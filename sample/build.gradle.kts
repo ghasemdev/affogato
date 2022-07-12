@@ -22,36 +22,29 @@ android {
             useSupportLibrary = true
         }
     }
-
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-
     kotlinOptions {
         jvmTarget = "11"
     }
-
     buildFeatures {
         compose = true
     }
-
     composeOptions {
         kotlinCompilerExtensionVersion = "1.2.0"
     }
-
     packagingOptions {
         resources.excludes.add("META-INF/AL2.0")
         resources.excludes.add("META-INF/LGPL2.1")
     }
-
     kotlin {
         sourceSets.debug {
             kotlin.srcDir("build/generated/ksp/debug/kotlin")
@@ -63,6 +56,9 @@ android {
 }
 
 dependencies {
+    // Modules
+    implementation(project(":unit"))
+
     // AndroidX ------------------------------------------------------------------------------------
     implementation("androidx.core:core-ktx:1.8.0")
 
