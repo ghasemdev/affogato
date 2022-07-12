@@ -2,7 +2,7 @@ plugins {
     id("com.android.application")
     kotlin("android")
     // Kotlin Serialization
-    kotlin("plugin.serialization") version "1.7.10"
+    kotlin("plugin.serialization") version "1.7.0"
     // Kotlin Parcelize
     id("kotlin-parcelize")
 }
