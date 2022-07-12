@@ -2,7 +2,7 @@ plugins {
     id("com.android.application")
     kotlin("android")
     // Kotlin Serialization
-    kotlin("plugin.serialization") version "1.7.0"
+    kotlin("plugin.serialization") version "1.7.10"
     // Kotlin Parcelize
     id("kotlin-parcelize")
 }
@@ -65,7 +65,6 @@ android {
 dependencies {
     // AndroidX ------------------------------------------------------------------------------------
     implementation("androidx.core:core-ktx:1.8.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.0")
 
     // Compose -------------------------------------------------------------------------------------
     val composeVersion = "1.2.0-rc03"
@@ -89,6 +88,7 @@ dependencies {
     implementation("androidx.compose.runtime:runtime-livedata:$composeVersion")
     implementation("androidx.compose.compiler:compiler:1.2.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.0-alpha01")
 
     implementation("androidx.paging:paging-compose:1.0.0-alpha15")
     implementation("androidx.activity:activity-compose:1.5.0")
