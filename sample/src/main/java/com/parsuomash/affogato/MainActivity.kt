@@ -14,12 +14,13 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.parsuomash.affogato.ui.theme.AffogatoTheme
-import com.parsuomash.unit.sdp
-import com.parsuomash.unit.ssp
+import com.parsuomash.affogato.unit.sdp
+import com.parsuomash.affogato.unit.ssp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +42,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String) {
     Column {
-//        val a = Sdp._1sdp
         Box(
             modifier = Modifier
                 .size(40.dp)
@@ -57,7 +57,8 @@ fun Greeting(name: String) {
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, device = Devices.NEXUS_5)
+@Preview(showBackground = true, device = Devices.PIXEL_4_XL)
 @Composable
 fun DefaultPreview() {
     AffogatoTheme {
