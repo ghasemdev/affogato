@@ -1,4 +1,4 @@
-package com.parsuomash.unit
+package com.parsuomash.affogato.unit
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
@@ -6,9 +6,6 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
-import com.intuit.ssp.R
-
-typealias Ssp = R.dimen
 
 /**
  * Creates a Scalable SP unit [TextUnit]:

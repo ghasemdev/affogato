@@ -57,7 +57,8 @@ android {
 
 dependencies {
     // Modules
-    implementation(project(":unit"))
+    val affogatoVersion = "1.0.0-alpha03"
+    implementation("com.github.ghasemdev:affogato:$affogatoVersion")
 
     // AndroidX ------------------------------------------------------------------------------------
     implementation("androidx.core:core-ktx:1.8.0")

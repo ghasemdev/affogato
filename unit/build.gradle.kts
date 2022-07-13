@@ -41,10 +41,6 @@ android {
 }
 
 dependencies {
-    // Scalable DP, SP
-    implementation("com.intuit.sdp:sdp-android:1.1.0")
-    implementation("com.intuit.ssp:ssp-android:1.1.0")
-
     // Compose -------------------------------------------------------------------------------------
     val composeVersion = "1.2.0-rc03"
 
@@ -83,7 +79,7 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 groupId = "com.github.ghasemdev"
                 artifactId = "affogato-unit"
-                version = "1.0.0-alpha02"
+                version = "1.0.0-alpha04"
 
                 from(components["release"])
             }

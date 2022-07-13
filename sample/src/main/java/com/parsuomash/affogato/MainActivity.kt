@@ -41,6 +41,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String) {
     Column {
+//        val a = Sdp._1sdp
         Box(
             modifier = Modifier
                 .size(40.dp)
