@@ -1,4 +1,4 @@
-package com.parsuomash.unit
+package com.parsuomash.affogato.unit
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

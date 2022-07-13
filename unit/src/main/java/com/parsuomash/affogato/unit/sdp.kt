@@ -1,4 +1,4 @@
-package com.parsuomash.unit
+package com.parsuomash.affogato.unit
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
@@ -6,9 +6,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.intuit.sdp.R
-
-typealias Sdp = R.dimen
 
 /**
  * Create a Scalable [Dp] using an [Int]:
