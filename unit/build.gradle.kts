@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("maven-publish")
 }
 
 android {
@@ -74,4 +75,18 @@ dependencies {
     androidTestImplementation("junit:junit:4.13.2")
     androidTestImplementation("com.google.truth:truth:1.1.3")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                groupId = "com.github.ghasemdev"
+                artifactId = "affogato-unit"
+                version = "1.0.0-alpha02"
+
+                from(components["release"])
+            }
+        }
+    }
 }
