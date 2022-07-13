@@ -12,17 +12,17 @@ import androidx.compose.ui.unit.dp
  *
  * Example:
  * ```Kotlin
- * val dimen = 24.sdp
+ * val dimen = 24.udp
  * ```
  */
 @Stable
-val Int.sdp: Dp
+val Int.udp: Dp
     @Composable
-    get() = getSdp()
+    get() = getUdp()
 
-@JvmName("_getSdp")
+@JvmName("_getUdp")
 @Composable
-private fun Int.getSdp(): Dp {
+private fun Int.getUdp(): Dp {
     val id = when (this) {
         in 1..MAX_DP -> "_${this}sdp"
         in (-MAX_NEGATIVE_DP..-1) -> "_minus${this}sdp"

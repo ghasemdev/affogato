@@ -2,7 +2,7 @@ plugins {
     id("com.android.application")
     kotlin("android")
     // Kotlin Serialization
-    kotlin("plugin.serialization") version "1.7.0"
+    kotlin("plugin.serialization") version "1.7.10"
     // Kotlin Parcelize
     id("kotlin-parcelize")
 }
@@ -34,6 +34,11 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+        freeCompilerArgs = listOf(
+            "-P",
+            "plugin:androidx.compose.compiler.plugins.kotlin:" +
+                "suppressKotlinVersionCompatibilityCheck=true"
+        )
     }
     buildFeatures {
         compose = true
@@ -57,8 +62,9 @@ android {
 
 dependencies {
     // Modules
-    val affogatoVersion = "1.0.0-alpha04"
-    implementation("com.github.ghasemdev:affogato:$affogatoVersion")
+//    val affogatoVersion = "1.0.0-alpha05"
+//    implementation("com.github.ghasemdev:affogato:$affogatoVersion")
+    implementation(project(":affogato-unit"))
 
     // AndroidX ------------------------------------------------------------------------------------
     implementation("androidx.core:core-ktx:1.8.0")
