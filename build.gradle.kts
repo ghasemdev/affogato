@@ -3,13 +3,12 @@ import io.gitlab.arturbosch.detekt.Detekt
 plugins {
     id("com.android.application") version "7.2.1" apply false
     id("com.android.library") version "7.2.1" apply false
-    id("org.jetbrains.kotlin.android") version "1.7.0" apply false
-    id("org.jetbrains.kotlin.jvm") version "1.7.0" apply false
+    id("org.jetbrains.kotlin.android") version "1.7.10" apply false
+    id("org.jetbrains.kotlin.jvm") version "1.7.10" apply false
 
     id("io.gitlab.arturbosch.detekt") version "1.21.0-RC2"
     id("org.jetbrains.dokka") version "1.7.0"
     id("org.jetbrains.kotlinx.kover") version "0.5.1"
-    id("com.google.devtools.ksp") version "1.7.0-1.0.6"
 }
 
 subprojects {

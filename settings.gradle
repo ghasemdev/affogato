@@ -16,4 +16,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "affogato"
 include ':sample'
-include ':unit'
+include ':affogato-unit'
+include ':affogato-unit-processor'

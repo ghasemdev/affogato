@@ -19,8 +19,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.parsuomash.affogato.ui.theme.AffogatoTheme
-import com.parsuomash.affogato.unit.sdp
-import com.parsuomash.affogato.unit.ssp
+import com.parsuomash.affogato.unit.Unit
+import com.parsuomash.affogato.unit.udp
+import com.parsuomash.affogato.unit.usp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,11 +50,11 @@ fun Greeting(name: String) {
         )
         Box(
             modifier = Modifier
-                .size(40.sdp)
+                .size(40.udp)
                 .background(Color.Red)
         )
         Text(text = "Hello $name!", fontSize = 20.sp)
-        Text(text = "Hello $name!", fontSize = 20.ssp)
+        Text(text = "Hello $name!", fontSize = 20.usp)
     }
 }
 
@@ -65,3 +66,12 @@ fun DefaultPreview() {
         Greeting("Android")
     }
 }
+
+@Unit(type = "dp", values = ["320:24", "480:26", "600:28", "720:30"])
+val topPadding = 24.dp
+
+@Unit(type = "sp", values = ["320=24", "480=26", "600=28", "720=30"])
+val buttonFontSize = 24.sp
+
+@Unit(type = "dp", values = ["320=24", "480=26", "600=28", "720=30"])
+val x = 10.dp
