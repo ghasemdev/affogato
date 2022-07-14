@@ -19,8 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.parsuomash.affogato.ui.theme.AffogatoTheme
-import com.parsuomash.affogato.unit.Udp
-import com.parsuomash.affogato.unit.Usp
+import com.parsuomash.affogato.unit.Unit
 import com.parsuomash.affogato.unit.udp
 import com.parsuomash.affogato.unit.usp
 
@@ -68,8 +67,11 @@ fun DefaultPreview() {
     }
 }
 
-@Udp(sw320 = 24, sw480 = 26, sw600 = 28, sw720 = 30)
+@Unit(type = "dp", values = ["320:24", "480:26", "600:28", "720:30"])
 val topPadding = 24.dp
 
-@Usp(sw320 = 24, sw480 = 26, sw600 = 28, sw720 = 30)
+@Unit(type = "sp", values = ["320=24", "480=26", "600=28", "720=30"])
 val buttonFontSize = 24.sp
+
+@Unit(type = "dp", values = ["320=24", "480=26", "600=28", "720=30"])
+val x = 10.dp
