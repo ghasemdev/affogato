@@ -1,10 +1,10 @@
-@file:Suppress("ForbiddenClassName")
+@file:Suppress("ForbiddenClassName", "MaxLineLength", "LongMethod")
 
 package com.parsuomash.affogato.unit.processor.internal
 
-import com.fleshgrinder.extensions.kotlin.toLowerCamelCase
 import com.fleshgrinder.extensions.kotlin.toUpperCamelCase
 import com.google.devtools.ksp.processing.CodeGenerator
+import com.google.devtools.ksp.processing.Dependencies
 import com.google.devtools.ksp.processing.KSPLogger
 import com.google.devtools.ksp.processing.Resolver
 import com.google.devtools.ksp.processing.SymbolProcessor
@@ -14,6 +14,8 @@ import com.google.devtools.ksp.symbol.KSPropertyDeclaration
 import com.google.devtools.ksp.symbol.KSValueArgument
 import com.google.devtools.ksp.validate
 import com.parsuomash.affogato.unit.processor.utils.UnitValidator
+import com.parsuomash.affogato.unit.processor.utils.UnitValidator.Companion.COLON_SYMBOL
+import com.parsuomash.affogato.unit.processor.utils.UnitValidator.Companion.EQUALS_SYMBOL
 
 internal class UnitSymbolProcessor(
     private val config: UnitConfig,
@@ -23,6 +25,9 @@ internal class UnitSymbolProcessor(
 
     private val declarations = mutableListOf<KSPropertyDeclaration>()
     private val visitor = UnitVisitor(declarations)
+
+    private val unitPackage: List<String>
+        get() = declarations.map { it.packageName.asString() }
 
     private val unitTypes: List<String?>
         get() = declarations.map {
@@ -35,6 +40,9 @@ internal class UnitSymbolProcessor(
         }
 
     private val unitClassNames: List<String?>
+        get() = declarations.map { it.getClassSimpleName() }
+
+    private val unitClassQualifiedNames: List<String?>
         get() = declarations.map { it.getClassQualifiedName() }
 
     private val unitNames: List<String?>
@@ -49,79 +57,105 @@ internal class UnitSymbolProcessor(
     }
 
     override fun finish() {
-        if (!UnitValidator(unitTypes, unitValues, unitClassNames).validate(logger)) return
+        if (!UnitValidator(unitTypes, unitValues, unitClassQualifiedNames).validate(logger)) return
 
-        val fileName = "${config.moduleName.toUpperCamelCase()}Strings"
-        val stringsName = "${config.moduleName.toLowerCamelCase()}Strings"
+        val fileName = "${config.moduleName.toUpperCamelCase()}UnitProvider"
         val visibility = if (config.internalVisibility) "internal" else "public"
 
-//        val defaultLanguageTag = declarations
-//            .firstNotNullOfOrNull { it.annotations.getDefaultLanguageTag() }
-//            ?.let { "\"$it\"" }
-//            ?: "Locale.current.toLanguageTag()"
-//
-//        val defaultStrings = declarations
-//            .first { it.annotations.getValue<Boolean>(ANNOTATION_PARAM_DEFAULT) == true }
-//
-//        val packagesOutput = declarations
-//            .mapNotNull { it.qualifiedName?.asString() }
-//            .plus(defaultStrings.getClassQualifiedName())
-//            .joinToString(separator = "\n") { packageName -> "import $packageName" }
-//
-//        val stringsClassOutput = defaultStrings.getClassSimpleName()
-//
-//        val defaultStringsOutput = defaultStrings.simpleName.getShortName()
-//
-//        val translationMappingOutput = declarations.map {
-//            it.annotations.getValue<String>(ANNOTATION_PARAM_LANGUAGE_TAG)!! to
-//                it.simpleName.getShortName()
-//        }.joinToString(",\n") { (languageTag, property) ->
-//            "$INDENTATION\"$languageTag\" to $property"
-//        }
-//
-//        codeGenerator.createNewFile(
-//            dependencies = Dependencies(
-//                aggregating = true,
-//                sources = declarations.map { it.containingFile!! }.toTypedArray()
-//            ),
-//            packageName = config.packageName,
-//            fileName = fileName
-//        ).use { stream ->
-//            stream.write(
-//                """
-//                |package ${config.packageName}
-//                |
-//                |import androidx.compose.runtime.Composable
-//                |import androidx.compose.runtime.staticCompositionLocalOf
-//                |import androidx.compose.ui.text.intl.Locale
-//                |import cafe.adriel.lyricist.Lyricist
-//                |import cafe.adriel.lyricist.LanguageTag
-//                |import cafe.adriel.lyricist.rememberStrings
-//                |import cafe.adriel.lyricist.ProvideStrings
-//                |$packagesOutput
-//                |
-//                |$visibility val $stringsName = mapOf<LanguageTag, $stringsClassOutput>(
-//                |$translationMappingOutput
-//                |)
-//                |
-//                |$visibility val Local$fileName = staticCompositionLocalOf { $defaultStringsOutput }
-//                |
-//                |@Composable
-//                |$visibility fun remember$fileName(
-//                |    languageTag: LanguageTag = $defaultLanguageTag
-//                |): Lyricist<$stringsClassOutput> =
-//                |    rememberStrings($stringsName, languageTag)
-//                |
-//                |@Composable
-//                |$visibility fun Provide$fileName(
-//                |    lyricist: Lyricist<$stringsClassOutput> = remember$fileName(),
-//                |    content: @Composable () -> Unit
-//                |) {
-//                |    ProvideStrings(lyricist, Local$fileName, content)
-//                |}
-//                """.trimMargin().toByteArray()
-//            )
-//        }
+        val screenWidths = unitValues[0]!!.map { keys ->
+            keys.toString().split(EQUALS_SYMBOL, COLON_SYMBOL).map { it.trim().toInt() }.first()
+        }.sorted()
+
+        val whenStatement = buildString {
+            append("${INDENTATION}screenWidth < ${screenWidths.first()} -> sw${screenWidths.first()}Dimensions\n")
+            screenWidths.windowed(2) {
+                append("${INDENTATION * 2}screenWidth in ${it[0]}..${it[1]} -> sw${it[0]}Dimensions\n")
+            }
+            append("${INDENTATION * 2}else -> sw${screenWidths.last()}Dimensions")
+        }
+
+        val dimensions = buildString {
+            var counter = 0
+            (unitPackage zip unitNames).zip(unitClassNames) { (packageName, name), className ->
+                val newLine = if (counter < unitNames.lastIndex) "\n" else ""
+                append("$INDENTATION val $name: $className = $packageName.$name,$newLine")
+                counter++
+            }
+        }
+
+        val dimensionObjects = buildString {
+            screenWidths.forEachIndexed { index, width ->
+                val newLine1 = if (index < screenWidths.lastIndex) "\n" else ""
+                append("private val sw${width}Dimensions = Dimensions(\n")
+                (unitTypes zip unitNames).zip(unitValues) { (type, name), value ->
+                    val newValue = value?.associate { v ->
+                        val list = v.toString().split(EQUALS_SYMBOL, COLON_SYMBOL)
+                            .map { it.trim().toInt() }
+                        list[0] to list[1]
+                    }
+                    append("$INDENTATION $name = ${newValue?.get(width)}.$type,\n")
+                }
+                append(")\n$newLine1")
+            }
+        }
+
+        codeGenerator.createNewFile(
+            dependencies = Dependencies(
+                aggregating = true,
+                sources = declarations.map { it.containingFile!! }.toTypedArray()
+            ),
+            packageName = config.packageName,
+            fileName = fileName
+        ).use { stream ->
+            stream.write(
+                """
+                |package ${config.packageName}
+                |
+                |import androidx.compose.runtime.Composable
+                |import androidx.compose.runtime.CompositionLocalProvider
+                |import androidx.compose.runtime.remember
+                |import androidx.compose.runtime.staticCompositionLocalOf
+                |import androidx.compose.ui.platform.LocalConfiguration
+                |import androidx.compose.ui.unit.Dp
+                |import androidx.compose.ui.unit.TextUnit
+                |import androidx.compose.ui.unit.dp
+                |import androidx.compose.ui.unit.sp
+                |
+                |@Composable
+                |$visibility fun ProvideDimens(
+                |    dimensions: Dimensions = defaultDimens(),
+                |    content: @Composable () -> Unit
+                |) {
+                |    val dimensionSet = remember { dimensions }
+                |    CompositionLocalProvider(LocalAppDimens provides dimensionSet, content = content)
+                |}
+                |
+                |private val LocalAppDimens = staticCompositionLocalOf {
+                |    Dimensions()
+                |}
+                |
+                |$visibility val dimen: Dimensions
+                |    @Composable
+                |    get() = LocalAppDimens.current
+                |
+                |@Composable
+                |private fun defaultDimens(): Dimensions {
+                |    val configuration = LocalConfiguration.current
+                |    val screenWidth = configuration.screenWidthDp
+                |
+                |    return when {
+                |    $whenStatement
+                |    }
+                |}
+                |
+                |$visibility data class Dimensions(
+                |$dimensions
+                |)
+                |
+                |$dimensionObjects
+                """.trimMargin().toByteArray()
+            )
+        }
     }
 
     private fun KSPropertyDeclaration.getClassSimpleName(): String? =
@@ -129,19 +163,6 @@ internal class UnitSymbolProcessor(
 
     private fun KSPropertyDeclaration.getClassQualifiedName(): String? =
         getter?.returnType?.resolve()?.declaration?.qualifiedName?.asString()
-
-    private fun KSPropertyDeclaration.getClassQualified(): String? =
-        getter?.returnType?.resolve()?.declaration?.qualifiedName?.getQualifier()
-
-    private fun Sequence<KSAnnotation>.getDefaultLanguageTag(): String? =
-        firstOrNull {
-            withName(ANNOTATION_NAME)
-                ?.arguments
-                ?.withName(ANNOTATION_PARAM_DEFAULT)
-                ?.value == true
-        }?.arguments
-            ?.withName(ANNOTATION_PARAM_LANGUAGE_TAG)
-            ?.value as? String
 
     private inline fun <reified T> Sequence<KSAnnotation>.getValue(argumentName: String): T? =
         withName(ANNOTATION_NAME)
@@ -166,9 +187,9 @@ internal class UnitSymbolProcessor(
 
         const val ANNOTATION_NAME = "Unit"
         const val ANNOTATION_PACKAGE = "com.parsuomash.affogato.unit.$ANNOTATION_NAME"
-        const val ANNOTATION_PARAM_LANGUAGE_TAG = "languageTag"
-        const val ANNOTATION_PARAM_DEFAULT = "default"
         const val ANNOTATION_PARAM_TYPE = "type"
         const val ANNOTATION_PARAM_VALUES = "values"
     }
 }
+
+private operator fun String.times(i: Int): String = repeat(i)

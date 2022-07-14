@@ -1,6 +1,6 @@
 package com.parsuomash.affogato.unit.processor.utils
 
-object ErrorMassage {
+internal object ErrorMassage {
     const val ERROR_MASSAGE_UNIT_TYPES = """Use valid Unit types `@Unit(type "sp|dp")`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"""
 
