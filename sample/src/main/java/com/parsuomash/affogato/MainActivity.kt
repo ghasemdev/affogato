@@ -43,6 +43,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String) {
     Column {
+        dimen.buttonFontSize
         Box(
             modifier = Modifier
                 .size(40.dp)

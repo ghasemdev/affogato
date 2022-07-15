@@ -5,6 +5,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import com.parsuomash.affogato.ProvideDimens
 
 private val DarkColorPalette = darkColors(
     primary = Purple200,
@@ -35,10 +36,12 @@ fun AffogatoTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composab
         LightColorPalette
     }
 
-    MaterialTheme(
-        colors = colors,
-        typography = Typography,
-        shapes = Shapes,
-        content = content
-    )
+    ProvideDimens {
+        MaterialTheme(
+            colors = colors,
+            typography = Typography,
+            shapes = Shapes,
+            content = content
+        )
+    }
 }
