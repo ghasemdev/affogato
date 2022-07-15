@@ -12,17 +12,17 @@ import androidx.compose.ui.unit.sp
  *
  * Example:
  * ```Kotlin
- * val textSize = 24.usp
+ * val textSize = 24.ssp
  * ```
  */
 @Stable
-val Int.usp: TextUnit
+val Int.ssp: TextUnit
     @Composable
-    get() = getUsp()
+    get() = getSsp()
 
-@JvmName("_getUsp")
+@JvmName("_getSsp")
 @Composable
-private fun Int.getUsp(): TextUnit {
+private fun Int.getSsp(): TextUnit {
     val id = when (this) {
         in 1..MAX_DP -> "_${this}ssp"
         in (-MAX_NEGATIVE_DP..-1) -> "_minus${this}ssp"
