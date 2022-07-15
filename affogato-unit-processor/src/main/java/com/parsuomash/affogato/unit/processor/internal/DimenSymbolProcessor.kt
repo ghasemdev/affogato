@@ -13,39 +13,39 @@ import com.google.devtools.ksp.symbol.KSAnnotation
 import com.google.devtools.ksp.symbol.KSPropertyDeclaration
 import com.google.devtools.ksp.symbol.KSValueArgument
 import com.google.devtools.ksp.validate
-import com.parsuomash.affogato.unit.processor.utils.UnitValidator
-import com.parsuomash.affogato.unit.processor.utils.UnitValidator.Companion.COLON_SYMBOL
-import com.parsuomash.affogato.unit.processor.utils.UnitValidator.Companion.EQUALS_SYMBOL
+import com.parsuomash.affogato.unit.processor.utils.DimenValidator
+import com.parsuomash.affogato.unit.processor.utils.DimenValidator.Companion.COLON_SYMBOL
+import com.parsuomash.affogato.unit.processor.utils.DimenValidator.Companion.EQUALS_SYMBOL
 
-internal class UnitSymbolProcessor(
-    private val config: UnitConfig,
+internal class DimenSymbolProcessor(
+    private val config: DimenConfig,
     private val codeGenerator: CodeGenerator,
     private val logger: KSPLogger
 ) : SymbolProcessor {
 
     private val declarations = mutableListOf<KSPropertyDeclaration>()
-    private val visitor = UnitVisitor(declarations)
+    private val visitor = DimenVisitor(declarations)
 
-    private val unitPackage: List<String>
+    private val dimenPackage: List<String>
         get() = declarations.map { it.packageName.asString() }
 
-    private val unitTypes: List<String?>
+    private val dimenTypes: List<String?>
         get() = declarations.map {
             it.annotations.getValue<String>(ANNOTATION_PARAM_TYPE)?.lowercase()?.trim()
         }
 
-    private val unitValues: List<List<*>?>
+    private val dimenValues: List<List<*>?>
         get() = declarations.map {
             it.annotations.getValues(ANNOTATION_PARAM_VALUES)
         }
 
-    private val unitClassNames: List<String?>
+    private val dimenClassNames: List<String?>
         get() = declarations.map { it.getClassSimpleName() }
 
-    private val unitClassQualifiedNames: List<String?>
+    private val dimenClassQualifiedNames: List<String?>
         get() = declarations.map { it.getClassQualifiedName() }
 
-    private val unitNames: List<String?>
+    private val dimenNames: List<String?>
         get() = declarations.map { it.simpleName.getShortName() }
 
     override fun process(resolver: Resolver): List<KSAnnotated> {
@@ -57,12 +57,13 @@ internal class UnitSymbolProcessor(
     }
 
     override fun finish() {
-        if (!UnitValidator(unitTypes, unitValues, unitClassQualifiedNames).validate(logger)) return
+        val validator = DimenValidator(dimenTypes, dimenValues, dimenClassQualifiedNames)
+        if (!validator.validate(logger)) return
 
-        val fileName = "${config.moduleName.toUpperCamelCase()}UnitProvider"
+        val fileName = "${config.moduleName.toUpperCamelCase()}DimenProvider"
         val visibility = if (config.internalVisibility) "internal" else "public"
 
-        val screenWidths = unitValues[0]!!.map { keys ->
+        val screenWidths = dimenValues[0]!!.map { keys ->
             keys.toString().split(EQUALS_SYMBOL, COLON_SYMBOL).map { it.trim().toInt() }.first()
         }.sorted()
 
@@ -76,8 +77,8 @@ internal class UnitSymbolProcessor(
 
         val dimensions = buildString {
             var counter = 0
-            (unitPackage zip unitNames).zip(unitClassNames) { (packageName, name), className ->
-                val newLine = if (counter < unitNames.lastIndex) "\n" else ""
+            (dimenPackage zip dimenNames).zip(dimenClassNames) { (packageName, name), className ->
+                val newLine = if (counter < dimenNames.lastIndex) "\n" else ""
                 append("$INDENTATION val $name: $className = $packageName.$name,$newLine")
                 counter++
             }
@@ -87,7 +88,7 @@ internal class UnitSymbolProcessor(
             screenWidths.forEachIndexed { index, width ->
                 val newLine1 = if (index < screenWidths.lastIndex) "\n" else ""
                 append("private val sw${width}Dimensions = Dimensions(\n")
-                (unitTypes zip unitNames).zip(unitValues) { (type, name), value ->
+                (dimenTypes zip dimenNames).zip(dimenValues) { (type, name), value ->
                     val newValue = value?.associate { v ->
                         val list = v.toString().split(EQUALS_SYMBOL, COLON_SYMBOL)
                             .map { it.trim().toInt() }
@@ -185,7 +186,7 @@ internal class UnitSymbolProcessor(
     private companion object {
         val INDENTATION = " ".repeat(4)
 
-        const val ANNOTATION_NAME = "Unit"
+        const val ANNOTATION_NAME = "Dimen"
         const val ANNOTATION_PACKAGE = "com.parsuomash.affogato.unit.$ANNOTATION_NAME"
         const val ANNOTATION_PARAM_TYPE = "type"
         const val ANNOTATION_PARAM_VALUES = "values"

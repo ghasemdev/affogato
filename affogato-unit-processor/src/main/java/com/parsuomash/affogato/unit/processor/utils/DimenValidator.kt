@@ -1,29 +1,29 @@
 package com.parsuomash.affogato.unit.processor.utils
 
 import com.google.devtools.ksp.processing.KSPLogger
+import com.parsuomash.affogato.unit.processor.utils.ErrorMassage.ERROR_MASSAGE_DIMEN_TYPES
+import com.parsuomash.affogato.unit.processor.utils.ErrorMassage.ERROR_MASSAGE_DIMEN_TYPE_EQUALS_TO_CLASS_NAMES
 import com.parsuomash.affogato.unit.processor.utils.ErrorMassage.ERROR_MASSAGE_KEYS_UNIQUE
 import com.parsuomash.affogato.unit.processor.utils.ErrorMassage.ERROR_MASSAGE_SAME_KEYS
-import com.parsuomash.affogato.unit.processor.utils.ErrorMassage.ERROR_MASSAGE_UNIT_TYPES
-import com.parsuomash.affogato.unit.processor.utils.ErrorMassage.ERROR_MASSAGE_UNIT_TYPE_EQUALS_TO_CLASS_NAMES
 import com.parsuomash.affogato.unit.processor.utils.ErrorMassage.ERROR_MASSAGE_VALID_VALUES
 import com.parsuomash.affogato.unit.processor.utils.ErrorMassage.ERROR_MASSAGE_VALUES_EQUALS_SIZE
 import com.parsuomash.affogato.unit.processor.utils.ErrorMassage.ERROR_MASSAGE_VALUES_SPLIT_TWO_PART
 
-internal class UnitValidator(
-    private val unitTypes: List<String?>,
-    private val unitValues: List<List<*>?>,
-    private val unitClassNames: List<String?>,
+internal class DimenValidator(
+    private val dimenTypes: List<String?>,
+    private val dimenValues: List<List<*>?>,
+    private val dimenClassNames: List<String?>,
 ) {
 
     fun validate(logger: KSPLogger) = when {
-        isNoUnitTag() -> false
-        !isValidUnitTypes() -> {
-            logger.exception(IllegalArgumentException(ERROR_MASSAGE_UNIT_TYPES))
+        isNoDimenTag() -> false
+        !isValidDimenTypes() -> {
+            logger.exception(IllegalArgumentException(ERROR_MASSAGE_DIMEN_TYPES))
             false
         }
-        !isUnitTypeEqualsToClassNames() -> {
+        !isDimenTypeEqualsToClassNames() -> {
             logger.exception(
-                IllegalArgumentException(ERROR_MASSAGE_UNIT_TYPE_EQUALS_TO_CLASS_NAMES)
+                IllegalArgumentException(ERROR_MASSAGE_DIMEN_TYPE_EQUALS_TO_CLASS_NAMES)
             )
             false
         }
@@ -50,24 +50,25 @@ internal class UnitValidator(
         else -> true
     }
 
-    private fun isNoUnitTag() = unitTypes.isEmpty()
+    private fun isNoDimenTag() = dimenTypes.isEmpty()
 
-    private fun isValidUnitTypes() = unitTypes.toSet().all { it in validUnitTypes }
+    private fun isValidDimenTypes() = dimenTypes.toSet().all { it in validUnitTypes }
 
-    private fun isUnitTypeEqualsToClassNames() = unitTypes.zip(unitClassNames) { type, className ->
-        val newType = unitTypeToClassName(type)
-        newType == className
-    }.all { it }
+    private fun isDimenTypeEqualsToClassNames() =
+        dimenTypes.zip(dimenClassNames) { type, className ->
+            val newType = unitTypeToClassName(type)
+            newType == className
+        }.all { it }
 
-    private fun isValuesEqualsSize() = unitValues.map { it?.size }.toSet().size == 1
+    private fun isValuesEqualsSize() = dimenValues.map { it?.size }.toSet().size == 1
 
-    private fun isValuesSplitTwoPart() = unitValues.map { outer ->
+    private fun isValuesSplitTwoPart() = dimenValues.map { outer ->
         outer?.map { inner ->
             inner.toString().split(EQUALS_SYMBOL, COLON_SYMBOL).size == 2
         }?.all { it } ?: false
     }.all { it }
 
-    private fun isValidValues() = unitValues.map { outer ->
+    private fun isValidValues() = dimenValues.map { outer ->
         outer?.map { inner ->
             inner.toString().split(EQUALS_SYMBOL, COLON_SYMBOL).map {
                 it.trim().toIntOrNull() != null
@@ -75,14 +76,14 @@ internal class UnitValidator(
         }?.all { it } ?: false
     }.all { it }
 
-    private fun isKeysUnique() = unitValues.map { outer ->
+    private fun isKeysUnique() = dimenValues.map { outer ->
         val values = outer?.map { inner ->
             inner.toString().split(EQUALS_SYMBOL, COLON_SYMBOL).map { it.trim() }.first()
         }
         values?.toSet()?.size == values?.size
     }.all { it }
 
-    private fun isSameKeys() = unitValues.map { outer ->
+    private fun isSameKeys() = dimenValues.map { outer ->
         outer?.map { inner ->
             inner.toString().split(EQUALS_SYMBOL, COLON_SYMBOL).map { it.trim() }.first()
         } ?: listOf()
@@ -94,7 +95,7 @@ internal class UnitValidator(
     private fun unitTypeToClassName(type: String?) = when (type) {
         UNIT_DP -> PACKAGE_NAME_DP
         UNIT_SP -> PACKAGE_NAME_UNIT_TEXT
-        else -> throw IllegalArgumentException(ERROR_MASSAGE_UNIT_TYPES)
+        else -> throw IllegalArgumentException(ERROR_MASSAGE_DIMEN_TYPES)
     }
 
     companion object {
