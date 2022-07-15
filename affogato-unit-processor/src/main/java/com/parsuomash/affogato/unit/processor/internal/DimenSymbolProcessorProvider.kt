@@ -6,12 +6,12 @@ import com.google.devtools.ksp.processing.SymbolProcessor
 import com.google.devtools.ksp.processing.SymbolProcessorEnvironment
 import com.google.devtools.ksp.processing.SymbolProcessorProvider
 
-internal class UnitSymbolProcessorProvider : SymbolProcessorProvider {
+internal class DimenSymbolProcessorProvider : SymbolProcessorProvider {
 
     override fun create(environment: SymbolProcessorEnvironment): SymbolProcessor =
         with(environment) {
-            UnitSymbolProcessor(
-                config = UnitConfig(
+            DimenSymbolProcessor(
+                config = DimenConfig(
                     packageName = options[ARG_PACKAGE_NAME] ?: DEFAULT_PACKAGE_NAME,
                     moduleName = options[ARG_MODULE_NAME].orEmpty(),
                     internalVisibility = options[ARG_INTERNAL_VISIBILITY].toBoolean()
