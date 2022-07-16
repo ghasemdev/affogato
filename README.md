@@ -9,7 +9,7 @@
 
 Affogato is a multipurpose library for Jetpack Compose, Android and Kotlin.
 
-### [Unit](https://github.com/ghasemdev/affogato/wiki/Unit)
+### [Unit Size](https://github.com/ghasemdev/affogato/wiki/Unit-Size)
 
 The unit is one of the **Jetpack Compose** modules of this library, which can support all screen
 sizes in `sdp`, `ssp` or custom create with `@Dimen`.
