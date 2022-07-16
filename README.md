@@ -18,7 +18,7 @@ Also we can use `rememberWindowSize()` to know in which device we are (Compact, 
 # Links
 
 Affogato is currently available for maven/gradle builds
-at [Jitpack](https://jitpack.io/#ghasemdev/affogato/1.0.0-beta02) (
+at [Jitpack](https://jitpack.io/#ghasemdev/affogato/1.0.0-beta03) (
 read [Getting started](https://github.com/ghasemdev/affogato/wiki/Getting-Started)).
 
 * [Wiki](https://github.com/ghasemdev/affogato/wiki)
