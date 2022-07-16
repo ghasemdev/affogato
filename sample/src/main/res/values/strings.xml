@@ -1,3 +1,6 @@
 <resources>
   <string name="app_name">affogato</string>
+  <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem, beatae
+    corporis cupiditate dolor, facere impedit ipsa iste omnis perspiciatis repellat repudiandae sed
+    sequi soluta temporibus. Culpa dicta dolorem quibusdam?</string>
 </resources>
