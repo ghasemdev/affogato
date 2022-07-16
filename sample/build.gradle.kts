@@ -64,7 +64,7 @@ android {
 
 dependencies {
     // Modules
-    val affogatoVersion = "1.0.0-beta03"
+    val affogatoVersion = "1.0.0-beta02"
     implementation("com.github.ghasemdev.affogato:affogato-unit:$affogatoVersion")
     ksp("com.github.ghasemdev.affogato:affogato-unit-processor:$affogatoVersion")
 
