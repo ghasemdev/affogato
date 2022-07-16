@@ -122,6 +122,23 @@ internal class DimenSymbolProcessor(
                 |import androidx.compose.ui.unit.dp
                 |import androidx.compose.ui.unit.sp
                 |
+                |/**
+                | * Provide dimens for multiscreen support.
+                | * in Theme.kt add this function
+                | * ```Kotlin
+                | * ProvideDimens {
+                | *   MaterialTheme(
+                | *     colors = colors,
+                | *     typography = Typography,
+                | *     shapes = Shapes,
+                | *     content = content
+                | *   )
+                | * }
+                | * ```
+                | *
+                | * @param dimensions
+                | * @param content
+                | */
                 |@Composable
                 |$visibility fun ProvideDimens(
                 |    dimensions: Dimensions = defaultDimens(),

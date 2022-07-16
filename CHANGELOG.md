@@ -5,18 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased] - yyyy-mm-dd
+## [🎉 v1.0.0-beta02 Affogato Unit] - 2022-07-16
 
-Here we write upgrading notes for brands. It's a team effort to make them as straightforward as
-possible.
+### 🚀 Features
 
-### Added
+* Add new sample
 
-- [PROJECTNAME-XXXX](http://tickets.projectname.com/browse/PROJECTNAME-XXXX)
-  MINOR Ticket title goes here.
-- [PROJECTNAME-YYYY](http://tickets.projectname.com/browse/PROJECTNAME-YYYY)
-  PATCH Ticket title goes here.
+### 🧪 Tests
 
-### Changed
+* Add tests for dimen tag validator
 
-### Fixed
+### 💭 Other
+
+* Add doc and update readme
+
+## [🎉 v1.0.0-beta01 Affogato Unit] - 2022-07-15
+
+### 🚀 Features
+
+* Add sdp and ssp unit
+* Add Dimen tag for create auto dimensions
