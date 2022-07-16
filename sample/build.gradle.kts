@@ -64,10 +64,10 @@ android {
 
 dependencies {
     // Modules
-    val affogatoVersion = "1.0.0-beta02"
+    val affogatoVersion = "1.0.0-beta03"
     implementation("com.github.ghasemdev.affogato:affogato-unit:$affogatoVersion")
     ksp("com.github.ghasemdev.affogato:affogato-unit-processor:$affogatoVersion")
-    implementation("androidx.compose.material3:material3-window-size-class:1.0.0-alpha14")
+
     // AndroidX ------------------------------------------------------------------------------------
     implementation("androidx.core:core-ktx:1.8.0")
 

@@ -17,6 +17,8 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -36,12 +38,13 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AffogatoTheme {
+                val window = rememberWindowSize()
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    ScreenContent2()
+                    ScreenContent2(window)
                 }
             }
         }
@@ -83,7 +86,16 @@ fun ScreenContent() {
 }
 
 @Composable
-fun ScreenContent2() {
+fun ScreenContent2(window: WindowSize) {
+    val text by remember(window) {
+        mutableStateOf(
+            when (window) {
+                WindowType.Compact -> "Compact"
+                WindowType.Medium -> "Medium"
+                WindowType.Expanded -> "Expanded"
+            }
+        )
+    }
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -91,6 +103,9 @@ fun ScreenContent2() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+        Text(text = text)
+        Spacer(modifier = Modifier.height(dimen.space))
+
         Image(
             painter = painterResource(id = R.drawable.affogato),
             modifier = Modifier.size(dimen.icon),
@@ -124,8 +139,9 @@ fun ScreenContent2() {
 @Preview(name = "PIXEL_C", showBackground = true, device = Devices.PIXEL_C)
 @Composable
 fun DefaultPreview() {
+    val window = rememberWindowSize()
     AffogatoTheme {
-        ScreenContent2()
+        ScreenContent2(window)
     }
 }
 
