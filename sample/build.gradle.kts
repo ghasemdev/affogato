@@ -64,9 +64,8 @@ android {
 
 dependencies {
     // Modules
-    val affogatoVersion = "1.0.0-beta04"
-    implementation("com.github.ghasemdev.affogato:affogato-unit:$affogatoVersion")
-    ksp("com.github.ghasemdev.affogato:affogato-unit-processor:$affogatoVersion")
+    implementation(project(":affogato-unit"))
+    ksp(project(":affogato-unit-processor"))
 
     // AndroidX ------------------------------------------------------------------------------------
     implementation("androidx.core:core-ktx:1.8.0")

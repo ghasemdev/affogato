@@ -20,3 +20,7 @@ annotation class Dimen(
     val type: String,
     val values: Array<String>,
 )
+
+const val COMPACT_WIDTH = 0
+const val MEDIUM_WIDTH = 600
+const val EXPANDED_WIDTH = 840
