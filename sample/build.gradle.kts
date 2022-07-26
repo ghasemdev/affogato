@@ -64,9 +64,8 @@ android {
 
 dependencies {
     // Modules
-    val affogatoVersion = "1.0.0-beta02"
-    implementation("com.github.ghasemdev.affogato:affogato-unit:$affogatoVersion")
-    ksp("com.github.ghasemdev.affogato:affogato-unit-processor:$affogatoVersion")
+    implementation(project(":affogato-unit"))
+    ksp(project(":affogato-unit-processor"))
 
     // AndroidX ------------------------------------------------------------------------------------
     implementation("androidx.core:core-ktx:1.8.0")
@@ -104,6 +103,12 @@ dependencies {
 
     debugImplementation("androidx.compose.ui:ui-tooling:$composeVersion")
     debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
+
+    // Accompanist ---------------------------------------------------------------------------------
+    val accompanistVersion = "0.24.13-rc"
+
+    implementation("com.google.accompanist:accompanist-pager:$accompanistVersion")
+    implementation("com.google.accompanist:accompanist-pager-indicators:$accompanistVersion")
 
     // Test ----------------------------------------------------------------------------------------
     testImplementation("junit:junit:4.13.2")

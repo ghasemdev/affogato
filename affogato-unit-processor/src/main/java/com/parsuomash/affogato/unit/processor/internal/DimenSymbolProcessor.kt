@@ -112,6 +112,7 @@ internal class DimenSymbolProcessor(
                 """
                 |package ${config.packageName}
                 |
+                |import android.content.res.Configuration
                 |import androidx.compose.runtime.Composable
                 |import androidx.compose.runtime.CompositionLocalProvider
                 |import androidx.compose.runtime.remember
@@ -159,7 +160,8 @@ internal class DimenSymbolProcessor(
                 |@Composable
                 |private fun defaultDimens(): Dimensions {
                 |    val configuration = LocalConfiguration.current
-                |    val screenWidth = configuration.screenWidthDp
+                |    val isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
+                |    val screenWidth = if (isLandscape) configuration.screenHeightDp else configuration.screenWidthDp
                 |
                 |    return when {
                 |    $whenStatement

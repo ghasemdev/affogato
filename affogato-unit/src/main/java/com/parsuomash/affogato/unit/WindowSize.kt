@@ -49,18 +49,18 @@ fun rememberWindowSize(): WindowSize {
 }
 
 private fun getScreenWidth(width: Int): WindowType = when {
-    width < COMPACT_WIDTH -> WindowType.Compact
-    width < MEDIUM_WIDTH -> WindowType.Medium
+    width < SIZE_COMPACT_WIDTH -> WindowType.Compact
+    width < SIZE_MEDIUM_WIDTH -> WindowType.Medium
     else -> WindowType.Expanded
 }
 
 private fun getScreenHeight(height: Int): WindowType = when {
-    height < COMPACT_HEIGHT -> WindowType.Compact
-    height < MEDIUM_HEIGHT -> WindowType.Medium
+    height < SIZE_COMPACT_HEIGHT -> WindowType.Compact
+    height < SIZE_MEDIUM_HEIGHT -> WindowType.Medium
     else -> WindowType.Expanded
 }
 
-private const val COMPACT_WIDTH = 600
-private const val MEDIUM_WIDTH = 840
-private const val COMPACT_HEIGHT = 480
-private const val MEDIUM_HEIGHT = 900
+private const val SIZE_COMPACT_WIDTH = 600
+private const val SIZE_MEDIUM_WIDTH = 840
+private const val SIZE_COMPACT_HEIGHT = 480
+private const val SIZE_MEDIUM_HEIGHT = 900
