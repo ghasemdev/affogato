@@ -6,7 +6,7 @@ plugins {
     id("org.jetbrains.kotlin.android") version "1.7.10" apply false
     id("org.jetbrains.kotlin.jvm") version "1.7.10" apply false
 
-    id("io.gitlab.arturbosch.detekt") version "1.21.0-RC2"
+    id("io.gitlab.arturbosch.detekt") version "1.21.0"
     id("org.jetbrains.dokka") version "1.7.0"
     id("org.jetbrains.kotlinx.kover") version "0.5.1"
 }
@@ -20,13 +20,13 @@ subprojects {
         plugin("org.jetbrains.dokka")
     }
     dependencies {
-        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.21.0-RC2")
+        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.21.0")
         dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.0")
     }
     // Static analysis
     detekt {
         // detekt version
-        toolVersion = "1.21.0-RC2"
+        toolVersion = "1.21.0"
         // preconfigure defaults
         buildUponDefaultConfig = true
         // activate all available (even unstable) rules.
