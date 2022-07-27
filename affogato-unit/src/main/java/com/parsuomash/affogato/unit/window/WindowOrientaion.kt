@@ -8,7 +8,7 @@ import androidx.compose.ui.platform.LocalConfiguration
 
 /**
  * Defines the current orientation of the window.
- * @since 1.0.0-beta05
+ * @since 1.0.0
  */
 enum class WindowOrientation {
   ORIENTATION_LANDSCAPE,
@@ -26,7 +26,7 @@ enum class WindowOrientation {
  * ...
  * }
  * ```
- * @since 1.0.0-beta05
+ * @since 1.0.0
  * @see android.content.res.Configuration
  */
 inline val windowOrientation: WindowOrientation
@@ -39,7 +39,7 @@ inline val windowOrientation: WindowOrientation
 
 /**
  * Is landscape mode enabled.
- * @since 1.0.0-beta05
+ * @since 1.0.0
  * @see android.content.res.Configuration
  */
 inline val Configuration.isLandscape: Boolean

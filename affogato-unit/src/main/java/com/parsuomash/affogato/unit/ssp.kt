@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.sp
  * ```Kotlin
  * val textSize = 24.ssp
  * ```
- * @since 1.0.0-beta01
+ * @since 1.0.0
  */
 @Stable
 val Int.ssp: TextUnit

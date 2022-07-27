@@ -17,7 +17,7 @@ import androidx.compose.ui.platform.LocalConfiguration
  *
  * See [rememberWindowSize] to calculate the WindowSizeClass for an Activity's current window
  *
- * @since 1.0.0-beta03
+ * @since 1.0.0
  * @property width width-based window size class ([WindowType])
  * @property height height-based window size class ([WindowType])
  */
@@ -34,11 +34,11 @@ data class WindowSize(
  *
  * [Design for large screens](https://m3.material.io/foundations/adaptive-design/large-screens/overview)
  *
- * Compact: Most phones in portrait mode
- * Medium: Most foldables and tablets in portrait mode
- * Expanded: Most tablets in landscape mode
+ * * Compact: Most phones in portrait mode
+ * * Medium: Most foldables and tablets in portrait mode
+ * * Expanded: Most tablets in landscape mode
  *
- * @since 1.0.0-beta05
+ * @since 1.0.0
  * @see WindowSize
  * @property dpSize window size
  */
@@ -62,7 +62,7 @@ sealed class WindowType(val dpSize: Int) {
  *   is WindowType.Expanded -> "Expanded"
  * }
  * ```
- * @since 1.0.0-beta03
+ * @since 1.0.0
  * @return [WindowSize] corresponding to the given width and height
  */
 @Composable

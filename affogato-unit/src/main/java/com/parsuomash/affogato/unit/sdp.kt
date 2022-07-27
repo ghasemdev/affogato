@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
  * ```Kotlin
  * val dimen = 24.sdp
  * ```
- * @since 1.0.0-beta01
+ * @since 1.0.0
  */
 @Stable
 val Int.sdp: Dp

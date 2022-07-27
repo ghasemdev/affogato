@@ -13,7 +13,7 @@ package com.parsuomash.affogato.unit.window
  *   else -> WindowType.Expanded(width)
  * }
  * ```
- * @since 1.0.0-beta05
+ * @since 1.0.0
  * @see rememberWindowSize
  */
 object GlobalWindowSize {
