@@ -4,10 +4,9 @@ import com.google.devtools.ksp.symbol.KSPropertyDeclaration
 import com.google.devtools.ksp.symbol.KSVisitorVoid
 
 internal class DimenVisitor(
-    private val declarations: MutableList<KSPropertyDeclaration>
+  private val declarations: MutableList<KSPropertyDeclaration>
 ) : KSVisitorVoid() {
-
-    override fun visitPropertyDeclaration(property: KSPropertyDeclaration, data: Unit) {
-        declarations += property
-    }
+  override fun visitPropertyDeclaration(property: KSPropertyDeclaration, data: Unit) {
+    declarations += property
+  }
 }
