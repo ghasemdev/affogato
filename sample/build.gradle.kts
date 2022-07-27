@@ -70,7 +70,7 @@ dependencies {
   // AndroidX ------------------------------------------------------------------------------------
   implementation("androidx.core:core-ktx:1.8.0")
 
-  // Compose -------------------------------------------------------------------------------------
+  // Compose ---------------------------------------------------------------------------------------
   val composeVersion = "1.2.0-rc03"
 
   implementation("androidx.compose.ui:ui:$composeVersion")
@@ -104,23 +104,23 @@ dependencies {
   debugImplementation("androidx.compose.ui:ui-tooling:$composeVersion")
   debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
 
-  // Accompanist ---------------------------------------------------------------------------------
+  // Accompanist -----------------------------------------------------------------------------------
   val accompanistVersion = "0.24.13-rc"
 
   implementation("com.google.accompanist:accompanist-pager:$accompanistVersion")
   implementation("com.google.accompanist:accompanist-pager-indicators:$accompanistVersion")
 
-  // Test ----------------------------------------------------------------------------------------
+  // Test ------------------------------------------------------------------------------------------
   testImplementation("junit:junit:4.13.2")
   testImplementation("com.google.truth:truth:1.1.3")
 
-  // Instrumentation Test ------------------------------------------------------------------------
+  // Instrumentation Test --------------------------------------------------------------------------
   androidTestImplementation("junit:junit:4.13.2")
   androidTestImplementation("com.google.truth:truth:1.1.3")
   androidTestImplementation("androidx.test.ext:junit:1.1.3")
 
   androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 
-  // Leakcanary ----------------------------------------------------------------------------------
+  // Leakcanary ------------------------------------------------------------------------------------
   debugImplementation("com.squareup.leakcanary:leakcanary-android:2.9.1")
 }

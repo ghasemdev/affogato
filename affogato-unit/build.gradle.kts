@@ -46,13 +46,16 @@ android {
 }
 
 dependencies {
+  // Window ----------------------------------------------------------------------------------------
+  implementation("androidx.window:window:1.0.0")
+
   // Compose -------------------------------------------------------------------------------------
   val composeVersion = "1.2.0-rc03"
 
   implementation("androidx.compose.ui:ui:$composeVersion")
-  implementation("androidx.compose.material:material:$composeVersion")
+  implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.0-alpha01")
 
-  // Test ----------------------------------------------------------------------------------------
+  // Test ------------------------------------------------------------------------------------------
   testImplementation("junit:junit:4.13.2")
   testImplementation("com.google.truth:truth:1.1.3")
 }
