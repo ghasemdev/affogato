@@ -2,7 +2,6 @@ package com.parsuomash.affogato.unit
 
 /**
  * Dimen tag used for generation dimensions.
- * [Resource](https://github.com/ghasemdev/affogato/wiki/Unit-Size#also-you-can-create-custom-dimension-with-dimen-tag)
  *
  * Example:
  * ```Kotlin
