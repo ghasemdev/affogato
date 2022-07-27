@@ -26,10 +26,32 @@ data class WindowSize(
     val height: WindowType
 )
 
-enum class WindowType { Compact, Medium, Expanded }
+/**
+ * Breakpoints defines the screen type at which a layout will adapt to best fit content and conform
+ * to responsive layout requirements. A breakpoint range informs how a screen adjusts to fit its
+ * size and orientation.
+ *
+ * [Design for large screens](https://m3.material.io/foundations/adaptive-design/large-screens/overview)
+ *
+ * Compact: Most phones in portrait mode
+ * Medium: Most foldables and tablets in portrait mode
+ * Expanded: Most tablets in landscape mode
+ */
+sealed interface WindowType {
+    @JvmInline
+    value class Compact(val dpSize: Int) : WindowType
+
+    @JvmInline
+    value class Medium(val dpSize: Int) : WindowType
+
+    @JvmInline
+    value class Expanded(val dpSize: Int) : WindowType
+}
 
 /**
- * Calculates [WindowSize].
+ * Remembers the [WindowSize] class for the window corresponding to the current window metrics.
+ *
+ * [References](https://github.com/android/compose-samples/blob/d38047520c00d5eed71eb731b1fa5ecd99f59a32/JetNews/app/src/main/java/com/example/jetnews/utils/WindowSize.kt)
  * @return [WindowSize] corresponding to the given width and height
  */
 @Composable
@@ -43,24 +65,21 @@ fun rememberWindowSize(): WindowSize {
     }
 
     return WindowSize(
-        width = getScreenWidth(screenWidth),
-        height = getScreenHeight(screenHeight)
+        GlobalWindowSize.Factory.fromWidth?.invoke(screenWidth) ?: getScreenWidth(screenWidth),
+        GlobalWindowSize.Factory.fromHeight?.invoke(screenHeight) ?: getScreenHeight(screenHeight)
     )
 }
 
 private fun getScreenWidth(width: Int): WindowType = when {
-    width < SIZE_COMPACT_WIDTH -> WindowType.Compact
-    width < SIZE_MEDIUM_WIDTH -> WindowType.Medium
-    else -> WindowType.Expanded
+    width < 0 -> throw IllegalArgumentException("value cannot be negative")
+    width < GlobalWindowSize.compactWidth -> WindowType.Compact(width)
+    width < GlobalWindowSize.mediumWidth -> WindowType.Medium(width)
+    else -> WindowType.Expanded(width)
 }
 
 private fun getScreenHeight(height: Int): WindowType = when {
-    height < SIZE_COMPACT_HEIGHT -> WindowType.Compact
-    height < SIZE_MEDIUM_HEIGHT -> WindowType.Medium
-    else -> WindowType.Expanded
+    height < 0 -> throw IllegalArgumentException("value cannot be negative")
+    height < GlobalWindowSize.compactHeight -> WindowType.Compact(height)
+    height < GlobalWindowSize.mediumHeight -> WindowType.Medium(height)
+    else -> WindowType.Expanded(height)
 }
-
-private const val SIZE_COMPACT_WIDTH = 600
-private const val SIZE_MEDIUM_WIDTH = 840
-private const val SIZE_COMPACT_HEIGHT = 480
-private const val SIZE_MEDIUM_HEIGHT = 900

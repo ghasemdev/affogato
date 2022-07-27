@@ -33,11 +33,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.parsuomash.affogato.ui.theme.AffogatoTheme
 import com.parsuomash.affogato.unit.Dimen
-import com.parsuomash.affogato.unit.WindowSize
-import com.parsuomash.affogato.unit.WindowType
-import com.parsuomash.affogato.unit.rememberWindowSize
 import com.parsuomash.affogato.unit.sdp
 import com.parsuomash.affogato.unit.ssp
+import com.parsuomash.affogato.unit.window.WindowSize
+import com.parsuomash.affogato.unit.window.WindowType
+import com.parsuomash.affogato.unit.window.rememberWindowSize
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -99,9 +99,9 @@ fun ScreenContent2(window: WindowSize) {
     val text by remember(window) {
         mutableStateOf(
             when (if (isLandscape) window.height else window.width) {
-                WindowType.Compact -> "Compact"
-                WindowType.Medium -> "Medium"
-                WindowType.Expanded -> "Expanded"
+                is WindowType.Compact -> "Compact"
+                is WindowType.Medium -> "Medium"
+                is WindowType.Expanded -> "Expanded"
             }
         )
     }
