@@ -23,8 +23,8 @@ import androidx.compose.ui.platform.LocalConfiguration
  */
 @Immutable
 data class WindowSize(
-    val width: WindowType,
-    val height: WindowType
+  val width: WindowType,
+  val height: WindowType
 )
 
 /**
@@ -67,30 +67,30 @@ sealed class WindowType(val dpSize: Int) {
  */
 @Composable
 fun rememberWindowSize(): WindowSize {
-    val configuration = LocalConfiguration.current
-    val screenWidth by remember(configuration) {
-        mutableStateOf(configuration.screenWidthDp)
-    }
-    val screenHeight by remember(configuration) {
-        mutableStateOf(configuration.screenHeightDp)
-    }
+  val configuration = LocalConfiguration.current
+  val screenWidth by remember(configuration) {
+    mutableStateOf(configuration.screenWidthDp)
+  }
+  val screenHeight by remember(configuration) {
+    mutableStateOf(configuration.screenHeightDp)
+  }
 
-    return WindowSize(
-        GlobalWindowSize.Factory.fromWidth?.invoke(screenWidth) ?: getScreenWidth(screenWidth),
-        GlobalWindowSize.Factory.fromHeight?.invoke(screenHeight) ?: getScreenHeight(screenHeight)
-    )
+  return WindowSize(
+    GlobalWindowSize.Factory.fromWidth?.invoke(screenWidth) ?: getScreenWidth(screenWidth),
+    GlobalWindowSize.Factory.fromHeight?.invoke(screenHeight) ?: getScreenHeight(screenHeight)
+  )
 }
 
 private fun getScreenWidth(width: Int): WindowType = when {
-    width < 0 -> throw IllegalArgumentException("value cannot be negative")
-    width < GlobalWindowSize.compactWidth -> WindowType.Compact(width)
-    width < GlobalWindowSize.mediumWidth -> WindowType.Medium(width)
-    else -> WindowType.Expanded(width)
+  width < 0 -> throw IllegalArgumentException("value cannot be negative")
+  width < GlobalWindowSize.compactWidth -> WindowType.Compact(width)
+  width < GlobalWindowSize.mediumWidth -> WindowType.Medium(width)
+  else -> WindowType.Expanded(width)
 }
 
 private fun getScreenHeight(height: Int): WindowType = when {
-    height < 0 -> throw IllegalArgumentException("value cannot be negative")
-    height < GlobalWindowSize.compactHeight -> WindowType.Compact(height)
-    height < GlobalWindowSize.mediumHeight -> WindowType.Medium(height)
-    else -> WindowType.Expanded(height)
+  height < 0 -> throw IllegalArgumentException("value cannot be negative")
+  height < GlobalWindowSize.compactHeight -> WindowType.Compact(height)
+  height < GlobalWindowSize.mediumHeight -> WindowType.Medium(height)
+  else -> WindowType.Expanded(height)
 }

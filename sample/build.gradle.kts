@@ -1,126 +1,126 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
-    // Kotlin Serialization
-    kotlin("plugin.serialization") version "1.7.10"
-    // Kotlin Parcelize
-    id("kotlin-parcelize")
-    // Kotlin Symbol Processor
-    id("com.google.devtools.ksp") version "1.7.10-1.0.6"
+  id("com.android.application")
+  kotlin("android")
+  // Kotlin Serialization
+  kotlin("plugin.serialization") version "1.7.10"
+  // Kotlin Parcelize
+  id("kotlin-parcelize")
+  // Kotlin Symbol Processor
+  id("com.google.devtools.ksp") version "1.7.10-1.0.6"
 }
 
 android {
-    compileSdk = 32
-    buildToolsVersion = "32.0.0"
+  compileSdk = 32
+  buildToolsVersion = "32.0.0"
 
-    defaultConfig {
-        applicationId = "com.parsuomash.affogato"
-        minSdk = 21
-        targetSdk = 32
-        versionCode = 1
-        versionName = "1.0.0"
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+  defaultConfig {
+    applicationId = "com.parsuomash.affogato"
+    minSdk = 21
+    targetSdk = 32
+    versionCode = 1
+    versionName = "1.0.0"
+    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    vectorDrawables {
+      useSupportLibrary = true
     }
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
-        }
+  }
+  buildTypes {
+    getByName("release") {
+      isMinifyEnabled = false
+      proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+  }
+  compileOptions {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+  }
+  kotlinOptions {
+    jvmTarget = "11"
+    freeCompilerArgs = listOf(
+      "-P",
+      "plugin:androidx.compose.compiler.plugins.kotlin:" +
+        "suppressKotlinVersionCompatibilityCheck=true"
+    )
+  }
+  buildFeatures {
+    compose = true
+  }
+  composeOptions {
+    kotlinCompilerExtensionVersion = "1.2.0"
+  }
+  packagingOptions {
+    resources.excludes.add("META-INF/AL2.0")
+    resources.excludes.add("META-INF/LGPL2.1")
+  }
+  kotlin {
+    sourceSets.debug {
+      kotlin.srcDir("build/generated/ksp/debug/kotlin")
     }
-    kotlinOptions {
-        jvmTarget = "11"
-        freeCompilerArgs = listOf(
-            "-P",
-            "plugin:androidx.compose.compiler.plugins.kotlin:" +
-                "suppressKotlinVersionCompatibilityCheck=true"
-        )
+    sourceSets.release {
+      kotlin.srcDir("build/generated/ksp/release/kotlin")
     }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.2.0"
-    }
-    packagingOptions {
-        resources.excludes.add("META-INF/AL2.0")
-        resources.excludes.add("META-INF/LGPL2.1")
-    }
-    kotlin {
-        sourceSets.debug {
-            kotlin.srcDir("build/generated/ksp/debug/kotlin")
-        }
-        sourceSets.release {
-            kotlin.srcDir("build/generated/ksp/release/kotlin")
-        }
-    }
+  }
 }
 
 dependencies {
-    // Modules
-    implementation(project(":affogato-unit"))
-    ksp(project(":affogato-unit-processor"))
+  // Modules
+  implementation(project(":affogato-unit"))
+  ksp(project(":affogato-unit-processor"))
 
-    // AndroidX ------------------------------------------------------------------------------------
-    implementation("androidx.core:core-ktx:1.8.0")
+  // AndroidX ------------------------------------------------------------------------------------
+  implementation("androidx.core:core-ktx:1.8.0")
 
-    // Compose -------------------------------------------------------------------------------------
-    val composeVersion = "1.2.0-rc03"
+  // Compose -------------------------------------------------------------------------------------
+  val composeVersion = "1.2.0-rc03"
 
-    implementation("androidx.compose.ui:ui:$composeVersion")
-    implementation("androidx.compose.ui:ui-util:$composeVersion")
+  implementation("androidx.compose.ui:ui:$composeVersion")
+  implementation("androidx.compose.ui:ui-util:$composeVersion")
 
-    implementation("androidx.compose.foundation:foundation:$composeVersion")
+  implementation("androidx.compose.foundation:foundation:$composeVersion")
 
-    implementation("androidx.compose.material:material:$composeVersion")
-    implementation("androidx.compose.material:material-icons-core:$composeVersion")
-    implementation("androidx.compose.material:material-icons-extended:$composeVersion")
+  implementation("androidx.compose.material:material:$composeVersion")
+  implementation("androidx.compose.material:material-icons-core:$composeVersion")
+  implementation("androidx.compose.material:material-icons-extended:$composeVersion")
 
-    implementation("androidx.compose.ui:ui-tooling:$composeVersion")
-    implementation("androidx.compose.ui:ui-tooling-preview:$composeVersion")
+  implementation("androidx.compose.ui:ui-tooling:$composeVersion")
+  implementation("androidx.compose.ui:ui-tooling-preview:$composeVersion")
 
-    implementation("androidx.compose.animation:animation:$composeVersion")
-    implementation("androidx.compose.animation:animation-graphics:$composeVersion")
+  implementation("androidx.compose.animation:animation:$composeVersion")
+  implementation("androidx.compose.animation:animation-graphics:$composeVersion")
 
-    implementation("androidx.compose.runtime:runtime:$composeVersion")
-    implementation("androidx.compose.runtime:runtime-livedata:$composeVersion")
-    implementation("androidx.compose.compiler:compiler:1.2.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.0-alpha01")
+  implementation("androidx.compose.runtime:runtime:$composeVersion")
+  implementation("androidx.compose.runtime:runtime-livedata:$composeVersion")
+  implementation("androidx.compose.compiler:compiler:1.2.0")
+  implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.0")
+  implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.0-alpha01")
 
-    implementation("androidx.paging:paging-compose:1.0.0-alpha15")
-    implementation("androidx.activity:activity-compose:1.5.0")
-    implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
+  implementation("androidx.paging:paging-compose:1.0.0-alpha15")
+  implementation("androidx.activity:activity-compose:1.5.0")
+  implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
-    androidTestImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
+  androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
+  androidTestImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
 
-    debugImplementation("androidx.compose.ui:ui-tooling:$composeVersion")
-    debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
+  debugImplementation("androidx.compose.ui:ui-tooling:$composeVersion")
+  debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
 
-    // Accompanist ---------------------------------------------------------------------------------
-    val accompanistVersion = "0.24.13-rc"
+  // Accompanist ---------------------------------------------------------------------------------
+  val accompanistVersion = "0.24.13-rc"
 
-    implementation("com.google.accompanist:accompanist-pager:$accompanistVersion")
-    implementation("com.google.accompanist:accompanist-pager-indicators:$accompanistVersion")
+  implementation("com.google.accompanist:accompanist-pager:$accompanistVersion")
+  implementation("com.google.accompanist:accompanist-pager-indicators:$accompanistVersion")
 
-    // Test ----------------------------------------------------------------------------------------
-    testImplementation("junit:junit:4.13.2")
-    testImplementation("com.google.truth:truth:1.1.3")
+  // Test ----------------------------------------------------------------------------------------
+  testImplementation("junit:junit:4.13.2")
+  testImplementation("com.google.truth:truth:1.1.3")
 
-    // Instrumentation Test ------------------------------------------------------------------------
-    androidTestImplementation("junit:junit:4.13.2")
-    androidTestImplementation("com.google.truth:truth:1.1.3")
-    androidTestImplementation("androidx.test.ext:junit:1.1.3")
+  // Instrumentation Test ------------------------------------------------------------------------
+  androidTestImplementation("junit:junit:4.13.2")
+  androidTestImplementation("com.google.truth:truth:1.1.3")
+  androidTestImplementation("androidx.test.ext:junit:1.1.3")
 
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+  androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 
-    // Leakcanary ----------------------------------------------------------------------------------
-    debugImplementation("com.squareup.leakcanary:leakcanary-android:2.9.1")
+  // Leakcanary ----------------------------------------------------------------------------------
+  debugImplementation("com.squareup.leakcanary:leakcanary-android:2.9.1")
 }

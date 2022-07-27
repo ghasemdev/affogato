@@ -20,22 +20,22 @@ import androidx.compose.ui.unit.sp
  */
 @Stable
 val Int.ssp: TextUnit
-    @Composable
-    get() = getSsp()
+  @Composable
+  get() = getSsp()
 
 @JvmName("_getSsp")
 @Composable
 private fun Int.getSsp(): TextUnit {
-    val id = when (this) {
-        in 1..MAX_DP -> "_${this}ssp"
-        in (-MAX_NEGATIVE_DP..-1) -> "_minus${this}ssp"
-        else -> return this.sp
-    }
+  val id = when (this) {
+    in 1..MAX_DP -> "_${this}ssp"
+    in (-MAX_NEGATIVE_DP..-1) -> "_minus${this}ssp"
+    else -> return this.sp
+  }
 
-    val resourceField = getFieldId(id)
-    return if (resourceField != 0) {
-        with(LocalDensity.current) {
-            dimensionResource(resourceField).toSp()
-        }
-    } else this.sp
+  val resourceField = getFieldId(id)
+  return if (resourceField != 0) {
+    with(LocalDensity.current) {
+      dimensionResource(resourceField).toSp()
+    }
+  } else this.sp
 }

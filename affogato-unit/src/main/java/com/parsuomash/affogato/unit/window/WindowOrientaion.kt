@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.parsuomash.affogato.unit.window
 
 import android.content.res.Configuration
@@ -9,8 +11,8 @@ import androidx.compose.ui.platform.LocalConfiguration
  * @since 1.0.0-beta05
  */
 enum class WindowOrientation {
-    ORIENTATION_LANDSCAPE,
-    ORIENTATION_PORTRAIT,
+  ORIENTATION_LANDSCAPE,
+  ORIENTATION_PORTRAIT,
 }
 
 /**
@@ -28,12 +30,12 @@ enum class WindowOrientation {
  * @see android.content.res.Configuration
  */
 inline val windowOrientation: WindowOrientation
-    @Composable get() =
-        if (LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            WindowOrientation.ORIENTATION_LANDSCAPE
-        } else {
-            WindowOrientation.ORIENTATION_PORTRAIT
-        }
+  @Composable get() =
+    if (LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+      WindowOrientation.ORIENTATION_LANDSCAPE
+    } else {
+      WindowOrientation.ORIENTATION_PORTRAIT
+    }
 
 /**
  * Is landscape mode enabled.
