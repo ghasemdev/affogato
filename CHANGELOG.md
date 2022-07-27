@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [🎉 v1.0.0 Affogato Unit] - 2022-07-27
+
+### 🚀 Features
+
+* sdp and ssp unit
+* Dimen tag for create auto dimensions
+* Window Size, Global Window Size, rememberWindowSize()
+* Window Orientation, isLandscape
+* Posture, postureState, postureFlow, ...
+* Hinge Size, hingeWidthDp, hingeHeightDp, ...
+* WindowLayoutInfo, windowLayoutInfoState, windowLayoutInfo, ...
+
 ## [🎉 v1.0.0-beta05 Affogato Unit] - 2022-07-26
 
 ### 🐛 Fixes

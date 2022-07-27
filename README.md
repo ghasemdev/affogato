@@ -1,4 +1,4 @@
-[![Version](https://shields.io/badge/VERSION-1.0.0--beta06-blue?style=for-the-badge)](https://github.com/ghasemdev/affogato/releases/tag/1.0.0-beta06)
+[![Version](https://shields.io/badge/VERSION-1.0.0-blue?style=for-the-badge)](https://github.com/ghasemdev/affogato/releases/tag/1.0.0)
 [![Kotlin](https://shields.io/badge/Kotlin-1.7.10-pink?style=for-the-badge)](https://kotlinlang.org/)
 [![API](https://shields.io/badge/Api-+21-green?style=for-the-badge)](https://www.android.com/)
 [![License MIT](https://shields.io/badge/LICENSE-MIT-orange?style=for-the-badge)](https://opensource.org/licenses/MIT)
@@ -19,7 +19,7 @@ use `postureState` to build adaptive and responsive UIs in **Foldables**.
 # Links
 
 Affogato is currently available for maven/gradle builds
-at [Jitpack](https://jitpack.io/#ghasemdev/affogato/1.0.0-beta04) (
+at [Jitpack](https://jitpack.io/#ghasemdev/affogato/1.0.0) (
 read [Getting started](https://github.com/ghasemdev/affogato/wiki/Getting-Started)).
 
 * [Wiki](https://github.com/ghasemdev/affogato/wiki)
