@@ -81,6 +81,5 @@ fun WindowInfoTracker.windowLayoutInfoState(activity: Activity): State<WindowLay
  * Finds a [FoldingFeature] from a [WindowLayoutInfo].
  * @since 1.0.0
  */
-fun WindowLayoutInfo.findFoldingFeature(): FoldingFeature? {
-  return displayFeatures.filterIsInstance<FoldingFeature>().firstOrNull()
-}
+fun WindowLayoutInfo.findFoldingFeature(): FoldingFeature? =
+  displayFeatures.filterIsInstance<FoldingFeature>().firstOrNull()

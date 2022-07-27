@@ -136,9 +136,8 @@ inline val FoldingFeature.isHorizontal: Boolean
  * Finds a [FoldingFeature] from a list of [DisplayFeature].
  * @since 1.0.0
  */
-fun List<DisplayFeature>.findFoldingFeature(): FoldingFeature? {
-  return filterIsInstance<FoldingFeature>().firstOrNull()
-}
+fun List<DisplayFeature>.findFoldingFeature(): FoldingFeature? =
+  filterIsInstance<FoldingFeature>().firstOrNull()
 
 /**
  * Returns a [Posture] which represent the current posture of the foldable device.
@@ -154,15 +153,12 @@ fun FoldingFeature.toPosture(): Posture = when {
  * Returns a [Size] spec from a [FoldingFeature].
  * @since 1.0.0
  */
-fun DisplayFeature.toSize(): Size {
-  return Size((bounds.right - bounds.left).toFloat(), (bounds.bottom - bounds.top).toFloat())
-}
+fun DisplayFeature.toSize(): Size =
+  Size((bounds.right - bounds.left).toFloat(), (bounds.bottom - bounds.top).toFloat())
 
 /**
  * Returns [Size] class from a [Rect] class.
  * @since 1.0.0
  */
 @JvmSynthetic
-private fun Rect.toSize(): Size {
-  return Size((right - left).toFloat(), (bottom - top).toFloat())
-}
+private fun Rect.toSize(): Size = Size((right - left).toFloat(), (bottom - top).toFloat())
