@@ -1,6 +1,5 @@
 package com.parsuomash.affogato
 
-import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -33,114 +32,115 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.parsuomash.affogato.ui.theme.AffogatoTheme
 import com.parsuomash.affogato.unit.Dimen
-import com.parsuomash.affogato.unit.WindowSize
-import com.parsuomash.affogato.unit.WindowType
-import com.parsuomash.affogato.unit.rememberWindowSize
 import com.parsuomash.affogato.unit.sdp
 import com.parsuomash.affogato.unit.ssp
+import com.parsuomash.affogato.unit.window.WindowSize
+import com.parsuomash.affogato.unit.window.WindowType
+import com.parsuomash.affogato.unit.window.isLandscape
+import com.parsuomash.affogato.unit.window.rememberWindowSize
 
 class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            AffogatoTheme {
-                val window = rememberWindowSize()
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    ScreenContent2(window)
-                }
-            }
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContent {
+      AffogatoTheme {
+        val window = rememberWindowSize()
+        // A surface container using the 'background' color from the theme
+        Surface(
+          modifier = Modifier.fillMaxSize(),
+          color = MaterialTheme.colors.background
+        ) {
+          ScreenContent2(window)
         }
+      }
     }
+  }
 }
 
 @Composable
 fun ScreenContent() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.sdp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+  Column(
+    modifier = Modifier
+      .fillMaxSize()
+      .padding(16.sdp),
+    horizontalAlignment = Alignment.CenterHorizontally,
+    verticalArrangement = Arrangement.Center
+  ) {
+    Image(
+      painter = painterResource(id = R.drawable.affogato),
+      modifier = Modifier.size(80.sdp),
+      contentDescription = null
+    )
+    Spacer(modifier = Modifier.height(32.sdp))
+
+    Text(
+      text = stringResource(id = R.string.lorem),
+      textAlign = TextAlign.Justify,
+      fontSize = 16.ssp
+    )
+    Spacer(modifier = Modifier.height(32.sdp))
+
+    Button(
+      modifier = Modifier
+        .fillMaxWidth()
+        .height(48.sdp),
+      onClick = { }
     ) {
-        Image(
-            painter = painterResource(id = R.drawable.affogato),
-            modifier = Modifier.size(80.sdp),
-            contentDescription = null
-        )
-        Spacer(modifier = Modifier.height(32.sdp))
-
-        Text(
-            text = stringResource(id = R.string.lorem),
-            textAlign = TextAlign.Justify,
-            fontSize = 16.ssp
-        )
-        Spacer(modifier = Modifier.height(32.sdp))
-
-        Button(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(48.sdp),
-            onClick = { }
-        ) {
-            Text(text = stringResource(id = R.string.app_name).uppercase(), fontSize = 16.ssp)
-        }
+      Text(text = stringResource(id = R.string.app_name).uppercase(), fontSize = 16.ssp)
     }
+  }
 }
 
 @Composable
 fun ScreenContent2(window: WindowSize) {
-    val configuration = LocalConfiguration.current
-    val isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
+  val configuration = LocalConfiguration.current
+  val isLandscape = configuration.isLandscape
 
-    val text by remember(window) {
-        mutableStateOf(
-            when (if (isLandscape) window.height else window.width) {
-                WindowType.Compact -> "Compact"
-                WindowType.Medium -> "Medium"
-                WindowType.Expanded -> "Expanded"
-            }
-        )
-    }
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(dimen.padding),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+  val text by remember(window) {
+    mutableStateOf(
+      when (if (isLandscape) window.height else window.width) {
+        is WindowType.Compact -> "Compact"
+        is WindowType.Medium -> "Medium"
+        is WindowType.Expanded -> "Expanded"
+      }
+    )
+  }
+  Column(
+    modifier = Modifier
+      .fillMaxSize()
+      .padding(dimen.padding),
+    horizontalAlignment = Alignment.CenterHorizontally,
+    verticalArrangement = Arrangement.Center
+  ) {
+    Text(text = text)
+    Spacer(modifier = Modifier.height(dimen.space))
+
+    Image(
+      painter = painterResource(id = R.drawable.affogato),
+      modifier = Modifier.size(dimen.icon),
+      contentDescription = null
+    )
+    Spacer(modifier = Modifier.height(dimen.space))
+
+    Text(
+      text = stringResource(id = R.string.lorem),
+      textAlign = TextAlign.Justify,
+      fontSize = dimen.fontSize
+    )
+    Spacer(modifier = Modifier.height(dimen.space))
+
+    Button(
+      modifier = Modifier
+        .fillMaxWidth()
+        .height(dimen.heightButton),
+      onClick = { }
     ) {
-        Text(text = text)
-        Spacer(modifier = Modifier.height(dimen.space))
-
-        Image(
-            painter = painterResource(id = R.drawable.affogato),
-            modifier = Modifier.size(dimen.icon),
-            contentDescription = null
-        )
-        Spacer(modifier = Modifier.height(dimen.space))
-
-        Text(
-            text = stringResource(id = R.string.lorem),
-            textAlign = TextAlign.Justify,
-            fontSize = dimen.fontSize
-        )
-        Spacer(modifier = Modifier.height(dimen.space))
-
-        Button(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(dimen.heightButton),
-            onClick = { }
-        ) {
-            Text(
-                text = stringResource(id = R.string.app_name).uppercase(),
-                fontSize = dimen.fontSize
-            )
-        }
+      Text(
+        text = stringResource(id = R.string.app_name).uppercase(),
+        fontSize = dimen.fontSize
+      )
     }
+  }
 }
 
 @Preview(name = "NEXUS_5", showBackground = true, device = Devices.NEXUS_5)
@@ -148,10 +148,10 @@ fun ScreenContent2(window: WindowSize) {
 @Preview(name = "PIXEL_C", showBackground = true, device = Devices.PIXEL_C)
 @Composable
 fun DefaultPreview() {
-    val window = rememberWindowSize()
-    AffogatoTheme {
-        ScreenContent2(window)
-    }
+  val window = rememberWindowSize()
+  AffogatoTheme {
+    ScreenContent2(window)
+  }
 }
 
 @Dimen(type = "dp", values = ["320:70", "480:80", "600:180", "720:180"])
