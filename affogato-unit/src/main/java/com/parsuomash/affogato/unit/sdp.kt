@@ -9,11 +9,14 @@ import androidx.compose.ui.unit.dp
 
 /**
  * Create a Scalable [Dp] using an [Int]:
+
+ * [Resource](https://github.com/ghasemdev/affogato/wiki/Unit-Size#to-use-the-default-units-just-use-the-extension-values-sdp-or-ssp)
  *
  * Example:
  * ```Kotlin
  * val dimen = 24.sdp
  * ```
+ * @since 1.0.0-beta01
  */
 @Stable
 val Int.sdp: Dp

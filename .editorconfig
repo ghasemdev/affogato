@@ -7,6 +7,10 @@ insert_final_newline = true
 max_line_length = 100
 ij_kotlin_imports_layout = *, android.*, androidx.*, com.*, java.*, javax.*, kotlin.*, kotlinx.*, $*
 
+[*.kt]
+indent_style = space
+indent_size = 2
+
 # Tab indentation (no size specified)
 [*.md]
 indent_style = tab

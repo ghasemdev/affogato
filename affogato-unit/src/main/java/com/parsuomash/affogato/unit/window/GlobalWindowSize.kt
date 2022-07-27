@@ -2,6 +2,19 @@ package com.parsuomash.affogato.unit.window
 
 /**
  * Definition of the window size to be on the global scope.
+ *
+ * Example:
+ * ```Kotlin
+ * GlobalWindowSize.compactWidth = 480
+ * GlobalWindowSize.Factory.fromWidth { screenWidth ->
+ *   screenWidth < 0 -> throw IllegalArgumentException("value cannot be negative")
+ *   screenWidth < 500 -> WindowType.Compact(width)
+ *   screenWidth < 700 -> WindowType.Medium(width)
+ *   else -> WindowType.Expanded(width)
+ * }
+ * ```
+ * @since 1.0.0-beta05
+ * @see rememberWindowSize
  */
 object GlobalWindowSize {
     /** Defines most phones in portrait mode */

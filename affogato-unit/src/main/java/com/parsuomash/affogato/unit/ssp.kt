@@ -10,10 +10,13 @@ import androidx.compose.ui.unit.sp
 /**
  * Creates a Scalable SP unit [TextUnit]:
  *
+ * [Resource](https://github.com/ghasemdev/affogato/wiki/Unit-Size#to-use-the-default-units-just-use-the-extension-values-sdp-or-ssp)
+ *
  * Example:
  * ```Kotlin
  * val textSize = 24.ssp
  * ```
+ * @since 1.0.0-beta01
  */
 @Stable
 val Int.ssp: TextUnit

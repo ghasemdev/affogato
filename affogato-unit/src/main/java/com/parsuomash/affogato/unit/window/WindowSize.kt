@@ -17,6 +17,7 @@ import androidx.compose.ui.platform.LocalConfiguration
  *
  * See [rememberWindowSize] to calculate the WindowSizeClass for an Activity's current window
  *
+ * @since 1.0.0-beta03
  * @property width width-based window size class ([WindowType])
  * @property height height-based window size class ([WindowType])
  */
@@ -36,22 +37,32 @@ data class WindowSize(
  * Compact: Most phones in portrait mode
  * Medium: Most foldables and tablets in portrait mode
  * Expanded: Most tablets in landscape mode
+ *
+ * @since 1.0.0-beta05
+ * @see WindowSize
+ * @property dpSize window size
  */
-sealed interface WindowType {
-    @JvmInline
-    value class Compact(val dpSize: Int) : WindowType
-
-    @JvmInline
-    value class Medium(val dpSize: Int) : WindowType
-
-    @JvmInline
-    value class Expanded(val dpSize: Int) : WindowType
+sealed class WindowType(val dpSize: Int) {
+  class Medium(dpSize: Int) : WindowType(dpSize)
+  class Compact(dpSize: Int) : WindowType(dpSize)
+  class Expanded(dpSize: Int) : WindowType(dpSize)
 }
 
 /**
  * Remembers the [WindowSize] class for the window corresponding to the current window metrics.
  *
  * [References](https://github.com/android/compose-samples/blob/d38047520c00d5eed71eb731b1fa5ecd99f59a32/JetNews/app/src/main/java/com/example/jetnews/utils/WindowSize.kt)
+ *
+ * Example:
+ * ```Kotlin
+ * val window: WindowSize = rememberWindowSize()
+ * when(window.width) {
+ *   is WindowType.Compact -> "Compact"
+ *   is WindowType.Medium -> "Medium"
+ *   is WindowType.Expanded -> "Expanded"
+ * }
+ * ```
+ * @since 1.0.0-beta03
  * @return [WindowSize] corresponding to the given width and height
  */
 @Composable
