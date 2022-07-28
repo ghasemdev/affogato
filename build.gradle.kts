@@ -7,8 +7,14 @@ plugins {
   id("org.jetbrains.kotlin.jvm") version "1.7.10" apply false
 
   id("io.gitlab.arturbosch.detekt") version "1.21.0"
-  id("org.jetbrains.dokka") version "1.7.0"
+  id("org.jetbrains.dokka") version "1.7.10"
   id("org.jetbrains.kotlinx.kover") version "0.5.1"
+}
+
+buildscript {
+  dependencies {
+    classpath("org.jetbrains.dokka:dokka-base:1.7.10")
+  }
 }
 
 subprojects {
@@ -21,7 +27,7 @@ subprojects {
   }
   dependencies {
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.21.0")
-    dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.0")
+    dokkaPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.10")
   }
   // Static analysis
   detekt {
@@ -80,15 +86,20 @@ tasks.dokkaHtml.configure {
   dokkaSourceSets {
     configureEach {
       perPackageOption {
-        matchingRegex.set(""".*\app.*""")
-        suppress.set(true)
+        matchingRegex.set(""".*\sample.*""")
+        reportUndocumented.set(false)
       }
     }
   }
 }
 tasks.dokkaHtmlMultiModule.configure {
+  outputDirectory.set(rootDir.resolve("docs"))
   // Set module name displayed in the final output
   moduleName.set("Affogato")
+  // Custom Style
+  pluginConfiguration<org.jetbrains.dokka.base.DokkaBase, org.jetbrains.dokka.base.DokkaBaseConfiguration> {
+    customAssets = listOf(file("$rootDir/config/dokka/logo-icon.svg"))
+  }
 }
 
 tasks.register("testAll") {
