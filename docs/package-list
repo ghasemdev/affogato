@@ -1,0 +1,9 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+module:affogato-unit
+com.parsuomash.affogato.unit
+com.parsuomash.affogato.unit.window
+module:sample
+com.parsuomash.affogato
+com.parsuomash.affogato.ui.theme
