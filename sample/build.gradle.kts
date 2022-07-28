@@ -90,7 +90,7 @@ dependencies {
 
   implementation("androidx.compose.runtime:runtime:$composeVersion")
   implementation("androidx.compose.runtime:runtime-livedata:$composeVersion")
-  implementation("androidx.compose.compiler:compiler:1.2.0")
+  implementation("androidx.compose.compiler:compiler:$composeVersion")
   implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.0")
   implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.0-alpha01")
 
@@ -105,7 +105,7 @@ dependencies {
   debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
 
   // Accompanist -----------------------------------------------------------------------------------
-  val accompanistVersion = "0.24.13-rc"
+  val accompanistVersion = "0.25.0"
 
   implementation("com.google.accompanist:accompanist-pager:$accompanistVersion")
   implementation("com.google.accompanist:accompanist-pager-indicators:$accompanistVersion")
