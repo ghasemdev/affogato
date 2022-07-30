@@ -47,7 +47,7 @@ android {
 
 dependencies {
   // Window ----------------------------------------------------------------------------------------
-  implementation("androidx.window:window:1.0.0")
+  api("androidx.window:window:1.0.0")
 
   // Compose -------------------------------------------------------------------------------------
   val composeVersion = "1.2.0"
