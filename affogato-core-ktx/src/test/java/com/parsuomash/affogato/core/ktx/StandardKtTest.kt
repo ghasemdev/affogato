@@ -154,5 +154,5 @@ class StandardKtTest {
     assertThat(result2).isEqualTo(0)
   }
 
-  private fun raiseError(): Nothing = throw Exception()
+  private fun raiseError(): Nothing = throw IllegalArgumentException()
 }
