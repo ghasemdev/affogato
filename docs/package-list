@@ -1,9 +1,11 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
 
+module:affogato-core-ktx
+com.parsuomash.affogato.core.ktx
 module:affogato-unit
 com.parsuomash.affogato.unit
 com.parsuomash.affogato.unit.window
 module:sample
-com.parsuomash.affogato
-com.parsuomash.affogato.ui.theme
+com.parsuomash.affogato.app
+com.parsuomash.affogato.app.ui.theme

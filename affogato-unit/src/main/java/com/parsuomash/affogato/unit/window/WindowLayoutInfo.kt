@@ -17,9 +17,9 @@ import kotlinx.coroutines.flow.Flow
  * @since 1.0.0
  */
 @ExperimentalLifecycleComposeApi
-inline val Activity.windowLayoutInfoState: State<WindowLayoutInfo>
+inline val Activity.windowLayoutInfoState: State<WindowLayoutInfo?>
   @JvmSynthetic @Composable get() =
-    windowLayoutInfo.collectAsStateWithLifecycle(initialValue = WindowLayoutInfo(emptyList()))
+    windowLayoutInfo.collectAsStateWithLifecycle(initialValue = null)
 
 /**
  * Returns a [Flow] of the [WindowLayoutInfo].
@@ -71,10 +71,8 @@ inline val WindowLayoutInfo.state: FoldingFeature.State
  */
 @ExperimentalLifecycleComposeApi
 @Composable
-fun WindowInfoTracker.windowLayoutInfoState(activity: Activity): State<WindowLayoutInfo> {
-  return windowLayoutInfo(activity).collectAsStateWithLifecycle(
-    initialValue = WindowLayoutInfo(emptyList())
-  )
+fun WindowInfoTracker.windowLayoutInfoState(activity: Activity): State<WindowLayoutInfo?> {
+  return windowLayoutInfo(activity).collectAsStateWithLifecycle(initialValue = null)
 }
 
 /**

@@ -68,9 +68,33 @@ kover {
 }
 tasks.koverXmlReport { isEnabled = false }
 tasks.koverMergedXmlReport { isEnabled = false }
+
+tasks.koverHtmlReport {
+  isEnabled = true
+  excludes = listOf(
+    "com.parsuomash.affogato.app.*",
+    "com.parsuomash.affogato.unit.*",
+  )
+}
 tasks.koverMergedHtmlReport {
   isEnabled = true // false to disable report generation
   htmlReportDir.set(layout.buildDirectory.dir("kover/htmlMultiModule"))
+  excludes = listOf(
+    "com.parsuomash.affogato.app.*",
+    "com.parsuomash.affogato.unit.*",
+  )
+}
+tasks.koverVerify {
+  rule {
+    name = "Minimal line coverage rate in percents"
+    bound {
+      minValue = 0
+    }
+  }
+  excludes = listOf(
+    "com.parsuomash.affogato.app.*",
+    "com.parsuomash.affogato.unit.*",
+  )
 }
 tasks.koverMergedVerify {
   rule {
@@ -79,6 +103,10 @@ tasks.koverMergedVerify {
       minValue = 0
     }
   }
+  excludes = listOf(
+    "com.parsuomash.affogato.app.*",
+    "com.parsuomash.affogato.unit.*",
+  )
 }
 
 // Dokka
@@ -86,8 +114,8 @@ tasks.dokkaHtml.configure {
   dokkaSourceSets {
     configureEach {
       perPackageOption {
-        matchingRegex.set(""".*\sample.*""")
-        reportUndocumented.set(false)
+        matchingRegex.set(""".*\.app.*""")
+        suppress.set(true)
       }
     }
   }
