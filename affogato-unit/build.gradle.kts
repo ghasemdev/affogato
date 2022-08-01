@@ -43,6 +43,9 @@ android {
   composeOptions {
     kotlinCompilerExtensionVersion = "1.2.0"
   }
+  lint {
+    baseline = file("$rootDir/config/lint/lint-baseline.xml")
+  }
 }
 
 dependencies {

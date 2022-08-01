@@ -71,9 +71,8 @@ inline val WindowLayoutInfo.state: FoldingFeature.State
  */
 @ExperimentalLifecycleComposeApi
 @Composable
-fun WindowInfoTracker.windowLayoutInfoState(activity: Activity): State<WindowLayoutInfo?> {
-  return windowLayoutInfo(activity).collectAsStateWithLifecycle(initialValue = null)
-}
+fun WindowInfoTracker.windowLayoutInfoState(activity: Activity): State<WindowLayoutInfo?> =
+  windowLayoutInfo(activity).collectAsStateWithLifecycle(initialValue = null)
 
 /**
  * Finds a [FoldingFeature] from a [WindowLayoutInfo].

@@ -60,6 +60,9 @@ android {
       kotlin.srcDir("build/generated/ksp/release/kotlin")
     }
   }
+  lint {
+    baseline = file("$rootDir/config/lint/lint-baseline.xml")
+  }
 }
 
 ksp {
