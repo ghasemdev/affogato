@@ -1,7 +1,7 @@
 package com.parsuomash.affogato.core.ktx
 
 import com.google.common.truth.Truth.assertThat
-import org.junit.Test
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
 class StringsKtTest {
@@ -152,5 +152,17 @@ class StringsKtTest {
 
     assertThat("Hello".getOrElse(1..3) { "Hi" }).isEqualTo("ell")
     assertThat("Hello".getOrElse(1..5) { "Hi" }).isEqualTo("Hi")
+  }
+
+  @Test
+  fun `substring with progression`() {
+    assertThat("Hello affogato core ktx"[0..20 step 2]).isEqualTo("Hloafgt oek")
+    assertThrows<StringIndexOutOfBoundsException> { ""[0..10 step 2] }
+
+    assertThat("Hello".getOrNull(0..4 step 2)).isEqualTo("Hlo")
+    assertThat("Hello".getOrNull(0..8 step 2)).isNull()
+
+    assertThat("Hello".getOrElse(0..4 step 2) { "Hi" }).isEqualTo("Hlo")
+    assertThat("Hello".getOrElse(0..8 step 2) { "Hi" }).isEqualTo("Hi")
   }
 }

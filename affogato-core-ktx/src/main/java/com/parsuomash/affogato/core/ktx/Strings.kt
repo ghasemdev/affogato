@@ -321,9 +321,11 @@ fun String.capitalize() = replaceFirstChar {
  * val str = mainStr[2..8] // "teresti"
  * ```
  * @since 1.1.0
+ * @throws StringIndexOutOfBoundsException if the range is out of bounds of this string.
  * @see substring
+ * @see IntRange
  */
-operator fun String.get(range: IntRange): String = substring(range.first, range.last + 1)
+operator fun String.get(indices: IntRange): String = substring(indices.first, indices.last + 1)
 
 /**
  * Returns the substring from the given range if exist otherwise return a null.
@@ -335,8 +337,9 @@ operator fun String.get(range: IntRange): String = substring(range.first, range.
  * ```
  * @since 1.1.0
  * @see substring
+ * @see IntRange
  */
-fun String.getOrNull(range: IntRange): String? = tryCatchNull { get(range) }
+fun String.getOrNull(indices: IntRange): String? = tryCatchNull { get(indices) }
 
 /**
  * Returns the substring from the given range if exist otherwise return else block.
@@ -348,6 +351,53 @@ fun String.getOrNull(range: IntRange): String? = tryCatchNull { get(range) }
  * ```
  * @since 1.1.0
  * @see substring
+ * @see IntRange
  */
-fun String.getOrElse(range: IntRange, defaultValue: (range: IntRange) -> String): String =
-  tryCatchElse(elseBlock = { defaultValue(range) }) { get(range) }
+inline fun String.getOrElse(indices: IntRange, defaultValue: () -> String): String =
+  tryCatchElse({ defaultValue() }) { get(indices) }
+
+/**
+ * Returns the substring from the given progression.
+ *
+ * Example:
+ * ```Kotlin
+ * val mainStr = "Interesting"
+ * val str = mainStr[2..8 step 2] // "trsi"
+ * ```
+ * @since 1.1.0
+ * @throws StringIndexOutOfBoundsException if the range is out of bounds of this string.
+ * @see substring
+ * @see IntProgression
+ */
+operator fun String.get(indices: IntProgression): String = buildString {
+  for (i in indices) append(this@get[i])
+}
+
+/**
+ * Returns the substring from the given progression if exist otherwise return a null.
+ *
+ * Example:
+ * ```Kotlin
+ * "Hello".getOrNull(0..4 step 2) // Hlo
+ * "Hello".getOrNull(0..8 step 2) // null
+ * ```
+ * @since 1.1.0
+ * @see substring
+ * @see IntProgression
+ */
+fun String.getOrNull(indices: IntProgression): String? = tryCatchNull { get(indices) }
+
+/**
+ * Returns the substring from the given progression if exist otherwise return else block.
+ *
+ * Example:
+ * ```Kotlin
+ * "Hello".getOrElse(0..4 step 2) { "Hi" } // Hlo
+ * "Hello".getOrElse(0..8 step 2) { "Hi" } // Hi
+ * ```
+ * @since 1.1.0
+ * @see substring
+ * @see IntProgression
+ */
+inline fun String.getOrElse(indices: IntProgression, defaultValue: () -> String): String =
+  tryCatchElse({ defaultValue() }) { get(indices) }
