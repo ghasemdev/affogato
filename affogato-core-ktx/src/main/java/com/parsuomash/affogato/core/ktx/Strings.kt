@@ -341,7 +341,7 @@ operator fun String.get(range: IntRange): String = substring(range.first, range.
 fun String.getOrNull(range: IntRange): String? = tryCatchNull { get(range) }
 
 /**
- * Returns the substring from the given range.
+ * Returns the substring from the given range if exist otherwise return else block.
  *
  * Example:
  * ```Kotlin

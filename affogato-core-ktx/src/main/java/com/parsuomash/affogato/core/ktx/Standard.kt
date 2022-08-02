@@ -96,7 +96,7 @@ inline fun <T, R> T?.ifNotNull(block: (T) -> R): R? = if (this != null) block(th
 fun <T> T?.orDefault(default: T): T = this ?: default
 
 /**
- * Sometimes we need try-catch block without catching.
+ * Sometimes we need try-catch block without error handling.
  *
  * Example:
  * ```Kotlin
@@ -115,7 +115,7 @@ inline fun tryCatchIgnore(block: () -> Unit) {
 }
 
 /**
- * Sometimes we need try-catch block without catching.
+ * When try-catch block failed return false otherwise true.
  *
  * Example:
  * ```Kotlin
@@ -140,7 +140,7 @@ inline fun tryCatchBoolean(block: () -> Unit): Boolean {
 }
 
 /**
- * When try-catch block failed return null otherwise latest value
+ * When try-catch block failed return null otherwise latest value.
  *
  * Example:
  * ```Kotlin
@@ -165,7 +165,7 @@ inline fun <T> tryCatchNull(block: () -> T): T? {
 }
 
 /**
- * When try-catch block failed return null otherwise latest value
+ * When try-catch block failed return else block otherwise try block.
  *
  * Example:
  * ```Kotlin
