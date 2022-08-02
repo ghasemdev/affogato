@@ -1,5 +1,3 @@
-@file:Suppress("unused")
-
 package com.parsuomash.affogato.core.ktx
 
 import java.net.URLDecoder
