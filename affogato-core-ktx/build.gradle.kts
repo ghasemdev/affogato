@@ -9,11 +9,16 @@ java {
   targetCompatibility = JavaVersion.VERSION_1_8
 }
 
+tasks.test {
+  useJUnitPlatform()
+}
+
 dependencies {
   // Test ------------------------------------------------------------------------------------------
-  testImplementation("junit:junit:4.13.2")
   testImplementation("io.kotlintest:kotlintest-core:3.4.2")
   testImplementation("com.google.truth:truth:1.1.3")
+  testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.2")
+  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.2")
 }
 
 afterEvaluate {
