@@ -249,7 +249,7 @@ fun String.capitalize() = replaceFirstChar {
 }
 
 /**
- * Rotates the string to the left by specified distance.
+ * Rotates the [String] to the left by specified distance.
  *
  * Example:
  * ```Kotlin
@@ -261,14 +261,14 @@ fun String.capitalize() = replaceFirstChar {
  * @see Collections.rotate
  */
 fun String.rotateLeft(n: Int = 1): String {
-  require(n >= 1) { "n must be grater than 1" }
+  require(n >= 1) { "n must be >= 1" }
   val list = this.toMutableList()
   Collections.rotate(list, n)
   return list.joinToString("")
 }
 
 /**
- * Rotates the string to the right by specified distance.
+ * Rotates the [String] to the right by specified distance.
  *
  * Example:
  * ```Kotlin
@@ -280,7 +280,7 @@ fun String.rotateLeft(n: Int = 1): String {
  * @see Collections.rotate
  */
 fun String.rotateRight(n: Int = 1): String {
-  require(n >= 1) { "n must be grater than 1" }
+  require(n >= 1) { "n must be >= 1" }
   val list = this.toMutableList()
   Collections.rotate(list, -n)
   return list.joinToString("")
