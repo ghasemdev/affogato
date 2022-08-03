@@ -741,6 +741,12 @@ internal class ArrayKtTest {
         assertThat(array.getOrElse(0..10 step 2) { booleanArrayOf() }).isEmpty()
       }
     }
+
+    @Test
+    @DisplayName("get or empty")
+    fun getOrEmpty() {
+      assertThat(arrayOf("a", "b", "c").getOrEmpty(3)).isEmpty()
+    }
   }
 
   @Nested

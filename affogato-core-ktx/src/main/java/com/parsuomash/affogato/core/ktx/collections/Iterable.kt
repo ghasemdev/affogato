@@ -15,6 +15,22 @@ import com.parsuomash.affogato.core.ktx.tryCatchNull
 inline val <T> Collection<T>.lastIndex: Int get() = size - 1
 
 /**
+ * Returns an element at the given index or empty
+ * if the index is out of bounds of this string [Collection].
+ *
+ * Example:
+ * ```Kotlin
+ * val list = listOf(1..5)
+ * list.getOrEmpty(8) // ""
+ * list[2] // 3
+ * ```
+ * @since 1.1.0
+ * @see listOf
+ */
+fun Collection<String>.getOrEmpty(index: Int): String =
+  if (index in 0..lastIndex) toList()[index] else ""
+
+/**
  * Returns the sub-list from the given range.
  *
  * Example:

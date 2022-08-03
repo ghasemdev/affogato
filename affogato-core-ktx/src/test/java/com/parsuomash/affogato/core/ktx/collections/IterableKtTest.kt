@@ -104,6 +104,28 @@ internal class IterableKtTest {
         assertThat(array.getOrElse(0..10 step 2) { emptyList() }).isEmpty()
       }
     }
+
+    @Test
+    @DisplayName("get or empty")
+    fun getOrEmpty() {
+      assertThat(listOf("a", "b", "c").getOrEmpty(3)).isEmpty()
+      assertThat(mutableListOf("a", "b", "c").getOrEmpty(3)).isEmpty()
+      assertThat(arrayListOf("a", "b", "c").getOrEmpty(3)).isEmpty()
+      assertThat(linkedListOf("a", "b", "c").getOrEmpty(3)).isEmpty()
+
+      assertThat(setOf("a", "b", "c").getOrEmpty(3)).isEmpty()
+      assertThat(hashSetOf("a", "b", "c").getOrEmpty(3)).isEmpty()
+      assertThat(linkedSetOf("a", "b", "c").getOrEmpty(3)).isEmpty()
+      assertThat(sortedSetOf("a", "b", "c").getOrEmpty(3)).isEmpty()
+
+      assertThat(stackOf("a", "b", "c").getOrEmpty(3)).isEmpty()
+      assertThat(vectorOf("a", "b", "c").getOrEmpty(3)).isEmpty()
+
+      assertThat(queueOf("a", "b", "c").getOrEmpty(3)).isEmpty()
+      assertThat(priorityQueueOf("a", "b", "c").getOrEmpty(3)).isEmpty()
+      assertThat(dequeOf("a", "b", "c").getOrEmpty(3)).isEmpty()
+      assertThat(arrayDequeOf("a", "b", "c").getOrEmpty(3)).isEmpty()
+    }
   }
 
   @Nested

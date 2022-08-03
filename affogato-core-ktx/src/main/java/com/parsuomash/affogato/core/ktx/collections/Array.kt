@@ -278,6 +278,22 @@ fun charArrayOf(range: CharRange): CharArray = range.toList().toCharArray()
 fun charArrayOf(progression: CharProgression): CharArray = progression.toList().toCharArray()
 
 /**
+ * Returns an element at the given index or empty
+ * if the index is out of bounds of this string [Array].
+ *
+ * Example:
+ * ```Kotlin
+ * val list = arrayOf(1..5)
+ * list.getOrEmpty(8) // ""
+ * list[2] // 3
+ * ```
+ * @since 1.1.0
+ * @see arrayOf
+ */
+fun Array<String>.getOrEmpty(index: Int): String =
+  if (index in 0..lastIndex) toList()[index] else ""
+
+/**
  * Returns the sub-array from the given range.
  *
  * Example:
