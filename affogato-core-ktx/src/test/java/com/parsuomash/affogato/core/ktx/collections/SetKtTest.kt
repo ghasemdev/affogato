@@ -447,4 +447,21 @@ internal class SetKtTest {
       }
     }
   }
+
+  @Nested
+  @DisplayName("Converter")
+  inner class Converter {
+    @Test
+    @DisplayName("toLinkedSet")
+    fun toLinkedSet() {
+      assertThat((1..10).toLinkedSet()).isEqualTo(linkedSetOf(1..10))
+    }
+
+    @Test
+    @DisplayName("toHashTable")
+    fun toHashTable() {
+      assertThat(mapOf(1 to 1, 2 to 2).toHashTable()).isEqualTo(hashTableOf(1 to 1, 2 to 2))
+      assertThat((1 to 1).toHashTable()).isEqualTo(hashTableOf(1 to 1))
+    }
+  }
 }

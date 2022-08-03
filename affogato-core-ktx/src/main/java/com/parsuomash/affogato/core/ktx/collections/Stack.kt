@@ -1,6 +1,17 @@
 package com.parsuomash.affogato.core.ktx.collections
 
 /**
+ * Returns a [Stack] containing all elements.
+ *
+ * Example:
+ * ```Kotlin
+ * (1..10).toStack() // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ * ```
+ * @since 1.1.0
+ */
+inline fun <reified T> Iterable<T>.toStack(): Stack<T> = Stack<T>().apply { addAll(this@toStack) }
+
+/**
  * Return an empty new [Stack].
  * @since 1.1.0
  */

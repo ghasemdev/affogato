@@ -138,4 +138,14 @@ internal class VectorKtTest {
       }
     }
   }
+
+  @Nested
+  @DisplayName("Converter")
+  inner class Converter {
+    @Test
+    @DisplayName("toVector")
+    fun toVector() {
+      assertThat((1..10).toVector()).isEqualTo(vectorOf(1..10))
+    }
+  }
 }

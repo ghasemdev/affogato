@@ -138,4 +138,14 @@ internal class StackKtTest {
       }
     }
   }
+
+  @Nested
+  @DisplayName("Converter")
+  inner class Converter {
+    @Test
+    @DisplayName("toStack")
+    fun toStack() {
+      assertThat((1..10).toStack()).isEqualTo(stackOf(1..10))
+    }
+  }
 }

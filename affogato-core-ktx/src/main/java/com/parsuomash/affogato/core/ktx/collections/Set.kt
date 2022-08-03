@@ -1,6 +1,39 @@
 package com.parsuomash.affogato.core.ktx.collections
 
 /**
+ * Returns a [LinkedHashSet] containing all elements.
+ *
+ * Example:
+ * ```Kotlin
+ * (1..10).toLinkedSet() // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ * ```
+ * @since 1.1.0
+ */
+inline fun <reified T> Iterable<T>.toLinkedSet(): LinkedHashSet<T> = LinkedHashSet(toList())
+
+/**
+ * Returns a [Hashtable] containing all elements.
+ *
+ * Example:
+ * ```Kotlin
+ * mapOf(1 to 2, 2 to 3).toHashTable() // {1=2, 2=3}
+ * ```
+ * @since 1.1.0
+ */
+inline fun <reified K, V> Map<K, V>.toHashTable(): Hashtable<K, V> = Hashtable(this)
+
+/**
+ * Returns a [Hashtable] containing all elements.
+ *
+ * Example:
+ * ```Kotlin
+ * (1 to 2).toHashTable() // {1=2}
+ * ```
+ * @since 1.1.0
+ */
+inline fun <reified K, V> Pair<K, V>.toHashTable(): Hashtable<K, V> = Hashtable(mapOf(this))
+
+/**
  * Return an integer [Set] from int range.
  *
  * Example:

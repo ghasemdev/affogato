@@ -1,6 +1,50 @@
 package com.parsuomash.affogato.core.ktx.collections
 
 /**
+ * Returns a [Queue] containing all elements.
+ *
+ * Example:
+ * ```Kotlin
+ * (1..10).toQueue() // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ * ```
+ * @since 1.1.0
+ */
+inline fun <reified T> Iterable<T>.toQueue(): Queue<T> = LinkedList(toList())
+
+/**
+ * Returns a [PriorityQueue] containing all elements.
+ *
+ * Example:
+ * ```Kotlin
+ * (1..10).toPriorityQueue() // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ * ```
+ * @since 1.1.0
+ */
+inline fun <reified T> Iterable<T>.toPriorityQueue(): PriorityQueue<T> = PriorityQueue(toList())
+
+/**
+ * Returns a [Deque] containing all elements.
+ *
+ * Example:
+ * ```Kotlin
+ * (1..10).toDeque() // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ * ```
+ * @since 1.1.0
+ */
+inline fun <reified T> Iterable<T>.toDeque(): Deque<T> = LinkedList(toList())
+
+/**
+ * Returns a [ArrayDeque] containing all elements.
+ *
+ * Example:
+ * ```Kotlin
+ * (1..10).toArrayDeque() // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ * ```
+ * @since 1.1.0
+ */
+inline fun <reified T> Iterable<T>.toArrayDeque(): ArrayDeque<T> = ArrayDeque(toList())
+
+/**
  * Return an empty new [Queue].
  * @since 1.1.0
  * @see LinkedList

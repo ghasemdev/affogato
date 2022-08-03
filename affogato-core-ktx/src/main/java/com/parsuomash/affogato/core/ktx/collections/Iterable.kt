@@ -31,6 +31,28 @@ fun Collection<String>.getOrEmpty(index: Int): String =
   if (index in 0..lastIndex) toList()[index] else ""
 
 /**
+ * Returns a [ArrayList] containing all elements.
+ *
+ * Example:
+ * ```Kotlin
+ * (1..10).toArrayList() // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ * ```
+ * @since 1.1.0
+ */
+inline fun <reified T> Iterable<T>.toArrayList(): ArrayList<T> = ArrayList(toList())
+
+/**
+ * Returns a [LinkedList] containing all elements.
+ *
+ * Example:
+ * ```Kotlin
+ * (1..10).toLinkedList() // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ * ```
+ * @since 1.1.0
+ */
+inline fun <reified T> Iterable<T>.toLinkedList(): LinkedList<T> = LinkedList(toList())
+
+/**
  * Returns the sub-list from the given range.
  *
  * Example:

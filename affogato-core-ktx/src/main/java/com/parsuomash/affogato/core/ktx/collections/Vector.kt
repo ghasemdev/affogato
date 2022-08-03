@@ -1,6 +1,17 @@
 package com.parsuomash.affogato.core.ktx.collections
 
 /**
+ * Returns a [Vector] containing all elements.
+ *
+ * Example:
+ * ```Kotlin
+ * (1..10).toVector() // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ * ```
+ * @since 1.1.0
+ */
+inline fun <reified T> Iterable<T>.toVector(): Vector<T> = Vector(toList())
+
+/**
  * Return an empty new [Vector].
  * @since 1.1.0
  * @param size default size is 10

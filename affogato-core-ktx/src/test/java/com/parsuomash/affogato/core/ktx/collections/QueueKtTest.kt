@@ -354,4 +354,32 @@ internal class QueueKtTest {
       }
     }
   }
+
+  @Nested
+  @DisplayName("Converter")
+  inner class Converter {
+    @Test
+    @DisplayName("toQueue")
+    fun toQueue() {
+      assertThat((1..10).toQueue()).isEqualTo(queueOf(1..10))
+    }
+
+    @Test
+    @DisplayName("toPriorityQueue")
+    fun toPriorityQueue() {
+      assertThat((1..10).toPriorityQueue().containsAll(priorityQueueOf(1..10))).isTrue()
+    }
+
+    @Test
+    @DisplayName("toDeque")
+    fun toDeque() {
+      assertThat((1..10).toDeque()).isEqualTo(dequeOf(1..10))
+    }
+
+    @Test
+    @DisplayName("toArrayDeque")
+    fun toArrayDeque() {
+      assertThat((1..10).toArrayDeque()).isEqualTo(arrayDequeOf(1..10))
+    }
+  }
 }

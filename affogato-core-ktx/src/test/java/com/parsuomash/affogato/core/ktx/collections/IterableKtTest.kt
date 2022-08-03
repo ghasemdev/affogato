@@ -245,4 +245,20 @@ internal class IterableKtTest {
       }
     }
   }
+
+  @Nested
+  @DisplayName("Converter")
+  inner class Converter {
+    @Test
+    @DisplayName("toArrayList")
+    fun toArrayList() {
+      assertThat((1..10).toArrayList()).isEqualTo(arrayListOf(1..10))
+    }
+
+    @Test
+    @DisplayName("toLinkedList")
+    fun toLinkedList() {
+      assertThat((1..10).toLinkedList()).isEqualTo(linkedListOf(1..10))
+    }
+  }
 }
