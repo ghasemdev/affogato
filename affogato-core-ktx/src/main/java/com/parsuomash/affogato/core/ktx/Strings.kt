@@ -1,6 +1,5 @@
 package com.parsuomash.affogato.core.ktx
 
-import com.parsuomash.affogato.core.ktx.collections.rotateRight
 import java.net.URLDecoder
 import java.net.URLEncoder
 import java.util.*
@@ -249,13 +248,39 @@ fun String.capitalize() = replaceFirstChar {
   if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString()
 }
 
+/**
+ * Rotates the string to the left by specified distance.
+ *
+ * Example:
+ * ```Kotlin
+ * "abc".rotateLeft(2) // bca
+ * ```
+ * @since 1.1.0
+ * @param n number of elements rotate
+ * @throws IllegalArgumentException if n is **negative** or **zero**.
+ * @see Collections.rotate
+ */
 fun String.rotateLeft(n: Int = 1): String {
+  require(n >= 1) { "n must be grater than 1" }
   val list = this.toMutableList()
   Collections.rotate(list, n)
   return list.joinToString("")
 }
 
+/**
+ * Rotates the string to the right by specified distance.
+ *
+ * Example:
+ * ```Kotlin
+ * "abc".rotateRight(2) // cab
+ * ```
+ * @since 1.1.0
+ * @param n number of elements rotate
+ * @throws IllegalArgumentException if n is **negative** or **zero**.
+ * @see Collections.rotate
+ */
 fun String.rotateRight(n: Int = 1): String {
+  require(n >= 1) { "n must be grater than 1" }
   val list = this.toMutableList()
   Collections.rotate(list, -n)
   return list.joinToString("")
