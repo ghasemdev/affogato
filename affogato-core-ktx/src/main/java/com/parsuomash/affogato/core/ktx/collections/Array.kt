@@ -285,6 +285,7 @@ fun charArrayOf(progression: CharProgression): CharArray = progression.toList().
  * arrayOf(1..10)[0..4] // [1, 2, 3, 4, 5]
  * ```
  * @since 1.1.0
+ * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see arrayOf
  * @see Array
@@ -299,6 +300,7 @@ inline operator fun <reified T> Array<T>.get(indices: IntRange): Array<T> = slic
  * byteArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)[0..4] // [1, 2, 3, 4, 5]
  * ```
  * @since 1.1.0
+ * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see byteArrayOf
  */
@@ -312,6 +314,7 @@ operator fun ByteArray.get(indices: IntRange): ByteArray = sliceArray(indices)
  * charArrayOf('a'..'z')[0..4] // ['a', 'b', 'c', 'd', 'e']
  * ```
  * @since 1.1.0
+ * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see charArrayOf
  */
@@ -325,6 +328,7 @@ operator fun CharArray.get(indices: IntRange): CharArray = sliceArray(indices)
  * shortArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)[0..4] // [1, 2, 3, 4, 5]
  * ```
  * @since 1.1.0
+ * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see shortArrayOf
  */
@@ -338,6 +342,7 @@ operator fun ShortArray.get(indices: IntRange): ShortArray = sliceArray(indices)
  * intArrayOf(1..10)[0..4] // [1, 2, 3, 4, 5]
  * ```
  * @since 1.1.0
+ * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see intArrayOf
  */
@@ -351,6 +356,7 @@ operator fun IntArray.get(indices: IntRange): IntArray = sliceArray(indices)
  * longArrayOf(1..10L)[0..4] // [1L, 2L, 3L, 4L, 5L]
  * ```
  * @since 1.1.0
+ * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see longArrayOf
  */
@@ -365,6 +371,7 @@ operator fun LongArray.get(indices: IntRange): LongArray = sliceArray(indices)
  * // [1.0f, 2.0f, 3.0f, 4.0f, 5.0f]
  * ```
  * @since 1.1.0
+ * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see floatArrayOf
  */
@@ -379,6 +386,7 @@ operator fun FloatArray.get(indices: IntRange): FloatArray = sliceArray(indices)
  * // [1.0, 2.0, 3.0, 4.0, 5.0]
  * ```
  * @since 1.1.0
+ * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see doubleArrayOf
  */
@@ -393,6 +401,7 @@ operator fun DoubleArray.get(indices: IntRange): DoubleArray = sliceArray(indice
  * // [true, false, true, false, true]
  * ```
  * @since 1.1.0
+ * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see booleanArrayOf
  */
@@ -406,6 +415,7 @@ operator fun BooleanArray.get(indices: IntRange): BooleanArray = sliceArray(indi
  * arrayOf(1..10)[0..9 step 2] // [1, 3, 5, 7, 9]
  * ```
  * @since 1.1.0
+ * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see arrayOf
  * @see Array
@@ -421,6 +431,7 @@ inline operator fun <reified T> Array<T>.get(indices: IntProgression): Array<T> 
  * byteArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)[0..9 step 2] // [1, 3, 5, 7, 9]
  * ```
  * @since 1.1.0
+ * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see byteArrayOf
  */
@@ -434,6 +445,7 @@ operator fun ByteArray.get(indices: IntProgression): ByteArray = sliceArray(indi
  * charArrayOf('a'..'z')[0..9 step 2] // ['a', 'c', 'e', 'g', 'i']
  * ```
  * @since 1.1.0
+ * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see charArrayOf
  */
@@ -447,6 +459,7 @@ operator fun CharArray.get(indices: IntProgression): CharArray = sliceArray(indi
  * shortArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)[0..9 step 2] // [1, 3, 5, 7, 9]
  * ```
  * @since 1.1.0
+ * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see shortArrayOf
  */
@@ -460,6 +473,7 @@ operator fun ShortArray.get(indices: IntProgression): ShortArray = sliceArray(in
  * intArrayOf(1..10)[0..9 step 2] // [1, 3, 5, 7, 9]
  * ```
  * @since 1.1.0
+ * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see intArrayOf
  */
@@ -473,6 +487,7 @@ operator fun IntArray.get(indices: IntProgression): IntArray = sliceArray(indice
  * longArrayOf(1..10L)[0..9 step 2] // [1L, 3L, 5L, 7L, 9L]
  * ```
  * @since 1.1.0
+ * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see longArrayOf
  */
@@ -487,6 +502,7 @@ operator fun LongArray.get(indices: IntProgression): LongArray = sliceArray(indi
  * // [1.0f, 3.0f, 5.0f, 7.0f, 9.0f]
  * ```
  * @since 1.1.0
+ * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see floatArrayOf
  */
@@ -501,6 +517,7 @@ operator fun FloatArray.get(indices: IntProgression): FloatArray = sliceArray(in
  * // [1.0, 3.0, 5.0, 7.0, 9.0]
  * ```
  * @since 1.1.0
+ * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see doubleArrayOf
  */
@@ -515,7 +532,7 @@ operator fun DoubleArray.get(indices: IntProgression): DoubleArray = sliceArray(
  * // [true, true, true, true, true]
  * ```
  * @since 1.1.0
- * @see sliceArray
+ * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see booleanArrayOf
  */
 operator fun BooleanArray.get(indices: IntProgression): BooleanArray = sliceArray(indices.toList())
@@ -529,7 +546,6 @@ operator fun BooleanArray.get(indices: IntProgression): BooleanArray = sliceArra
  * arrayOf(1..10).getOrNull(10..14) // null
  * ```
  * @since 1.1.0
- * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see arrayOf
  * @see Array
@@ -546,7 +562,6 @@ inline fun <reified T> Array<T>.getOrNull(indices: IntRange): Array<T>? =
  * byteArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10).getOrNull(10..14) // null
  * ```
  * @since 1.1.0
- * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see byteArrayOf
  */
@@ -561,7 +576,6 @@ fun ByteArray.getOrNull(indices: IntRange): ByteArray? = tryCatchNull { get(indi
  * charArrayOf('a'..'c').getOrNull(10..14) // null
  * ```
  * @since 1.1.0
- * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see charArrayOf
  */
@@ -576,7 +590,6 @@ fun CharArray.getOrNull(indices: IntRange): CharArray? = tryCatchNull { get(indi
  * shortArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10).getOrNull(10..14) // null
  * ```
  * @since 1.1.0
- * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see shortArrayOf
  */
@@ -591,7 +604,6 @@ fun ShortArray.getOrNull(indices: IntRange): ShortArray? = tryCatchNull { get(in
  * intArrayOf(1..10).getOrNull(10..14) // null
  * ```
  * @since 1.1.0
- * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see intArrayOf
  */
@@ -606,7 +618,6 @@ fun IntArray.getOrNull(indices: IntRange): IntArray? = tryCatchNull { get(indice
  * longArrayOf(1..10L).getOrNull(10..14) // null
  * ```
  * @since 1.1.0
- * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see longArrayOf
  */
@@ -623,7 +634,6 @@ fun LongArray.getOrNull(indices: IntRange): LongArray? = tryCatchNull { get(indi
  *   .getOrNull(10..14) // null
  * ```
  * @since 1.1.0
- * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see floatArrayOf
  */
@@ -639,7 +649,6 @@ fun FloatArray.getOrNull(indices: IntRange): FloatArray? = tryCatchNull { get(in
  * doubleArrayOf(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0).getOrNull(10..14) // null
  * ```
  * @since 1.1.0
- * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see doubleArrayOf
  */
@@ -656,7 +665,6 @@ fun DoubleArray.getOrNull(indices: IntRange): DoubleArray? = tryCatchNull { get(
  *   .getOrNull(10..14) // null
  * ```
  * @since 1.1.0
- * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see booleanArrayOf
  */
@@ -671,7 +679,6 @@ fun BooleanArray.getOrNull(indices: IntRange): BooleanArray? = tryCatchNull { ge
  * arrayOf(1..10).getOrNull(10..14 step 2) // null
  * ```
  * @since 1.1.0
- * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see arrayOf
  * @see Array
@@ -688,7 +695,6 @@ inline fun <reified T> Array<T>.getOrNull(indices: IntProgression): Array<T>? =
  * byteArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10).getOrNull(10..14 step 2) // null
  * ```
  * @since 1.1.0
- * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see byteArrayOf
  */
@@ -703,7 +709,6 @@ fun ByteArray.getOrNull(indices: IntProgression): ByteArray? = tryCatchNull { ge
  * charArrayOf('a'..'c').getOrNull(10..14 step 2) // null
  * ```
  * @since 1.1.0
- * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see charArrayOf
  */
@@ -718,7 +723,6 @@ fun CharArray.getOrNull(indices: IntProgression): CharArray? = tryCatchNull { ge
  * shortArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10).getOrNull(10..14 step 2) // null
  * ```
  * @since 1.1.0
- * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see shortArrayOf
  */
@@ -733,7 +737,6 @@ fun ShortArray.getOrNull(indices: IntProgression): ShortArray? = tryCatchNull { 
  * intArrayOf(1..10).getOrNull(10..14 step 2) // null
  * ```
  * @since 1.1.0
- * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see intArrayOf
  */
@@ -748,7 +751,6 @@ fun IntArray.getOrNull(indices: IntProgression): IntArray? = tryCatchNull { get(
  * longArrayOf(1..10L).getOrNull(10..14 step 2) // null
  * ```
  * @since 1.1.0
- * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see longArrayOf
  */
@@ -765,7 +767,6 @@ fun LongArray.getOrNull(indices: IntProgression): LongArray? = tryCatchNull { ge
  *   .getOrNull(10..14 step 2) // null
  * ```
  * @since 1.1.0
- * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see floatArrayOf
  */
@@ -782,7 +783,6 @@ fun FloatArray.getOrNull(indices: IntProgression): FloatArray? = tryCatchNull { 
  *   .getOrNull(10..14 step 2) // null
  * ```
  * @since 1.1.0
- * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see doubleArrayOf
  */
@@ -799,7 +799,6 @@ fun DoubleArray.getOrNull(indices: IntProgression): DoubleArray? = tryCatchNull 
  *   .getOrNull(10..14 step 2) // null
  * ```
  * @since 1.1.0
- * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see sliceArray
  * @see booleanArrayOf
  */
