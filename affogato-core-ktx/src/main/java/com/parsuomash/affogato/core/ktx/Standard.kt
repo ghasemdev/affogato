@@ -1,6 +1,19 @@
 package com.parsuomash.affogato.core.ktx
 
 /**
+ * when variable is null default value maintained.
+ *
+ * Example:
+ * ```Kotlin
+ * val str: String? = null
+ * str.orDefault("def") // def
+ * ```
+ * @since 1.1.0
+ * @return [T] value or **default**
+ */
+fun <T> T?.orDefault(default: T): T = this ?: default
+
+/**
  * Checking nullability.
  *
  * Example:
@@ -79,19 +92,6 @@ inline fun <T> T?.ifNull(block: (T?) -> Any): Any = this ?: block(this)
  * @return value or [Unit]
  */
 inline fun <T, R> T?.ifNotNull(block: (T) -> R): R? = if (this != null) block(this) else this
-
-/**
- * when variable is null default value maintained.
- *
- * Example:
- * ```Kotlin
- * val str: String? = null
- * str.orDefault("def") // def
- * ```
- * @since 1.1.0
- * @return [T] value or **default**
- */
-fun <T> T?.orDefault(default: T): T = this ?: default
 
 /**
  * Sometimes we need try-catch block without error handling.
