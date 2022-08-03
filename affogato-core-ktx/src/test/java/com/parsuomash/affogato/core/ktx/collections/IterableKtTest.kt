@@ -10,9 +10,29 @@ internal class IterableKtTest {
   @Test
   @DisplayName("lastIndex")
   fun array() {
-    val array: List<Int> = listOf(1..10)
-    assertThat(array.size).isEqualTo(10)
-    assertThat(array.lastIndex).isEqualTo(9)
+    val myList = listOf(1..10)
+    assertThat(myList.lastIndex).isEqualTo(9)
+
+    val myMutableList = mutableListOf(1..10)
+    assertThat(myMutableList.lastIndex).isEqualTo(9)
+
+    val mySet = setOf(1..10)
+    assertThat(mySet.lastIndex).isEqualTo(9)
+
+    val myArrayList = arrayListOf(1..10)
+    assertThat(myArrayList.lastIndex).isEqualTo(9)
+
+    val myStack = stackOf(1..10)
+    assertThat(myStack.lastIndex).isEqualTo(9)
+
+    val myLinkedList = linkedListOf(1..10)
+    assertThat(myLinkedList.lastIndex).isEqualTo(9)
+
+    val myVector = vectorOf(1..10)
+    assertThat(myVector.lastIndex).isEqualTo(9)
+
+    val myQueue = queueOf(1..10)
+    assertThat(myQueue.lastIndex).isEqualTo(9)
   }
 
   @Nested
