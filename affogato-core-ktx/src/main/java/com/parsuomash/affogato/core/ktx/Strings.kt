@@ -1,5 +1,6 @@
 package com.parsuomash.affogato.core.ktx
 
+import com.parsuomash.affogato.core.ktx.collections.rotateRight
 import java.net.URLDecoder
 import java.net.URLEncoder
 import java.util.*
@@ -246,6 +247,18 @@ fun String.decodeToUrl(charSet: String = "UTF-8"): String = URLDecoder.decode(th
  */
 fun String.capitalize() = replaceFirstChar {
   if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString()
+}
+
+fun String.rotateLeft(n: Int = 1): String {
+  val list = this.toMutableList()
+  Collections.rotate(list, n)
+  return list.joinToString("")
+}
+
+fun String.rotateRight(n: Int = 1): String {
+  val list = this.toMutableList()
+  Collections.rotate(list, -n)
+  return list.joinToString("")
 }
 
 /**

@@ -1,6 +1,8 @@
 package com.parsuomash.affogato.core.ktx
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
@@ -116,28 +118,61 @@ internal class StringsKtTest {
   }
 
   @Test
-  fun `substring with range`() {
-    assertThat("Hi"[0]).isEqualTo('H')
-    assertThat("Hello affogato core ktx"[10..20]).isEqualTo("gato core k")
-    assertThrows<StringIndexOutOfBoundsException> { ""[0..10] }
-
-    assertThat("Hello".getOrNull(1..3)).isEqualTo("ell")
-    assertThat("Hello".getOrNull(1..5)).isNull()
-
-    assertThat("Hello".getOrElse(1..3) { "Hi" }).isEqualTo("ell")
-    assertThat("Hello".getOrElse(1..5) { "Hi" }).isEqualTo("Hi")
+  fun `string capitalize`() {
+    assertThat("hello".capitalize()).isEqualTo("Hello")
+    assertThat("Hello".capitalize()).isEqualTo("Hello")
+    assertThat("HELLO".capitalize()).isEqualTo("HELLO")
   }
 
-  @Test
-  fun `substring with progression`() {
-    assertThat("Hello affogato core ktx"[0..20 step 2]).isEqualTo("Hloafgt oek")
-    assertThrows<StringIndexOutOfBoundsException> { ""[0..10 step 2] }
+  @Nested
+  @DisplayName("rotate")
+  inner class Rotate {
+    @Test
+    @DisplayName("left")
+    fun left() {
+      assertThat("hello".rotateLeft(3)).isEqualTo("llohe")
+      assertThat("Hello".rotateLeft(2)).isEqualTo("loHel")
+      assertThat("HELLO".rotateLeft()).isEqualTo("OHELL")
+    }
 
-    assertThat("Hello".getOrNull(0..4 step 2)).isEqualTo("Hlo")
-    assertThat("Hello".getOrNull(0..8 step 2)).isNull()
+    @Test
+    @DisplayName("right")
+    fun right() {
+      assertThat("hello".rotateRight(3)).isEqualTo("lohel")
+      assertThat("Hello".rotateRight(2)).isEqualTo("lloHe")
+      assertThat("HELLO".rotateRight()).isEqualTo("ELLOH")
+    }
+  }
 
-    assertThat("Hello".getOrElse(0..4 step 2) { "Hi" }).isEqualTo("Hlo")
-    assertThat("Hello".getOrElse(0..8 step 2) { "Hi" }).isEqualTo("Hi")
+  @Nested
+  @DisplayName("substring")
+  inner class Substring {
+    @Test
+    @DisplayName("with range")
+    fun range() {
+      assertThat("Hi"[0]).isEqualTo('H')
+      assertThat("Hello affogato core ktx"[10..20]).isEqualTo("gato core k")
+      assertThrows<StringIndexOutOfBoundsException> { ""[0..10] }
+
+      assertThat("Hello".getOrNull(1..3)).isEqualTo("ell")
+      assertThat("Hello".getOrNull(1..5)).isNull()
+
+      assertThat("Hello".getOrElse(1..3) { "Hi" }).isEqualTo("ell")
+      assertThat("Hello".getOrElse(1..5) { "Hi" }).isEqualTo("Hi")
+    }
+
+    @Test
+    @DisplayName("with progression")
+    fun progression() {
+      assertThat("Hello affogato core ktx"[0..20 step 2]).isEqualTo("Hloafgt oek")
+      assertThrows<StringIndexOutOfBoundsException> { ""[0..10 step 2] }
+
+      assertThat("Hello".getOrNull(0..4 step 2)).isEqualTo("Hlo")
+      assertThat("Hello".getOrNull(0..8 step 2)).isNull()
+
+      assertThat("Hello".getOrElse(0..4 step 2) { "Hi" }).isEqualTo("Hlo")
+      assertThat("Hello".getOrElse(0..8 step 2) { "Hi" }).isEqualTo("Hi")
+    }
   }
 
   @Test
@@ -157,12 +192,5 @@ internal class StringsKtTest {
     assertThat(joinWith("H", "e", "l", "l", "o", separator = "")).isEqualTo("Hello")
     assertThat(joinWith(1, 2, 3, 4, separator = ", ")).isEqualTo("1, 2, 3, 4")
     assertThat(joinWith(1, 2, 3, 4)).isEqualTo("1 2 3 4")
-  }
-
-  @Test
-  fun `string capitalize`() {
-    assertThat("hello".capitalize()).isEqualTo("Hello")
-    assertThat("Hello".capitalize()).isEqualTo("Hello")
-    assertThat("HELLO".capitalize()).isEqualTo("HELLO")
   }
 }
