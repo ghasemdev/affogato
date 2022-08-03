@@ -202,39 +202,6 @@ inline val String.lastPathComponent: String
   }
 
 /**
- * Creates a string from all the elements separated using [separator] and using the given [prefix]
- * and [postfix] if supplied.
- *
- * If the collection could be huge, you can specify a non-negative value of [limit], in which case
- * only the first [limit] elements will be appended, followed by the [truncated] string
- * (which defaults to "...").
- *
- * Example:
- * ```Kotlin
- * joinWith("H", "e", "l", "l", "o", separator = "") // Hello
- * joinWith(1, 2, 3, 4, separator = ", ") // 1, 2, 3, 4
- * ```
- * @since 1.1.0
- * @see joinToString
- */
-fun <T> joinWith(
-  vararg params: T,
-  separator: CharSequence = " ",
-  prefix: CharSequence = "",
-  postfix: CharSequence = "",
-  limit: Int = -1,
-  truncated: CharSequence = "...",
-  transform: ((T) -> CharSequence)? = null
-): String = params.joinToString(
-  separator = separator,
-  prefix = prefix,
-  postfix = postfix,
-  limit = limit,
-  truncated = truncated,
-  transform = transform
-)
-
-/**
  * Translates a string into application/x-www-form-urlencoded format using a specific encoding
  * scheme.
  *
@@ -260,37 +227,6 @@ fun String.encodeToUrl(charSet: String = "UTF-8"): String = URLEncoder.encode(th
  * @see URLDecoder
  */
 fun String.decodeToUrl(charSet: String = "UTF-8"): String = URLDecoder.decode(this, charSet)
-
-/**
- * append space in string builders
- *
- * Example:
- * ```Kotlin
- * val str = buildString {
- *   append("Hello")
- *   appendSpace()
- *   append("World")
- * } // "Hello World"
- * ```
- * @since 1.1.0
- * @see StringBuilder
- */
-fun StringBuilder.appendSpace(): StringBuilder = append(" ")
-
-/**
- * Checks that the length of a string is valid for block execution
- *
- * Example:
- * ```Kotlin
- * var result: Boolean? = null
- * "12345678".hasValidLength(8) { result = true }
- * result // true
- * ```
- * @since 1.1.0
- */
-inline fun String.hasValidLength(length: Int, block: () -> Unit) {
-  if (this.length <= length) block()
-}
 
 /**
  * Returns a copy of this string having it's first letter title cased using the rules of the
@@ -401,3 +337,67 @@ fun String.getOrNull(indices: IntProgression): String? = tryCatchNull { get(indi
  */
 inline fun String.getOrElse(indices: IntProgression, defaultValue: () -> String): String =
   tryCatchElse({ defaultValue() }) { get(indices) }
+
+/**
+ * Checks that the length of a string is valid for block execution
+ *
+ * Example:
+ * ```Kotlin
+ * var result: Boolean? = null
+ * "12345678".hasValidLength(8) { result = true }
+ * result // true
+ * ```
+ * @since 1.1.0
+ */
+inline fun String.hasValidLength(length: Int, block: () -> Unit) {
+  if (this.length <= length) block()
+}
+
+/**
+ * append space in string builders
+ *
+ * Example:
+ * ```Kotlin
+ * val str = buildString {
+ *   append("Hello")
+ *   appendSpace()
+ *   append("World")
+ * } // "Hello World"
+ * ```
+ * @since 1.1.0
+ * @see StringBuilder
+ */
+fun StringBuilder.appendSpace(): StringBuilder = append(" ")
+
+/**
+ * Creates a string from all the elements separated using [separator] and using the given [prefix]
+ * and [postfix] if supplied.
+ *
+ * If the collection could be huge, you can specify a non-negative value of [limit], in which case
+ * only the first [limit] elements will be appended, followed by the [truncated] string
+ * (which defaults to "...").
+ *
+ * Example:
+ * ```Kotlin
+ * joinWith("H", "e", "l", "l", "o", separator = "") // Hello
+ * joinWith(1, 2, 3, 4, separator = ", ") // 1, 2, 3, 4
+ * ```
+ * @since 1.1.0
+ * @see joinToString
+ */
+fun <T> joinWith(
+  vararg params: T,
+  separator: CharSequence = " ",
+  prefix: CharSequence = "",
+  postfix: CharSequence = "",
+  limit: Int = -1,
+  truncated: CharSequence = "...",
+  transform: ((T) -> CharSequence)? = null
+): String = params.joinToString(
+  separator = separator,
+  prefix = prefix,
+  postfix = postfix,
+  limit = limit,
+  truncated = truncated,
+  transform = transform
+)

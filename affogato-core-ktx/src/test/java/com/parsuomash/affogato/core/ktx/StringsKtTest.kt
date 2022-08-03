@@ -116,32 +116,6 @@ class StringsKtTest {
   }
 
   @Test
-  fun `join with`() {
-    assertThat(joinWith("H", "e", "l", "l", "o", separator = "")).isEqualTo("Hello")
-    assertThat(joinWith(1, 2, 3, 4, separator = ", ")).isEqualTo("1, 2, 3, 4")
-    assertThat(joinWith(1, 2, 3, 4)).isEqualTo("1 2 3 4")
-  }
-
-  @Test
-  fun `append space`() {
-    assertThat(buildString { appendSpace() }).isEqualTo(" ")
-  }
-
-  @Test
-  fun `string has valid length`() {
-    var result: Boolean? = null
-    "12345678".hasValidLength(8) { result = true }
-    assertThat(result).isTrue()
-  }
-
-  @Test
-  fun `string capitalize`() {
-    assertThat("hello".capitalize()).isEqualTo("Hello")
-    assertThat("Hello".capitalize()).isEqualTo("Hello")
-    assertThat("HELLO".capitalize()).isEqualTo("HELLO")
-  }
-
-  @Test
   fun `substring with range`() {
     assertThat("Hi"[0]).isEqualTo('H')
     assertThat("Hello affogato core ktx"[10..20]).isEqualTo("gato core k")
@@ -164,5 +138,31 @@ class StringsKtTest {
 
     assertThat("Hello".getOrElse(0..4 step 2) { "Hi" }).isEqualTo("Hlo")
     assertThat("Hello".getOrElse(0..8 step 2) { "Hi" }).isEqualTo("Hi")
+  }
+
+  @Test
+  fun `string has valid length`() {
+    var result: Boolean? = null
+    "12345678".hasValidLength(8) { result = true }
+    assertThat(result).isTrue()
+  }
+
+  @Test
+  fun `append space`() {
+    assertThat(buildString { appendSpace() }).isEqualTo(" ")
+  }
+
+  @Test
+  fun `join with`() {
+    assertThat(joinWith("H", "e", "l", "l", "o", separator = "")).isEqualTo("Hello")
+    assertThat(joinWith(1, 2, 3, 4, separator = ", ")).isEqualTo("1, 2, 3, 4")
+    assertThat(joinWith(1, 2, 3, 4)).isEqualTo("1 2 3 4")
+  }
+
+  @Test
+  fun `string capitalize`() {
+    assertThat("hello".capitalize()).isEqualTo("Hello")
+    assertThat("Hello".capitalize()).isEqualTo("Hello")
+    assertThat("HELLO".capitalize()).isEqualTo("HELLO")
   }
 }
