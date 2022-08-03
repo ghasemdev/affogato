@@ -4,7 +4,7 @@ import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
-class StringsKtTest {
+internal class StringsKtTest {
   @Test
   fun `is alphanumeric`() {
     assertThat("123".isAlphanumeric).isTrue()

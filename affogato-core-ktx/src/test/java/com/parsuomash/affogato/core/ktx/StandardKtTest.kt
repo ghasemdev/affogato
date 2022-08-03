@@ -8,7 +8,7 @@ import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
-class StandardKtTest {
+internal class StandardKtTest {
   @Test
   @DisplayName("or default")
   fun orDefault() {

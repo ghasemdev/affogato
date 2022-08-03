@@ -3,7 +3,7 @@ package com.parsuomash.affogato.core.ktx
 import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Test
 
-class NumberKtTest {
+internal class NumberKtTest {
   @Test
   fun `or zero on null values`() {
     val int: Number? = null
