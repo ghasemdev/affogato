@@ -14,7 +14,7 @@ package com.parsuomash.affogato.core.ktx
  * @see groupingBy
  * @see eachCount
  */
-fun counter(content: String) = content.groupingBy { it }.eachCount()
+fun counter(content: String): Map<Char, Int> = content.groupingBy { it }.eachCount()
 
 /**
  * Calculate count of each value by group in the Array.
@@ -29,7 +29,7 @@ fun counter(content: String) = content.groupingBy { it }.eachCount()
  * @see eachCount
  * @see arrayOf
  */
-fun <T> counter(content: Array<T>) = content.groupingBy { it }.eachCount()
+fun <T> counter(content: Array<T>): Map<T, Int> = content.groupingBy { it }.eachCount()
 
 /**
  * Calculate count of each value by group in the byte array.
@@ -44,7 +44,7 @@ fun <T> counter(content: Array<T>) = content.groupingBy { it }.eachCount()
  * @see eachCount
  * @see byteArrayOf
  */
-fun counter(content: ByteArray) = content.toList().groupingBy { it }.eachCount()
+fun counter(content: ByteArray): Map<Byte, Int> = content.toList().groupingBy { it }.eachCount()
 
 /**
  * Calculate count of each value by group in the char array.
@@ -59,7 +59,7 @@ fun counter(content: ByteArray) = content.toList().groupingBy { it }.eachCount()
  * @see eachCount
  * @see charArrayOf
  */
-fun counter(content: CharArray) = content.toList().groupingBy { it }.eachCount()
+fun counter(content: CharArray): Map<Char, Int> = content.toList().groupingBy { it }.eachCount()
 
 /**
  * Calculate count of each value by group in the short array.
@@ -74,7 +74,7 @@ fun counter(content: CharArray) = content.toList().groupingBy { it }.eachCount()
  * @see eachCount
  * @see shortArrayOf
  */
-fun counter(content: ShortArray) = content.toList().groupingBy { it }.eachCount()
+fun counter(content: ShortArray): Map<Short, Int> = content.toList().groupingBy { it }.eachCount()
 
 /**
  * Calculate count of each value by group in the int array.
@@ -89,7 +89,7 @@ fun counter(content: ShortArray) = content.toList().groupingBy { it }.eachCount(
  * @see eachCount
  * @see intArrayOf
  */
-fun counter(content: IntArray) = content.toList().groupingBy { it }.eachCount()
+fun counter(content: IntArray): Map<Int, Int> = content.toList().groupingBy { it }.eachCount()
 
 /**
  * Calculate count of each value by group in the long array.
@@ -104,7 +104,7 @@ fun counter(content: IntArray) = content.toList().groupingBy { it }.eachCount()
  * @see eachCount
  * @see longArrayOf
  */
-fun counter(content: LongArray) = content.toList().groupingBy { it }.eachCount()
+fun counter(content: LongArray): Map<Long, Int> = content.toList().groupingBy { it }.eachCount()
 
 /**
  * Calculate count of each value by group in the float array.
@@ -119,7 +119,7 @@ fun counter(content: LongArray) = content.toList().groupingBy { it }.eachCount()
  * @see eachCount
  * @see floatArrayOf
  */
-fun counter(content: FloatArray) = content.toList().groupingBy { it }.eachCount()
+fun counter(content: FloatArray): Map<Float, Int> = content.toList().groupingBy { it }.eachCount()
 
 /**
  * Calculate count of each value by group in the double array.
@@ -134,7 +134,7 @@ fun counter(content: FloatArray) = content.toList().groupingBy { it }.eachCount(
  * @see eachCount
  * @see doubleArrayOf
  */
-fun counter(content: DoubleArray) = content.toList().groupingBy { it }.eachCount()
+fun counter(content: DoubleArray): Map<Double, Int> = content.toList().groupingBy { it }.eachCount()
 
 /**
  * Calculate count of each value by group in the boolean array.
@@ -149,7 +149,8 @@ fun counter(content: DoubleArray) = content.toList().groupingBy { it }.eachCount
  * @see eachCount
  * @see booleanArrayOf
  */
-fun counter(content: BooleanArray) = content.toList().groupingBy { it }.eachCount()
+fun counter(content: BooleanArray): Map<Boolean, Int> =
+  content.toList().groupingBy { it }.eachCount()
 
 /**
  * Calculate count of each value by group in the iterable.
@@ -164,7 +165,7 @@ fun counter(content: BooleanArray) = content.toList().groupingBy { it }.eachCoun
  * @see eachCount
  * @see listOf
  */
-fun <T> counter(content: Iterable<T>) = content.groupingBy { it }.eachCount()
+fun <T> counter(content: Iterable<T>): Map<T, Int> = content.groupingBy { it }.eachCount()
 
 /**
  * when variable is null default value maintained.

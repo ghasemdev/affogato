@@ -995,6 +995,19 @@ internal class ArrayKtTest {
       }
 
       @Test
+      @DisplayName("null Pair")
+      fun nullArray() {
+        val pair = arrayOf(1..5).findPairOfSum(20)
+        assertThat(pair).isNull()
+        val floatPair = arrayOf(1F, 2F, 3F, 4F).findPairOfSum(20F)
+        assertThat(floatPair).isNull()
+        val doublePair = arrayOf(1.0, 2.0, 3.0, 4.0).findPairOfSum(20.0)
+        assertThat(doublePair).isNull()
+        val longPair = arrayOf(1..5L).findPairOfSum(20L)
+        assertThat(longPair).isNull()
+      }
+
+      @Test
       @DisplayName("IntArray")
       fun intArray() {
         val pair = intArrayOf(1..10).findPairOfSum(4)
@@ -1049,6 +1062,19 @@ internal class ArrayKtTest {
 
         val nullTriple = arrayOf(1..5L).findTripleOfSum(20)
         assertThat(nullTriple).isNull()
+      }
+
+      @Test
+      @DisplayName("null Pair")
+      fun nullList() {
+        val triple = arrayOf(1..5).findTripleOfSum(20)
+        assertThat(triple).isNull()
+        val floatTriple = arrayOf(1F, 2F, 3F, 4F).findTripleOfSum(20F)
+        assertThat(floatTriple).isNull()
+        val doubleTriple = arrayOf(1.0, 2.0, 3.0, 4.0).findTripleOfSum(20.0)
+        assertThat(doubleTriple).isNull()
+        val longTriple = arrayOf(1..5L).findTripleOfSum(20L)
+        assertThat(longTriple).isNull()
       }
 
       @Test

@@ -184,7 +184,7 @@ internal class IterableKtTest {
     inner class Pair {
       @Test
       @DisplayName("List<T>")
-      fun array() {
+      fun list() {
         val pair = listOf(1..10).findPairOfSum(4)
         pair?.let { (x, y) -> assertThat(x + y).isEqualTo(4) }
 
@@ -194,8 +194,21 @@ internal class IterableKtTest {
         val doublePair = listOf(1.0, 2.0, 3.0, 4.0).findPairOfSum(4.0)
         doublePair?.let { (x, y) -> assertThat(x + y).isEqualTo(4.0) }
 
-        val nullPair = listOf(1..5L).findPairOfSum(20)
-        assertThat(nullPair).isNull()
+        val longPair = listOf(1..10L).findPairOfSum(4L)
+        longPair?.let { (x, y) -> assertThat(x + y).isEqualTo(4L) }
+      }
+
+      @Test
+      @DisplayName("null Pair")
+      fun nullList() {
+        val pair = listOf(1..5).findPairOfSum(20)
+        assertThat(pair).isNull()
+        val floatPair = listOf(1F, 2F, 3F, 4F).findPairOfSum(20F)
+        assertThat(floatPair).isNull()
+        val doublePair = listOf(1.0, 2.0, 3.0, 4.0).findPairOfSum(20.0)
+        assertThat(doublePair).isNull()
+        val longPair = listOf(1..5L).findPairOfSum(20L)
+        assertThat(longPair).isNull()
       }
     }
 
@@ -204,7 +217,7 @@ internal class IterableKtTest {
     inner class Triple {
       @Test
       @DisplayName("List<T>")
-      fun array() {
+      fun list() {
         val triple = listOf(1..10).findTripleOfSum(4)
         triple?.let { (x, y, z) -> assertThat(x + y + z).isEqualTo(4) }
 
@@ -214,8 +227,21 @@ internal class IterableKtTest {
         val doubleTriple = listOf(1.0, 2.0, 3.0, 4.0).findTripleOfSum(4.0)
         doubleTriple?.let { (x, y, z) -> assertThat(x + y + z).isEqualTo(4.0) }
 
-        val nullTriple = listOf(1..5L).findTripleOfSum(20)
-        assertThat(nullTriple).isNull()
+        val longTriple = listOf(1..10L).findTripleOfSum(4L)
+        longTriple?.let { (x, y, z) -> assertThat(x + y + z).isEqualTo(4L) }
+      }
+
+      @Test
+      @DisplayName("null Pair")
+      fun nullList() {
+        val triple = listOf(1..5).findTripleOfSum(20)
+        assertThat(triple).isNull()
+        val floatTriple = listOf(1F, 2F, 3F, 4F).findTripleOfSum(20F)
+        assertThat(floatTriple).isNull()
+        val doubleTriple = listOf(1.0, 2.0, 3.0, 4.0).findTripleOfSum(20.0)
+        assertThat(doubleTriple).isNull()
+        val longTriple = listOf(1..5L).findTripleOfSum(20L)
+        assertThat(longTriple).isNull()
       }
     }
   }
