@@ -8,12 +8,13 @@ plugins {
 
   id("io.gitlab.arturbosch.detekt") version "1.21.0"
   id("org.jetbrains.dokka") version "1.7.10"
-  id("org.jetbrains.kotlinx.kover") version "0.5.1"
+  id("org.jetbrains.kotlinx.kover") version "0.6.0-Beta"
 }
 
 buildscript {
   dependencies {
     classpath("org.jetbrains.dokka:dokka-base:1.7.10")
+    classpath("org.jetbrains.kotlinx:kover:0.6.0-Beta")
   }
 }
 
@@ -24,6 +25,7 @@ subprojects {
   apply {
     plugin("io.gitlab.arturbosch.detekt")
     plugin("org.jetbrains.dokka")
+    plugin("org.jetbrains.kotlinx.kover")
   }
   dependencies {
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.21.0")
@@ -51,63 +53,46 @@ subprojects {
       md.required.set(true)
     }
   }
+  // Test coverage
+  kover {
+    // true to disable instrumentation and all Kover tasks in this project
+    isDisabled.set(hasProperty("disableKover"))
+    // change Coverage Engine
+    engine.set(kotlinx.kover.api.DefaultIntellijEngine)
+  }
 }
 
 // Test coverage
-kover {
-  isDisabled = hasProperty("disableKover")
-  // change instrumentation agent and reporter
-  coverageEngine.set(kotlinx.kover.api.CoverageEngine.INTELLIJ)
-  // change a version of IntelliJ agent and reporter
-  intellijEngineVersion.set("1.0.675")
-  // change a version of JaCoCo agent and reporter
-  jacocoEngineVersion.set("0.8.8")
-  // false to do not execute `koverMergedReport` task before `check` task
-  generateReportOnCheck = true
-  // true to instrument packages `android.*` and `com.android.*`
-  instrumentAndroidPackage = true
-}
-tasks.koverXmlReport { isEnabled = false }
-tasks.koverMergedXmlReport { isEnabled = false }
-
-tasks.koverHtmlReport {
-  isEnabled = true
-  excludes = listOf(
-    "com.parsuomash.affogato.app.*",
-    "com.parsuomash.affogato.unit.*",
-  )
-}
-tasks.koverMergedHtmlReport {
-  isEnabled = true // false to disable report generation
-  htmlReportDir.set(layout.buildDirectory.dir("kover/htmlMultiModule"))
-  excludes = listOf(
-    "com.parsuomash.affogato.app.*",
-    "com.parsuomash.affogato.unit.*",
-  )
-}
-tasks.koverVerify {
-  rule {
-    name = "Minimal line coverage rate in percents"
-    bound {
-      minValue = 0
+koverMerged {
+  enable() // create Kover merged reports
+  filters { // common filters for all default Kover merged tasks
+    classes { // common class filter for all default Kover merged tasks
+      excludes += listOf(
+        "com.parsuomash.affogato.app.*",
+        "com.parsuomash.affogato.unit.*"
+      ) // class exclusion rules
     }
   }
-  excludes = listOf(
-    "com.parsuomash.affogato.app.*",
-    "com.parsuomash.affogato.unit.*",
-  )
-}
-tasks.koverMergedVerify {
-  rule {
-    name = "Minimal line coverage rate in percents"
-    bound {
-      minValue = 0
+  xmlReport { onCheck.set(true) }
+  htmlReport { onCheck.set(true) }
+  verify {
+    // true to run koverMergedVerify task during the execution of the check task
+    onCheck.set(true)
+    rule { // add verification rule
+      isEnabled = true // false to disable rule checking
+      name = "Minimal line coverage rate in percents" // custom name for the rule
+      // specify by which entity the code for separate coverage evaluation will be grouped
+      target = kotlinx.kover.api.VerificationTarget.ALL
+      bound { // add rule bound
+        minValue = 70
+        maxValue = 100
+        // change coverage metric to evaluate (LINE, INSTRUCTION, BRANCH)
+        counter = kotlinx.kover.api.CounterType.LINE
+        // change counter value (COVERED_COUNT, MISSED_COUNT, COVERED_PERCENTAGE, MISSED_PERCENTAGE)
+        valueType = kotlinx.kover.api.VerificationValueType.COVERED_PERCENTAGE
+      }
     }
   }
-  excludes = listOf(
-    "com.parsuomash.affogato.app.*",
-    "com.parsuomash.affogato.unit.*",
-  )
 }
 
 // Dokka
