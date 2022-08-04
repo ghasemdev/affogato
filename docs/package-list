@@ -3,6 +3,7 @@ $dokka.linkExtension:html
 
 module:affogato-core-ktx
 com.parsuomash.affogato.core.ktx
+com.parsuomash.affogato.core.ktx.collections
 module:affogato-unit
 com.parsuomash.affogato.unit
 com.parsuomash.affogato.unit.window
