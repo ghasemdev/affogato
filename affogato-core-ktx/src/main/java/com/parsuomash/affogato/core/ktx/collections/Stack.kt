@@ -1,3 +1,5 @@
+@file:Suppress("MethodOverloading")
+
 package com.parsuomash.affogato.core.ktx.collections
 
 /**

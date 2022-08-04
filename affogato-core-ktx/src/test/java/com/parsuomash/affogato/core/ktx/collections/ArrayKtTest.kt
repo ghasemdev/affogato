@@ -17,7 +17,7 @@ internal class ArrayKtTest {
       @Test
       @DisplayName("build integer array")
       fun integer() {
-        val intArray: Array<Int> = arrayOf(1..10)
+        val intArray = arrayOf(1..10)
         assertThat(intArray.size).isEqualTo(10)
         assertThat(intArray).isInstanceOf(Array<Int>::class.java)
         assertThat(intArray).isEqualTo((1..10).toList().toTypedArray())
@@ -31,7 +31,7 @@ internal class ArrayKtTest {
       @Test
       @DisplayName("build long array")
       fun long() {
-        val longArray: Array<Long> = arrayOf(1..10L)
+        val longArray = arrayOf(1..10L)
         assertThat(longArray.size).isEqualTo(10)
         assertThat(longArray).isInstanceOf(Array<Long>::class.java)
         assertThat(longArray).isEqualTo((1..10L).toList().toTypedArray())
@@ -45,7 +45,7 @@ internal class ArrayKtTest {
       @Test
       @DisplayName("build char array")
       fun char() {
-        val charArray: Array<Char> = arrayOf('a'..'z')
+        val charArray = arrayOf('a'..'z')
         assertThat(charArray.size).isEqualTo(26)
         assertThat(charArray).isInstanceOf(Array<Char>::class.java)
         assertThat(charArray).isEqualTo(('a'..'z').toList().toTypedArray())
@@ -93,7 +93,7 @@ internal class ArrayKtTest {
       @Test
       @DisplayName("build integer array")
       fun integer() {
-        val intArray: Array<Int> = arrayOf(1..10 step 2)
+        val intArray = arrayOf(1..10 step 2)
         assertThat(intArray.size).isEqualTo(5)
         assertThat(intArray).isInstanceOf(Array<Int>::class.java)
         assertThat(intArray).isEqualTo((1..10 step 2).toList().toTypedArray())
@@ -107,7 +107,7 @@ internal class ArrayKtTest {
       @Test
       @DisplayName("build long array")
       fun long() {
-        val longArray: Array<Long> = arrayOf(1..10L step 2)
+        val longArray = arrayOf(1..10L step 2)
         assertThat(longArray.size).isEqualTo(5)
         assertThat(longArray).isInstanceOf(Array<Long>::class.java)
         assertThat(longArray).isEqualTo((1..10L step 2).toList().toTypedArray())
@@ -121,7 +121,7 @@ internal class ArrayKtTest {
       @Test
       @DisplayName("build char array")
       fun char() {
-        val charArray: Array<Char> = arrayOf('a'..'z' step 2)
+        val charArray = arrayOf('a'..'z' step 2)
         assertThat(charArray.size).isEqualTo(13)
         assertThat(charArray).isInstanceOf(Array<Char>::class.java)
         assertThat(charArray).isEqualTo(('a'..'z' step 2).toList().toTypedArray())
@@ -173,7 +173,7 @@ internal class ArrayKtTest {
       @Test
       @DisplayName("Array<T>")
       fun array() {
-        val array: Array<Int> = arrayOf(1..10)[0..4]
+        val array = arrayOf(1..10)[0..4]
         assertThat(array.size).isEqualTo(5)
         assertThat(array).isInstanceOf(Array<Int>::class.java)
         assertThat(array).isEqualTo((1..5).toList().toTypedArray())
@@ -260,7 +260,7 @@ internal class ArrayKtTest {
       @Test
       @DisplayName("Array<T>")
       fun array() {
-        val array: Array<Int> = arrayOf(1..10)[0..9 step 2]
+        val array = arrayOf(1..10)[0..9 step 2]
         assertThat(array.size).isEqualTo(5)
         assertThat(array).isInstanceOf(Array<Int>::class.java)
         assertThat(array).isEqualTo(arrayOf(1..10 step 2))
@@ -348,7 +348,7 @@ internal class ArrayKtTest {
       @Test
       @DisplayName("Array<T>")
       fun array() {
-        val array: Array<Int> = arrayOf(1..10)
+        val array = arrayOf(1..10)
         assertThat(array.getOrNull(0..4)!!.size).isEqualTo(5)
         assertThat(array.getOrNull(0..4)!!).isInstanceOf(Array<Int>::class.java)
         assertThat(array.getOrNull(0..4)!!).isEqualTo((1..5).toList().toTypedArray())
@@ -446,7 +446,7 @@ internal class ArrayKtTest {
       @Test
       @DisplayName("Array<T>")
       fun array() {
-        val array: Array<Int> = arrayOf(1..10)
+        val array = arrayOf(1..10)
         assertThat(array.getOrNull(0..9 step 2)!!.size).isEqualTo(5)
         assertThat(array.getOrNull(0..9 step 2)!!).isInstanceOf(Array<Int>::class.java)
         assertThat(array.getOrNull(0..9 step 2)!!).isEqualTo(arrayOf(1..10 step 2))
@@ -544,7 +544,7 @@ internal class ArrayKtTest {
       @Test
       @DisplayName("Array<T>")
       fun array() {
-        val array: Array<Int> = arrayOf(1..10)
+        val array = arrayOf(1..10)
         assertThat(array.getOrElse(0..4) { emptyArray() }.size).isEqualTo(5)
         assertThat(array.getOrElse(0..4) { emptyArray() }).isInstanceOf(Array<Int>::class.java)
         assertThat(array.getOrElse(0..4) { emptyArray() })
@@ -632,11 +632,14 @@ internal class ArrayKtTest {
       fun booleanArray() {
         val array: BooleanArray =
           booleanArrayOf(false, true, false, true, false, false, true, false, true, false)
-        assertThat(array.getOrElse(0..4) { booleanArrayOf() }.size).isEqualTo(5)
-        assertThat(array.getOrElse(0..4) { booleanArrayOf() }).isInstanceOf(BooleanArray::class.java)
+        assertThat(array.getOrElse(0..4) { booleanArrayOf() }.size)
+          .isEqualTo(5)
+        assertThat(array.getOrElse(0..4) { booleanArrayOf() })
+          .isInstanceOf(BooleanArray::class.java)
         assertThat(array.getOrElse(0..4) { booleanArrayOf() })
           .isEqualTo(booleanArrayOf(false, true, false, true, false))
-        assertThat(array.getOrElse(0..10) { booleanArrayOf() }).isEmpty()
+        assertThat(array.getOrElse(0..10) { booleanArrayOf() })
+          .isEmpty()
       }
     }
 
@@ -646,75 +649,99 @@ internal class ArrayKtTest {
       @Test
       @DisplayName("Array<T>")
       fun array() {
-        val array: Array<Int> = arrayOf(1..10)
-        assertThat(array.getOrElse(0..9 step 2) { emptyArray() }.size).isEqualTo(5)
-        assertThat(array.getOrElse(0..9 step 2) { emptyArray() }).isInstanceOf(Array<Int>::class.java)
+        val array = arrayOf(1..10)
+        assertThat(array.getOrElse(0..9 step 2) { emptyArray() }.size)
+          .isEqualTo(5)
+        assertThat(array.getOrElse(0..9 step 2) { emptyArray() })
+          .isInstanceOf(Array<Int>::class.java)
         assertThat(array.getOrElse(0..9 step 2) { emptyArray() })
           .isEqualTo(arrayOf(1..10 step 2))
-        assertThat(array.getOrElse(0..10 step 2) { emptyArray() }).isEmpty()
+        assertThat(array.getOrElse(0..10 step 2) { emptyArray() })
+          .isEmpty()
       }
 
       @Test
       @DisplayName("ByteArray")
       fun byteArray() {
         val array: ByteArray = byteArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-        assertThat(array.getOrElse(0..9 step 2) { byteArrayOf() }.size).isEqualTo(5)
-        assertThat(array.getOrElse(0..9 step 2) { byteArrayOf() }).isInstanceOf(ByteArray::class.java)
+        assertThat(array.getOrElse(0..9 step 2) { byteArrayOf() }.size)
+          .isEqualTo(5)
+        assertThat(array.getOrElse(0..9 step 2) { byteArrayOf() })
+          .isInstanceOf(ByteArray::class.java)
         assertThat(array.getOrElse(0..9 step 2) { byteArrayOf() })
           .isEqualTo(byteArrayOf(1, 3, 5, 7, 9))
-        assertThat(array.getOrElse(0..10 step 2) { byteArrayOf() }).isEmpty()
+        assertThat(array.getOrElse(0..10 step 2) { byteArrayOf() })
+          .isEmpty()
       }
 
       @Test
       @DisplayName("CharArray")
       fun charArray() {
         val array: CharArray = charArrayOf('a'..'z')
-        assertThat(array.getOrElse(0..9 step 2) { charArrayOf() }.size).isEqualTo(5)
-        assertThat(array.getOrElse(0..9 step 2) { charArrayOf() }).isInstanceOf(CharArray::class.java)
-        assertThat(array.getOrElse(0..9 step 2) { charArrayOf() }).isEqualTo(charArrayOf('a'..'j' step 2))
-        assertThat(array.getOrElse(0..26 step 2) { charArrayOf() }).isEmpty()
+        assertThat(array.getOrElse(0..9 step 2) { charArrayOf() }.size)
+          .isEqualTo(5)
+        assertThat(array.getOrElse(0..9 step 2) { charArrayOf() })
+          .isInstanceOf(CharArray::class.java)
+        assertThat(array.getOrElse(0..9 step 2) { charArrayOf() })
+          .isEqualTo(charArrayOf('a'..'j' step 2))
+        assertThat(array.getOrElse(0..26 step 2) { charArrayOf() })
+          .isEmpty()
       }
 
       @Test
       @DisplayName("ShortArray")
       fun shortArray() {
         val array: ShortArray = shortArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-        assertThat(array.getOrElse(0..9 step 2) { shortArrayOf() }.size).isEqualTo(5)
-        assertThat(array.getOrElse(0..9 step 2) { shortArrayOf() }).isInstanceOf(ShortArray::class.java)
+        assertThat(array.getOrElse(0..9 step 2) { shortArrayOf() }.size)
+          .isEqualTo(5)
+        assertThat(array.getOrElse(0..9 step 2) { shortArrayOf() })
+          .isInstanceOf(ShortArray::class.java)
         assertThat(array.getOrElse(0..9 step 2) { shortArrayOf() })
           .isEqualTo(shortArrayOf(1, 3, 5, 7, 9))
-        assertThat(array.getOrElse(0..10 step 2) { shortArrayOf() }).isEmpty()
+        assertThat(array.getOrElse(0..10 step 2) { shortArrayOf() })
+          .isEmpty()
       }
 
       @Test
       @DisplayName("IntArray")
       fun intArray() {
         val array: IntArray = intArrayOf(1..10)
-        assertThat(array.getOrElse(0..9 step 2) { intArrayOf() }.size).isEqualTo(5)
-        assertThat(array.getOrElse(0..9 step 2) { intArrayOf() }).isInstanceOf(IntArray::class.java)
-        assertThat(array.getOrElse(0..9 step 2) { intArrayOf() }).isEqualTo(intArrayOf(1..10 step 2))
-        assertThat(array.getOrElse(0..10 step 2) { intArrayOf() }).isEmpty()
+        assertThat(array.getOrElse(0..9 step 2) { intArrayOf() }.size)
+          .isEqualTo(5)
+        assertThat(array.getOrElse(0..9 step 2) { intArrayOf() })
+          .isInstanceOf(IntArray::class.java)
+        assertThat(array.getOrElse(0..9 step 2) { intArrayOf() })
+          .isEqualTo(intArrayOf(1..10 step 2))
+        assertThat(array.getOrElse(0..10 step 2) { intArrayOf() })
+          .isEmpty()
       }
 
       @Test
       @DisplayName("LongArray")
       fun longArray() {
         val array: LongArray = longArrayOf(1..10L)
-        assertThat(array.getOrElse(0..9 step 2) { longArrayOf() }.size).isEqualTo(5)
-        assertThat(array.getOrElse(0..9 step 2) { longArrayOf() }).isInstanceOf(LongArray::class.java)
-        assertThat(array.getOrElse(0..9 step 2) { longArrayOf() }).isEqualTo(longArrayOf(1..10L step 2))
-        assertThat(array.getOrElse(0..10 step 2) { longArrayOf() }).isEmpty()
+        assertThat(array.getOrElse(0..9 step 2) { longArrayOf() }.size)
+          .isEqualTo(5)
+        assertThat(array.getOrElse(0..9 step 2) { longArrayOf() })
+          .isInstanceOf(LongArray::class.java)
+        assertThat(array.getOrElse(0..9 step 2) { longArrayOf() })
+          .isEqualTo(longArrayOf(1..10L step 2))
+        assertThat(array.getOrElse(0..10 step 2) { longArrayOf() })
+          .isEmpty()
       }
 
       @Test
       @DisplayName("FloatArray")
       fun floatArray() {
         val array: FloatArray = floatArrayOf(1F, 2F, 3F, 4F, 5F, 6F, 7F, 8F, 9F, 10F)
-        assertThat(array.getOrElse(0..9 step 2) { floatArrayOf() }.size).isEqualTo(5)
-        assertThat(array.getOrElse(0..9 step 2) { floatArrayOf() }).isInstanceOf(FloatArray::class.java)
+        assertThat(array.getOrElse(0..9 step 2) { floatArrayOf() }.size)
+          .isEqualTo(5)
+        assertThat(array.getOrElse(0..9 step 2) { floatArrayOf() })
+          .isInstanceOf(FloatArray::class.java)
         assertThat(array.getOrElse(0..9 step 2) { floatArrayOf() })
           .isEqualTo(floatArrayOf(1F, 3F, 5F, 7F, 9F))
-        assertThat(array.getOrElse(0..10 step 2) { floatArrayOf() }).isEmpty()
+        assertThat(array.getOrElse(0..10 step 2) { floatArrayOf() })
+          .isEmpty()
       }
 
       @Test
@@ -722,11 +749,14 @@ internal class ArrayKtTest {
       fun doubleArray() {
         val array: DoubleArray =
           doubleArrayOf(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0)
-        assertThat(array.getOrElse(0..9 step 2) { doubleArrayOf() }.size).isEqualTo(5)
-        assertThat(array.getOrElse(0..9 step 2) { doubleArrayOf() }).isInstanceOf(DoubleArray::class.java)
+        assertThat(array.getOrElse(0..9 step 2) { doubleArrayOf() }.size)
+          .isEqualTo(5)
+        assertThat(array.getOrElse(0..9 step 2) { doubleArrayOf() })
+          .isInstanceOf(DoubleArray::class.java)
         assertThat(array.getOrElse(0..9 step 2) { doubleArrayOf() })
           .isEqualTo(doubleArrayOf(1.0, 3.0, 5.0, 7.0, 9.0))
-        assertThat(array.getOrElse(0..10 step 2) { doubleArrayOf() }).isEmpty()
+        assertThat(array.getOrElse(0..10 step 2) { doubleArrayOf() })
+          .isEmpty()
       }
 
       @Test
@@ -734,11 +764,14 @@ internal class ArrayKtTest {
       fun booleanArray() {
         val array: BooleanArray =
           booleanArrayOf(false, true, false, true, false, true, false, true, false, true)
-        assertThat(array.getOrElse(0..9 step 2) { booleanArrayOf() }.size).isEqualTo(5)
-        assertThat(array.getOrElse(0..9 step 2) { booleanArrayOf() }).isInstanceOf(BooleanArray::class.java)
+        assertThat(array.getOrElse(0..9 step 2) { booleanArrayOf() }.size)
+          .isEqualTo(5)
+        assertThat(array.getOrElse(0..9 step 2) { booleanArrayOf() })
+          .isInstanceOf(BooleanArray::class.java)
         assertThat(array.getOrElse(0..9 step 2) { booleanArrayOf() })
           .isEqualTo(booleanArrayOf(false, false, false, false, false))
-        assertThat(array.getOrElse(0..10 step 2) { booleanArrayOf() }).isEmpty()
+        assertThat(array.getOrElse(0..10 step 2) { booleanArrayOf() })
+          .isEmpty()
       }
     }
 
@@ -1100,15 +1133,19 @@ internal class ArrayKtTest {
       @Test
       @DisplayName("intArray")
       fun intArray() {
-        assertThat(intArrayOf(1..10).rotateLeft(3)).isEqualTo(intArrayOf(8..10) + intArrayOf(1..7))
-        assertThat(intArrayOf(1..10).rotateLeft()).isEqualTo(intArrayOf(10) + intArrayOf(1..9))
+        assertThat(intArrayOf(1..10).rotateLeft(3))
+          .isEqualTo(intArrayOf(8..10) + intArrayOf(1..7))
+        assertThat(intArrayOf(1..10).rotateLeft())
+          .isEqualTo(intArrayOf(10) + intArrayOf(1..9))
       }
 
       @Test
       @DisplayName("longArray")
       fun longArray() {
-        assertThat(longArrayOf(1..10L).rotateLeft(3)).isEqualTo(longArrayOf(8..10L) + longArrayOf(1..7L))
-        assertThat(longArrayOf(1..10L).rotateLeft()).isEqualTo(longArrayOf(10) + longArrayOf(1..9L))
+        assertThat(longArrayOf(1..10L).rotateLeft(3))
+          .isEqualTo(longArrayOf(8..10L) + longArrayOf(1..7L))
+        assertThat(longArrayOf(1..10L).rotateLeft())
+          .isEqualTo(longArrayOf(10) + longArrayOf(1..9L))
       }
 
       @Test
@@ -1179,15 +1216,19 @@ internal class ArrayKtTest {
       @Test
       @DisplayName("intArray")
       fun intArray() {
-        assertThat(intArrayOf(1..10).rotateRight(3)).isEqualTo(intArrayOf(4..10) + intArrayOf(1..3))
-        assertThat(intArrayOf(1..10).rotateRight()).isEqualTo(intArrayOf(2..10) + intArrayOf(1))
+        assertThat(intArrayOf(1..10).rotateRight(3))
+          .isEqualTo(intArrayOf(4..10) + intArrayOf(1..3))
+        assertThat(intArrayOf(1..10).rotateRight())
+          .isEqualTo(intArrayOf(2..10) + intArrayOf(1))
       }
 
       @Test
       @DisplayName("longArray")
       fun longArray() {
-        assertThat(longArrayOf(1..10L).rotateRight(3)).isEqualTo(longArrayOf(4..10L) + longArrayOf(1..3L))
-        assertThat(longArrayOf(1..10L).rotateRight()).isEqualTo(longArrayOf(2..10L) + longArrayOf(1))
+        assertThat(longArrayOf(1..10L).rotateRight(3))
+          .isEqualTo(longArrayOf(4..10L) + longArrayOf(1..3L))
+        assertThat(longArrayOf(1..10L).rotateRight())
+          .isEqualTo(longArrayOf(2..10L) + longArrayOf(1))
       }
 
       @Test

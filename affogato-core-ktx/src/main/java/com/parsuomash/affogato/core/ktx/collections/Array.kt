@@ -1,3 +1,5 @@
+@file:Suppress("MethodOverloading", "TooManyFunctions", "ArrayPrimitive")
+
 package com.parsuomash.affogato.core.ktx.collections
 
 import com.parsuomash.affogato.core.ktx.tryCatchElse
@@ -1821,7 +1823,7 @@ inline fun <reified T> Array<T>.rotateLeft(n: Int = 1): Array<T> {
  * @see byteArrayOf
  */
 fun ByteArray.rotateLeft(n: Int = 1): ByteArray {
-  require(n >= 1) { "n must be >= 1" }
+  require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
   Collections.rotate(list, n)
   return list.toByteArray()
@@ -1841,7 +1843,7 @@ fun ByteArray.rotateLeft(n: Int = 1): ByteArray {
  * @see shortArrayOf
  */
 fun ShortArray.rotateLeft(n: Int = 1): ShortArray {
-  require(n >= 1) { "n must be >= 1" }
+  require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
   Collections.rotate(list, n)
   return list.toShortArray()
@@ -1861,7 +1863,7 @@ fun ShortArray.rotateLeft(n: Int = 1): ShortArray {
  * @see charArrayOf
  */
 fun CharArray.rotateLeft(n: Int = 1): CharArray {
-  require(n >= 1) { "n must be >= 1" }
+  require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
   Collections.rotate(list, n)
   return list.toCharArray()
@@ -1881,7 +1883,7 @@ fun CharArray.rotateLeft(n: Int = 1): CharArray {
  * @see intArrayOf
  */
 fun IntArray.rotateLeft(n: Int = 1): IntArray {
-  require(n >= 1) { "n must be >= 1" }
+  require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
   Collections.rotate(list, n)
   return list.toIntArray()
@@ -1901,7 +1903,7 @@ fun IntArray.rotateLeft(n: Int = 1): IntArray {
  * @see longArrayOf
  */
 fun LongArray.rotateLeft(n: Int = 1): LongArray {
-  require(n >= 1) { "n must be >= 1" }
+  require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
   Collections.rotate(list, n)
   return list.toLongArray()
@@ -1921,7 +1923,7 @@ fun LongArray.rotateLeft(n: Int = 1): LongArray {
  * @see floatArrayOf
  */
 fun FloatArray.rotateLeft(n: Int = 1): FloatArray {
-  require(n >= 1) { "n must be >= 1" }
+  require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
   Collections.rotate(list, n)
   return list.toFloatArray()
@@ -1941,7 +1943,7 @@ fun FloatArray.rotateLeft(n: Int = 1): FloatArray {
  * @see doubleArrayOf
  */
 fun DoubleArray.rotateLeft(n: Int = 1): DoubleArray {
-  require(n >= 1) { "n must be >= 1" }
+  require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
   Collections.rotate(list, n)
   return list.toDoubleArray()
@@ -1961,7 +1963,7 @@ fun DoubleArray.rotateLeft(n: Int = 1): DoubleArray {
  * @see booleanArrayOf
  */
 fun BooleanArray.rotateLeft(n: Int = 1): BooleanArray {
-  require(n >= 1) { "n must be >= 1" }
+  require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
   Collections.rotate(list, n)
   return list.toBooleanArray()
@@ -2001,7 +2003,7 @@ inline fun <reified T> Array<T>.rotateRight(n: Int = 1): Array<T> {
  * @see byteArrayOf
  */
 fun ByteArray.rotateRight(n: Int = 1): ByteArray {
-  require(n >= 1) { "n must be >= 1" }
+  require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
   Collections.rotate(list, -n)
   return list.toByteArray()
@@ -2021,7 +2023,7 @@ fun ByteArray.rotateRight(n: Int = 1): ByteArray {
  * @see shortArrayOf
  */
 fun ShortArray.rotateRight(n: Int = 1): ShortArray {
-  require(n >= 1) { "n must be >= 1" }
+  require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
   Collections.rotate(list, -n)
   return list.toShortArray()
@@ -2041,7 +2043,7 @@ fun ShortArray.rotateRight(n: Int = 1): ShortArray {
  * @see charArrayOf
  */
 fun CharArray.rotateRight(n: Int = 1): CharArray {
-  require(n >= 1) { "n must be >= 1" }
+  require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
   Collections.rotate(list, -n)
   return list.toCharArray()
@@ -2061,7 +2063,7 @@ fun CharArray.rotateRight(n: Int = 1): CharArray {
  * @see intArrayOf
  */
 fun IntArray.rotateRight(n: Int = 1): IntArray {
-  require(n >= 1) { "n must be >= 1" }
+  require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
   Collections.rotate(list, -n)
   return list.toIntArray()
@@ -2081,7 +2083,7 @@ fun IntArray.rotateRight(n: Int = 1): IntArray {
  * @see longArrayOf
  */
 fun LongArray.rotateRight(n: Int = 1): LongArray {
-  require(n >= 1) { "n must be >= 1" }
+  require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
   Collections.rotate(list, -n)
   return list.toLongArray()
@@ -2101,7 +2103,7 @@ fun LongArray.rotateRight(n: Int = 1): LongArray {
  * @see floatArrayOf
  */
 fun FloatArray.rotateRight(n: Int = 1): FloatArray {
-  require(n >= 1) { "n must be >= 1" }
+  require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
   Collections.rotate(list, -n)
   return list.toFloatArray()
@@ -2121,7 +2123,7 @@ fun FloatArray.rotateRight(n: Int = 1): FloatArray {
  * @see doubleArrayOf
  */
 fun DoubleArray.rotateRight(n: Int = 1): DoubleArray {
-  require(n >= 1) { "n must be >= 1" }
+  require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
   Collections.rotate(list, -n)
   return list.toDoubleArray()
@@ -2141,8 +2143,10 @@ fun DoubleArray.rotateRight(n: Int = 1): DoubleArray {
  * @see booleanArrayOf
  */
 fun BooleanArray.rotateRight(n: Int = 1): BooleanArray {
-  require(n >= 1) { "n must be >= 1" }
+  require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
   Collections.rotate(list, -n)
   return list.toBooleanArray()
 }
+
+private const val ROTATE_N_SIZE = "n must be >= 1"
