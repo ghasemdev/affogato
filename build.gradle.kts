@@ -1,8 +1,8 @@
 import io.gitlab.arturbosch.detekt.Detekt
 
 plugins {
-  id("com.android.application") version "7.2.1" apply false
-  id("com.android.library") version "7.2.1" apply false
+  id("com.android.application") version "7.2.2" apply false
+  id("com.android.library") version "7.2.2" apply false
   id("org.jetbrains.kotlin.android") version "1.7.10" apply false
   id("org.jetbrains.kotlin.jvm") version "1.7.10" apply false
 
@@ -55,16 +55,17 @@ subprojects {
 
 // Test coverage
 kover {
+  isDisabled = hasProperty("disableKover")
   // change instrumentation agent and reporter
   coverageEngine.set(kotlinx.kover.api.CoverageEngine.INTELLIJ)
   // change a version of IntelliJ agent and reporter
-  intellijEngineVersion.set("1.0.668")
+  intellijEngineVersion.set("1.0.675")
   // change a version of JaCoCo agent and reporter
-  jacocoEngineVersion.set("0.8.7")
+  jacocoEngineVersion.set("0.8.8")
   // false to do not execute `koverMergedReport` task before `check` task
   generateReportOnCheck = true
   // true to instrument packages `android.*` and `com.android.*`
-  instrumentAndroidPackage = false
+  instrumentAndroidPackage = true
 }
 tasks.koverXmlReport { isEnabled = false }
 tasks.koverMergedXmlReport { isEnabled = false }

@@ -11,7 +11,7 @@ java {
 
 dependencies {
   // KSP -------------------------------------------------------------------------------------------
-  implementation("com.google.devtools.ksp:symbol-processing-api:1.7.10-1.0.6")
+  implementation("com.google.devtools.ksp:symbol-processing-api:1.7.20-Beta-1.0.6")
   implementation("com.fleshgrinder.kotlin:case-format:0.2.0")
 
   // Test ------------------------------------------------------------------------------------------
