@@ -1306,8 +1306,9 @@ fun BooleanArray.head(n: Int = 10): List<Boolean> = take(n)
  * @see arrayOf
  * @see Array
  */
-inline fun <reified T> Array<T>.tail(n: Int = 10): List<T> =
-  (size - n).let { drop(if (it < 0) 0 else it) }
+inline fun <reified T> Array<T>.tail(n: Int = 10): List<T> = (size - n).let {
+  drop(if (it < 0) 0 else it)
+}
 
 /**
  * Returns a list containing last [n] elements.

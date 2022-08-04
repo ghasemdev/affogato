@@ -990,8 +990,8 @@ internal class ArrayKtTest {
         val doublePair = arrayOf(1.0, 2.0, 3.0, 4.0).findPairOfSum(4.0)
         doublePair?.let { (x, y) -> assertThat(x + y).isEqualTo(4.0) }
 
-        val nullPair = arrayOf(1..5L).findPairOfSum(20)
-        assertThat(nullPair).isNull()
+        val longPair = arrayOf(1..5L).findPairOfSum(4)
+        longPair?.let { (x, y) -> assertThat(x + y).isEqualTo(4) }
       }
 
       @Test
@@ -1060,8 +1060,8 @@ internal class ArrayKtTest {
         val doubleTriple = arrayOf(1.0, 2.0, 3.0, 4.0).findTripleOfSum(4.0)
         doubleTriple?.let { (x, y, z) -> assertThat(x + y + z).isEqualTo(4.0) }
 
-        val nullTriple = arrayOf(1..5L).findTripleOfSum(20)
-        assertThat(nullTriple).isNull()
+        val longTriple = arrayOf(1..5L).findTripleOfSum(4)
+        longTriple?.let { (x, y, z) -> assertThat(x + y + z).isEqualTo(4) }
       }
 
       @Test
