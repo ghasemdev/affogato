@@ -148,4 +148,15 @@ internal class VectorKtTest {
       assertThat((1..10).toVector()).isEqualTo(vectorOf(1..10))
     }
   }
+
+  @Test
+  @DisplayName("vector functionality")
+  fun testVectorOf() {
+    val vector = vectorOf(1, 2, 3, 4, 5, 6)
+    assertThat(vector.size).isEqualTo(6)
+    assertThat(vector.toList()).isEqualTo(listOf(1, 2, 3, 4, 5, 6))
+    assertThat(vector[0]).isEqualTo(1)
+    vector.add(10)
+    assertThat(vector.last()).isEqualTo(10)
+  }
 }

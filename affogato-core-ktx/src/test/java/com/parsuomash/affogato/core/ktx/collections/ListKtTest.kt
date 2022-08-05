@@ -324,4 +324,21 @@ internal class ListKtTest {
       assertThat(list2.size).isEqualTo(15)
     }
   }
+
+  @Test
+  @DisplayName("linked list functionality")
+  fun testLinkedListOf() {
+    val linkedList = linkedListOf(1, 2, 3, 4, 5, 6)
+    assertThat(linkedList.size).isEqualTo(6)
+    assertThat(linkedList).isEqualTo(listOf(1, 2, 3, 4, 5, 6))
+    assertThat(linkedList.pop()).isEqualTo(1)
+    assertThat(linkedList.peek()).isEqualTo(2)
+    linkedList.push(4)
+    assertThat(linkedList.peek()).isEqualTo(4)
+    assertThat(linkedList.poll()).isEqualTo(4)
+    assertThat(linkedList[0]).isEqualTo(2)
+    linkedList.add(2, 20)
+    assertThat(linkedList[2]).isEqualTo(20)
+    assertThat(linkedList[0]).isEqualTo(2)
+  }
 }

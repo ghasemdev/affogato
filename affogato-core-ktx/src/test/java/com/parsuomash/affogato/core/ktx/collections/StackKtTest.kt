@@ -148,4 +148,17 @@ internal class StackKtTest {
       assertThat((1..10).toStack()).isEqualTo(stackOf(1..10))
     }
   }
+
+
+  @Test
+  @DisplayName("stack functionality")
+  fun testStackOf() {
+    val stack = stackOf(1, 2, 3, 4, 5, 6)
+    assertThat(stack.size).isEqualTo(6)
+    assertThat(stack.toList()).isEqualTo(listOf(1, 2, 3, 4, 5, 6))
+    assertThat(stack.pop()).isEqualTo(6)
+    assertThat(stack.peek()).isEqualTo(5)
+    stack.push(4)
+    assertThat(stack.peek()).isEqualTo(4)
+  }
 }

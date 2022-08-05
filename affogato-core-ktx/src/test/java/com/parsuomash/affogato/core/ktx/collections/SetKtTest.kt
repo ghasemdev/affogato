@@ -464,4 +464,16 @@ internal class SetKtTest {
       assertThat((1 to 1).toHashTable()).isEqualTo(hashTableOf(1 to 1))
     }
   }
+
+  @Test
+  @DisplayName("hash table functionality")
+  fun testHashTableOf() {
+    val hashTable = hashTableOf(1 to 1, 2 to 2, 3 to 3, 4 to 4, 5 to 5, 6 to 6)
+    assertThat(hashTable.size).isEqualTo(6)
+    assertThat(hashTable.toList())
+      .isEqualTo(listOf(1 to 1, 2 to 2, 3 to 3, 4 to 4, 5 to 5, 6 to 6).reversed())
+    assertThat(hashTable[5]).isEqualTo(5)
+    hashTable[7] = 9
+    assertThat(hashTable[7]).isEqualTo(9)
+  }
 }
