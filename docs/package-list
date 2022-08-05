@@ -4,6 +4,7 @@ $dokka.linkExtension:html
 module:affogato-core-ktx
 com.parsuomash.affogato.core.ktx
 com.parsuomash.affogato.core.ktx.collections
+com.parsuomash.affogato.core.ktx.math
 module:affogato-unit
 com.parsuomash.affogato.unit
 com.parsuomash.affogato.unit.window
