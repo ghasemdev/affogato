@@ -143,9 +143,9 @@ internal class MathKtTest {
     assertThat(5F pow 5L).isEqualTo(3125)
     assertThat(5F pow 2.3).isEqualTo(40.51641491731905)
 
-    assertThat(100L pow 2).isEqualTo(10000.0)
-    assertThat(100L pow 3.3).isEqualTo(3981071.7055349695)
+    assertThat(100L pow 2).isEqualTo(10_000.0)
+    assertThat(100L pow 3.3).isEqualTo(3_981_071.7055349695)
     assertThat(100L pow 5L).isEqualTo(1.0E10)
-    assertThat(100L pow 2.3).isEqualTo(39810.71705534969)
+    assertThat(100L pow 2.3).isEqualTo(39_810.71705534969)
   }
 }

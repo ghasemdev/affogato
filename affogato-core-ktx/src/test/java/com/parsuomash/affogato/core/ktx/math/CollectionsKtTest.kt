@@ -115,18 +115,18 @@ internal class CollectionsKtTest {
     @Test
     @DisplayName("Array")
     fun array() {
-      assertThat(arrayOf(10, 100, 1000, 10000) log 10)
+      assertThat(arrayOf(10, 100, 1_000, 10_000) log 10)
         .isEqualTo(arrayOf(1.0, 2.0, 2.9999999999999996, 4.0))
-      assertThat(1000 log arrayOf(1000, 100, 10))
+      assertThat(1_000 log arrayOf(1_000, 100, 10))
         .isEqualTo(arrayOf(1.0, 1.4999999999999998, 2.9999999999999996))
     }
 
     @Test
     @DisplayName("Iterable")
     fun iterable() {
-      assertThat(listOf(10, 100, 1000, 10000) log 10)
+      assertThat(listOf(10, 100, 1_000, 10_000) log 10)
         .isEqualTo(listOf(1.0, 2.0, 2.9999999999999996, 4.0))
-      assertThat(1000 log listOf(1000, 100, 10))
+      assertThat(1_000 log listOf(1_000, 100, 10))
         .isEqualTo(listOf(1.0, 1.4999999999999998, 2.9999999999999996))
     }
   }
@@ -137,18 +137,18 @@ internal class CollectionsKtTest {
     @Test
     @DisplayName("Array")
     fun array() {
-      assertThat(arrayOf(10, 100, 1000, 10000).log10())
+      assertThat(arrayOf(10, 100, 1_000, 10_000).log10())
         .isEqualTo(arrayOf(1.0, 2.0, 3.0, 4.0))
-      assertThat(arrayOf(1000, 100, 10).log10())
+      assertThat(arrayOf(1_000, 100, 10).log10())
         .isEqualTo(arrayOf(3.0, 2.0, 1.0))
     }
 
     @Test
     @DisplayName("Iterable")
     fun iterable() {
-      assertThat(listOf(10, 100, 1000, 10000).log10())
+      assertThat(listOf(10, 100, 1_000, 10_000).log10())
         .isEqualTo(listOf(1.0, 2.0, 3.0, 4.0))
-      assertThat(listOf(1000, 100, 10).log10())
+      assertThat(listOf(1_000, 100, 10).log10())
         .isEqualTo(listOf(3.0, 2.0, 1.0))
     }
   }
@@ -181,7 +181,7 @@ internal class CollectionsKtTest {
     @Test
     @DisplayName("Array")
     fun array() {
-      assertThat(arrayOf(10, 100, 1000, 10000).ln())
+      assertThat(arrayOf(10, 100, 1_000, 10_000).ln())
         .isEqualTo(
           arrayOf(
             2.302585092994046,
@@ -190,14 +190,14 @@ internal class CollectionsKtTest {
             9.210340371976184
           )
         )
-      assertThat(arrayOf(1000, 100, 10).ln())
+      assertThat(arrayOf(1_000, 100, 10).ln())
         .isEqualTo(arrayOf(6.907755278982137, 4.605170185988092, 2.302585092994046))
     }
 
     @Test
     @DisplayName("Iterable")
     fun iterable() {
-      assertThat(listOf(10, 100, 1000, 10000).ln())
+      assertThat(listOf(10, 100, 1_000, 10_000).ln())
         .isEqualTo(
           listOf(
             2.302585092994046,
@@ -206,7 +206,7 @@ internal class CollectionsKtTest {
             9.210340371976184
           )
         )
-      assertThat(listOf(1000, 100, 10).ln())
+      assertThat(listOf(1_000, 100, 10).ln())
         .isEqualTo(listOf(6.907755278982137, 4.605170185988092, 2.302585092994046))
     }
   }
@@ -239,18 +239,18 @@ internal class CollectionsKtTest {
     @Test
     @DisplayName("Array")
     fun array() {
-      assertThat(arrayOf(10, 100, 1000, 10000).sqrt())
+      assertThat(arrayOf(10, 100, 1_000, 10_000).sqrt())
         .isEqualTo(arrayOf(3.1622776601683795, 10.0, 31.622776601683793, 100.0))
-      assertThat(arrayOf(1000, 100, 10).sqrt())
+      assertThat(arrayOf(1_000, 100, 10).sqrt())
         .isEqualTo(arrayOf(31.622776601683793, 10.0, 3.1622776601683795))
     }
 
     @Test
     @DisplayName("Iterable")
     fun iterable() {
-      assertThat(listOf(10, 100, 1000, 10000).sqrt())
+      assertThat(listOf(10, 100, 1_000, 10_000).sqrt())
         .isEqualTo(listOf(3.1622776601683795, 10.0, 31.622776601683793, 100.0))
-      assertThat(listOf(1000, 100, 10).sqrt())
+      assertThat(listOf(1_000, 100, 10).sqrt())
         .isEqualTo(listOf(31.622776601683793, 10.0, 3.1622776601683795))
     }
   }

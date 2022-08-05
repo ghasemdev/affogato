@@ -149,7 +149,6 @@ internal class StackKtTest {
     }
   }
 
-
   @Test
   @DisplayName("stack functionality")
   fun testStackOf() {
