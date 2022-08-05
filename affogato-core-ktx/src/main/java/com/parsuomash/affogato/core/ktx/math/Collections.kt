@@ -392,13 +392,40 @@ inline fun <reified T : Number> Array<T>.ln(): Array<Double> =
  *
  * Example:
  * ```Kotlin
+ * listOf(31.62F, 10F, 3.16F).round() // [32F, 10F, 3F]
+ * ```
+ * @since 1.1.0
+ * @see kotlin.math.round
+ */
+@JvmName("roundFloat")
+fun Iterable<Float>.round(): Iterable<Float> = map { round(it) }
+
+/**
+ * Rounds the given value [Array] towards the closest integer with ties
+ * rounded towards even integer.
+ *
+ * Example:
+ * ```Kotlin
+ * arrayOf(31.62F, 10F, 3.16F).round() // [32F, 10F, 3F]
+ * ```
+ * @since 1.1.0
+ * @see kotlin.math.round
+ */
+fun Array<Float>.round(): Array<Float> = map { round(it) }.toTypedArray()
+
+/**
+ * Rounds the given value [Iterable] towards the closest integer with ties rounded
+ * towards even integer.
+ *
+ * Example:
+ * ```Kotlin
  * listOf(31.622776601683793, 10.0, 3.1622776601683795).round() // [32.0, 10.0, 3.0]
  * ```
  * @since 1.1.0
  * @see kotlin.math.round
  */
-inline fun <reified T : Number> Iterable<T>.round(): Iterable<Double> =
-  map { round(it.toDouble()) }
+@JvmName("roundDouble")
+fun Iterable<Double>.round(): Iterable<Double> = map { round(it) }
 
 /**
  * Rounds the given value [Array] towards the closest integer with ties
@@ -411,8 +438,7 @@ inline fun <reified T : Number> Iterable<T>.round(): Iterable<Double> =
  * @since 1.1.0
  * @see kotlin.math.round
  */
-inline fun <reified T : Number> Array<T>.round(): Array<Double> =
-  map { round(it.toDouble()) }.toTypedArray()
+fun Array<Double>.round(): Array<Double> = map { round(it) }.toTypedArray()
 
 /**
  * Computes the positive square root of the value [Iterable].

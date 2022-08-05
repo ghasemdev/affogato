@@ -6,6 +6,43 @@ import org.junit.jupiter.api.Test
 
 internal class MathKtTest {
   @Test
+  fun isOdd() {
+    assertThat(5.isOdd).isTrue()
+    assertThat(0.isOdd).isFalse()
+  }
+
+  @Test
+  fun isEven() {
+    assertThat(5.isEven).isFalse()
+    assertThat(0.isEven).isTrue()
+  }
+
+  @Test
+  fun degrees() {
+    assertThat(0.5.asDegrees.round(2)).isEqualTo(28.65F)
+    assertThat(1.asDegrees.round(2)).isEqualTo(57.30F)
+    assertThat(2.asDegrees.round(2)).isEqualTo(114.59F)
+  }
+
+  @Test
+  fun radians() {
+    assertThat(45.asRadians.round(2)).isEqualTo(0.79F)
+    assertThat(90.asRadians.round(2)).isEqualTo(1.57F)
+    assertThat(180.asRadians.round(2)).isEqualTo(3.14F)
+  }
+
+  @Test
+  fun round() {
+    assertThat(1.999.round()).isEqualTo(2.0)
+    assertThat(1.856.round(1)).isEqualTo(1.9)
+    assertThat(1.856.round(2)).isEqualTo(1.86)
+
+    assertThat(1.999F.round()).isEqualTo(2.0F)
+    assertThat(1.856F.round(1)).isEqualTo(1.9F)
+    assertThat(1.856f.round(2)).isEqualTo(1.86F)
+  }
+
+  @Test
   @DisplayName("almost equals")
   fun almostEq() {
     assertThat(5 almostEq 5).isFalse()
@@ -16,6 +53,28 @@ internal class MathKtTest {
     assertThat(2.5F almostEq 2F).isTrue()
     assertThat(2.5F almostEq 2.5).isTrue()
     assertThat(2.5F almostEq 3F).isFalse()
+  }
+
+  @Test
+  @DisplayName("factorial")
+  fun factorial() {
+    assertThat(fact(1)).isEqualTo(1)
+    assertThat(fact(2)).isEqualTo(2)
+    assertThat(fact(3)).isEqualTo(6)
+    assertThat(fact(4)).isEqualTo(24)
+    assertThat(fact(5)).isEqualTo(120)
+  }
+
+  @Test
+  @DisplayName("fibonacci")
+  fun fibonacci() {
+    assertThat(fib(1)).isEqualTo(1)
+    assertThat(fib(2)).isEqualTo(1)
+    assertThat(fib(3)).isEqualTo(2)
+    assertThat(fib(4)).isEqualTo(3)
+    assertThat(fib(5)).isEqualTo(5)
+    assertThat(fib(6)).isEqualTo(8)
+    assertThat(fib(7)).isEqualTo(13)
   }
 
   @Test
