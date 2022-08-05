@@ -202,6 +202,21 @@ inline val String.lastPathComponent: String
   }
 
 /**
+ * Returns a string containing this char sequence repeated [n] times.
+ *
+ * Example:
+ * ```Kotlin
+ * "^" * 5 // "^^^^^"
+ * "hi" * 0 // ""
+ * "error" * -1 // IllegalArgumentException
+ * ```
+ * @since 1.1.0
+ * @throws IllegalArgumentException when n < 0.
+ * @see String.repeat
+ */
+infix operator fun String.times(n: Int): String = repeat(n)
+
+/**
  * Translates a string into application/x-www-form-urlencoded format using a specific encoding
  * scheme.
  *

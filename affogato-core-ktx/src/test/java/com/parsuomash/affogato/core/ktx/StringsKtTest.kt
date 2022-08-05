@@ -176,6 +176,15 @@ internal class StringsKtTest {
   }
 
   @Test
+  @DisplayName("times string")
+  fun times() {
+    assertThat("Hello" * 3).isEqualTo("HelloHelloHello")
+    assertThat("Hello" * 0).isEqualTo("")
+    assertThat("Hello" * 1).isEqualTo("Hello")
+    assertThat("^" * 5).isEqualTo("^^^^^")
+  }
+
+  @Test
   fun `string has valid length`() {
     var result: Boolean? = null
     "12345678".hasValidLength(8) { result = true }
