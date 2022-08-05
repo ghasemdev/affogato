@@ -49,11 +49,13 @@ inline fun <reified K, V> Map<K, V>.sortedByValueDescending(): Map<K, V> =
   toList().sortedByDescending { it.second.hashCode() }.toMap()
 
 /**
+ * Returns a map of all elements sorted by key.
+ *
  * Example:
  * ```Kotlin
- * mapOf(1 to 0, 5 to 1, 10 to 10, 7 to 0).sortedByValue()
+ * mapOf(1 to 0, 5 to 1, 10 to 10, 7 to 0).sortedByKey()
  * // {1:0, 7:0, 5:1, 10:10}
- * mapOf(1 to "a", 2 to "0", 3 to "11", 4 to "01", 5 to "1").sortedByValue()
+ * mapOf(1 to "a", 2 to "0", 3 to "11", 4 to "01", 5 to "1").sortedByKey()
  * // {2:"0", 4:"01", 5:"1", 3:"11", 1:"a"}
  * ```
  * @since 1.1.0
@@ -62,11 +64,13 @@ inline fun <reified K, V> Map<K, V>.sortedByKey(): Map<K, V> =
   toList().sortedBy { it.first.hashCode() }.toMap()
 
 /**
+ * Returns a map of all elements sorted by dec key.
+ *
  * Example:
  * ```Kotlin
- * mapOf(1 to 0, 5 to 1, 10 to 10, 7 to 0).sortedByValueDescending()
+ * mapOf(1 to 0, 5 to 1, 10 to 10, 7 to 0).sortedByKeyDescending()
  * // {10:10, 5:1, 1:0, 7:0}
- * mapOf(2 to "0", 3 to "11", 4 to "01", 5 to "1").sortedByValueDescending()
+ * mapOf(2 to "0", 3 to "11", 4 to "01", 5 to "1").sortedByKeyDescending()
  * // {3:"11", 5:"1", 4:"01", 2:"0"}
  * ```
  * @since 1.1.0
