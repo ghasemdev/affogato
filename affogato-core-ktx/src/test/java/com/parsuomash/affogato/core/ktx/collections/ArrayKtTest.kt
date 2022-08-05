@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
-@DisplayName("Array")
 internal class ArrayKtTest {
   @Nested
   @DisplayName("Array Builders")
