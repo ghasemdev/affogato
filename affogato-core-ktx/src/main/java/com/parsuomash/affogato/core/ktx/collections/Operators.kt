@@ -5,11 +5,11 @@ package com.parsuomash.affogato.core.ktx.collections
  *
  * Example:
  * ```Kotlin
- * 10 sum arrayOf(1, 2, 3) // [11, 12, 13]
+ * 10 add arrayOf(1, 2, 3) // [11, 12, 13]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Int.sum(array: Array<T>): Array<Int> =
+inline infix fun <reified T : Number> Int.add(array: Array<T>): Array<Int> =
   array.map { this + it.toInt() }.toTypedArray()
 
 /**
@@ -17,11 +17,11 @@ inline infix fun <reified T : Number> Int.sum(array: Array<T>): Array<Int> =
  *
  * Example:
  * ```Kotlin
- * 10 sum listOf(1, 2, 3) // [11, 12, 13]
+ * 10 add listOf(1, 2, 3) // [11, 12, 13]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Int.sum(iterable: Iterable<T>): Iterable<Int> =
+inline infix fun <reified T : Number> Int.add(iterable: Iterable<T>): Iterable<Int> =
   iterable.map { this + it.toInt() }
 
 /**
@@ -29,11 +29,11 @@ inline infix fun <reified T : Number> Int.sum(iterable: Iterable<T>): Iterable<I
  *
  * Example:
  * ```Kotlin
- * arrayOf(1, 2, 3) sum 10 // [11, 12, 13]
+ * arrayOf(1, 2, 3) add 10 // [11, 12, 13]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Array<T>.sum(number: Int): Array<Int> =
+inline infix fun <reified T : Number> Array<T>.add(number: Int): Array<Int> =
   map { it.toInt() + number }.toTypedArray()
 
 /**
@@ -41,11 +41,11 @@ inline infix fun <reified T : Number> Array<T>.sum(number: Int): Array<Int> =
  *
  * Example:
  * ```Kotlin
- * listOf(1, 2, 3) sum 10 // [11, 12, 13]
+ * listOf(1, 2, 3) add 10 // [11, 12, 13]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Iterable<T>.sum(number: Int): Iterable<Int> =
+inline infix fun <reified T : Number> Iterable<T>.add(number: Int): Iterable<Int> =
   map { it.toInt() + number }
 
 /**
@@ -53,11 +53,11 @@ inline infix fun <reified T : Number> Iterable<T>.sum(number: Int): Iterable<Int
  *
  * Example:
  * ```Kotlin
- * 10F sum arrayOf(1F, 2F, 3F) // [11F, 12F, 13F]
+ * 10F add arrayOf(1F, 2F, 3F) // [11F, 12F, 13F]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Float.sum(array: Array<T>): Array<Float> =
+inline infix fun <reified T : Number> Float.add(array: Array<T>): Array<Float> =
   array.map { this + it.toFloat() }.toTypedArray()
 
 /**
@@ -65,11 +65,11 @@ inline infix fun <reified T : Number> Float.sum(array: Array<T>): Array<Float> =
  *
  * Example:
  * ```Kotlin
- * 10F sum listOf(1F, 2F, 3F) // [11F, 12F, 13F]
+ * 10F add listOf(1F, 2F, 3F) // [11F, 12F, 13F]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Float.sum(iterable: Iterable<T>): Iterable<Float> =
+inline infix fun <reified T : Number> Float.add(iterable: Iterable<T>): Iterable<Float> =
   iterable.map { this + it.toFloat() }
 
 /**
@@ -77,11 +77,11 @@ inline infix fun <reified T : Number> Float.sum(iterable: Iterable<T>): Iterable
  *
  * Example:
  * ```Kotlin
- * arrayOf(1F, 2F, 3F) sum 10F // [11F, 12F, 13F]
+ * arrayOf(1F, 2F, 3F) add 10F // [11F, 12F, 13F]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Array<T>.sum(number: Float): Array<Float> =
+inline infix fun <reified T : Number> Array<T>.add(number: Float): Array<Float> =
   map { it.toFloat() + number }.toTypedArray()
 
 /**
@@ -89,11 +89,11 @@ inline infix fun <reified T : Number> Array<T>.sum(number: Float): Array<Float> 
  *
  * Example:
  * ```Kotlin
- * listOf(1F, 2F, 3F) sum 10F // [11F, 12F, 13F]
+ * listOf(1F, 2F, 3F) add 10F // [11F, 12F, 13F]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Iterable<T>.sum(number: Float): Iterable<Float> =
+inline infix fun <reified T : Number> Iterable<T>.add(number: Float): Iterable<Float> =
   map { it.toFloat() + number }
 
 /**
@@ -101,11 +101,11 @@ inline infix fun <reified T : Number> Iterable<T>.sum(number: Float): Iterable<F
  *
  * Example:
  * ```Kotlin
- * 10.0 sum arrayOf(1.0, 2.0, 3.0) // [11.0, 12.0, 13.0]
+ * 10.0 add arrayOf(1.0, 2.0, 3.0) // [11.0, 12.0, 13.0]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Double.sum(array: Array<T>): Array<Double> =
+inline infix fun <reified T : Number> Double.add(array: Array<T>): Array<Double> =
   array.map { this + it.toDouble() }.toTypedArray()
 
 /**
@@ -113,11 +113,11 @@ inline infix fun <reified T : Number> Double.sum(array: Array<T>): Array<Double>
  *
  * Example:
  * ```Kotlin
- * 10.0 sum listOf(1.0, 2.0, 3.0) // [11.0, 12.0, 13.0]
+ * 10.0 add listOf(1.0, 2.0, 3.0) // [11.0, 12.0, 13.0]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Double.sum(iterable: Iterable<T>): Iterable<Double> =
+inline infix fun <reified T : Number> Double.add(iterable: Iterable<T>): Iterable<Double> =
   iterable.map { this + it.toDouble() }
 
 /**
@@ -125,11 +125,11 @@ inline infix fun <reified T : Number> Double.sum(iterable: Iterable<T>): Iterabl
  *
  * Example:
  * ```Kotlin
- * arrayOf(1.0, 2.0, 3.0) sum 10.0 // [11.0, 12.0, 13.0]
+ * arrayOf(1.0, 2.0, 3.0) add 10.0 // [11.0, 12.0, 13.0]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Array<T>.sum(number: Double): Array<Double> =
+inline infix fun <reified T : Number> Array<T>.add(number: Double): Array<Double> =
   map { it.toDouble() + number }.toTypedArray()
 
 /**
@@ -137,11 +137,11 @@ inline infix fun <reified T : Number> Array<T>.sum(number: Double): Array<Double
  *
  * Example:
  * ```Kotlin
- * listOf(1.0, 2.0, 3.0) sum 10.0 // [11.0, 12.0, 13.0]
+ * listOf(1.0, 2.0, 3.0) add 10.0 // [11.0, 12.0, 13.0]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Iterable<T>.sum(number: Double): Iterable<Double> =
+inline infix fun <reified T : Number> Iterable<T>.add(number: Double): Iterable<Double> =
   map { it.toDouble() + number }
 
 /**
@@ -149,11 +149,11 @@ inline infix fun <reified T : Number> Iterable<T>.sum(number: Double): Iterable<
  *
  * Example:
  * ```Kotlin
- * 10L sum arrayOf(1L, 2L, 3L) // [11L, 12L, 13L]
+ * 10L add arrayOf(1L, 2L, 3L) // [11L, 12L, 13L]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Long.sum(array: Array<T>): Array<Long> =
+inline infix fun <reified T : Number> Long.add(array: Array<T>): Array<Long> =
   array.map { this + it.toLong() }.toTypedArray()
 
 /**
@@ -161,11 +161,11 @@ inline infix fun <reified T : Number> Long.sum(array: Array<T>): Array<Long> =
  *
  * Example:
  * ```Kotlin
- * 10L sum listOf(1L, 2L, 3L) // [11L, 12L, 13L]
+ * 10L add listOf(1L, 2L, 3L) // [11L, 12L, 13L]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Long.sum(iterable: Iterable<T>): Iterable<Long> =
+inline infix fun <reified T : Number> Long.add(iterable: Iterable<T>): Iterable<Long> =
   iterable.map { this + it.toLong() }
 
 /**
@@ -173,11 +173,11 @@ inline infix fun <reified T : Number> Long.sum(iterable: Iterable<T>): Iterable<
  *
  * Example:
  * ```Kotlin
- * arrayOf(1L, 2L, 3L) sum 10L // [11L, 12L, 13L]
+ * arrayOf(1L, 2L, 3L) add 10L // [11L, 12L, 13L]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Array<T>.sum(number: Long): Array<Long> =
+inline infix fun <reified T : Number> Array<T>.add(number: Long): Array<Long> =
   map { it.toLong() + number }.toTypedArray()
 
 /**
@@ -185,11 +185,11 @@ inline infix fun <reified T : Number> Array<T>.sum(number: Long): Array<Long> =
  *
  * Example:
  * ```Kotlin
- * listOf(1L, 2L, 3L) sum 10L // [11L, 12L, 13L]
+ * listOf(1L, 2L, 3L) add 10L // [11L, 12L, 13L]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Iterable<T>.sum(number: Long): Iterable<Long> =
+inline infix fun <reified T : Number> Iterable<T>.add(number: Long): Iterable<Long> =
   map { it.toLong() + number }
 
 /**
@@ -773,11 +773,11 @@ inline infix fun <reified T : Number> Iterable<T>.div(number: Long): Iterable<Lo
  *
  * Example:
  * ```Kotlin
- * 10 mod arrayOf(1, 2, 3) // [0, 0, 1]
+ * 10 rem arrayOf(1, 2, 3) // [0, 0, 1]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Int.mod(array: Array<T>): Array<Int> =
+inline infix fun <reified T : Number> Int.rem(array: Array<T>): Array<Int> =
   array.map { this % it.toInt() }.toTypedArray()
 
 /**
@@ -785,11 +785,11 @@ inline infix fun <reified T : Number> Int.mod(array: Array<T>): Array<Int> =
  *
  * Example:
  * ```Kotlin
- * 10 mod listOf(1, 2, 3) // [0, 0, 1]
+ * 10 rem listOf(1, 2, 3) // [0, 0, 1]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Int.mod(iterable: Iterable<T>): Iterable<Int> =
+inline infix fun <reified T : Number> Int.rem(iterable: Iterable<T>): Iterable<Int> =
   iterable.map { this % it.toInt() }
 
 /**
@@ -797,11 +797,11 @@ inline infix fun <reified T : Number> Int.mod(iterable: Iterable<T>): Iterable<I
  *
  * Example:
  * ```Kotlin
- * arrayOf(1, 2, 3) mod 10 // [1, 2, 3]
+ * arrayOf(1, 2, 3) rem 10 // [1, 2, 3]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Array<T>.mod(number: Int): Array<Int> =
+inline infix fun <reified T : Number> Array<T>.rem(number: Int): Array<Int> =
   map { it.toInt() % number }.toTypedArray()
 
 /**
@@ -809,11 +809,11 @@ inline infix fun <reified T : Number> Array<T>.mod(number: Int): Array<Int> =
  *
  * Example:
  * ```Kotlin
- * listOf(1, 2, 3) mod 10 // [1, 2, 3]
+ * listOf(1, 2, 3) rem 10 // [1, 2, 3]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Iterable<T>.mod(number: Int): Iterable<Int> =
+inline infix fun <reified T : Number> Iterable<T>.rem(number: Int): Iterable<Int> =
   map { it.toInt() % number }
 
 /**
@@ -821,11 +821,11 @@ inline infix fun <reified T : Number> Iterable<T>.mod(number: Int): Iterable<Int
  *
  * Example:
  * ```Kotlin
- * 10F mod arrayOf(1F, 2F, 3F) // [0F, 0F, 1F]
+ * 10F rem arrayOf(1F, 2F, 3F) // [0F, 0F, 1F]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Float.mod(array: Array<T>): Array<Float> =
+inline infix fun <reified T : Number> Float.rem(array: Array<T>): Array<Float> =
   array.map { this % it.toFloat() }.toTypedArray()
 
 /**
@@ -833,11 +833,11 @@ inline infix fun <reified T : Number> Float.mod(array: Array<T>): Array<Float> =
  *
  * Example:
  * ```Kotlin
- * 10F mod listOf(1F, 2F, 3F) // [0F, 0F, 1F]
+ * 10F rem listOf(1F, 2F, 3F) // [0F, 0F, 1F]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Float.mod(iterable: Iterable<T>): Iterable<Float> =
+inline infix fun <reified T : Number> Float.rem(iterable: Iterable<T>): Iterable<Float> =
   iterable.map { this % it.toFloat() }
 
 /**
@@ -845,11 +845,11 @@ inline infix fun <reified T : Number> Float.mod(iterable: Iterable<T>): Iterable
  *
  * Example:
  * ```Kotlin
- * arrayOf(1F, 2F, 3F) mod 10F // [1F, 2F, 3F]
+ * arrayOf(1F, 2F, 3F) rem 10F // [1F, 2F, 3F]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Array<T>.mod(number: Float): Array<Float> =
+inline infix fun <reified T : Number> Array<T>.rem(number: Float): Array<Float> =
   map { it.toFloat() % number }.toTypedArray()
 
 /**
@@ -857,11 +857,11 @@ inline infix fun <reified T : Number> Array<T>.mod(number: Float): Array<Float> 
  *
  * Example:
  * ```Kotlin
- * listOf(1F, 2F, 3F) mod 10F // [1F, 2F, 3F]
+ * listOf(1F, 2F, 3F) rem 10F // [1F, 2F, 3F]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Iterable<T>.mod(number: Float): Iterable<Float> =
+inline infix fun <reified T : Number> Iterable<T>.rem(number: Float): Iterable<Float> =
   map { it.toFloat() % number }
 
 /**
@@ -869,11 +869,11 @@ inline infix fun <reified T : Number> Iterable<T>.mod(number: Float): Iterable<F
  *
  * Example:
  * ```Kotlin
- * 10.0 mod arrayOf(1.0, 2.0, 3.0) // [0.0, 0.0, 1.0]
+ * 10.0 rem arrayOf(1.0, 2.0, 3.0) // [0.0, 0.0, 1.0]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Double.mod(array: Array<T>): Array<Double> =
+inline infix fun <reified T : Number> Double.rem(array: Array<T>): Array<Double> =
   array.map { this % it.toDouble() }.toTypedArray()
 
 /**
@@ -881,11 +881,11 @@ inline infix fun <reified T : Number> Double.mod(array: Array<T>): Array<Double>
  *
  * Example:
  * ```Kotlin
- * 10.0 mod listOf(1.0, 2.0, 3.0) // [0.0, 0.0, 1.0]
+ * 10.0 rem listOf(1.0, 2.0, 3.0) // [0.0, 0.0, 1.0]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Double.mod(iterable: Iterable<T>): Iterable<Double> =
+inline infix fun <reified T : Number> Double.rem(iterable: Iterable<T>): Iterable<Double> =
   iterable.map { this % it.toDouble() }
 
 /**
@@ -893,11 +893,11 @@ inline infix fun <reified T : Number> Double.mod(iterable: Iterable<T>): Iterabl
  *
  * Example:
  * ```Kotlin
- * arrayOf(1.0, 2.0, 3.0) mod 10.0 // [1.0, 2.0, 3.0]
+ * arrayOf(1.0, 2.0, 3.0) rem 10.0 // [1.0, 2.0, 3.0]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Array<T>.mod(number: Double): Array<Double> =
+inline infix fun <reified T : Number> Array<T>.rem(number: Double): Array<Double> =
   map { it.toDouble() % number }.toTypedArray()
 
 /**
@@ -905,11 +905,11 @@ inline infix fun <reified T : Number> Array<T>.mod(number: Double): Array<Double
  *
  * Example:
  * ```Kotlin
- * listOf(1.0, 2.0, 3.0) mod 10.0 // [1.0, 2.0, 3.0]
+ * listOf(1.0, 2.0, 3.0) rem 10.0 // [1.0, 2.0, 3.0]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Iterable<T>.mod(number: Double): Iterable<Double> =
+inline infix fun <reified T : Number> Iterable<T>.rem(number: Double): Iterable<Double> =
   map { it.toDouble() % number }
 
 /**
@@ -917,11 +917,11 @@ inline infix fun <reified T : Number> Iterable<T>.mod(number: Double): Iterable<
  *
  * Example:
  * ```Kotlin
- * 10L mod arrayOf(1L, 2L, 3L) // [0L, 0L, 1L]
+ * 10L rem arrayOf(1L, 2L, 3L) // [0L, 0L, 1L]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Long.mod(array: Array<T>): Array<Long> =
+inline infix fun <reified T : Number> Long.rem(array: Array<T>): Array<Long> =
   array.map { this % it.toLong() }.toTypedArray()
 
 /**
@@ -929,11 +929,11 @@ inline infix fun <reified T : Number> Long.mod(array: Array<T>): Array<Long> =
  *
  * Example:
  * ```Kotlin
- * 10L mod listOf(1L, 2L, 3L) // [0L, 0L, 1L]
+ * 10L rem listOf(1L, 2L, 3L) // [0L, 0L, 1L]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Long.mod(iterable: Iterable<T>): Iterable<Long> =
+inline infix fun <reified T : Number> Long.rem(iterable: Iterable<T>): Iterable<Long> =
   iterable.map { this % it.toLong() }
 
 /**
@@ -941,11 +941,11 @@ inline infix fun <reified T : Number> Long.mod(iterable: Iterable<T>): Iterable<
  *
  * Example:
  * ```Kotlin
- * arrayOf(1L, 2L, 3L) mod 10L // [1L, 2L, 3L]
+ * arrayOf(1L, 2L, 3L) rem 10L // [1L, 2L, 3L]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Array<T>.mod(number: Long): Array<Long> =
+inline infix fun <reified T : Number> Array<T>.rem(number: Long): Array<Long> =
   map { it.toLong() % number }.toTypedArray()
 
 /**
@@ -953,9 +953,9 @@ inline infix fun <reified T : Number> Array<T>.mod(number: Long): Array<Long> =
  *
  * Example:
  * ```Kotlin
- * listOf(1L, 2L, 3L) mod 10L // [1L, 2L, 3L]
+ * listOf(1L, 2L, 3L) rem 10L // [1L, 2L, 3L]
  * ```
  * @since 1.1.0
  */
-inline infix fun <reified T : Number> Iterable<T>.mod(number: Long): Iterable<Long> =
+inline infix fun <reified T : Number> Iterable<T>.rem(number: Long): Iterable<Long> =
   map { it.toLong() % number }
