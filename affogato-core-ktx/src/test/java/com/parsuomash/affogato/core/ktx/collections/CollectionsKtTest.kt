@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
-internal class IterableKtTest {
+internal class CollectionsKtTest {
   @Test
   @DisplayName("lastIndex")
   fun array() {
