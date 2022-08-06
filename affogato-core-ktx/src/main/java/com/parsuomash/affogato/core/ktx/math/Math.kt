@@ -4,6 +4,7 @@ import com.parsuomash.affogato.core.ktx.times
 import java.text.DecimalFormat
 import kotlin.math.PI
 import kotlin.math.pow
+import kotlin.math.log
 import kotlin.math.round
 
 /**
@@ -216,4 +217,4 @@ inline infix fun <reified T : Number> T.pow(number: T): Double =
  * @see kotlin.math.log
  */
 inline infix fun <reified T : Number> T.log(base: T): Double =
-  kotlin.math.log(toDouble(), base.toDouble())
+  log(toDouble(), base.toDouble())
