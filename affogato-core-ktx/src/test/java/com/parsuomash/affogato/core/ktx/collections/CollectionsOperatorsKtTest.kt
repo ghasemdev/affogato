@@ -5,7 +5,7 @@ import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
-internal class OperatorsKtTest {
+internal class CollectionsOperatorsKtTest {
   @Nested
   @DisplayName("Minus")
   inner class Minus {
