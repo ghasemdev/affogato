@@ -219,15 +219,6 @@ internal class StringsKtTest {
   }
 
   @Test
-  @DisplayName("hex to rgb")
-  fun hexToRgb() {
-    val black = Triple(0.toUByte(), 0.toUByte(), 0.toUByte())
-    assertThat("#000000".hexToRgb()).isEqualTo(black)
-    val white = Triple(255.toUByte(), 255.toUByte(), 255.toUByte())
-    assertThat("#FFFFFF".hexToRgb()).isEqualTo(white)
-  }
-
-  @Test
   fun `string has valid length`() {
     var result: Boolean? = null
     "12345678".hasValidLength(8) { result = true }

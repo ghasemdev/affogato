@@ -455,26 +455,6 @@ inline fun String.getOrElse(indices: IntProgression, defaultValue: () -> String)
   tryCatchElse({ defaultValue() }) { get(indices) }
 
 /**
- * Convert [String] HEX color to RGB color.
- *
- * Example:
- * ```Kotlin
- * "#000000".hexToRgb() // (0, 0, 0)
- * "#FFFFFF".hexToRgb() // (255, 255 255)
- * ```
- * @since 1.1.0
- * @return [Triple] of red, green and blue values.
- */
-fun String.hexToRgb(): Triple<UByte, UByte, UByte>? = tryCatchNull {
-  var name = this
-  if (!name.startsWith("#")) {
-    name = "#$this"
-  }
-  val color = Color.decode(name)
-  Triple(color.red.toUByte(), color.green.toUByte(), color.blue.toUByte())
-}
-
-/**
  * Checks that the length of a string is valid for block execution
  *
  * Example:

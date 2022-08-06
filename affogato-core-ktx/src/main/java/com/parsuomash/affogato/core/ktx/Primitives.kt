@@ -1,33 +1,6 @@
 package com.parsuomash.affogato.core.ktx
 
 /**
- * Convert [Int] color to [String] hex color.
- *
- * Example:
- * ```Kotlin
- * 0.rgbToHex() // #000000
- * ```
- * @since 1.1.0
- */
-fun Int.rgbToHex(): String = "#%06X".format(-0x1 and this)
-
-/**
- * Convert [Triple] color to [String] hex color.
- *
- * Example:
- * ```Kotlin
- * "#FFFFFF".hexToRgb().rgbToHex() // #FFFFFF
- * ```
- * @since 1.1.0
- */
-fun Triple<UByte, UByte, UByte>.rgbToHex(): String {
-  val r = "%02X".format(-0x1 and first.toInt())
-  val g = "%02X".format(-0x1 and second.toInt())
-  val b = "%02X".format(-0x1 and third.toInt())
-  return "#$r$g$b"
-}
-
-/**
  * Return zero when number is null.
  *
  * Example:
