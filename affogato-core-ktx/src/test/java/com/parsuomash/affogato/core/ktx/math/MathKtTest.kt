@@ -40,6 +40,14 @@ internal class MathKtTest {
     assertThat(1.999F.round()).isEqualTo(2.0F)
     assertThat(1.856F.round(1)).isEqualTo(1.9F)
     assertThat(1.856f.round(2)).isEqualTo(1.86F)
+
+    assertThat(round(1.999)).isEqualTo(2.0)
+    assertThat(round(1.856, 1)).isEqualTo(1.9)
+    assertThat(round(1.856, 2)).isEqualTo(1.86)
+
+    assertThat(round(1.999F)).isEqualTo(2.0F)
+    assertThat(round(1.856F, 1)).isEqualTo(1.9F)
+    assertThat(round(1.856f, 2)).isEqualTo(1.86F)
   }
 
   @Test

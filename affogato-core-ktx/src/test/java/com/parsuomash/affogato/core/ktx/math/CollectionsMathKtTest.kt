@@ -137,6 +137,8 @@ internal class CollectionsMathKtTest {
         .isEqualTo(listOf(3.0, 10.0, 32.0, 100.0))
       assertThat(listOf(31.622776601683793, 10.0, 3.1622776601683795).round())
         .isEqualTo(listOf(32.0, 10.0, 3.0))
+      assertThat(listOf(2.6F, 1.999F, 21.0006F).round())
+        .isEqualTo(listOf(3F,2F,21F))
     }
   }
 
