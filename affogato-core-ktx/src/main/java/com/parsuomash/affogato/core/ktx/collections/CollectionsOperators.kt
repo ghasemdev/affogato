@@ -1,4 +1,4 @@
-@file:Suppress("TooManyFunctions", "ArrayPrimitive")
+@file:Suppress("TooManyFunctions")
 
 package com.parsuomash.affogato.core.ktx.collections
 
