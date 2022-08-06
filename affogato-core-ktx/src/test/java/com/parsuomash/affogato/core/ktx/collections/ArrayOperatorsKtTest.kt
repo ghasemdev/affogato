@@ -1,10 +1,11 @@
 package com.parsuomash.affogato.core.ktx.collections
+
 import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
-internal class ArrayOperatorsKtTest{
+internal class ArrayOperatorsKtTest {
   @Nested
   @DisplayName("Subtract")
   inner class Subtract {
