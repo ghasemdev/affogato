@@ -1,6 +1,6 @@
 @file:Suppress("TooManyFunctions")
 
-package com.parsuomash.affogato.core.ktx.collections
+package com.parsuomash.affogato.core.ktx.operations
 
 /**
  * Adds the [Iterable] value to this value.

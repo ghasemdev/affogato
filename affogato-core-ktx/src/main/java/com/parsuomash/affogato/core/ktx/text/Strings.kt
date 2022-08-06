@@ -1,6 +1,7 @@
-package com.parsuomash.affogato.core.ktx
+package com.parsuomash.affogato.core.ktx.text
 
-import java.awt.Color
+import com.parsuomash.affogato.core.ktx.tryCatchElse
+import com.parsuomash.affogato.core.ktx.tryCatchNull
 import java.net.URLDecoder
 import java.net.URLEncoder
 import java.util.*
@@ -263,21 +264,6 @@ fun String?.isNotNullOrBlank(): Boolean = isNotNull() && this!!.isNotBlank()
  * @see isNotNull
  */
 fun String?.isNotNullOrEmpty(): Boolean = isNotNull() && this!!.isNotEmpty()
-
-/**
- * Returns a string containing this char sequence repeated [n] times.
- *
- * Example:
- * ```Kotlin
- * "^" * 5 // "^^^^^"
- * "hi" * 0 // ""
- * "error" * -1 // IllegalArgumentException
- * ```
- * @since 1.1.0
- * @throws IllegalArgumentException when n < 0.
- * @see String.repeat
- */
-infix operator fun String.times(n: Int): String = repeat(n)
 
 /**
  * Translates a string into application/x-www-form-urlencoded format using a specific encoding

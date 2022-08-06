@@ -1,4 +1,4 @@
-package com.parsuomash.affogato.core.ktx
+package com.parsuomash.affogato.core.ktx.math
 
 import com.google.common.truth.Truth.assertThat
 import java.math.BigDecimal

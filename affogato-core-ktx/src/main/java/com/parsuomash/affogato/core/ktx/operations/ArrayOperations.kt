@@ -1,6 +1,6 @@
 @file:Suppress("TooManyFunctions", "ArrayPrimitive")
 
-package com.parsuomash.affogato.core.ktx.collections
+package com.parsuomash.affogato.core.ktx.operations
 
 // TODO v3.2.0 add operators for IntArray , FloatArray , DoubleArray and LongArray.
 

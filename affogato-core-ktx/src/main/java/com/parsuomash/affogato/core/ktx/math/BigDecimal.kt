@@ -1,4 +1,4 @@
-package com.parsuomash.affogato.core.ktx
+package com.parsuomash.affogato.core.ktx.math
 
 import java.math.BigDecimal
 import java.math.BigInteger

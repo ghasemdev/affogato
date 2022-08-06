@@ -1,6 +1,6 @@
 package com.parsuomash.affogato.core.ktx.math
 
-import com.parsuomash.affogato.core.ktx.times
+import com.parsuomash.affogato.core.ktx.operations.times
 import java.text.DecimalFormat
 import kotlin.math.PI
 import kotlin.math.log

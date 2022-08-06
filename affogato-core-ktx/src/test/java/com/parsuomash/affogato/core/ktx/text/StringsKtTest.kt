@@ -1,4 +1,4 @@
-package com.parsuomash.affogato.core.ktx
+package com.parsuomash.affogato.core.ktx.text
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.DisplayName
@@ -207,15 +207,6 @@ internal class StringsKtTest {
       assertThat("Hello".getOrElse(0..4 step 2) { "Hi" }).isEqualTo("Hlo")
       assertThat("Hello".getOrElse(0..8 step 2) { "Hi" }).isEqualTo("Hi")
     }
-  }
-
-  @Test
-  @DisplayName("times string")
-  fun times() {
-    assertThat("Hello" * 3).isEqualTo("HelloHelloHello")
-    assertThat("Hello" * 0).isEqualTo("")
-    assertThat("Hello" * 1).isEqualTo("Hello")
-    assertThat("^" * 5).isEqualTo("^^^^^")
   }
 
   @Test

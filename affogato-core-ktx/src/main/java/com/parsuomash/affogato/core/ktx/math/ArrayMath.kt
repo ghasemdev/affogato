@@ -4,6 +4,17 @@ package com.parsuomash.affogato.core.ktx.math
 
 import com.parsuomash.affogato.core.ktx.collections.sortedByValueDescending
 import com.parsuomash.affogato.core.ktx.counter
+import kotlin.math.abs
+import kotlin.math.ceil
+import kotlin.math.exp
+import kotlin.math.floor
+import kotlin.math.ln
+import kotlin.math.log10
+import kotlin.math.log2
+import kotlin.math.round
+import kotlin.math.sign
+import kotlin.math.sqrt
+import kotlin.math.truncate
 
 // TODO v2.2.0 add trigonometric functions (sin, sinh, asin, asinh, cos, cosh,
 //  acos, acosh, tan, tanh, atan, atanh).
@@ -76,7 +87,7 @@ inline fun <reified T : Number> Array<T>.std(): Double {
   for (num in numbers) {
     standardDeviation += (num - mean) pow 2
   }
-  return kotlin.math.sqrt(standardDeviation / size)
+  return sqrt(standardDeviation / size)
 }
 
 /**
@@ -166,7 +177,7 @@ inline infix fun <reified T : Number> Array<T>.log(number: T): Array<Double> =
  * @see kotlin.math.ln
  */
 inline fun <reified T : Number> Array<T>.log10(): Array<Double> =
-  map { kotlin.math.log10(it.toDouble()) }.toTypedArray()
+  map { log10(it.toDouble()) }.toTypedArray()
 
 /**
  * Computes the binary logarithm (base 2) of the value [Array].
@@ -180,7 +191,7 @@ inline fun <reified T : Number> Array<T>.log10(): Array<Double> =
  * @see kotlin.math.ln
  */
 inline fun <reified T : Number> Array<T>.log2(): Array<Double> =
-  map { kotlin.math.log2(it.toDouble()) }.toTypedArray()
+  map { log2(it.toDouble()) }.toTypedArray()
 
 /**
  * Computes the natural logarithm (base E) of the value [Array].
@@ -193,7 +204,7 @@ inline fun <reified T : Number> Array<T>.log2(): Array<Double> =
  * @see kotlin.math.ln
  */
 inline fun <reified T : Number> Array<T>.ln(): Array<Double> =
-  map { kotlin.math.ln(it.toDouble()) }.toTypedArray()
+  map { ln(it.toDouble()) }.toTypedArray()
 
 /**
  * Rounds the given value [Array] towards the closest integer with ties
@@ -206,7 +217,7 @@ inline fun <reified T : Number> Array<T>.ln(): Array<Double> =
  * @since 1.1.0
  * @see kotlin.math.round
  */
-fun Array<Float>.round(): Array<Float> = map { kotlin.math.round(it) }.toTypedArray()
+fun Array<Float>.round(): Array<Float> = map { round(it) }.toTypedArray()
 
 /**
  * Rounds the given value [Array] towards the closest integer with ties
@@ -219,7 +230,7 @@ fun Array<Float>.round(): Array<Float> = map { kotlin.math.round(it) }.toTypedAr
  * @since 1.1.0
  * @see kotlin.math.round
  */
-fun Array<Double>.round(): Array<Double> = map { kotlin.math.round(it) }.toTypedArray()
+fun Array<Double>.round(): Array<Double> = map { round(it) }.toTypedArray()
 
 /**
  * Computes the positive square root of the value [Array].
@@ -232,7 +243,7 @@ fun Array<Double>.round(): Array<Double> = map { kotlin.math.round(it) }.toTyped
  * @see kotlin.math.sqrt
  */
 inline fun <reified T : Number> Array<T>.sqrt(): Array<Double> =
-  map { kotlin.math.sqrt(it.toDouble()) }.toTypedArray()
+  map { sqrt(it.toDouble()) }.toTypedArray()
 
 /**
  * Returns the absolute value of the given value [Array].
@@ -245,7 +256,7 @@ inline fun <reified T : Number> Array<T>.sqrt(): Array<Double> =
  * @see kotlin.math.abs
  */
 @JvmName("absInt")
-fun Array<Int>.abs(): Array<Int> = map { kotlin.math.abs(it) }.toTypedArray()
+fun Array<Int>.abs(): Array<Int> = map { abs(it) }.toTypedArray()
 
 /**
  * Returns the absolute value of the given value [Array].
@@ -258,7 +269,7 @@ fun Array<Int>.abs(): Array<Int> = map { kotlin.math.abs(it) }.toTypedArray()
  * @see kotlin.math.abs
  */
 @JvmName("absFloat")
-fun Array<Float>.abs(): Array<Float> = map { kotlin.math.abs(it) }.toTypedArray()
+fun Array<Float>.abs(): Array<Float> = map { abs(it) }.toTypedArray()
 
 /**
  * Returns the absolute value of the given value [Array].
@@ -271,7 +282,7 @@ fun Array<Float>.abs(): Array<Float> = map { kotlin.math.abs(it) }.toTypedArray(
  * @see kotlin.math.abs
  */
 @JvmName("absDouble")
-fun Array<Double>.abs(): Array<Double> = map { kotlin.math.abs(it) }.toTypedArray()
+fun Array<Double>.abs(): Array<Double> = map { abs(it) }.toTypedArray()
 
 /**
  * Returns the absolute value of the given value [Array].
@@ -284,7 +295,7 @@ fun Array<Double>.abs(): Array<Double> = map { kotlin.math.abs(it) }.toTypedArra
  * @see kotlin.math.abs
  */
 @JvmName("absLong")
-fun Array<Long>.abs(): Array<Long> = map { kotlin.math.abs(it) }.toTypedArray()
+fun Array<Long>.abs(): Array<Long> = map { abs(it) }.toTypedArray()
 
 /**
  * Rounds the given value [Array] to an integer towards positive infinity.
@@ -297,7 +308,7 @@ fun Array<Long>.abs(): Array<Long> = map { kotlin.math.abs(it) }.toTypedArray()
  * @see kotlin.math.ceil
  */
 inline fun <reified T : Number> Array<T>.ceil(): Array<Double> =
-  map { kotlin.math.ceil(it.toDouble()) }.toTypedArray()
+  map { ceil(it.toDouble()) }.toTypedArray()
 
 /**
  * Rounds the given value [Array] to an integer towards negative infinity.
@@ -310,7 +321,7 @@ inline fun <reified T : Number> Array<T>.ceil(): Array<Double> =
  * @see kotlin.math.floor
  */
 inline fun <reified T : Number> Array<T>.floor(): Array<Double> =
-  map { kotlin.math.floor(it.toDouble()) }.toTypedArray()
+  map { floor(it.toDouble()) }.toTypedArray()
 
 /**
  * Returns the sign of the given value [Array]:
@@ -326,7 +337,7 @@ inline fun <reified T : Number> Array<T>.floor(): Array<Double> =
  * @see kotlin.math.sign
  */
 inline fun <reified T : Number> Array<T>.sign(): Array<Double> =
-  map { kotlin.math.sign(it.toDouble()) }.toTypedArray()
+  map { sign(it.toDouble()) }.toTypedArray()
 
 /**
  * Computes Euler's number e raised to the power of the value [Array].
@@ -340,7 +351,7 @@ inline fun <reified T : Number> Array<T>.sign(): Array<Double> =
  * @see kotlin.math.exp
  */
 inline fun <reified T : Number> Array<T>.exp(): Array<Double> =
-  map { kotlin.math.exp(it.toDouble()) }.toTypedArray()
+  map { exp(it.toDouble()) }.toTypedArray()
 
 /**
  * Rounds the given value [Array] to an integer towards zero.
@@ -353,4 +364,4 @@ inline fun <reified T : Number> Array<T>.exp(): Array<Double> =
  * @see kotlin.math.truncate
  */
 inline fun <reified T : Number> Array<T>.truncate(): Array<Double> =
-  map { kotlin.math.truncate(it.toDouble()) }.toTypedArray()
+  map { truncate(it.toDouble()) }.toTypedArray()
