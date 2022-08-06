@@ -27,4 +27,3 @@ internal class ColorKtTest {
     assertThat("#FFFFFF".hexToRgb).isEqualTo(white)
   }
 }
-
