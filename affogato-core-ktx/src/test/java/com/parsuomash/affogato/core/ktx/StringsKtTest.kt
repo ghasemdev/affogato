@@ -94,6 +94,40 @@ internal class StringsKtTest {
   }
 
   @Test
+  fun `is null`() {
+    assertThat("null".isNull()).isTrue()
+    assertThat(null.isNull()).isTrue()
+    assertThat(" ".isNull()).isFalse()
+  }
+
+  @Test
+  fun `is not null`() {
+    assertThat("null".isNotNull()).isFalse()
+    assertThat(null.isNotNull()).isFalse()
+    assertThat(" ".isNotNull()).isTrue()
+  }
+
+  @Test
+  fun `is not null or blank`() {
+    assertThat(" ".isNotNullOrBlank()).isFalse()
+    assertThat("null".isNotNullOrBlank()).isFalse()
+    assertThat(null.isNotNullOrBlank()).isFalse()
+    assertThat("\n".isNotNullOrBlank()).isFalse()
+    assertThat("\r".isNotNullOrBlank()).isFalse()
+    assertThat("hi".isNotNullOrBlank()).isTrue()
+  }
+
+  @Test
+  fun `is not null or empty`() {
+    assertThat("null".isNotNullOrEmpty()).isFalse()
+    assertThat(null.isNotNullOrEmpty()).isFalse()
+    assertThat(" ".isNotNullOrEmpty()).isTrue()
+    assertThat("\n".isNotNullOrEmpty()).isTrue()
+    assertThat("\r".isNotNullOrEmpty()).isTrue()
+    assertThat("hi".isNotNullOrEmpty()).isTrue()
+  }
+
+  @Test
   fun `url encoding`() {
     val originalUrl = "https://www.google.co.nz/?gfe_rd=cr&ei=dzbFV&gws_rd=ssl#q=java"
     val encodingUrl = originalUrl.urlEncode
@@ -182,6 +216,15 @@ internal class StringsKtTest {
     assertThat("Hello" * 0).isEqualTo("")
     assertThat("Hello" * 1).isEqualTo("Hello")
     assertThat("^" * 5).isEqualTo("^^^^^")
+  }
+
+  @Test
+  @DisplayName("hex to rgb")
+  fun hexToRgb() {
+    val black = Triple(0.toUByte(), 0.toUByte(), 0.toUByte())
+    assertThat("#000000".hexToRgb()).isEqualTo(black)
+    val white = Triple(255.toUByte(), 255.toUByte(), 255.toUByte())
+    assertThat("#FFFFFF".hexToRgb()).isEqualTo(white)
   }
 
   @Test

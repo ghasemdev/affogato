@@ -1,6 +1,7 @@
 package com.parsuomash.affogato.core.ktx
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
 internal class PrimitivesKtTest {
@@ -32,5 +33,18 @@ internal class PrimitivesKtTest {
 
     val double = 5.0
     assertThat(double.orZero()).isEqualTo(5.0)
+  }
+
+  @Test
+  @DisplayName("rgb color to hex color")
+  fun rgbToHex() {
+    val black = "#000000".hexToRgb()!!
+    val white = "#FFFFFF".hexToRgb()!!
+
+    assertThat(black.rgbToHex()).isEqualTo("#000000")
+    assertThat(white.rgbToHex()).isEqualTo("#FFFFFF")
+
+    assertThat(0.rgbToHex()).isEqualTo("#000000")
+    assertThat(255.rgbToHex()).isEqualTo("#0000FF")
   }
 }

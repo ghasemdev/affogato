@@ -95,21 +95,21 @@ internal class StandardKtTest {
     @Test
     @DisplayName("value is null")
     fun isNull() {
-      val text: String? = null
-      assertThat(text.isNull()).isTrue()
+      val num: Int? = null
+      assertThat(num.isNull()).isTrue()
 
-      val text2 = "hi"
-      assertThat(text2.isNull()).isFalse()
+      val num2 = 1
+      assertThat(num2.isNull()).isFalse()
     }
 
     @Test
     @DisplayName("value is not null")
     fun isNotNull() {
-      val text: String? = null
-      assertThat(text.isNotNull()).isFalse()
+      val num: Int? = null
+      assertThat(num.isNotNull()).isFalse()
 
-      val text2 = "hi"
-      assertThat(text2.isNotNull()).isTrue()
+      val num2 = 1
+      assertThat(num2.isNotNull()).isTrue()
     }
   }
 

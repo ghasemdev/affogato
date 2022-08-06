@@ -1,5 +1,6 @@
 package com.parsuomash.affogato.core.ktx
 
+import java.awt.Color
 import java.net.URLDecoder
 import java.net.URLEncoder
 import java.util.*
@@ -202,6 +203,68 @@ inline val String.lastPathComponent: String
   }
 
 /**
+ * Checking nullability.
+ *
+ * Example:
+ * ```Kotlin
+ * val text: String? = null
+ * text.isNull() // true
+ *
+ * val text2 = "null"
+ * text2.isNull() // true
+ *
+ * val text3 = "hi"
+ * text3.isNull() // false
+ * ```
+ * @since 1.1.0
+ * @return [Boolean]
+ */
+fun String?.isNull(): Boolean = this == null || equals("null", true)
+
+/**
+ * Checking nullability.
+ *
+ * Example:
+ * ```Kotlin
+ * val text: String? = null
+ * text.isNotNull() // false
+ *
+ * val text2 = "null"
+ * text2.isNotNull() // false
+ *
+ * val text3 = "hi"
+ * text3.isNotNull() // true
+ * ```
+ * @since 1.1.0
+ * @return [Boolean]
+ */
+fun String?.isNotNull(): Boolean = this != null && !equals("null", true)
+
+/**
+ * Return true if string not null and not blank.
+ *
+ * Example:
+ * ```Kotlin
+ * ```
+ * @since 1.1.0
+ * @see isNotBlank
+ * @see isNotNull
+ */
+fun String?.isNotNullOrBlank(): Boolean = isNotNull() && this!!.isNotBlank()
+
+/**
+ * Return true if string not null and not empty.
+ *
+ * Example:
+ * ```Kotlin
+ * ```
+ * @since 1.1.0
+ * @see isNotBlank
+ * @see isNotNull
+ */
+fun String?.isNotNullOrEmpty(): Boolean = isNotNull() && this!!.isNotEmpty()
+
+/**
  * Returns a string containing this char sequence repeated [n] times.
  *
  * Example:
@@ -390,6 +453,26 @@ fun String.getOrNull(indices: IntProgression): String? = tryCatchNull { get(indi
  */
 inline fun String.getOrElse(indices: IntProgression, defaultValue: () -> String): String =
   tryCatchElse({ defaultValue() }) { get(indices) }
+
+/**
+ * Convert [String] HEX color to RGB color.
+ *
+ * Example:
+ * ```Kotlin
+ * "#000000".hexToRgb() // (0, 0, 0)
+ * "#FFFFFF".hexToRgb() // (255, 255 255)
+ * ```
+ * @since 1.1.0
+ * @return [Triple] of red, green and blue values.
+ */
+fun String.hexToRgb(): Triple<UByte, UByte, UByte>? = tryCatchNull {
+  var name = this
+  if (!name.startsWith("#")) {
+    name = "#$this"
+  }
+  val color = Color.decode(name)
+  Triple(color.red.toUByte(), color.green.toUByte(), color.blue.toUByte())
+}
 
 /**
  * Checks that the length of a string is valid for block execution

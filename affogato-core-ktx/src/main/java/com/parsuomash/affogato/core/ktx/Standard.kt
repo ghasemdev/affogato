@@ -185,11 +185,11 @@ fun <T> T?.orDefault(default: T): T = this ?: default
  *
  * Example:
  * ```Kotlin
- * val text: String? = null
- * text.isNull() // true
+ * val num: Int? = null
+ * num.isNull() // true
  *
- * val text2 = "hi"
- * text2.isNull() // false
+ * val num2 = 1
+ * num2.isNull() // false
  * ```
  * @since 1.1.0
  * @return [Boolean]
@@ -201,11 +201,11 @@ fun <T> T?.isNull(): Boolean = this == null
  *
  * Example:
  * ```Kotlin
- * val text: String? = null
- * text.isNotNull() // false
+ * val num: Int? = null
+ * num.isNotNull() // false
  *
- * val text2 = "hi"
- * text2.isNotNull() // true
+ * val num2 = 1
+ * num2.isNotNull() // true
  * ```
  * @since 1.1.0
  * @return [Boolean]
