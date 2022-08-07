@@ -1284,4 +1284,36 @@ internal class ArrayKtTest {
       }
     }
   }
+
+  @Nested
+  @DisplayName("Converter")
+  inner class Converter {
+    @Test
+    @DisplayName("as Hex")
+    fun asHex() {
+      assertThat(byteArrayOf(0, 15, 16, 255.toByte(), 1, 5, 10, 9, 11).asHex)
+        .isEqualTo("00 0F 10 FF 01 05 0A 09 0B")
+    }
+
+    @Test
+    @DisplayName("as Reversed Hex")
+    fun asReversedHex() {
+      assertThat(byteArrayOf(0, 15, 16, 255.toByte(), 1, 5, 10, 9, 11).asReversedHex)
+        .isEqualTo("0B 09 0A 05 01 FF 10 0F 00")
+    }
+
+    @Test
+    @DisplayName("as Decimal")
+    fun asDecimal() {
+      assertThat(byteArrayOf(0, 15, 16, 255.toByte(), 1, 5, 10, 9, 11).asDecimal)
+        .isEqualTo("015162551510911")
+    }
+
+    @Test
+    @DisplayName("as Reversed Decimal")
+    fun asReversedDecimal() {
+      assertThat(byteArrayOf(0, 15, 16, 255.toByte(), 1, 5, 10, 9, 11).asReversedDecimal)
+        .isEqualTo("119105125516150")
+    }
+  }
 }
