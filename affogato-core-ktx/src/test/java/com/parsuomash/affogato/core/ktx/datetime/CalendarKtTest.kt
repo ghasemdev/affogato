@@ -148,7 +148,7 @@ internal class CalendarKtTest {
           calendar.year,
           calendar.month + 1,
           calendar.dayOfMonth,
-          calendar.hour,
+          calendar.hourOfDay,
           calendar.minute,
           calendar.second
         )
