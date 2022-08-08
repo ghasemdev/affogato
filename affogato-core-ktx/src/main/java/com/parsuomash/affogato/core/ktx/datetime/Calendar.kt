@@ -8,6 +8,7 @@ import java.util.*
 import kotlin.time.Duration
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.LocalTime
 
 /** @since 1.1.0 */
 inline val Calendar.year: Int get() = get(Calendar.YEAR)
@@ -73,6 +74,12 @@ inline val Calendar.asDate: Date get() = time
  * @since 1.1.0
  */
 inline val Calendar.asLocalDate: LocalDate get() = LocalDate(year, month + 1, dayOfMonth)
+
+/**
+ * Convert [Calendar] to [LocalTime].
+ * @since 1.1.0
+ */
+inline val Calendar.asLocalTime: LocalTime get() = LocalTime(hourOfDay, minute, second)
 
 /**
  * Convert [Calendar] to [LocalDateTime].

@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.LocalTime
 
 /**
  * Convert [Long] to [LocalDateTime].
@@ -36,6 +37,12 @@ inline val LocalDateTime.asDate: Date get() = asCalendar.time
 inline val LocalDateTime.asLocalDate: LocalDate get() = date
 
 /**
+ * Convert [LocalDateTime] to [LocalTime].
+ * @since 1.1.0
+ */
+inline val LocalDateTime.asLocalTime: LocalTime get() = time
+
+/**
  * Convert [LocalDateTime] to [Calendar].
  * @since 1.1.0
  */
@@ -49,6 +56,7 @@ inline val LocalDateTime.asCalendar: Calendar
       this@asCalendar.minute,
       this@asCalendar.second
     )
+    set(Calendar.MILLISECOND, 0)
   }
 
 /**

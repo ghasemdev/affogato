@@ -35,6 +35,7 @@ inline val Long.asLocalDate: LocalDate
 inline val LocalDate.asDate: Date
   get() = Calendar.getInstance().apply {
     set(this@asDate.year, this@asDate.monthNumber - 1, this@asDate.dayOfMonth, 0, 0, 0)
+    set(Calendar.MILLISECOND, 0)
   }.time
 
 /**
@@ -51,6 +52,7 @@ inline val LocalDate.asLocalDateTime: LocalDateTime
 inline val LocalDate.asCalendar: Calendar
   get() = Calendar.getInstance().apply {
     set(this@asCalendar.year, this@asCalendar.monthNumber - 1, this@asCalendar.dayOfMonth, 0, 0, 0)
+    set(Calendar.MILLISECOND, 0)
   }
 
 /**

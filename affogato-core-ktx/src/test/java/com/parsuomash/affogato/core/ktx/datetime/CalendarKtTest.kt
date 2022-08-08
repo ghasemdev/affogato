@@ -5,6 +5,7 @@ import java.util.*
 import kotlin.time.Duration.Companion.days
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.LocalTime
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
@@ -130,6 +131,13 @@ internal class CalendarKtTest {
     fun calendarAsLocalDate() {
       assertThat(calendar.asLocalDate)
         .isEqualTo(LocalDate(calendar.year, calendar.month + 1, calendar.dayOfMonth))
+    }
+
+    @Test
+    @DisplayName("Calendar as LocalTime")
+    fun calendarAsLocalTime() {
+      assertThat(calendar.asLocalTime)
+        .isEqualTo(LocalTime(calendar.hourOfDay, calendar.minute, calendar.second))
     }
 
     @Test

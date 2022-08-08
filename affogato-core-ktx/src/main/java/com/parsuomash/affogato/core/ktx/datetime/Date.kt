@@ -6,6 +6,7 @@ import java.util.*
 import kotlin.time.Duration
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.LocalTime
 
 /**
  * Convert [Long] to [Date].
@@ -37,6 +38,16 @@ inline val Date.asLocalDate: LocalDate
   get() {
     val calendar = Calendar.getInstance().apply { time = this@asLocalDate }
     return LocalDate(calendar.year, calendar.month + 1, calendar.dayOfMonth)
+  }
+
+/**
+ * Convert [Date] to [LocalTime].
+ * @since 1.1.0
+ */
+inline val Date.asLocalTime: LocalTime
+  get() {
+    val calendar = Calendar.getInstance().apply { time = this@asLocalTime }
+    return LocalTime(calendar.hourOfDay, calendar.minute, calendar.second)
   }
 
 /**

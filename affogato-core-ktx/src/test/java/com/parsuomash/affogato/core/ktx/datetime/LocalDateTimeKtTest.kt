@@ -7,6 +7,7 @@ import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.minutes
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.LocalTime
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
@@ -30,7 +31,10 @@ internal class LocalDateTimeKtTest {
     @DisplayName("LocalDateTime as Date")
     fun localDateTimeAsDate() {
       val date = LocalDateTime(2020, 1, 2, 3, 4, 5)
-      val calendar = Calendar.getInstance().apply { set(2020, 0, 2, 3, 4, 5) }
+      val calendar = Calendar.getInstance().apply {
+        set(2020, 0, 2, 3, 4, 5)
+        set(Calendar.MILLISECOND, 0)
+      }
       assertThat(date.asDate).isEqualTo(calendar.time)
     }
 
@@ -43,10 +47,21 @@ internal class LocalDateTimeKtTest {
     }
 
     @Test
+    @DisplayName("LocalDateTime as LocalTime")
+    fun localDateTimeAsLocalTime() {
+      val date = LocalDateTime(2020, 1, 2, 8, 0, 0)
+      val local = LocalTime(8, 0, 0)
+      assertThat(date.asLocalTime).isEqualTo(local)
+    }
+
+    @Test
     @DisplayName("LocalDateTime as Calendar")
     fun localDateTimeAsCalendar() {
       val date = LocalDateTime(2020, 1, 2, 0, 10, 0)
-      val calendar = Calendar.getInstance().apply { set(2020, 0, 2, 0, 10, 0) }
+      val calendar = Calendar.getInstance().apply {
+        set(2020, 0, 2, 0, 10, 0)
+        set(Calendar.MILLISECOND, 0)
+      }
       assertThat(date.asCalendar).isEqualTo(calendar)
     }
 

@@ -33,7 +33,10 @@ internal class LocalDateKtTest {
     @DisplayName("localDate as Date")
     fun localDateAsDate() {
       val date = LocalDate(2020, 1, 2)
-      val calendar = Calendar.getInstance().apply { set(2020, 0, 2, 0, 0, 0) }
+      val calendar = Calendar.getInstance().apply {
+        set(2020, 0, 2, 0, 0, 0)
+        set(Calendar.MILLISECOND, 0)
+      }
       assertThat(date.asDate).isEqualTo(calendar.time)
     }
 
@@ -49,7 +52,10 @@ internal class LocalDateKtTest {
     @DisplayName("localDate as Calendar")
     fun localDateAsCalendar() {
       val date = LocalDate(2020, 1, 2)
-      val calendar = Calendar.getInstance().apply { set(2020, 0, 2, 0, 0, 0) }
+      val calendar = Calendar.getInstance().apply {
+        set(2020, 0, 2, 0, 0, 0)
+        set(Calendar.MILLISECOND, 0)
+      }
       assertThat(date.asCalendar).isEqualTo(calendar)
     }
 
