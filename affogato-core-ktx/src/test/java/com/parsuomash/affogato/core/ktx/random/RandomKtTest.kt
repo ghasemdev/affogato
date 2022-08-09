@@ -89,6 +89,8 @@ internal class RandomKtTest {
 
   @Test
   fun `choice or null map`() {
+    val map = mapOf(1 to 1, 2 to 2, 3 to 3, 4 to 4, 5 to 5)
+    assertThat(Random.choiceOrNull(map)!!.first, `in`(map.keys))
     assertThat(Random.choiceOrNull(mapOf<String, String>()), `is`(nullValue()))
     assertThat(mapOf<String, String>().randomOrNull(), `is`(nullValue()))
   }
@@ -102,8 +104,10 @@ internal class RandomKtTest {
     println("3 -> ${randomList.count { it == 3 }}")
     println("4 -> ${randomList.count { it == 4 }}")
     println("5 -> ${randomList.count { it == 5 }}")
-
     assertThat(randomList, everyItem(`is`(`in`((listOf(1, 2, 3, 4, 5))))))
+
+    val randomList2 = Random.choices(arrayOf(1, 2, 3, 4, 5))
+    assertThat(randomList2, everyItem(`is`(`in`((listOf(1, 2, 3, 4, 5))))))
   }
 
   @Test
@@ -115,8 +119,10 @@ internal class RandomKtTest {
     println("3 -> ${randomList.count { it == 3 }}")
     println("4 -> ${randomList.count { it == 4 }}")
     println("5 -> ${randomList.count { it == 5 }}")
-
     assertThat(randomList, everyItem(`is`(`in`((listOf(1, 2, 3, 4, 5))))))
+
+    val randomList2 = Random.choices(listOf(1, 2, 3, 4, 5))
+    assertThat(randomList2, everyItem(`is`(`in`((listOf(1, 2, 3, 4, 5))))))
   }
 
   @Test
@@ -128,8 +134,10 @@ internal class RandomKtTest {
     println("3 -> ${randomList.count { it == 3 }}")
     println("4 -> ${randomList.count { it == 4 }}")
     println("5 -> ${randomList.count { it == 5 }}")
-
     assertThat(randomList, everyItem(`is`(`in`((listOf(1, 2, 3, 4, 5))))))
+
+    val randomList2 = Random.choices(1, 2, 3, 4, 5)
+    assertThat(randomList2, everyItem(`is`(`in`((listOf(1, 2, 3, 4, 5))))))
   }
 
   @Test
@@ -140,8 +148,15 @@ internal class RandomKtTest {
       Random.choicesOrNull(listOf<Int>(), weights = listOf(9, 3, 4, 6, 5), length = 5)
     val randomList3 =
       Random.choicesOrNull(listOf(1, 2), weights = listOf(9, 3, 4), length = 5)
+    val randomList4 = Random.choicesOrNull(arrayOf<Int>())
+    val randomList5 = Random.choicesOrNull(listOf<Int>())
+    val randomList6 = Random.choicesOrNull(listOf(1, 2))
+
     assertThat(randomList, `is`(nullValue()))
     assertThat(randomList2, `is`(nullValue()))
     assertThat(randomList3, `is`(nullValue()))
+    assertThat(randomList4, `is`(nullValue()))
+    assertThat(randomList5, `is`(nullValue()))
+    assertThat(randomList6, everyItem(`is`(`in`((listOf(1, 2, 3, 4, 5))))))
   }
 }
