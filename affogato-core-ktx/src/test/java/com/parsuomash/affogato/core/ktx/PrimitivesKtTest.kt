@@ -33,4 +33,19 @@ internal class PrimitivesKtTest {
     val double = 5.0
     assertThat(double.orZero()).isEqualTo(5.0)
   }
+
+  @Test
+  fun `checking negativity`() {
+    assertThat(1.isNegative).isFalse()
+    assertThat((-1).isNegative).isTrue()
+
+    assertThat(1L.isNegative).isFalse()
+    assertThat((-1L).isNegative).isTrue()
+
+    assertThat(1F.isNegative).isFalse()
+    assertThat((-1F).isNegative).isTrue()
+
+    assertThat(1.0.isNegative).isFalse()
+    assertThat((-1.0).isNegative).isTrue()
+  }
 }
