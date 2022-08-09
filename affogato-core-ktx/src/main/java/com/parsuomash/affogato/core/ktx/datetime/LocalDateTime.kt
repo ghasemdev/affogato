@@ -3,9 +3,12 @@ package com.parsuomash.affogato.core.ktx.datetime
 import com.parsuomash.affogato.core.ktx.tryCatchNull
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlinx.datetime.Clock
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.LocalTime
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
 
 /**
  * Convert [Long] to [LocalDateTime].
@@ -58,6 +61,15 @@ inline val LocalDateTime.asCalendar: Calendar
     )
     set(Calendar.MILLISECOND, 0)
   }
+
+/**
+ * Get current [LocalDateTime].
+ * @since 1.1.0
+ * @see Clock
+ */
+fun LocalDateTime.Companion.now(
+  timeZone: TimeZone = TimeZone.currentSystemDefault()
+): LocalDateTime = Clock.System.now().toLocalDateTime(timeZone)
 
 /**
  * Two days are considered to be the same if they have the same day.

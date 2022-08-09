@@ -56,7 +56,7 @@ inline val LocalDate.asCalendar: Calendar
   }
 
 /**
- * Get current local date.
+ * Get current [LocalDate].
  * @since 1.1.0
  * @see Clock
  */
