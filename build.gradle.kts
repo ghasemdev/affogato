@@ -1,4 +1,6 @@
 import io.gitlab.arturbosch.detekt.Detekt
+import org.jetbrains.dokka.base.DokkaBase
+import org.jetbrains.dokka.base.DokkaBaseConfiguration
 
 plugins {
   id("com.android.application") version "7.2.2" apply false
@@ -69,7 +71,8 @@ koverMerged {
     classes { // common class filter for all default Kover merged tasks
       excludes += listOf(
         "com.parsuomash.affogato.app.*",
-        "com.parsuomash.affogato.unit.*"
+        "com.parsuomash.affogato.unit.*",
+        "com.parsuomash.affogato.core.ktx.time.messages.*"
       ) // class exclusion rules
     }
   }
@@ -111,7 +114,7 @@ tasks.dokkaHtmlMultiModule.configure {
   // Set module name displayed in the final output
   moduleName.set("Affogato")
   // Custom Style
-  pluginConfiguration<org.jetbrains.dokka.base.DokkaBase, org.jetbrains.dokka.base.DokkaBaseConfiguration> {
+  pluginConfiguration<DokkaBase, DokkaBaseConfiguration> {
     customAssets = listOf(file("$rootDir/config/dokka/logo-icon.svg"))
   }
 }
