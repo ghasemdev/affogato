@@ -11,7 +11,7 @@ java {
 
 dependencies {
   // KSP -------------------------------------------------------------------------------------------
-  implementation("com.google.devtools.ksp:symbol-processing-api:1.7.10-1.0.6")
+  implementation("com.google.devtools.ksp:symbol-processing-api:1.7.20-Beta-1.0.6")
   implementation("com.fleshgrinder.kotlin:case-format:0.2.0")
 
   // Test ------------------------------------------------------------------------------------------
@@ -25,7 +25,7 @@ afterEvaluate {
       create<MavenPublication>("java") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-unit-processor"
-        version = "1.1.0-alpha01"
+        version = "1.1.0-beta01"
 
         from(components["java"])
       }

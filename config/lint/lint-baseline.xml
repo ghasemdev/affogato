@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+  <!-- Ignore the ObsoleteLayoutParam issue in the specified files -->
+  <issue id="UnusedResources">
+    <ignore path="src/main/res/values/negative_sdps.xml" />
+    <ignore path="src/main/res/values/positive_sdps.xml" />
+    <ignore path="src/main/res/values/positive_ssps.xml" />
+  </issue>
+</lint>

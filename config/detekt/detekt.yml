@@ -133,7 +133,7 @@ complexity:
     ignoreAnnotatedParameter: [ ]
   MethodOverloading:
     active: true
-    threshold: 6
+    threshold: 8
   NamedArguments:
     active: true
     threshold: 3
@@ -165,10 +165,10 @@ complexity:
     excludes: [ '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**',
                 '**/jsTest/**', '**/iosTest/**' ]
     thresholdInFiles: 25
-    thresholdInClasses: 11
-    thresholdInInterfaces: 11
-    thresholdInObjects: 11
-    thresholdInEnums: 11
+    thresholdInClasses: 15
+    thresholdInInterfaces: 10
+    thresholdInObjects: 20
+    thresholdInEnums: 5
     ignoreDeprecated: false
     ignorePrivate: false
     ignoreOverridden: false

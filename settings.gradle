@@ -18,3 +18,4 @@ rootProject.name = "affogato"
 include ':sample'
 include ':affogato-unit'
 include ':affogato-unit-processor'
+include ':affogato-core-ktx'

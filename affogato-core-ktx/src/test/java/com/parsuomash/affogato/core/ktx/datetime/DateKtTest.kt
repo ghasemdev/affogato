@@ -1,0 +1,132 @@
+package com.parsuomash.affogato.core.ktx.datetime
+
+import com.google.common.truth.Truth.assertThat
+import java.text.ParseException
+import java.util.*
+import kotlin.time.Duration.Companion.days
+import kotlinx.datetime.LocalDate
+import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.LocalTime
+import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Nested
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
+
+internal class DateKtTest {
+  private val date = Date()
+  private val calendar = Calendar.getInstance()
+
+  @Nested
+  @DisplayName("Converter")
+  inner class Converter {
+    @Test
+    @DisplayName("Long as Date")
+    fun longAsDate() {
+      assertThat(1_659_873_010_453.asDate).isEqualTo(Date(1_659_873_010_453))
+      assertThat(date.time.asDate).isEqualTo(date)
+    }
+
+    @Test
+    @DisplayName("Duration as Date")
+    fun durationAsDate() {
+      assertThat(1.days.asDate).isEqualTo(1.days.inWholeMilliseconds.asDate.also(::println))
+    }
+
+    @Test
+    @DisplayName("Date as localDate")
+    fun dateAsLocalDate() {
+      val date = calendar.time
+      with(calendar) {
+        assertThat(date.asLocalDate).isEqualTo(LocalDate(year, month + 1, dayOfMonth))
+      }
+    }
+
+    @Test
+    @DisplayName("Date as LocalTime")
+    fun dateAsLocalTime() {
+      val date = calendar.time
+      with(calendar) {
+        assertThat(date.asLocalTime).isEqualTo(LocalTime(hourOfDay, minute, second))
+      }
+    }
+
+    @Test
+    @DisplayName("Date as localDateTime")
+    fun dateAsLocalDateTime() {
+      val date = calendar.time
+      with(calendar) {
+        assertThat(date.asLocalDateTime)
+          .isEqualTo(LocalDateTime(year, month + 1, dayOfMonth, hourOfDay, minute, second))
+      }
+    }
+
+    @Test
+    @DisplayName("Date as Calendar")
+    fun dateAsCalendar() {
+      assertThat(date.asCalendar).isInstanceOf(Calendar::class.java)
+      val calendar = Calendar.getInstance().apply { time = date }
+      assertThat(date.asCalendar).isEqualTo(calendar)
+    }
+
+    @Test
+    @DisplayName("String to Date")
+    fun stringToDate() {
+      assertThat("8/7/2022".toDate("MM/dd/yyyy"))
+        .isEqualTo(1_659_814_200_000.asDate.also(::println))
+      assertThat("Sun Aug 07 16:37:42 IRDT 2022".toDate())
+        .isEqualTo(1_659_874_062_000.asDate.also(::println))
+      assertThrows<ParseException> { "7/2022".toDate("MM/dd/yyyy") }
+    }
+
+    @Test
+    @DisplayName("String to Date or Null")
+    fun stringToDateOrNull() {
+      assertThat("8/7/2022".toDateOrNull("MM/dd/yyyy"))
+        .isEqualTo(1_659_814_200_000.asDate)
+      assertThat("Sun Aug 07 16:37:42 IRDT 2022".toDateOrNull())
+        .isEqualTo(1_659_874_062_000.asDate)
+      assertThat("7/2022".toDateOrNull("MM/dd/yyyy")).isNull()
+    }
+
+    @Test
+    @DisplayName("Date to String")
+    fun dateToString() {
+      assertThat(1_659_814_200_000.asDate.toString("MM/dd/yyyy")).isEqualTo("08/07/2022")
+      assertThat(1_659_874_062_000.asDate.toString("EEE MMM dd HH:mm:ss zzz yyyy"))
+        .isEqualTo("Sun Aug 07 16:37:42 IRDT 2022")
+    }
+  }
+
+  @Nested
+  @DisplayName("Operations")
+  inner class Operations {
+    @Test
+    fun plusDate() {
+      assertThat((date + date).time).isEqualTo(date.time * 2)
+      assertThat((date + 1.days).time).isEqualTo(date.time + 1.days.inWholeMilliseconds)
+    }
+
+    @Test
+    fun minusDate() {
+      assertThat((date - date).time).isEqualTo(0)
+      assertThat((date - 1.days).time).isEqualTo(date.time - 1.days.inWholeMilliseconds)
+    }
+
+    @Test
+    fun isSameDay() {
+      val date1 = Date()
+      val date2 = Date()
+      assertThat(date1 isSameDay date2).isTrue()
+    }
+  }
+
+  @Test
+  fun convertDate() {
+    val format = "yyyy-MM-dd HH:mm:ss"
+    val stringDate = date.toString(format)
+    val formatDate = stringDate.toDate(format)
+
+    assertThat(stringDate).isEqualTo(formatDate.toString(format))
+    assertThat(formatDate).isEqualTo(stringDate.toDate(format))
+  }
+}

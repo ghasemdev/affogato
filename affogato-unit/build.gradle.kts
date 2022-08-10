@@ -43,6 +43,9 @@ android {
   composeOptions {
     kotlinCompilerExtensionVersion = "1.2.0"
   }
+  lint {
+    baseline = file("$rootDir/config/lint/lint-baseline.xml")
+  }
 }
 
 dependencies {
@@ -66,7 +69,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-unit"
-        version = "1.1.0-alpha01"
+        version = "1.1.0-beta01"
 
         from(components["release"])
       }
