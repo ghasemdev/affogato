@@ -8,7 +8,10 @@ com.parsuomash.affogato.core.ktx.color
 com.parsuomash.affogato.core.ktx.datetime
 com.parsuomash.affogato.core.ktx.math
 com.parsuomash.affogato.core.ktx.operations
+com.parsuomash.affogato.core.ktx.random
 com.parsuomash.affogato.core.ktx.text
+com.parsuomash.affogato.core.ktx.time
+com.parsuomash.affogato.core.ktx.time.messages
 module:affogato-unit
 com.parsuomash.affogato.unit
 com.parsuomash.affogato.unit.window
