@@ -183,11 +183,31 @@ internal class CalendarKtTest {
     }
   }
 
-  @Test
-  @DisplayName("is same day")
-  fun isSameDay() {
-    val calendar = Calendar.getInstance().apply { time = Date() }
-    val calendar2 = Calendar.getInstance().apply { time = Date() }
-    assertThat(calendar isSameDay calendar2).isTrue()
+  @Nested
+  @DisplayName("Operator")
+  inner class Operator {
+    @Test
+    @DisplayName("is same day")
+    fun isSameDay() {
+      val calendar = Calendar.getInstance().apply { time = Date() }
+      val calendar2 = Calendar.getInstance().apply { time = Date() }
+      assertThat(calendar isSameDay calendar2).isTrue()
+    }
+
+    @Test
+    @DisplayName("plus")
+    fun plus() {
+      assertThat((calendar + calendar).timeInMillis).isEqualTo((calendar.timeInMillis * 2))
+      assertThat((calendar + 1.days).timeInMillis)
+        .isEqualTo((calendar.timeInMillis + 1.days.inWholeMilliseconds))
+    }
+
+    @Test
+    @DisplayName("minus")
+    fun minus() {
+      assertThat((calendar - calendar).timeInMillis).isEqualTo(0)
+      assertThat((calendar - 1.days).timeInMillis)
+        .isEqualTo((calendar.timeInMillis - 1.days.inWholeMilliseconds))
+    }
   }
 }

@@ -95,6 +95,32 @@ inline val Calendar.asLocalDateTime: LocalDateTime
 infix fun Calendar.isSameDay(date: Calendar): Boolean = dayOfYear == date.dayOfYear
 
 /**
+ * Adds the other value to this value.
+ * @since 1.1.0
+ */
+operator fun Calendar.plus(other: Calendar): Calendar = (time + other.time).asCalendar
+
+/**
+ * Subtracts the other value from this value.
+ * @since 1.1.0
+ */
+operator fun Calendar.minus(other: Calendar): Calendar = (time - other.time).asCalendar
+
+/**
+ * Adds the [Duration] value to this [Calendar].
+ * @since 1.1.0
+ */
+operator
+
+fun Calendar.plus(other: Duration): Calendar = this + other.asCalendar
+
+/**
+ * Subtracts the [Duration] value from this [Calendar].
+ * @since 1.1.0
+ */
+operator fun Calendar.minus(other: Duration): Calendar = this - other.asCalendar
+
+/**
  * Produce a Calendar from the given strings value and [pattern].
  * @since 1.1.0
  * @throws java.text.ParseException if the beginning of the specified string cannot be parsed.

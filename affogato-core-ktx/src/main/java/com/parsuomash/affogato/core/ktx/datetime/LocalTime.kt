@@ -3,7 +3,13 @@ package com.parsuomash.affogato.core.ktx.datetime
 import com.parsuomash.affogato.core.ktx.tryCatchNull
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.time.Duration
+import kotlinx.datetime.Clock
 import kotlinx.datetime.LocalTime
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toJavaLocalTime
+import kotlinx.datetime.toKotlinLocalTime
+import kotlinx.datetime.toLocalDateTime
 
 /**
  * Convert [Long] to [LocalTime].
@@ -39,6 +45,29 @@ inline val LocalTime.asCalendar: Calendar
     set(0, 0, 0, this@asCalendar.hour, this@asCalendar.minute, this@asCalendar.second)
     set(Calendar.MILLISECOND, 0)
   }
+
+/**
+ * Get current [LocalTime].
+ * @since 1.1.0
+ * @see Clock
+ */
+fun LocalTime.Companion.now(
+  timeZone: TimeZone = TimeZone.currentSystemDefault()
+): LocalTime = Clock.System.now().toLocalDateTime(timeZone).time
+
+/**
+ * Adds the other value to this value.
+ * @since 1.1.0
+ */
+operator fun LocalTime.plus(duration: Duration): LocalTime =
+  toJavaLocalTime().plusNanos(duration.inWholeNanoseconds).toKotlinLocalTime()
+
+/**
+ * Subtracts the other value from this value.
+ * @since 1.1.0
+ */
+operator fun LocalTime.minus(duration: Duration): LocalTime =
+  toJavaLocalTime().minusNanos(duration.inWholeNanoseconds).toKotlinLocalTime()
 
 /**
  * Produce a LocalTime from the given strings value and [pattern].

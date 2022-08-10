@@ -8,6 +8,7 @@ import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.LocalTime
 import kotlinx.datetime.TimeZone
 
 /**
@@ -70,6 +71,19 @@ fun nowInCalendar(): Calendar = nowInMilliseconds().asCalendar
  */
 fun nowInLocalDate(timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDate =
   LocalDate.now(timeZone)
+
+/**
+ * Get current [LocalTime].
+ *
+ * Example:
+ * ```Kotlin
+ * nowInLocalTime() // 22:35:13.316474400
+ * ```
+ * @since 1.1.0
+ * @see LocalTime.Companion.now
+ */
+fun nowInLocalTime(timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalTime =
+  LocalTime.now(timeZone)
 
 /**
  * Get current [LocalDateTime].

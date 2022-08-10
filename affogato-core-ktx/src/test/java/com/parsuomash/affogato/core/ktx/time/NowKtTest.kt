@@ -10,6 +10,7 @@ internal class NowKtTest {
     nowInDate()
     nowInCalendar()
     nowInLocalDate()
+    nowInLocalTime()
     nowInLocalDateTime()
   }
 }

@@ -1,9 +1,14 @@
 package com.parsuomash.affogato.core.ktx.datetime
 
 import com.google.common.truth.Truth.assertThat
+import com.parsuomash.affogato.core.ktx.time.nowInLocalTime
 import java.text.ParseException
 import java.util.*
+import kotlin.time.Duration.Companion.minutes
 import kotlinx.datetime.LocalTime
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toJavaLocalTime
+import kotlinx.datetime.toKotlinLocalTime
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
@@ -11,6 +16,7 @@ import org.junit.jupiter.api.assertThrows
 
 internal class LocalTimeKtTest {
   private val date = Date()
+  private val now = nowInLocalTime()
 
   @Nested
   @DisplayName("Converter")
@@ -69,5 +75,30 @@ internal class LocalTimeKtTest {
     fun localTimeToString() {
       assertThat(LocalTime(11, 10, 0).toString("HH")).isEqualTo("11")
     }
+  }
+
+  @Nested
+  @DisplayName("Operations")
+  inner class Operations {
+    @Test
+    fun plusLocalDate() {
+      assertThat(now + 1.minutes).isEqualTo(
+        now.toJavaLocalTime().plusNanos(1.minutes.inWholeNanoseconds).toKotlinLocalTime()
+      )
+    }
+
+    @Test
+    fun minusLocalDate() {
+      assertThat(now - 1.minutes).isEqualTo(
+        now.toJavaLocalTime().minusNanos(1.minutes.inWholeNanoseconds).toKotlinLocalTime()
+      )
+    }
+  }
+
+  @Test
+  @DisplayName("now")
+  fun now() {
+    LocalTime.now()
+    LocalTime.now(TimeZone.currentSystemDefault())
   }
 }

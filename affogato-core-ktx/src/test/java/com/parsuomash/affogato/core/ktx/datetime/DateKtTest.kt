@@ -103,11 +103,13 @@ internal class DateKtTest {
     @Test
     fun plusDate() {
       assertThat((date + date).time).isEqualTo(date.time * 2)
+      assertThat((date + 1.days).time).isEqualTo(date.time + 1.days.inWholeMilliseconds)
     }
 
     @Test
     fun minusDate() {
       assertThat((date - date).time).isEqualTo(0)
+      assertThat((date - 1.days).time).isEqualTo(date.time - 1.days.inWholeMilliseconds)
     }
 
     @Test

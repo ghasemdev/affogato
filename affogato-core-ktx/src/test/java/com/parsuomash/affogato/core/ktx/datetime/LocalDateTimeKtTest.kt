@@ -1,13 +1,16 @@
 package com.parsuomash.affogato.core.ktx.datetime
 
 import com.google.common.truth.Truth.assertThat
+import com.parsuomash.affogato.core.ktx.time.nowInLocalDateTime
 import java.text.ParseException
 import java.util.*
-import kotlin.time.Duration.Companion.hours
-import kotlin.time.Duration.Companion.minutes
+import kotlin.time.Duration.Companion.days
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.LocalTime
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toJavaLocalDateTime
+import kotlinx.datetime.toKotlinLocalDateTime
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
@@ -15,6 +18,7 @@ import org.junit.jupiter.api.assertThrows
 
 internal class LocalDateTimeKtTest {
   private val date = Date()
+  private val now = nowInLocalDateTime()
 
   @Nested
   @DisplayName("Converter")
@@ -70,7 +74,7 @@ internal class LocalDateTimeKtTest {
     fun stringToLocalDateTime() {
       assertThat("08/07/2022 13".toLocalDateTime("MM/dd/yyyy HH").also(::println))
         .isEqualTo(LocalDateTime(2022, 8, 7, 13, 0, 0))
-      assertThat("Sun Aug 07 16:37:42 IRDT 2022".toLocalDateTime().also(::println))
+      assertThat("Sun Aug 07 16:37:42 IRDT 2022".toLocalDateTime())
         .isEqualTo(LocalDateTime(2022, 8, 7, 16, 37, 42))
       assertThrows<ParseException> { "7/2022".toLocalDateTime("MM/dd/yyyy") }
     }
@@ -99,10 +103,31 @@ internal class LocalDateTimeKtTest {
   @DisplayName("Operations")
   inner class Operations {
     @Test
-    fun isSameDay() {
-      val date = Date() - 1.minutes
-      val date2 = Date() + 1.hours
-      assertThat(date.asLocalDateTime isSameDay date2.asLocalDateTime).isTrue()
+    fun plusLocalDate() {
+      assertThat(now + 1.days).isEqualTo(
+        now.toJavaLocalDateTime().plusNanos(1.days.inWholeNanoseconds).toKotlinLocalDateTime()
+      )
     }
+
+    @Test
+    fun minusLocalDate() {
+      assertThat(now - 1.days).isEqualTo(
+        now.toJavaLocalDateTime().minusNanos(1.days.inWholeNanoseconds).toKotlinLocalDateTime()
+      )
+    }
+
+    @Test
+    fun isSameDay() {
+      val date = LocalDateTime(2020, 1, 2, 8, 0, 0)
+      val date2 = LocalDateTime(2020, 1, 2, 7, 0, 0)
+      assertThat(date isSameDay date2).isTrue()
+    }
+  }
+
+  @Test
+  @DisplayName("now")
+  fun now() {
+    LocalDateTime.now()
+    LocalDateTime.now(TimeZone.currentSystemDefault())
   }
 }

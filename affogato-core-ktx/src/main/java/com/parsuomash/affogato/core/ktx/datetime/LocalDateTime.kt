@@ -3,11 +3,14 @@ package com.parsuomash.affogato.core.ktx.datetime
 import com.parsuomash.affogato.core.ktx.tryCatchNull
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.time.Duration
 import kotlinx.datetime.Clock
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.LocalTime
 import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toJavaLocalDateTime
+import kotlinx.datetime.toKotlinLocalDateTime
 import kotlinx.datetime.toLocalDateTime
 
 /**
@@ -76,6 +79,20 @@ fun LocalDateTime.Companion.now(
  * @since 1.1.0
  */
 infix fun LocalDateTime.isSameDay(date: LocalDateTime): Boolean = dayOfYear == date.dayOfYear
+
+/**
+ * Adds the other value to this value.
+ * @since 1.1.0
+ */
+operator fun LocalDateTime.plus(duration: Duration): LocalDateTime =
+  toJavaLocalDateTime().plusNanos(duration.inWholeNanoseconds).toKotlinLocalDateTime()
+
+/**
+ * Subtracts the other value from this value.
+ * @since 1.1.0
+ */
+operator fun LocalDateTime.minus(duration: Duration): LocalDateTime =
+  toJavaLocalDateTime().minusNanos(duration.inWholeNanoseconds).toKotlinLocalDateTime()
 
 /**
  * Produce a LocalDateTime from the given strings value and [pattern].
