@@ -9,8 +9,6 @@ import androidx.compose.ui.unit.dp
 
 /**
  * Create a Scalable [Dp] using an [Int]:
-
- * [Resource](https://github.com/ghasemdev/affogato/wiki/Unit-Size#to-use-the-default-units-just-use-the-extension-values-sdp-or-ssp)
  *
  * Example:
  * ```Kotlin

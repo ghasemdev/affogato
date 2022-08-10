@@ -1,3 +1,5 @@
+@file:Suppress("MemberVisibilityCanBePrivate")
+
 package com.parsuomash.affogato.unit.window
 
 import androidx.compose.runtime.Composable

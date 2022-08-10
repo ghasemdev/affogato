@@ -1,0 +1,279 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>GlobalWindowSize</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>Affogato</span>            </a>    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageids="affogato-unit::com.parsuomash.affogato.unit.window/GlobalWindowSize///PointingToDeclaration//1203341655">
+  <div class="breadcrumbs"><a href="../../index.html">affogato-unit</a><span class="delimiter">/</span><a href="../index.html">com.parsuomash.affogato.unit.window</a><span class="delimiter">/</span><a href="index.html">GlobalWindowSize</a></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Global</span><wbr><span>Window</span><wbr><span><span>Size</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-unit:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">class </span><a href="index.html">GlobalWindowSize</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Definition of the window size to be on the global scope.</p><p class="paragraph">Example:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">GlobalWindowSize.compactWidth = 480<br>GlobalWindowSize.Factory.fromWidth { screenWidth -&gt;<br>  screenWidth &lt; 0 -&gt; throw IllegalArgumentException("value cannot be negative")<br>  screenWidth &lt; 500 -&gt; WindowType.Compact(width)<br>  screenWidth &lt; 700 -&gt; WindowType.Medium(width)<br>  else -&gt; WindowType.Expanded(width)<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h4 class="">Since</h4><p class="paragraph">1.0.0</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button><button class="section-tab" data-togglable="See also">See also</button></div>
+    <div class="tabs-section-body">
+      <h2 class="">See also</h2>
+      <div data-togglable="See also">
+        <div class="platform-hinted WithExtraAttributes" data-platform-hinted="data-platform-hinted" data-togglable="See also"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-unit:dokkaHtmlPartial/release"><div data-togglable="See also"><div class="table" data-togglable="See also"><div class="table-row" data-filterable-current=":affogato-unit:dokkaHtmlPartial/release" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><a href="../../../affogato-unit/com.parsuomash.affogato.unit.window/index.html"><span>remember</span><wbr><span>Window</span><wbr><span><span>Size</span></span></a></div></span></div><div><div class="title"><div data-togglable="See also"></div></div></div></div></div></div></div></div></div>
+      </div>
+      <h2 class="">Types</h2>
+      <div class="table" data-togglable="Types"><a data-name="-1925796211%2FClasslikes%2F1203341655" anchor-label="Factory" id="-1925796211%2FClasslikes%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a>
+        <div class="table-row" data-filterable-current=":affogato-unit:dokkaHtmlPartial/release" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="-factory/index.html"><span><span>Factory</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1925796211%2FClasslikes%2F1203341655"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-unit:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">class </span><a href="-factory/index.html">Factory</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">A global factory class of the <a href="../-window-type/index.html">WindowType</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="57554338%2FFunctions%2F1203341655" anchor-label="getCompactHeight" id="57554338%2FFunctions%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a>
+        <div class="table-row" data-filterable-current=":affogato-unit:dokkaHtmlPartial/release" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-compact-height.html"><span>get</span><wbr><span>Compact</span><wbr><span><span>Height</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="57554338%2FFunctions%2F1203341655"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-unit:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="get-compact-height.html"><span class="token function">getCompactHeight</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Defines most phones in portrait mode</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1066913269%2FFunctions%2F1203341655" anchor-label="getCompactWidth" id="-1066913269%2FFunctions%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a>
+        <div class="table-row" data-filterable-current=":affogato-unit:dokkaHtmlPartial/release" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-compact-width.html"><span>get</span><wbr><span>Compact</span><wbr><span><span>Width</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1066913269%2FFunctions%2F1203341655"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-unit:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="get-compact-width.html"><span class="token function">getCompactWidth</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Defines most phones in portrait mode</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-2113699950%2FFunctions%2F1203341655" anchor-label="getMediumHeight" id="-2113699950%2FFunctions%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a>
+        <div class="table-row" data-filterable-current=":affogato-unit:dokkaHtmlPartial/release" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-medium-height.html"><span>get</span><wbr><span>Medium</span><wbr><span><span>Height</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2113699950%2FFunctions%2F1203341655"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-unit:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="get-medium-height.html"><span class="token function">getMediumHeight</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Defines most foldables and tablets in portrait mode</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-167122405%2FFunctions%2F1203341655" anchor-label="getMediumWidth" id="-167122405%2FFunctions%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a>
+        <div class="table-row" data-filterable-current=":affogato-unit:dokkaHtmlPartial/release" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-medium-width.html"><span>get</span><wbr><span>Medium</span><wbr><span><span>Width</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-167122405%2FFunctions%2F1203341655"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-unit:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="get-medium-width.html"><span class="token function">getMediumWidth</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Defines most foldables and tablets in portrait mode</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1923845684%2FFunctions%2F1203341655" anchor-label="setCompactHeight" id="-1923845684%2FFunctions%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a>
+        <div class="table-row" data-filterable-current=":affogato-unit:dokkaHtmlPartial/release" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="set-compact-height.html"><span>set</span><wbr><span>Compact</span><wbr><span><span>Height</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1923845684%2FFunctions%2F1203341655"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-unit:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>&nbsp;<a href="set-compact-height.html"><span class="token function">setCompactHeight</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;compactHeight</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Defines most phones in portrait mode</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-2109791395%2FFunctions%2F1203341655" anchor-label="setCompactWidth" id="-2109791395%2FFunctions%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a>
+        <div class="table-row" data-filterable-current=":affogato-unit:dokkaHtmlPartial/release" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="set-compact-width.html"><span>set</span><wbr><span>Compact</span><wbr><span><span>Width</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2109791395%2FFunctions%2F1203341655"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-unit:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>&nbsp;<a href="set-compact-width.html"><span class="token function">setCompactWidth</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;compactWidth</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Defines most phones in portrait mode</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1938263004%2FFunctions%2F1203341655" anchor-label="setMediumHeight" id="-1938263004%2FFunctions%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a>
+        <div class="table-row" data-filterable-current=":affogato-unit:dokkaHtmlPartial/release" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="set-medium-height.html"><span>set</span><wbr><span>Medium</span><wbr><span><span>Height</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1938263004%2FFunctions%2F1203341655"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-unit:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>&nbsp;<a href="set-medium-height.html"><span class="token function">setMediumHeight</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;mediumHeight</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Defines most foldables and tablets in portrait mode</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="937784837%2FFunctions%2F1203341655" anchor-label="setMediumWidth" id="937784837%2FFunctions%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a>
+        <div class="table-row" data-filterable-current=":affogato-unit:dokkaHtmlPartial/release" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="set-medium-width.html"><span>set</span><wbr><span>Medium</span><wbr><span><span>Width</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="937784837%2FFunctions%2F1203341655"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-unit:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>&nbsp;<a href="set-medium-width.html"><span class="token function">setMediumWidth</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;mediumWidth</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Defines most foldables and tablets in portrait mode</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Properties</h2>
+      <div class="table" data-togglable="Properties"><a data-name="-949226086%2FProperties%2F1203341655" anchor-label="compactHeight" id="-949226086%2FProperties%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a>
+        <div class="table-row" data-filterable-current=":affogato-unit:dokkaHtmlPartial/release" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#-949226086%2FProperties%2F1203341655"><span>compact</span><wbr><span><span>Height</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-949226086%2FProperties%2F1203341655"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-unit:dokkaHtmlPartial/release"><a data-name="-949226086%2FProperties%2F1203341655" anchor-label="compactHeight" id="-949226086%2FProperties%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#-949226086%2FProperties%2F1203341655">compactHeight</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-949226086%2FProperties%2F1203341655" anchor-label="compactHeight" id="-949226086%2FProperties%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a><p class="paragraph">Defines most phones in portrait mode</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1237937389%2FProperties%2F1203341655" anchor-label="compactWidth" id="-1237937389%2FProperties%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a>
+        <div class="table-row" data-filterable-current=":affogato-unit:dokkaHtmlPartial/release" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#-1237937389%2FProperties%2F1203341655"><span>compact</span><wbr><span><span>Width</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1237937389%2FProperties%2F1203341655"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-unit:dokkaHtmlPartial/release"><a data-name="-1237937389%2FProperties%2F1203341655" anchor-label="compactWidth" id="-1237937389%2FProperties%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#-1237937389%2FProperties%2F1203341655">compactWidth</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1237937389%2FProperties%2F1203341655" anchor-label="compactWidth" id="-1237937389%2FProperties%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a><p class="paragraph">Defines most phones in portrait mode</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-977248351%2FProperties%2F1203341655" anchor-label="INSTANCE" id="-977248351%2FProperties%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a>
+        <div class="table-row" data-filterable-current=":affogato-unit:dokkaHtmlPartial/release" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#-977248351%2FProperties%2F1203341655"><span><span>INSTANCE</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-977248351%2FProperties%2F1203341655"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-unit:dokkaHtmlPartial/release"><a data-name="-977248351%2FProperties%2F1203341655" anchor-label="INSTANCE" id="-977248351%2FProperties%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="index.html">GlobalWindowSize</a>&nbsp;<a href="index.html#-977248351%2FProperties%2F1203341655">INSTANCE</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="2010243226%2FProperties%2F1203341655" anchor-label="mediumHeight" id="2010243226%2FProperties%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a>
+        <div class="table-row" data-filterable-current=":affogato-unit:dokkaHtmlPartial/release" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#2010243226%2FProperties%2F1203341655"><span>medium</span><wbr><span><span>Height</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2010243226%2FProperties%2F1203341655"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-unit:dokkaHtmlPartial/release"><a data-name="2010243226%2FProperties%2F1203341655" anchor-label="mediumHeight" id="2010243226%2FProperties%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#2010243226%2FProperties%2F1203341655">mediumHeight</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="2010243226%2FProperties%2F1203341655" anchor-label="mediumHeight" id="2010243226%2FProperties%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a><p class="paragraph">Defines most foldables and tablets in portrait mode</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1142470637%2FProperties%2F1203341655" anchor-label="mediumWidth" id="-1142470637%2FProperties%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a>
+        <div class="table-row" data-filterable-current=":affogato-unit:dokkaHtmlPartial/release" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#-1142470637%2FProperties%2F1203341655"><span>medium</span><wbr><span><span>Width</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1142470637%2FProperties%2F1203341655"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-unit:dokkaHtmlPartial/release"><a data-name="-1142470637%2FProperties%2F1203341655" anchor-label="mediumWidth" id="-1142470637%2FProperties%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#-1142470637%2FProperties%2F1203341655">mediumWidth</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1142470637%2FProperties%2F1203341655" anchor-label="mediumWidth" id="-1142470637%2FProperties%2F1203341655" data-filterable-set=":affogato-unit:dokkaHtmlPartial/release"></a><p class="paragraph">Defines most foldables and tablets in portrait mode</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+
+</body></html>
+

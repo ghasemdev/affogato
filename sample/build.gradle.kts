@@ -60,6 +60,13 @@ android {
       kotlin.srcDir("build/generated/ksp/release/kotlin")
     }
   }
+  lint {
+    baseline = file("$rootDir/config/lint/lint-baseline.xml")
+  }
+}
+
+ksp {
+  arg("affogato.packageName", "com.parsuomash.affogato.app")
 }
 
 dependencies {
@@ -71,7 +78,7 @@ dependencies {
   implementation("androidx.core:core-ktx:1.8.0")
 
   // Compose ---------------------------------------------------------------------------------------
-  val composeVersion = "1.2.0-rc03"
+  val composeVersion = "1.2.0"
 
   implementation("androidx.compose.ui:ui:$composeVersion")
   implementation("androidx.compose.ui:ui-util:$composeVersion")
@@ -90,12 +97,12 @@ dependencies {
 
   implementation("androidx.compose.runtime:runtime:$composeVersion")
   implementation("androidx.compose.runtime:runtime-livedata:$composeVersion")
-  implementation("androidx.compose.compiler:compiler:1.2.0")
-  implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.0")
+  implementation("androidx.compose.compiler:compiler:$composeVersion")
+  implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1")
   implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.0-alpha01")
 
   implementation("androidx.paging:paging-compose:1.0.0-alpha15")
-  implementation("androidx.activity:activity-compose:1.5.0")
+  implementation("androidx.activity:activity-compose:1.5.1")
   implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 
   androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
@@ -105,7 +112,7 @@ dependencies {
   debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
 
   // Accompanist -----------------------------------------------------------------------------------
-  val accompanistVersion = "0.24.13-rc"
+  val accompanistVersion = "0.25.0"
 
   implementation("com.google.accompanist:accompanist-pager:$accompanistVersion")
   implementation("com.google.accompanist:accompanist-pager-indicators:$accompanistVersion")
