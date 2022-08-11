@@ -1,7 +1,7 @@
-package com.parsuomash.affogato.core.ktx.time.messages
+package com.parsuomash.affogato.core.ktx.time.messages.protocol
 
 /**
- * [HourMessages] template hour message for [LookupMessages].
+ * [HourMessages] template for [LookupMessages].
  * @since 1.1.0
  */
 interface HourMessages {

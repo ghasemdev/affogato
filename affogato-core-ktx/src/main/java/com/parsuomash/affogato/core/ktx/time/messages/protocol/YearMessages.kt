@@ -1,7 +1,7 @@
-package com.parsuomash.affogato.core.ktx.time.messages
+package com.parsuomash.affogato.core.ktx.time.messages.protocol
 
 /**
- * [YearMessages] template year message for [LookupMessages].
+ * [YearMessages] template for [LookupMessages].
  * @since 1.1.0
  */
 interface YearMessages {

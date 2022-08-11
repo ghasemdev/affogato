@@ -1,4 +1,4 @@
-package com.parsuomash.affogato.core.ktx.time.messages
+package com.parsuomash.affogato.core.ktx.time.messages.protocol
 
 import com.parsuomash.affogato.core.ktx.time.TimeAgo
 

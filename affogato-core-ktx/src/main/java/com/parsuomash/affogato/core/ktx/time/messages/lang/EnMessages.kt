@@ -1,7 +1,8 @@
-package com.parsuomash.affogato.core.ktx.time.messages
+package com.parsuomash.affogato.core.ktx.time.messages.lang
 
 import com.parsuomash.affogato.core.ktx.datetime.asDate
 import com.parsuomash.affogato.core.ktx.datetime.toString
+import com.parsuomash.affogato.core.ktx.time.messages.protocol.LookupMessages
 
 /**
  * English Messages.

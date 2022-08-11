@@ -1,7 +1,7 @@
-package com.parsuomash.affogato.core.ktx.time.messages
+package com.parsuomash.affogato.core.ktx.time.messages.protocol
 
 /**
- * [DayMessages] template day message for [LookupMessages].
+ * [DayMessages] template for [LookupMessages].
  * @since 1.1.0
  */
 interface DayMessages {

@@ -1,7 +1,7 @@
-package com.parsuomash.affogato.core.ktx.time.messages
+package com.parsuomash.affogato.core.ktx.time.messages.protocol
 
 /**
- * [SuffixMessages] template suffix message for [LookupMessages].
+ * [SuffixMessages] template for [LookupMessages].
  * @since 1.1.0
  */
 interface SuffixMessages {
