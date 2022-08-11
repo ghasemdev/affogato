@@ -18,17 +18,15 @@ internal object ArMessages : LookupMessages {
     else -> "$seconds ثانية"
   }
 
-  override fun aboutAMinute(minutes: Int): String = "حوالي دقيقة"
+  override fun aboutAMinute(minutes: Int): String = "دقيقة تقريباً"
   override fun minutes(minutes: Int): String = when (minutes) {
-    1 -> "دقيقة واحدة"
     2 -> "دقيقتين"
     in 3..10 -> "$minutes دقائق"
     else -> "$minutes دقيقة"
   }
 
-  override fun aboutAnHour(minutes: Int): String = "حوالي الساعة"
+  override fun aboutAnHour(minutes: Int): String = "ساعة تقريباً"
   override fun hours(hours: Int): String = when (hours) {
-    1 -> "ساعة"
     2 -> "ساعتين"
     in 3..10 -> "$hours ساعات"
     else -> "$hours ساعة"
@@ -36,25 +34,22 @@ internal object ArMessages : LookupMessages {
 
   override fun aDay(hours: Int): String = "يوم"
   override fun days(days: Int): String = when (days) {
-    1 -> "يوم واحد"
     2 -> "يومين"
     in 3..10 -> "$days ايام"
     else -> "$days يوم"
   }
 
-  override fun aboutAMonth(days: Int): String = "حوالي شهر"
+  override fun aboutAMonth(days: Int): String = "شهر تقريباً"
   override fun months(months: Int): String = when {
-    months == 1 -> "منذ شهر"
-    months == 2 -> "منذ شهرين"
+    months == 2 -> "شهرين"
     months in 3..10 -> "$months اشهر"
     months > 10 -> "$months شهر"
     else -> "$months شهور"
   }
 
-  override fun aboutAYear(year: Int): String = "قبل سنة"
+  override fun aboutAYear(year: Int): String = "سنة تقريباً"
   override fun years(years: Int): String = when (years) {
-    1 -> "منذ سنة"
-    2 -> "منذ سنتين"
+    2 -> "سنتين"
     in 3..10 -> "$years سنوات"
     else -> "$years سنة"
   }
