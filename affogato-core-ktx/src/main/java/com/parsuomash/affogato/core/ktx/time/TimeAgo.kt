@@ -1,14 +1,23 @@
 @file:Suppress("ObjectPropertyName", "LongMethod")
 
+/**
+ * A fork of dart time ago package v3.3.0
+ * https://github.com/andresaraujo/timeago.dart
+ */
+
 package com.parsuomash.affogato.core.ktx.time
 
 import com.parsuomash.affogato.core.ktx.datetime.asDate
 import com.parsuomash.affogato.core.ktx.time.TimeAgo.setLocaleMessages
 import com.parsuomash.affogato.core.ktx.time.messages.NoSuchMessageException
+import com.parsuomash.affogato.core.ktx.time.messages.lang.AmMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.AmShortMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.ArMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.ArShortMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.AzMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.AzShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.BsMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.BsShortMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.CaMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.CaShortMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.CsMessages
@@ -52,6 +61,8 @@ import com.parsuomash.affogato.core.ktx.time.messages.lang.MnMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.MnShortMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.MsMyMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.MsMyShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.MyMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.MyShortMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.NbNoMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.NbNoShortMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.NlMessages
@@ -70,6 +81,7 @@ import com.parsuomash.affogato.core.ktx.time.messages.lang.SvShortMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.TaMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.ThMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.ThShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.TkMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.TrMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.UkMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.UkShortMessages
@@ -135,6 +147,8 @@ object TimeAgo {
    * setLocaleMessages("fa")
    * ```
    * @since 1.1.0
+   * @throws NoSuchMessageException if the [locale] is not supported.
+   * @see LookupMessages
    */
   fun setLocaleMessages(locale: String) {
     when (locale) {
@@ -142,10 +156,14 @@ object TimeAgo {
       "en_short" -> setLocaleMessages("en_short", EnShortMessages)
       "fa" -> setLocaleMessages("fa", FaMessages)
       "fa_short" -> setLocaleMessages("fa_short", FaShortMessages)
+      "am" -> setLocaleMessages("am", AmMessages)
+      "am_short" -> setLocaleMessages("am_short", AmShortMessages)
       "ar" -> setLocaleMessages("ar", ArMessages)
       "ar_short" -> setLocaleMessages("ar_short", ArShortMessages)
       "az" -> setLocaleMessages("az", AzMessages)
       "az_short" -> setLocaleMessages("az_short", AzShortMessages)
+      "bs" -> setLocaleMessages("bs", BsMessages)
+      "bs_short" -> setLocaleMessages("bs_short", BsShortMessages)
       "ca" -> setLocaleMessages("ca", CaMessages)
       "ca_short" -> setLocaleMessages("ca_short", CaShortMessages)
       "cs" -> setLocaleMessages("cs", CsMessages)
@@ -185,6 +203,8 @@ object TimeAgo {
       "mn_short" -> setLocaleMessages("mn_short", MnShortMessages)
       "ms_my" -> setLocaleMessages("ms_my", MsMyMessages)
       "ms_my_short" -> setLocaleMessages("ms_my_short", MsMyShortMessages)
+      "my" -> setLocaleMessages("my", MyMessages)
+      "my_short" -> setLocaleMessages("my_short", MyShortMessages)
       "nb_no" -> setLocaleMessages("nb_no", NbNoMessages)
       "nb_no_short" -> setLocaleMessages("nb_no_short", NbNoShortMessages)
       "nl" -> setLocaleMessages("nl", NlMessages)
@@ -203,6 +223,7 @@ object TimeAgo {
       "ta" -> setLocaleMessages("ta", TaMessages)
       "th" -> setLocaleMessages("th", ThMessages)
       "th_short" -> setLocaleMessages("th_short", ThShortMessages)
+      "tk" -> setLocaleMessages("tk", TkMessages)
       "tr" -> setLocaleMessages("tr", TrMessages)
       "uk" -> setLocaleMessages("uk", UkMessages)
       "uk_short" -> setLocaleMessages("uk_short", UkShortMessages)
