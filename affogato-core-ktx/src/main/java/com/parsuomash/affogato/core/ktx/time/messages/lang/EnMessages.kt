@@ -8,7 +8,7 @@ import com.parsuomash.affogato.core.ktx.time.messages.protocol.LookupMessages
  * English Messages.
  * @since 1.1.0
  */
-class EnMessages : LookupMessages {
+internal object EnMessages : LookupMessages {
   override fun suffixAgo(): String = "ago"
   override fun suffixFromNow(): String = "from now"
   override fun lessThanOneMinute(seconds: Int): String = "a moment"
@@ -29,7 +29,7 @@ class EnMessages : LookupMessages {
  * English Short Messages.
  * @since 1.1.0
  */
-class EnShortMessages : LookupMessages {
+internal object EnShortMessages : LookupMessages {
   override fun lessThanOneMinute(seconds: Int): String = "now"
   override fun aboutAMinute(minutes: Int): String = "1m"
   override fun minutes(minutes: Int): String = "${minutes}m"

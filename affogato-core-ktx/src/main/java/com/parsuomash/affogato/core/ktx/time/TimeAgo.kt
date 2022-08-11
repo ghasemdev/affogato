@@ -1,13 +1,84 @@
-@file:Suppress("ObjectPropertyName")
+@file:Suppress("ObjectPropertyName", "LongMethod")
 
 package com.parsuomash.affogato.core.ktx.time
 
 import com.parsuomash.affogato.core.ktx.datetime.asDate
 import com.parsuomash.affogato.core.ktx.time.TimeAgo.setLocaleMessages
 import com.parsuomash.affogato.core.ktx.time.messages.NoSuchMessageException
+import com.parsuomash.affogato.core.ktx.time.messages.lang.ArMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.ArShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.AzMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.AzShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.CaMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.CaShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.CsMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.CsShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.DaMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.DaShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.DeMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.DeShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.DvMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.DvShortMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.EnMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.EnShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.EsMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.EsShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.EtMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.EtShortMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.FaMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.FaShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.FiMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.FiShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.FrMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.FrShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.GrMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.GrShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.HeMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.HeShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.HiMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.HiShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.HuMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.HuShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.IdMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.ItMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.ItShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.JaMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.KmMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.KmShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.KoMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.KuMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.KuShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.MnMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.MnShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.MsMyMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.MsMyShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.NbNoMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.NbNoShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.NlMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.NlShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.NnNoMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.NnNoShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.PlMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.RoMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.RoShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.RuMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.RuShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.RwMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.RwShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.SvMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.SvShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.TaMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.ThMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.ThShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.TrMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.UkMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.UkShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.UrMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.UrShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.ViMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.ViShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.ZhCnMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.ZhMessages
 import com.parsuomash.affogato.core.ktx.time.messages.protocol.LookupMessages
 import java.util.*
 import kotlin.math.abs
@@ -33,9 +104,10 @@ object TimeAgo {
   val default get() = _default
 
   private val lookupMessagesMap = mutableMapOf(
-    "en" to EnMessages(),
-    "en_short" to EnShortMessages(),
-    "fa" to FaMessages()
+    "en" to EnMessages,
+    "en_short" to EnShortMessages,
+    "fa" to FaMessages,
+    "fa_short" to FaShortMessages
   )
 
   /**
@@ -43,7 +115,6 @@ object TimeAgo {
    *
    * Example:
    * ```Kotlin
-   * setLocaleMessages("fa", FaMessages())
    * setDefaultLocale("fa")
    * ```
    * @since 1.1.0
@@ -56,12 +127,108 @@ object TimeAgo {
   }
 
   /**
+   * Sets a [locale] with the auto provided [LookupMessages] to be available when
+   * using the [format] function.
+   *
+   * Example:
+   * ```Kotlin
+   * setLocaleMessages("fa")
+   * ```
+   * @since 1.1.0
+   */
+  fun setLocaleMessages(locale: String) {
+    when (locale) {
+      "en" -> setLocaleMessages("en", EnMessages)
+      "en_short" -> setLocaleMessages("en_short", EnShortMessages)
+      "fa" -> setLocaleMessages("fa", FaMessages)
+      "fa_short" -> setLocaleMessages("fa_short", FaShortMessages)
+      "ar" -> setLocaleMessages("ar", ArMessages)
+      "ar_short" -> setLocaleMessages("ar_short", ArShortMessages)
+      "az" -> setLocaleMessages("az", AzMessages)
+      "az_short" -> setLocaleMessages("az_short", AzShortMessages)
+      "ca" -> setLocaleMessages("ca", CaMessages)
+      "ca_short" -> setLocaleMessages("ca_short", CaShortMessages)
+      "cs" -> setLocaleMessages("cs", CsMessages)
+      "cs_short" -> setLocaleMessages("cs_short", CsShortMessages)
+      "da" -> setLocaleMessages("da", DaMessages)
+      "da_short" -> setLocaleMessages("da_short", DaShortMessages)
+      "de" -> setLocaleMessages("de", DeMessages)
+      "de_short" -> setLocaleMessages("de_short", DeShortMessages)
+      "dv" -> setLocaleMessages("dv", DvMessages)
+      "dv_short" -> setLocaleMessages("dv_short", DvShortMessages)
+      "es" -> setLocaleMessages("es", EsMessages)
+      "es_short" -> setLocaleMessages("es_short", EsShortMessages)
+      "et" -> setLocaleMessages("et", EtMessages)
+      "et_short" -> setLocaleMessages("et_short", EtShortMessages)
+      "fi" -> setLocaleMessages("fi", FiMessages)
+      "fi_short" -> setLocaleMessages("fi_short", FiShortMessages)
+      "fr" -> setLocaleMessages("fr", FrMessages)
+      "fr_short" -> setLocaleMessages("fr_short", FrShortMessages)
+      "gr" -> setLocaleMessages("gr", GrMessages)
+      "gr_short" -> setLocaleMessages("gr_short", GrShortMessages)
+      "he" -> setLocaleMessages("he", HeMessages)
+      "he_short" -> setLocaleMessages("he_short", HeShortMessages)
+      "hi" -> setLocaleMessages("he", HiMessages)
+      "hi_short" -> setLocaleMessages("he_short", HiShortMessages)
+      "hu" -> setLocaleMessages("hu", HuMessages)
+      "hu_short" -> setLocaleMessages("hu_short", HuShortMessages)
+      "id" -> setLocaleMessages("id", IdMessages)
+      "it" -> setLocaleMessages("it", ItMessages)
+      "it_short" -> setLocaleMessages("it_short", ItShortMessages)
+      "ja" -> setLocaleMessages("ja", JaMessages)
+      "km" -> setLocaleMessages("km", KmMessages)
+      "km_short" -> setLocaleMessages("km_short", KmShortMessages)
+      "ko" -> setLocaleMessages("ko", KoMessages)
+      "ku" -> setLocaleMessages("ku", KuMessages)
+      "ku_short" -> setLocaleMessages("ku_short", KuShortMessages)
+      "mn" -> setLocaleMessages("mn", MnMessages)
+      "mn_short" -> setLocaleMessages("mn_short", MnShortMessages)
+      "ms_my" -> setLocaleMessages("ms_my", MsMyMessages)
+      "ms_my_short" -> setLocaleMessages("ms_my_short", MsMyShortMessages)
+      "nb_no" -> setLocaleMessages("nb_no", NbNoMessages)
+      "nb_no_short" -> setLocaleMessages("nb_no_short", NbNoShortMessages)
+      "nl" -> setLocaleMessages("nl", NlMessages)
+      "nl_short" -> setLocaleMessages("nl_short", NlShortMessages)
+      "nn_no" -> setLocaleMessages("nn_no", NnNoMessages)
+      "nn_no_short" -> setLocaleMessages("nn_no_short", NnNoShortMessages)
+      "pl" -> setLocaleMessages("pl", PlMessages)
+      "ro" -> setLocaleMessages("ro", RoMessages)
+      "ro_short" -> setLocaleMessages("ro_short", RoShortMessages)
+      "ru" -> setLocaleMessages("ru", RuMessages)
+      "ru_short" -> setLocaleMessages("ru_short", RuShortMessages)
+      "rw" -> setLocaleMessages("rw", RwMessages)
+      "rw_short" -> setLocaleMessages("rw_short", RwShortMessages)
+      "sv" -> setLocaleMessages("sv", SvMessages)
+      "sv_short" -> setLocaleMessages("sv_short", SvShortMessages)
+      "ta" -> setLocaleMessages("ta", TaMessages)
+      "th" -> setLocaleMessages("th", ThMessages)
+      "th_short" -> setLocaleMessages("th_short", ThShortMessages)
+      "tr" -> setLocaleMessages("tr", TrMessages)
+      "uk" -> setLocaleMessages("uk", UkMessages)
+      "uk_short" -> setLocaleMessages("uk_short", UkShortMessages)
+      "ur" -> setLocaleMessages("ur", UrMessages)
+      "ur_short" -> setLocaleMessages("ur_short", UrShortMessages)
+      "vi" -> setLocaleMessages("vi", ViMessages)
+      "vi_short" -> setLocaleMessages("vi_short", ViShortMessages)
+      "zh_cn" -> setLocaleMessages("zh_cn", ZhCnMessages)
+      "zh" -> setLocaleMessages("zh", ZhMessages)
+      else -> throw NoSuchMessageException(
+        "Instead of using the factory, use the " +
+          "setLocaleMessages(locale: String, lookupMessages: LookupMessages method)."
+      )
+    }
+  }
+
+  /**
    * Sets a [locale] with the provided [lookupMessages] to be available when
    * using the [format] function.
    *
    * Example:
    * ```Kotlin
-   * setLocaleMessages("fa", FaMessages())
+   * object CustomMessages : LookupMessages {
+   * ...
+   * }
+   * setLocaleMessages("custom", CustomMessages)
    * ```
    *
    * If you want to define locale message implement [LookupMessages] interface

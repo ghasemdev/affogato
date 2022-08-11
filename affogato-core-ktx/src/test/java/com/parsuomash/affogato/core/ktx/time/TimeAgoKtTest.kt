@@ -5,7 +5,6 @@ import com.parsuomash.affogato.core.ktx.datetime.asDate
 import com.parsuomash.affogato.core.ktx.datetime.minus
 import com.parsuomash.affogato.core.ktx.datetime.toString
 import com.parsuomash.affogato.core.ktx.time.messages.NoSuchMessageException
-import com.parsuomash.affogato.core.ktx.time.messages.lang.EnMessages
 import kotlin.time.Duration.Companion.days
 import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.minutes
@@ -188,7 +187,7 @@ internal class TimeAgoKtTest {
     @JvmStatic
     @BeforeAll
     fun init() {
-      TimeAgo.setLocaleMessages("en", EnMessages())
+      TimeAgo.setLocaleMessages("en")
       TimeAgo.setDefaultLocale("en")
     }
   }
