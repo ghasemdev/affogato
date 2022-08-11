@@ -4,11 +4,11 @@ package com.parsuomash.affogato.core.ktx.time
 
 import com.parsuomash.affogato.core.ktx.datetime.asDate
 import com.parsuomash.affogato.core.ktx.time.TimeAgo.setLocaleMessages
-import com.parsuomash.affogato.core.ktx.time.messages.EnMessages
-import com.parsuomash.affogato.core.ktx.time.messages.EnShortMessages
-import com.parsuomash.affogato.core.ktx.time.messages.FaMessages
-import com.parsuomash.affogato.core.ktx.time.messages.LookupMessages
 import com.parsuomash.affogato.core.ktx.time.messages.NoSuchMessageException
+import com.parsuomash.affogato.core.ktx.time.messages.lang.EnMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.EnShortMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.FaMessages
+import com.parsuomash.affogato.core.ktx.time.messages.protocol.LookupMessages
 import java.util.*
 import kotlin.math.abs
 import kotlin.math.roundToInt
@@ -84,6 +84,10 @@ object TimeAgo {
    * - If [allowFromNow] is true, format will use the Form prefix, i.e. a date
    * 5 minutes from now in 'en' locale will display as "5 minutes from now".
    *
+   * Example:
+   * ```Kotlin
+   * TimeAgo.format(nowInMilliseconds()) // "a moment ago"
+   * ```
    * @since 1.1.0
    */
   fun format(
@@ -106,7 +110,10 @@ object TimeAgo {
       messages.prefixAgo() to messages.suffixAgo()
     }
 
-    val result = calculateResult(elapsed, date, messages, allowOnDate)
+    val result = calculateResult(elapsed, messages, allowOnDate) {
+      return onDate(date)
+    }
+
     return listOf(prefix, result, suffix)
       .filter { it.isNotEmpty() }
       .joinToString(messages.wordSeparator())
@@ -123,6 +130,10 @@ object TimeAgo {
    * - If [allowFromNow] is true, format will use the Form prefix, i.e. a date
    * 5 minutes from now in 'en' locale will display as "5 minutes from now".
    *
+   * Example:
+   * ```Kotlin
+   * TimeAgo.format(nowInDate()) // "a moment ago"
+   * ```
    * @since 1.1.0
    */
   fun format(
@@ -144,6 +155,10 @@ object TimeAgo {
    * - If [allowFromNow] is true, format will use the Form prefix, i.e. a date
    * 5 minutes from now in 'en' locale will display as "5 minutes from now".
    *
+   * Example:
+   * ```Kotlin
+   * TimeAgo.format(nowInCalendar()) // "a moment ago"
+   * ```
    * @since 1.1.0
    */
   fun format(
@@ -165,6 +180,10 @@ object TimeAgo {
    * - If [allowFromNow] is true, format will use the Form prefix, i.e. a date
    * 5 minutes from now in 'en' locale will display as "5 minutes from now".
    *
+   * Example:
+   * ```Kotlin
+   * TimeAgo.format(now()) // "a moment ago"
+   * ```
    * @since 1.1.0
    */
   fun format(
@@ -192,6 +211,10 @@ object TimeAgo {
    * - If [allowFromNow] is true, format will use the Form prefix, i.e. a date
    * 5 minutes from now in 'en' locale will display as "5 minutes from now".
    *
+   * Example:
+   * ```Kotlin
+   * TimeAgo.format(nowInLocalDateTime()) // "a moment ago"
+   * ```
    * @since 1.1.0
    */
   fun format(
@@ -202,11 +225,11 @@ object TimeAgo {
     allowFromNow: Boolean = false
   ): String = format(date.asDate.time, locale, clock.asDate.time, allowOnDate, allowFromNow)
 
-  private fun calculateResult(
+  private inline fun calculateResult(
     elapsed: Long,
-    date: Long,
     messages: LookupMessages,
-    allowOnDate: Boolean
+    allowOnDate: Boolean,
+    onDate: LookupMessages.() -> String
   ): String {
     val seconds = elapsed / SECOND_IN_MILLIS
     val minutes = seconds / MINUTE_IN_SECOND
@@ -227,11 +250,7 @@ object TimeAgo {
         days < ABOUT_A_MONTH -> aboutAMonth(days.roundToInt())
         days < ABOUT_A_YEAR -> months(months.roundToInt())
         years < 2 -> aboutAYear(months.roundToInt())
-        else -> if (allowOnDate) {
-          return onDate(date)
-        } else {
-          years(years.roundToInt())
-        }
+        else -> if (allowOnDate) onDate() else years(years.roundToInt())
       }
     }
   }
@@ -249,7 +268,7 @@ object TimeAgo {
  * 5 minutes from now in 'en' locale will display as "5 minutes from now".
  *
  * ```Kotlin
- *
+ * 1565591769464.timeAgo() // on 08/12/2019
  * ```
  * @since 1.1.0
  */
@@ -272,7 +291,7 @@ fun Long.timeAgo(
  * 5 minutes from now in 'en' locale will display as "5 minutes from now".
  *
  * ```Kotlin
- *
+ * (nowInDate() - 4.hours).timeAgo() // 4 hours ago
  * ```
  * @since 1.1.0
  */
@@ -295,7 +314,7 @@ fun Date.timeAgo(
  * 5 minutes from now in 'en' locale will display as "5 minutes from now".
  *
  * ```Kotlin
- *
+ * (nowInCalendar() - 1.hours).timeAgo() // about an hour ago
  * ```
  * @since 1.1.0
  */
@@ -318,7 +337,7 @@ fun Calendar.timeAgo(
  * 5 minutes from now in 'en' locale will display as "5 minutes from now".
  *
  * ```Kotlin
- *
+ * now().timeAgo() // a moment ago
  * ```
  * @since 1.1.0
  */
@@ -347,7 +366,7 @@ fun Instant.timeAgo(
  * 5 minutes from now in 'en' locale will display as "5 minutes from now".
  *
  * ```Kotlin
- *
+ * (nowInLocalDateTime() - 1.years).timeAgo() // about a year ago
  * ```
  * @since 1.1.0
  */

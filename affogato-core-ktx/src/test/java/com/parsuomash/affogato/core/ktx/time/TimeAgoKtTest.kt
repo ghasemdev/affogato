@@ -4,8 +4,8 @@ import com.google.common.truth.Truth.assertThat
 import com.parsuomash.affogato.core.ktx.datetime.asDate
 import com.parsuomash.affogato.core.ktx.datetime.minus
 import com.parsuomash.affogato.core.ktx.datetime.toString
-import com.parsuomash.affogato.core.ktx.time.messages.EnMessages
 import com.parsuomash.affogato.core.ktx.time.messages.NoSuchMessageException
+import com.parsuomash.affogato.core.ktx.time.messages.lang.EnMessages
 import kotlin.time.Duration.Companion.days
 import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.minutes
@@ -32,7 +32,7 @@ internal class TimeAgoKtTest {
     assertThat((now() - 1.years).toEpochMilliseconds().timeAgo()).isEqualTo("about a year ago")
     val threeYearsAgo = (now() - 3.years).toEpochMilliseconds()
     val date = threeYearsAgo.asDate
-    assertThat(threeYearsAgo.timeAgo()).isEqualTo("on ${date.toString("MM/dd/yyyy")} ago")
+    assertThat(threeYearsAgo.timeAgo()).isEqualTo("on ${date.toString("MM/dd/yyyy")}")
 
     assertThat(nowInMilliseconds().timeAgo(locale = "en")).isEqualTo("a moment ago")
 
@@ -68,7 +68,7 @@ internal class TimeAgoKtTest {
     assertThat((nowInDate() - 10.months).timeAgo()).isEqualTo("10 months ago")
     assertThat((nowInDate() - 1.years).timeAgo()).isEqualTo("about a year ago")
     val threeYearsAgo = (nowInDate() - 3.years)
-    assertThat(threeYearsAgo.timeAgo()).isEqualTo("on ${threeYearsAgo.toString("MM/dd/yyyy")} ago")
+    assertThat(threeYearsAgo.timeAgo()).isEqualTo("on ${threeYearsAgo.toString("MM/dd/yyyy")}")
 
     assertThat(nowInDate().timeAgo(locale = "en")).isEqualTo("a moment ago")
 
@@ -100,7 +100,7 @@ internal class TimeAgoKtTest {
     assertThat((nowInCalendar() - 10.months).timeAgo()).isEqualTo("10 months ago")
     assertThat((nowInCalendar() - 1.years).timeAgo()).isEqualTo("about a year ago")
     val threeYearsAgo = (nowInCalendar() - 3.years)
-    assertThat(threeYearsAgo.timeAgo()).isEqualTo("on ${threeYearsAgo.toString("MM/dd/yyyy")} ago")
+    assertThat(threeYearsAgo.timeAgo()).isEqualTo("on ${threeYearsAgo.toString("MM/dd/yyyy")}")
 
     assertThat(nowInCalendar().timeAgo(locale = "en")).isEqualTo("a moment ago")
 
@@ -132,7 +132,7 @@ internal class TimeAgoKtTest {
     assertThat((now() - 10.months).timeAgo()).isEqualTo("10 months ago")
     assertThat((now() - 1.years).timeAgo()).isEqualTo("about a year ago")
     val threeYearsAgo = (now() - 3.years)
-    assertThat(threeYearsAgo.timeAgo()).isEqualTo("on ${threeYearsAgo.toString("MM/dd/yyyy")} ago")
+    assertThat(threeYearsAgo.timeAgo()).isEqualTo("on ${threeYearsAgo.toString("MM/dd/yyyy")}")
 
     assertThat(now().timeAgo(locale = "en")).isEqualTo("a moment ago")
 
@@ -164,7 +164,7 @@ internal class TimeAgoKtTest {
     assertThat((nowInLocalDateTime() - 10.months).timeAgo()).isEqualTo("10 months ago")
     assertThat((nowInLocalDateTime() - 1.years).timeAgo()).isEqualTo("about a year ago")
     val threeYearsAgo = (nowInLocalDateTime() - 3.years)
-    assertThat(threeYearsAgo.timeAgo()).isEqualTo("on ${threeYearsAgo.toString("MM/dd/yyyy")} ago")
+    assertThat(threeYearsAgo.timeAgo()).isEqualTo("on ${threeYearsAgo.toString("MM/dd/yyyy")}")
 
     assertThat(nowInLocalDateTime().timeAgo(locale = "en")).isEqualTo("a moment ago")
 
