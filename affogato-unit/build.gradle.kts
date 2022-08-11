@@ -69,7 +69,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-unit"
-        version = "1.1.0-beta01"
+        version = "1.1.0-beta02"
 
         from(components["release"])
       }
