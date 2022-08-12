@@ -6,8 +6,8 @@ package com.parsuomash.affogato.core.ktx.time.messages.protocol
  */
 interface DayMessages {
   /** Format when time is a day */
-  fun aDay(hours: Int): String
+  fun aDay(hours: Int, date: Long): String
 
   /** Format when time is in days */
-  fun days(days: Int): String
+  fun days(days: Int, hours: Int, date: Long): String
 }

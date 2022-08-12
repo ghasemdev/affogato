@@ -1,7 +1,5 @@
 package com.parsuomash.affogato.core.ktx.time.messages.lang
 
-import com.parsuomash.affogato.core.ktx.datetime.asDate
-import com.parsuomash.affogato.core.ktx.datetime.toString
 import com.parsuomash.affogato.core.ktx.time.messages.protocol.LookupMessages
 
 /**
@@ -11,18 +9,24 @@ import com.parsuomash.affogato.core.ktx.time.messages.protocol.LookupMessages
 internal object RuMessages : LookupMessages {
   override fun prefixFromNow(): String = "через"
   override fun suffixAgo(): String = "назад"
-  override fun lessThanOneMinute(seconds: Int): String = "минуту"
-  override fun aboutAMinute(minutes: Int): String = "минуту"
-  override fun minutes(minutes: Int): String = "$minutes ${convert(minutes, " minutes ")}"
-  override fun aboutAnHour(minutes: Int): String = "час"
-  override fun hours(hours: Int): String = "$hours ${convert(hours, " hours ")}"
-  override fun aDay(hours: Int): String = "день"
-  override fun days(days: Int): String = "$days ${convert(days, " days ")}"
-  override fun aboutAMonth(days: Int): String = "месяц"
-  override fun months(months: Int): String = "$months ${convert(months, " months ")}"
-  override fun aboutAYear(year: Int): String = "год"
-  override fun years(years: Int): String = "$years ${convert(years, " years ")}"
-  override fun onDate(elapsed: Long): String = elapsed.asDate.toString("MM/dd/yyyy")
+  override fun lessThanOneMinute(seconds: Int, date: Long): String = "минуту"
+  override fun aboutAMinute(minutes: Int, date: Long): String = "минуту"
+  override fun minutes(minutes: Int, seconds: Int, date: Long): String =
+    "$minutes ${convert(minutes, " minutes ")}"
+
+  override fun aboutAnHour(minutes: Int, date: Long): String = "час"
+  override fun hours(hours: Int, minutes: Int, date: Long): String =
+    "$hours ${convert(hours, " hours ")}"
+
+  override fun aDay(hours: Int, date: Long): String = "день"
+  override fun days(days: Int, hours: Int, date: Long): String = "$days ${convert(days, " days ")}"
+  override fun aboutAMonth(days: Int, date: Long): String = "месяц"
+  override fun months(months: Int, days: Int, date: Long): String =
+    "$months ${convert(months, " months ")}"
+
+  override fun aboutAYear(year: Int, date: Long): String = "год"
+  override fun years(years: Int, months: Int, date: Long): String =
+    "$years ${convert(years, " years ")}"
 }
 
 /**
@@ -30,18 +34,17 @@ internal object RuMessages : LookupMessages {
  * @since 1.1.0
  */
 internal object RuShortMessages : LookupMessages {
-  override fun lessThanOneMinute(seconds: Int): String = "только что"
-  override fun aboutAMinute(minutes: Int): String = "1 мин."
-  override fun minutes(minutes: Int): String = "$minutes мин."
-  override fun aboutAnHour(minutes: Int): String = "~1 ч."
-  override fun hours(hours: Int): String = "$hours ч."
-  override fun aDay(hours: Int): String = "~1 д."
-  override fun days(days: Int): String = "$days д."
-  override fun aboutAMonth(days: Int): String = "~1 мес."
-  override fun months(months: Int): String = "$months мес."
-  override fun aboutAYear(year: Int): String = "~1 г."
-  override fun years(years: Int): String = "$years г."
-  override fun onDate(elapsed: Long): String = elapsed.asDate.toString("MM/dd/yyyy")
+  override fun lessThanOneMinute(seconds: Int, date: Long): String = "только что"
+  override fun aboutAMinute(minutes: Int, date: Long): String = "1 мин."
+  override fun minutes(minutes: Int, seconds: Int, date: Long): String = "$minutes мин."
+  override fun aboutAnHour(minutes: Int, date: Long): String = "~1 ч."
+  override fun hours(hours: Int, minutes: Int, date: Long): String = "$hours ч."
+  override fun aDay(hours: Int, date: Long): String = "~1 д."
+  override fun days(days: Int, hours: Int, date: Long): String = "$days д."
+  override fun aboutAMonth(days: Int, date: Long): String = "~1 мес."
+  override fun months(months: Int, days: Int, date: Long): String = "$months мес."
+  override fun aboutAYear(year: Int, date: Long): String = "~1 г."
+  override fun years(years: Int, months: Int, date: Long): String = "$years г."
 }
 
 @Suppress("MagicNumber")

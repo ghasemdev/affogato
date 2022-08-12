@@ -1,7 +1,5 @@
 package com.parsuomash.affogato.core.ktx.time.messages.lang
 
-import com.parsuomash.affogato.core.ktx.datetime.asDate
-import com.parsuomash.affogato.core.ktx.datetime.toString
 import com.parsuomash.affogato.core.ktx.time.messages.protocol.LookupMessages
 
 /**
@@ -11,18 +9,23 @@ import com.parsuomash.affogato.core.ktx.time.messages.protocol.LookupMessages
 internal object PlMessages : LookupMessages {
   override fun suffixAgo(): String = "temu"
   override fun suffixFromNow(): String = "od tego momentu"
-  override fun lessThanOneMinute(seconds: Int): String = "chwilę"
-  override fun aboutAMinute(minutes: Int): String = "około minuty"
-  override fun minutes(minutes: Int): String = pluralize(minutes, "minuty", "minut")
-  override fun aboutAnHour(minutes: Int): String = "około godziny"
-  override fun hours(hours: Int): String = pluralize(hours, "godziny", "godzin")
-  override fun aDay(hours: Int): String = "dzień"
-  override fun days(days: Int): String = "$days dni"
-  override fun aboutAMonth(days: Int): String = "około miesiąca"
-  override fun months(months: Int): String = pluralize(months, "miesiące", "miesięcy")
-  override fun aboutAYear(year: Int): String = "około roku"
-  override fun years(years: Int): String = pluralize(years, "lata", "lat")
-  override fun onDate(elapsed: Long): String = elapsed.asDate.toString("MM/dd/yyyy")
+  override fun lessThanOneMinute(seconds: Int, date: Long): String = "chwilę"
+  override fun aboutAMinute(minutes: Int, date: Long): String = "około minuty"
+  override fun minutes(minutes: Int, seconds: Int, date: Long): String =
+    pluralize(minutes, "minuty", "minut")
+
+  override fun aboutAnHour(minutes: Int, date: Long): String = "około godziny"
+  override fun hours(hours: Int, minutes: Int, date: Long): String =
+    pluralize(hours, "godziny", "godzin")
+
+  override fun aDay(hours: Int, date: Long): String = "dzień"
+  override fun days(days: Int, hours: Int, date: Long): String = "$days dni"
+  override fun aboutAMonth(days: Int, date: Long): String = "około miesiąca"
+  override fun months(months: Int, days: Int, date: Long): String =
+    pluralize(months, "miesiące", "miesięcy")
+
+  override fun aboutAYear(year: Int, date: Long): String = "około roku"
+  override fun years(years: Int, months: Int, date: Long): String = pluralize(years, "lata", "lat")
 }
 
 @Suppress("MagicNumber")
