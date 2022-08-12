@@ -13,11 +13,9 @@ interface LookupMessages :
   MinuteMessages,
   HourMessages,
   DayMessages,
+  WeekMessages,
   MonthMessages,
   YearMessages {
-  /** Format when time is on date */
-  fun onDate(elapsed: Long): String
-
   /** word separator when words are concatenated */
   fun wordSeparator(): String = " "
 }
