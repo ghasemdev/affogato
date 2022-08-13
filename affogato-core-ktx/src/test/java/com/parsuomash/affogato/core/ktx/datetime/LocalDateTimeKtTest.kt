@@ -26,9 +26,9 @@ internal class LocalDateTimeKtTest {
     @Test
     @DisplayName("Long as LocalDateTime")
     fun longAsLocalDateTime() {
-      assertThat(1_659_814_200_000.asLocalDateTime.also(::println))
+      assertThat(1_659_814_200_000.toLocalDateTime().also(::println))
         .isEqualTo(LocalDateTime(2022, 8, 7, 0, 0, 0))
-      assertThat(date.time.asLocalDateTime).isEqualTo(date.asLocalDateTime)
+      assertThat(date.time.toLocalDateTime()).isEqualTo(date.toLocalDateTime())
     }
 
     @Test
@@ -39,7 +39,7 @@ internal class LocalDateTimeKtTest {
         set(2020, 0, 2, 3, 4, 5)
         set(Calendar.MILLISECOND, 0)
       }
-      assertThat(date.asDate).isEqualTo(calendar.time)
+      assertThat(date.toDate()).isEqualTo(calendar.time)
     }
 
     @Test
@@ -47,7 +47,7 @@ internal class LocalDateTimeKtTest {
     fun localDateTimeAsLocalDate() {
       val date = LocalDateTime(2020, 1, 2, 8, 0, 0)
       val local = LocalDate(2020, 1, 2)
-      assertThat(date.asLocalDate).isEqualTo(local)
+      assertThat(date.toLocalDate()).isEqualTo(local)
     }
 
     @Test
@@ -55,7 +55,7 @@ internal class LocalDateTimeKtTest {
     fun localDateTimeAsLocalTime() {
       val date = LocalDateTime(2020, 1, 2, 8, 0, 0)
       val local = LocalTime(8, 0, 0)
-      assertThat(date.asLocalTime).isEqualTo(local)
+      assertThat(date.toLocalTime()).isEqualTo(local)
     }
 
     @Test
@@ -66,7 +66,7 @@ internal class LocalDateTimeKtTest {
         set(2020, 0, 2, 0, 10, 0)
         set(Calendar.MILLISECOND, 0)
       }
-      assertThat(date.asCalendar).isEqualTo(calendar)
+      assertThat(date.toCalendar()).isEqualTo(calendar)
     }
 
     @Test
@@ -92,9 +92,9 @@ internal class LocalDateTimeKtTest {
     @Test
     @DisplayName("LocalDateTime to String")
     fun localDateTimeToString() {
-      assertThat(1_659_814_205_950.asLocalDateTime.toString("MM/dd/yyyy"))
+      assertThat(1_659_814_205_950.toLocalDateTime().toString("MM/dd/yyyy"))
         .isEqualTo("08/07/2022")
-      assertThat(1_659_814_205_950.asLocalDateTime.toString("EEE MMM dd HH:mm:ss zzz yyyy"))
+      assertThat(1_659_814_205_950.toLocalDateTime().toString("EEE MMM dd HH:mm:ss zzz yyyy"))
         .isEqualTo("Sun Aug 07 00:00:05 IRDT 2022")
     }
   }

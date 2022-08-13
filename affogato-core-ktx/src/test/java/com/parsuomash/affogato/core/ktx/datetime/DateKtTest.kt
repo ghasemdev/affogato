@@ -22,14 +22,14 @@ internal class DateKtTest {
     @Test
     @DisplayName("Long as Date")
     fun longAsDate() {
-      assertThat(1_659_873_010_453.asDate).isEqualTo(Date(1_659_873_010_453))
-      assertThat(date.time.asDate).isEqualTo(date)
+      assertThat(1_659_873_010_453.toDate()).isEqualTo(Date(1_659_873_010_453))
+      assertThat(date.time.toDate()).isEqualTo(date)
     }
 
     @Test
     @DisplayName("Duration as Date")
     fun durationAsDate() {
-      assertThat(1.days.asDate).isEqualTo(1.days.inWholeMilliseconds.asDate.also(::println))
+      assertThat(1.days.toDate()).isEqualTo(1.days.inWholeMilliseconds.toDate().also(::println))
     }
 
     @Test
@@ -37,7 +37,7 @@ internal class DateKtTest {
     fun dateAsLocalDate() {
       val date = calendar.time
       with(calendar) {
-        assertThat(date.asLocalDate).isEqualTo(LocalDate(year, month + 1, dayOfMonth))
+        assertThat(date.toLocalDate()).isEqualTo(LocalDate(year, month + 1, dayOfMonth))
       }
     }
 
@@ -46,7 +46,7 @@ internal class DateKtTest {
     fun dateAsLocalTime() {
       val date = calendar.time
       with(calendar) {
-        assertThat(date.asLocalTime).isEqualTo(LocalTime(hourOfDay, minute, second))
+        assertThat(date.toLocalTime()).isEqualTo(LocalTime(hourOfDay, minute, second))
       }
     }
 
@@ -55,7 +55,7 @@ internal class DateKtTest {
     fun dateAsLocalDateTime() {
       val date = calendar.time
       with(calendar) {
-        assertThat(date.asLocalDateTime)
+        assertThat(date.toLocalDateTime())
           .isEqualTo(LocalDateTime(year, month + 1, dayOfMonth, hourOfDay, minute, second))
       }
     }
@@ -63,18 +63,18 @@ internal class DateKtTest {
     @Test
     @DisplayName("Date as Calendar")
     fun dateAsCalendar() {
-      assertThat(date.asCalendar).isInstanceOf(Calendar::class.java)
+      assertThat(date.toCalendar()).isInstanceOf(Calendar::class.java)
       val calendar = Calendar.getInstance().apply { time = date }
-      assertThat(date.asCalendar).isEqualTo(calendar)
+      assertThat(date.toCalendar()).isEqualTo(calendar)
     }
 
     @Test
     @DisplayName("String to Date")
     fun stringToDate() {
       assertThat("8/7/2022".toDate("MM/dd/yyyy"))
-        .isEqualTo(1_659_814_200_000.asDate.also(::println))
+        .isEqualTo(1_659_814_200_000.toDate().also(::println))
       assertThat("Sun Aug 07 16:37:42 IRDT 2022".toDate())
-        .isEqualTo(1_659_874_062_000.asDate.also(::println))
+        .isEqualTo(1_659_874_062_000.toDate().also(::println))
       assertThrows<ParseException> { "7/2022".toDate("MM/dd/yyyy") }
     }
 
@@ -82,17 +82,17 @@ internal class DateKtTest {
     @DisplayName("String to Date or Null")
     fun stringToDateOrNull() {
       assertThat("8/7/2022".toDateOrNull("MM/dd/yyyy"))
-        .isEqualTo(1_659_814_200_000.asDate)
+        .isEqualTo(1_659_814_200_000.toDate())
       assertThat("Sun Aug 07 16:37:42 IRDT 2022".toDateOrNull())
-        .isEqualTo(1_659_874_062_000.asDate)
+        .isEqualTo(1_659_874_062_000.toDate())
       assertThat("7/2022".toDateOrNull("MM/dd/yyyy")).isNull()
     }
 
     @Test
     @DisplayName("Date to String")
     fun dateToString() {
-      assertThat(1_659_814_200_000.asDate.toString("MM/dd/yyyy")).isEqualTo("08/07/2022")
-      assertThat(1_659_874_062_000.asDate.toString("EEE MMM dd HH:mm:ss zzz yyyy"))
+      assertThat(1_659_814_200_000.toDate().toString("MM/dd/yyyy")).isEqualTo("08/07/2022")
+      assertThat(1_659_874_062_000.toDate().toString("EEE MMM dd HH:mm:ss zzz yyyy"))
         .isEqualTo("Sun Aug 07 16:37:42 IRDT 2022")
     }
   }

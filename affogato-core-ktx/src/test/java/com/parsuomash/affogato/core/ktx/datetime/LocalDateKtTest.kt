@@ -25,8 +25,8 @@ internal class LocalDateKtTest {
     @Test
     @DisplayName("Long as LocalDate")
     fun longAsLocalDate() {
-      assertThat(1_659_814_200_000.asLocalDate.also(::println)).isEqualTo(LocalDate(2022, 8, 7))
-      assertThat(date.time.asLocalDate).isEqualTo(date.asLocalDate)
+      assertThat(1_659_814_200_000.toLocalDate().also(::println)).isEqualTo(LocalDate(2022, 8, 7))
+      assertThat(date.time.toLocalDate()).isEqualTo(date.toLocalDate())
     }
 
     @Test
@@ -37,7 +37,7 @@ internal class LocalDateKtTest {
         set(2020, 0, 2, 0, 0, 0)
         set(Calendar.MILLISECOND, 0)
       }
-      assertThat(date.asDate).isEqualTo(calendar.time)
+      assertThat(date.toDate()).isEqualTo(calendar.time)
     }
 
     @Test
@@ -45,7 +45,7 @@ internal class LocalDateKtTest {
     fun localDateAsLocalDateTime() {
       val date = LocalDate(2020, 1, 2)
       val local = LocalDateTime(2020, 1, 2, 0, 0)
-      assertThat(date.asLocalDateTime).isEqualTo(local)
+      assertThat(date.toLocalDateTime()).isEqualTo(local)
     }
 
     @Test
@@ -56,16 +56,16 @@ internal class LocalDateKtTest {
         set(2020, 0, 2, 0, 0, 0)
         set(Calendar.MILLISECOND, 0)
       }
-      assertThat(date.asCalendar).isEqualTo(calendar)
+      assertThat(date.toCalendar()).isEqualTo(calendar)
     }
 
     @Test
     @DisplayName("String to LocalDate")
     fun stringToLocalDate() {
       assertThat("8/7/2022".toLocalDate("MM/dd/yyyy"))
-        .isEqualTo(1_659_814_200_000.asLocalDate.also(::println))
+        .isEqualTo(1_659_814_200_000.toLocalDate().also(::println))
       assertThat("Sun Aug 07 16:37:42 IRDT 2022".toLocalDate())
-        .isEqualTo(1_659_874_062_000.asLocalDate.also(::println))
+        .isEqualTo(1_659_874_062_000.toLocalDate().also(::println))
       assertThrows<ParseException> { "7/2022".toLocalDate("MM/dd/yyyy") }
     }
 
@@ -73,17 +73,17 @@ internal class LocalDateKtTest {
     @DisplayName("String to LocalDate or Null")
     fun stringToLocalDateOrNull() {
       assertThat("8/7/2022".toLocalDateOrNull("MM/dd/yyyy"))
-        .isEqualTo(1_659_814_200_000.asLocalDate)
+        .isEqualTo(1_659_814_200_000.toLocalDate())
       assertThat("Sun Aug 07 16:37:42 IRDT 2022".toLocalDateOrNull())
-        .isEqualTo(1_659_874_062_000.asLocalDate)
+        .isEqualTo(1_659_874_062_000.toLocalDate())
       assertThat("7/2022".toLocalDateOrNull("MM/dd/yyyy")).isNull()
     }
 
     @Test
     @DisplayName("LocalDate to String")
     fun localDateToString() {
-      assertThat(1_659_814_200_000.asLocalDate.toString("MM/dd/yyyy")).isEqualTo("08/07/2022")
-      assertThat(1_659_874_062_000.asLocalDate.toString("EEE MMM dd HH:mm:ss zzz yyyy"))
+      assertThat(1_659_814_200_000.toLocalDate().toString("MM/dd/yyyy")).isEqualTo("08/07/2022")
+      assertThat(1_659_874_062_000.toLocalDate().toString("EEE MMM dd HH:mm:ss zzz yyyy"))
         .isEqualTo("Sun Aug 07 00:00:00 IRDT 2022")
     }
   }

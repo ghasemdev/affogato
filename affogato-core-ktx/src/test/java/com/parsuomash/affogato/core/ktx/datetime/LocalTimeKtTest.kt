@@ -24,8 +24,8 @@ internal class LocalTimeKtTest {
     @Test
     @DisplayName("Long as LocalTime")
     fun longAsLocalTime() {
-      assertThat(1_659_814_200_000.asLocalTime.also(::println)).isEqualTo(LocalTime(0, 0, 0))
-      assertThat(date.time.asLocalTime).isEqualTo(date.asLocalTime)
+      assertThat(1_659_814_200_000.toLocalTime().also(::println)).isEqualTo(LocalTime(0, 0, 0))
+      assertThat(date.time.toLocalTime()).isEqualTo(date.toLocalTime())
     }
 
     @Test
@@ -36,7 +36,7 @@ internal class LocalTimeKtTest {
         set(0, 0, 0, 21, 21, 21)
         set(Calendar.MILLISECOND, 0)
       }
-      assertThat(time.asDate).isEqualTo(calendar.time)
+      assertThat(time.toDate()).isEqualTo(calendar.time)
     }
 
     @Test
@@ -47,7 +47,7 @@ internal class LocalTimeKtTest {
         set(0, 0, 0, 0, 13, 0)
         set(Calendar.MILLISECOND, 0)
       }
-      assertThat(time.asCalendar).isEqualTo(calendar)
+      assertThat(time.toCalendar()).isEqualTo(calendar)
     }
 
     @Test

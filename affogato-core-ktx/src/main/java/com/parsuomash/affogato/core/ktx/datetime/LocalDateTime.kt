@@ -18,52 +18,50 @@ import kotlinx.datetime.toLocalDateTime
  *
  * Example:
  * ```Kotlin
- * 1659814200000.asLocalDateTime // 2022-07-07T00:00
+ * 1659814200000.toLocalDateTime() // 2022-07-07T00:00
  * ```
  * @since 1.1.0
  */
-inline val Long.asLocalDateTime: LocalDateTime
-  get() {
-    val calendar = Calendar.getInstance().apply { time = Date(this@asLocalDateTime) }
-    with(calendar) {
-      return LocalDateTime(year, month + 1, dayOfMonth, hourOfDay, minute, second)
-    }
+fun Long.toLocalDateTime(): LocalDateTime {
+  val calendar = Calendar.getInstance().apply { time = Date(this@toLocalDateTime) }
+  with(calendar) {
+    return LocalDateTime(year, month + 1, dayOfMonth, hourOfDay, minute, second)
   }
+}
 
 /**
  * Convert [LocalDateTime] to [Date].
  * @since 1.1.0
  */
-inline val LocalDateTime.asDate: Date get() = asCalendar.time
+fun LocalDateTime.toDate(): Date = toCalendar().time
 
 /**
  * Convert [LocalDateTime] to [LocalDate].
  * @since 1.1.0
  */
-inline val LocalDateTime.asLocalDate: LocalDate get() = date
+fun LocalDateTime.toLocalDate(): LocalDate = date
 
 /**
  * Convert [LocalDateTime] to [LocalTime].
  * @since 1.1.0
  */
-inline val LocalDateTime.asLocalTime: LocalTime get() = time
+fun LocalDateTime.toLocalTime(): LocalTime = time
 
 /**
  * Convert [LocalDateTime] to [Calendar].
  * @since 1.1.0
  */
-inline val LocalDateTime.asCalendar: Calendar
-  get() = Calendar.getInstance().apply {
-    set(
-      this@asCalendar.year,
-      this@asCalendar.monthNumber - 1,
-      this@asCalendar.dayOfMonth,
-      this@asCalendar.hour,
-      this@asCalendar.minute,
-      this@asCalendar.second
-    )
-    set(Calendar.MILLISECOND, 0)
-  }
+fun LocalDateTime.toCalendar(): Calendar = Calendar.getInstance().apply {
+  set(
+    this@toCalendar.year,
+    this@toCalendar.monthNumber - 1,
+    this@toCalendar.dayOfMonth,
+    this@toCalendar.hour,
+    this@toCalendar.minute,
+    this@toCalendar.second
+  )
+  set(Calendar.MILLISECOND, 0)
+}
 
 /**
  * Get current [LocalDateTime].
@@ -111,7 +109,7 @@ operator fun LocalDateTime.minus(duration: Duration): LocalDateTime =
  */
 fun String.toLocalDateTime(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): LocalDateTime {
   simpleDateFormat.applyPattern(pattern)
-  return simpleDateFormat.parse(this).asLocalDateTime
+  return simpleDateFormat.parse(this).toLocalDateTime()
 }
 
 /**
@@ -130,7 +128,7 @@ fun String.toLocalDateTime(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): Lo
 fun String.toLocalDateTimeOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): LocalDateTime? =
   tryCatchNull {
     simpleDateFormat.applyPattern(pattern)
-    simpleDateFormat.parse(this).asLocalDateTime
+    simpleDateFormat.parse(this).toLocalDateTime()
   }
 
 /**
@@ -138,7 +136,7 @@ fun String.toLocalDateTimeOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy
  *
  * Example:
  * ```Kotlin
- * 1659814205950.asLocalDateTime.toString("MM/dd/yyyy") // 08/07/2022
+ * 1659814205950.toLocalDateTime().toString("MM/dd/yyyy") // 08/07/2022
  * ```
  * @since 1.1.0
  * @throws IllegalArgumentException if the given pattern is invalid
@@ -147,5 +145,5 @@ fun String.toLocalDateTimeOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy
  */
 fun LocalDateTime.toString(format: String): String {
   simpleDateFormat.applyPattern(format)
-  return simpleDateFormat.format(asDate)
+  return simpleDateFormat.format(toDate())
 }

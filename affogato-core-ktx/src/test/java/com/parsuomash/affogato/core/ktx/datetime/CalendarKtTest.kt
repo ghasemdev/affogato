@@ -110,40 +110,40 @@ internal class CalendarKtTest {
     @DisplayName("Long as Calendar")
     fun longAsCalendar() {
       val calendar = Calendar.getInstance().apply { time = Date(1_659_814_200_000) }
-      assertThat(1_659_814_200_000.asCalendar).isEqualTo(calendar)
+      assertThat(1_659_814_200_000.toCalendar()).isEqualTo(calendar)
     }
 
     @Test
     @DisplayName("Duration as Calendar")
     fun durationAsCalendar() {
       val calendar = Calendar.getInstance().apply { time = Date(1.days.inWholeMilliseconds) }
-      assertThat(1.days.asCalendar).isEqualTo(calendar)
+      assertThat(1.days.toCalendar()).isEqualTo(calendar)
     }
 
     @Test
     @DisplayName("Calendar as Date")
     fun calendarAsDate() {
-      assertThat(calendar.asDate).isEqualTo(calendar.time)
+      assertThat(calendar.toDate()).isEqualTo(calendar.time)
     }
 
     @Test
     @DisplayName("Calendar as LocalDate")
     fun calendarAsLocalDate() {
-      assertThat(calendar.asLocalDate)
+      assertThat(calendar.toLocalDate())
         .isEqualTo(LocalDate(calendar.year, calendar.month + 1, calendar.dayOfMonth))
     }
 
     @Test
     @DisplayName("Calendar as LocalTime")
     fun calendarAsLocalTime() {
-      assertThat(calendar.asLocalTime)
+      assertThat(calendar.toLocalTime())
         .isEqualTo(LocalTime(calendar.hourOfDay, calendar.minute, calendar.second))
     }
 
     @Test
     @DisplayName("Calendar as LocalDateTime")
     fun calendarAsLocalDateTime() {
-      assertThat(calendar.asLocalDateTime).isEqualTo(
+      assertThat(calendar.toLocalDateTime()).isEqualTo(
         LocalDateTime(
           calendar.year,
           calendar.month + 1,
@@ -163,9 +163,9 @@ internal class CalendarKtTest {
     @DisplayName("String to Calender")
     fun stringToCalendar() {
       assertThat("2020-01-01".toCalendar("yyyy-MM-dd"))
-        .isEqualTo("2020-01-01".toDate("yyyy-MM-dd").asCalendar)
+        .isEqualTo("2020-01-01".toDate("yyyy-MM-dd").toCalendar())
       assertThat("Sun Aug 07 16:37:42 IRDT 2022".toCalendar())
-        .isEqualTo(1_659_874_062_000.asCalendar)
+        .isEqualTo(1_659_874_062_000.toCalendar())
     }
 
     @Test
@@ -173,7 +173,7 @@ internal class CalendarKtTest {
     fun stringToCalendarOrNull() {
       assertThat("-01-01".toCalendarOrNull("yyyy-dd-mm")).isNull()
       assertThat("Sun Aug 07 16:37:42 IRDT 2022".toCalendarOrNull())
-        .isEqualTo(1_659_874_062_000.asCalendar)
+        .isEqualTo(1_659_874_062_000.toCalendar())
     }
 
     @Test

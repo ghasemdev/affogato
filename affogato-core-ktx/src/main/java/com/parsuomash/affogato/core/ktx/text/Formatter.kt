@@ -1,6 +1,9 @@
 package com.parsuomash.affogato.core.ktx.text
 
+import com.parsuomash.affogato.core.ktx.math.pow
 import java.text.DecimalFormat
+import kotlin.math.floor
+import kotlin.math.log10
 
 /**
  * Remove decimal part when [Float] number has decimal part.
@@ -13,11 +16,10 @@ import java.text.DecimalFormat
  * @since 1.1.0
  * @see Double.removeDecimalPart
  */
-inline val Float.removeDecimalPart: String
-  get() {
-    val numberToInt = toInt()
-    return if (this == numberToInt.toFloat()) numberToInt.toString() else toString()
-  }
+fun Float.removeDecimalPart(): String {
+  val numberToInt = toInt()
+  return if (this == numberToInt.toFloat()) numberToInt.toString() else toString()
+}
 
 /**
  * Remove decimal part when [Double] number has decimal part.
@@ -30,27 +32,52 @@ inline val Float.removeDecimalPart: String
  * @since 1.1.0
  * @see Float.removeDecimalPart
  */
-inline val Double.removeDecimalPart: String
-  get() {
-    val numberToInt = toInt()
-    return if (this == numberToInt.toDouble()) numberToInt.toString() else toString()
-  }
+fun Double.removeDecimalPart(): String {
+  val numberToInt = toInt()
+  return if (this == numberToInt.toDouble()) numberToInt.toString() else toString()
+}
 
 /**
- * Separate number with given pattern.
+ * Format numbers with given pattern.
  *
  * Example:
  * ```Kotlin
- * 123456789.separate() // 1,234,567,890
+ * 123456789.format() // 1,234,567,890
  * ```
  * @since 1.1.0
  * @see DecimalFormat
  * @param pattern default pattern is comma separator.
- * @return separated number.
+ * @return format number.
  */
-fun Number.separate(pattern: String = "#,###.##"): String {
+fun Number.format(pattern: String = "#,###.##"): String {
   decimalFormat.applyPattern(pattern)
   return decimalFormat.format(this)
+}
+
+/**
+ * Compact format numbers.
+ *
+ * Example:
+ * ```Kotlin
+ * 1200.compactFormat() // 1.2k
+ * ```
+ * @since 1.1.0
+ * @see DecimalFormat
+ * @return compact format number.
+ */
+fun Number.compactFormat(): String {
+  val numValue = toLong()
+  val value = floor(log10(numValue.toDouble())).toInt()
+  val base = value / 3
+
+  return if (value >= 3 && base < suffix.size) {
+    DecimalFormat("#0.0")
+      .format(numValue / 10.0.pow((base * 3).toDouble()))
+      .toDouble()
+      .removeDecimalPart() + suffix[base]
+  } else {
+    DecimalFormat("#,##0").format(numValue).toDouble().removeDecimalPart()
+  }
 }
 
 /**
@@ -77,3 +104,4 @@ fun String.formatCreditCard(separator: String = " ", separatorDigit: Int = 4): S
 }
 
 internal val decimalFormat: DecimalFormat by lazy { DecimalFormat() }
+private val suffix = charArrayOf(' ', 'k', 'M', 'B', 'T', 'P', 'E')

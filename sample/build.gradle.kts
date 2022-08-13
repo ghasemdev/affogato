@@ -10,13 +10,13 @@ plugins {
 }
 
 android {
-  compileSdk = 32
-  buildToolsVersion = "32.0.0"
+  compileSdk = 33
+  buildToolsVersion = "33.0.0"
 
   defaultConfig {
     applicationId = "com.parsuomash.affogato"
     minSdk = 21
-    targetSdk = 32
+    targetSdk = 33
     versionCode = 1
     versionName = "1.0.0"
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -35,6 +35,8 @@ android {
     targetCompatibility = JavaVersion.VERSION_11
   }
   kotlinOptions {
+    apiVersion = "1.7"
+    languageVersion = "1.7"
     jvmTarget = "11"
     freeCompilerArgs = listOf(
       "-P",
@@ -46,7 +48,7 @@ android {
     compose = true
   }
   composeOptions {
-    kotlinCompilerExtensionVersion = "1.2.0"
+    kotlinCompilerExtensionVersion = "1.3.0"
   }
   packagingOptions {
     resources.excludes.add("META-INF/AL2.0")
@@ -78,7 +80,7 @@ dependencies {
   implementation("androidx.core:core-ktx:1.8.0")
 
   // Compose ---------------------------------------------------------------------------------------
-  val composeVersion = "1.2.0"
+  val composeVersion = "1.2.1"
 
   implementation("androidx.compose.ui:ui:$composeVersion")
   implementation("androidx.compose.ui:ui-util:$composeVersion")
@@ -112,7 +114,7 @@ dependencies {
   debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
 
   // Accompanist -----------------------------------------------------------------------------------
-  val accompanistVersion = "0.25.0"
+  val accompanistVersion = "0.25.1"
 
   implementation("com.google.accompanist:accompanist-pager:$accompanistVersion")
   implementation("com.google.accompanist:accompanist-pager-indicators:$accompanistVersion")

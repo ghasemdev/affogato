@@ -6,6 +6,52 @@ import com.parsuomash.affogato.core.ktx.tryCatchElse
 import com.parsuomash.affogato.core.ktx.tryCatchNull
 
 /**
+ * Convert [ByteArray] to [String] HEX.
+ *
+ * @since 1.1.0
+ * @see asReversedHex
+ * @see asDecimal
+ * @see asReversedDecimal
+ */
+inline val ByteArray.asHex: String
+  get() = joinToString(" ") { "%02X".format(it) }
+
+/**
+ * Convert [ByteArray] to [String] reversed HEX.
+ *
+ * @since 1.1.0
+ * @see asHex
+ * @see asDecimal
+ * @see asReversedDecimal
+ */
+inline val ByteArray.asReversedHex: String
+  get() = reversedArray().joinToString(" ") { "%02X".format(it) }
+
+/**
+ * Convert [ByteArray] to [String] decimal.
+ *
+ * @since 1.1.0
+ * @see asHex
+ * @see asReversedHex
+ * @see asReversedDecimal
+ */
+inline val ByteArray.asDecimal: String
+  get() = buildString { this@asDecimal.forEach { append("%02X".format(it).toLong(16)) } }
+
+/**
+ * Convert [ByteArray] to [String] reversed decimal.
+ *
+ * @since 1.1.0
+ * @see asHex
+ * @see asReversedHex
+ * @see asDecimal
+ */
+inline val ByteArray.asReversedDecimal: String
+  get() = buildString {
+    this@asReversedDecimal.reversedArray().forEach { append("%02X".format(it).toLong(16)) }
+  }
+
+/**
  * Return an integer Array from int range.
  *
  * Example:
@@ -2149,51 +2195,5 @@ fun BooleanArray.rotateRight(n: Int = 1): BooleanArray {
   Collections.rotate(list, -n)
   return list.toBooleanArray()
 }
-
-/**
- * Convert [ByteArray] to [String] HEX.
- *
- * @since 1.1.0
- * @see asReversedHex
- * @see asDecimal
- * @see asReversedDecimal
- */
-inline val ByteArray.asHex: String
-  get() = joinToString(" ") { "%02X".format(it) }
-
-/**
- * Convert [ByteArray] to [String] reversed HEX.
- *
- * @since 1.1.0
- * @see asHex
- * @see asDecimal
- * @see asReversedDecimal
- */
-inline val ByteArray.asReversedHex: String
-  get() = reversedArray().joinToString(" ") { "%02X".format(it) }
-
-/**
- * Convert [ByteArray] to [String] decimal.
- *
- * @since 1.1.0
- * @see asHex
- * @see asReversedHex
- * @see asReversedDecimal
- */
-inline val ByteArray.asDecimal: String
-  get() = buildString { this@asDecimal.forEach { append("%02X".format(it).toLong(16)) } }
-
-/**
- * Convert [ByteArray] to [String] reversed decimal.
- *
- * @since 1.1.0
- * @see asHex
- * @see asReversedHex
- * @see asDecimal
- */
-inline val ByteArray.asReversedDecimal: String
-  get() = buildString {
-    this@asReversedDecimal.reversedArray().forEach { append("%02X".format(it).toLong(16)) }
-  }
 
 private const val ROTATE_N_SIZE = "n must be >= 1"

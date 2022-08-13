@@ -14,16 +14,31 @@ internal class FormatterKtTest {
   }
 
   @Test
-  fun `separate number with pattern`() {
+  fun `format number with pattern`() {
     val number1 = 1_000_000
     val number2 = 1_000_000.569
     val number3 = 100_000_000_000_000
     val number4 = 12_345.369F
 
-    assertThat(number1.separate()).isEqualTo("1,000,000")
-    assertThat(number2.separate()).isEqualTo("1,000,000.57")
-    assertThat(number3.separate()).isEqualTo("100,000,000,000,000")
-    assertThat(number4.separate()).isEqualTo("12,345.37")
+    assertThat(number1.format()).isEqualTo("1,000,000")
+    assertThat(number2.format()).isEqualTo("1,000,000.57")
+    assertThat(number3.format()).isEqualTo("100,000,000,000,000")
+    assertThat(number4.format()).isEqualTo("12,345.37")
+  }
+
+  @Test
+  fun `compact format number with pattern`() {
+    val number1 = 1_000_000
+    val number2 = 1_000_000.569
+    val number3 = 100_000_000_000_000
+    val number4 = 12_345.369F
+    val number5 = 1
+
+    assertThat(number1.compactFormat()).isEqualTo("1M")
+    assertThat(number2.compactFormat()).isEqualTo("1M")
+    assertThat(number3.compactFormat()).isEqualTo("100T")
+    assertThat(number4.compactFormat()).isEqualTo("12.3k")
+    assertThat(number5.compactFormat()).isEqualTo("1")
   }
 
   @Test

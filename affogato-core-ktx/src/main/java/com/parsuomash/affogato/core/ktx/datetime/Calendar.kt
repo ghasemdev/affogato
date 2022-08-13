@@ -53,40 +53,39 @@ inline val Calendar.weekOfMonth: Int get() = get(Calendar.WEEK_OF_MONTH)
  * Convert [Long] to [Calendar].
  * @since 1.1.0
  */
-inline val Long.asCalendar: Calendar
-  get() = Calendar.getInstance().apply { time = Date(this@asCalendar) }
+fun Long.toCalendar(): Calendar = Calendar.getInstance().apply { time = Date(this@toCalendar) }
 
 /**
  * Convert [Duration] to [Calendar].
  * @since 1.1.0
  */
-inline val Duration.asCalendar: Calendar
-  get() = Calendar.getInstance().apply { time = Date(inWholeMilliseconds) }
+fun Duration.toCalendar(): Calendar =
+  Calendar.getInstance().apply { time = Date(inWholeMilliseconds) }
 
 /**
  * Convert [Calendar] to [Date].
  * @since 1.1.0
  */
-inline val Calendar.asDate: Date get() = time
+fun Calendar.toDate(): Date = time
 
 /**
  * Convert [Calendar] to [LocalDate].
  * @since 1.1.0
  */
-inline val Calendar.asLocalDate: LocalDate get() = LocalDate(year, month + 1, dayOfMonth)
+fun Calendar.toLocalDate(): LocalDate = LocalDate(year, month + 1, dayOfMonth)
 
 /**
  * Convert [Calendar] to [LocalTime].
  * @since 1.1.0
  */
-inline val Calendar.asLocalTime: LocalTime get() = LocalTime(hourOfDay, minute, second)
+fun Calendar.toLocalTime(): LocalTime = LocalTime(hourOfDay, minute, second)
 
 /**
  * Convert [Calendar] to [LocalDateTime].
  * @since 1.1.0
  */
-inline val Calendar.asLocalDateTime: LocalDateTime
-  get() = LocalDateTime(year, month + 1, dayOfMonth, hourOfDay, minute, second)
+fun Calendar.toLocalDateTime(): LocalDateTime =
+  LocalDateTime(year, month + 1, dayOfMonth, hourOfDay, minute, second)
 
 /**
  * Two days are considered to be the same if they have the same day.
@@ -98,13 +97,13 @@ infix fun Calendar.isSameDay(date: Calendar): Boolean = dayOfYear == date.dayOfY
  * Adds the other value to this value.
  * @since 1.1.0
  */
-operator fun Calendar.plus(other: Calendar): Calendar = (time + other.time).asCalendar
+operator fun Calendar.plus(other: Calendar): Calendar = (time + other.time).toCalendar()
 
 /**
  * Subtracts the other value from this value.
  * @since 1.1.0
  */
-operator fun Calendar.minus(other: Calendar): Calendar = (time - other.time).asCalendar
+operator fun Calendar.minus(other: Calendar): Calendar = (time - other.time).toCalendar()
 
 /**
  * Adds the [Duration] value to this [Calendar].
@@ -112,13 +111,13 @@ operator fun Calendar.minus(other: Calendar): Calendar = (time - other.time).asC
  */
 operator
 
-fun Calendar.plus(other: Duration): Calendar = this + other.asCalendar
+fun Calendar.plus(other: Duration): Calendar = this + other.toCalendar()
 
 /**
  * Subtracts the [Duration] value from this [Calendar].
  * @since 1.1.0
  */
-operator fun Calendar.minus(other: Duration): Calendar = this - other.asCalendar
+operator fun Calendar.minus(other: Duration): Calendar = this - other.toCalendar()
 
 /**
  * Produce a Calendar from the given strings value and [pattern].
@@ -130,7 +129,7 @@ operator fun Calendar.minus(other: Duration): Calendar = this - other.asCalendar
  */
 fun String.toCalendar(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): Calendar {
   simpleDateFormat.applyPattern(pattern)
-  return simpleDateFormat.parse(this).asCalendar
+  return simpleDateFormat.parse(this).toCalendar()
 }
 
 /**
@@ -142,7 +141,7 @@ fun String.toCalendar(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): Calenda
 fun String.toCalendarOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): Calendar? =
   tryCatchNull {
     simpleDateFormat.applyPattern(pattern)
-    simpleDateFormat.parse(this).asCalendar
+    simpleDateFormat.parse(this).toCalendar()
   }
 
 /**

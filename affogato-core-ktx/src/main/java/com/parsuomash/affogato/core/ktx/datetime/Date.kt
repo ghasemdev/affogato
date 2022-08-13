@@ -13,61 +13,57 @@ import kotlinx.datetime.LocalTime
  *
  * Example:
  * ```Kotlin
- * 1659873010453L.asDate // Sun Aug 07 16:20:10 IRDT 2022
+ * 1659873010453L.toDate() // Sun Aug 07 16:20:10 IRDT 2022
  * ```
  * @since 1.1.0
  */
-inline val Long.asDate: Date get() = Date(this)
+fun Long.toDate(): Date = Date(this)
 
 /**
  * Convert [Duration] to [Date].
  *
  * Example:
  * ```Kotlin
- * 1.days.asDate // Fri Jan 02 03:30:00 IRST 1970
+ * 1.days.toDate() // Fri Jan 02 03:30:00 IRST 1970
  * ```
  * @since 1.1.0
  */
-inline val Duration.asDate: Date get() = Date(inWholeMilliseconds)
+fun Duration.toDate(): Date = Date(inWholeMilliseconds)
 
 /**
  * Convert [Date] to [LocalDate].
  * @since 1.1.0
  */
-inline val Date.asLocalDate: LocalDate
-  get() {
-    val calendar = Calendar.getInstance().apply { time = this@asLocalDate }
-    return LocalDate(calendar.year, calendar.month + 1, calendar.dayOfMonth)
-  }
+fun Date.toLocalDate(): LocalDate {
+  val calendar = Calendar.getInstance().apply { time = this@toLocalDate }
+  return LocalDate(calendar.year, calendar.month + 1, calendar.dayOfMonth)
+}
 
 /**
  * Convert [Date] to [LocalTime].
  * @since 1.1.0
  */
-inline val Date.asLocalTime: LocalTime
-  get() {
-    val calendar = Calendar.getInstance().apply { time = this@asLocalTime }
-    return LocalTime(calendar.hourOfDay, calendar.minute, calendar.second)
-  }
+fun Date.toLocalTime(): LocalTime {
+  val calendar = Calendar.getInstance().apply { time = this@toLocalTime }
+  return LocalTime(calendar.hourOfDay, calendar.minute, calendar.second)
+}
 
 /**
  * Convert [Date] to [LocalDateTime].
  * @since 1.1.0
  */
-inline val Date.asLocalDateTime: LocalDateTime
-  get() {
-    val calendar = Calendar.getInstance().apply { time = this@asLocalDateTime }
-    with(calendar) {
-      return LocalDateTime(year, month + 1, dayOfMonth, hourOfDay, minute, second)
-    }
+fun Date.toLocalDateTime(): LocalDateTime {
+  val calendar = Calendar.getInstance().apply { time = this@toLocalDateTime }
+  with(calendar) {
+    return LocalDateTime(year, month + 1, dayOfMonth, hourOfDay, minute, second)
   }
+}
 
 /**
  * Convert [Date] to [Calendar].
  * @since 1.1.0
  */
-inline val Date.asCalendar: Calendar
-  get() = Calendar.getInstance().apply { time = this@asCalendar }
+fun Date.toCalendar(): Calendar = Calendar.getInstance().apply { time = this@toCalendar }
 
 /**
  * Two days are considered to be the same if they have the same day.
@@ -80,7 +76,8 @@ inline val Date.asCalendar: Calendar
  * ```
  * @since 1.1.0
  */
-infix fun Date.isSameDay(date: Date): Boolean = asCalendar.dayOfYear == date.asCalendar.dayOfYear
+infix fun Date.isSameDay(date: Date): Boolean =
+  toCalendar().dayOfYear == date.toCalendar().dayOfYear
 
 /**
  * Adds the other value to this value.
@@ -149,7 +146,7 @@ fun String.toDateOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): Date?
  *
  * Example:
  * ```Kotlin
- * 1659814200000.asDate.toString("MM/dd/yyyy") // 08/07/2022
+ * 1659814200000.toDate().toString("MM/dd/yyyy") // 08/07/2022
  * ```
  * @since 1.1.0
  * @throws IllegalArgumentException if the given pattern is invalid

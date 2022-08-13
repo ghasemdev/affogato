@@ -16,35 +16,32 @@ import kotlinx.datetime.toLocalDateTime
  *
  * Example:
  * ```Kotlin
- * 1_659_814_200_000.asLocalTime // 00:00
+ * 1_659_814_200_000.toLocalTime() // 00:00
  * ```
  * @since 1.1.0
  */
-inline val Long.asLocalTime: LocalTime
-  get() {
-    val calendar = Calendar.getInstance().apply { time = Date(this@asLocalTime) }
-    return LocalTime(calendar.hourOfDay, calendar.minute, calendar.second)
-  }
+fun Long.toLocalTime(): LocalTime {
+  val calendar = Calendar.getInstance().apply { time = Date(this@toLocalTime) }
+  return LocalTime(calendar.hourOfDay, calendar.minute, calendar.second)
+}
 
 /**
  * Convert [LocalTime] to [Date].
  * @since 1.1.0
  */
-inline val LocalTime.asDate: Date
-  get() = Calendar.getInstance().apply {
-    set(0, 0, 0, this@asDate.hour, this@asDate.minute, this@asDate.second)
-    set(Calendar.MILLISECOND, 0)
-  }.time
+fun LocalTime.toDate(): Date = Calendar.getInstance().apply {
+  set(0, 0, 0, this@toDate.hour, this@toDate.minute, this@toDate.second)
+  set(Calendar.MILLISECOND, 0)
+}.time
 
 /**
  * Convert [LocalTime] to [Calendar].
  * @since 1.1.0
  */
-inline val LocalTime.asCalendar: Calendar
-  get() = Calendar.getInstance().apply {
-    set(0, 0, 0, this@asCalendar.hour, this@asCalendar.minute, this@asCalendar.second)
-    set(Calendar.MILLISECOND, 0)
-  }
+fun LocalTime.toCalendar(): Calendar = Calendar.getInstance().apply {
+  set(0, 0, 0, this@toCalendar.hour, this@toCalendar.minute, this@toCalendar.second)
+  set(Calendar.MILLISECOND, 0)
+}
 
 /**
  * Get current [LocalTime].
@@ -86,7 +83,7 @@ operator fun LocalTime.minus(duration: Duration): LocalTime =
  */
 fun String.toLocalTime(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): LocalTime {
   simpleDateFormat.applyPattern(pattern)
-  return simpleDateFormat.parse(this).asLocalTime
+  return simpleDateFormat.parse(this).toLocalTime()
 }
 
 /**
@@ -105,7 +102,7 @@ fun String.toLocalTime(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): LocalT
 fun String.toLocalTimeOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): LocalTime? =
   tryCatchNull {
     simpleDateFormat.applyPattern(pattern)
-    simpleDateFormat.parse(this).asLocalTime
+    simpleDateFormat.parse(this).toLocalTime()
   }
 
 /**
@@ -114,7 +111,7 @@ fun String.toLocalTimeOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): 
  * Example:
  * ```Kotlin
  * val time = LocalTime(11, 10, 0)
- * time.asLocalDate.toString("HH") // 11
+ * time.toLocalDate().toString("HH") // 11
  * ```
  * @since 1.1.0
  * @throws IllegalArgumentException if the given pattern is invalid
@@ -123,5 +120,5 @@ fun String.toLocalTimeOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): 
  */
 fun LocalTime.toString(format: String): String {
   simpleDateFormat.applyPattern(format)
-  return simpleDateFormat.format(asDate)
+  return simpleDateFormat.format(toDate())
 }

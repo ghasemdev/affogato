@@ -1,4 +1,4 @@
-[![Version](https://shields.io/badge/VERSION-1.0.0-blue?style=for-the-badge)](https://github.com/ghasemdev/affogato/releases/tag/1.0.0)
+[![Version](https://shields.io/badge/VERSION-1.1.0--beta02-blue?style=for-the-badge)](https://github.com/ghasemdev/affogato/releases/tag/1.1.0-beta02)
 [![Kotlin](https://shields.io/badge/Kotlin-1.7.10-pink?style=for-the-badge)](https://kotlinlang.org/)
 [![API](https://shields.io/badge/Api-+21-green?style=for-the-badge)](https://www.android.com/)
 [![License MIT](https://shields.io/badge/LICENSE-MIT-orange?style=for-the-badge)](https://opensource.org/licenses/MIT)
@@ -8,6 +8,12 @@
 # Affogato
 
 Affogato is a multipurpose library for Jetpack Compose, Android and Kotlin.
+
+### [Core-ktx](https://github.com/ghasemdev/affogato/wiki/Core-Ktx)
+
+Core-ktx is a Kotlin library that provides a set of Kotlin extensions for Android. Like
+collections, operations, string, math, random, date time, color, block scope and try-catch
+functions. Also, `TimeAgo` is my favorite extension for times 😄.
 
 ### [Compose Unit Size](https://github.com/ghasemdev/affogato/wiki/Unit-Size)
 
@@ -19,7 +25,7 @@ use `postureState` to build adaptive and responsive UIs in **Foldables**.
 # Links
 
 Affogato is currently available for maven/gradle builds
-at [Jitpack](https://jitpack.io/#ghasemdev/affogato/1.0.0) (
+at [Jitpack](https://jitpack.io/#ghasemdev/affogato/1.1.0-beta02) (
 read [Getting started](https://github.com/ghasemdev/affogato/wiki/Getting-Started)).
 
 * [Wiki](https://github.com/ghasemdev/affogato/wiki)
