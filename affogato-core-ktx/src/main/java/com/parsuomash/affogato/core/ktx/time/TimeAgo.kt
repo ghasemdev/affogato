@@ -74,6 +74,8 @@ import com.parsuomash.affogato.core.ktx.time.messages.lang.NlShortMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.NnNoMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.NnNoShortMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.PlMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.PtBrMessages
+import com.parsuomash.affogato.core.ktx.time.messages.lang.PtBrShortMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.RoMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.RoShortMessages
 import com.parsuomash.affogato.core.ktx.time.messages.lang.RuMessages
@@ -102,8 +104,15 @@ import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDateTime
 
 /**
- * TimeAgo is an Object that can be used to calculate the time difference between two dates is
- * specific format.
+ * TimeAgo is an Object  that converts a date into a humanized text. Instead of showing a date
+ * 2020-12-12 18:30 with timeago you can display something like `"now", "an hour ago", "~1y", etc`
+ *
+ * Note: This class uses ISO 639-1 language code to identify the language. For more information
+ * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
+ * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
+ * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
+ * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
+ * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
  *
  * Example:
  * ```Kotlin
@@ -129,6 +138,13 @@ object TimeAgo {
   /**
    * Sets the default [locale]. By default, it is `en`.
    *
+   * Note: This function uses ISO 639-1 language code to identify the language. For more information
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
+   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
+   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
+   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
+   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+   *
    * Example:
    * ```Kotlin
    * setDefaultLocale("fa")
@@ -146,6 +162,13 @@ object TimeAgo {
    * Sets [locales] with the auto provided [LookupMessages] to be available when
    * using the [format] function.
    *
+   * Note: This function uses ISO 639-1 language code to identify the language. For more information
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
+   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
+   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
+   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
+   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+   *
    * Example:
    * ```Kotlin
    * setLocaleMessages("fa", "en", "ar")
@@ -161,6 +184,13 @@ object TimeAgo {
   /**
    * Sets a [locale] with the auto provided [LookupMessages] to be available when
    * using the [format] function.
+   *
+   * Note: This function uses ISO 639-1 language code to identify the language. For more information
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
+   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
+   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
+   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
+   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
    *
    * Example:
    * ```Kotlin
@@ -234,6 +264,8 @@ object TimeAgo {
       "nn_no" -> setLocaleMessages("nn_no", NnNoMessages)
       "nn_no_short" -> setLocaleMessages("nn_no_short", NnNoShortMessages)
       "pl" -> setLocaleMessages("pl", PlMessages)
+      "pt_br" -> setLocaleMessages("pt_br", PtBrMessages)
+      "pt_br_short" -> setLocaleMessages("pt_br", PtBrShortMessages)
       "ro" -> setLocaleMessages("ro", RoMessages)
       "ro_short" -> setLocaleMessages("ro_short", RoShortMessages)
       "ru" -> setLocaleMessages("ru", RuMessages)
@@ -266,6 +298,13 @@ object TimeAgo {
    * Sets a [locale] with the provided [lookupMessages] to be available when
    * using the [format] function.
    *
+   * Note: This function uses ISO 639-1 language code to identify the language. For more information
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
+   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
+   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
+   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
+   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+   *
    * Example:
    * ```Kotlin
    * object CustomMessages : LookupMessages {
@@ -287,6 +326,13 @@ object TimeAgo {
    * Sets a [locale] with the auto provided [LookupMessages] to be available when
    * using the [format] function. also Sets the default locale.
    *
+   * Note: This function uses ISO 639-1 language code to identify the language. For more information
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
+   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
+   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
+   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
+   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+   *
    * Example:
    * ```Kotlin
    * setLocaleMessagesAndDefaultLocale("ar")
@@ -302,6 +348,13 @@ object TimeAgo {
   /**
    * Sets a [locale] with the auto provided [LookupMessages] to be available when
    * using the [format] function. also Sets the default locale.
+   *
+   * Note: This function uses ISO 639-1 language code to identify the language. For more information
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
+   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
+   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
+   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
+   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
    *
    * Example:
    * ```Kotlin
@@ -331,6 +384,13 @@ object TimeAgo {
    * 1 week to 4 week.
    * - If [allowFromNow] is true, format will use the Form prefix, i.e. a date
    * 5 minutes from now in 'en' locale will display as "5 minutes from now".
+   *
+   * Note: This function uses ISO 639-1 language code to identify the language. For more information
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
+   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
+   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
+   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
+   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
    *
    * Example:
    * ```Kotlin
@@ -458,6 +518,13 @@ object TimeAgo {
    * - If [allowFromNow] is true, format will use the Form prefix, i.e. a date
    * 5 minutes from now in 'en' locale will display as "5 minutes from now".
    *
+   * Note: This function uses ISO 639-1 language code to identify the language. For more information
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
+   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
+   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
+   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
+   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+   *
    * Example:
    * ```Kotlin
    * TimeAgo.format(nowInDate()) // "a moment ago"
@@ -486,6 +553,13 @@ object TimeAgo {
    * 1 week to 4 week.
    * - If [allowFromNow] is true, format will use the Form prefix, i.e. a date
    * 5 minutes from now in 'en' locale will display as "5 minutes from now".
+   *
+   * Note: This function uses ISO 639-1 language code to identify the language. For more information
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
+   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
+   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
+   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
+   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
    *
    * Example:
    * ```Kotlin
@@ -523,6 +597,13 @@ object TimeAgo {
    * - If [allowFromNow] is true, format will use the Form prefix, i.e. a date
    * 5 minutes from now in 'en' locale will display as "5 minutes from now".
    *
+   * Note: This function uses ISO 639-1 language code to identify the language. For more information
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
+   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
+   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
+   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
+   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+   *
    * Example:
    * ```Kotlin
    * TimeAgo.format(now()) // "a moment ago"
@@ -558,6 +639,13 @@ object TimeAgo {
    * 1 week to 4 week.
    * - If [allowFromNow] is true, format will use the Form prefix, i.e. a date
    * 5 minutes from now in 'en' locale will display as "5 minutes from now".
+   *
+   * Note: This function uses ISO 639-1 language code to identify the language. For more information
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
+   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
+   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
+   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
+   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
    *
    * Example:
    * ```Kotlin
@@ -597,6 +685,13 @@ object TimeAgo {
  * - If [allowFromNow] is true, format will use the Form prefix, i.e. a date
  * 5 minutes from now in 'en' locale will display as "5 minutes from now".
  *
+ * Note: This function uses ISO 639-1 language code to identify the language. For more information
+ * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
+ * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
+ * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
+ * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
+ * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+ *
  * ```Kotlin
  * 1565591769464.timeAgo() // on 08/12/2019
  * ```
@@ -623,6 +718,13 @@ fun Long.timeAgo(
  * 1 week to 4 week.
  * - If [allowFromNow] is true, format will use the Form prefix, i.e. a date
  * 5 minutes from now in 'en' locale will display as "5 minutes from now".
+ *
+ * Note: This function uses ISO 639-1 language code to identify the language. For more information
+ * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
+ * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
+ * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
+ * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
+ * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
  *
  * ```Kotlin
  * (nowInDate() - 4.hours).timeAgo() // 4 hours ago
@@ -651,6 +753,13 @@ fun Date.timeAgo(
  * - If [allowFromNow] is true, format will use the Form prefix, i.e. a date
  * 5 minutes from now in 'en' locale will display as "5 minutes from now".
  *
+ * Note: This function uses ISO 639-1 language code to identify the language. For more information
+ * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
+ * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
+ * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
+ * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
+ * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+ *
  * ```Kotlin
  * (nowInCalendar() - 1.hours).timeAgo() // about an hour ago
  * ```
@@ -678,6 +787,13 @@ fun Calendar.timeAgo(
  * - If [allowFromNow] is true, format will use the Form prefix, i.e. a date
  * 5 minutes from now in 'en' locale will display as "5 minutes from now".
  *
+ * Note: This function uses ISO 639-1 language code to identify the language. For more information
+ * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
+ * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
+ * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
+ * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
+ * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+ *
  * ```Kotlin
  * now().timeAgo() // a moment ago
  * ```
@@ -704,6 +820,13 @@ fun Instant.timeAgo(
  * 1 week to 4 week.
  * - If [allowFromNow] is true, format will use the Form prefix, i.e. a date
  * 5 minutes from now in 'en' locale will display as "5 minutes from now".
+ *
+ * Note: This function uses ISO 639-1 language code to identify the language. For more information
+ * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
+ * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
+ * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
+ * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
+ * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
  *
  * ```Kotlin
  * (nowInLocalDateTime() - 1.years).timeAgo() // about a year ago

@@ -3,7 +3,7 @@
 package com.parsuomash.affogato.core.ktx.time
 
 /**
- * [DateLimitation] is an enum class for show Limitation prefix and suffix [TimeAgo].
+ * [DateLimitation] is an enum class for limitation [TimeAgo] prefix and suffix.
  * @since 1.1.0
  */
 enum class DateLimitation(val priority: Int) {
