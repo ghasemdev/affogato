@@ -99,7 +99,7 @@ dependencies {
 
   implementation("androidx.compose.runtime:runtime:$composeVersion")
   implementation("androidx.compose.runtime:runtime-livedata:$composeVersion")
-  implementation("androidx.compose.compiler:compiler:$composeVersion")
+  implementation("androidx.compose.compiler:compiler:1.3.0")
   implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1")
   implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.0-alpha01")
 

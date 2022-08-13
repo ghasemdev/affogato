@@ -30,9 +30,6 @@ dependencies {
   // KotlinX DateTime ------------------------------------------------------------------------------
   api("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
 
-  // Persian DateTime ------------------------------------------------------------------------------
-  api("com.github.samanzamani:PersianDate:1.5.4")
-
   // Test ------------------------------------------------------------------------------------------
   testImplementation("io.kotlintest:kotlintest-core:3.4.2")
   testImplementation("com.google.truth:truth:1.1.3")

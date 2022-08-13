@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test
 internal class FormatterKtTest {
   @Test
   fun `remove decimal part`() {
-    assertThat(12.0F.removeDecimalPart).isEqualTo("12")
-    assertThat(12.3F.removeDecimalPart).isEqualTo("12.3")
+    assertThat(12.0F.removeDecimalPart()).isEqualTo("12")
+    assertThat(12.3F.removeDecimalPart()).isEqualTo("12.3")
 
-    assertThat(12.0.removeDecimalPart).isEqualTo("12")
-    assertThat(12.3.removeDecimalPart).isEqualTo("12.3")
+    assertThat(12.0.removeDecimalPart()).isEqualTo("12")
+    assertThat(12.3.removeDecimalPart()).isEqualTo("12.3")
   }
 
   @Test
