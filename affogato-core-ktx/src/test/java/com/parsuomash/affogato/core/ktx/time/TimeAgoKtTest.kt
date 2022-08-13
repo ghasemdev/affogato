@@ -4,8 +4,6 @@ import com.google.common.truth.Truth.assertThat
 import com.parsuomash.affogato.core.ktx.datetime.minus
 import com.parsuomash.affogato.core.ktx.datetime.toString
 import com.parsuomash.affogato.core.ktx.time.messages.NoSuchMessageException
-import com.parsuomash.affogato.core.ktx.time.messages.lang.EnDetailMessage
-import com.parsuomash.affogato.core.ktx.time.messages.lang.EnShortDetailMessages
 import com.parsuomash.affogato.core.ktx.time.messages.protocol.LookupMessages
 import kotlin.time.Duration.Companion.days
 import kotlin.time.Duration.Companion.hours
@@ -19,7 +17,7 @@ import org.junit.jupiter.api.assertThrows
 internal class TimeAgoKtTest {
   @Test
   fun `time ago for long type`() {
-    assertThrows<NoSuchMessageException> { nowInMilliseconds().timeAgo(locale = "ko") }
+    assertThrows<NoSuchMessageException> { nowInMilliseconds().timeAgo(locale = "*") }
     assertThat(TimeAgo.format(nowInMilliseconds())).isEqualTo("a moment ago")
 
     assertThat(nowInMilliseconds().timeAgo()).isEqualTo("a moment ago")
@@ -54,7 +52,7 @@ internal class TimeAgoKtTest {
 
   @Test
   fun `time ago for date type`() {
-    assertThrows<NoSuchMessageException> { nowInDate().timeAgo(locale = "ko") }
+    assertThrows<NoSuchMessageException> { nowInDate().timeAgo(locale = "*") }
     assertThat(TimeAgo.format(nowInDate())).isEqualTo("a moment ago")
 
     assertThat(nowInDate().timeAgo()).isEqualTo("a moment ago")
@@ -85,7 +83,7 @@ internal class TimeAgoKtTest {
 
   @Test
   fun `time ago for calendar type`() {
-    assertThrows<NoSuchMessageException> { nowInCalendar().timeAgo(locale = "ko") }
+    assertThrows<NoSuchMessageException> { nowInCalendar().timeAgo(locale = "*") }
     assertThat(TimeAgo.format(nowInCalendar())).isEqualTo("a moment ago")
 
     assertThat(nowInCalendar().timeAgo()).isEqualTo("a moment ago")
@@ -116,7 +114,7 @@ internal class TimeAgoKtTest {
 
   @Test
   fun `time ago for instant type`() {
-    assertThrows<NoSuchMessageException> { now().timeAgo(locale = "ko") }
+    assertThrows<NoSuchMessageException> { now().timeAgo(locale = "*") }
     assertThat(TimeAgo.format(now())).isEqualTo("a moment ago")
 
     assertThat(now().timeAgo()).isEqualTo("a moment ago")
@@ -148,7 +146,7 @@ internal class TimeAgoKtTest {
 
   @Test
   fun `time ago for local date time type`() {
-    assertThrows<NoSuchMessageException> { nowInLocalDateTime().timeAgo(locale = "ko") }
+    assertThrows<NoSuchMessageException> { nowInLocalDateTime().timeAgo(locale = "*") }
     assertThat(TimeAgo.format(nowInLocalDateTime())).isEqualTo("a moment ago")
 
     assertThat(nowInLocalDateTime().timeAgo()).isEqualTo("a moment ago")
@@ -191,81 +189,100 @@ internal class TimeAgoKtTest {
   @Test
   fun `min cut off`() {
     var date = now() - 2.years
-    assertThat(date.timeAgo(locale = "en_de", minCutOff = DateLimitation.Year).also(::println))
+    assertThat(date.timeAgo(locale = "en_detail", minCutOff = DateLimitation.Year).also(::println))
       .isEqualTo(date.toString("MMM dd, yyyy"))
 
     date = now() - 1.days
-    assertThat(date.timeAgo(locale = "en_de", minCutOff = DateLimitation.Year).also(::println))
+    assertThat(date.timeAgo(locale = "en_detail", minCutOff = DateLimitation.Year).also(::println))
       .isEqualTo("a day ago")
 
     date = now() - 1.months
-    assertThat(date.timeAgo(locale = "en_de", minCutOff = DateLimitation.Month).also(::println))
+    assertThat(date.timeAgo(locale = "en_detail", minCutOff = DateLimitation.Month).also(::println))
       .isEqualTo(date.toString("MMM dd"))
 
     date = now() - 2.months
-    assertThat(date.timeAgo(locale = "en_de", minCutOff = DateLimitation.Month).also(::println))
+    assertThat(date.timeAgo(locale = "en_detail", minCutOff = DateLimitation.Month).also(::println))
       .isEqualTo(date.toString("MMM dd"))
 
     date = now() - 1.years
-    assertThat(date.timeAgo(locale = "en_de", minCutOff = DateLimitation.Month).also(::println))
+    assertThat(date.timeAgo(locale = "en_detail", minCutOff = DateLimitation.Month).also(::println))
       .isEqualTo(date.toString("MMM dd, yyyy"))
   }
 
   @Test
   fun remind() {
     var date = now() - 2.years - 2.months
-    assertThat(date.timeAgo(locale = "en_short2").also(::println)).isEqualTo("2y 2m")
+    assertThat(date.timeAgo(locale = "en_short_detail").also(::println)).isEqualTo("2y 2m")
 
     date = now() - 265.days
-    assertThat(date.timeAgo(locale = "en_short2").also(::println)).isEqualTo("8mo 25d")
+    assertThat(date.timeAgo(locale = "en_short_detail").also(::println)).isEqualTo("8mo 25d")
 
     date = now() - 2.days - 8.hours
-    assertThat(date.timeAgo(locale = "en_short2").also(::println)).isEqualTo("2d 8h")
+    assertThat(date.timeAgo(locale = "en_short_detail").also(::println)).isEqualTo("2d 8h")
 
     date = now() - 2.hours - 45.minutes
-    assertThat(date.timeAgo(locale = "en_short2").also(::println)).isEqualTo("2h 45m")
+    assertThat(date.timeAgo(locale = "en_short_detail").also(::println)).isEqualTo("2h 45m")
 
     date = now() - 5.minutes - 23.seconds
-    assertThat(date.timeAgo(locale = "en_short2").also(::println)).isEqualTo("5m 23s")
+    assertThat(date.timeAgo(locale = "en_short_detail").also(::println)).isEqualTo("5m 23s")
 
     date = now() - 2.days
-    assertThat(date.timeAgo(locale = "en_short2", isWeekFormatEnabled = true).also(::println))
+    assertThat(date.timeAgo(locale = "en_short_detail", isWeekFormatEnabled = true).also(::println))
       .isEqualTo("2d")
 
     date = now() - 3.days
-    assertThat(date.timeAgo(locale = "en_short2", isWeekFormatEnabled = true).also(::println))
+    assertThat(date.timeAgo(locale = "en_short_detail", isWeekFormatEnabled = true).also(::println))
       .isEqualTo("3d")
 
     date = now() - 4.days
-    assertThat(date.timeAgo(locale = "en_short2", isWeekFormatEnabled = true).also(::println))
+    assertThat(date.timeAgo(locale = "en_short_detail", isWeekFormatEnabled = true).also(::println))
       .isEqualTo("4d")
 
     date = now() - 5.days
-    assertThat(date.timeAgo(locale = "en_short2", isWeekFormatEnabled = true).also(::println))
+    assertThat(date.timeAgo(locale = "en_short_detail", isWeekFormatEnabled = true).also(::println))
       .isEqualTo("5d")
 
     date = now() - 6.days
-    assertThat(date.timeAgo(locale = "en_short2", isWeekFormatEnabled = true).also(::println))
+    assertThat(date.timeAgo(locale = "en_short_detail", isWeekFormatEnabled = true).also(::println))
       .isEqualTo("6d")
 
     date = now() - 7.days
-    assertThat(date.timeAgo(locale = "en_short2", isWeekFormatEnabled = true).also(::println))
+    assertThat(date.timeAgo(locale = "en_short_detail", isWeekFormatEnabled = true).also(::println))
       .isEqualTo("1w")
 
     date = now() - 8.days
-    assertThat(date.timeAgo(locale = "en_short2", isWeekFormatEnabled = true).also(::println))
+    assertThat(date.timeAgo(locale = "en_short_detail", isWeekFormatEnabled = true).also(::println))
       .isEqualTo("1w 1d")
 
     date = now() - 29.days
-    assertThat(date.timeAgo(locale = "en_short2", isWeekFormatEnabled = true).also(::println))
+    assertThat(date.timeAgo(locale = "en_short_detail", isWeekFormatEnabled = true).also(::println))
       .isEqualTo("~1mo")
   }
 
   companion object {
+    private val languages = listOf(
+      "am", "ar", "az", "bs", "ca", "cs", "da", "de", "dv", "en", "es", "et", "fa", "fi", "fr",
+      "gr", "he", "hi", "hu", "it", "km", "ku", "mn", "ms_my", "my", "nb_no", "nl", "pt_br",
+      "ru", "rw", "sv", "uk", "ur", "vi"
+    )
+
     @JvmStatic
     @BeforeAll
     fun init() {
-      TimeAgo.setLocaleMessagesAndDefaultLocale("en")
+      assertThrows<NoSuchMessageException> {
+        TimeAgo.setLocaleMessages("*")
+      }
+      for (lang in languages) {
+        TimeAgo.setLocaleMessages(lang)
+        TimeAgo.setLocaleMessages(lang + "_short")
+        println(lang + "_short")
+      }
+      TimeAgo.setLocaleMessages(
+        "id", "ja", "ko", "nn_no", "pl", "ta", "tk", "tr", "zh_cn", "zh"
+      )
+      TimeAgo.setLocaleMessages("en_short_detail")
+      TimeAgo.setLocaleMessages("en_detail")
+
       TimeAgo.setLocaleMessagesAndDefaultLocale(
         locale = "custom",
         object : LookupMessages {
@@ -282,9 +299,7 @@ internal class TimeAgoKtTest {
           override fun years(years: Int, months: Int, date: Long): String = ""
         }
       )
-      TimeAgo.setLocaleMessages("ar", "az")
-      TimeAgo.setLocaleMessages("en_de", EnDetailMessage)
-      TimeAgo.setLocaleMessages("en_short2", EnShortDetailMessages)
+      TimeAgo.setLocaleMessagesAndDefaultLocale("en")
       TimeAgo.setDefaultLocale("en")
     }
   }

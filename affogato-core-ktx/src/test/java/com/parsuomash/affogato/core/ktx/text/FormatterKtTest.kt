@@ -32,11 +32,13 @@ internal class FormatterKtTest {
     val number2 = 1_000_000.569
     val number3 = 100_000_000_000_000
     val number4 = 12_345.369F
+    val number5 = 1
 
     assertThat(number1.compactFormat()).isEqualTo("1M")
     assertThat(number2.compactFormat()).isEqualTo("1M")
     assertThat(number3.compactFormat()).isEqualTo("100T")
     assertThat(number4.compactFormat()).isEqualTo("12.3k")
+    assertThat(number5.compactFormat()).isEqualTo("1")
   }
 
   @Test
