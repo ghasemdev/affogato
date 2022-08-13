@@ -16,11 +16,10 @@ import kotlin.math.log10
  * @since 1.1.0
  * @see Double.removeDecimalPart
  */
-inline val Float.removeDecimalPart: String
-  get() {
-    val numberToInt = toInt()
-    return if (this == numberToInt.toFloat()) numberToInt.toString() else toString()
-  }
+fun Float.removeDecimalPart(): String {
+  val numberToInt = toInt()
+  return if (this == numberToInt.toFloat()) numberToInt.toString() else toString()
+}
 
 /**
  * Remove decimal part when [Double] number has decimal part.
@@ -33,11 +32,10 @@ inline val Float.removeDecimalPart: String
  * @since 1.1.0
  * @see Float.removeDecimalPart
  */
-inline val Double.removeDecimalPart: String
-  get() {
-    val numberToInt = toInt()
-    return if (this == numberToInt.toDouble()) numberToInt.toString() else toString()
-  }
+fun Double.removeDecimalPart(): String {
+  val numberToInt = toInt()
+  return if (this == numberToInt.toDouble()) numberToInt.toString() else toString()
+}
 
 /**
  * Format numbers with given pattern.
@@ -76,9 +74,9 @@ fun Number.compactFormat(): String {
     DecimalFormat("#0.0")
       .format(numValue / 10.0.pow((base * 3).toDouble()))
       .toDouble()
-      .removeDecimalPart + suffix[base]
+      .removeDecimalPart() + suffix[base]
   } else {
-    DecimalFormat("#,##0").format(numValue).toDouble().removeDecimalPart
+    DecimalFormat("#,##0").format(numValue).toDouble().removeDecimalPart()
   }
 }
 

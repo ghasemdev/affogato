@@ -1,6 +1,6 @@
 package com.parsuomash.affogato.core.ktx.time.messages.protocol
 
-import com.parsuomash.affogato.core.ktx.datetime.asDate
+import com.parsuomash.affogato.core.ktx.datetime.toDate
 import com.parsuomash.affogato.core.ktx.datetime.toString
 
 /**
@@ -9,8 +9,8 @@ import com.parsuomash.affogato.core.ktx.datetime.toString
  */
 interface YearMessages {
   /** Format when time is about a year */
-  fun aboutAYear(year: Int, date: Long): String = date.asDate.toString("MMM dd, yyyy")
+  fun aboutAYear(year: Int, date: Long): String = date.toDate().toString("MMM dd, yyyy")
 
   /** Format when time is in years */
-  fun years(years: Int, months: Int, date: Long): String = date.asDate.toString("MMM dd, yyyy")
+  fun years(years: Int, months: Int, date: Long): String = date.toDate().toString("MMM dd, yyyy")
 }

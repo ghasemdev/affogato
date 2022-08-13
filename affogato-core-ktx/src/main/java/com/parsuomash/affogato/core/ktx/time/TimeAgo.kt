@@ -7,7 +7,7 @@
 
 package com.parsuomash.affogato.core.ktx.time
 
-import com.parsuomash.affogato.core.ktx.datetime.asDate
+import com.parsuomash.affogato.core.ktx.datetime.toDate
 import com.parsuomash.affogato.core.ktx.math.round
 import com.parsuomash.affogato.core.ktx.time.DateLimitation.None
 import com.parsuomash.affogato.core.ktx.time.TimeAgo.setLocaleMessages
@@ -662,9 +662,9 @@ object TimeAgo {
     allowFromNow: Boolean = false
   ): String =
     format(
-      date.asDate.time,
+      date.toDate().time,
       locale,
-      clock.asDate.time,
+      clock.toDate().time,
       minCutOff,
       isWeekFormatEnabled,
       allowFromNow

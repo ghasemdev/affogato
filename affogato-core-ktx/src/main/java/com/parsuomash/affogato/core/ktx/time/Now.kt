@@ -1,8 +1,8 @@
 package com.parsuomash.affogato.core.ktx.time
 
-import com.parsuomash.affogato.core.ktx.datetime.asCalendar
-import com.parsuomash.affogato.core.ktx.datetime.asDate
 import com.parsuomash.affogato.core.ktx.datetime.now
+import com.parsuomash.affogato.core.ktx.datetime.toCalendar
+import com.parsuomash.affogato.core.ktx.datetime.toDate
 import java.util.*
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
@@ -45,7 +45,7 @@ fun nowInMilliseconds(): Long = now().toEpochMilliseconds()
  * @since 1.1.0
  * @see nowInMilliseconds
  */
-fun nowInDate(): Date = nowInMilliseconds().asDate
+fun nowInDate(): Date = nowInMilliseconds().toDate()
 
 /**
  * Get current time in [Calendar] format.
@@ -57,7 +57,7 @@ fun nowInDate(): Date = nowInMilliseconds().asDate
  * @since 1.1.0
  * @see nowInMilliseconds
  */
-fun nowInCalendar(): Calendar = nowInMilliseconds().asCalendar
+fun nowInCalendar(): Calendar = nowInMilliseconds().toCalendar()
 
 /**
  * Get current [LocalDate].
