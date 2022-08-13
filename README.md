@@ -11,9 +11,9 @@ Affogato is a multipurpose library for Jetpack Compose, Android and Kotlin.
 
 ### [Core-ktx](https://github.com/ghasemdev/affogato/wiki/Core-Ktx)
 
-Core-ktx is a Kotlin library that provides a set of Kotlin extensions for Android. Like
-collections, operations, string, math, random, date time, color, block scope and try-catch
-functions. Also, `TimeAgo` is my favorite extension for times 😄.
+Core-ktx is a Kotlin library that provides a set of Kotlin extensions. Like collections, operations,
+string, math, random, date time, color, block scope and try-catch functions. Also, `TimeAgo` is my
+favorite extension for times 😄.
 
 ### [Compose Unit Size](https://github.com/ghasemdev/affogato/wiki/Unit-Size)
 

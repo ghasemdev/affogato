@@ -9,9 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### 🚀 Features
 
-* Add factory pattern to set local in TimeAgo
-* Add new languages for time ago
-* Add cut off, local number, week support for TimeAgo
+* Add factory pattern to set local in `TimeAgo`
+* Add new languages for `TimeAgo`
+* Add cut off, local number, week support for `TimeAgo`
 * Add new compact format function for numbers
 
 ### 💥 Breaking Changes
