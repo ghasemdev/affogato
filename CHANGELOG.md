@@ -5,6 +5,47 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [🎉 v1.1.0-beta02 Core-ktx] - 2022-08-13
+
+### 🚀 Features
+
+* Add factory pattern to set local in TimeAgo
+* Add new languages for time ago
+* Add cut off, local number, week support for TimeAgo
+* Add new compact format function for numbers
+
+### 💥 Breaking Changes
+
+* Change time ago messages package
+* Remove onDate function from LookupMessages class
+* Change `as...` function -> `to...` function for date time converters
+
+### 🐛 Fixes
+
+* Fix TimeAgo arabic issue
+
+### 🧪 Tests
+
+* Add more tests
+
+## [🎉 v1.1.0-beta01 Core-ktx] - 2022-08-10
+
+### 🚀 Features
+
+* Collections Function (built-in and get functions based on Range and Progression, sorting map,
+  rotate, head, tail and ...)
+* Operations Function (collection operation add, sub, mul, div and rem, string times and some
+  boolean operator)
+* String Function (formatting and get functions based on Range and Progression, separate,
+  removeDecimalPart, rotate and ... )
+* Math Function (math for collection like median, std, variance and more, BD and BI, round with
+  digit, infix pow and degree to radian, ... )
+* Random Function (choice, choices and nextInt-long based on Progression)
+* Date Time Function (convert all type of date time to each other :), now functions and time ago)
+* Color Converter (rgb to hex, hex to rgb)
+* Block Scope Function
+* Try-Catch Functions and Counter
+
 ## [🎉 v1.0.0 Affogato Unit] - 2022-07-27
 
 ### 🚀 Features
