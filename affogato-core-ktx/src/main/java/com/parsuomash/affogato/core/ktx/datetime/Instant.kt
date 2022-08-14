@@ -7,7 +7,6 @@ import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalTime
 import kotlinx.datetime.TimeZone
-import kotlinx.datetime.toKotlinInstant
 import kotlinx.datetime.toLocalDateTime
 
 /**
@@ -80,7 +79,8 @@ infix fun Instant.isSameDay(date: Instant): Boolean =
  */
 fun String.toInstant(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): Instant {
   simpleDateFormat.applyPattern(pattern)
-  return simpleDateFormat.parse(this).toInstant().toKotlinInstant()
+  val date = simpleDateFormat.parse(this)
+  return Instant.fromEpochMilliseconds(date.time)
 }
 
 /**
@@ -99,7 +99,8 @@ fun String.toInstant(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): Instant 
 fun String.toInstantOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): Instant? =
   tryCatchNull {
     simpleDateFormat.applyPattern(pattern)
-    simpleDateFormat.parse(this).toInstant().toKotlinInstant()
+    val date = simpleDateFormat.parse(this)
+    Instant.fromEpochMilliseconds(date.time)
   }
 
 /**
@@ -114,7 +115,33 @@ fun String.toInstantOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): In
  * @return The formatted date-time string.
  * @see SimpleDateFormat
  */
+@Deprecated(
+  message = "This function is deprecated and will be removed in next major release." +
+    "Use format() instead.",
+  replaceWith = ReplaceWith(
+    expression = "format",
+    imports = ["com.parsuomash.affogato.core.ktx.datetime.format"]
+  ),
+  level = DeprecationLevel.WARNING
+)
 fun Instant.toString(format: String): String {
   simpleDateFormat.applyPattern(format)
+  return simpleDateFormat.format(toDate())
+}
+
+/**
+ * Formats a [Instant] into a date-time [String].
+ *
+ * Example:
+ * ```Kotlin
+ * 1659814200000.toInstant().format("MM/dd/yyyy") // 08/07/2022
+ * ```
+ * @since 1.1.0
+ * @throws IllegalArgumentException if the given pattern is invalid
+ * @return The formatted date-time string.
+ * @see SimpleDateFormat
+ */
+fun Instant.format(pattern: String): String {
+  simpleDateFormat.applyPattern(pattern)
   return simpleDateFormat.format(toDate())
 }
