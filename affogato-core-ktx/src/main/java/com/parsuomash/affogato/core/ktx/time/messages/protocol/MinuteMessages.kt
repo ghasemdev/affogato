@@ -6,11 +6,11 @@ package com.parsuomash.affogato.core.ktx.time.messages.protocol
  */
 interface MinuteMessages {
   /** Format when time is less than a minute */
-  fun lessThanOneMinute(seconds: Int, date: Long): String
+  fun lessThanOneMinute(seconds: Int, dateInMillis: Long): String
 
   /** Format when time is about a minute */
-  fun aboutAMinute(minutes: Int, date: Long): String
+  fun aboutAMinute(minutes: Int, dateInMillis: Long): String
 
   /** Format when time is in minutes */
-  fun minutes(minutes: Int, seconds: Int, date: Long): String
+  fun minutes(minutes: Int, seconds: Int, dateInMillis: Long): String
 }

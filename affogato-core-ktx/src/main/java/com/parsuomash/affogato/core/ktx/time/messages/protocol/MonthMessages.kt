@@ -9,8 +9,10 @@ import com.parsuomash.affogato.core.ktx.datetime.toString
  */
 interface MonthMessages {
   /** Format when time is about a month */
-  fun aboutAMonth(days: Int, date: Long): String = date.toDate().toString("MMM dd")
+  fun aboutAMonth(days: Int, dateInMillis: Long): String =
+    dateInMillis.toDate().toString("MMM dd")
 
   /** Format when time is in months */
-  fun months(months: Int, days: Int, date: Long): String = date.toDate().toString("MMM dd")
+  fun months(months: Int, days: Int, dateInMillis: Long): String =
+    dateInMillis.toDate().toString("MMM dd")
 }

@@ -6,8 +6,8 @@ package com.parsuomash.affogato.core.ktx.time.messages.protocol
  */
 interface HourMessages {
   /** Format when time is about an hour */
-  fun aboutAnHour(minutes: Int, date: Long): String
+  fun aboutAnHour(minutes: Int, dateInMillis: Long): String
 
   /** Format when time is in hours */
-  fun hours(hours: Int, minutes: Int, date: Long): String
+  fun hours(hours: Int, minutes: Int, dateInMillis: Long): String
 }

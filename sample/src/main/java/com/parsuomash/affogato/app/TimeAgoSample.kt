@@ -18,20 +18,26 @@ fun main() {
   val customMessage = object : LookupMessages {
     override fun suffixAgo(): String = "ago"
     override fun suffixFromNow(): String = "from now"
-    override fun lessThanOneMinute(seconds: Int, date: Long): String = "a moment"
-    override fun aboutAMinute(minutes: Int, date: Long): String = "a minute"
-    override fun minutes(minutes: Int, seconds: Int, date: Long): String = "$minutes minutes"
-    override fun aboutAnHour(minutes: Int, date: Long): String = "about an hour"
-    override fun hours(hours: Int, minutes: Int, date: Long): String = "$hours hours"
-    override fun aDay(hours: Int, date: Long): String = "a day"
-    override fun days(days: Int, hours: Int, date: Long): String = "$days days"
-    override fun aboutAMonth(days: Int, date: Long): String = date.toDate().toString("MMM dd")
-    override fun months(months: Int, days: Int, date: Long): String =
-      date.toDate().toString("MMM dd")
+    override fun lessThanOneMinute(seconds: Int, dateInMillis: Long): String = "a moment"
+    override fun aboutAMinute(minutes: Int, dateInMillis: Long): String = "a minute"
+    override fun minutes(minutes: Int, seconds: Int, dateInMillis: Long): String =
+      "$minutes minutes"
 
-    override fun aboutAYear(year: Int, date: Long): String = date.toDate().toString("MMM dd, yyyy")
-    override fun years(years: Int, months: Int, date: Long): String =
-      date.toDate().toString("MMM dd, yyyy")
+    override fun aboutAnHour(minutes: Int, dateInMillis: Long): String = "about an hour"
+    override fun hours(hours: Int, minutes: Int, dateInMillis: Long): String = "$hours hours"
+    override fun aDay(hours: Int, dateInMillis: Long): String = "a day"
+    override fun days(days: Int, hours: Int, dateInMillis: Long): String = "$days days"
+    override fun aboutAMonth(days: Int, dateInMillis: Long): String =
+      dateInMillis.toDate().toString("MMM dd")
+
+    override fun months(months: Int, days: Int, dateInMillis: Long): String =
+      dateInMillis.toDate().toString("MMM dd")
+
+    override fun aboutAYear(year: Int, dateInMillis: Long): String =
+      dateInMillis.toDate().toString("MMM dd, yyyy")
+
+    override fun years(years: Int, months: Int, dateInMillis: Long): String =
+      dateInMillis.toDate().toString("MMM dd, yyyy")
   }
   TimeAgo.setLocaleMessagesAndDefaultLocale("custom", customMessage)
   TimeAgo.isLocaleNumberEnabled = true

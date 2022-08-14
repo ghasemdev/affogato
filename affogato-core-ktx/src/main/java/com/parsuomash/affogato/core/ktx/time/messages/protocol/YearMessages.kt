@@ -9,8 +9,10 @@ import com.parsuomash.affogato.core.ktx.datetime.toString
  */
 interface YearMessages {
   /** Format when time is about a year */
-  fun aboutAYear(year: Int, date: Long): String = date.toDate().toString("MMM dd, yyyy")
+  fun aboutAYear(year: Int, dateInMillis: Long): String =
+    dateInMillis.toDate().toString("MMM dd, yyyy")
 
   /** Format when time is in years */
-  fun years(years: Int, months: Int, date: Long): String = date.toDate().toString("MMM dd, yyyy")
+  fun years(years: Int, months: Int, dateInMillis: Long): String =
+    dateInMillis.toDate().toString("MMM dd, yyyy")
 }
