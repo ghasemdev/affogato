@@ -18,17 +18,17 @@ internal object FaMessages : LookupMessages {
 
   override fun aboutAnHour(minutes: Int, date: Long): String = "یک ساعت"
   override fun hours(hours: Int, minutes: Int, date: Long): String =
-    "$${toFarsi(hours.toString())} ساعت"
+    "${toFarsi(hours.toString())} ساعت"
 
   override fun aDay(hours: Int, date: Long): String = "یک روز"
-  override fun days(days: Int, hours: Int, date: Long): String = "$${toFarsi(days.toString())} روز"
+  override fun days(days: Int, hours: Int, date: Long): String = "${toFarsi(days.toString())} روز"
   override fun aboutAMonth(days: Int, date: Long): String = "یک ماه"
   override fun months(months: Int, days: Int, date: Long): String =
-    "$${toFarsi(months.toString())} ماه"
+    "${toFarsi(months.toString())} ماه"
 
   override fun aboutAYear(year: Int, date: Long): String = "یک سال"
   override fun years(years: Int, months: Int, date: Long): String =
-    "$${toFarsi(years.toString())} سال"
+    "${toFarsi(years.toString())} سال"
 }
 
 /**
@@ -39,21 +39,21 @@ internal object FaShortMessages : LookupMessages {
   override fun lessThanOneMinute(seconds: Int, date: Long): String = "الان"
   override fun aboutAMinute(minutes: Int, date: Long): String = "~${toFarsi("1")} د"
   override fun minutes(minutes: Int, seconds: Int, date: Long): String =
-    "$${toFarsi(minutes.toString())} د"
+    "${toFarsi(minutes.toString())} د"
 
   override fun aboutAnHour(minutes: Int, date: Long): String = "~${toFarsi("1")} س"
   override fun hours(hours: Int, minutes: Int, date: Long): String =
-    "$${toFarsi(hours.toString())} س"
+    "${toFarsi(hours.toString())} س"
 
   override fun aDay(hours: Int, date: Long): String = "~${toFarsi("1")} ر"
-  override fun days(days: Int, hours: Int, date: Long): String = "$${toFarsi(days.toString())} ر"
+  override fun days(days: Int, hours: Int, date: Long): String = "${toFarsi(days.toString())} ر"
   override fun aboutAMonth(days: Int, date: Long): String = "~${toFarsi("1")} م"
   override fun months(months: Int, days: Int, date: Long): String =
-    "$${toFarsi(months.toString())} م"
+    "${toFarsi(months.toString())} م"
 
   override fun aboutAYear(year: Int, date: Long): String = "~${toFarsi("1")} س"
   override fun years(years: Int, months: Int, date: Long): String =
-    "$${toFarsi(years.toString())} س"
+    "${toFarsi(years.toString())} س"
 }
 
 private fun toFarsi(number: String) =

@@ -65,21 +65,21 @@ internal object ArShortMessages : LookupMessages {
 
   override fun aboutAMinute(minutes: Int, date: Long): String = "~${toArabic("1")} د"
   override fun minutes(minutes: Int, seconds: Int, date: Long): String =
-    "$${toArabic(minutes.toString())} د"
+    "${toArabic(minutes.toString())} د"
 
   override fun aboutAnHour(minutes: Int, date: Long): String = "~${toArabic("1")} س"
   override fun hours(hours: Int, minutes: Int, date: Long): String =
-    "$${toArabic(hours.toString())} س"
+    "${toArabic(hours.toString())} س"
 
   override fun aDay(hours: Int, date: Long): String = "~${toArabic("1")} ي"
-  override fun days(days: Int, hours: Int, date: Long): String = "$${toArabic(days.toString())} ي"
+  override fun days(days: Int, hours: Int, date: Long): String = "${toArabic(days.toString())} ي"
   override fun aboutAMonth(days: Int, date: Long): String = "~${toArabic("1")} ش"
   override fun months(months: Int, days: Int, date: Long): String =
-    "$${toArabic(months.toString())} ش"
+    "${toArabic(months.toString())} ش"
 
   override fun aboutAYear(year: Int, date: Long): String = "~${toArabic("1")} س"
   override fun years(years: Int, months: Int, date: Long): String =
-    "$${toArabic(years.toString())} س"
+    "${toArabic(years.toString())} س"
 }
 
 private fun toArabic(number: String) =
