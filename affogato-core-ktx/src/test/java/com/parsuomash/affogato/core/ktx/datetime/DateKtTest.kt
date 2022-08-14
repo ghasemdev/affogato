@@ -91,8 +91,8 @@ internal class DateKtTest {
     @Test
     @DisplayName("Date to String")
     fun dateToString() {
-      assertThat(1_659_814_200_000.toDate().toString("MM/dd/yyyy")).isEqualTo("08/07/2022")
-      assertThat(1_659_874_062_000.toDate().toString("EEE MMM dd HH:mm:ss zzz yyyy"))
+      assertThat(1_659_814_200_000.toDate().format("MM/dd/yyyy")).isEqualTo("08/07/2022")
+      assertThat(1_659_874_062_000.toDate().format("EEE MMM dd HH:mm:ss zzz yyyy"))
         .isEqualTo("Sun Aug 07 16:37:42 IRDT 2022")
     }
   }
@@ -123,10 +123,10 @@ internal class DateKtTest {
   @Test
   fun convertDate() {
     val format = "yyyy-MM-dd HH:mm:ss"
-    val stringDate = date.toString(format)
+    val stringDate = date.format(format)
     val formatDate = stringDate.toDate(format)
 
-    assertThat(stringDate).isEqualTo(formatDate.toString(format))
+    assertThat(stringDate).isEqualTo(formatDate.format(format))
     assertThat(formatDate).isEqualTo(stringDate.toDate(format))
   }
 }

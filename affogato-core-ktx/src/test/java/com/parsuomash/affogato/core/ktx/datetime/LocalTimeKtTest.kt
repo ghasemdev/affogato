@@ -73,7 +73,7 @@ internal class LocalTimeKtTest {
     @Test
     @DisplayName("LocalTime to String")
     fun localTimeToString() {
-      assertThat(LocalTime(11, 10, 0).toString("HH")).isEqualTo("11")
+      assertThat(LocalTime(11, 10, 0).format("HH")).isEqualTo("11")
     }
   }
 

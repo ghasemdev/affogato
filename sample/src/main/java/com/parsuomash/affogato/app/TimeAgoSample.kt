@@ -1,7 +1,7 @@
 package com.parsuomash.affogato.app
 
+import com.parsuomash.affogato.core.ktx.datetime.format
 import com.parsuomash.affogato.core.ktx.datetime.toDate
-import com.parsuomash.affogato.core.ktx.datetime.toString
 import com.parsuomash.affogato.core.ktx.time.DateLimitation
 import com.parsuomash.affogato.core.ktx.time.TimeAgo
 import com.parsuomash.affogato.core.ktx.time.messages.protocol.LookupMessages
@@ -28,16 +28,16 @@ fun main() {
     override fun aDay(hours: Int, dateInMillis: Long): String = "a day"
     override fun days(days: Int, hours: Int, dateInMillis: Long): String = "$days days"
     override fun aboutAMonth(days: Int, dateInMillis: Long): String =
-      dateInMillis.toDate().toString("MMM dd")
+      dateInMillis.toDate().format("MMM dd")
 
     override fun months(months: Int, days: Int, dateInMillis: Long): String =
-      dateInMillis.toDate().toString("MMM dd")
+      dateInMillis.toDate().format("MMM dd")
 
     override fun aboutAYear(year: Int, dateInMillis: Long): String =
-      dateInMillis.toDate().toString("MMM dd, yyyy")
+      dateInMillis.toDate().format("MMM dd, yyyy")
 
     override fun years(years: Int, months: Int, dateInMillis: Long): String =
-      dateInMillis.toDate().toString("MMM dd, yyyy")
+      dateInMillis.toDate().format("MMM dd, yyyy")
   }
   TimeAgo.setLocaleMessagesAndDefaultLocale("custom", customMessage)
   TimeAgo.isLocaleNumberEnabled = true

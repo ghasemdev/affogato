@@ -54,6 +54,8 @@ fun Number.format(pattern: String = "#,###.##"): String {
   return decimalFormat.format(this)
 }
 
+// TODO v1.8.0 support more language for compactFormat.
+
 /**
  * Compact format numbers.
  *

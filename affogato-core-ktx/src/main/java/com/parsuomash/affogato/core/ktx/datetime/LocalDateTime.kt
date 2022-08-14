@@ -9,8 +9,7 @@ import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.LocalTime
 import kotlinx.datetime.TimeZone
-import kotlinx.datetime.toJavaLocalDateTime
-import kotlinx.datetime.toKotlinLocalDateTime
+import kotlinx.datetime.toInstant
 import kotlinx.datetime.toLocalDateTime
 
 /**
@@ -82,15 +81,19 @@ infix fun LocalDateTime.isSameDay(date: LocalDateTime): Boolean = dayOfYear == d
  * Adds the other value to this value.
  * @since 1.1.0
  */
-operator fun LocalDateTime.plus(duration: Duration): LocalDateTime =
-  toJavaLocalDateTime().plusNanos(duration.inWholeNanoseconds).toKotlinLocalDateTime()
+operator fun LocalDateTime.plus(duration: Duration): LocalDateTime {
+  val timeZone = TimeZone.currentSystemDefault()
+  return (toInstant(timeZone) + duration).toLocalDateTime(timeZone)
+}
 
 /**
  * Subtracts the other value from this value.
  * @since 1.1.0
  */
-operator fun LocalDateTime.minus(duration: Duration): LocalDateTime =
-  toJavaLocalDateTime().minusNanos(duration.inWholeNanoseconds).toKotlinLocalDateTime()
+operator fun LocalDateTime.minus(duration: Duration): LocalDateTime {
+  val timeZone = TimeZone.currentSystemDefault()
+  return (toInstant(timeZone) - duration).toLocalDateTime(timeZone)
+}
 
 /**
  * Produce a LocalDateTime from the given strings value and [pattern].
@@ -143,7 +146,33 @@ fun String.toLocalDateTimeOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy
  * @return The formatted date-time string.
  * @see SimpleDateFormat
  */
+@Deprecated(
+  message = "This function is deprecated and will be removed in next major release." +
+    "Use format() instead.",
+  replaceWith = ReplaceWith(
+    expression = "format",
+    imports = ["com.parsuomash.affogato.core.ktx.datetime.format"]
+  ),
+  level = DeprecationLevel.WARNING
+)
 fun LocalDateTime.toString(format: String): String {
+  simpleDateFormat.applyPattern(format)
+  return simpleDateFormat.format(toDate())
+}
+
+/**
+ * Formats a [LocalDateTime] into a date-time [String].
+ *
+ * Example:
+ * ```Kotlin
+ * 1659814205950.toLocalDateTime().format("MM/dd/yyyy") // 08/07/2022
+ * ```
+ * @since 1.1.0
+ * @throws IllegalArgumentException if the given pattern is invalid
+ * @return The formatted date-time string.
+ * @see SimpleDateFormat
+ */
+fun LocalDateTime.format(format: String): String {
   simpleDateFormat.applyPattern(format)
   return simpleDateFormat.format(toDate())
 }
