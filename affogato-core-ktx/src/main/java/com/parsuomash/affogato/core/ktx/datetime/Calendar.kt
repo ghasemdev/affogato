@@ -172,7 +172,7 @@ fun Calendar.toString(format: String): String {
  * @return The formatted date-time string.
  * @see SimpleDateFormat
  */
-fun Calendar.format(format: String): String {
-  simpleDateFormat.applyPattern(format)
+fun Calendar.format(pattern: String): String {
+  simpleDateFormat.applyPattern(pattern)
   return simpleDateFormat.format(time)
 }

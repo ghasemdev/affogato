@@ -172,7 +172,7 @@ fun LocalDateTime.toString(format: String): String {
  * @return The formatted date-time string.
  * @see SimpleDateFormat
  */
-fun LocalDateTime.format(format: String): String {
-  simpleDateFormat.applyPattern(format)
+fun LocalDateTime.format(pattern: String): String {
+  simpleDateFormat.applyPattern(pattern)
   return simpleDateFormat.format(toDate())
 }

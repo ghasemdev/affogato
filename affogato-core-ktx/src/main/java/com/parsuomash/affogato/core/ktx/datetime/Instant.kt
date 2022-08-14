@@ -141,7 +141,7 @@ fun Instant.toString(format: String): String {
  * @return The formatted date-time string.
  * @see SimpleDateFormat
  */
-fun Instant.format(format: String): String {
-  simpleDateFormat.applyPattern(format)
+fun Instant.format(pattern: String): String {
+  simpleDateFormat.applyPattern(pattern)
   return simpleDateFormat.format(toDate())
 }
