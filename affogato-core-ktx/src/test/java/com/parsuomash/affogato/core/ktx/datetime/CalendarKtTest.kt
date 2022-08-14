@@ -179,7 +179,7 @@ internal class CalendarKtTest {
     @Test
     @DisplayName("Calendar to String")
     fun calendarToString() {
-      assertThat(calendar.toString("yyyy")).isEqualTo(LocalDate.now().year.toString())
+      assertThat(calendar.format("yyyy")).isEqualTo(LocalDate.now().year.toString())
     }
   }
 

@@ -73,6 +73,7 @@ ksp {
 
 dependencies {
   // Modules
+  implementation(project(":affogato-core-ktx"))
   implementation(project(":affogato-unit"))
   ksp(project(":affogato-unit-processor"))
 

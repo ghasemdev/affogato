@@ -6,5 +6,6 @@ package com.parsuomash.affogato.core.ktx.time.messages.protocol
  */
 interface WeekMessages {
   /** Format when time is in weeks */
-  fun weeks(weeks: Int, days: Int, date: Long): String = "${weeks}w ${days}d".replace(" 0d", "")
+  fun weeks(weeks: Int, days: Int, dateInMillis: Long): String =
+    "${weeks}w ${days}d".replace(" 0d", "")
 }

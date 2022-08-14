@@ -11,44 +11,44 @@ import com.parsuomash.affogato.core.ktx.time.messages.protocol.LookupMessages
 internal object ArMessages : LookupMessages {
   override fun prefixAgo(): String = "منذ"
   override fun prefixFromNow(): String = "بعد"
-  override fun lessThanOneMinute(seconds: Int, date: Long): String = when (seconds) {
+  override fun lessThanOneMinute(seconds: Int, dateInMillis: Long): String = when (seconds) {
     1 -> "ثانية واحدة"
     2 -> "ثانيتين"
     in 3..10 -> "${toArabic(seconds.toString())} ثواني"
     else -> "${toArabic(seconds.toString())} ثانية"
   }
 
-  override fun aboutAMinute(minutes: Int, date: Long): String = "دقيقة تقريباً"
-  override fun minutes(minutes: Int, seconds: Int, date: Long): String = when (minutes) {
+  override fun aboutAMinute(minutes: Int, dateInMillis: Long): String = "دقيقة تقريباً"
+  override fun minutes(minutes: Int, seconds: Int, dateInMillis: Long): String = when (minutes) {
     2 -> "دقيقتين"
     in 3..10 -> "${toArabic(minutes.toString())} دقائق"
     else -> "${toArabic(minutes.toString())} دقيقة"
   }
 
-  override fun aboutAnHour(minutes: Int, date: Long): String = "ساعة تقريباً"
-  override fun hours(hours: Int, minutes: Int, date: Long): String = when (hours) {
+  override fun aboutAnHour(minutes: Int, dateInMillis: Long): String = "ساعة تقريباً"
+  override fun hours(hours: Int, minutes: Int, dateInMillis: Long): String = when (hours) {
     2 -> "ساعتين"
     in 3..10 -> "${toArabic(hours.toString())} ساعات"
     else -> "${toArabic(hours.toString())} ساعة"
   }
 
-  override fun aDay(hours: Int, date: Long): String = "يوم"
-  override fun days(days: Int, hours: Int, date: Long): String = when (days) {
+  override fun aDay(hours: Int, dateInMillis: Long): String = "يوم"
+  override fun days(days: Int, hours: Int, dateInMillis: Long): String = when (days) {
     2 -> "يومين"
     in 3..10 -> "${toArabic(days.toString())} ايام"
     else -> "${toArabic(days.toString())} يوم"
   }
 
-  override fun aboutAMonth(days: Int, date: Long): String = "شهر تقريباً"
-  override fun months(months: Int, days: Int, date: Long): String = when {
+  override fun aboutAMonth(days: Int, dateInMillis: Long): String = "شهر تقريباً"
+  override fun months(months: Int, days: Int, dateInMillis: Long): String = when {
     months == 2 -> "شهرين"
     months in 3..10 -> "${toArabic(months.toString())} اشهر"
     months > 10 -> "${toArabic(months.toString())} شهر"
     else -> "${toArabic(months.toString())} شهور"
   }
 
-  override fun aboutAYear(year: Int, date: Long): String = "سنة تقريباً"
-  override fun years(years: Int, months: Int, date: Long): String = when (years) {
+  override fun aboutAYear(year: Int, dateInMillis: Long): String = "سنة تقريباً"
+  override fun years(years: Int, months: Int, dateInMillis: Long): String = when (years) {
     2 -> "سنتين"
     in 3..10 -> "${toArabic(years.toString())} سنوات"
     else -> "${toArabic(years.toString())} سنة"
@@ -60,26 +60,28 @@ internal object ArMessages : LookupMessages {
  * @since 1.1.0
  */
 internal object ArShortMessages : LookupMessages {
-  override fun lessThanOneMinute(seconds: Int, date: Long): String =
+  override fun lessThanOneMinute(seconds: Int, dateInMillis: Long): String =
     "${toArabic(seconds.toString())} ثا"
 
-  override fun aboutAMinute(minutes: Int, date: Long): String = "~${toArabic("1")} د"
-  override fun minutes(minutes: Int, seconds: Int, date: Long): String =
-    "$${toArabic(minutes.toString())} د"
+  override fun aboutAMinute(minutes: Int, dateInMillis: Long): String = "~${toArabic("1")} د"
+  override fun minutes(minutes: Int, seconds: Int, dateInMillis: Long): String =
+    "${toArabic(minutes.toString())} د"
 
-  override fun aboutAnHour(minutes: Int, date: Long): String = "~${toArabic("1")} س"
-  override fun hours(hours: Int, minutes: Int, date: Long): String =
-    "$${toArabic(hours.toString())} س"
+  override fun aboutAnHour(minutes: Int, dateInMillis: Long): String = "~${toArabic("1")} س"
+  override fun hours(hours: Int, minutes: Int, dateInMillis: Long): String =
+    "${toArabic(hours.toString())} س"
 
-  override fun aDay(hours: Int, date: Long): String = "~${toArabic("1")} ي"
-  override fun days(days: Int, hours: Int, date: Long): String = "$${toArabic(days.toString())} ي"
-  override fun aboutAMonth(days: Int, date: Long): String = "~${toArabic("1")} ش"
-  override fun months(months: Int, days: Int, date: Long): String =
-    "$${toArabic(months.toString())} ش"
+  override fun aDay(hours: Int, dateInMillis: Long): String = "~${toArabic("1")} ي"
+  override fun days(days: Int, hours: Int, dateInMillis: Long): String =
+    "${toArabic(days.toString())} ي"
 
-  override fun aboutAYear(year: Int, date: Long): String = "~${toArabic("1")} س"
-  override fun years(years: Int, months: Int, date: Long): String =
-    "$${toArabic(years.toString())} س"
+  override fun aboutAMonth(days: Int, dateInMillis: Long): String = "~${toArabic("1")} ش"
+  override fun months(months: Int, days: Int, dateInMillis: Long): String =
+    "${toArabic(months.toString())} ش"
+
+  override fun aboutAYear(year: Int, dateInMillis: Long): String = "~${toArabic("1")} س"
+  override fun years(years: Int, months: Int, dateInMillis: Long): String =
+    "${toArabic(years.toString())} س"
 }
 
 private fun toArabic(number: String) =

@@ -1,8 +1,8 @@
 package com.parsuomash.affogato.core.ktx.time
 
 import com.google.common.truth.Truth.assertThat
+import com.parsuomash.affogato.core.ktx.datetime.format
 import com.parsuomash.affogato.core.ktx.datetime.minus
-import com.parsuomash.affogato.core.ktx.datetime.toString
 import com.parsuomash.affogato.core.ktx.time.messages.NoSuchMessageException
 import com.parsuomash.affogato.core.ktx.time.messages.protocol.LookupMessages
 import kotlin.time.Duration.Companion.days
@@ -190,7 +190,7 @@ internal class TimeAgoKtTest {
   fun `min cut off`() {
     var date = now() - 2.years
     assertThat(date.timeAgo(locale = "en_detail", minCutOff = DateLimitation.Year).also(::println))
-      .isEqualTo(date.toString("MMM dd, yyyy"))
+      .isEqualTo(date.format("MMM dd, yyyy"))
 
     date = now() - 1.days
     assertThat(date.timeAgo(locale = "en_detail", minCutOff = DateLimitation.Year).also(::println))
@@ -198,15 +198,15 @@ internal class TimeAgoKtTest {
 
     date = now() - 1.months
     assertThat(date.timeAgo(locale = "en_detail", minCutOff = DateLimitation.Month).also(::println))
-      .isEqualTo(date.toString("MMM dd"))
+      .isEqualTo(date.format("MMM dd"))
 
     date = now() - 2.months
     assertThat(date.timeAgo(locale = "en_detail", minCutOff = DateLimitation.Month).also(::println))
-      .isEqualTo(date.toString("MMM dd"))
+      .isEqualTo(date.format("MMM dd"))
 
     date = now() - 1.years
     assertThat(date.timeAgo(locale = "en_detail", minCutOff = DateLimitation.Month).also(::println))
-      .isEqualTo(date.toString("MMM dd, yyyy"))
+      .isEqualTo(date.format("MMM dd, yyyy"))
   }
 
   @Test
@@ -286,17 +286,17 @@ internal class TimeAgoKtTest {
       TimeAgo.setLocaleMessagesAndDefaultLocale(
         locale = "custom",
         object : LookupMessages {
-          override fun lessThanOneMinute(seconds: Int, date: Long): String = ""
-          override fun aboutAMinute(minutes: Int, date: Long): String = ""
-          override fun minutes(minutes: Int, seconds: Int, date: Long): String = ""
-          override fun aboutAnHour(minutes: Int, date: Long): String = ""
-          override fun hours(hours: Int, minutes: Int, date: Long): String = ""
-          override fun aDay(hours: Int, date: Long): String = ""
-          override fun days(days: Int, hours: Int, date: Long): String = ""
-          override fun aboutAMonth(days: Int, date: Long): String = ""
-          override fun months(months: Int, days: Int, date: Long): String = ""
-          override fun aboutAYear(year: Int, date: Long): String = ""
-          override fun years(years: Int, months: Int, date: Long): String = ""
+          override fun lessThanOneMinute(seconds: Int, dateInMillis: Long): String = ""
+          override fun aboutAMinute(minutes: Int, dateInMillis: Long): String = ""
+          override fun minutes(minutes: Int, seconds: Int, dateInMillis: Long): String = ""
+          override fun aboutAnHour(minutes: Int, dateInMillis: Long): String = ""
+          override fun hours(hours: Int, minutes: Int, dateInMillis: Long): String = ""
+          override fun aDay(hours: Int, dateInMillis: Long): String = ""
+          override fun days(days: Int, hours: Int, dateInMillis: Long): String = ""
+          override fun aboutAMonth(days: Int, dateInMillis: Long): String = ""
+          override fun months(months: Int, days: Int, dateInMillis: Long): String = ""
+          override fun aboutAYear(year: Int, dateInMillis: Long): String = ""
+          override fun years(years: Int, months: Int, dateInMillis: Long): String = ""
         }
       )
       TimeAgo.setLocaleMessagesAndDefaultLocale("en")
