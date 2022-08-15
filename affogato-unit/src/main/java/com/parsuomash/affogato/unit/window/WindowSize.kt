@@ -44,9 +44,15 @@ data class WindowSize(
  * @see WindowSize
  * @property dpSize window size
  */
+@Immutable
 sealed class WindowType(val dpSize: Int) {
+  @Immutable
   class Medium(dpSize: Int) : WindowType(dpSize)
+
+  @Immutable
   class Compact(dpSize: Int) : WindowType(dpSize)
+
+  @Immutable
   class Expanded(dpSize: Int) : WindowType(dpSize)
 }
 

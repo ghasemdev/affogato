@@ -138,7 +138,7 @@ fun LocalTime.toString(format: String): String {
  * val time = LocalTime(11, 10, 0)
  * time.toLocalDate().format("HH") // 11
  * ```
- * @since 1.1.0
+ * @since 1.1.1
  * @throws IllegalArgumentException if the given pattern is invalid
  * @return The formatted date-time string.
  * @see SimpleDateFormat

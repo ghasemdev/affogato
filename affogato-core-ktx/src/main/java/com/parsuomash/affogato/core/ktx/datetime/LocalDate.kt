@@ -159,7 +159,7 @@ fun LocalDate.toString(format: String): String {
  * ```Kotlin
  * 1659814200000.toLocalDate().format("MM/dd/yyyy") // 08/07/2022
  * ```
- * @since 1.1.0
+ * @since 1.1.1
  * @throws IllegalArgumentException if the given pattern is invalid
  * @return The formatted date-time string.
  * @see SimpleDateFormat
