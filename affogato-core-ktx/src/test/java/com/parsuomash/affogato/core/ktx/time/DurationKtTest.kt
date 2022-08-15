@@ -8,6 +8,19 @@ import org.junit.jupiter.api.Test
 
 internal class DurationKtTest {
   @Test
+  @DisplayName("week")
+  fun week() {
+    assertThat(1.weeks).isEqualTo(7.days)
+    assertThat(2.weeks).isEqualTo(14.days)
+
+    assertThat(1L.weeks).isEqualTo(7.days)
+    assertThat(2L.weeks).isEqualTo(14.days)
+
+    assertThat(1.5.weeks).isEqualTo(10.days + 12.hours)
+    assertThat(2.5.weeks).isEqualTo(17.days + 12.hours)
+  }
+
+  @Test
   @DisplayName("month")
   fun month() {
     assertThat(1.months).isEqualTo(30.days)
