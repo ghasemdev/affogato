@@ -8,16 +8,18 @@ import com.parsuomash.affogato.core.ktx.time.messages.protocol.LookupMessages
 import com.parsuomash.affogato.core.ktx.time.months
 import com.parsuomash.affogato.core.ktx.time.now
 import com.parsuomash.affogato.core.ktx.time.timeAgo
+import kotlin.time.Duration.Companion.days
 import kotlin.time.Duration.Companion.minutes
 
 fun main() {
   val currentTime = now()
   val fiveMinuteAgo = currentTime - 5.minutes
   val twoMonthAgo = currentTime - 2.months
+  val oneDayLater = currentTime + 1.days
 
   val customMessage = object : LookupMessages {
     override fun suffixAgo(): String = "ago"
-    override fun suffixFromNow(): String = "from now"
+    override fun suffixFromNow(): String = "later"
     override fun lessThanOneMinute(seconds: Int, dateInMillis: Long): String = "a moment"
     override fun aboutAMinute(minutes: Int, dateInMillis: Long): String = "a minute"
     override fun minutes(minutes: Int, seconds: Int, dateInMillis: Long): String =
@@ -25,7 +27,7 @@ fun main() {
 
     override fun aboutAnHour(minutes: Int, dateInMillis: Long): String = "about an hour"
     override fun hours(hours: Int, minutes: Int, dateInMillis: Long): String = "$hours hours"
-    override fun aDay(hours: Int, dateInMillis: Long): String = "a day"
+    override fun aDay(hours: Int, dateInMillis: Long): String = "1 day"
     override fun days(days: Int, hours: Int, dateInMillis: Long): String = "$days days"
     override fun aboutAMonth(days: Int, dateInMillis: Long): String =
       dateInMillis.toDate().format("MMM dd")
@@ -47,4 +49,7 @@ fun main() {
 
   println("Two Month Ago: $twoMonthAgo")
   println("Two Month Ago: " + twoMonthAgo.timeAgo(minCutOff = DateLimitation.Month))
+
+  println("One Day Latter: $oneDayLater")
+  println("One Day Latter: " + oneDayLater.timeAgo(allowFromNow = true))
 }
