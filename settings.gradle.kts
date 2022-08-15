@@ -3,7 +3,7 @@ pluginManagement {
     gradlePluginPortal()
     google()
     mavenCentral()
-    maven { url 'https://jitpack.io' }
+    maven("https://jitpack.io")
   }
 }
 dependencyResolutionManagement {
@@ -11,11 +11,11 @@ dependencyResolutionManagement {
   repositories {
     google()
     mavenCentral()
-    maven { url 'https://jitpack.io' }
+    maven("https://jitpack.io")
   }
 }
 rootProject.name = "affogato"
-include ':sample'
-include ':affogato-unit'
-include ':affogato-unit-processor'
-include ':affogato-core-ktx'
+include(":sample")
+include(":affogato-unit")
+include(":affogato-unit-processor")
+include(":affogato-core-ktx")
