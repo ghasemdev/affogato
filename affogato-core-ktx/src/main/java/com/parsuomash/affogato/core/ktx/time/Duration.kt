@@ -5,6 +5,46 @@ import kotlin.time.DurationUnit
 import kotlin.time.toDuration
 
 /**
+ * Returns a [Duration] equal to this [Int] number of weeks.
+ *
+ * Example:
+ * ```Kotlin
+ * 2.weeks // 14.days
+ * ```
+ * @since 1.1.2
+ */
+inline val Int.weeks: Duration
+  get() = toDuration(DurationUnit.DAYS) * 7
+
+/**
+ * Returns a [Duration] equal to this [Long] number of weeks.
+ *
+ * Example:
+ * ```Kotlin
+ * 2L.weeks // 14.days
+ * ```
+ * @since 1.1.2
+ */
+inline val Long.weeks: Duration
+  get() = toDuration(DurationUnit.DAYS) * 7
+
+/**
+ * Returns a [Duration] equal to this [Double] number of weeks.
+ *
+ * Depending on its magnitude, the value is rounded to an integer number of
+ * nanoseconds or milliseconds.
+ *
+ * Example:
+ * ```Kotlin
+ * 2.0.weeks // 14.days
+ * ```
+ * @since 1.1.2
+ * @throws IllegalArgumentException if this [Double] value is `NaN`.
+ */
+inline val Double.weeks: Duration
+  get() = toDuration(DurationUnit.DAYS) * 7
+
+/**
  * Returns a [Duration] equal to this [Int] number of months.
  *
  * Example:
