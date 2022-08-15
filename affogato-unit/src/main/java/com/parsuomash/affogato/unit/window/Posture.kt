@@ -4,6 +4,7 @@ package com.parsuomash.affogato.unit.window
 
 import android.app.Activity
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.State
 import androidx.compose.ui.geometry.Size
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
@@ -25,14 +26,18 @@ import kotlinx.coroutines.flow.map
  * @see postureState
  * @See postureFlow
  **/
+@Immutable
 sealed class Posture(val size: Size) {
   /** Device posture is in tabletop mode (half open with the hinge horizontal). */
+  @Immutable
   class TableTop(windowSize: Size) : Posture(windowSize)
 
   /** Device posture is in book mode (half open with the hinge vertical). */
+  @Immutable
   class Book(windowSize: Size) : Posture(windowSize)
 
   /** Device posture is in normal mode. */
+  @Immutable
   object Normal : Posture(Size(0F, 0F))
 }
 
