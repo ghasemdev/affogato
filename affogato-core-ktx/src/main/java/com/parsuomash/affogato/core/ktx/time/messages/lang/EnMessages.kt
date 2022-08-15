@@ -16,6 +16,9 @@ internal object EnMessages : LookupMessages {
   override fun hours(hours: Int, minutes: Int, dateInMillis: Long): String = "$hours hours"
   override fun aDay(hours: Int, dateInMillis: Long): String = "a day"
   override fun days(days: Int, hours: Int, dateInMillis: Long): String = "$days days"
+  override fun weeks(weeks: Int, days: Int, dateInMillis: Long): String =
+    if (weeks == 1) "a week" else "$weeks weeks"
+
   override fun aboutAMonth(days: Int, dateInMillis: Long): String = "about a month"
   override fun months(months: Int, days: Int, dateInMillis: Long): String = "$months months"
   override fun aboutAYear(year: Int, dateInMillis: Long): String = "about a year"

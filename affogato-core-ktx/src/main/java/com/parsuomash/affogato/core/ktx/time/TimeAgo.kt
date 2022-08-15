@@ -427,67 +427,67 @@ object TimeAgo {
     val months = days / MONTH_IN_DAY
     val years = days / YEAR_IN_DAY
 
-    val roundedSeconds = seconds.round(digits = 1).toInt()
-    val roundedMinutes = minutes.round(digits = 1).toInt()
-    val roundedHours = hours.round(digits = 1).toInt()
-    val roundedDays = days.round(digits = 1).toInt()
-    val roundedWeeks = weeks.round(digits = 1).toInt()
-    val roundedMonths = months.round(digits = 1).toInt()
-    val roundedYears = years.round(digits = 1).toInt()
+    val roundedSeconds = seconds.round(digits = 2).toInt()
+    val roundedMinutes = minutes.round(digits = 2).toInt()
+    val roundedHours = hours.round(digits = 2).toInt()
+    val roundedDays = days.round(digits = 2).toInt()
+    val roundedWeeks = weeks.round(digits = 2).toInt()
+    val roundedMonths = months.round(digits = 2).toInt()
+    val roundedYears = years.round(digits = 2).toInt()
 
     val result = with(messages) {
       when {
-        seconds < LESS_THAN_ONE_MINUTE -> {
+        roundedSeconds < LESS_THAN_ONE_MINUTE -> {
           val result = lessThanOneMinute(roundedSeconds, date)
           if (minCutOff.priority > 6) return result else result
         }
-        seconds < ABOUT_A_MINUTE -> {
+        roundedSeconds < ABOUT_A_MINUTE -> {
           val result = aboutAMinute(roundedMinutes, date)
           if (minCutOff.priority > 5) return result else result
         }
-        minutes < MINUTES -> {
+        roundedMinutes < MINUTES -> {
           val remindSecond = roundedSeconds - (roundedMinutes * MINUTE_IN_SECOND.toInt())
           val result = minutes(roundedMinutes, remindSecond, date)
           if (minCutOff.priority > 5) return result else result
         }
-        minutes < ABOUT_AN_HOUR -> {
+        roundedMinutes < ABOUT_AN_HOUR -> {
           val result = aboutAnHour(roundedMinutes, date)
           if (minCutOff.priority > 4) return result else result
         }
-        hours < HOURS -> {
+        roundedHours < HOURS -> {
           val remindMinute = roundedMinutes - (roundedHours * HOUR_IN_MINUTE.toInt())
           val result = hours(roundedHours, remindMinute, date)
           if (minCutOff.priority > 4) return result else result
         }
-        hours < A_DAY -> {
+        roundedHours < A_DAY -> {
           val result = aDay(roundedHours, date)
           if (minCutOff.priority > 3) return result else result
         }
-        days < DAYS && !isWeekFormatEnabled -> {
+        roundedDays < A_WEEK && isWeekFormatEnabled -> {
           val remindHour = roundedHours - (roundedDays * DAY_IN_HOUR.toInt())
           val result = days(roundedDays, remindHour, date)
           if (minCutOff.priority > 3) return result else result
         }
-        days < A_WEEK && isWeekFormatEnabled -> {
-          val remindHour = roundedHours - (roundedDays * DAY_IN_HOUR.toInt())
-          val result = days(roundedDays, remindHour, date)
-          if (minCutOff.priority > 3) return result else result
-        }
-        days < WEEKS && isWeekFormatEnabled -> {
+        roundedDays < DAYS && isWeekFormatEnabled -> {
           val remindDay = roundedDays - (roundedWeeks * WEEK_IN_DAY.toInt())
           val result = weeks(roundedWeeks, remindDay, date)
           if (minCutOff.priority > 2) return result else result
         }
-        days < ABOUT_A_MONTH -> {
+        roundedDays < DAYS && !isWeekFormatEnabled -> {
+          val remindHour = roundedHours - (roundedDays * DAY_IN_HOUR.toInt())
+          val result = days(roundedDays, remindHour, date)
+          if (minCutOff.priority > 3) return result else result
+        }
+        roundedDays < ABOUT_A_MONTH -> {
           val result = aboutAMonth(roundedDays, date)
           if (minCutOff.priority > 1) return result else result
         }
-        days < ABOUT_A_YEAR -> {
+        roundedDays < ABOUT_A_YEAR -> {
           val remindDay = roundedDays - (roundedMonths * MONTH_IN_DAY.toInt())
           val result = months(roundedMonths, remindDay, date)
           if (minCutOff.priority > 1) return result else result
         }
-        years < 2 -> {
+        roundedYears < 2 -> {
           val result = aboutAYear(roundedMonths, date)
           if (minCutOff.priority > 0) return result else result
         }
@@ -850,14 +850,13 @@ private const val MONTH_IN_DAY = 30.0
 private const val YEAR_IN_DAY = 365.0
 private const val YEAR_IN_MONTH = 12.0
 
-private const val LESS_THAN_ONE_MINUTE = 45
-private const val ABOUT_A_MINUTE = 90
-private const val MINUTES = 45
-private const val ABOUT_AN_HOUR = 90
-private const val HOURS = 24
-private const val A_DAY = 48
-private const val DAYS = 30
-private const val A_WEEK = 7
-private const val WEEKS = 28
-private const val ABOUT_A_MONTH = 60
-private const val ABOUT_A_YEAR = 365
+private const val LESS_THAN_ONE_MINUTE = 60.0
+private const val ABOUT_A_MINUTE = 120.0
+private const val MINUTES = 60.0
+private const val ABOUT_AN_HOUR = 120.0
+private const val HOURS = 24.0
+private const val A_DAY = 48.0
+private const val DAYS = 30.0
+private const val A_WEEK = 7.0
+private const val ABOUT_A_MONTH = 60.0
+private const val ABOUT_A_YEAR = 365.0
