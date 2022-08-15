@@ -5,7 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [🎉 v1.1.1 Core-ktx] - 2022-08-14
+## [🐛 v1.1.2 Core-ktx] - 2022-08-14
+
+### 🚀 Features
+
+* add weeks duration (`2.weeks`)
+
+### 🐛 Fixes
+
+* Fix rounding issue for TimeAgo.kt
+
+## [🐛 v1.1.1 Core-ktx] - 2022-08-14
 
 ### 💥 Breaking Changes
 
