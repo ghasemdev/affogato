@@ -167,7 +167,7 @@ fun Calendar.toString(format: String): String {
 
 /**
  * Formats a [Calendar] into a date-time [String].
- * @since 1.1.0
+ * @since 1.1.1
  * @throws IllegalArgumentException if the given pattern is invalid
  * @return The formatted date-time string.
  * @see SimpleDateFormat
