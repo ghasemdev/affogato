@@ -20,13 +20,9 @@ tasks.withType<KotlinCompile>().configureEach {
 }
 
 dependencies {
-  // KSP -------------------------------------------------------------------------------------------
-  implementation("com.google.devtools.ksp:symbol-processing-api:1.7.20-Beta-1.0.6")
-  implementation("com.fleshgrinder.kotlin:case-format:0.2.0")
-
-  // Test ------------------------------------------------------------------------------------------
-  testImplementation("junit:junit:4.13.2")
-  testImplementation("com.google.truth:truth:1.1.3")
+  // Coroutines ------------------------------------------------------------------------------------
+  api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+  api("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
 }
 
 afterEvaluate {
@@ -34,7 +30,7 @@ afterEvaluate {
     publications {
       create<MavenPublication>("java") {
         groupId = "com.parsuomash.affogato"
-        artifactId = "affogato-unit-processor"
+        artifactId = "affogato-coroutines-core"
         version = "1.2.0"
 
         from(components["java"])
