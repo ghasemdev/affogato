@@ -1,6 +1,8 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
   id("java-library")
-  id("org.jetbrains.kotlin.jvm")
+  kotlin("jvm")
   id("maven-publish")
 }
 
@@ -9,7 +11,7 @@ java {
   targetCompatibility = JavaVersion.VERSION_11
 }
 
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+tasks.withType<KotlinCompile>().configureEach {
   kotlinOptions {
     apiVersion = "1.7"
     languageVersion = "1.7"
@@ -33,7 +35,7 @@ afterEvaluate {
       create<MavenPublication>("java") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-unit-processor"
-        version = "1.1.2"
+        version = "1.2.0"
 
         from(components["java"])
       }

@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
   id("java-library")
-  id("org.jetbrains.kotlin.jvm")
+  kotlin("jvm")
   id("maven-publish")
 }
 
@@ -44,7 +44,7 @@ afterEvaluate {
       create<MavenPublication>("java") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-core-ktx"
-        version = "1.1.2"
+        version = "1.2.0"
 
         from(components["java"])
       }

@@ -14,7 +14,8 @@ package com.parsuomash.affogato.core.ktx
  * @see groupingBy
  * @see eachCount
  */
-fun counter(content: String): Map<Char, Int> = content.groupingBy { it }.eachCount()
+fun counter(content: String): Map<Char, Int> =
+  content.groupingBy { it }.eachCount()
 
 /**
  * Calculate count of each value by group in the Array.
@@ -29,7 +30,8 @@ fun counter(content: String): Map<Char, Int> = content.groupingBy { it }.eachCou
  * @see eachCount
  * @see arrayOf
  */
-fun <T> counter(content: Array<T>): Map<T, Int> = content.groupingBy { it }.eachCount()
+fun <T> counter(content: Array<T>): Map<T, Int> =
+  content.groupingBy { it }.eachCount()
 
 /**
  * Calculate count of each value by group in the byte array.
@@ -44,7 +46,8 @@ fun <T> counter(content: Array<T>): Map<T, Int> = content.groupingBy { it }.each
  * @see eachCount
  * @see byteArrayOf
  */
-fun counter(content: ByteArray): Map<Byte, Int> = content.toList().groupingBy { it }.eachCount()
+fun counter(content: ByteArray): Map<Byte, Int> =
+  content.toList().groupingBy { it }.eachCount()
 
 /**
  * Calculate count of each value by group in the char array.
@@ -59,7 +62,8 @@ fun counter(content: ByteArray): Map<Byte, Int> = content.toList().groupingBy { 
  * @see eachCount
  * @see charArrayOf
  */
-fun counter(content: CharArray): Map<Char, Int> = content.toList().groupingBy { it }.eachCount()
+fun counter(content: CharArray): Map<Char, Int> =
+  content.toList().groupingBy { it }.eachCount()
 
 /**
  * Calculate count of each value by group in the short array.
@@ -74,7 +78,8 @@ fun counter(content: CharArray): Map<Char, Int> = content.toList().groupingBy { 
  * @see eachCount
  * @see shortArrayOf
  */
-fun counter(content: ShortArray): Map<Short, Int> = content.toList().groupingBy { it }.eachCount()
+fun counter(content: ShortArray): Map<Short, Int> =
+  content.toList().groupingBy { it }.eachCount()
 
 /**
  * Calculate count of each value by group in the int array.
@@ -89,7 +94,8 @@ fun counter(content: ShortArray): Map<Short, Int> = content.toList().groupingBy 
  * @see eachCount
  * @see intArrayOf
  */
-fun counter(content: IntArray): Map<Int, Int> = content.toList().groupingBy { it }.eachCount()
+fun counter(content: IntArray): Map<Int, Int> =
+  content.toList().groupingBy { it }.eachCount()
 
 /**
  * Calculate count of each value by group in the long array.
@@ -104,7 +110,8 @@ fun counter(content: IntArray): Map<Int, Int> = content.toList().groupingBy { it
  * @see eachCount
  * @see longArrayOf
  */
-fun counter(content: LongArray): Map<Long, Int> = content.toList().groupingBy { it }.eachCount()
+fun counter(content: LongArray): Map<Long, Int> =
+  content.toList().groupingBy { it }.eachCount()
 
 /**
  * Calculate count of each value by group in the float array.
@@ -119,7 +126,8 @@ fun counter(content: LongArray): Map<Long, Int> = content.toList().groupingBy { 
  * @see eachCount
  * @see floatArrayOf
  */
-fun counter(content: FloatArray): Map<Float, Int> = content.toList().groupingBy { it }.eachCount()
+fun counter(content: FloatArray): Map<Float, Int> =
+  content.toList().groupingBy { it }.eachCount()
 
 /**
  * Calculate count of each value by group in the double array.
@@ -134,7 +142,8 @@ fun counter(content: FloatArray): Map<Float, Int> = content.toList().groupingBy 
  * @see eachCount
  * @see doubleArrayOf
  */
-fun counter(content: DoubleArray): Map<Double, Int> = content.toList().groupingBy { it }.eachCount()
+fun counter(content: DoubleArray): Map<Double, Int> =
+  content.toList().groupingBy { it }.eachCount()
 
 /**
  * Calculate count of each value by group in the boolean array.
@@ -165,7 +174,8 @@ fun counter(content: BooleanArray): Map<Boolean, Int> =
  * @see eachCount
  * @see listOf
  */
-fun <T> counter(content: Iterable<T>): Map<T, Int> = content.groupingBy { it }.eachCount()
+fun <T> counter(content: Iterable<T>): Map<T, Int> =
+  content.groupingBy { it }.eachCount()
 
 /**
  * when variable is null default value maintained.
@@ -178,7 +188,8 @@ fun <T> counter(content: Iterable<T>): Map<T, Int> = content.groupingBy { it }.e
  * @since 1.1.0
  * @return [T] value or **default**
  */
-fun <T> T?.orDefault(default: T): T = this ?: default
+fun <T> T?.orDefault(default: T): T =
+  this ?: default
 
 /**
  * Checking nullability.
@@ -194,7 +205,8 @@ fun <T> T?.orDefault(default: T): T = this ?: default
  * @since 1.1.0
  * @return [Boolean]
  */
-fun <T> T?.isNull(): Boolean = this == null
+fun <T> T?.isNull(): Boolean =
+  this == null
 
 /**
  * Checking none nullability.
@@ -210,7 +222,8 @@ fun <T> T?.isNull(): Boolean = this == null
  * @since 1.1.0
  * @return [Boolean]
  */
-fun <T> T?.isNotNull(): Boolean = this != null
+fun <T> T?.isNotNull(): Boolean =
+  this != null
 
 /**
  * ifNull execute when value is null.
@@ -234,7 +247,8 @@ fun <T> T?.isNotNull(): Boolean = this != null
  * @since 1.1.0
  * @return value or [Unit]
  */
-inline fun <T> T?.ifNull(block: (T?) -> Any): Any = this ?: block(this)
+inline fun <T> T?.ifNull(block: (T?) -> Any): Any =
+  this ?: block(this)
 
 /**
  * ifNotNull execute when value isn't null.
@@ -258,10 +272,11 @@ inline fun <T> T?.ifNull(block: (T?) -> Any): Any = this ?: block(this)
  * @since 1.1.0
  * @return value or [Unit]
  */
-inline fun <T, R> T?.ifNotNull(block: (T) -> R): R? = if (this != null) block(this) else this
+inline fun <T, R> T?.ifNotNull(block: (T) -> R): R? =
+  if (this != null) block(this) else this
 
 /**
- * Sometimes we need try-catch block without error handling.
+ * tryCatchIgnore used when you want to ignore catch block if an exception is thrown.
  *
  * Example:
  * ```Kotlin
@@ -280,7 +295,7 @@ inline fun tryCatchIgnore(block: () -> Unit) {
 }
 
 /**
- * When try-catch block failed return false otherwise true.
+ * tryCatchBoolean used when you want to return false if an exception is thrown.
  *
  * Example:
  * ```Kotlin
@@ -294,6 +309,7 @@ inline fun tryCatchIgnore(block: () -> Unit) {
  * } // true
  * ```
  * @since 1.1.0
+ * @see tryCatchBool
  */
 inline fun tryCatchBoolean(block: () -> Unit): Boolean {
   return try {
@@ -305,7 +321,37 @@ inline fun tryCatchBoolean(block: () -> Unit): Boolean {
 }
 
 /**
- * When try-catch block failed return null otherwise latest value.
+ * tryCatchBool used when you want to return a boolean value or return false
+ * if an exception is thrown.
+ *
+ * Example:
+ * ```Kotlin
+ * tryCatchBoolean {
+ *   ...
+ *   throw Exception("throw")
+ * } // false
+ *
+ * tryCatchBoolean {
+ *   val result = false
+ *   if(...) {
+ *     result = true
+ *   }
+ *   result
+ * }
+ * ```
+ * @since 1.2.0
+ * @see tryCatchBoolean
+ */
+inline fun tryCatchBool(block: () -> Boolean): Boolean {
+  return try {
+    block()
+  } catch (_: Exception) {
+    false
+  }
+}
+
+/**
+ * tryCatchNull used when you want to return null if an exception is thrown.
  *
  * Example:
  * ```Kotlin
@@ -330,7 +376,7 @@ inline fun <T> tryCatchNull(block: () -> T): T? {
 }
 
 /**
- * When try-catch block failed return else block otherwise try block.
+ * tryCatchElse used when you want to return a default value if an exception is thrown.
  *
  * Example:
  * ```Kotlin

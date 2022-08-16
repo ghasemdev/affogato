@@ -16,6 +16,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "affogato"
 include(":sample")
+include(":affogato-core-ktx")
+include(":affogato-coroutines-android")
+include(":affogato-coroutines-core")
 include(":affogato-unit")
 include(":affogato-unit-processor")
-include(":affogato-core-ktx")

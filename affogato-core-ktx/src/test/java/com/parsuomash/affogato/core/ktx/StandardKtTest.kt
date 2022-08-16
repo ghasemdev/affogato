@@ -213,6 +213,16 @@ internal class StandardKtTest {
         print(num)
       }
       assertThat(result2).isTrue()
+
+      val result3 = tryCatchBool {
+        raiseError()
+      }
+      assertThat(result3).isFalse()
+
+      val result4 = tryCatchBool {
+        false
+      }
+      assertThat(result4).isFalse()
     }
 
     @Test
