@@ -13,6 +13,10 @@ com.parsuomash.affogato.core.ktx.text
 com.parsuomash.affogato.core.ktx.time
 com.parsuomash.affogato.core.ktx.time.messages
 com.parsuomash.affogato.core.ktx.time.messages.protocol
+module:affogato-coroutines-android
+com.parsuomash.affogato.coroutines.android
+module:affogato-coroutines-core
+com.parsuomash.affogato.coroutines.core
 module:affogato-unit
 com.parsuomash.affogato.unit
 com.parsuomash.affogato.unit.window
