@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [🎉 1.3.0 Structure] - 2022-08-18
+
+### 🚀 Features
+
+* Add local const val to `TimeAgo` class instead of used invalid locale strings.
+* New structure module with below features:
+	* `EntityMapper` - Convert entity to domain model and vice versa.
+	* `DataState` - Contains three different state -> Loading, Error and Success.
+
 ## [🎉 1.2.0 Coroutines] - 2022-08-16
 
 ### 🚀 Features
