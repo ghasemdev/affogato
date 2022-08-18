@@ -17,6 +17,8 @@ module:affogato-coroutines-android
 com.parsuomash.affogato.coroutines.android
 module:affogato-coroutines-core
 com.parsuomash.affogato.coroutines.core
+module:affogato-structure
+com.parsuomash.affogato.structure
 module:affogato-unit
 com.parsuomash.affogato.unit
 com.parsuomash.affogato.unit.window

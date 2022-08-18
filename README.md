@@ -1,4 +1,4 @@
-[![Version](https://shields.io/badge/VERSION-1.2.0-blue?style=for-the-badge)](https://github.com/ghasemdev/affogato/releases/tag/1.2.0)
+[![Version](https://shields.io/badge/VERSION-1.3.0-blue?style=for-the-badge)](https://github.com/ghasemdev/affogato/releases/tag/1.3.0)
 [![Kotlin](https://shields.io/badge/Kotlin-1.7.10-pink?style=for-the-badge)](https://kotlinlang.org/)
 [![API](https://shields.io/badge/Api-+21-green?style=for-the-badge)](https://www.android.com/)
 [![License MIT](https://shields.io/badge/LICENSE-MIT-orange?style=for-the-badge)](https://opensource.org/licenses/MIT)
@@ -17,8 +17,33 @@ favorite extension for times 😄.
 
 ```kotlin
 TimeAgo.format(now()) // a moment ago
-now().timeAgo() // a moment ago
+now().timeAgo(locale = TimeAgo.Locale.EN) // a moment ago
 ```
+
+### [Coroutines](https://github.com/ghasemdev/affogato/wiki/Coroutines)
+
+Coroutines module contains suspended try-catch from Core-ktx and `DispatchersProvider` for handling
+coroutines context in main and test source.
+
+```Kotlin
+// Old way
+suspend fun foo() = withContext(Dispatchers.Default) {
+  return try {
+    // do something return value
+  } catch (_: Exception) {
+    null
+  }
+}
+
+// New way
+suspend fun foo() = suspendedTryCatchNull {
+	// do something return value
+}
+```
+
+### [Structure](https://github.com/ghasemdev/affogato/wiki/Structure)
+
+This module contains useful struct class like `DataState` and `EntityMapper`.
 
 ### [Compose Unit Size](https://github.com/ghasemdev/affogato/wiki/Unit-Size)
 
@@ -30,7 +55,7 @@ use `postureState` to build adaptive and responsive UIs in **Foldables**.
 # Links
 
 Affogato is currently available for maven/gradle builds
-at [Jitpack](https://jitpack.io/#ghasemdev/affogato/1.2.0) (
+at [Jitpack](https://jitpack.io/#ghasemdev/affogato/1.3.0) (
 read [Getting started](https://github.com/ghasemdev/affogato/wiki/Getting-Started)).
 
 * [Wiki](https://github.com/ghasemdev/affogato/wiki)
@@ -59,7 +84,7 @@ dependencies {
 }
 ```
 
-***
+---
 
 ### Maven Setup
 
@@ -84,7 +109,7 @@ Step 2. Add the dependency
 </dependency>
 ```
 
-***
+---
 
 ### License
 

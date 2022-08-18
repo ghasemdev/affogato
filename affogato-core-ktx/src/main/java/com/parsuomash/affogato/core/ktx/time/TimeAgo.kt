@@ -707,6 +707,16 @@ object TimeAgo {
       allowFromNow
     )
 
+  /**
+   * [Locale] show available languages for [TimeAgo].
+   *
+   * Example:
+   * ```Kotlin
+   * TimeAgo.Locale.EN // en
+   * ```
+   * @since 1.3.0
+   * @see TimeAgo
+   */
   object Locale {
     const val EN: String = "en"
     const val EN_SHORT: String = "en_short"
