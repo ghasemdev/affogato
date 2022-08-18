@@ -10,6 +10,91 @@ package com.parsuomash.affogato.core.ktx.time
 import com.parsuomash.affogato.core.ktx.datetime.toDate
 import com.parsuomash.affogato.core.ktx.math.round
 import com.parsuomash.affogato.core.ktx.time.DateLimitation.None
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.AM
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.AM_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.AR
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.AR_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.AZ
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.AZ_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.BS
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.BS_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.CA
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.CA_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.CS
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.CS_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.DA
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.DA_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.DE
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.DE_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.DV
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.DV_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.EN
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.EN_DETAIL
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.EN_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.EN_SHORT_DETAIL
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.ES
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.ES_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.ET
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.ET_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.FA
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.FA_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.FI
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.FI_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.FR
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.FR_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.GR
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.GR_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.HE
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.HE_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.HI
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.HI_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.HU
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.HU_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.ID
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.IT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.IT_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.JA
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.KM
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.KM_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.KO
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.KU
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.KU_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.MN
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.MN_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.MS_MY
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.MS_MY_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.MY
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.MY_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.NB_NO
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.NB_NO_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.NL
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.NL_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.NN_NO
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.NN_NO_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.PL
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.PT_BR
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.PT_BR_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.RO
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.RO_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.RU
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.RU_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.RW
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.RW_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.SV
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.SV_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.TA
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.TH
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.TH_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.TK
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.TR
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.UK
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.UK_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.UR
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.UR_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.VI
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.VI_SHORT
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.ZH
+import com.parsuomash.affogato.core.ktx.time.TimeAgo.Locale.ZH_CN
 import com.parsuomash.affogato.core.ktx.time.TimeAgo.setLocaleMessages
 import com.parsuomash.affogato.core.ktx.time.messages.NoSuchMessageException
 import com.parsuomash.affogato.core.ktx.time.messages.lang.AmMessages
@@ -108,11 +193,7 @@ import kotlinx.datetime.LocalDateTime
  * 2020-12-12 18:30 with timeago you can display something like `"now", "an hour ago", "~1y", etc`
  *
  * Note: This class uses ISO 639-1 language code to identify the language. For more information
- * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
- * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
- * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
- * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
- * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+ * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
  *
  * Example:
  * ```Kotlin
@@ -124,26 +205,22 @@ import kotlinx.datetime.LocalDateTime
  * @see NoSuchMessageException
  */
 object TimeAgo {
-  private var _default = "en"
+  private var _default = EN
   val default get() = _default
 
   var isLocaleNumberEnabled = false
   private val lookupMessagesMap = mutableMapOf(
-    "en" to EnMessages,
-    "en_short" to EnShortMessages,
-    "fa" to FaMessages,
-    "fa_short" to FaShortMessages
+    EN to EnMessages,
+    EN_SHORT to EnShortMessages,
+    FA to FaMessages,
+    FA_SHORT to FaShortMessages
   )
 
   /**
    * Sets the default [locale]. By default, it is `en`.
    *
    * Note: This function uses ISO 639-1 language code to identify the language. For more information
-   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
-   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
-   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
-   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
-   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
    *
    * Example:
    * ```Kotlin
@@ -163,15 +240,11 @@ object TimeAgo {
    * using the [format] function.
    *
    * Note: This function uses ISO 639-1 language code to identify the language. For more information
-   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
-   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
-   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
-   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
-   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
    *
    * Example:
    * ```Kotlin
-   * setLocaleMessages("fa", "en", "ar")
+   * setLocaleMessages("fa", "en", AR)
    * ```
    * @since 1.1.0
    * @throws NoSuchMessageException if the locales is not supported.
@@ -186,11 +259,7 @@ object TimeAgo {
    * using the [format] function.
    *
    * Note: This function uses ISO 639-1 language code to identify the language. For more information
-   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
-   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
-   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
-   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
-   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
    *
    * Example:
    * ```Kotlin
@@ -202,91 +271,91 @@ object TimeAgo {
    */
   fun setLocaleMessages(locale: String) {
     when (locale) {
-      "en" -> setLocaleMessages("en", EnMessages)
-      "en_short" -> setLocaleMessages("en_short", EnShortMessages)
-      "en_short_detail" -> setLocaleMessages("en_short_detail", EnShortDetailMessages)
-      "en_detail" -> setLocaleMessages("en_detail", EnDetailMessage)
-      "fa" -> setLocaleMessages("fa", FaMessages)
-      "fa_short" -> setLocaleMessages("fa_short", FaShortMessages)
-      "am" -> setLocaleMessages("am", AmMessages)
-      "am_short" -> setLocaleMessages("am_short", AmShortMessages)
-      "ar" -> setLocaleMessages("ar", ArMessages)
-      "ar_short" -> setLocaleMessages("ar_short", ArShortMessages)
-      "az" -> setLocaleMessages("az", AzMessages)
-      "az_short" -> setLocaleMessages("az_short", AzShortMessages)
-      "bs" -> setLocaleMessages("bs", BsMessages)
-      "bs_short" -> setLocaleMessages("bs_short", BsShortMessages)
-      "ca" -> setLocaleMessages("ca", CaMessages)
-      "ca_short" -> setLocaleMessages("ca_short", CaShortMessages)
-      "cs" -> setLocaleMessages("cs", CsMessages)
-      "cs_short" -> setLocaleMessages("cs_short", CsShortMessages)
-      "da" -> setLocaleMessages("da", DaMessages)
-      "da_short" -> setLocaleMessages("da_short", DaShortMessages)
-      "de" -> setLocaleMessages("de", DeMessages)
-      "de_short" -> setLocaleMessages("de_short", DeShortMessages)
-      "dv" -> setLocaleMessages("dv", DvMessages)
-      "dv_short" -> setLocaleMessages("dv_short", DvShortMessages)
-      "es" -> setLocaleMessages("es", EsMessages)
-      "es_short" -> setLocaleMessages("es_short", EsShortMessages)
-      "et" -> setLocaleMessages("et", EtMessages)
-      "et_short" -> setLocaleMessages("et_short", EtShortMessages)
-      "fi" -> setLocaleMessages("fi", FiMessages)
-      "fi_short" -> setLocaleMessages("fi_short", FiShortMessages)
-      "fr" -> setLocaleMessages("fr", FrMessages)
-      "fr_short" -> setLocaleMessages("fr_short", FrShortMessages)
-      "gr" -> setLocaleMessages("gr", GrMessages)
-      "gr_short" -> setLocaleMessages("gr_short", GrShortMessages)
-      "he" -> setLocaleMessages("he", HeMessages)
-      "he_short" -> setLocaleMessages("he_short", HeShortMessages)
-      "hi" -> setLocaleMessages("he", HiMessages)
-      "hi_short" -> setLocaleMessages("he_short", HiShortMessages)
-      "hu" -> setLocaleMessages("hu", HuMessages)
-      "hu_short" -> setLocaleMessages("hu_short", HuShortMessages)
-      "id" -> setLocaleMessages("id", IdMessages)
-      "it" -> setLocaleMessages("it", ItMessages)
-      "it_short" -> setLocaleMessages("it_short", ItShortMessages)
-      "ja" -> setLocaleMessages("ja", JaMessages)
-      "km" -> setLocaleMessages("km", KmMessages)
-      "km_short" -> setLocaleMessages("km_short", KmShortMessages)
-      "ko" -> setLocaleMessages("ko", KoMessages)
-      "ku" -> setLocaleMessages("ku", KuMessages)
-      "ku_short" -> setLocaleMessages("ku_short", KuShortMessages)
-      "mn" -> setLocaleMessages("mn", MnMessages)
-      "mn_short" -> setLocaleMessages("mn_short", MnShortMessages)
-      "ms_my" -> setLocaleMessages("ms_my", MsMyMessages)
-      "ms_my_short" -> setLocaleMessages("ms_my_short", MsMyShortMessages)
-      "my" -> setLocaleMessages("my", MyMessages)
-      "my_short" -> setLocaleMessages("my_short", MyShortMessages)
-      "nb_no" -> setLocaleMessages("nb_no", NbNoMessages)
-      "nb_no_short" -> setLocaleMessages("nb_no_short", NbNoShortMessages)
-      "nl" -> setLocaleMessages("nl", NlMessages)
-      "nl_short" -> setLocaleMessages("nl_short", NlShortMessages)
-      "nn_no" -> setLocaleMessages("nn_no", NnNoMessages)
-      "nn_no_short" -> setLocaleMessages("nn_no_short", NnNoShortMessages)
-      "pl" -> setLocaleMessages("pl", PlMessages)
-      "pt_br" -> setLocaleMessages("pt_br", PtBrMessages)
-      "pt_br_short" -> setLocaleMessages("pt_br", PtBrShortMessages)
-      "ro" -> setLocaleMessages("ro", RoMessages)
-      "ro_short" -> setLocaleMessages("ro_short", RoShortMessages)
-      "ru" -> setLocaleMessages("ru", RuMessages)
-      "ru_short" -> setLocaleMessages("ru_short", RuShortMessages)
-      "rw" -> setLocaleMessages("rw", RwMessages)
-      "rw_short" -> setLocaleMessages("rw_short", RwShortMessages)
-      "sv" -> setLocaleMessages("sv", SvMessages)
-      "sv_short" -> setLocaleMessages("sv_short", SvShortMessages)
-      "ta" -> setLocaleMessages("ta", TaMessages)
-      "th" -> setLocaleMessages("th", ThMessages)
-      "th_short" -> setLocaleMessages("th_short", ThShortMessages)
-      "tk" -> setLocaleMessages("tk", TkMessages)
-      "tr" -> setLocaleMessages("tr", TrMessages)
-      "uk" -> setLocaleMessages("uk", UkMessages)
-      "uk_short" -> setLocaleMessages("uk_short", UkShortMessages)
-      "ur" -> setLocaleMessages("ur", UrMessages)
-      "ur_short" -> setLocaleMessages("ur_short", UrShortMessages)
-      "vi" -> setLocaleMessages("vi", ViMessages)
-      "vi_short" -> setLocaleMessages("vi_short", ViShortMessages)
-      "zh_cn" -> setLocaleMessages("zh_cn", ZhCnMessages)
-      "zh" -> setLocaleMessages("zh", ZhMessages)
+      EN -> setLocaleMessages(EN, EnMessages)
+      EN_SHORT -> setLocaleMessages(EN_SHORT, EnShortMessages)
+      EN_SHORT_DETAIL -> setLocaleMessages(EN_SHORT_DETAIL, EnShortDetailMessages)
+      EN_DETAIL -> setLocaleMessages(EN_DETAIL, EnDetailMessage)
+      FA -> setLocaleMessages(FA, FaMessages)
+      FA_SHORT -> setLocaleMessages(FA_SHORT, FaShortMessages)
+      AM -> setLocaleMessages(AM, AmMessages)
+      AM_SHORT -> setLocaleMessages(AM_SHORT, AmShortMessages)
+      AR -> setLocaleMessages(AR, ArMessages)
+      AR_SHORT -> setLocaleMessages(AR_SHORT, ArShortMessages)
+      AZ -> setLocaleMessages(AZ, AzMessages)
+      AZ_SHORT -> setLocaleMessages(AZ_SHORT, AzShortMessages)
+      BS -> setLocaleMessages(BS, BsMessages)
+      BS_SHORT -> setLocaleMessages(BS_SHORT, BsShortMessages)
+      CA -> setLocaleMessages(CA, CaMessages)
+      CA_SHORT -> setLocaleMessages(CA_SHORT, CaShortMessages)
+      CS -> setLocaleMessages(CS, CsMessages)
+      CS_SHORT -> setLocaleMessages(CS_SHORT, CsShortMessages)
+      DA -> setLocaleMessages(DA, DaMessages)
+      DA_SHORT -> setLocaleMessages(DA_SHORT, DaShortMessages)
+      DE -> setLocaleMessages(DE, DeMessages)
+      DE_SHORT -> setLocaleMessages(DE_SHORT, DeShortMessages)
+      DV -> setLocaleMessages(DV, DvMessages)
+      DV_SHORT -> setLocaleMessages(DV_SHORT, DvShortMessages)
+      ES -> setLocaleMessages(ES, EsMessages)
+      ES_SHORT -> setLocaleMessages(ES_SHORT, EsShortMessages)
+      ET -> setLocaleMessages(ET, EtMessages)
+      ET_SHORT -> setLocaleMessages(ET_SHORT, EtShortMessages)
+      FI -> setLocaleMessages(FI, FiMessages)
+      FI_SHORT -> setLocaleMessages(FI_SHORT, FiShortMessages)
+      FR -> setLocaleMessages(FR, FrMessages)
+      FR_SHORT -> setLocaleMessages(FR_SHORT, FrShortMessages)
+      GR -> setLocaleMessages(GR, GrMessages)
+      GR_SHORT -> setLocaleMessages(GR_SHORT, GrShortMessages)
+      HE -> setLocaleMessages(HE, HeMessages)
+      HE_SHORT -> setLocaleMessages(HE_SHORT, HeShortMessages)
+      HI -> setLocaleMessages(HI, HiMessages)
+      HI_SHORT -> setLocaleMessages(HI_SHORT, HiShortMessages)
+      HU -> setLocaleMessages(HU, HuMessages)
+      HU_SHORT -> setLocaleMessages(HU_SHORT, HuShortMessages)
+      ID -> setLocaleMessages(ID, IdMessages)
+      IT -> setLocaleMessages(IT, ItMessages)
+      IT_SHORT -> setLocaleMessages(IT_SHORT, ItShortMessages)
+      JA -> setLocaleMessages(JA, JaMessages)
+      KM -> setLocaleMessages(KM, KmMessages)
+      KM_SHORT -> setLocaleMessages(KM_SHORT, KmShortMessages)
+      KO -> setLocaleMessages(KO, KoMessages)
+      KU -> setLocaleMessages(KU, KuMessages)
+      KU_SHORT -> setLocaleMessages(KU_SHORT, KuShortMessages)
+      MN -> setLocaleMessages(MN, MnMessages)
+      MN_SHORT -> setLocaleMessages(MN_SHORT, MnShortMessages)
+      MS_MY -> setLocaleMessages(MS_MY, MsMyMessages)
+      MS_MY_SHORT -> setLocaleMessages(MS_MY_SHORT, MsMyShortMessages)
+      MY -> setLocaleMessages(MY, MyMessages)
+      MY_SHORT -> setLocaleMessages(MY_SHORT, MyShortMessages)
+      NB_NO -> setLocaleMessages(NB_NO, NbNoMessages)
+      NB_NO_SHORT -> setLocaleMessages(NB_NO_SHORT, NbNoShortMessages)
+      NL -> setLocaleMessages(NL, NlMessages)
+      NL_SHORT -> setLocaleMessages(NL_SHORT, NlShortMessages)
+      NN_NO -> setLocaleMessages(NN_NO, NnNoMessages)
+      NN_NO_SHORT -> setLocaleMessages(NN_NO_SHORT, NnNoShortMessages)
+      PL -> setLocaleMessages(PL, PlMessages)
+      PT_BR -> setLocaleMessages(PT_BR, PtBrMessages)
+      PT_BR_SHORT -> setLocaleMessages(PT_BR, PtBrShortMessages)
+      RO -> setLocaleMessages(RO, RoMessages)
+      RO_SHORT -> setLocaleMessages(RO_SHORT, RoShortMessages)
+      RU -> setLocaleMessages(RU, RuMessages)
+      RU_SHORT -> setLocaleMessages(RU_SHORT, RuShortMessages)
+      RW -> setLocaleMessages(RW, RwMessages)
+      RW_SHORT -> setLocaleMessages(RW_SHORT, RwShortMessages)
+      SV -> setLocaleMessages(SV, SvMessages)
+      SV_SHORT -> setLocaleMessages(SV_SHORT, SvShortMessages)
+      TA -> setLocaleMessages(TA, TaMessages)
+      TH -> setLocaleMessages(TH, ThMessages)
+      TH_SHORT -> setLocaleMessages(TH_SHORT, ThShortMessages)
+      TK -> setLocaleMessages(TK, TkMessages)
+      TR -> setLocaleMessages(TR, TrMessages)
+      UK -> setLocaleMessages(UK, UkMessages)
+      UK_SHORT -> setLocaleMessages(UK_SHORT, UkShortMessages)
+      UR -> setLocaleMessages(UR, UrMessages)
+      UR_SHORT -> setLocaleMessages(UR_SHORT, UrShortMessages)
+      VI -> setLocaleMessages(VI, ViMessages)
+      VI_SHORT -> setLocaleMessages(VI_SHORT, ViShortMessages)
+      ZH_CN -> setLocaleMessages(ZH_CN, ZhCnMessages)
+      ZH -> setLocaleMessages(ZH, ZhMessages)
       else -> throw NoSuchMessageException(
         "Instead of using the factory, use the " +
           "setLocaleMessages(locale: String, lookupMessages: LookupMessages) method."
@@ -299,11 +368,7 @@ object TimeAgo {
    * using the [format] function.
    *
    * Note: This function uses ISO 639-1 language code to identify the language. For more information
-   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
-   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
-   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
-   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
-   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
    *
    * Example:
    * ```Kotlin
@@ -327,15 +392,11 @@ object TimeAgo {
    * using the [format] function. also Sets the default locale.
    *
    * Note: This function uses ISO 639-1 language code to identify the language. For more information
-   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
-   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
-   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
-   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
-   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
    *
    * Example:
    * ```Kotlin
-   * setLocaleMessagesAndDefaultLocale("ar")
+   * setLocaleMessagesAndDefaultLocale(AR)
    * ```
    * @since 1.1.0
    * @throws NoSuchMessageException if the [locale] is not supported.
@@ -350,11 +411,7 @@ object TimeAgo {
    * using the [format] function. also Sets the default locale.
    *
    * Note: This function uses ISO 639-1 language code to identify the language. For more information
-   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
-   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
-   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
-   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
-   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
    *
    * Example:
    * ```Kotlin
@@ -386,11 +443,7 @@ object TimeAgo {
    * 5 minutes from now in 'en' locale will display as "5 minutes from now".
    *
    * Note: This function uses ISO 639-1 language code to identify the language. For more information
-   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
-   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
-   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
-   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
-   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
    *
    * Example:
    * ```Kotlin
@@ -519,11 +572,7 @@ object TimeAgo {
    * 5 minutes from now in 'en' locale will display as "5 minutes from now".
    *
    * Note: This function uses ISO 639-1 language code to identify the language. For more information
-   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
-   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
-   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
-   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
-   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
    *
    * Example:
    * ```Kotlin
@@ -555,11 +604,7 @@ object TimeAgo {
    * 5 minutes from now in 'en' locale will display as "5 minutes from now".
    *
    * Note: This function uses ISO 639-1 language code to identify the language. For more information
-   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
-   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
-   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
-   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
-   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
    *
    * Example:
    * ```Kotlin
@@ -598,11 +643,7 @@ object TimeAgo {
    * 5 minutes from now in 'en' locale will display as "5 minutes from now".
    *
    * Note: This function uses ISO 639-1 language code to identify the language. For more information
-   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
-   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
-   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
-   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
-   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
    *
    * Example:
    * ```Kotlin
@@ -641,11 +682,7 @@ object TimeAgo {
    * 5 minutes from now in 'en' locale will display as "5 minutes from now".
    *
    * Note: This function uses ISO 639-1 language code to identify the language. For more information
-   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
-   * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
-   * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
-   * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
-   * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+   * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
    *
    * Example:
    * ```Kotlin
@@ -669,6 +706,104 @@ object TimeAgo {
       isWeekFormatEnabled,
       allowFromNow
     )
+
+  /**
+   * [Locale] show available languages for [TimeAgo].
+   *
+   * Example:
+   * ```Kotlin
+   * TimeAgo.Locale.EN // en
+   * ```
+   * @since 1.3.0
+   * @see TimeAgo
+   */
+  object Locale {
+    const val EN: String = "en"
+    const val EN_SHORT: String = "en_short"
+    const val EN_SHORT_DETAIL: String = "en_short_detail"
+    const val EN_DETAIL: String = "en_detail"
+    const val FA: String = "fa"
+    const val FA_SHORT: String = "fa_short"
+    const val AM: String = "am"
+    const val AM_SHORT: String = "am_short"
+    const val AR: String = "ar"
+    const val AR_SHORT: String = "ar_short"
+    const val AZ: String = "az"
+    const val AZ_SHORT: String = "az_short"
+    const val BS: String = "bs"
+    const val BS_SHORT: String = "bs_short"
+    const val CA: String = "ca"
+    const val CA_SHORT: String = "ca_short"
+    const val CS: String = "cs"
+    const val CS_SHORT: String = "cs_short"
+    const val DA: String = "da"
+    const val DA_SHORT: String = "da_short"
+    const val DE: String = "de"
+    const val DE_SHORT: String = "de_short"
+    const val DV: String = "dv"
+    const val DV_SHORT: String = "dv_short"
+    const val ES: String = "es"
+    const val ES_SHORT: String = "es_short"
+    const val ET: String = "et"
+    const val ET_SHORT: String = "et_short"
+    const val FI: String = "fi"
+    const val FI_SHORT: String = "fi_short"
+    const val FR: String = "fr"
+    const val FR_SHORT: String = "fr_short"
+    const val GR: String = "gr"
+    const val GR_SHORT: String = "gr_short"
+    const val HE: String = "he"
+    const val HE_SHORT: String = "he_short"
+    const val HI: String = "hi"
+    const val HI_SHORT: String = "hi_short"
+    const val HU: String = "hu"
+    const val HU_SHORT: String = "hu_short"
+    const val ID: String = "id"
+    const val IT: String = "it"
+    const val IT_SHORT: String = "it_short"
+    const val JA: String = "ja"
+    const val KM: String = "km"
+    const val KM_SHORT: String = "km_short"
+    const val KO: String = "ko"
+    const val KU: String = "ku"
+    const val KU_SHORT: String = "ku_short"
+    const val MN: String = "mn"
+    const val MN_SHORT: String = "mn_short"
+    const val MS_MY: String = "ms_my"
+    const val MS_MY_SHORT: String = "ms_my_short"
+    const val MY: String = "my"
+    const val MY_SHORT: String = "my_short"
+    const val NB_NO: String = "nb_no"
+    const val NB_NO_SHORT: String = "nb_no_short"
+    const val NL: String = "nl"
+    const val NL_SHORT: String = "nl_short"
+    const val NN_NO: String = "nn_no"
+    const val NN_NO_SHORT: String = "nn_no_short"
+    const val PL: String = "pl"
+    const val PT_BR: String = "pt_br"
+    const val PT_BR_SHORT: String = "pt_br_short"
+    const val RO: String = "ro"
+    const val RO_SHORT: String = "ro_short"
+    const val RU: String = "ru"
+    const val RU_SHORT: String = "ru_short"
+    const val RW: String = "rw"
+    const val RW_SHORT: String = "rw_short"
+    const val SV: String = "sv"
+    const val SV_SHORT: String = "sv_short"
+    const val TA: String = "ta"
+    const val TH: String = "th"
+    const val TH_SHORT: String = "th_short"
+    const val TK: String = "tk"
+    const val TR: String = "tr"
+    const val UK: String = "uk"
+    const val UK_SHORT: String = "uk_short"
+    const val UR: String = "ur"
+    const val UR_SHORT: String = "ur_short"
+    const val VI: String = "vi"
+    const val VI_SHORT: String = "vi_short"
+    const val ZH_CN: String = "zh_cn"
+    const val ZH: String = "zh"
+  }
 }
 
 /**
@@ -686,11 +821,7 @@ object TimeAgo {
  * 5 minutes from now in 'en' locale will display as "5 minutes from now".
  *
  * Note: This function uses ISO 639-1 language code to identify the language. For more information
- * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
- * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
- * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
- * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
- * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+ * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
  *
  * ```Kotlin
  * 1565591769464.timeAgo() // on 08/12/2019
@@ -720,11 +851,7 @@ fun Long.timeAgo(
  * 5 minutes from now in 'en' locale will display as "5 minutes from now".
  *
  * Note: This function uses ISO 639-1 language code to identify the language. For more information
- * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
- * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
- * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
- * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
- * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+ * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
  *
  * ```Kotlin
  * (nowInDate() - 4.hours).timeAgo() // 4 hours ago
@@ -754,11 +881,7 @@ fun Date.timeAgo(
  * 5 minutes from now in 'en' locale will display as "5 minutes from now".
  *
  * Note: This function uses ISO 639-1 language code to identify the language. For more information
- * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
- * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
- * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
- * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
- * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+ * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
  *
  * ```Kotlin
  * (nowInCalendar() - 1.hours).timeAgo() // about an hour ago
@@ -788,11 +911,7 @@ fun Calendar.timeAgo(
  * 5 minutes from now in 'en' locale will display as "5 minutes from now".
  *
  * Note: This function uses ISO 639-1 language code to identify the language. For more information
- * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
- * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
- * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
- * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
- * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+ * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
  *
  * ```Kotlin
  * now().timeAgo() // a moment ago
@@ -822,11 +941,7 @@ fun Instant.timeAgo(
  * 5 minutes from now in 'en' locale will display as "5 minutes from now".
  *
  * Note: This function uses ISO 639-1 language code to identify the language. For more information
- * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). list of available code
- * is: `am`, `ar`, `az`, `bs`, `ca`, `cs`, `da`, `de`, `dv`, `en`,
- * `es`, `et`, `fa`, `fi`, `fr`, `gr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `km`, `ko`, `ku`,
- * `mn`, `ms_my`, `my`, `nb_no`, `nl`, `nn_no`, `pl`, `pt_br`, `ro`, `ru`, `rw`, `sv`, `ta`, `th`,
- * `tk`, `tr`, `uk`, `ur`, `vi`, `zh_cn`, `zh`.
+ * see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
  *
  * ```Kotlin
  * (nowInLocalDateTime() - 1.years).timeAgo() // about a year ago
