@@ -24,12 +24,6 @@ tasks.test {
 }
 
 dependencies {
-  implementation(project(":affogato-core-ktx"))
-
-  // Coroutines ------------------------------------------------------------------------------------
-  api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-  api("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
-
   // Test ------------------------------------------------------------------------------------------
   testImplementation("com.google.truth:truth:1.1.3")
   testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
@@ -41,7 +35,7 @@ afterEvaluate {
     publications {
       create<MavenPublication>("java") {
         groupId = "com.parsuomash.affogato"
-        artifactId = "affogato-coroutines-core"
+        artifactId = "affogato-structure"
         version = "1.3.0"
 
         from(components["java"])
