@@ -37,7 +37,6 @@ android {
 }
 
 dependencies {
-  implementation(project(":affogato-core-ktx"))
   api(project(":affogato-coroutines-core"))
 
   // Coroutines ------------------------------------------------------------------------------------
