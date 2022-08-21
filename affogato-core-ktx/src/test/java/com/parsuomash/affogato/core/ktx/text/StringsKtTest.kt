@@ -115,6 +115,13 @@ internal class StringsKtTest {
     assertThat("\n".isNotNullOrBlank()).isFalse()
     assertThat("\r".isNotNullOrBlank()).isFalse()
     assertThat("hi".isNotNullOrBlank()).isTrue()
+
+    assertThat(" ".isNotNullNotBlank()).isFalse()
+    assertThat("null".isNotNullNotBlank()).isFalse()
+    assertThat(null.isNotNullNotBlank()).isFalse()
+    assertThat("\n".isNotNullNotBlank()).isFalse()
+    assertThat("\r".isNotNullNotBlank()).isFalse()
+    assertThat("hi".isNotNullNotBlank()).isTrue()
   }
 
   @Test
@@ -125,6 +132,13 @@ internal class StringsKtTest {
     assertThat("\n".isNotNullOrEmpty()).isTrue()
     assertThat("\r".isNotNullOrEmpty()).isTrue()
     assertThat("hi".isNotNullOrEmpty()).isTrue()
+
+    assertThat("null".isNotNullNotEmpty()).isFalse()
+    assertThat(null.isNotNullNotEmpty()).isFalse()
+    assertThat(" ".isNotNullNotEmpty()).isTrue()
+    assertThat("\n".isNotNullNotEmpty()).isTrue()
+    assertThat("\r".isNotNullNotEmpty()).isTrue()
+    assertThat("hi".isNotNullNotEmpty()).isTrue()
   }
 
   @Test

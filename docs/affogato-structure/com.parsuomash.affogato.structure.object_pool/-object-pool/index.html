@@ -1,0 +1,369 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>ObjectPool</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>Affogato</span>            </a>    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageids="affogato-structure::com.parsuomash.affogato.structure.object_pool/ObjectPool///PointingToDeclaration//-390748097">
+  <div class="breadcrumbs"><a href="../../index.html">affogato-structure</a><span class="delimiter">/</span><a href="../index.html">com.parsuomash.affogato.structure.object_pool</a><span class="delimiter">/</span><a href="index.html">ObjectPool</a></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Object</span><wbr><span><span>Pool</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-structure:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword"></span><span class="token keyword">class </span><a href="index.html">ObjectPool</a><span class="token operator">&lt;</span>T<span class="token keyword"> extends </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">This class define a simple template of object pool pattern.</p><p class="paragraph">Example:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">val customPool = ObjectPool&lt;Int&gt;()</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h4 class="">Since</h4><p class="paragraph">1.4.0</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button><button class="section-tab" data-togglable="Inheritors">Inheritors</button></div>
+    <div class="tabs-section-body">
+      <h2 class="tabbedcontent">Constructors</h2>
+      <div class="table" data-togglable="Constructors"><a data-name="573610203%2FConstructors%2F-390748097" anchor-label="ObjectPool" id="573610203%2FConstructors%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-object-pool.html"><span>Object</span><wbr><span><span>Pool</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="573610203%2FConstructors%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-structure:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="index.html">ObjectPool</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span>&nbsp;<a href="-object-pool.html"><span class="token function">ObjectPool</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="1717128852%2FFunctions%2F-390748097" anchor-label="first" id="1717128852%2FFunctions%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="first.html"><span><span>first</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1717128852%2FFunctions%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-structure:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="index.html">T</a>&nbsp;<a href="first.html"><span class="token function">first</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Returns the first value or throws an exception if pool is empty.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-654567007%2FFunctions%2F-390748097" anchor-label="firstOrElse" id="-654567007%2FFunctions%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="first-or-else.html"><span>first</span><wbr><span>Or</span><wbr><span><span>Else</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-654567007%2FFunctions%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-structure:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="index.html">T</a>&nbsp;<a href="first-or-else.html"><span class="token function">firstOrElse</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="kotlin.jvm.functions/Function0///PointingToDeclaration/">Function0</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span>&nbsp;defaultValue</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Returns the first value, or the result of the <a href="first-or-else.html">defaultValue</a> function if there was no entry.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-288757142%2FFunctions%2F-390748097" anchor-label="firstOrNull" id="-288757142%2FFunctions%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="first-or-null.html"><span>first</span><wbr><span>Or</span><wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-288757142%2FFunctions%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-structure:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="index.html">T</a>&nbsp;<a href="first-or-null.html"><span class="token function">firstOrNull</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Returns the first value, or null if this pool contains no entry.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-2086189738%2FFunctions%2F-390748097" anchor-label="get" id="-2086189738%2FFunctions%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get.html"><span><span>get</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2086189738%2FFunctions%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-structure:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="index.html">T</a>&nbsp;<a href="get.html"><span class="token function">get</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>&nbsp;key</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Returns the value for the given <a href="get.html">key</a> or throws an exception if there is no such key in the pool.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-573948552%2FFunctions%2F-390748097" anchor-label="getObjects" id="-573948552%2FFunctions%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-objects.html"><span>get</span><wbr><span><span>Objects</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-573948552%2FFunctions%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-structure:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span>&nbsp;<a href="get-objects.html"><span class="token function">getObjects</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="267071340%2FFunctions%2F-390748097" anchor-label="getOrElse" id="267071340%2FFunctions%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-or-else.html"><span>get</span><wbr><span>Or</span><wbr><span><span>Else</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="267071340%2FFunctions%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-structure:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="index.html">T</a>&nbsp;<a href="get-or-else.html"><span class="token function">getOrElse</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>&nbsp;key<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="kotlin.jvm.functions/Function0///PointingToDeclaration/">Function0</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span>&nbsp;defaultValue</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Returns the value for the given <a href="get-or-else.html">key</a>, or the result of the <a href="get-or-else.html">defaultValue</a> function if there was no entry for the given key.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="725561536%2FFunctions%2F-390748097" anchor-label="getOrNull" id="725561536%2FFunctions%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-or-null.html"><span>get</span><wbr><span>Or</span><wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="725561536%2FFunctions%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-structure:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="index.html">T</a>&nbsp;<a href="get-or-null.html"><span class="token function">getOrNull</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>&nbsp;key</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Returns the value to which the specified <a href="get-or-null.html">key</a> is mapped, or null if this pool contains no mapping for the <a href="get-or-null.html">key</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="182997229%2FFunctions%2F-390748097" anchor-label="getSize" id="182997229%2FFunctions%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-size.html"><span>get</span><wbr><span><span>Size</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="182997229%2FFunctions%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-structure:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a>&nbsp;<a href="get-size.html"><span class="token function">getSize</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1674026624%2FFunctions%2F-390748097" anchor-label="last" id="-1674026624%2FFunctions%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="last.html"><span><span>last</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1674026624%2FFunctions%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-structure:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="index.html">T</a>&nbsp;<a href="last.html"><span class="token function">last</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Returns the last value or throws an exception if pool is empty.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="606416181%2FFunctions%2F-390748097" anchor-label="lastOrElse" id="606416181%2FFunctions%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="last-or-else.html"><span>last</span><wbr><span>Or</span><wbr><span><span>Else</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="606416181%2FFunctions%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-structure:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="index.html">T</a>&nbsp;<a href="last-or-else.html"><span class="token function">lastOrElse</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="kotlin.jvm.functions/Function0///PointingToDeclaration/">Function0</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span>&nbsp;defaultValue</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Returns the last value, or the result of the <a href="last-or-else.html">defaultValue</a> function if there was no entry.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-170779562%2FFunctions%2F-390748097" anchor-label="lastOrNull" id="-170779562%2FFunctions%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="last-or-null.html"><span>last</span><wbr><span>Or</span><wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-170779562%2FFunctions%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-structure:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="index.html">T</a>&nbsp;<a href="last-or-null.html"><span class="token function">lastOrNull</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Returns the last value, or null if this pool contains no entry.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1538270975%2FFunctions%2F-390748097" anchor-label="set" id="-1538270975%2FFunctions%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="set.html"><span><span>set</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1538270975%2FFunctions%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-structure:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>&nbsp;<a href="set.html"><span class="token function">set</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>&nbsp;key<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="index.html">T</a>&nbsp;value</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Allows to use the index operator for storing values in a pool.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Properties</h2>
+      <div class="table" data-togglable="Properties"><a data-name="195383024%2FProperties%2F-390748097" anchor-label="objects" id="195383024%2FProperties%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#195383024%2FProperties%2F-390748097"><span><span>objects</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="195383024%2FProperties%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-structure:dokkaHtmlPartial/main"><a data-name="195383024%2FProperties%2F-390748097" anchor-label="objects" id="195383024%2FProperties%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span>&nbsp;<a href="index.html#195383024%2FProperties%2F-390748097">objects</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1184140683%2FProperties%2F-390748097" anchor-label="size" id="-1184140683%2FProperties%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#-1184140683%2FProperties%2F-390748097"><span><span>size</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1184140683%2FProperties%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-structure:dokkaHtmlPartial/main"><a data-name="-1184140683%2FProperties%2F-390748097" anchor-label="size" id="-1184140683%2FProperties%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#-1184140683%2FProperties%2F-390748097">size</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1184140683%2FProperties%2F-390748097" anchor-label="size" id="-1184140683%2FProperties%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a><p class="paragraph">Pool size</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Inheritors</h2>
+      <div class="table" data-togglable="Inheritors"><a data-name="1863379969%2FInheritors%2F-390748097" anchor-label="DefaultPool" id="1863379969%2FInheritors%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-default-pool/index.html">DefaultPool</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1863379969%2FInheritors%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div></div>
+          </div>
+        </div>
+<a data-name="-1403235462%2FInheritors%2F-390748097" anchor-label="BooleanPool" id="-1403235462%2FInheritors%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-boolean-pool/index.html">BooleanPool</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1403235462%2FInheritors%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div></div>
+          </div>
+        </div>
+<a data-name="-1011282029%2FInheritors%2F-390748097" anchor-label="IntPool" id="-1011282029%2FInheritors%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-int-pool/index.html">IntPool</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1011282029%2FInheritors%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div></div>
+          </div>
+        </div>
+<a data-name="-525431188%2FInheritors%2F-390748097" anchor-label="LongPool" id="-525431188%2FInheritors%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-long-pool/index.html">LongPool</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-525431188%2FInheritors%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div></div>
+          </div>
+        </div>
+<a data-name="157327622%2FInheritors%2F-390748097" anchor-label="FloatPool" id="157327622%2FInheritors%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-float-pool/index.html">FloatPool</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="157327622%2FInheritors%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div></div>
+          </div>
+        </div>
+<a data-name="-2013051785%2FInheritors%2F-390748097" anchor-label="DoublePool" id="-2013051785%2FInheritors%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-double-pool/index.html">DoublePool</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2013051785%2FInheritors%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div></div>
+          </div>
+        </div>
+<a data-name="726321207%2FInheritors%2F-390748097" anchor-label="StringPool" id="726321207%2FInheritors%2F-390748097" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":affogato-structure:dokkaHtmlPartial/main" data-filterable-set=":affogato-structure:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-string-pool/index.html">StringPool</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="726321207%2FInheritors%2F-390748097"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+
+</body></html>
+

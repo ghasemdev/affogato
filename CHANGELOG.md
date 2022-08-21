@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [🎉 1.4.0 Structure, Metrica] - 2022-08-21
+
+### 🚀 Features
+
+* Add New Structure Class.
+	* lazy singleton object
+	* object pool pattern
+	* validator class `EmailChecker`, `PasswordChecker`, `PhoneChecker` and `IRPhoneChecker`
+* Add `Metrica` Module.
+	* metrica builder `yandexMetrica("api-key") {}`, `yandexMetricaConfig("api-key") {}`
+	  , `withLogs(isDebugMode)`, `withSessionTimeout(duration)`
+	* metrica reporter for serialized class `YandexMetricaX.reportEvent("key", data-class)`
+	* metrica profile builder `metricaProfile {}`, `withValue(Int)`
+
+### 💥 Breaking Changes
+
+* Remove additional classes from affogato-coroutines-android
+
+### 💭 Other
+
+* rename `block` -> `runBlock`
+* rename `isNotNullOrEmpty` -> `isNotNullNotEmpty`, `isNotNullOrBlank` -> `isNotNullNotBlank`
+
 ## [🎉 1.3.0 Structure] - 2022-08-18
 
 ### 🚀 Features

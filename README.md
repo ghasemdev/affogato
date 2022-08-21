@@ -26,7 +26,7 @@ Coroutines module contains suspended try-catch from Core-ktx and `DispatchersPro
 coroutines context in main and test source.
 
 ```Kotlin
-// Old way
+// Normal way
 suspend fun foo() = withContext(Dispatchers.Default) {
   return try {
     // do something return value
@@ -35,15 +35,45 @@ suspend fun foo() = withContext(Dispatchers.Default) {
   }
 }
 
-// New way
+// Affogato way
 suspend fun foo() = suspendedTryCatchNull {
-	// do something return value
+  // do something return value
 }
+```
+
+### [Metrica-ktx](https://github.com/ghasemdev/affogato/wiki/Metrica-Ktx)
+
+This module adds Yandex Metrica to your project. You can use it for crashlytics and reporting events
+and push notifications.
+
+```kotlin
+yandexMetrica("api-key") {
+  // configuration
+}
+
+@Serializable
+data class Foo(val bar: String)
+YandexMetricaX.reportEvent("event_name", Foo("bar"))
 ```
 
 ### [Structure](https://github.com/ghasemdev/affogato/wiki/Structure)
 
-This module contains useful struct class like `DataState` and `EntityMapper`.
+This module contains useful structure class like `DataState` and `EntityMapper`. Also, it contains
+`SingletonHolder` for creating singleton classes or `ObjectPool` for creating heavy objects to save
+time. You can use checker class for validate phone, email and password.
+
+```kotlin
+class SharedPref private constructor(private val context: Context) {
+  // ...
+  companion object : SingletonHolder<SharedPref, Context>(::SharedPref)
+}
+
+StringPool["key"] = "token"
+StringPool["key"] // token
+
+PhoneChecker("09123456789").isValid() // true
+PhoneChecker("09123456789").format("IR") // +98 912 345 6789
+```
 
 ### [Compose Unit Size](https://github.com/ghasemdev/affogato/wiki/Unit-Size)
 
@@ -51,6 +81,13 @@ The unit is one of the **Jetpack Compose** modules of this library, which can su
 screen sizes in `sdp`, `ssp` and custom create with `@Dimen`. Also, we can
 use `rememberWindowSize()` to know in which device we are (Compact, Medium, Expanded) or
 use `postureState` to build adaptive and responsive UIs in **Foldables**.
+
+```kotlin
+@Dimen(type = "dp", values = ["320:70", "480:80", "600:180", "720:180"])
+val icon = 80.dp
+
+dimen.icon // 80.dp in device with width 480.dp
+```
 
 # Links
 

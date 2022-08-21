@@ -109,6 +109,26 @@ fun String.toLocalTimeOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): 
  * Example:
  * ```Kotlin
  * val time = LocalTime(11, 10, 0)
+ * time.toLocalDate().format("HH") // 11
+ * ```
+ * @since 1.1.1
+ * @throws IllegalArgumentException if the given pattern is invalid
+ * @return The formatted date-time string.
+ * @see SimpleDateFormat
+ */
+fun LocalTime.format(pattern: String): String {
+  simpleDateFormat.applyPattern(pattern)
+  return simpleDateFormat.format(toDate())
+}
+
+// TODO v2.0.0 remove deprecated functions ---------------------------------------------------------
+
+/**
+ * Formats a [LocalTime] into a date-time [String].
+ *
+ * Example:
+ * ```Kotlin
+ * val time = LocalTime(11, 10, 0)
  * time.toLocalDate().toString("HH") // 11
  * ```
  * @since 1.1.0
@@ -120,30 +140,12 @@ fun String.toLocalTimeOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): 
   message = "This function is deprecated and will be removed in next major release." +
     "Use format() instead.",
   replaceWith = ReplaceWith(
-    expression = "format",
+    expression = "format(format)",
     imports = ["com.parsuomash.affogato.core.ktx.datetime.format"]
   ),
   level = DeprecationLevel.WARNING
 )
 fun LocalTime.toString(format: String): String {
   simpleDateFormat.applyPattern(format)
-  return simpleDateFormat.format(toDate())
-}
-
-/**
- * Formats a [LocalTime] into a date-time [String].
- *
- * Example:
- * ```Kotlin
- * val time = LocalTime(11, 10, 0)
- * time.toLocalDate().format("HH") // 11
- * ```
- * @since 1.1.1
- * @throws IllegalArgumentException if the given pattern is invalid
- * @return The formatted date-time string.
- * @see SimpleDateFormat
- */
-fun LocalTime.format(pattern: String): String {
-  simpleDateFormat.applyPattern(pattern)
   return simpleDateFormat.format(toDate())
 }

@@ -72,7 +72,8 @@ koverMerged {
       excludes += listOf(
         "com.parsuomash.affogato.app.*",
         "com.parsuomash.affogato.unit.*",
-        "com.parsuomash.affogato.core.ktx.time.messages.*"
+        "com.parsuomash.affogato.core.ktx.time.messages.*",
+        "com.parsuomash.affogato.metrica.ktx.*"
       ) // class exclusion rules
     }
   }
