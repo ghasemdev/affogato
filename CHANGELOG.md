@@ -14,7 +14,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 	  , `withLogs(isDebugMode)`, `withSessionTimeout(duration)`
 	* metrica reporter for serialized class `YandexMetricaX.reportEvent("key", data-class)`
 	* metrica profile builder `metricaProfile {}`, `withValue(Int)`
-*
+
+### 💥 Breaking Changes
+
+* Remove additional classes from affogato-coroutines-android
 
 ### 💭 Other
 
