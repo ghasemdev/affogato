@@ -42,7 +42,7 @@ afterEvaluate {
       create<MavenPublication>("java") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-coroutines-core"
-        version = "1.3.0"
+        version = "1.4.0"
 
         from(components["java"])
       }
