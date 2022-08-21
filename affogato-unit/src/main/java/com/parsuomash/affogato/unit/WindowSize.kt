@@ -1,3 +1,4 @@
+// TODO v2.0.0 remove deprecated functions ---------------------------------------------------------
 @file:Suppress("DEPRECATION")
 
 package com.parsuomash.affogato.unit

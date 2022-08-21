@@ -146,6 +146,20 @@ fun String.toCalendarOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): C
 
 /**
  * Formats a [Calendar] into a date-time [String].
+ * @since 1.1.1
+ * @throws IllegalArgumentException if the given pattern is invalid
+ * @return The formatted date-time string.
+ * @see SimpleDateFormat
+ */
+fun Calendar.format(pattern: String): String {
+  simpleDateFormat.applyPattern(pattern)
+  return simpleDateFormat.format(time)
+}
+
+// TODO v2.0.0 remove deprecated functions ---------------------------------------------------------
+
+/**
+ * Formats a [Calendar] into a date-time [String].
  * @since 1.1.0
  * @throws IllegalArgumentException if the given pattern is invalid
  * @return The formatted date-time string.
@@ -155,24 +169,12 @@ fun String.toCalendarOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): C
   message = "This function is deprecated and will be removed in next major release." +
     "Use format() instead.",
   replaceWith = ReplaceWith(
-    expression = "format",
+    expression = "format(format)",
     imports = ["com.parsuomash.affogato.core.ktx.datetime.format"]
   ),
   level = DeprecationLevel.WARNING
 )
 fun Calendar.toString(format: String): String {
   simpleDateFormat.applyPattern(format)
-  return simpleDateFormat.format(time)
-}
-
-/**
- * Formats a [Calendar] into a date-time [String].
- * @since 1.1.1
- * @throws IllegalArgumentException if the given pattern is invalid
- * @return The formatted date-time string.
- * @see SimpleDateFormat
- */
-fun Calendar.format(pattern: String): String {
-  simpleDateFormat.applyPattern(pattern)
   return simpleDateFormat.format(time)
 }

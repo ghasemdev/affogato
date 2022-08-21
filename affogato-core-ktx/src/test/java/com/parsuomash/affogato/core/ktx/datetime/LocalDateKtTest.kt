@@ -82,6 +82,10 @@ internal class LocalDateKtTest {
     @Test
     @DisplayName("LocalDate to String")
     fun localDateToString() {
+      assertThat(1_659_814_200_000.toLocalDate().toString("MM/dd/yyyy")).isEqualTo("08/07/2022")
+      assertThat(1_659_874_062_000.toLocalDate().toString("EEE MMM dd HH:mm:ss zzz yyyy"))
+        .isEqualTo("Sun Aug 07 00:00:00 IRDT 2022")
+
       assertThat(1_659_814_200_000.toLocalDate().format("MM/dd/yyyy")).isEqualTo("08/07/2022")
       assertThat(1_659_874_062_000.toLocalDate().format("EEE MMM dd HH:mm:ss zzz yyyy"))
         .isEqualTo("Sun Aug 07 00:00:00 IRDT 2022")

@@ -78,6 +78,10 @@ internal class InstantKtTest {
   @Test
   @DisplayName("Instant to String")
   fun localDateToString() {
+    assertThat(1_659_814_200_000.toInstant().toString("MM/dd/yyyy")).isEqualTo("08/07/2022")
+    assertThat(1_659_874_062_000.toInstant().toString("EEE MMM dd HH:mm:ss zzz yyyy"))
+      .isEqualTo("Sun Aug 07 16:37:42 IRDT 2022")
+
     assertThat(1_659_814_200_000.toInstant().format("MM/dd/yyyy")).isEqualTo("08/07/2022")
     assertThat(1_659_874_062_000.toInstant().format("EEE MMM dd HH:mm:ss zzz yyyy"))
       .isEqualTo("Sun Aug 07 16:37:42 IRDT 2022")

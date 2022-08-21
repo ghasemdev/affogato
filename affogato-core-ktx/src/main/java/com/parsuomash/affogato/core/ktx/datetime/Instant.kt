@@ -108,6 +108,25 @@ fun String.toInstantOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): In
  *
  * Example:
  * ```Kotlin
+ * 1659814200000.toInstant().format("MM/dd/yyyy") // 08/07/2022
+ * ```
+ * @since 1.1.1
+ * @throws IllegalArgumentException if the given pattern is invalid
+ * @return The formatted date-time string.
+ * @see SimpleDateFormat
+ */
+fun Instant.format(pattern: String): String {
+  simpleDateFormat.applyPattern(pattern)
+  return simpleDateFormat.format(toDate())
+}
+
+// TODO v2.0.0 remove deprecated functions ---------------------------------------------------------
+
+/**
+ * Formats a [Instant] into a date-time [String].
+ *
+ * Example:
+ * ```Kotlin
  * 1659814200000.toInstant().toString("MM/dd/yyyy") // 08/07/2022
  * ```
  * @since 1.1.0
@@ -119,29 +138,12 @@ fun String.toInstantOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): In
   message = "This function is deprecated and will be removed in next major release." +
     "Use format() instead.",
   replaceWith = ReplaceWith(
-    expression = "format",
+    expression = "format(format)",
     imports = ["com.parsuomash.affogato.core.ktx.datetime.format"]
   ),
   level = DeprecationLevel.WARNING
 )
 fun Instant.toString(format: String): String {
   simpleDateFormat.applyPattern(format)
-  return simpleDateFormat.format(toDate())
-}
-
-/**
- * Formats a [Instant] into a date-time [String].
- *
- * Example:
- * ```Kotlin
- * 1659814200000.toInstant().format("MM/dd/yyyy") // 08/07/2022
- * ```
- * @since 1.1.1
- * @throws IllegalArgumentException if the given pattern is invalid
- * @return The formatted date-time string.
- * @see SimpleDateFormat
- */
-fun Instant.format(pattern: String): String {
-  simpleDateFormat.applyPattern(pattern)
   return simpleDateFormat.format(toDate())
 }
