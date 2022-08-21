@@ -158,7 +158,8 @@ inline val String.isHttp: Boolean
  * @since 1.1.0
  * @see URLEncoder
  */
-inline val String.urlEncode: String get() = encodeToUrl()
+inline val String.urlEncode: String
+  get() = encodeToUrl()
 
 /**
  * Decodes an application/x-www-form-urlencoded string using a specific encoding scheme.
@@ -171,7 +172,8 @@ inline val String.urlEncode: String get() = encodeToUrl()
  * @since 1.1.0
  * @see URLDecoder
  */
-inline val String.urlDecode: String get() = decodeToUrl()
+inline val String.urlDecode: String
+  get() = decodeToUrl()
 
 /**
  * Get last path segment of the string.
@@ -220,7 +222,8 @@ inline val String.lastPathComponent: String
  * @since 1.1.0
  * @return [Boolean]
  */
-fun String?.isNull(): Boolean = this == null || equals("null", true)
+fun String?.isNull(): Boolean =
+  this == null || equals("null", true)
 
 /**
  * Checking nullability.
@@ -239,31 +242,56 @@ fun String?.isNull(): Boolean = this == null || equals("null", true)
  * @since 1.1.0
  * @return [Boolean]
  */
-fun String?.isNotNull(): Boolean = this != null && !equals("null", true)
+fun String?.isNotNull(): Boolean =
+  this != null && !equals("null", true)
 
 /**
  * Return true if string not null and not blank.
  *
  * Example:
  * ```Kotlin
+ * val text: String? = null
+ * text.isNotNullNotBlank() // false
+ *
+ * val text2 = "null"
+ * text2.isNotNullNotBlank() // false
+ *
+ * val text3 = "hi"
+ * text3.isNotNullNotBlank() // true
+ *
+ * val text4 = " "
+ * text4.isNotNullNotBlank() // false
  * ```
- * @since 1.1.0
+ * @since 1.4.0
  * @see isNotBlank
  * @see isNotNull
  */
-fun String?.isNotNullOrBlank(): Boolean = isNotNull() && this!!.isNotBlank()
+fun String?.isNotNullNotBlank(): Boolean =
+  isNotNull() && this!!.isNotBlank()
 
 /**
  * Return true if string not null and not empty.
  *
  * Example:
  * ```Kotlin
+ * val text: String? = null
+ * text.isNotNullNotEmpty() // false
+ *
+ * val text2 = "null"
+ * text2.isNotNullNotEmpty() // false
+ *
+ * val text3 = "hi"
+ * text3.isNotNullNotEmpty() // true
+ *
+ * val text4 = ""
+ * text4.isNotNullNotEmpty() // false
  * ```
- * @since 1.1.0
+ * @since 1.4.0
  * @see isNotBlank
  * @see isNotNull
  */
-fun String?.isNotNullOrEmpty(): Boolean = isNotNull() && this!!.isNotEmpty()
+fun String?.isNotNullNotEmpty(): Boolean =
+  isNotNull() && this!!.isNotEmpty()
 
 /**
  * Translates a string into application/x-www-form-urlencoded format using a specific encoding
@@ -277,7 +305,8 @@ fun String?.isNotNullOrEmpty(): Boolean = isNotNull() && this!!.isNotEmpty()
  * @since 1.1.0
  * @see URLEncoder
  */
-fun String.encodeToUrl(charSet: String = "UTF-8"): String = URLEncoder.encode(this, charSet)
+fun String.encodeToUrl(charSet: String = "UTF-8"): String =
+  URLEncoder.encode(this, charSet)
 
 /**
  * Decodes an application/x-www-form-urlencoded string using a specific encoding scheme.
@@ -290,7 +319,8 @@ fun String.encodeToUrl(charSet: String = "UTF-8"): String = URLEncoder.encode(th
  * @since 1.1.0
  * @see URLDecoder
  */
-fun String.decodeToUrl(charSet: String = "UTF-8"): String = URLDecoder.decode(this, charSet)
+fun String.decodeToUrl(charSet: String = "UTF-8"): String =
+  URLDecoder.decode(this, charSet)
 
 /**
  * Returns a copy of this string having it's first letter title cased using the rules of the
@@ -308,9 +338,10 @@ fun String.decodeToUrl(charSet: String = "UTF-8"): String = URLDecoder.decode(th
  * @since 1.1.0
  * @see kotlin.text.capitalize
  */
-fun String.capitalize() = replaceFirstChar {
-  if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString()
-}
+fun String.capitalize() =
+  replaceFirstChar {
+    if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString()
+  }
 
 /**
  * Rotates the [String] to the left by specified distance.
@@ -363,7 +394,8 @@ fun String.rotateRight(n: Int = 1): String {
  * @see substring
  * @see IntRange
  */
-operator fun String.get(indices: IntRange): String = substring(indices.first, indices.last + 1)
+operator fun String.get(indices: IntRange): String =
+  substring(indices.first, indices.last + 1)
 
 /**
  * Returns the substring from the given range if exist otherwise return a null.
@@ -377,7 +409,8 @@ operator fun String.get(indices: IntRange): String = substring(indices.first, in
  * @see substring
  * @see IntRange
  */
-fun String.getOrNull(indices: IntRange): String? = tryCatchNull { get(indices) }
+fun String.getOrNull(indices: IntRange): String? =
+  tryCatchNull { get(indices) }
 
 /**
  * Returns the substring from the given range if exist otherwise return else block.
@@ -407,9 +440,10 @@ inline fun String.getOrElse(indices: IntRange, defaultValue: () -> String): Stri
  * @see substring
  * @see IntProgression
  */
-operator fun String.get(indices: IntProgression): String = buildString {
-  for (i in indices) append(this@get[i])
-}
+operator fun String.get(indices: IntProgression): String =
+  buildString {
+    for (i in indices) append(this@get[i])
+  }
 
 /**
  * Returns the substring from the given progression if exist otherwise return a null.
@@ -423,7 +457,8 @@ operator fun String.get(indices: IntProgression): String = buildString {
  * @see substring
  * @see IntProgression
  */
-fun String.getOrNull(indices: IntProgression): String? = tryCatchNull { get(indices) }
+fun String.getOrNull(indices: IntProgression): String? =
+  tryCatchNull { get(indices) }
 
 /**
  * Returns the substring from the given progression if exist otherwise return else block.
@@ -469,7 +504,8 @@ inline fun String.hasValidLength(length: Int, block: () -> Unit) {
  * @since 1.1.0
  * @see StringBuilder
  */
-fun StringBuilder.appendSpace(): StringBuilder = append(" ")
+fun StringBuilder.appendSpace(): StringBuilder =
+  append(" ")
 
 /**
  * Creates a string from all the elements separated using [separator] and using the given [prefix]
@@ -503,3 +539,71 @@ fun <T> joinWith(
   truncated = truncated,
   transform = transform
 )
+
+// TODO v2.0.0 remove deprecated functions ---------------------------------------------------------
+
+/**
+ * Return true if string not null and not blank.
+ *
+ * Example:
+ * ```Kotlin
+ * val text: String? = null
+ * text.isNotNullOrBlank() // false
+ *
+ * val text2 = "null"
+ * text2.isNotNullOrBlank() // false
+ *
+ * val text3 = "hi"
+ * text3.isNotNullOrBlank() // true
+ *
+ * val text4 = " "
+ * text4.isNotNullOrBlank() // false
+ * ```
+ * @since 1.1.0
+ * @see isNotBlank
+ * @see isNotNull
+ */
+@Deprecated(
+  message = "This function is deprecated and will be removed in next major release." +
+    "Use isNotNullNotBlank() instead.",
+  replaceWith = ReplaceWith(
+    expression = "isNotNullNotBlank()",
+    imports = ["com.parsuomash.affogato.core.ktx.text.isNotNullNotBlank"]
+  ),
+  level = DeprecationLevel.WARNING
+)
+fun String?.isNotNullOrBlank(): Boolean =
+  isNotNull() && this!!.isNotBlank()
+
+/**
+ * Return true if string not null and not empty.
+ *
+ * Example:
+ * ```Kotlin
+ * val text: String? = null
+ * text.isNotNullOrEmpty() // false
+ *
+ * val text2 = "null"
+ * text2.isNotNullOrEmpty() // false
+ *
+ * val text3 = "hi"
+ * text3.isNotNullOrEmpty() // true
+ *
+ * val text4 = ""
+ * text4.isNotNullOrEmpty() // false
+ * ```
+ * @since 1.1.0
+ * @see isNotBlank
+ * @see isNotNull
+ */
+@Deprecated(
+  message = "This function is deprecated and will be removed in next major release." +
+    "Use isNotNullNotEmpty() instead.",
+  replaceWith = ReplaceWith(
+    expression = "isNotNullNotEmpty()",
+    imports = ["com.parsuomash.affogato.core.ktx.text.isNotNullNotEmpty"]
+  ),
+  level = DeprecationLevel.WARNING
+)
+fun String?.isNotNullOrEmpty(): Boolean =
+  isNotNull() && this!!.isNotEmpty()
