@@ -1,4 +1,4 @@
-[![Version](https://shields.io/badge/VERSION-1.3.0-blue?style=for-the-badge)](https://github.com/ghasemdev/affogato/releases/tag/1.3.0)
+[![Version](https://shields.io/badge/VERSION-1.4.0-blue?style=for-the-badge)](https://github.com/ghasemdev/affogato/releases/tag/1.4.0)
 [![Kotlin](https://shields.io/badge/Kotlin-1.7.10-pink?style=for-the-badge)](https://kotlinlang.org/)
 [![API](https://shields.io/badge/Api-+21-green?style=for-the-badge)](https://www.android.com/)
 [![License MIT](https://shields.io/badge/LICENSE-MIT-orange?style=for-the-badge)](https://opensource.org/licenses/MIT)
@@ -92,7 +92,7 @@ dimen.icon // 80.dp in device with width 480.dp
 # Links
 
 Affogato is currently available for maven/gradle builds
-at [Jitpack](https://jitpack.io/#ghasemdev/affogato/1.3.0) (
+at [Jitpack](https://jitpack.io/#ghasemdev/affogato/1.4.0) (
 read [Getting started](https://github.com/ghasemdev/affogato/wiki/Getting-Started)).
 
 * [Wiki](https://github.com/ghasemdev/affogato/wiki)
