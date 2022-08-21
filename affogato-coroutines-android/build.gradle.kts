@@ -38,14 +38,12 @@ android {
 
 dependencies {
   implementation(project(":affogato-core-ktx"))
+  api(project(":affogato-coroutines-core"))
 
   // Coroutines ------------------------------------------------------------------------------------
+  api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
   api("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
   api("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
-
-  // Test ------------------------------------------------------------------------------------------
-  testImplementation("junit:junit:4.13.2")
-  testImplementation("com.google.truth:truth:1.1.3")
 }
 
 afterEvaluate {
