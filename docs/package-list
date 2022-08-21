@@ -17,6 +17,9 @@ module:affogato-coroutines-android
 com.parsuomash.affogato.coroutines.android
 module:affogato-coroutines-core
 com.parsuomash.affogato.coroutines.core
+module:affogato-metrica-ktx
+com.parsuomash.affogato.metrica.ktx
+com.parsuomash.affogato.metrica.ktx.profile
 module:affogato-structure
 com.parsuomash.affogato.structure
 module:affogato-unit
