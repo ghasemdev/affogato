@@ -80,8 +80,7 @@ value class PhoneChecker(val value: String) : Emptiness {
    * @since 1.4.0
    * @return a boolean that indicates whether the number is empty.
    */
-  override fun isEmpty(): Boolean =
-    value.isEmpty()
+  override fun isEmpty(): Boolean = value.isEmpty()
 
   override fun toString(): String = "PhoneChecker(value=$value)"
 }

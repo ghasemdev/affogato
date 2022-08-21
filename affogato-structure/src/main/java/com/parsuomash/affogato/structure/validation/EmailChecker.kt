@@ -24,15 +24,13 @@ value class EmailChecker(val value: String) : Validation, Emptiness {
    * check is a valid email
    * @since 1.4.0
    */
-  override fun isValid(): Boolean =
-    value.matches(EMAIL_REGEX.toRegex())
+  override fun isValid(): Boolean = value.matches(EMAIL_REGEX.toRegex())
 
   /**
    * Check email is empty
    * @since 1.4.0
    */
-  override fun isEmpty(): Boolean =
-    value.isEmpty()
+  override fun isEmpty(): Boolean = value.isEmpty()
 
   override fun toString(): String = "EmailChecker(value=$value)"
 

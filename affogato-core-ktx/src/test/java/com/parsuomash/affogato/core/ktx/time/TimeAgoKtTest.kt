@@ -411,7 +411,7 @@ internal class TimeAgoKtTest {
     private val languages = listOf(
       "am", "ar", "az", "bs", "ca", "cs", "da", "de", "dv", "en", "es", "et", "fa", "fi", "fr",
       "gr", "he", "hi", "hu", "it", "km", "ku", "mn", "ms_my", "my", "nb_no", "nl", "pt_br",
-      "ru", "rw", "sv", "uk", "ur", "vi"
+      "ru", "rw", "sv", "uk", "ur", "vi", "nn_no", "ro", "th"
     )
 
     @JvmStatic
@@ -426,7 +426,7 @@ internal class TimeAgoKtTest {
         println(lang + "_short")
       }
       TimeAgo.setLocaleMessages(
-        "id", "ja", "ko", "nn_no", "pl", "ta", "tk", "tr", "zh_cn", "zh"
+        "id", "ja", "ko", "pl", "ta", "tk", "tr", "zh_cn", "zh"
       )
       TimeAgo.setLocaleMessages("en_short_detail")
       TimeAgo.setLocaleMessages("en_detail")

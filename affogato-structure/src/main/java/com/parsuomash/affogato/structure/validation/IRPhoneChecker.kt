@@ -19,15 +19,13 @@ value class IRPhoneChecker(val value: String) : Validation, Emptiness {
    * check phone number is valid.
    * @since 1.4.0
    */
-  override fun isValid(): Boolean =
-    value.matches(PHONE_REGEX.toRegex())
+  override fun isValid(): Boolean = value.matches(PHONE_REGEX.toRegex())
 
   /**
    * Check phone is empty.
    * @since 1.4.0
    */
-  override fun isEmpty(): Boolean =
-    value.isEmpty()
+  override fun isEmpty(): Boolean = value.isEmpty()
 
   override fun toString(): String = "IRPhoneChecker(value=$value)"
 
