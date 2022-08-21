@@ -26,7 +26,7 @@ Coroutines module contains suspended try-catch from Core-ktx and `DispatchersPro
 coroutines context in main and test source.
 
 ```Kotlin
-// Old way
+// Normal way
 suspend fun foo() = withContext(Dispatchers.Default) {
   return try {
     // do something return value
@@ -35,10 +35,25 @@ suspend fun foo() = withContext(Dispatchers.Default) {
   }
 }
 
-// New way
+// Affogato way
 suspend fun foo() = suspendedTryCatchNull {
-	// do something return value
+  // do something return value
 }
+```
+
+### [Metrica-ktx](https://github.com/ghasemdev/affogato/wiki/Metrica-Ktx)
+
+This module adds Yandex Metrica to your project. You can use it for crashlytics and reporting events
+and push notifications.
+
+```kotlin
+yandexMetrica("api-key") {
+  // configuration
+}
+
+@Serializable
+data class Foo(val bar: String)
+YandexMetricaX.reportEvent("event_name", Foo("bar"))
 ```
 
 ### [Structure](https://github.com/ghasemdev/affogato/wiki/Structure)

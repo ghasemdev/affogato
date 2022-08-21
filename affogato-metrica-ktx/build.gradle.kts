@@ -41,6 +41,9 @@ dependencies {
   api("com.yandex.android:mobmetricalib:5.0.1")
   api("com.yandex.android:mobmetricapushlib:2.2.0")
   api("com.yandex.android:appmetricapush-provider-hms:2.2.0")
+
+  // Serialization ---------------------------------------------------------------------------------
+  implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
 }
 
 afterEvaluate {
