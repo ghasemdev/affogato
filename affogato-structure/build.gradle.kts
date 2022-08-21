@@ -4,6 +4,7 @@ plugins {
   id("java-library")
   kotlin("jvm")
   id("maven-publish")
+  kotlin("plugin.serialization") version "1.7.10"
 }
 
 java {
@@ -24,6 +25,14 @@ tasks.test {
 }
 
 dependencies {
+  implementation(project(":affogato-core-ktx"))
+
+  // Serialization ---------------------------------------------------------------------------------
+  implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
+
+  // Phone Checker ---------------------------------------------------------------------------------
+  implementation("com.googlecode.libphonenumber:libphonenumber:8.12.54")
+
   // Test ------------------------------------------------------------------------------------------
   testImplementation("com.google.truth:truth:1.1.3")
   testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
