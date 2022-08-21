@@ -11,6 +11,8 @@ internal class ScopeKtTest {
     var string = "Hello"
     val blockString = string.block { string += " World" }
     assertThat(blockString).isEqualTo("Hello")
+    val blockString2 = string.runBlock { string += " World" }
+    assertThat(blockString2).isEqualTo("Hello")
     assertThat(string).isEqualTo("Hello World")
   }
 }
