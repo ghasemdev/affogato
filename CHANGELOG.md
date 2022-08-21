@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### 🚀 Features
 
+* Add New Structure Class.
+	* lazy singleton object
+	* object pool pattern
+	* validator class `EmailChecker`, `PasswordChecker`, `PhoneChecker` and `IRPhoneChecker`
 * Add `Metrica` Module.
 	* metrica builder `yandexMetrica("api-key") {}`, `yandexMetricaConfig("api-key") {}`
 	  , `withLogs(isDebugMode)`, `withSessionTimeout(duration)`
