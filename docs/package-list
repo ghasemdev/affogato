@@ -20,6 +20,9 @@ com.parsuomash.affogato.logger.android
 module:affogato-metrica-ktx
 com.parsuomash.affogato.metrica.ktx
 com.parsuomash.affogato.metrica.ktx.profile
+module:affogato-okhttp-android
+com.parsuomash.affogato.okhttp.android
+com.parsuomash.affogato.okhttp.android.progress
 module:affogato-structure
 com.parsuomash.affogato.structure
 com.parsuomash.affogato.structure.lazy_object

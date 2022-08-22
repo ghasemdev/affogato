@@ -81,6 +81,19 @@ data class Foo(val bar: String)
 YandexMetricaX.reportEvent("event_name", Foo("bar"))
 ```
 
+### [Okhttp](https://github.com/ghasemdev/affogato/wiki/Okhttp)
+
+Okhttp builder is part of this module. You can use it for building okhttp client with a simple
+syntax. Also, you can track download and upload progress with `DownloadStreamResponseBody`
+and `UploadStreamRequestBody`.
+
+```kotlin
+val client = okHttp {
+  addInterceptor(HttpLoggingInterceptor())
+  cache(Cache(cacheDir, cacheSize))
+}
+```
+
 ### [Structure](https://github.com/ghasemdev/affogato/wiki/Structure)
 
 This module contains useful structure class like `DataState` and `EntityMapper`. Also, it contains
