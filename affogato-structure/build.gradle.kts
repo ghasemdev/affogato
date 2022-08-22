@@ -29,7 +29,6 @@ dependencies {
 
   // Serialization ---------------------------------------------------------------------------------
   implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
-
   // Phone Checker ---------------------------------------------------------------------------------
   implementation("com.googlecode.libphonenumber:libphonenumber:8.12.54")
 

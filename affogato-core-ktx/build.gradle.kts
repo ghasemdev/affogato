@@ -26,10 +26,8 @@ tasks.test {
 dependencies {
   // Serialization ---------------------------------------------------------------------------------
   api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
-
   // Immutable Collections -------------------------------------------------------------------------
   api("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
-
   // DateTime --------------------------------------------------------------------------------------
   api("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
 

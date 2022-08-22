@@ -5,14 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [🎉 1.5.0 Structure, Logger] - 2022-08-22
+## [🎉 1.5.0 Structure, Logger, OkHttp] - 2022-08-22
 
 ### 🚀 Features
 
+* Add `okhttp-android` module
+	* okhttp builder extension `okhttpClient {}` , `Response.new {}` and `OkHttpClient.new {}`.
+	* download and upload progress listener `DownloadStreamResponseBody`, `UploadStreamRequestBody`.
 * Add `logger-android` module
-  * `LogLevel` enum.
-  * `logcat` extension.
-  * Singleton `Logger`.
+	* `LogLevel` enum.
+	* `logcat` extension.
+	* Singleton `Logger`.
 
 ### 💥 Breaking Changes
 
