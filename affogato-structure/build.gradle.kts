@@ -29,7 +29,6 @@ dependencies {
 
   // Serialization ---------------------------------------------------------------------------------
   implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
-
   // Phone Checker ---------------------------------------------------------------------------------
   implementation("com.googlecode.libphonenumber:libphonenumber:8.12.54")
 
@@ -45,7 +44,7 @@ afterEvaluate {
       create<MavenPublication>("java") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-structure"
-        version = "1.4.0"
+        version = "1.5.0"
 
         from(components["java"])
       }

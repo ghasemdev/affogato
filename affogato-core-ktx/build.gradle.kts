@@ -26,10 +26,8 @@ tasks.test {
 dependencies {
   // Serialization ---------------------------------------------------------------------------------
   api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
-
   // Immutable Collections -------------------------------------------------------------------------
   api("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
-
   // DateTime --------------------------------------------------------------------------------------
   api("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
 
@@ -47,7 +45,7 @@ afterEvaluate {
       create<MavenPublication>("java") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-core-ktx"
-        version = "1.4.0"
+        version = "1.5.0"
 
         from(components["java"])
       }

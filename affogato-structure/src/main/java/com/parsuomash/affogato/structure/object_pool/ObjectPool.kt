@@ -52,7 +52,7 @@ open class ObjectPool<T> {
    * @see get
    * @see getOrNull
    */
-  fun getOrElse(key: String, defaultValue: () -> T): T =
+  inline fun getOrElse(key: String, defaultValue: () -> T): T =
     objects.getOrElse(key, defaultValue)
 
   /**
@@ -82,7 +82,7 @@ open class ObjectPool<T> {
    * @see last
    * @see lastOrNull
    */
-  fun lastOrElse(defaultValue: () -> T): T =
+  inline fun lastOrElse(defaultValue: () -> T): T =
     objects.values.lastOrNull().orDefault(defaultValue())
 
   /**
@@ -112,7 +112,7 @@ open class ObjectPool<T> {
    * @see first
    * @see firstOrNull
    */
-  fun firstOrElse(defaultValue: () -> T): T =
+  inline fun firstOrElse(defaultValue: () -> T): T =
     objects.values.firstOrNull().orDefault(defaultValue())
 
   /**

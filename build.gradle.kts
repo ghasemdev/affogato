@@ -73,7 +73,9 @@ koverMerged {
         "com.parsuomash.affogato.app.*",
         "com.parsuomash.affogato.unit.*",
         "com.parsuomash.affogato.core.ktx.time.messages.*",
-        "com.parsuomash.affogato.metrica.ktx.*"
+        "com.parsuomash.affogato.metrica.ktx.*",
+        "com.parsuomash.affogato.logger.android.*",
+        "com.parsuomash.affogato.okhttp.android.*"
       ) // class exclusion rules
     }
   }
