@@ -41,31 +41,6 @@ suspend fun foo() = suspendedTryCatchNull {
 }
 ```
 
-### [Logger](https://github.com/ghasemdev/affogato/wiki/Logger)
-
-Logger module contains a simple logger for Android. It's a wrapper for `Log` and`Logger` with some
-extensions.
-
-```Kotlin
-// Setup
-Logger.tag = "MyApp"
-
-Logger.isDebug = BuildConfig.DEBUG // if debug mode false onRelease will be called.
-Logger.onRealease = { tag, message, throwable ->
-  // do something
-}
-
-// Extension
-logcat { "Hello Affogato" }
-logcat(tag = "TAG") { "Hello Affogato" }
-logcat(LogLevel.INFO) { "Hello Affogato" }
-try {
-  // do something
-} catch (e: Exception) {
-  logcat(throwable = e) { "Hello Affogato" }
-}
-```
-
 ### [Metrica-ktx](https://github.com/ghasemdev/affogato/wiki/Metrica-Ktx)
 
 This module adds Yandex Metrica to your project. You can use it for crashlytics and reporting events
@@ -79,19 +54,6 @@ yandexMetrica("api-key") {
 @Serializable
 data class Foo(val bar: String)
 YandexMetricaX.reportEvent("event_name", Foo("bar"))
-```
-
-### [Okhttp](https://github.com/ghasemdev/affogato/wiki/Okhttp)
-
-Okhttp builder is part of this module. You can use it for building okhttp client with a simple
-syntax. Also, you can track download and upload progress with `DownloadStreamResponseBody`
-and `UploadStreamRequestBody`.
-
-```kotlin
-val client = okHttp {
-  addInterceptor(HttpLoggingInterceptor())
-  cache(Cache(cacheDir, cacheSize))
-}
 ```
 
 ### [Structure](https://github.com/ghasemdev/affogato/wiki/Structure)
@@ -109,8 +71,8 @@ class SharedPref private constructor(private val context: Context) {
 StringPool["key"] = "token"
 StringPool["key"] // token
 
-Phone("09123456789").isValid() // true
-Phone("09123456789").format("IR") // +98 912 345 6789
+PhoneChecker("09123456789").isValid() // true
+PhoneChecker("09123456789").format("IR") // +98 912 345 6789
 ```
 
 ### [Compose Unit Size](https://github.com/ghasemdev/affogato/wiki/Unit-Size)
