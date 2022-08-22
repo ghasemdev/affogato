@@ -39,10 +39,10 @@ dependencies {
 afterEvaluate {
   publishing {
     publications {
-      create<MavenPublication>("java") {
+      create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-coroutines-core"
-        version = "1.5.0"
+        version = "1.5.1"
 
         from(components["java"])
       }
