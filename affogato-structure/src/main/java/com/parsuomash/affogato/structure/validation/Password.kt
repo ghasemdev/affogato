@@ -6,7 +6,7 @@ import kotlin.properties.Delegates
 import kotlinx.serialization.Serializable
 
 /**
- * # PasswordChecker
+ * # Password
  * When password changed validator executed.
  *
  * Example :
@@ -22,10 +22,10 @@ import kotlinx.serialization.Serializable
  * password.value = "password"
  * ```
  * @since 1.4.0
- * @see PasswordChecker.Builder
+ * @see Password.Builder
  */
 @Serializable
-open class PasswordChecker {
+open class Password {
   private lateinit var lengthValidation: (Boolean) -> Unit
   private lateinit var digitValidation: (Boolean) -> Unit
   private lateinit var lowercaseValidation: (Boolean) -> Unit
@@ -99,8 +99,8 @@ open class PasswordChecker {
       whitespaceHolder = initialize
     }
 
-    fun build(): PasswordChecker {
-      return PasswordChecker().apply {
+    fun build(): Password {
+      return Password().apply {
         if (::lengthHolder.isInitialized) lengthValidation = lengthHolder
         if (::digitHolder.isInitialized) digitValidation = digitHolder
         if (::lowercaseHolder.isInitialized) lowercaseValidation = lowercaseHolder
@@ -114,7 +114,7 @@ open class PasswordChecker {
 }
 
 /**
- * password builder create [PasswordChecker] for validation.
+ * password builder create [Password] for validation.
  *
  * Example :
  * ```
@@ -130,5 +130,5 @@ open class PasswordChecker {
  * ```
  * @since 1.4.0
  */
-fun password(init: PasswordChecker.Builder.() -> Unit): PasswordChecker =
-  PasswordChecker.Builder(init).build()
+fun password(init: Password.Builder.() -> Unit): Password =
+  Password.Builder(init).build()
