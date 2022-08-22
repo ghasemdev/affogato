@@ -3,18 +3,18 @@ package com.parsuomash.affogato.structure.validation
 import kotlinx.serialization.Serializable
 
 /**
- * # Iranian Phone Checker
+ * # Iranian Phone
  *
  * Example:
  * ```kotlin
- * val checker = IRPhoneChecker("09151234567")
+ * val checker = IRPhone("09151234567")
  * checker.isValid() // true
  * ```
  * @since 1.4.0
  */
 @JvmInline
 @Serializable
-value class IRPhoneChecker(val value: String) : Validation, Emptiness {
+value class IRPhone(val value: String) : Validation, Emptiness {
   /**
    * check phone number is valid.
    * @since 1.4.0
@@ -27,7 +27,7 @@ value class IRPhoneChecker(val value: String) : Validation, Emptiness {
    */
   override fun isEmpty(): Boolean = value.isEmpty()
 
-  override fun toString(): String = "IRPhoneChecker(value=$value)"
+  override fun toString(): String = "IRPhone(value=$value)"
 
   companion object {
     private const val PHONE_REGEX = "^(\\+98[\\-\\s]?)?[0]?(91)?[789]\\d{9}${'$'}"

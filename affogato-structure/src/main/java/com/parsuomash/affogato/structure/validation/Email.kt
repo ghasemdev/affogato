@@ -8,18 +8,18 @@ package com.parsuomash.affogato.structure.validation
 import kotlinx.serialization.Serializable
 
 /**
- * # Email Checker
+ * # Email
  *
  * Example:
  * ```kotlin
- * val checker = EmailChecker("test@gmail.com")
+ * val checker = Email("test@gmail.com")
  * checker.isValid() // true
  * ```
  * @since 1.4.0
  */
 @JvmInline
 @Serializable
-value class EmailChecker(val value: String) : Validation, Emptiness {
+value class Email(val value: String) : Validation, Emptiness {
   /**
    * check is a valid email
    * @since 1.4.0
@@ -32,7 +32,7 @@ value class EmailChecker(val value: String) : Validation, Emptiness {
    */
   override fun isEmpty(): Boolean = value.isEmpty()
 
-  override fun toString(): String = "EmailChecker(value=$value)"
+  override fun toString(): String = "Email(value=$value)"
 
   companion object {
     private const val EMAIL_REGEX = "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +

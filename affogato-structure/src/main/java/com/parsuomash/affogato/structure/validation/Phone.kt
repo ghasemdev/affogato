@@ -7,18 +7,18 @@ import com.parsuomash.affogato.core.ktx.tryCatchNull
 import kotlinx.serialization.Serializable
 
 /**
- * # Phone Checker
+ * # Phone
  *
  * Example:
  * ```kotlin
- * val checker = PhoneChecker("+989123456789")
+ * val checker = Phone("+989123456789")
  * checker.isValid() // true
  * ```
  * @since 1.4.0
  */
 @JvmInline
 @Serializable
-value class PhoneChecker(val value: String) : Emptiness {
+value class Phone(val value: String) : Emptiness {
   /**
    * Check phone number is valid.
    * @since 1.4.0
@@ -82,7 +82,7 @@ value class PhoneChecker(val value: String) : Emptiness {
    */
   override fun isEmpty(): Boolean = value.isEmpty()
 
-  override fun toString(): String = "PhoneChecker(value=$value)"
+  override fun toString(): String = "Phone(value=$value)"
 }
 
 /**

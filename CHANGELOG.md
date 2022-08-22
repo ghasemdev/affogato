@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [🎉 1.5.0 Structure, Logger] - 2022-08-22
+
+### 🚀 Features
+
+* Add `logger-android` module
+  * `LogLevel` enum.
+  * `logcat` extension.
+  * Singleton `Logger`.
+
+### 💥 Breaking Changes
+
+* Rename checker class from **structure** module.
+
 ## [🎉 1.4.0 Structure, Metrica] - 2022-08-21
 
 ### 🚀 Features
