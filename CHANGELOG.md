@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### 🚀 Features
 
 * Add `okhttp-android` module
-	* okhttp builder extension `okhttpClient {}` , `Response.new {}` and `OkHttpClient.new {}`.
+	* okhttp builder extension `okhttp {}` , `Response.new {}` and `OkHttpClient.new {}`.
 	* download and upload progress listener `DownloadStreamResponseBody`, `UploadStreamRequestBody`.
 * Add `logger-android` module
 	* `LogLevel` enum.
