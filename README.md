@@ -1,4 +1,4 @@
-[![Version](https://shields.io/badge/VERSION-1.4.0-blue?style=for-the-badge)](https://github.com/ghasemdev/affogato/releases/tag/1.4.0)
+[![Version](https://shields.io/badge/VERSION-1.5.0-blue?style=for-the-badge)](https://github.com/ghasemdev/affogato/releases/tag/1.5.0)
 [![Kotlin](https://shields.io/badge/Kotlin-1.7.10-pink?style=for-the-badge)](https://kotlinlang.org/)
 [![API](https://shields.io/badge/Api-+21-green?style=for-the-badge)](https://www.android.com/)
 [![License MIT](https://shields.io/badge/LICENSE-MIT-orange?style=for-the-badge)](https://opensource.org/licenses/MIT)
@@ -41,6 +41,31 @@ suspend fun foo() = suspendedTryCatchNull {
 }
 ```
 
+### [Logger](https://github.com/ghasemdev/affogato/wiki/Logger)
+
+Logger module contains a simple logger for Android. It's a wrapper for `Log` and`Logger` with some
+extensions.
+
+```Kotlin
+// Setup
+Logger.tag = "MyApp"
+
+Logger.isDebug = BuildConfig.DEBUG // if debug mode false onRelease will be called.
+Logger.onRealease = { tag, message, throwable ->
+  // do something
+}
+
+// Extension
+logcat { "Hello Affogato" }
+logcat(tag = "TAG") { "Hello Affogato" }
+logcat(LogLevel.INFO) { "Hello Affogato" }
+try {
+  // do something
+} catch (e: Exception) {
+  logcat(throwable = e) { "Hello Affogato" }
+}
+```
+
 ### [Metrica-ktx](https://github.com/ghasemdev/affogato/wiki/Metrica-Ktx)
 
 This module adds Yandex Metrica to your project. You can use it for crashlytics and reporting events
@@ -71,8 +96,8 @@ class SharedPref private constructor(private val context: Context) {
 StringPool["key"] = "token"
 StringPool["key"] // token
 
-PhoneChecker("09123456789").isValid() // true
-PhoneChecker("09123456789").format("IR") // +98 912 345 6789
+Phone("09123456789").isValid() // true
+Phone("09123456789").format("IR") // +98 912 345 6789
 ```
 
 ### [Compose Unit Size](https://github.com/ghasemdev/affogato/wiki/Unit-Size)
@@ -92,7 +117,7 @@ dimen.icon // 80.dp in device with width 480.dp
 # Links
 
 Affogato is currently available for maven/gradle builds
-at [Jitpack](https://jitpack.io/#ghasemdev/affogato/1.4.0) (
+at [Jitpack](https://jitpack.io/#ghasemdev/affogato/1.5.0) (
 read [Getting started](https://github.com/ghasemdev/affogato/wiki/Getting-Started)).
 
 * [Wiki](https://github.com/ghasemdev/affogato/wiki)
