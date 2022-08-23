@@ -17,7 +17,7 @@ import com.parsuomash.affogato.unit.processor.utils.DimenValidator
 import com.parsuomash.affogato.unit.processor.utils.DimenValidator.Companion.COLON_SYMBOL
 import com.parsuomash.affogato.unit.processor.utils.DimenValidator.Companion.EQUALS_SYMBOL
 
-class DimenSymbolProcessor(
+internal class DimenSymbolProcessor(
   private val config: DimenConfig,
   private val codeGenerator: CodeGenerator,
   private val logger: KSPLogger

@@ -134,6 +134,7 @@ inline val FoldingFeature.isHorizontal: Boolean
  * Finds a [FoldingFeature] from a list of [DisplayFeature].
  * @since 1.0.0
  */
+@JvmSynthetic
 fun List<DisplayFeature>.findFoldingFeature(): FoldingFeature? =
   filterIsInstance<FoldingFeature>().firstOrNull()
 

@@ -1,6 +1,6 @@
 package com.parsuomash.affogato.unit.processor.utils
 
-object ErrorMassage {
+internal object ErrorMassage {
   const val ERROR_MASSAGE_DIMEN_TYPES = """Use valid Dimen types `@Dimen(type "sp|dp")`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"""
 
