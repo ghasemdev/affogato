@@ -1,3 +1,4 @@
+@file:JvmSynthetic
 @file:Suppress("ForbiddenClassName")
 
 package com.parsuomash.affogato.unit.processor.internal

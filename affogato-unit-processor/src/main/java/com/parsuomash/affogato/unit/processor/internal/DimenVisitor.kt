@@ -1,3 +1,5 @@
+@file:JvmSynthetic
+
 package com.parsuomash.affogato.unit.processor.internal
 
 import com.google.devtools.ksp.symbol.KSPropertyDeclaration

@@ -1,3 +1,4 @@
+@file:JvmSynthetic
 @file:Suppress("ForbiddenClassName", "MaxLineLength", "LongMethod")
 
 package com.parsuomash.affogato.unit.processor.internal

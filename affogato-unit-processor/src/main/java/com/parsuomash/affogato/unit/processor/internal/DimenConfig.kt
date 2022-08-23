@@ -1,3 +1,5 @@
+@file:JvmSynthetic
+
 package com.parsuomash.affogato.unit.processor.internal
 
 internal data class DimenConfig(

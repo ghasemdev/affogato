@@ -1,3 +1,5 @@
+@file:JvmSynthetic
+
 package com.parsuomash.affogato.core.ktx.random
 
 import kotlin.random.Random

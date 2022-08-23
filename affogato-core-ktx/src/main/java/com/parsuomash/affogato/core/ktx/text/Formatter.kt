@@ -105,5 +105,7 @@ fun String.formatCreditCard(separator: String = " ", separatorDigit: Int = 4): S
   }
 }
 
+@get:JvmSynthetic
 internal val decimalFormat: DecimalFormat by lazy { DecimalFormat() }
+
 private val suffix = charArrayOf(' ', 'k', 'M', 'B', 'T', 'P', 'E')

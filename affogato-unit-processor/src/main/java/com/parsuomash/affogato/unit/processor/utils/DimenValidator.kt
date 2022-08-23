@@ -1,3 +1,5 @@
+@file:JvmSynthetic
+
 package com.parsuomash.affogato.unit.processor.utils
 
 import com.google.devtools.ksp.processing.KSPLogger
