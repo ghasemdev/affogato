@@ -1,6 +1,3 @@
-@file:JvmName("DateTimeUtils")
-@file:JvmMultifileClass
-
 package com.parsuomash.affogato.core.ktx.datetime
 
 import com.parsuomash.affogato.core.ktx.tryCatchNull

@@ -1,5 +1,3 @@
-@file:JvmName("_Scope")
-
 package com.parsuomash.affogato.core.ktx
 
 /**

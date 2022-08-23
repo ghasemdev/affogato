@@ -1,5 +1,3 @@
-@file:JvmName("_YandexMetricaX")
-
 package com.parsuomash.affogato.metrica.ktx
 
 import com.yandex.metrica.YandexMetrica

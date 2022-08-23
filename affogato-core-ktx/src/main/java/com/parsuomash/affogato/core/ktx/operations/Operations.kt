@@ -1,5 +1,3 @@
-@file:JvmName("_Operations")
-
 package com.parsuomash.affogato.core.ktx.operations
 
 import com.parsuomash.affogato.core.ktx.tryCatchNull

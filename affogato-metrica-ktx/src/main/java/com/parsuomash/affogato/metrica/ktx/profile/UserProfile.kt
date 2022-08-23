@@ -1,5 +1,3 @@
-@file:JvmName("_MetricaUserProfile")
-
 package com.parsuomash.affogato.metrica.ktx.profile
 
 import com.yandex.metrica.YandexMetrica

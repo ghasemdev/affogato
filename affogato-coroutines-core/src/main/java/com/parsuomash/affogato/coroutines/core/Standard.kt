@@ -1,5 +1,3 @@
-@file:JvmName("_Standard")
-
 package com.parsuomash.affogato.coroutines.core
 
 import com.parsuomash.affogato.core.ktx.tryCatchBool

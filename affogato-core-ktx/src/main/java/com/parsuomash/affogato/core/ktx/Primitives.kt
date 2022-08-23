@@ -1,5 +1,3 @@
-@file:JvmName("_Primitives")
-
 package com.parsuomash.affogato.core.ktx
 
 /**

@@ -1,6 +1,4 @@
 @file:Suppress("MethodOverloading", "TooManyFunctions", "ArrayPrimitive")
-@file:JvmName("CollectionsUtils")
-@file:JvmMultifileClass
 
 package com.parsuomash.affogato.core.ktx.collections
 

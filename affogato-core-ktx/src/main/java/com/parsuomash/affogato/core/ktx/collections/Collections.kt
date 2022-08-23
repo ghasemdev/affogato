@@ -1,6 +1,3 @@
-@file:JvmName("CollectionsUtils")
-@file:JvmMultifileClass
-
 package com.parsuomash.affogato.core.ktx.collections
 
 import com.parsuomash.affogato.core.ktx.tryCatchElse

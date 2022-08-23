@@ -1,5 +1,3 @@
-@file:JvmName("_BigInteger")
-
 package com.parsuomash.affogato.core.ktx.math
 
 import java.math.BigInteger

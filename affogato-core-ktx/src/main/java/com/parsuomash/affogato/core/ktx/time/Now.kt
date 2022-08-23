@@ -1,6 +1,3 @@
-@file:JvmName("CurrentTime")
-@file:JvmMultifileClass
-
 package com.parsuomash.affogato.core.ktx.time
 
 import com.parsuomash.affogato.core.ktx.datetime.now

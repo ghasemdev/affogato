@@ -1,6 +1,3 @@
-@file:JvmName("ColorUtils")
-@file:JvmMultifileClass
-
 package com.parsuomash.affogato.core.ktx.color
 
 import com.parsuomash.affogato.core.ktx.tryCatchNull

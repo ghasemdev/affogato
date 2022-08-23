@@ -1,6 +1,3 @@
-@file:JvmName("StringsUtils")
-@file:JvmMultifileClass
-
 package com.parsuomash.affogato.core.ktx.text
 
 import com.parsuomash.affogato.core.ktx.tryCatchElse

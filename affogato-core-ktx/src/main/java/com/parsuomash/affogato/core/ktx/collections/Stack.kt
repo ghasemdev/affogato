@@ -1,5 +1,4 @@
 @file:Suppress("MethodOverloading")
-@file:JvmName("_Stack")
 
 package com.parsuomash.affogato.core.ktx.collections
 

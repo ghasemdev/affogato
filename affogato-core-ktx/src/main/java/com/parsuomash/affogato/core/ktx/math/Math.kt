@@ -1,6 +1,3 @@
-@file:JvmName("MathUtils")
-@file:JvmMultifileClass
-
 package com.parsuomash.affogato.core.ktx.math
 
 import com.parsuomash.affogato.core.ktx.operations.times

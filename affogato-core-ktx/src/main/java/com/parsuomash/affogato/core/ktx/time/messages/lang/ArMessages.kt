@@ -1,5 +1,3 @@
-@file:JvmName("_LookupMessages")
-
 package com.parsuomash.affogato.core.ktx.time.messages.lang
 
 import com.parsuomash.affogato.core.ktx.text.NumberConverter

@@ -1,5 +1,4 @@
 @file:Suppress("TooManyFunctions", "ArrayPrimitive")
-@file:JvmName("_ArrayOperations")
 
 package com.parsuomash.affogato.core.ktx.operations
 

@@ -1,6 +1,4 @@
 @file:Suppress("unused")
-@file:JvmName("RandomUtils")
-@file:JvmMultifileClass
 
 package com.parsuomash.affogato.core.ktx.random
 

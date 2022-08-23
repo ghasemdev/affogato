@@ -1,5 +1,4 @@
 @file:Suppress("TooManyFunctions")
-@file:JvmName("_CollectionsOperations")
 
 package com.parsuomash.affogato.core.ktx.operations
 

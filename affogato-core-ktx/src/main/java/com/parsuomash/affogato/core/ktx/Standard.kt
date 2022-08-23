@@ -1,6 +1,4 @@
 @file:Suppress("MethodOverloading")
-@file:JvmName("StandardUtils")
-@file:JvmMultifileClass
 
 package com.parsuomash.affogato.core.ktx
 

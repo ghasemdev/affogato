@@ -1,5 +1,4 @@
 @file:Suppress("MethodOverloading", "TooManyFunctions")
-@file:JvmName("_Queue")
 
 package com.parsuomash.affogato.core.ktx.collections
 

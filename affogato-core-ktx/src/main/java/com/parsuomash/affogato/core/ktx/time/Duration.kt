@@ -1,5 +1,3 @@
-@file:JvmName("_Duration")
-
 package com.parsuomash.affogato.core.ktx.time
 
 import kotlin.time.Duration

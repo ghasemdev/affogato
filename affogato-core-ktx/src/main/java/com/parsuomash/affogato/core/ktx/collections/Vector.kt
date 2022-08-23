@@ -1,5 +1,4 @@
 @file:Suppress("MethodOverloading")
-@file:JvmName("_Vector")
 
 package com.parsuomash.affogato.core.ktx.collections
 

@@ -1,6 +1,3 @@
-@file:JvmName("MetricaBuilder")
-@file:JvmMultifileClass
-
 package com.parsuomash.affogato.metrica.ktx
 
 import android.content.Context

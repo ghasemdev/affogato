@@ -1,5 +1,3 @@
-@file:JvmName("_CsMessages")
-
 package com.parsuomash.affogato.core.ktx.time.messages.lang
 
 import com.parsuomash.affogato.core.ktx.time.messages.protocol.LookupMessages

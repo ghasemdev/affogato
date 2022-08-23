@@ -1,6 +1,3 @@
-@file:JvmName("FormatterUtils")
-@file:JvmMultifileClass
-
 package com.parsuomash.affogato.core.ktx.text
 
 import com.parsuomash.affogato.core.ktx.math.pow
