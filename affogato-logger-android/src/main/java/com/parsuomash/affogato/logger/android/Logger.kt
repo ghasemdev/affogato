@@ -19,7 +19,7 @@ import android.util.Log
  *       YandexMetrica.reportError(message, throwable)
  *     }
  * }
- * Logger.info(message = "Hello world!")
+ * Logger.info(message = "Hello Affogato!")
  * ```
  * @since 1.5.0
  * @see logcat
