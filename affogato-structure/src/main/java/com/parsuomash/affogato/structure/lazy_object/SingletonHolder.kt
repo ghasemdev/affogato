@@ -1,5 +1,3 @@
-@file:Suppress("unused")
-
 package com.parsuomash.affogato.structure.lazy_object
 
 import com.parsuomash.affogato.core.ktx.runBlock

@@ -74,6 +74,7 @@ open class Password {
       initialize()
     }
 
+    @JvmOverloads
     fun isValidLength(length: Int = 8, initialize: (Boolean) -> Unit) {
       passwordLength = length
       lengthHolder = initialize
@@ -130,5 +131,6 @@ open class Password {
  * ```
  * @since 1.4.0
  */
+@JvmSynthetic
 fun password(init: Password.Builder.() -> Unit): Password =
   Password.Builder(init).build()
