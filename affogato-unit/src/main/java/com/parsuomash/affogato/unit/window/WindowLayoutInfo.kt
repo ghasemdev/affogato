@@ -1,5 +1,3 @@
-@file:Suppress("unused")
-
 package com.parsuomash.affogato.unit.window
 
 import android.app.Activity
@@ -70,6 +68,7 @@ inline val WindowLayoutInfo.state: FoldingFeature.State
  * @since 1.0.0
  */
 @ExperimentalLifecycleComposeApi
+@JvmSynthetic
 @Composable
 fun WindowInfoTracker.windowLayoutInfoState(activity: Activity): State<WindowLayoutInfo?> =
   windowLayoutInfo(activity).collectAsStateWithLifecycle(initialValue = null)
@@ -78,5 +77,6 @@ fun WindowInfoTracker.windowLayoutInfoState(activity: Activity): State<WindowLay
  * Finds a [FoldingFeature] from a [WindowLayoutInfo].
  * @since 1.0.0
  */
+@JvmSynthetic
 fun WindowLayoutInfo.findFoldingFeature(): FoldingFeature? =
   displayFeatures.filterIsInstance<FoldingFeature>().firstOrNull()

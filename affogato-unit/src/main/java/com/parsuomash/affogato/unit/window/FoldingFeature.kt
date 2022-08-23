@@ -1,5 +1,3 @@
-@file:Suppress("unused")
-
 package com.parsuomash.affogato.unit.window
 
 import android.content.res.Configuration
@@ -143,6 +141,7 @@ fun List<DisplayFeature>.findFoldingFeature(): FoldingFeature? =
  * Returns a [Posture] which represent the current posture of the foldable device.
  * @since 1.0.0
  */
+@JvmSynthetic
 fun FoldingFeature.toPosture(): Posture = when {
   isTableTopPosture -> Posture.TableTop(bounds.toSize())
   isBookPosture -> Posture.Book(bounds.toSize())
@@ -153,6 +152,7 @@ fun FoldingFeature.toPosture(): Posture = when {
  * Returns a [Size] spec from a [FoldingFeature].
  * @since 1.0.0
  */
+@JvmSynthetic
 fun DisplayFeature.toSize(): Size =
   Size((bounds.right - bounds.left).toFloat(), (bounds.bottom - bounds.top).toFloat())
 
@@ -160,5 +160,4 @@ fun DisplayFeature.toSize(): Size =
  * Returns [Size] class from a [Rect] class.
  * @since 1.0.0
  */
-@JvmSynthetic
 private fun Rect.toSize(): Size = Size((right - left).toFloat(), (bottom - top).toFloat())

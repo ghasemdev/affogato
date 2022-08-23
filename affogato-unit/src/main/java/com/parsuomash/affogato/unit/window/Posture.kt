@@ -47,7 +47,8 @@ sealed class Posture(val size: Size) {
  */
 @ExperimentalLifecycleComposeApi
 inline val Activity.postureState: State<Posture>
-  @Composable get() = postureFlow.collectAsStateWithLifecycle(initialValue = Posture.Normal)
+  @Composable @JvmSynthetic get() = postureFlow
+    .collectAsStateWithLifecycle(initialValue = Posture.Normal)
 
 /**
  * Returns a [Flow] of the [Posture] by tracking the [WindowLayoutInfo].
@@ -60,6 +61,7 @@ inline val Activity.postureFlow: Flow<Posture>
  * Returns a [Flow] of the [Posture] by tracking the [WindowLayoutInfo].
  * @since 1.0.0
  */
+@JvmSynthetic
 fun WindowInfoTracker.postureFlow(activity: Activity): Flow<Posture> {
   return activity.windowLayoutInfo.map { layoutInfo ->
     layoutInfo.findFoldingFeature()?.toPosture()
