@@ -1,5 +1,3 @@
-@file:Suppress("MemberVisibilityCanBePrivate")
-
 package com.parsuomash.affogato.logger.android
 
 import android.util.Log
