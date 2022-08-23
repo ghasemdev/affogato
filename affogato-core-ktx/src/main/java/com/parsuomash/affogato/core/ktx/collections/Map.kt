@@ -1,3 +1,5 @@
+@file:JvmName("_Map")
+
 package com.parsuomash.affogato.core.ktx.collections
 
 /**

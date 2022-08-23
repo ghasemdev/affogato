@@ -1,4 +1,62 @@
+@file:JvmName("_Primitives")
+
 package com.parsuomash.affogato.core.ktx
+
+/**
+ * Checking positivity.
+ *
+ * Example:
+ * ```Kotlin
+ * 10.isPositive() // true
+ * -10.isPositive() // false
+ * ```
+ * @since 1.5.1
+ */
+@get:JvmSynthetic
+inline val Int.isPositive: Boolean
+  get() = this > 0
+
+/**
+ * Checking positivity.
+ *
+ * Example:
+ * ```Kotlin
+ * 10L.isPositive() // true
+ * -10L.isPositive() // false
+ * ```
+ * @since 1.5.1
+ */
+@get:JvmSynthetic
+inline val Long.isPositive: Boolean
+  get() = this > 0
+
+/**
+ * Checking positivity.
+ *
+ * Example:
+ * ```Kotlin
+ * 10F.isPositive() // true
+ * -10F.isPositive() // false
+ * ```
+ * @since 1.5.1
+ */
+@get:JvmSynthetic
+inline val Float.isPositive: Boolean
+  get() = this > 0
+
+/**
+ * Checking positivity.
+ *
+ * Example:
+ * ```Kotlin
+ * 10.0.isPositive() // true
+ * -10.0.isPositive() // false
+ * ```
+ * @since 1.5.1
+ */
+@get:JvmSynthetic
+inline val Double.isPositive: Boolean
+  get() = this > 0
 
 /**
  * Checking negativity.
@@ -10,7 +68,9 @@ package com.parsuomash.affogato.core.ktx
  * ```
  * @since 1.1.0
  */
-inline val Int.isNegative: Boolean get() = this < 0
+@get:JvmSynthetic
+inline val Int.isNegative: Boolean
+  get() = this < 0
 
 /**
  * Checking negativity.
@@ -22,7 +82,9 @@ inline val Int.isNegative: Boolean get() = this < 0
  * ```
  * @since 1.1.0
  */
-inline val Long.isNegative: Boolean get() = this < 0
+@get:JvmSynthetic
+inline val Long.isNegative: Boolean
+  get() = this < 0
 
 /**
  * Checking negativity.
@@ -34,7 +96,9 @@ inline val Long.isNegative: Boolean get() = this < 0
  * ```
  * @since 1.1.0
  */
-inline val Float.isNegative: Boolean get() = this < 0
+@get:JvmSynthetic
+inline val Float.isNegative: Boolean
+  get() = this < 0
 
 /**
  * Checking negativity.
@@ -46,7 +110,9 @@ inline val Float.isNegative: Boolean get() = this < 0
  * ```
  * @since 1.1.0
  */
-inline val Double.isNegative: Boolean get() = this < 0
+@get:JvmSynthetic
+inline val Double.isNegative: Boolean
+  get() = this < 0
 
 /**
  * Return zero when number is null.
@@ -59,7 +125,9 @@ inline val Double.isNegative: Boolean get() = this < 0
  * @since 1.1.0
  * @return [Int] value or **Zero**
  */
-fun Int?.orZero(): Int = this ?: 0
+@JvmSynthetic
+fun Int?.orZero(): Int =
+  this ?: 0
 
 /**
  * Return zero when number is null.
@@ -72,7 +140,9 @@ fun Int?.orZero(): Int = this ?: 0
  * @since 1.1.0
  * @return [Long] value or **Zero**
  */
-fun Long?.orZero(): Long = this ?: 0L
+@JvmSynthetic
+fun Long?.orZero(): Long =
+  this ?: 0L
 
 /**
  * Return zero when number is null.
@@ -85,7 +155,9 @@ fun Long?.orZero(): Long = this ?: 0L
  * @since 1.1.0
  * @return [Float] value or **Zero**
  */
-fun Float?.orZero(): Float = this ?: 0F
+@JvmSynthetic
+fun Float?.orZero(): Float =
+  this ?: 0F
 
 /**
  * Return zero when number is null.
@@ -98,4 +170,6 @@ fun Float?.orZero(): Float = this ?: 0F
  * @since 1.1.0
  * @return [Double] value or **Zero**
  */
-fun Double?.orZero(): Double = this ?: 0.0
+@JvmSynthetic
+fun Double?.orZero(): Double =
+  this ?: 0.0

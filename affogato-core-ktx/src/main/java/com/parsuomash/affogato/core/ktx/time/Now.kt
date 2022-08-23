@@ -1,3 +1,6 @@
+@file:JvmName("CurrentTime")
+@file:JvmMultifileClass
+
 package com.parsuomash.affogato.core.ktx.time
 
 import com.parsuomash.affogato.core.ktx.datetime.now
@@ -21,6 +24,7 @@ import kotlinx.datetime.TimeZone
  * @since 1.1.0
  * @see Clock
  */
+@JvmSynthetic
 fun now(): Instant = Clock.System.now()
 
 /**
@@ -69,6 +73,7 @@ fun nowInCalendar(): Calendar = nowInMilliseconds().toCalendar()
  * @since 1.1.0
  * @see LocalDate.Companion.now
  */
+@JvmSynthetic
 fun nowInLocalDate(timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDate =
   LocalDate.now(timeZone)
 
@@ -82,6 +87,7 @@ fun nowInLocalDate(timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalD
  * @since 1.1.0
  * @see LocalTime.Companion.now
  */
+@JvmSynthetic
 fun nowInLocalTime(timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalTime =
   LocalTime.now(timeZone)
 
@@ -95,5 +101,6 @@ fun nowInLocalTime(timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalT
  * @since 1.1.0
  * @see LocalDateTime.Companion.now
  */
+@JvmSynthetic
 fun nowInLocalDateTime(timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
   LocalDateTime.now(timeZone)

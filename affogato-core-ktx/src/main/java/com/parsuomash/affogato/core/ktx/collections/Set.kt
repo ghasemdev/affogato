@@ -1,4 +1,5 @@
 @file:Suppress("MethodOverloading", "TooManyFunctions")
+@file:JvmName("_Set")
 
 package com.parsuomash.affogato.core.ktx.collections
 
@@ -44,6 +45,7 @@ inline fun <reified K, V> Pair<K, V>.toHashTable(): Hashtable<K, V> = Hashtable(
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun setOf(range: IntRange): Set<Int> = range.toSet()
 
 /**
@@ -55,6 +57,7 @@ fun setOf(range: IntRange): Set<Int> = range.toSet()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun setOf(range: UIntRange): Set<UInt> = range.toSet()
 
 /**
@@ -66,6 +69,7 @@ fun setOf(range: UIntRange): Set<UInt> = range.toSet()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun setOf(range: LongRange): Set<Long> = range.toSet()
 
 /**
@@ -77,6 +81,7 @@ fun setOf(range: LongRange): Set<Long> = range.toSet()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun setOf(range: ULongRange): Set<ULong> = range.toSet()
 
 /**
@@ -88,6 +93,7 @@ fun setOf(range: ULongRange): Set<ULong> = range.toSet()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun setOf(progression: IntProgression): Set<Int> = progression.toSet()
 
 /**
@@ -99,6 +105,7 @@ fun setOf(progression: IntProgression): Set<Int> = progression.toSet()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun setOf(progression: UIntProgression): Set<UInt> = progression.toSet()
 
 /**
@@ -110,6 +117,7 @@ fun setOf(progression: UIntProgression): Set<UInt> = progression.toSet()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun setOf(progression: LongProgression): Set<Long> = progression.toSet()
 
 /**
@@ -121,6 +129,7 @@ fun setOf(progression: LongProgression): Set<Long> = progression.toSet()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun setOf(progression: ULongProgression): Set<ULong> =
   progression.toSet()
 
@@ -133,6 +142,7 @@ fun setOf(progression: ULongProgression): Set<ULong> =
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun setOf(range: CharRange): Set<Char> = range.toSet()
 
 /**
@@ -144,6 +154,7 @@ fun setOf(range: CharRange): Set<Char> = range.toSet()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun setOf(progression: CharProgression): Set<Char> = progression.toSet()
 
 /**
@@ -155,6 +166,7 @@ fun setOf(progression: CharProgression): Set<Char> = progression.toSet()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun mutableSetOf(range: IntRange): MutableSet<Int> = range.toMutableSet()
 
 /**
@@ -166,6 +178,7 @@ fun mutableSetOf(range: IntRange): MutableSet<Int> = range.toMutableSet()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun mutableSetOf(range: UIntRange): MutableSet<UInt> = range.toMutableSet()
 
 /**
@@ -177,6 +190,7 @@ fun mutableSetOf(range: UIntRange): MutableSet<UInt> = range.toMutableSet()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun mutableSetOf(range: LongRange): MutableSet<Long> = range.toMutableSet()
 
 /**
@@ -188,6 +202,7 @@ fun mutableSetOf(range: LongRange): MutableSet<Long> = range.toMutableSet()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun mutableSetOf(range: ULongRange): MutableSet<ULong> = range.toMutableSet()
 
 /**
@@ -199,6 +214,7 @@ fun mutableSetOf(range: ULongRange): MutableSet<ULong> = range.toMutableSet()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun mutableSetOf(progression: IntProgression): MutableSet<Int> = progression.toMutableSet()
 
 /**
@@ -210,6 +226,7 @@ fun mutableSetOf(progression: IntProgression): MutableSet<Int> = progression.toM
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun mutableSetOf(progression: UIntProgression): MutableSet<UInt> = progression.toMutableSet()
 
 /**
@@ -221,6 +238,7 @@ fun mutableSetOf(progression: UIntProgression): MutableSet<UInt> = progression.t
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun mutableSetOf(progression: LongProgression): MutableSet<Long> = progression.toMutableSet()
 
 /**
@@ -232,6 +250,7 @@ fun mutableSetOf(progression: LongProgression): MutableSet<Long> = progression.t
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun mutableSetOf(progression: ULongProgression): MutableSet<ULong> =
   progression.toMutableSet()
 
@@ -244,6 +263,7 @@ fun mutableSetOf(progression: ULongProgression): MutableSet<ULong> =
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun mutableSetOf(range: CharRange): MutableSet<Char> = range.toMutableSet()
 
 /**
@@ -255,6 +275,7 @@ fun mutableSetOf(range: CharRange): MutableSet<Char> = range.toMutableSet()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun mutableSetOf(progression: CharProgression): MutableSet<Char> = progression.toMutableSet()
 
 /**
@@ -266,6 +287,7 @@ fun mutableSetOf(progression: CharProgression): MutableSet<Char> = progression.t
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun hashSetOf(range: IntRange): HashSet<Int> = range.toHashSet()
 
 /**
@@ -277,6 +299,7 @@ fun hashSetOf(range: IntRange): HashSet<Int> = range.toHashSet()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun hashSetOf(range: UIntRange): HashSet<UInt> = range.toHashSet()
 
 /**
@@ -288,6 +311,7 @@ fun hashSetOf(range: UIntRange): HashSet<UInt> = range.toHashSet()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun hashSetOf(range: LongRange): HashSet<Long> = range.toHashSet()
 
 /**
@@ -299,6 +323,7 @@ fun hashSetOf(range: LongRange): HashSet<Long> = range.toHashSet()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun hashSetOf(range: ULongRange): HashSet<ULong> = range.toHashSet()
 
 /**
@@ -310,6 +335,7 @@ fun hashSetOf(range: ULongRange): HashSet<ULong> = range.toHashSet()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun hashSetOf(progression: IntProgression): HashSet<Int> = progression.toHashSet()
 
 /**
@@ -321,6 +347,7 @@ fun hashSetOf(progression: IntProgression): HashSet<Int> = progression.toHashSet
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun hashSetOf(progression: UIntProgression): HashSet<UInt> = progression.toHashSet()
 
 /**
@@ -332,6 +359,7 @@ fun hashSetOf(progression: UIntProgression): HashSet<UInt> = progression.toHashS
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun hashSetOf(progression: LongProgression): HashSet<Long> = progression.toHashSet()
 
 /**
@@ -343,6 +371,7 @@ fun hashSetOf(progression: LongProgression): HashSet<Long> = progression.toHashS
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun hashSetOf(progression: ULongProgression): HashSet<ULong> =
   progression.toHashSet()
 
@@ -355,6 +384,7 @@ fun hashSetOf(progression: ULongProgression): HashSet<ULong> =
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun hashSetOf(range: CharRange): HashSet<Char> = range.toHashSet()
 
 /**
@@ -366,6 +396,7 @@ fun hashSetOf(range: CharRange): HashSet<Char> = range.toHashSet()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun hashSetOf(progression: CharProgression): HashSet<Char> = progression.toHashSet()
 
 /**
@@ -377,6 +408,7 @@ fun hashSetOf(progression: CharProgression): HashSet<Char> = progression.toHashS
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun linkedSetOf(range: IntRange): LinkedHashSet<Int> = LinkedHashSet(range.toList())
 
 /**
@@ -388,6 +420,7 @@ fun linkedSetOf(range: IntRange): LinkedHashSet<Int> = LinkedHashSet(range.toLis
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun linkedSetOf(range: UIntRange): LinkedHashSet<UInt> = LinkedHashSet(range.toList())
 
 /**
@@ -399,6 +432,7 @@ fun linkedSetOf(range: UIntRange): LinkedHashSet<UInt> = LinkedHashSet(range.toL
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun linkedSetOf(range: LongRange): LinkedHashSet<Long> = LinkedHashSet(range.toList())
 
 /**
@@ -410,6 +444,7 @@ fun linkedSetOf(range: LongRange): LinkedHashSet<Long> = LinkedHashSet(range.toL
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun linkedSetOf(range: ULongRange): LinkedHashSet<ULong> = LinkedHashSet(range.toList())
 
 /**
@@ -421,6 +456,7 @@ fun linkedSetOf(range: ULongRange): LinkedHashSet<ULong> = LinkedHashSet(range.t
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun linkedSetOf(progression: IntProgression): LinkedHashSet<Int> =
   LinkedHashSet(progression.toList())
 
@@ -433,6 +469,7 @@ fun linkedSetOf(progression: IntProgression): LinkedHashSet<Int> =
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun linkedSetOf(progression: UIntProgression): LinkedHashSet<UInt> =
   LinkedHashSet(progression.toList())
 
@@ -445,6 +482,7 @@ fun linkedSetOf(progression: UIntProgression): LinkedHashSet<UInt> =
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun linkedSetOf(progression: LongProgression): LinkedHashSet<Long> =
   LinkedHashSet(progression.toList())
 
@@ -457,6 +495,7 @@ fun linkedSetOf(progression: LongProgression): LinkedHashSet<Long> =
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun linkedSetOf(progression: ULongProgression): LinkedHashSet<ULong> =
   LinkedHashSet(progression.toList())
 
@@ -469,6 +508,7 @@ fun linkedSetOf(progression: ULongProgression): LinkedHashSet<ULong> =
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun linkedSetOf(range: CharRange): LinkedHashSet<Char> = LinkedHashSet(range.toList())
 
 /**
@@ -480,6 +520,7 @@ fun linkedSetOf(range: CharRange): LinkedHashSet<Char> = LinkedHashSet(range.toL
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun linkedSetOf(progression: CharProgression): LinkedHashSet<Char> =
   LinkedHashSet(progression.toList())
 
@@ -493,6 +534,7 @@ fun linkedSetOf(progression: CharProgression): LinkedHashSet<Char> =
  * @since 1.1.0
  * @see SortedSet
  */
+@JvmSynthetic
 fun sortedSetOf(range: IntRange): TreeSet<Int> = TreeSet(range.toList())
 
 /**
@@ -505,6 +547,7 @@ fun sortedSetOf(range: IntRange): TreeSet<Int> = TreeSet(range.toList())
  * @since 1.1.0
  * @see SortedSet
  */
+@JvmSynthetic
 fun sortedSetOf(range: UIntRange): TreeSet<UInt> = TreeSet(range.toList())
 
 /**
@@ -517,6 +560,7 @@ fun sortedSetOf(range: UIntRange): TreeSet<UInt> = TreeSet(range.toList())
  * @since 1.1.0
  * @see SortedSet
  */
+@JvmSynthetic
 fun sortedSetOf(range: LongRange): TreeSet<Long> = TreeSet(range.toList())
 
 /**
@@ -529,6 +573,7 @@ fun sortedSetOf(range: LongRange): TreeSet<Long> = TreeSet(range.toList())
  * @since 1.1.0
  * @see SortedSet
  */
+@JvmSynthetic
 fun sortedSetOf(range: ULongRange): TreeSet<ULong> = TreeSet(range.toList())
 
 /**
@@ -541,6 +586,7 @@ fun sortedSetOf(range: ULongRange): TreeSet<ULong> = TreeSet(range.toList())
  * @since 1.1.0
  * @see SortedSet
  */
+@JvmSynthetic
 fun sortedSetOf(progression: IntProgression): TreeSet<Int> = TreeSet(progression.toList())
 
 /**
@@ -553,6 +599,7 @@ fun sortedSetOf(progression: IntProgression): TreeSet<Int> = TreeSet(progression
  * @since 1.1.0
  * @see SortedSet
  */
+@JvmSynthetic
 fun sortedSetOf(progression: UIntProgression): TreeSet<UInt> = TreeSet(progression.toList())
 
 /**
@@ -565,6 +612,7 @@ fun sortedSetOf(progression: UIntProgression): TreeSet<UInt> = TreeSet(progressi
  * @since 1.1.0
  * @see SortedSet
  */
+@JvmSynthetic
 fun sortedSetOf(progression: LongProgression): TreeSet<Long> = TreeSet(progression.toList())
 
 /**
@@ -577,6 +625,7 @@ fun sortedSetOf(progression: LongProgression): TreeSet<Long> = TreeSet(progressi
  * @since 1.1.0
  * @see SortedSet
  */
+@JvmSynthetic
 fun sortedSetOf(progression: ULongProgression): TreeSet<ULong> = TreeSet(progression.toList())
 
 /**
@@ -589,6 +638,7 @@ fun sortedSetOf(progression: ULongProgression): TreeSet<ULong> = TreeSet(progres
  * @since 1.1.0
  * @see SortedSet
  */
+@JvmSynthetic
 fun sortedSetOf(range: CharRange): TreeSet<Char> = TreeSet(range.toList())
 
 /**
@@ -601,6 +651,7 @@ fun sortedSetOf(range: CharRange): TreeSet<Char> = TreeSet(range.toList())
  * @since 1.1.0
  * @see SortedSet
  */
+@JvmSynthetic
 fun sortedSetOf(progression: CharProgression): TreeSet<Char> = TreeSet(progression.toList())
 
 /**

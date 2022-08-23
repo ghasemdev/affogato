@@ -21,24 +21,31 @@ object NumberConverter {
   private val urduNumbers = charArrayOf('۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹')
 
   /** @since 1.1.0 */
+  @JvmStatic
   fun toArabic(value: String): String = numberConverter(value, arabicNumbers)
 
   /** @since 1.1.0 */
+  @JvmStatic
   fun toFarsi(value: String): String = numberConverter(value, farsiNumbers)
 
   /** @since 1.1.0 */
+  @JvmStatic
   fun toMongolian(value: String): String = numberConverter(value, mongolianNumbers)
 
   /** @since 1.1.0 */
+  @JvmStatic
   fun toMyanmar(value: String): String = numberConverter(value, myanmarNumbers)
 
   /** @since 1.1.0 */
+  @JvmStatic
   fun toTamil(value: String): String = numberConverter(value, tamilNumbers)
 
   /** @since 1.1.0 */
+  @JvmStatic
   fun toThai(value: String): String = numberConverter(value, thaiNumbers)
 
   /** @since 1.1.0 */
+  @JvmStatic
   fun toUrdu(value: String): String = numberConverter(value, urduNumbers)
 }
 

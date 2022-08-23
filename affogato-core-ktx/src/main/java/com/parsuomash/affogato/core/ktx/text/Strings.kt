@@ -1,3 +1,6 @@
+@file:JvmName("StringsUtils")
+@file:JvmMultifileClass
+
 package com.parsuomash.affogato.core.ktx.text
 
 import com.parsuomash.affogato.core.ktx.tryCatchElse
@@ -56,6 +59,7 @@ inline val String.isPersianDigit: Boolean
  * ```
  * @since 1.1.0
  */
+@get:JvmName("containsLatinLetter")
 inline val String.containsLatinLetter: Boolean
   get() = matches(Regex(".*[A-Za-z].*"))
 
@@ -70,6 +74,7 @@ inline val String.containsLatinLetter: Boolean
  * ```
  * @since 1.1.0
  */
+@get:JvmName("containsDigit")
 inline val String.containsDigit: Boolean
   get() = matches(Regex(".*[0-9].*"))
 
@@ -85,6 +90,7 @@ inline val String.containsDigit: Boolean
  * ```
  * @since 1.1.0
  */
+@get:JvmName("containsPersianDigit")
 inline val String.containsPersianDigit: Boolean
   get() = matches(Regex(".*[۰-۹].*"))
 
@@ -99,6 +105,7 @@ inline val String.containsPersianDigit: Boolean
  * ```
  * @since 1.1.0
  */
+@get:JvmName("hasLettersAndDigits")
 inline val String.hasLettersAndDigits: Boolean
   get() = containsLatinLetter && containsDigit
 
@@ -158,6 +165,7 @@ inline val String.isHttp: Boolean
  * @since 1.1.0
  * @see URLEncoder
  */
+@get:JvmSynthetic
 inline val String.urlEncode: String
   get() = encodeToUrl()
 
@@ -172,6 +180,7 @@ inline val String.urlEncode: String
  * @since 1.1.0
  * @see URLDecoder
  */
+@get:JvmSynthetic
 inline val String.urlDecode: String
   get() = decodeToUrl()
 
@@ -186,6 +195,7 @@ inline val String.urlDecode: String
  * ```
  * @since 1.1.0
  */
+@get:JvmName("lastPathComponent")
 inline val String.lastPathComponent: String
   get() {
     var path = this
@@ -305,6 +315,7 @@ fun String?.isNotNullNotEmpty(): Boolean =
  * @since 1.1.0
  * @see URLEncoder
  */
+@JvmOverloads
 fun String.encodeToUrl(charSet: String = "UTF-8"): String =
   URLEncoder.encode(this, charSet)
 
@@ -319,6 +330,7 @@ fun String.encodeToUrl(charSet: String = "UTF-8"): String =
  * @since 1.1.0
  * @see URLDecoder
  */
+@JvmOverloads
 fun String.decodeToUrl(charSet: String = "UTF-8"): String =
   URLDecoder.decode(this, charSet)
 
@@ -355,6 +367,7 @@ fun String.capitalize() =
  * @throws IllegalArgumentException if n is **negative** or **zero**.
  * @see Collections.rotate
  */
+@JvmOverloads
 fun String.rotateLeft(n: Int = 1): String {
   require(n >= 1) { "n must be >= 1" }
   val list = this.toMutableList()
@@ -374,6 +387,7 @@ fun String.rotateLeft(n: Int = 1): String {
  * @throws IllegalArgumentException if n is **negative** or **zero**.
  * @see Collections.rotate
  */
+@JvmOverloads
 fun String.rotateRight(n: Int = 1): String {
   require(n >= 1) { "n must be >= 1" }
   val list = this.toMutableList()
@@ -394,6 +408,7 @@ fun String.rotateRight(n: Int = 1): String {
  * @see substring
  * @see IntRange
  */
+@JvmSynthetic
 operator fun String.get(indices: IntRange): String =
   substring(indices.first, indices.last + 1)
 
@@ -409,6 +424,7 @@ operator fun String.get(indices: IntRange): String =
  * @see substring
  * @see IntRange
  */
+@JvmSynthetic
 fun String.getOrNull(indices: IntRange): String? =
   tryCatchNull { get(indices) }
 
@@ -424,6 +440,7 @@ fun String.getOrNull(indices: IntRange): String? =
  * @see substring
  * @see IntRange
  */
+@JvmSynthetic
 inline fun String.getOrElse(indices: IntRange, defaultValue: () -> String): String =
   tryCatchElse({ defaultValue() }) { get(indices) }
 
@@ -440,6 +457,7 @@ inline fun String.getOrElse(indices: IntRange, defaultValue: () -> String): Stri
  * @see substring
  * @see IntProgression
  */
+@JvmSynthetic
 operator fun String.get(indices: IntProgression): String =
   buildString {
     for (i in indices) append(this@get[i])
@@ -457,6 +475,7 @@ operator fun String.get(indices: IntProgression): String =
  * @see substring
  * @see IntProgression
  */
+@JvmSynthetic
 fun String.getOrNull(indices: IntProgression): String? =
   tryCatchNull { get(indices) }
 
@@ -472,6 +491,7 @@ fun String.getOrNull(indices: IntProgression): String? =
  * @see substring
  * @see IntProgression
  */
+@JvmSynthetic
 inline fun String.getOrElse(indices: IntProgression, defaultValue: () -> String): String =
   tryCatchElse({ defaultValue() }) { get(indices) }
 
@@ -504,6 +524,7 @@ inline fun String.hasValidLength(length: Int, block: () -> Unit) {
  * @since 1.1.0
  * @see StringBuilder
  */
+@JvmSynthetic
 fun StringBuilder.appendSpace(): StringBuilder =
   append(" ")
 
@@ -523,6 +544,7 @@ fun StringBuilder.appendSpace(): StringBuilder =
  * @since 1.1.0
  * @see joinToString
  */
+@JvmOverloads
 fun <T> joinWith(
   vararg params: T,
   separator: CharSequence = " ",

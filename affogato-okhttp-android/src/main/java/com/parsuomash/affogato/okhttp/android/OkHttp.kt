@@ -1,3 +1,5 @@
+@file:JvmName("_OkHttpExtension")
+
 package com.parsuomash.affogato.okhttp.android
 
 import java.util.concurrent.ExecutorService

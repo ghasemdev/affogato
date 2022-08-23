@@ -1,4 +1,5 @@
 @file:Suppress("MethodOverloading")
+@file:JvmName("_Stack")
 
 package com.parsuomash.affogato.core.ktx.collections
 
@@ -34,6 +35,7 @@ inline fun <reified T> stackOf(vararg elements: T): Stack<T> = Stack<T>().apply 
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun stackOf(range: IntRange): Stack<Int> = Stack<Int>().apply { addAll(range) }
 
 /**
@@ -45,6 +47,7 @@ fun stackOf(range: IntRange): Stack<Int> = Stack<Int>().apply { addAll(range) }
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun stackOf(range: UIntRange): Stack<UInt> = Stack<UInt>().apply { addAll(range) }
 
 /**
@@ -56,6 +59,7 @@ fun stackOf(range: UIntRange): Stack<UInt> = Stack<UInt>().apply { addAll(range)
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun stackOf(range: LongRange): Stack<Long> = Stack<Long>().apply { addAll(range) }
 
 /**
@@ -67,6 +71,7 @@ fun stackOf(range: LongRange): Stack<Long> = Stack<Long>().apply { addAll(range)
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun stackOf(range: ULongRange): Stack<ULong> = Stack<ULong>().apply { addAll(range) }
 
 /**
@@ -78,6 +83,7 @@ fun stackOf(range: ULongRange): Stack<ULong> = Stack<ULong>().apply { addAll(ran
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun stackOf(progression: IntProgression): Stack<Int> = Stack<Int>().apply { addAll(progression) }
 
 /**
@@ -89,6 +95,7 @@ fun stackOf(progression: IntProgression): Stack<Int> = Stack<Int>().apply { addA
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun stackOf(progression: UIntProgression): Stack<UInt> = Stack<UInt>().apply { addAll(progression) }
 
 /**
@@ -100,6 +107,7 @@ fun stackOf(progression: UIntProgression): Stack<UInt> = Stack<UInt>().apply { a
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun stackOf(progression: LongProgression): Stack<Long> = Stack<Long>().apply { addAll(progression) }
 
 /**
@@ -111,6 +119,7 @@ fun stackOf(progression: LongProgression): Stack<Long> = Stack<Long>().apply { a
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun stackOf(progression: ULongProgression): Stack<ULong> =
   Stack<ULong>().apply { addAll(progression) }
 
@@ -123,6 +132,7 @@ fun stackOf(progression: ULongProgression): Stack<ULong> =
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun stackOf(range: CharRange): Stack<Char> = Stack<Char>().apply { addAll(range) }
 
 /**
@@ -134,6 +144,7 @@ fun stackOf(range: CharRange): Stack<Char> = Stack<Char>().apply { addAll(range)
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun stackOf(progression: CharProgression): Stack<Char> = Stack<Char>().apply { addAll(progression) }
 
 /**

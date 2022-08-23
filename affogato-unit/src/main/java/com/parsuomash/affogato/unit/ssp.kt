@@ -17,9 +17,9 @@ import androidx.compose.ui.unit.sp
  * @since 1.0.0
  */
 @Stable
+@get:JvmSynthetic
 val Int.ssp: TextUnit
-  @Composable @JvmSynthetic
-  get() = getSsp()
+  @Composable get() = getSsp()
 
 @JvmName("_getSsp")
 @Composable

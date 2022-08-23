@@ -1,4 +1,5 @@
 @file:Suppress("MethodOverloading", "TooManyFunctions")
+@file:JvmName("_Queue")
 
 package com.parsuomash.affogato.core.ktx.collections
 
@@ -70,6 +71,7 @@ inline fun <reified T> queueOf(vararg elements: T): Queue<T> = LinkedList(elemen
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun queueOf(range: IntRange): Queue<Int> = LinkedList(range.toList())
 
 /**
@@ -82,6 +84,7 @@ fun queueOf(range: IntRange): Queue<Int> = LinkedList(range.toList())
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun queueOf(range: UIntRange): Queue<UInt> = LinkedList(range.toList())
 
 /**
@@ -94,6 +97,7 @@ fun queueOf(range: UIntRange): Queue<UInt> = LinkedList(range.toList())
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun queueOf(range: LongRange): Queue<Long> = LinkedList(range.toList())
 
 /**
@@ -106,6 +110,7 @@ fun queueOf(range: LongRange): Queue<Long> = LinkedList(range.toList())
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun queueOf(range: ULongRange): Queue<ULong> = LinkedList(range.toList())
 
 /**
@@ -118,6 +123,7 @@ fun queueOf(range: ULongRange): Queue<ULong> = LinkedList(range.toList())
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun queueOf(progression: IntProgression): Queue<Int> = LinkedList(progression.toList())
 
 /**
@@ -130,6 +136,7 @@ fun queueOf(progression: IntProgression): Queue<Int> = LinkedList(progression.to
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun queueOf(progression: UIntProgression): Queue<UInt> = LinkedList(progression.toList())
 
 /**
@@ -142,6 +149,7 @@ fun queueOf(progression: UIntProgression): Queue<UInt> = LinkedList(progression.
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun queueOf(progression: LongProgression): Queue<Long> = LinkedList(progression.toList())
 
 /**
@@ -154,6 +162,7 @@ fun queueOf(progression: LongProgression): Queue<Long> = LinkedList(progression.
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun queueOf(progression: ULongProgression): Queue<ULong> =
   LinkedList(progression.toList())
 
@@ -167,6 +176,7 @@ fun queueOf(progression: ULongProgression): Queue<ULong> =
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun queueOf(range: CharRange): Queue<Char> = LinkedList(range.toList())
 
 /**
@@ -179,6 +189,7 @@ fun queueOf(range: CharRange): Queue<Char> = LinkedList(range.toList())
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun queueOf(progression: CharProgression): Queue<Char> = LinkedList(progression.toList())
 
 /**
@@ -203,6 +214,7 @@ inline fun <reified T> priorityQueueOf(vararg elements: T): PriorityQueue<T> =
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun priorityQueueOf(range: IntRange): PriorityQueue<Int> = PriorityQueue(range.toList())
 
 /**
@@ -214,6 +226,7 @@ fun priorityQueueOf(range: IntRange): PriorityQueue<Int> = PriorityQueue(range.t
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun priorityQueueOf(range: UIntRange): PriorityQueue<UInt> = PriorityQueue(range.toList())
 
 /**
@@ -225,6 +238,7 @@ fun priorityQueueOf(range: UIntRange): PriorityQueue<UInt> = PriorityQueue(range
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun priorityQueueOf(range: LongRange): PriorityQueue<Long> = PriorityQueue(range.toList())
 
 /**
@@ -236,6 +250,7 @@ fun priorityQueueOf(range: LongRange): PriorityQueue<Long> = PriorityQueue(range
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun priorityQueueOf(range: ULongRange): PriorityQueue<ULong> = PriorityQueue(range.toList())
 
 /**
@@ -247,6 +262,7 @@ fun priorityQueueOf(range: ULongRange): PriorityQueue<ULong> = PriorityQueue(ran
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun priorityQueueOf(progression: IntProgression): PriorityQueue<Int> =
   PriorityQueue(progression.toList())
 
@@ -259,6 +275,7 @@ fun priorityQueueOf(progression: IntProgression): PriorityQueue<Int> =
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun priorityQueueOf(progression: UIntProgression): PriorityQueue<UInt> =
   PriorityQueue(progression.toList())
 
@@ -271,6 +288,7 @@ fun priorityQueueOf(progression: UIntProgression): PriorityQueue<UInt> =
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun priorityQueueOf(progression: LongProgression): PriorityQueue<Long> =
   PriorityQueue(progression.toList())
 
@@ -283,6 +301,7 @@ fun priorityQueueOf(progression: LongProgression): PriorityQueue<Long> =
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun priorityQueueOf(progression: ULongProgression): PriorityQueue<ULong> =
   PriorityQueue(progression.toList())
 
@@ -295,6 +314,7 @@ fun priorityQueueOf(progression: ULongProgression): PriorityQueue<ULong> =
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun priorityQueueOf(range: CharRange): PriorityQueue<Char> = PriorityQueue(range.toList())
 
 /**
@@ -306,6 +326,7 @@ fun priorityQueueOf(range: CharRange): PriorityQueue<Char> = PriorityQueue(range
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun priorityQueueOf(progression: CharProgression): PriorityQueue<Char> =
   PriorityQueue(progression.toList())
 
@@ -331,6 +352,7 @@ inline fun <reified T> dequeOf(vararg elements: T): Deque<T> = LinkedList(elemen
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun dequeOf(range: IntRange): Deque<Int> = LinkedList(range.toList())
 
 /**
@@ -343,6 +365,7 @@ fun dequeOf(range: IntRange): Deque<Int> = LinkedList(range.toList())
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun dequeOf(range: UIntRange): Deque<UInt> = LinkedList(range.toList())
 
 /**
@@ -355,6 +378,7 @@ fun dequeOf(range: UIntRange): Deque<UInt> = LinkedList(range.toList())
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun dequeOf(range: LongRange): Deque<Long> = LinkedList(range.toList())
 
 /**
@@ -367,6 +391,7 @@ fun dequeOf(range: LongRange): Deque<Long> = LinkedList(range.toList())
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun dequeOf(range: ULongRange): Deque<ULong> = LinkedList(range.toList())
 
 /**
@@ -379,6 +404,7 @@ fun dequeOf(range: ULongRange): Deque<ULong> = LinkedList(range.toList())
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun dequeOf(progression: IntProgression): Deque<Int> = LinkedList(progression.toList())
 
 /**
@@ -391,6 +417,7 @@ fun dequeOf(progression: IntProgression): Deque<Int> = LinkedList(progression.to
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun dequeOf(progression: UIntProgression): Deque<UInt> = LinkedList(progression.toList())
 
 /**
@@ -403,6 +430,7 @@ fun dequeOf(progression: UIntProgression): Deque<UInt> = LinkedList(progression.
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun dequeOf(progression: LongProgression): Deque<Long> = LinkedList(progression.toList())
 
 /**
@@ -415,6 +443,7 @@ fun dequeOf(progression: LongProgression): Deque<Long> = LinkedList(progression.
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun dequeOf(progression: ULongProgression): Deque<ULong> = LinkedList(progression.toList())
 
 /**
@@ -427,6 +456,7 @@ fun dequeOf(progression: ULongProgression): Deque<ULong> = LinkedList(progressio
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun dequeOf(range: CharRange): Deque<Char> = LinkedList(range.toList())
 
 /**
@@ -439,6 +469,7 @@ fun dequeOf(range: CharRange): Deque<Char> = LinkedList(range.toList())
  * @since 1.1.0
  * @see LinkedList
  */
+@JvmSynthetic
 fun dequeOf(progression: CharProgression): Deque<Char> = LinkedList(progression.toList())
 
 /**
@@ -463,6 +494,7 @@ inline fun <reified T> arrayDequeOf(vararg elements: T): ArrayDeque<T> =
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun arrayDequeOf(range: IntRange): ArrayDeque<Int> = ArrayDeque(range.toList())
 
 /**
@@ -474,6 +506,7 @@ fun arrayDequeOf(range: IntRange): ArrayDeque<Int> = ArrayDeque(range.toList())
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun arrayDequeOf(range: UIntRange): ArrayDeque<UInt> = ArrayDeque(range.toList())
 
 /**
@@ -485,6 +518,7 @@ fun arrayDequeOf(range: UIntRange): ArrayDeque<UInt> = ArrayDeque(range.toList()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun arrayDequeOf(range: LongRange): ArrayDeque<Long> = ArrayDeque(range.toList())
 
 /**
@@ -496,6 +530,7 @@ fun arrayDequeOf(range: LongRange): ArrayDeque<Long> = ArrayDeque(range.toList()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun arrayDequeOf(range: ULongRange): ArrayDeque<ULong> = ArrayDeque(range.toList())
 
 /**
@@ -507,6 +542,7 @@ fun arrayDequeOf(range: ULongRange): ArrayDeque<ULong> = ArrayDeque(range.toList
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun arrayDequeOf(progression: IntProgression): ArrayDeque<Int> = ArrayDeque(progression.toList())
 
 /**
@@ -518,6 +554,7 @@ fun arrayDequeOf(progression: IntProgression): ArrayDeque<Int> = ArrayDeque(prog
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun arrayDequeOf(progression: UIntProgression): ArrayDeque<UInt> = ArrayDeque(progression.toList())
 
 /**
@@ -529,6 +566,7 @@ fun arrayDequeOf(progression: UIntProgression): ArrayDeque<UInt> = ArrayDeque(pr
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun arrayDequeOf(progression: LongProgression): ArrayDeque<Long> = ArrayDeque(progression.toList())
 
 /**
@@ -540,6 +578,7 @@ fun arrayDequeOf(progression: LongProgression): ArrayDeque<Long> = ArrayDeque(pr
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun arrayDequeOf(progression: ULongProgression): ArrayDeque<ULong> =
   ArrayDeque(progression.toList())
 
@@ -552,6 +591,7 @@ fun arrayDequeOf(progression: ULongProgression): ArrayDeque<ULong> =
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun arrayDequeOf(range: CharRange): ArrayDeque<Char> = ArrayDeque(range.toList())
 
 /**
@@ -563,6 +603,7 @@ fun arrayDequeOf(range: CharRange): ArrayDeque<Char> = ArrayDeque(range.toList()
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun arrayDequeOf(progression: CharProgression): ArrayDeque<Char> = ArrayDeque(progression.toList())
 
 /**

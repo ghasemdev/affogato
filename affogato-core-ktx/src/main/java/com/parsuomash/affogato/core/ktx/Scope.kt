@@ -1,3 +1,5 @@
+@file:JvmName("_Scope")
+
 package com.parsuomash.affogato.core.ktx
 
 /**
@@ -17,6 +19,7 @@ package com.parsuomash.affogato.core.ktx
  * @see let
  * @see also
  */
+@JvmSynthetic
 inline fun <T> T.runBlock(block: () -> Unit): T {
   val old = this
   block()
@@ -51,6 +54,7 @@ inline fun <T> T.runBlock(block: () -> Unit): T {
   ),
   level = DeprecationLevel.WARNING
 )
+@JvmSynthetic
 inline fun <T> T.block(block: () -> Unit): T {
   val old = this
   block()

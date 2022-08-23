@@ -14,17 +14,19 @@ import kotlinx.coroutines.flow.Flow
  * Returns a [State] of the [WindowLayoutInfo].
  * @since 1.0.0
  */
+@get:JvmSynthetic
 @ExperimentalLifecycleComposeApi
 inline val Activity.windowLayoutInfoState: State<WindowLayoutInfo?>
-  @JvmSynthetic @Composable get() =
+  @Composable get() =
     windowLayoutInfo.collectAsStateWithLifecycle(initialValue = null)
 
 /**
  * Returns a [Flow] of the [WindowLayoutInfo].
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val Activity.windowLayoutInfo: Flow<WindowLayoutInfo>
-  @JvmSynthetic get() = WindowInfoTracker.getOrCreate(this).windowLayoutInfo(this)
+  get() = WindowInfoTracker.getOrCreate(this).windowLayoutInfo(this)
 
 /**
  * Calculates if a [FoldingFeature] should be thought of as splitting the window into
@@ -33,8 +35,9 @@ inline val Activity.windowLayoutInfo: Flow<WindowLayoutInfo>
  * separating when they are not [FoldingFeature.State.FLAT].
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val WindowLayoutInfo.isSeparating: Boolean
-  @JvmSynthetic get() = findFoldingFeature()?.isSeparating ?: false
+  get() = findFoldingFeature()?.isSeparating ?: false
 
 /**
  * Calculates the occlusion mode to determine if a FoldingFeature occludes a part of the window.
@@ -42,8 +45,9 @@ inline val WindowLayoutInfo.isSeparating: Boolean
  * For some devices occluded elements can not be accessed by the user at all.
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val WindowLayoutInfo.occlusionType: FoldingFeature.OcclusionType
-  @JvmSynthetic get() = findFoldingFeature()?.occlusionType
+  get() = findFoldingFeature()?.occlusionType
     ?: FoldingFeature.OcclusionType.NONE
 
 /**
@@ -51,16 +55,18 @@ inline val WindowLayoutInfo.occlusionType: FoldingFeature.OcclusionType
  * [FoldingFeature.Orientation.VERTICAL] otherwise.
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val WindowLayoutInfo.orientation: FoldingFeature.Orientation
-  @JvmSynthetic get() = findFoldingFeature()?.orientation
+  get() = findFoldingFeature()?.orientation
     ?: FoldingFeature.Orientation.HORIZONTAL
 
 /**
  * Returns the [FoldingFeature.State] for the [FoldingFeature].
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val WindowLayoutInfo.state: FoldingFeature.State
-  @JvmSynthetic get() = findFoldingFeature()?.state
+  get() = findFoldingFeature()?.state
     ?: FoldingFeature.State.FLAT
 
 /**

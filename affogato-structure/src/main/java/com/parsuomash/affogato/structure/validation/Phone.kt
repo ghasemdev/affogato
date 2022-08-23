@@ -111,4 +111,4 @@ typealias PhoneNumberFormat = PhoneNumberUtil.PhoneNumberFormat
 typealias PhoneNumberType = PhoneNumberUtil.PhoneNumberType
 
 @get:JvmSynthetic
-internal val phoneNumberKit: PhoneNumberUtil by lazy { PhoneNumberUtil.getInstance() }
+private val phoneNumberKit: PhoneNumberUtil by lazy { PhoneNumberUtil.getInstance() }

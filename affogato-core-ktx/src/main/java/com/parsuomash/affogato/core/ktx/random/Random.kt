@@ -1,4 +1,6 @@
 @file:Suppress("unused")
+@file:JvmName("RandomUtils")
+@file:JvmMultifileClass
 
 package com.parsuomash.affogato.core.ktx.random
 
@@ -16,6 +18,7 @@ import kotlin.random.nextULong
  * @throws IllegalArgumentException if progression is empty.
  * @see Random.nextInt
  */
+@JvmSynthetic
 fun Random.nextInt(progression: IntProgression): Int {
   val first = progression.last
   val last = progression.last
@@ -31,6 +34,7 @@ fun Random.nextInt(progression: IntProgression): Int {
  * @throws IllegalArgumentException if progression is empty.
  * @see Random.nextUInt
  */
+@JvmSynthetic
 fun Random.nextUInt(progression: UIntProgression): UInt {
   val first = progression.last
   val last = progression.last
@@ -46,6 +50,7 @@ fun Random.nextUInt(progression: UIntProgression): UInt {
  * @throws IllegalArgumentException if progression is empty.
  * @see Random.nextLong
  */
+@JvmSynthetic
 fun Random.nextLong(progression: LongProgression): Long {
   val first = progression.last
   val last = progression.last
@@ -61,6 +66,7 @@ fun Random.nextLong(progression: LongProgression): Long {
  * @throws IllegalArgumentException if progression is empty.
  * @see Random.nextULong
  */
+@JvmSynthetic
 fun Random.nextULong(progression: ULongProgression): ULong {
   val first = progression.last
   val last = progression.last
@@ -79,7 +85,7 @@ fun Random.nextULong(progression: ULongProgression): ULong {
  * @throws NoSuchElementException - if this array is empty.
  * @see Array.random
  */
-@JvmName("choiceVars")
+@JvmName("choiceVararg")
 fun <T> Random.choice(vararg elements: T): T = elements.random(this)
 
 /**
@@ -93,7 +99,8 @@ fun <T> Random.choice(vararg elements: T): T = elements.random(this)
  * @throws NoSuchElementException - if this array is empty.
  * @see Array.random
  */
-fun <T> Random.choice(array: Array<T>): T = array.random(this)
+fun <T> Random.choice(array: Array<T>): T =
+  array.random(this)
 
 /**
  * Returns a random element from this collection using the specified source of randomness.
@@ -106,7 +113,8 @@ fun <T> Random.choice(array: Array<T>): T = array.random(this)
  * @throws NoSuchElementException - if this collection is empty.
  * @see Collection.random
  */
-fun <T> Random.choice(collection: Collection<T>): T = collection.random(this)
+fun <T> Random.choice(collection: Collection<T>): T =
+  collection.random(this)
 
 /**
  * Returns a random element from this map using the specified source of randomness.
@@ -133,7 +141,8 @@ inline fun <reified T, K> Random.choice(map: Map<T, K>): Pair<T, K> {
  * @since 1.1.0
  * @throws NoSuchElementException - if this map is empty.
  */
-inline fun <reified K, V> Map<K, V>.random(): Pair<K, V> = Random.choice(this)
+inline fun <reified K, V> Map<K, V>.random(): Pair<K, V> =
+  Random.choice(this)
 
 /**
  * Returns a random element from this array using the specified source of randomness,
@@ -147,7 +156,8 @@ inline fun <reified K, V> Map<K, V>.random(): Pair<K, V> = Random.choice(this)
  * @since 1.1.0
  * @see Array.randomOrNull
  */
-fun <T> Random.choiceOrNull(array: Array<T>): T? = array.randomOrNull(this)
+fun <T> Random.choiceOrNull(array: Array<T>): T? =
+  array.randomOrNull(this)
 
 /**
  * Returns a random element from this collection using the specified source of randomness,
@@ -175,10 +185,11 @@ fun <T> Random.choiceOrNull(collection: Collection<T>): T? =
  * ```
  * @since 1.1.0
  */
-inline fun <reified T, K> Random.choiceOrNull(map: Map<T, K>): Pair<T, K>? = tryCatchNull {
-  val choice = map.keys.random(this)
-  Pair(choice, map[choice]!!)
-}
+inline fun <reified T, K> Random.choiceOrNull(map: Map<T, K>): Pair<T, K>? =
+  tryCatchNull {
+    val choice = map.keys.random(this)
+    Pair(choice, map[choice]!!)
+  }
 
 /**
  * Returns a random element from this map using the specified source of randomness,
@@ -191,7 +202,8 @@ inline fun <reified T, K> Random.choiceOrNull(map: Map<T, K>): Pair<T, K>? = try
  * ```
  * @since 1.1.0
  */
-inline fun <reified K, V> Map<K, V>.randomOrNull(): Pair<K, V>? = Random.choiceOrNull(this)
+inline fun <reified K, V> Map<K, V>.randomOrNull(): Pair<K, V>? =
+  Random.choiceOrNull(this)
 
 /**
  * Returns a random list from this array using the specified source of randomness.
@@ -204,7 +216,8 @@ inline fun <reified K, V> Map<K, V>.randomOrNull(): Pair<K, V>? = Random.choiceO
  * @return randomness list
  * @see Random.choice
  */
-@JvmName("choicesVars")
+@JvmName("choicesVararg")
+@JvmOverloads
 fun <T> Random.choices(vararg elements: T, weights: List<Int>? = null, length: Int = 1): List<T> {
   val size = elements.size
   require(elements.isNotEmpty()) { "Arrays is empty." }
@@ -237,6 +250,7 @@ fun <T> Random.choices(vararg elements: T, weights: List<Int>? = null, length: I
  * @return randomness list
  * @see Random.choice
  */
+@JvmOverloads
 fun <T> Random.choices(array: Array<T>, weights: List<Int>? = null, length: Int = 1): List<T> {
   val size = array.size
   require(array.isNotEmpty()) { "Arrays is empty." }
@@ -269,6 +283,7 @@ fun <T> Random.choices(array: Array<T>, weights: List<Int>? = null, length: Int 
  * @return randomness list
  * @see Random.choice
  */
+@JvmOverloads
 fun <T> Random.choices(
   collection: Collection<T>,
   weights: List<Int>? = null,
@@ -305,6 +320,7 @@ fun <T> Random.choices(
  * @return randomness list
  * @see Random.choice
  */
+@JvmOverloads
 fun <T> Random.choicesOrNull(
   array: Array<T>,
   weights: List<Int>? = null,
@@ -324,6 +340,7 @@ fun <T> Random.choicesOrNull(
  * @return randomness list
  * @see Random.choice
  */
+@JvmOverloads
 fun <T> Random.choicesOrNull(
   collection: Collection<T>,
   weights: List<Int>? = null,

@@ -1,3 +1,5 @@
+@file:JvmName("_TimeAgoExtension")
+
 package com.parsuomash.affogato.logger.android
 
 /**

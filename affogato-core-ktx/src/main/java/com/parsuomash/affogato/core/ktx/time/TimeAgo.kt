@@ -208,6 +208,7 @@ object TimeAgo {
   private var _default = EN
   val default get() = _default
 
+  @JvmField
   var isLocaleNumberEnabled = false
   private val lookupMessagesMap = mutableMapOf(
     EN to EnMessages,
@@ -230,6 +231,7 @@ object TimeAgo {
    * @throws IllegalArgumentException if the [locale] is not supported.
    * @see LookupMessages
    */
+  @JvmStatic
   fun setDefaultLocale(locale: String) {
     require(lookupMessagesMap.containsKey(locale)) { "[locale] must be a registered locale" }
     _default = locale
@@ -250,6 +252,7 @@ object TimeAgo {
    * @throws NoSuchMessageException if the locales is not supported.
    * @see LookupMessages
    */
+  @JvmStatic
   fun setLocaleMessages(vararg locales: String) {
     locales.forEach { setLocaleMessages(it) }
   }
@@ -269,6 +272,7 @@ object TimeAgo {
    * @throws NoSuchMessageException if the [locale] is not supported.
    * @see LookupMessages
    */
+  @JvmStatic
   fun setLocaleMessages(locale: String) {
     when (locale) {
       EN -> setLocaleMessages(EN, EnMessages)
@@ -383,6 +387,7 @@ object TimeAgo {
    *
    * @since 1.1.0
    */
+  @JvmStatic
   fun setLocaleMessages(locale: String, lookupMessages: LookupMessages) {
     lookupMessagesMap[locale] = lookupMessages
   }
@@ -401,6 +406,7 @@ object TimeAgo {
    * @since 1.1.0
    * @throws NoSuchMessageException if the [locale] is not supported.
    */
+  @JvmStatic
   fun setLocaleMessagesAndDefaultLocale(locale: String) {
     setLocaleMessages(locale)
     setDefaultLocale(locale)
@@ -423,6 +429,7 @@ object TimeAgo {
    * @since 1.1.0
    * @throws NoSuchMessageException if the [locale] is not supported.
    */
+  @JvmStatic
   fun setLocaleMessagesAndDefaultLocale(locale: String, lookupMessages: LookupMessages) {
     setLocaleMessages(locale, lookupMessages)
     setDefaultLocale(locale)
@@ -451,6 +458,8 @@ object TimeAgo {
    * ```
    * @since 1.1.0
    */
+  @JvmStatic
+  @JvmOverloads
   fun format(
     date: Long,
     locale: String = default,
@@ -580,6 +589,8 @@ object TimeAgo {
    * ```
    * @since 1.1.0
    */
+  @JvmStatic
+  @JvmOverloads
   fun format(
     date: Date,
     locale: String = default,
@@ -612,6 +623,8 @@ object TimeAgo {
    * ```
    * @since 1.1.0
    */
+  @JvmStatic
+  @JvmOverloads
   fun format(
     date: Calendar,
     locale: String = default,
@@ -651,6 +664,8 @@ object TimeAgo {
    * ```
    * @since 1.1.0
    */
+  @JvmStatic
+  @JvmOverloads
   fun format(
     date: Instant,
     locale: String = default,
@@ -690,6 +705,8 @@ object TimeAgo {
    * ```
    * @since 1.1.0
    */
+  @JvmStatic
+  @JvmOverloads
   fun format(
     date: LocalDateTime,
     locale: String = default,
@@ -828,6 +845,7 @@ object TimeAgo {
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun Long.timeAgo(
   locale: String = TimeAgo.default,
   clock: Long = nowInMilliseconds(),
@@ -858,6 +876,7 @@ fun Long.timeAgo(
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun Date.timeAgo(
   locale: String = TimeAgo.default,
   clock: Date = nowInDate(),
@@ -888,6 +907,7 @@ fun Date.timeAgo(
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun Calendar.timeAgo(
   locale: String = TimeAgo.default,
   clock: Calendar = nowInCalendar(),
@@ -918,6 +938,7 @@ fun Calendar.timeAgo(
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun Instant.timeAgo(
   locale: String = TimeAgo.default,
   clock: Instant = now(),
@@ -948,6 +969,7 @@ fun Instant.timeAgo(
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun LocalDateTime.timeAgo(
   locale: String = TimeAgo.default,
   clock: LocalDateTime = nowInLocalDateTime(),

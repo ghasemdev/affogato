@@ -1,3 +1,6 @@
+@file:JvmName("FormatterUtils")
+@file:JvmMultifileClass
+
 package com.parsuomash.affogato.core.ktx.text
 
 import com.parsuomash.affogato.core.ktx.math.pow
@@ -49,6 +52,7 @@ fun Double.removeDecimalPart(): String {
  * @param pattern default pattern is comma separator.
  * @return format number.
  */
+@JvmOverloads
 fun Number.format(pattern: String = "#,###.##"): String {
   decimalFormat.applyPattern(pattern)
   return decimalFormat.format(this)
@@ -93,6 +97,7 @@ fun Number.compactFormat(): String {
  * @since 1.1.0
  * @return formatted credit card number.
  */
+@JvmOverloads
 fun String.formatCreditCard(separator: String = " ", separatorDigit: Int = 4): String {
   val preparedString = replace(" ", "").trim()
   return buildString {
@@ -106,6 +111,6 @@ fun String.formatCreditCard(separator: String = " ", separatorDigit: Int = 4): S
 }
 
 @get:JvmSynthetic
-internal val decimalFormat: DecimalFormat by lazy { DecimalFormat() }
+private val decimalFormat: DecimalFormat by lazy { DecimalFormat() }
 
 private val suffix = charArrayOf(' ', 'k', 'M', 'B', 'T', 'P', 'E')

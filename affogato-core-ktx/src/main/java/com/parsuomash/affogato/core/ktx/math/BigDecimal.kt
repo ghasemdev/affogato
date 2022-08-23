@@ -1,3 +1,5 @@
+@file:JvmName("_BigDecimal")
+
 package com.parsuomash.affogato.core.ktx.math
 
 import java.math.BigDecimal
@@ -7,6 +9,7 @@ import java.math.BigInteger
  * Returns the value of this [Int] number as a [BigDecimal].
  * @since 1.1.0
  */
+@get:JvmSynthetic
 inline val Int.BD: BigDecimal
   get() = BigDecimal.valueOf(this.toLong())
 
@@ -14,6 +17,7 @@ inline val Int.BD: BigDecimal
  * Returns the value of this [Long] number as a [BigDecimal].
  * @since 1.1.0
  */
+@get:JvmSynthetic
 inline val Long.BD: BigDecimal
   get() = BigDecimal.valueOf(this)
 
@@ -21,6 +25,7 @@ inline val Long.BD: BigDecimal
  * Returns the value of this [Float] number as a [BigDecimal].
  * @since 1.1.0
  */
+@get:JvmSynthetic
 inline val Float.BD: BigDecimal
   get() = BigDecimal.valueOf(this.toDouble())
 
@@ -28,6 +33,7 @@ inline val Float.BD: BigDecimal
  * Returns the value of this [Double] number as a [BigDecimal].
  * @since 1.1.0
  */
+@get:JvmSynthetic
 inline val Double.BD: BigDecimal
   get() = BigDecimal.valueOf(this)
 
@@ -35,5 +41,6 @@ inline val Double.BD: BigDecimal
  * Returns the value of this [BigInteger] number as a [BigDecimal].
  * @since 1.1.0
  */
+@get:JvmSynthetic
 inline val BigInteger.BD: BigDecimal
   get() = BigDecimal(this)

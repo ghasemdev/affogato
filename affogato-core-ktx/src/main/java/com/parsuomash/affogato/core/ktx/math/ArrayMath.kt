@@ -1,4 +1,6 @@
 @file:Suppress("TooManyFunctions", "ArrayPrimitive")
+@file:JvmName("MathUtils")
+@file:JvmMultifileClass
 
 package com.parsuomash.affogato.core.ktx.math
 

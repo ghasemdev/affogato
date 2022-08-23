@@ -1,4 +1,5 @@
-@file:Suppress("EXTENSION_SHADOWED_BY_MEMBER")
+@file:JvmName("DateTimeUtils")
+@file:JvmMultifileClass
 
 package com.parsuomash.affogato.core.ktx.datetime
 
@@ -11,54 +12,82 @@ import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.LocalTime
 
 /** @since 1.1.0 */
-inline val Calendar.year: Int get() = get(Calendar.YEAR)
+@get:JvmSynthetic
+inline val Calendar.year: Int
+  get() = get(Calendar.YEAR)
 
 /** @since 1.1.0 */
-inline val Calendar.month: Int get() = get(Calendar.MONTH)
+@get:JvmSynthetic
+inline val Calendar.month: Int
+  get() = get(Calendar.MONTH)
 
 /** @since 1.1.0 */
-inline val Calendar.dayOfYear: Int get() = get(Calendar.DAY_OF_YEAR)
+@get:JvmSynthetic
+inline val Calendar.dayOfYear: Int
+  get() = get(Calendar.DAY_OF_YEAR)
 
 /** @since 1.1.0 */
-inline val Calendar.dayOfMonth: Int get() = get(Calendar.DAY_OF_MONTH)
+@get:JvmSynthetic
+inline val Calendar.dayOfMonth: Int
+  get() = get(Calendar.DAY_OF_MONTH)
 
 /** @since 1.1.0 */
-inline val Calendar.dayOfWeek: Int get() = get(Calendar.DAY_OF_WEEK)
+@get:JvmSynthetic
+inline val Calendar.dayOfWeek: Int
+  get() = get(Calendar.DAY_OF_WEEK)
 
 /** @since 1.1.0 */
-inline val Calendar.dayOfWeekInMonth: Int get() = get(Calendar.DAY_OF_WEEK_IN_MONTH)
+@get:JvmSynthetic
+inline val Calendar.dayOfWeekInMonth: Int
+  get() = get(Calendar.DAY_OF_WEEK_IN_MONTH)
 
 /** @since 1.1.0 */
-inline val Calendar.hour: Int get() = get(Calendar.HOUR)
+@get:JvmSynthetic
+inline val Calendar.hour: Int
+  get() = get(Calendar.HOUR)
 
 /** @since 1.1.0 */
-inline val Calendar.hourOfDay: Int get() = get(Calendar.HOUR_OF_DAY)
+@get:JvmSynthetic
+inline val Calendar.hourOfDay: Int
+  get() = get(Calendar.HOUR_OF_DAY)
 
 /** @since 1.1.0 */
-inline val Calendar.minute: Int get() = get(Calendar.MINUTE)
+@get:JvmSynthetic
+inline val Calendar.minute: Int
+  get() = get(Calendar.MINUTE)
 
 /** @since 1.1.0 */
-inline val Calendar.second: Int get() = get(Calendar.SECOND)
+@get:JvmSynthetic
+inline val Calendar.second: Int
+  get() = get(Calendar.SECOND)
 
 /** @since 1.1.0 */
-inline val Calendar.millisecond: Int get() = get(Calendar.MILLISECOND)
+@get:JvmSynthetic
+inline val Calendar.millisecond: Int
+  get() = get(Calendar.MILLISECOND)
 
 /** @since 1.1.0 */
-inline val Calendar.weekOfYear: Int get() = get(Calendar.WEEK_OF_YEAR)
+@get:JvmSynthetic
+inline val Calendar.weekOfYear: Int
+  get() = get(Calendar.WEEK_OF_YEAR)
 
 /** @since 1.1.0 */
-inline val Calendar.weekOfMonth: Int get() = get(Calendar.WEEK_OF_MONTH)
+@get:JvmSynthetic
+inline val Calendar.weekOfMonth: Int
+  get() = get(Calendar.WEEK_OF_MONTH)
 
 /**
  * Convert [Long] to [Calendar].
  * @since 1.1.0
  */
-fun Long.toCalendar(): Calendar = Calendar.getInstance().apply { time = Date(this@toCalendar) }
+fun Long.toCalendar(): Calendar =
+  Calendar.getInstance().apply { time = Date(this@toCalendar) }
 
 /**
  * Convert [Duration] to [Calendar].
  * @since 1.1.0
  */
+@JvmSynthetic
 fun Duration.toCalendar(): Calendar =
   Calendar.getInstance().apply { time = Date(inWholeMilliseconds) }
 
@@ -66,24 +95,30 @@ fun Duration.toCalendar(): Calendar =
  * Convert [Calendar] to [Date].
  * @since 1.1.0
  */
-fun Calendar.toDate(): Date = time
+fun Calendar.toDate(): Date =
+  time
 
 /**
  * Convert [Calendar] to [LocalDate].
  * @since 1.1.0
  */
-fun Calendar.toLocalDate(): LocalDate = LocalDate(year, month + 1, dayOfMonth)
+@JvmSynthetic
+fun Calendar.toLocalDate(): LocalDate =
+  LocalDate(year, month + 1, dayOfMonth)
 
 /**
  * Convert [Calendar] to [LocalTime].
  * @since 1.1.0
  */
-fun Calendar.toLocalTime(): LocalTime = LocalTime(hourOfDay, minute, second)
+@JvmSynthetic
+fun Calendar.toLocalTime(): LocalTime =
+  LocalTime(hourOfDay, minute, second)
 
 /**
  * Convert [Calendar] to [LocalDateTime].
  * @since 1.1.0
  */
+@JvmSynthetic
 fun Calendar.toLocalDateTime(): LocalDateTime =
   LocalDateTime(year, month + 1, dayOfMonth, hourOfDay, minute, second)
 
@@ -91,33 +126,40 @@ fun Calendar.toLocalDateTime(): LocalDateTime =
  * Two days are considered to be the same if they have the same day.
  * @since 1.1.0
  */
-infix fun Calendar.isSameDay(date: Calendar): Boolean = dayOfYear == date.dayOfYear
+infix fun Calendar.isSameDay(date: Calendar): Boolean =
+  dayOfYear == date.dayOfYear
 
 /**
  * Adds the other value to this value.
  * @since 1.1.0
  */
-operator fun Calendar.plus(other: Calendar): Calendar = (time + other.time).toCalendar()
+@JvmSynthetic
+operator fun Calendar.plus(other: Calendar): Calendar =
+  (time + other.time).toCalendar()
 
 /**
  * Subtracts the other value from this value.
  * @since 1.1.0
  */
-operator fun Calendar.minus(other: Calendar): Calendar = (time - other.time).toCalendar()
+@JvmSynthetic
+operator fun Calendar.minus(other: Calendar): Calendar =
+  (time - other.time).toCalendar()
 
 /**
  * Adds the [Duration] value to this [Calendar].
  * @since 1.1.0
  */
-operator
-
-fun Calendar.plus(other: Duration): Calendar = this + other.toCalendar()
+@JvmSynthetic
+operator fun Calendar.plus(other: Duration): Calendar =
+  this + other.toCalendar()
 
 /**
  * Subtracts the [Duration] value from this [Calendar].
  * @since 1.1.0
  */
-operator fun Calendar.minus(other: Duration): Calendar = this - other.toCalendar()
+@JvmSynthetic
+operator fun Calendar.minus(other: Duration): Calendar =
+  this - other.toCalendar()
 
 /**
  * Produce a Calendar from the given strings value and [pattern].
@@ -127,6 +169,7 @@ operator fun Calendar.minus(other: Duration): Calendar = this - other.toCalendar
  * @return A Calendar parsed from the string.
  * @see SimpleDateFormat
  */
+@JvmOverloads
 fun String.toCalendar(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): Calendar {
   simpleDateFormat.applyPattern(pattern)
   return simpleDateFormat.parse(this).toCalendar()
@@ -138,6 +181,7 @@ fun String.toCalendar(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): Calenda
  * @return A nullable Calendar parsed from the string.
  * @see SimpleDateFormat
  */
+@JvmOverloads
 fun String.toCalendarOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): Calendar? =
   tryCatchNull {
     simpleDateFormat.applyPattern(pattern)

@@ -1,3 +1,5 @@
+@file:JvmName("_LocalDateTime")
+
 package com.parsuomash.affogato.core.ktx.datetime
 
 import com.parsuomash.affogato.core.ktx.tryCatchNull
@@ -21,6 +23,7 @@ import kotlinx.datetime.toLocalDateTime
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun Long.toLocalDateTime(): LocalDateTime {
   val calendar = Calendar.getInstance().apply { time = Date(this@toLocalDateTime) }
   with(calendar) {
@@ -32,24 +35,31 @@ fun Long.toLocalDateTime(): LocalDateTime {
  * Convert [LocalDateTime] to [Date].
  * @since 1.1.0
  */
-fun LocalDateTime.toDate(): Date = toCalendar().time
+@JvmSynthetic
+fun LocalDateTime.toDate(): Date =
+  toCalendar().time
 
 /**
  * Convert [LocalDateTime] to [LocalDate].
  * @since 1.1.0
  */
-fun LocalDateTime.toLocalDate(): LocalDate = date
+@JvmSynthetic
+fun LocalDateTime.toLocalDate(): LocalDate =
+  date
 
 /**
  * Convert [LocalDateTime] to [LocalTime].
  * @since 1.1.0
  */
-fun LocalDateTime.toLocalTime(): LocalTime = time
+@JvmSynthetic
+fun LocalDateTime.toLocalTime(): LocalTime =
+  time
 
 /**
  * Convert [LocalDateTime] to [Calendar].
  * @since 1.1.0
  */
+@JvmSynthetic
 fun LocalDateTime.toCalendar(): Calendar = Calendar.getInstance().apply {
   set(
     this@toCalendar.year,
@@ -67,6 +77,7 @@ fun LocalDateTime.toCalendar(): Calendar = Calendar.getInstance().apply {
  * @since 1.1.0
  * @see Clock
  */
+@JvmSynthetic
 fun LocalDateTime.Companion.now(
   timeZone: TimeZone = TimeZone.currentSystemDefault()
 ): LocalDateTime = Clock.System.now().toLocalDateTime(timeZone)
@@ -75,12 +86,15 @@ fun LocalDateTime.Companion.now(
  * Two days are considered to be the same if they have the same day.
  * @since 1.1.0
  */
-infix fun LocalDateTime.isSameDay(date: LocalDateTime): Boolean = dayOfYear == date.dayOfYear
+@JvmSynthetic
+infix fun LocalDateTime.isSameDay(date: LocalDateTime): Boolean =
+  dayOfYear == date.dayOfYear
 
 /**
  * Adds the other value to this value.
  * @since 1.1.0
  */
+@JvmSynthetic
 operator fun LocalDateTime.plus(duration: Duration): LocalDateTime {
   val timeZone = TimeZone.currentSystemDefault()
   return (toInstant(timeZone) + duration).toLocalDateTime(timeZone)
@@ -90,6 +104,7 @@ operator fun LocalDateTime.plus(duration: Duration): LocalDateTime {
  * Subtracts the other value from this value.
  * @since 1.1.0
  */
+@JvmSynthetic
 operator fun LocalDateTime.minus(duration: Duration): LocalDateTime {
   val timeZone = TimeZone.currentSystemDefault()
   return (toInstant(timeZone) - duration).toLocalDateTime(timeZone)
@@ -110,6 +125,7 @@ operator fun LocalDateTime.minus(duration: Duration): LocalDateTime {
  * @return A LocalDateTime parsed from the string.
  * @see SimpleDateFormat
  */
+@JvmSynthetic
 fun String.toLocalDateTime(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): LocalDateTime {
   simpleDateFormat.applyPattern(pattern)
   return simpleDateFormat.parse(this).toLocalDateTime()
@@ -128,6 +144,7 @@ fun String.toLocalDateTime(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): Lo
  * @return A nullable LocalDateTime parsed from the string.
  * @see SimpleDateFormat
  */
+@JvmSynthetic
 fun String.toLocalDateTimeOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): LocalDateTime? =
   tryCatchNull {
     simpleDateFormat.applyPattern(pattern)
@@ -146,6 +163,7 @@ fun String.toLocalDateTimeOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy
  * @return The formatted date-time string.
  * @see SimpleDateFormat
  */
+@JvmSynthetic
 fun LocalDateTime.format(pattern: String): String {
   simpleDateFormat.applyPattern(pattern)
   return simpleDateFormat.format(toDate())
@@ -174,6 +192,7 @@ fun LocalDateTime.format(pattern: String): String {
   ),
   level = DeprecationLevel.WARNING
 )
+@JvmSynthetic
 fun LocalDateTime.toString(format: String): String {
   simpleDateFormat.applyPattern(format)
   return simpleDateFormat.format(toDate())

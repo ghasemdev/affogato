@@ -1,4 +1,4 @@
-@file:JvmSynthetic
+@file:JvmName("_HeMessages")
 
 package com.parsuomash.affogato.core.ktx.time.messages.lang
 

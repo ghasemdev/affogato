@@ -1,4 +1,5 @@
 @file:Suppress("MethodOverloading", "TooManyFunctions")
+@file:JvmName("_List")
 
 package com.parsuomash.affogato.core.ktx.collections
 
@@ -12,6 +13,7 @@ package com.parsuomash.affogato.core.ktx.collections
  * @since 1.1.0
  * @see listOf
  */
+@JvmSynthetic
 fun listOf(range: IntRange): List<Int> = range.toList()
 
 /**
@@ -24,6 +26,7 @@ fun listOf(range: IntRange): List<Int> = range.toList()
  * @since 1.1.0
  * @see listOf
  */
+@JvmSynthetic
 fun listOf(range: UIntRange): List<UInt> = range.toList()
 
 /**
@@ -36,6 +39,7 @@ fun listOf(range: UIntRange): List<UInt> = range.toList()
  * @since 1.1.0
  * @see listOf
  */
+@JvmSynthetic
 fun listOf(range: LongRange): List<Long> = range.toList()
 
 /**
@@ -48,6 +52,7 @@ fun listOf(range: LongRange): List<Long> = range.toList()
  * @since 1.1.0
  * @see listOf
  */
+@JvmSynthetic
 fun listOf(range: ULongRange): List<ULong> = range.toList()
 
 /**
@@ -60,6 +65,7 @@ fun listOf(range: ULongRange): List<ULong> = range.toList()
  * @since 1.1.0
  * @see listOf
  */
+@JvmSynthetic
 fun listOf(progression: IntProgression): List<Int> = progression.toList()
 
 /**
@@ -72,6 +78,7 @@ fun listOf(progression: IntProgression): List<Int> = progression.toList()
  * @since 1.1.0
  * @see listOf
  */
+@JvmSynthetic
 fun listOf(progression: UIntProgression): List<UInt> = progression.toList()
 
 /**
@@ -84,6 +91,7 @@ fun listOf(progression: UIntProgression): List<UInt> = progression.toList()
  * @since 1.1.0
  * @see listOf
  */
+@JvmSynthetic
 fun listOf(progression: LongProgression): List<Long> = progression.toList()
 
 /**
@@ -96,6 +104,7 @@ fun listOf(progression: LongProgression): List<Long> = progression.toList()
  * @since 1.1.0
  * @see listOf
  */
+@JvmSynthetic
 fun listOf(progression: ULongProgression): List<ULong> = progression.toList()
 
 /**
@@ -108,6 +117,7 @@ fun listOf(progression: ULongProgression): List<ULong> = progression.toList()
  * @since 1.1.0
  * @see listOf
  */
+@JvmSynthetic
 fun listOf(range: CharRange): List<Char> = range.toList()
 
 /**
@@ -120,6 +130,7 @@ fun listOf(range: CharRange): List<Char> = range.toList()
  * @since 1.1.0
  * @see listOf
  */
+@JvmSynthetic
 fun listOf(progression: CharProgression): List<Char> = progression.toList()
 
 /**
@@ -132,6 +143,7 @@ fun listOf(progression: CharProgression): List<Char> = progression.toList()
  * @since 1.1.0
  * @see mutableListOf
  */
+@JvmSynthetic
 fun mutableListOf(range: IntRange): MutableList<Int> = range.toMutableList()
 
 /**
@@ -144,6 +156,7 @@ fun mutableListOf(range: IntRange): MutableList<Int> = range.toMutableList()
  * @since 1.1.0
  * @see mutableListOf
  */
+@JvmSynthetic
 fun mutableListOf(range: UIntRange): MutableList<UInt> = range.toMutableList()
 
 /**
@@ -156,6 +169,7 @@ fun mutableListOf(range: UIntRange): MutableList<UInt> = range.toMutableList()
  * @since 1.1.0
  * @see mutableListOf
  */
+@JvmSynthetic
 fun mutableListOf(range: LongRange): MutableList<Long> = range.toMutableList()
 
 /**
@@ -168,6 +182,7 @@ fun mutableListOf(range: LongRange): MutableList<Long> = range.toMutableList()
  * @since 1.1.0
  * @see mutableListOf
  */
+@JvmSynthetic
 fun mutableListOf(range: ULongRange): MutableList<ULong> = range.toMutableList()
 
 /**
@@ -180,6 +195,7 @@ fun mutableListOf(range: ULongRange): MutableList<ULong> = range.toMutableList()
  * @since 1.1.0
  * @see mutableListOf
  */
+@JvmSynthetic
 fun mutableListOf(progression: IntProgression): MutableList<Int> = progression.toMutableList()
 
 /**
@@ -192,6 +208,7 @@ fun mutableListOf(progression: IntProgression): MutableList<Int> = progression.t
  * @since 1.1.0
  * @see mutableListOf
  */
+@JvmSynthetic
 fun mutableListOf(progression: UIntProgression): MutableList<UInt> = progression.toMutableList()
 
 /**
@@ -204,6 +221,7 @@ fun mutableListOf(progression: UIntProgression): MutableList<UInt> = progression
  * @since 1.1.0
  * @see mutableListOf
  */
+@JvmSynthetic
 fun mutableListOf(progression: LongProgression): MutableList<Long> = progression.toMutableList()
 
 /**
@@ -216,6 +234,7 @@ fun mutableListOf(progression: LongProgression): MutableList<Long> = progression
  * @since 1.1.0
  * @see mutableListOf
  */
+@JvmSynthetic
 fun mutableListOf(progression: ULongProgression): MutableList<ULong> = progression.toMutableList()
 
 /**
@@ -228,6 +247,7 @@ fun mutableListOf(progression: ULongProgression): MutableList<ULong> = progressi
  * @since 1.1.0
  * @see mutableListOf
  */
+@JvmSynthetic
 fun mutableListOf(range: CharRange): MutableList<Char> = range.toMutableList()
 
 /**
@@ -240,6 +260,7 @@ fun mutableListOf(range: CharRange): MutableList<Char> = range.toMutableList()
  * @since 1.1.0
  * @see mutableListOf
  */
+@JvmSynthetic
 fun mutableListOf(progression: CharProgression): MutableList<Char> = progression.toMutableList()
 
 /**
@@ -252,6 +273,7 @@ fun mutableListOf(progression: CharProgression): MutableList<Char> = progression
  * @since 1.1.0
  * @see arrayListOf
  */
+@JvmSynthetic
 fun arrayListOf(range: IntRange): ArrayList<Int> = ArrayList(range.toList())
 
 /**
@@ -264,6 +286,7 @@ fun arrayListOf(range: IntRange): ArrayList<Int> = ArrayList(range.toList())
  * @since 1.1.0
  * @see arrayListOf
  */
+@JvmSynthetic
 fun arrayListOf(range: UIntRange): ArrayList<UInt> = ArrayList(range.toList())
 
 /**
@@ -276,6 +299,7 @@ fun arrayListOf(range: UIntRange): ArrayList<UInt> = ArrayList(range.toList())
  * @since 1.1.0
  * @see arrayListOf
  */
+@JvmSynthetic
 fun arrayListOf(range: LongRange): ArrayList<Long> = ArrayList(range.toList())
 
 /**
@@ -288,6 +312,7 @@ fun arrayListOf(range: LongRange): ArrayList<Long> = ArrayList(range.toList())
  * @since 1.1.0
  * @see arrayListOf
  */
+@JvmSynthetic
 fun arrayListOf(range: ULongRange): ArrayList<ULong> = ArrayList(range.toList())
 
 /**
@@ -300,6 +325,7 @@ fun arrayListOf(range: ULongRange): ArrayList<ULong> = ArrayList(range.toList())
  * @since 1.1.0
  * @see arrayListOf
  */
+@JvmSynthetic
 fun arrayListOf(progression: IntProgression): ArrayList<Int> = ArrayList(progression.toList())
 
 /**
@@ -312,6 +338,7 @@ fun arrayListOf(progression: IntProgression): ArrayList<Int> = ArrayList(progres
  * @since 1.1.0
  * @see arrayListOf
  */
+@JvmSynthetic
 fun arrayListOf(progression: UIntProgression): ArrayList<UInt> = ArrayList(progression.toList())
 
 /**
@@ -324,6 +351,7 @@ fun arrayListOf(progression: UIntProgression): ArrayList<UInt> = ArrayList(progr
  * @since 1.1.0
  * @see arrayListOf
  */
+@JvmSynthetic
 fun arrayListOf(progression: LongProgression): ArrayList<Long> = ArrayList(progression.toList())
 
 /**
@@ -336,6 +364,7 @@ fun arrayListOf(progression: LongProgression): ArrayList<Long> = ArrayList(progr
  * @since 1.1.0
  * @see arrayListOf
  */
+@JvmSynthetic
 fun arrayListOf(progression: ULongProgression): ArrayList<ULong> = ArrayList(progression.toList())
 
 /**
@@ -348,6 +377,7 @@ fun arrayListOf(progression: ULongProgression): ArrayList<ULong> = ArrayList(pro
  * @since 1.1.0
  * @see arrayListOf
  */
+@JvmSynthetic
 fun arrayListOf(range: CharRange): ArrayList<Char> = ArrayList(range.toList())
 
 /**
@@ -360,6 +390,7 @@ fun arrayListOf(range: CharRange): ArrayList<Char> = ArrayList(range.toList())
  * @since 1.1.0
  * @see arrayListOf
  */
+@JvmSynthetic
 fun arrayListOf(progression: CharProgression): ArrayList<Char> = ArrayList(progression.toList())
 
 /**
@@ -385,6 +416,7 @@ inline fun <reified T> linkedListOf(vararg elements: T): LinkedList<T> =
  * @since 1.1.0
  * @see linkedListOf
  */
+@JvmSynthetic
 fun linkedListOf(range: IntRange): LinkedList<Int> = LinkedList(range.toList())
 
 /**
@@ -397,6 +429,7 @@ fun linkedListOf(range: IntRange): LinkedList<Int> = LinkedList(range.toList())
  * @since 1.1.0
  * @see linkedListOf
  */
+@JvmSynthetic
 fun linkedListOf(range: UIntRange): LinkedList<UInt> = LinkedList(range.toList())
 
 /**
@@ -409,6 +442,7 @@ fun linkedListOf(range: UIntRange): LinkedList<UInt> = LinkedList(range.toList()
  * @since 1.1.0
  * @see linkedListOf
  */
+@JvmSynthetic
 fun linkedListOf(range: LongRange): LinkedList<Long> = LinkedList(range.toList())
 
 /**
@@ -421,6 +455,7 @@ fun linkedListOf(range: LongRange): LinkedList<Long> = LinkedList(range.toList()
  * @since 1.1.0
  * @see linkedListOf
  */
+@JvmSynthetic
 fun linkedListOf(range: ULongRange): LinkedList<ULong> = LinkedList(range.toList())
 
 /**
@@ -433,6 +468,7 @@ fun linkedListOf(range: ULongRange): LinkedList<ULong> = LinkedList(range.toList
  * @since 1.1.0
  * @see linkedListOf
  */
+@JvmSynthetic
 fun linkedListOf(progression: IntProgression): LinkedList<Int> = LinkedList(progression.toList())
 
 /**
@@ -445,6 +481,7 @@ fun linkedListOf(progression: IntProgression): LinkedList<Int> = LinkedList(prog
  * @since 1.1.0
  * @see linkedListOf
  */
+@JvmSynthetic
 fun linkedListOf(progression: UIntProgression): LinkedList<UInt> = LinkedList(progression.toList())
 
 /**
@@ -457,6 +494,7 @@ fun linkedListOf(progression: UIntProgression): LinkedList<UInt> = LinkedList(pr
  * @since 1.1.0
  * @see linkedListOf
  */
+@JvmSynthetic
 fun linkedListOf(progression: LongProgression): LinkedList<Long> = LinkedList(progression.toList())
 
 /**
@@ -469,6 +507,7 @@ fun linkedListOf(progression: LongProgression): LinkedList<Long> = LinkedList(pr
  * @since 1.1.0
  * @see linkedListOf
  */
+@JvmSynthetic
 fun linkedListOf(progression: ULongProgression): LinkedList<ULong> =
   LinkedList(progression.toList())
 
@@ -482,6 +521,7 @@ fun linkedListOf(progression: ULongProgression): LinkedList<ULong> =
  * @since 1.1.0
  * @see linkedListOf
  */
+@JvmSynthetic
 fun linkedListOf(range: CharRange): LinkedList<Char> = LinkedList(range.toList())
 
 /**
@@ -494,6 +534,7 @@ fun linkedListOf(range: CharRange): LinkedList<Char> = LinkedList(range.toList()
  * @since 1.1.0
  * @see linkedListOf
  */
+@JvmSynthetic
 fun linkedListOf(progression: CharProgression): LinkedList<Char> = LinkedList(progression.toList())
 
 /**

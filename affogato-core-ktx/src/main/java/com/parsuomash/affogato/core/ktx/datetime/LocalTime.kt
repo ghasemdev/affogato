@@ -1,3 +1,5 @@
+@file:JvmName("_LocalTime")
+
 package com.parsuomash.affogato.core.ktx.datetime
 
 import com.parsuomash.affogato.core.ktx.tryCatchNull
@@ -18,6 +20,7 @@ import kotlinx.datetime.toLocalDateTime
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun Long.toLocalTime(): LocalTime {
   val calendar = Calendar.getInstance().apply { time = Date(this@toLocalTime) }
   return LocalTime(calendar.hourOfDay, calendar.minute, calendar.second)
@@ -27,6 +30,7 @@ fun Long.toLocalTime(): LocalTime {
  * Convert [LocalTime] to [Date].
  * @since 1.1.0
  */
+@JvmSynthetic
 fun LocalTime.toDate(): Date = Calendar.getInstance().apply {
   set(0, 0, 0, this@toDate.hour, this@toDate.minute, this@toDate.second)
   set(Calendar.MILLISECOND, 0)
@@ -36,6 +40,7 @@ fun LocalTime.toDate(): Date = Calendar.getInstance().apply {
  * Convert [LocalTime] to [Calendar].
  * @since 1.1.0
  */
+@JvmSynthetic
 fun LocalTime.toCalendar(): Calendar = Calendar.getInstance().apply {
   set(0, 0, 0, this@toCalendar.hour, this@toCalendar.minute, this@toCalendar.second)
   set(Calendar.MILLISECOND, 0)
@@ -46,6 +51,7 @@ fun LocalTime.toCalendar(): Calendar = Calendar.getInstance().apply {
  * @since 1.1.0
  * @see Clock
  */
+@JvmSynthetic
 fun LocalTime.Companion.now(
   timeZone: TimeZone = TimeZone.currentSystemDefault()
 ): LocalTime = Clock.System.now().toLocalDateTime(timeZone).time
@@ -54,6 +60,7 @@ fun LocalTime.Companion.now(
  * Adds the other value to this value.
  * @since 1.1.0
  */
+@JvmSynthetic
 operator fun LocalTime.plus(duration: Duration): LocalTime =
   LocalTime.fromNanosecondOfDay(toNanosecondOfDay() + duration.inWholeNanoseconds)
 
@@ -61,6 +68,7 @@ operator fun LocalTime.plus(duration: Duration): LocalTime =
  * Subtracts the other value from this value.
  * @since 1.1.0
  */
+@JvmSynthetic
 operator fun LocalTime.minus(duration: Duration): LocalTime =
   LocalTime.fromNanosecondOfDay(toNanosecondOfDay() - duration.inWholeNanoseconds)
 
@@ -79,6 +87,7 @@ operator fun LocalTime.minus(duration: Duration): LocalTime =
  * @return A LocalTime parsed from the string.
  * @see SimpleDateFormat
  */
+@JvmSynthetic
 fun String.toLocalTime(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): LocalTime {
   simpleDateFormat.applyPattern(pattern)
   return simpleDateFormat.parse(this).toLocalTime()
@@ -97,6 +106,7 @@ fun String.toLocalTime(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): LocalT
  * @return A nullable LocalTime parsed from the string.
  * @see SimpleDateFormat
  */
+@JvmSynthetic
 fun String.toLocalTimeOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): LocalTime? =
   tryCatchNull {
     simpleDateFormat.applyPattern(pattern)
@@ -116,6 +126,7 @@ fun String.toLocalTimeOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): 
  * @return The formatted date-time string.
  * @see SimpleDateFormat
  */
+@JvmSynthetic
 fun LocalTime.format(pattern: String): String {
   simpleDateFormat.applyPattern(pattern)
   return simpleDateFormat.format(toDate())
@@ -145,6 +156,7 @@ fun LocalTime.format(pattern: String): String {
   ),
   level = DeprecationLevel.WARNING
 )
+@JvmSynthetic
 fun LocalTime.toString(format: String): String {
   simpleDateFormat.applyPattern(format)
   return simpleDateFormat.format(toDate())

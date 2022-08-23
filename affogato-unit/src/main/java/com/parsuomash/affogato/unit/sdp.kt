@@ -18,9 +18,9 @@ import androidx.compose.ui.unit.dp
  * @since 1.0.0
  */
 @Stable
+@get:JvmSynthetic
 val Int.sdp: Dp
-  @Composable @JvmSynthetic
-  get() = getSdp()
+  @Composable get() = getSdp()
 
 @JvmName("_getSdp")
 @Composable

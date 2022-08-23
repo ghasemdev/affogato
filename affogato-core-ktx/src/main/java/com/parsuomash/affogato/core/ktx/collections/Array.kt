@@ -1,4 +1,6 @@
 @file:Suppress("MethodOverloading", "TooManyFunctions", "ArrayPrimitive")
+@file:JvmName("CollectionsUtils")
+@file:JvmMultifileClass
 
 package com.parsuomash.affogato.core.ktx.collections
 
@@ -13,6 +15,7 @@ import com.parsuomash.affogato.core.ktx.tryCatchNull
  * @see asDecimal
  * @see asReversedDecimal
  */
+@get:JvmName("asHex")
 inline val ByteArray.asHex: String
   get() = joinToString(" ") { "%02X".format(it) }
 
@@ -24,6 +27,7 @@ inline val ByteArray.asHex: String
  * @see asDecimal
  * @see asReversedDecimal
  */
+@get:JvmName("asReversedHex")
 inline val ByteArray.asReversedHex: String
   get() = reversedArray().joinToString(" ") { "%02X".format(it) }
 
@@ -35,6 +39,7 @@ inline val ByteArray.asReversedHex: String
  * @see asReversedHex
  * @see asReversedDecimal
  */
+@get:JvmName("asDecimal")
 inline val ByteArray.asDecimal: String
   get() = buildString { this@asDecimal.forEach { append("%02X".format(it).toLong(16)) } }
 
@@ -46,6 +51,7 @@ inline val ByteArray.asDecimal: String
  * @see asReversedHex
  * @see asDecimal
  */
+@get:JvmName("asReversedDecimal")
 inline val ByteArray.asReversedDecimal: String
   get() = buildString {
     this@asReversedDecimal.reversedArray().forEach { append("%02X".format(it).toLong(16)) }
@@ -63,6 +69,7 @@ inline val ByteArray.asReversedDecimal: String
  * @see Int
  * @see IntRange
  */
+@JvmSynthetic
 fun arrayOf(range: IntRange): Array<Int> = range.toList().toTypedArray()
 
 /**
@@ -77,6 +84,7 @@ fun arrayOf(range: IntRange): Array<Int> = range.toList().toTypedArray()
  * @see UInt
  * @see UIntRange
  */
+@JvmSynthetic
 fun arrayOf(range: UIntRange): Array<UInt> = range.toList().toTypedArray()
 
 /**
@@ -91,6 +99,7 @@ fun arrayOf(range: UIntRange): Array<UInt> = range.toList().toTypedArray()
  * @see Long
  * @see LongRange
  */
+@JvmSynthetic
 fun arrayOf(range: LongRange): Array<Long> = range.toList().toTypedArray()
 
 /**
@@ -105,6 +114,7 @@ fun arrayOf(range: LongRange): Array<Long> = range.toList().toTypedArray()
  * @see ULong
  * @see ULongRange
  */
+@JvmSynthetic
 fun arrayOf(range: ULongRange): Array<ULong> = range.toList().toTypedArray()
 
 /**
@@ -119,6 +129,7 @@ fun arrayOf(range: ULongRange): Array<ULong> = range.toList().toTypedArray()
  * @see Int
  * @see IntProgression
  */
+@JvmSynthetic
 fun arrayOf(progression: IntProgression): Array<Int> = progression.toList().toTypedArray()
 
 /**
@@ -133,6 +144,7 @@ fun arrayOf(progression: IntProgression): Array<Int> = progression.toList().toTy
  * @see UInt
  * @see UIntProgression
  */
+@JvmSynthetic
 fun arrayOf(progression: UIntProgression): Array<UInt> = progression.toList().toTypedArray()
 
 /**
@@ -147,6 +159,7 @@ fun arrayOf(progression: UIntProgression): Array<UInt> = progression.toList().to
  * @see Long
  * @see LongProgression
  */
+@JvmSynthetic
 fun arrayOf(progression: LongProgression): Array<Long> = progression.toList().toTypedArray()
 
 /**
@@ -161,6 +174,7 @@ fun arrayOf(progression: LongProgression): Array<Long> = progression.toList().to
  * @see ULong
  * @see ULongProgression
  */
+@JvmSynthetic
 fun arrayOf(progression: ULongProgression): Array<ULong> = progression.toList().toTypedArray()
 
 /**
@@ -175,6 +189,7 @@ fun arrayOf(progression: ULongProgression): Array<ULong> = progression.toList().
  * @see Char
  * @see CharRange
  */
+@JvmSynthetic
 fun arrayOf(range: CharRange): Array<Char> = range.toList().toTypedArray()
 
 /**
@@ -189,6 +204,7 @@ fun arrayOf(range: CharRange): Array<Char> = range.toList().toTypedArray()
  * @see Char
  * @see CharProgression
  */
+@JvmSynthetic
 fun arrayOf(progression: CharProgression): Array<Char> = progression.toList().toTypedArray()
 
 /**
@@ -202,6 +218,7 @@ fun arrayOf(progression: CharProgression): Array<Char> = progression.toList().to
  * @see IntArray
  * @see IntRange
  */
+@JvmSynthetic
 fun intArrayOf(range: IntRange): IntArray = range.toList().toIntArray()
 
 /**
@@ -215,6 +232,7 @@ fun intArrayOf(range: IntRange): IntArray = range.toList().toIntArray()
  * @see IntArray
  * @see IntProgression
  */
+@JvmSynthetic
 fun intArrayOf(progression: IntProgression): IntArray = progression.toList().toIntArray()
 
 /**
@@ -229,6 +247,7 @@ fun intArrayOf(progression: IntProgression): IntArray = progression.toList().toI
  * @see UIntRange
  */
 @ExperimentalUnsignedTypes
+@JvmSynthetic
 fun uintArrayOf(range: UIntRange): UIntArray = range.toList().toUIntArray()
 
 /**
@@ -243,6 +262,7 @@ fun uintArrayOf(range: UIntRange): UIntArray = range.toList().toUIntArray()
  * @see UIntProgression
  */
 @ExperimentalUnsignedTypes
+@JvmSynthetic
 fun uintArrayOf(progression: UIntProgression): UIntArray = progression.toList().toUIntArray()
 
 /**
@@ -256,6 +276,7 @@ fun uintArrayOf(progression: UIntProgression): UIntArray = progression.toList().
  * @see LongArray
  * @see LongRange
  */
+@JvmSynthetic
 fun longArrayOf(range: LongRange): LongArray = range.toList().toLongArray()
 
 /**
@@ -269,6 +290,7 @@ fun longArrayOf(range: LongRange): LongArray = range.toList().toLongArray()
  * @see LongArray
  * @see LongProgression
  */
+@JvmSynthetic
 fun longArrayOf(progression: LongProgression): LongArray = progression.toList().toLongArray()
 
 /**
@@ -283,6 +305,7 @@ fun longArrayOf(progression: LongProgression): LongArray = progression.toList().
  * @see ULongRange
  */
 @ExperimentalUnsignedTypes
+@JvmSynthetic
 fun ulongArrayOf(range: ULongRange): ULongArray = range.toList().toULongArray()
 
 /**
@@ -297,6 +320,7 @@ fun ulongArrayOf(range: ULongRange): ULongArray = range.toList().toULongArray()
  * @see ULongProgression
  */
 @ExperimentalUnsignedTypes
+@JvmSynthetic
 fun ulongArrayOf(progression: ULongProgression): ULongArray = progression.toList().toULongArray()
 
 /**
@@ -310,6 +334,7 @@ fun ulongArrayOf(progression: ULongProgression): ULongArray = progression.toList
  * @see CharArray
  * @see CharRange
  */
+@JvmSynthetic
 fun charArrayOf(range: CharRange): CharArray = range.toList().toCharArray()
 
 /**
@@ -323,6 +348,7 @@ fun charArrayOf(range: CharRange): CharArray = range.toList().toCharArray()
  * @see CharArray
  * @see CharProgression
  */
+@JvmSynthetic
 fun charArrayOf(progression: CharProgression): CharArray = progression.toList().toCharArray()
 
 /**
@@ -338,6 +364,7 @@ fun charArrayOf(progression: CharProgression): CharArray = progression.toList().
  * @since 1.1.0
  * @see arrayOf
  */
+@JvmSynthetic
 fun Array<String>.getOrEmpty(index: Int): String =
   if (index in 0..lastIndex) toList()[index] else ""
 
@@ -368,6 +395,7 @@ inline operator fun <reified T> Array<T>.get(indices: IntRange): Array<T> = slic
  * @see sliceArray
  * @see byteArrayOf
  */
+@JvmSynthetic
 operator fun ByteArray.get(indices: IntRange): ByteArray = sliceArray(indices)
 
 /**
@@ -382,6 +410,7 @@ operator fun ByteArray.get(indices: IntRange): ByteArray = sliceArray(indices)
  * @see sliceArray
  * @see charArrayOf
  */
+@JvmSynthetic
 operator fun CharArray.get(indices: IntRange): CharArray = sliceArray(indices)
 
 /**
@@ -396,6 +425,7 @@ operator fun CharArray.get(indices: IntRange): CharArray = sliceArray(indices)
  * @see sliceArray
  * @see shortArrayOf
  */
+@JvmSynthetic
 operator fun ShortArray.get(indices: IntRange): ShortArray = sliceArray(indices)
 
 /**
@@ -410,6 +440,7 @@ operator fun ShortArray.get(indices: IntRange): ShortArray = sliceArray(indices)
  * @see sliceArray
  * @see intArrayOf
  */
+@JvmSynthetic
 operator fun IntArray.get(indices: IntRange): IntArray = sliceArray(indices)
 
 /**
@@ -424,6 +455,7 @@ operator fun IntArray.get(indices: IntRange): IntArray = sliceArray(indices)
  * @see sliceArray
  * @see longArrayOf
  */
+@JvmSynthetic
 operator fun LongArray.get(indices: IntRange): LongArray = sliceArray(indices)
 
 /**
@@ -439,6 +471,7 @@ operator fun LongArray.get(indices: IntRange): LongArray = sliceArray(indices)
  * @see sliceArray
  * @see floatArrayOf
  */
+@JvmSynthetic
 operator fun FloatArray.get(indices: IntRange): FloatArray = sliceArray(indices)
 
 /**
@@ -454,6 +487,7 @@ operator fun FloatArray.get(indices: IntRange): FloatArray = sliceArray(indices)
  * @see sliceArray
  * @see doubleArrayOf
  */
+@JvmSynthetic
 operator fun DoubleArray.get(indices: IntRange): DoubleArray = sliceArray(indices)
 
 /**
@@ -469,6 +503,7 @@ operator fun DoubleArray.get(indices: IntRange): DoubleArray = sliceArray(indice
  * @see sliceArray
  * @see booleanArrayOf
  */
+@JvmSynthetic
 operator fun BooleanArray.get(indices: IntRange): BooleanArray = sliceArray(indices)
 
 /**
@@ -499,6 +534,7 @@ inline operator fun <reified T> Array<T>.get(indices: IntProgression): Array<T> 
  * @see sliceArray
  * @see byteArrayOf
  */
+@JvmSynthetic
 operator fun ByteArray.get(indices: IntProgression): ByteArray = sliceArray(indices.toList())
 
 /**
@@ -513,6 +549,7 @@ operator fun ByteArray.get(indices: IntProgression): ByteArray = sliceArray(indi
  * @see sliceArray
  * @see charArrayOf
  */
+@JvmSynthetic
 operator fun CharArray.get(indices: IntProgression): CharArray = sliceArray(indices.toList())
 
 /**
@@ -527,6 +564,7 @@ operator fun CharArray.get(indices: IntProgression): CharArray = sliceArray(indi
  * @see sliceArray
  * @see shortArrayOf
  */
+@JvmSynthetic
 operator fun ShortArray.get(indices: IntProgression): ShortArray = sliceArray(indices.toList())
 
 /**
@@ -541,6 +579,7 @@ operator fun ShortArray.get(indices: IntProgression): ShortArray = sliceArray(in
  * @see sliceArray
  * @see intArrayOf
  */
+@JvmSynthetic
 operator fun IntArray.get(indices: IntProgression): IntArray = sliceArray(indices.toList())
 
 /**
@@ -555,6 +594,7 @@ operator fun IntArray.get(indices: IntProgression): IntArray = sliceArray(indice
  * @see sliceArray
  * @see longArrayOf
  */
+@JvmSynthetic
 operator fun LongArray.get(indices: IntProgression): LongArray = sliceArray(indices.toList())
 
 /**
@@ -570,6 +610,7 @@ operator fun LongArray.get(indices: IntProgression): LongArray = sliceArray(indi
  * @see sliceArray
  * @see floatArrayOf
  */
+@JvmSynthetic
 operator fun FloatArray.get(indices: IntProgression): FloatArray = sliceArray(indices.toList())
 
 /**
@@ -585,6 +626,7 @@ operator fun FloatArray.get(indices: IntProgression): FloatArray = sliceArray(in
  * @see sliceArray
  * @see doubleArrayOf
  */
+@JvmSynthetic
 operator fun DoubleArray.get(indices: IntProgression): DoubleArray = sliceArray(indices.toList())
 
 /**
@@ -599,6 +641,7 @@ operator fun DoubleArray.get(indices: IntProgression): DoubleArray = sliceArray(
  * @throws IndexOutOfBoundsException if the range is out of bounds of the array.
  * @see booleanArrayOf
  */
+@JvmSynthetic
 operator fun BooleanArray.get(indices: IntProgression): BooleanArray = sliceArray(indices.toList())
 
 /**
@@ -629,6 +672,7 @@ inline fun <reified T> Array<T>.getOrNull(indices: IntRange): Array<T>? =
  * @see sliceArray
  * @see byteArrayOf
  */
+@JvmSynthetic
 fun ByteArray.getOrNull(indices: IntRange): ByteArray? = tryCatchNull { get(indices) }
 
 /**
@@ -643,6 +687,7 @@ fun ByteArray.getOrNull(indices: IntRange): ByteArray? = tryCatchNull { get(indi
  * @see sliceArray
  * @see charArrayOf
  */
+@JvmSynthetic
 fun CharArray.getOrNull(indices: IntRange): CharArray? = tryCatchNull { get(indices) }
 
 /**
@@ -657,6 +702,7 @@ fun CharArray.getOrNull(indices: IntRange): CharArray? = tryCatchNull { get(indi
  * @see sliceArray
  * @see shortArrayOf
  */
+@JvmSynthetic
 fun ShortArray.getOrNull(indices: IntRange): ShortArray? = tryCatchNull { get(indices) }
 
 /**
@@ -671,6 +717,7 @@ fun ShortArray.getOrNull(indices: IntRange): ShortArray? = tryCatchNull { get(in
  * @see sliceArray
  * @see intArrayOf
  */
+@JvmSynthetic
 fun IntArray.getOrNull(indices: IntRange): IntArray? = tryCatchNull { get(indices) }
 
 /**
@@ -685,6 +732,7 @@ fun IntArray.getOrNull(indices: IntRange): IntArray? = tryCatchNull { get(indice
  * @see sliceArray
  * @see longArrayOf
  */
+@JvmSynthetic
 fun LongArray.getOrNull(indices: IntRange): LongArray? = tryCatchNull { get(indices) }
 
 /**
@@ -701,6 +749,7 @@ fun LongArray.getOrNull(indices: IntRange): LongArray? = tryCatchNull { get(indi
  * @see sliceArray
  * @see floatArrayOf
  */
+@JvmSynthetic
 fun FloatArray.getOrNull(indices: IntRange): FloatArray? = tryCatchNull { get(indices) }
 
 /**
@@ -716,6 +765,7 @@ fun FloatArray.getOrNull(indices: IntRange): FloatArray? = tryCatchNull { get(in
  * @see sliceArray
  * @see doubleArrayOf
  */
+@JvmSynthetic
 fun DoubleArray.getOrNull(indices: IntRange): DoubleArray? = tryCatchNull { get(indices) }
 
 /**
@@ -732,6 +782,7 @@ fun DoubleArray.getOrNull(indices: IntRange): DoubleArray? = tryCatchNull { get(
  * @see sliceArray
  * @see booleanArrayOf
  */
+@JvmSynthetic
 fun BooleanArray.getOrNull(indices: IntRange): BooleanArray? = tryCatchNull { get(indices) }
 
 /**
@@ -762,6 +813,7 @@ inline fun <reified T> Array<T>.getOrNull(indices: IntProgression): Array<T>? =
  * @see sliceArray
  * @see byteArrayOf
  */
+@JvmSynthetic
 fun ByteArray.getOrNull(indices: IntProgression): ByteArray? = tryCatchNull { get(indices) }
 
 /**
@@ -776,6 +828,7 @@ fun ByteArray.getOrNull(indices: IntProgression): ByteArray? = tryCatchNull { ge
  * @see sliceArray
  * @see charArrayOf
  */
+@JvmSynthetic
 fun CharArray.getOrNull(indices: IntProgression): CharArray? = tryCatchNull { get(indices) }
 
 /**
@@ -790,6 +843,7 @@ fun CharArray.getOrNull(indices: IntProgression): CharArray? = tryCatchNull { ge
  * @see sliceArray
  * @see shortArrayOf
  */
+@JvmSynthetic
 fun ShortArray.getOrNull(indices: IntProgression): ShortArray? = tryCatchNull { get(indices) }
 
 /**
@@ -804,6 +858,7 @@ fun ShortArray.getOrNull(indices: IntProgression): ShortArray? = tryCatchNull { 
  * @see sliceArray
  * @see intArrayOf
  */
+@JvmSynthetic
 fun IntArray.getOrNull(indices: IntProgression): IntArray? = tryCatchNull { get(indices) }
 
 /**
@@ -818,6 +873,7 @@ fun IntArray.getOrNull(indices: IntProgression): IntArray? = tryCatchNull { get(
  * @see sliceArray
  * @see longArrayOf
  */
+@JvmSynthetic
 fun LongArray.getOrNull(indices: IntProgression): LongArray? = tryCatchNull { get(indices) }
 
 /**
@@ -834,6 +890,7 @@ fun LongArray.getOrNull(indices: IntProgression): LongArray? = tryCatchNull { ge
  * @see sliceArray
  * @see floatArrayOf
  */
+@JvmSynthetic
 fun FloatArray.getOrNull(indices: IntProgression): FloatArray? = tryCatchNull { get(indices) }
 
 /**
@@ -850,6 +907,7 @@ fun FloatArray.getOrNull(indices: IntProgression): FloatArray? = tryCatchNull { 
  * @see sliceArray
  * @see doubleArrayOf
  */
+@JvmSynthetic
 fun DoubleArray.getOrNull(indices: IntProgression): DoubleArray? = tryCatchNull { get(indices) }
 
 /**
@@ -866,6 +924,7 @@ fun DoubleArray.getOrNull(indices: IntProgression): DoubleArray? = tryCatchNull 
  * @see sliceArray
  * @see booleanArrayOf
  */
+@JvmSynthetic
 fun BooleanArray.getOrNull(indices: IntProgression): BooleanArray? = tryCatchNull { get(indices) }
 
 /**
@@ -898,6 +957,7 @@ inline fun <reified T> Array<T>.getOrElse(
  * @see sliceArray
  * @see byteArrayOf
  */
+@JvmSynthetic
 inline fun ByteArray.getOrElse(
   indices: IntRange,
   defaultValue: () -> ByteArray
@@ -915,6 +975,7 @@ inline fun ByteArray.getOrElse(
  * @see sliceArray
  * @see charArrayOf
  */
+@JvmSynthetic
 inline fun CharArray.getOrElse(
   indices: IntRange,
   defaultValue: () -> CharArray
@@ -932,6 +993,7 @@ inline fun CharArray.getOrElse(
  * @see sliceArray
  * @see shortArrayOf
  */
+@JvmSynthetic
 inline fun ShortArray.getOrElse(
   indices: IntRange,
   defaultValue: () -> ShortArray
@@ -949,6 +1011,7 @@ inline fun ShortArray.getOrElse(
  * @see sliceArray
  * @see intArrayOf
  */
+@JvmSynthetic
 inline fun IntArray.getOrElse(
   indices: IntRange,
   defaultValue: () -> IntArray
@@ -966,6 +1029,7 @@ inline fun IntArray.getOrElse(
  * @see sliceArray
  * @see longArrayOf
  */
+@JvmSynthetic
 inline fun LongArray.getOrElse(
   indices: IntRange,
   defaultValue: () -> LongArray
@@ -985,6 +1049,7 @@ inline fun LongArray.getOrElse(
  * @see sliceArray
  * @see floatArrayOf
  */
+@JvmSynthetic
 inline fun FloatArray.getOrElse(
   indices: IntRange,
   defaultValue: () -> FloatArray
@@ -1004,6 +1069,7 @@ inline fun FloatArray.getOrElse(
  * @see sliceArray
  * @see doubleArrayOf
  */
+@JvmSynthetic
 inline fun DoubleArray.getOrElse(
   indices: IntRange,
   defaultValue: () -> DoubleArray
@@ -1023,6 +1089,7 @@ inline fun DoubleArray.getOrElse(
  * @see sliceArray
  * @see booleanArrayOf
  */
+@JvmSynthetic
 inline fun BooleanArray.getOrElse(
   indices: IntRange,
   defaultValue: () -> BooleanArray
@@ -1060,6 +1127,7 @@ inline fun <reified T> Array<T>.getOrElse(
  * @see sliceArray
  * @see byteArrayOf
  */
+@JvmSynthetic
 inline fun ByteArray.getOrElse(
   indices: IntProgression,
   defaultValue: () -> ByteArray
@@ -1077,6 +1145,7 @@ inline fun ByteArray.getOrElse(
  * @see sliceArray
  * @see charArrayOf
  */
+@JvmSynthetic
 inline fun CharArray.getOrElse(
   indices: IntProgression,
   defaultValue: () -> CharArray
@@ -1096,6 +1165,7 @@ inline fun CharArray.getOrElse(
  * @see sliceArray
  * @see shortArrayOf
  */
+@JvmSynthetic
 inline fun ShortArray.getOrElse(
   indices: IntProgression,
   defaultValue: () -> ShortArray
@@ -1113,6 +1183,7 @@ inline fun ShortArray.getOrElse(
  * @see sliceArray
  * @see intArrayOf
  */
+@JvmSynthetic
 inline fun IntArray.getOrElse(
   indices: IntProgression,
   defaultValue: () -> IntArray
@@ -1130,6 +1201,7 @@ inline fun IntArray.getOrElse(
  * @see sliceArray
  * @see longArrayOf
  */
+@JvmSynthetic
 inline fun LongArray.getOrElse(
   indices: IntProgression,
   defaultValue: () -> LongArray
@@ -1149,6 +1221,7 @@ inline fun LongArray.getOrElse(
  * @see sliceArray
  * @see floatArrayOf
  */
+@JvmSynthetic
 inline fun FloatArray.getOrElse(
   indices: IntProgression,
   defaultValue: () -> FloatArray
@@ -1168,6 +1241,7 @@ inline fun FloatArray.getOrElse(
  * @see sliceArray
  * @see doubleArrayOf
  */
+@JvmSynthetic
 inline fun DoubleArray.getOrElse(
   indices: IntProgression,
   defaultValue: () -> DoubleArray
@@ -1187,6 +1261,7 @@ inline fun DoubleArray.getOrElse(
  * @see sliceArray
  * @see booleanArrayOf
  */
+@JvmSynthetic
 inline fun BooleanArray.getOrElse(
   indices: IntProgression,
   defaultValue: () -> BooleanArray
@@ -1223,6 +1298,7 @@ inline fun <reified T> Array<T>.head(n: Int = 10): List<T> = take(n)
  * @see take
  * @see byteArrayOf
  */
+@JvmOverloads
 fun ByteArray.head(n: Int = 10): List<Byte> = take(n)
 
 /**
@@ -1239,6 +1315,7 @@ fun ByteArray.head(n: Int = 10): List<Byte> = take(n)
  * @see take
  * @see charArrayOf
  */
+@JvmOverloads
 fun CharArray.head(n: Int = 10): List<Char> = take(n)
 
 /**
@@ -1255,6 +1332,7 @@ fun CharArray.head(n: Int = 10): List<Char> = take(n)
  * @see take
  * @see shortArrayOf
  */
+@JvmOverloads
 fun ShortArray.head(n: Int = 10): List<Short> = take(n)
 
 /**
@@ -1271,6 +1349,7 @@ fun ShortArray.head(n: Int = 10): List<Short> = take(n)
  * @see take
  * @see intArrayOf
  */
+@JvmOverloads
 fun IntArray.head(n: Int = 10): List<Int> = take(n)
 
 /**
@@ -1287,6 +1366,7 @@ fun IntArray.head(n: Int = 10): List<Int> = take(n)
  * @see take
  * @see longArrayOf
  */
+@JvmOverloads
 fun LongArray.head(n: Int = 10): List<Long> = take(n)
 
 /**
@@ -1303,6 +1383,7 @@ fun LongArray.head(n: Int = 10): List<Long> = take(n)
  * @see take
  * @see floatArrayOf
  */
+@JvmOverloads
 fun FloatArray.head(n: Int = 10): List<Float> = take(n)
 
 /**
@@ -1319,6 +1400,7 @@ fun FloatArray.head(n: Int = 10): List<Float> = take(n)
  * @see take
  * @see doubleArrayOf
  */
+@JvmOverloads
 fun DoubleArray.head(n: Int = 10): List<Double> = take(n)
 
 /**
@@ -1335,6 +1417,7 @@ fun DoubleArray.head(n: Int = 10): List<Double> = take(n)
  * @see take
  * @see booleanArrayOf
  */
+@JvmOverloads
 fun BooleanArray.head(n: Int = 10): List<Boolean> = take(n)
 
 /**
@@ -1370,6 +1453,7 @@ inline fun <reified T> Array<T>.tail(n: Int = 10): List<T> = (size - n).let {
  * @see drop
  * @see byteArrayOf
  */
+@JvmOverloads
 fun ByteArray.tail(n: Int = 10): List<Byte> = (size - n).let { drop(if (it < 0) 0 else it) }
 
 /**
@@ -1386,6 +1470,7 @@ fun ByteArray.tail(n: Int = 10): List<Byte> = (size - n).let { drop(if (it < 0) 
  * @see drop
  * @see charArrayOf
  */
+@JvmOverloads
 fun CharArray.tail(n: Int = 10): List<Char> = (size - n).let { drop(if (it < 0) 0 else it) }
 
 /**
@@ -1402,6 +1487,7 @@ fun CharArray.tail(n: Int = 10): List<Char> = (size - n).let { drop(if (it < 0) 
  * @see drop
  * @see shortArrayOf
  */
+@JvmOverloads
 fun ShortArray.tail(n: Int = 10): List<Short> = (size - n).let { drop(if (it < 0) 0 else it) }
 
 /**
@@ -1418,6 +1504,7 @@ fun ShortArray.tail(n: Int = 10): List<Short> = (size - n).let { drop(if (it < 0
  * @see drop
  * @see intArrayOf
  */
+@JvmOverloads
 fun IntArray.tail(n: Int = 10): List<Int> = (size - n).let { drop(if (it < 0) 0 else it) }
 
 /**
@@ -1434,6 +1521,7 @@ fun IntArray.tail(n: Int = 10): List<Int> = (size - n).let { drop(if (it < 0) 0 
  * @see drop
  * @see longArrayOf
  */
+@JvmOverloads
 fun LongArray.tail(n: Int = 10): List<Long> = (size - n).let { drop(if (it < 0) 0 else it) }
 
 /**
@@ -1450,6 +1538,7 @@ fun LongArray.tail(n: Int = 10): List<Long> = (size - n).let { drop(if (it < 0) 
  * @see drop
  * @see floatArrayOf
  */
+@JvmOverloads
 fun FloatArray.tail(n: Int = 10): List<Float> = (size - n).let { drop(if (it < 0) 0 else it) }
 
 /**
@@ -1466,6 +1555,7 @@ fun FloatArray.tail(n: Int = 10): List<Float> = (size - n).let { drop(if (it < 0
  * @see drop
  * @see doubleArrayOf
  */
+@JvmOverloads
 fun DoubleArray.tail(n: Int = 10): List<Double> = (size - n).let { drop(if (it < 0) 0 else it) }
 
 /**
@@ -1482,6 +1572,7 @@ fun DoubleArray.tail(n: Int = 10): List<Double> = (size - n).let { drop(if (it <
  * @see drop
  * @see booleanArrayOf
  */
+@JvmOverloads
 fun BooleanArray.tail(n: Int = 10): List<Boolean> = (size - n).let { drop(if (it < 0) 0 else it) }
 
 /**
@@ -1869,6 +1960,7 @@ inline fun <reified T> Array<T>.rotateLeft(n: Int = 1): Array<T> {
  * @see java.util.Collections.rotate
  * @see byteArrayOf
  */
+@JvmOverloads
 fun ByteArray.rotateLeft(n: Int = 1): ByteArray {
   require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
@@ -1889,6 +1981,7 @@ fun ByteArray.rotateLeft(n: Int = 1): ByteArray {
  * @see java.util.Collections.rotate
  * @see shortArrayOf
  */
+@JvmOverloads
 fun ShortArray.rotateLeft(n: Int = 1): ShortArray {
   require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
@@ -1909,6 +2002,7 @@ fun ShortArray.rotateLeft(n: Int = 1): ShortArray {
  * @see java.util.Collections.rotate
  * @see charArrayOf
  */
+@JvmOverloads
 fun CharArray.rotateLeft(n: Int = 1): CharArray {
   require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
@@ -1929,6 +2023,7 @@ fun CharArray.rotateLeft(n: Int = 1): CharArray {
  * @see java.util.Collections.rotate
  * @see intArrayOf
  */
+@JvmOverloads
 fun IntArray.rotateLeft(n: Int = 1): IntArray {
   require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
@@ -1949,6 +2044,7 @@ fun IntArray.rotateLeft(n: Int = 1): IntArray {
  * @see java.util.Collections.rotate
  * @see longArrayOf
  */
+@JvmOverloads
 fun LongArray.rotateLeft(n: Int = 1): LongArray {
   require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
@@ -1969,6 +2065,7 @@ fun LongArray.rotateLeft(n: Int = 1): LongArray {
  * @see java.util.Collections.rotate
  * @see floatArrayOf
  */
+@JvmOverloads
 fun FloatArray.rotateLeft(n: Int = 1): FloatArray {
   require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
@@ -1989,6 +2086,7 @@ fun FloatArray.rotateLeft(n: Int = 1): FloatArray {
  * @see java.util.Collections.rotate
  * @see doubleArrayOf
  */
+@JvmOverloads
 fun DoubleArray.rotateLeft(n: Int = 1): DoubleArray {
   require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
@@ -2009,6 +2107,7 @@ fun DoubleArray.rotateLeft(n: Int = 1): DoubleArray {
  * @see java.util.Collections.rotate
  * @see booleanArrayOf
  */
+@JvmOverloads
 fun BooleanArray.rotateLeft(n: Int = 1): BooleanArray {
   require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
@@ -2049,6 +2148,7 @@ inline fun <reified T> Array<T>.rotateRight(n: Int = 1): Array<T> {
  * @see java.util.Collections.rotate
  * @see byteArrayOf
  */
+@JvmOverloads
 fun ByteArray.rotateRight(n: Int = 1): ByteArray {
   require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
@@ -2069,6 +2169,7 @@ fun ByteArray.rotateRight(n: Int = 1): ByteArray {
  * @see java.util.Collections.rotate
  * @see shortArrayOf
  */
+@JvmOverloads
 fun ShortArray.rotateRight(n: Int = 1): ShortArray {
   require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
@@ -2089,6 +2190,7 @@ fun ShortArray.rotateRight(n: Int = 1): ShortArray {
  * @see java.util.Collections.rotate
  * @see charArrayOf
  */
+@JvmOverloads
 fun CharArray.rotateRight(n: Int = 1): CharArray {
   require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
@@ -2109,6 +2211,7 @@ fun CharArray.rotateRight(n: Int = 1): CharArray {
  * @see java.util.Collections.rotate
  * @see intArrayOf
  */
+@JvmOverloads
 fun IntArray.rotateRight(n: Int = 1): IntArray {
   require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
@@ -2129,6 +2232,7 @@ fun IntArray.rotateRight(n: Int = 1): IntArray {
  * @see java.util.Collections.rotate
  * @see longArrayOf
  */
+@JvmOverloads
 fun LongArray.rotateRight(n: Int = 1): LongArray {
   require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
@@ -2149,6 +2253,7 @@ fun LongArray.rotateRight(n: Int = 1): LongArray {
  * @see java.util.Collections.rotate
  * @see floatArrayOf
  */
+@JvmOverloads
 fun FloatArray.rotateRight(n: Int = 1): FloatArray {
   require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
@@ -2169,6 +2274,7 @@ fun FloatArray.rotateRight(n: Int = 1): FloatArray {
  * @see java.util.Collections.rotate
  * @see doubleArrayOf
  */
+@JvmOverloads
 fun DoubleArray.rotateRight(n: Int = 1): DoubleArray {
   require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
@@ -2189,6 +2295,7 @@ fun DoubleArray.rotateRight(n: Int = 1): DoubleArray {
  * @see java.util.Collections.rotate
  * @see booleanArrayOf
  */
+@JvmOverloads
 fun BooleanArray.rotateRight(n: Int = 1): BooleanArray {
   require(n >= 1) { ROTATE_N_SIZE }
   val list = this.toMutableList()
