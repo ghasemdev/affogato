@@ -1,8 +1,6 @@
-@file:JvmSynthetic
-
 package com.parsuomash.affogato.unit.processor.utils
 
-internal object ErrorMassage {
+object ErrorMassage {
   const val ERROR_MASSAGE_DIMEN_TYPES = """Use valid Dimen types `@Dimen(type "sp|dp")`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"""
 

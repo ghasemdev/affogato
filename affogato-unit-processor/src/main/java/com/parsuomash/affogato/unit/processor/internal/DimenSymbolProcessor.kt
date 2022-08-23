@@ -1,4 +1,3 @@
-@file:JvmSynthetic
 @file:Suppress("ForbiddenClassName", "MaxLineLength", "LongMethod")
 
 package com.parsuomash.affogato.unit.processor.internal
@@ -18,7 +17,7 @@ import com.parsuomash.affogato.unit.processor.utils.DimenValidator
 import com.parsuomash.affogato.unit.processor.utils.DimenValidator.Companion.COLON_SYMBOL
 import com.parsuomash.affogato.unit.processor.utils.DimenValidator.Companion.EQUALS_SYMBOL
 
-internal class DimenSymbolProcessor(
+class DimenSymbolProcessor(
   private val config: DimenConfig,
   private val codeGenerator: CodeGenerator,
   private val logger: KSPLogger

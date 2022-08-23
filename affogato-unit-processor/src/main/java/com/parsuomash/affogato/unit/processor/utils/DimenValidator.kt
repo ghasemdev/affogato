@@ -1,5 +1,3 @@
-@file:JvmSynthetic
-
 package com.parsuomash.affogato.unit.processor.utils
 
 import com.google.devtools.ksp.processing.KSPLogger
@@ -11,7 +9,7 @@ import com.parsuomash.affogato.unit.processor.utils.ErrorMassage.ERROR_MASSAGE_V
 import com.parsuomash.affogato.unit.processor.utils.ErrorMassage.ERROR_MASSAGE_VALUES_EQUALS_SIZE
 import com.parsuomash.affogato.unit.processor.utils.ErrorMassage.ERROR_MASSAGE_VALUES_SPLIT_TWO_PART
 
-internal class DimenValidator(
+class DimenValidator(
   private val dimenTypes: List<String?>,
   private val dimenValues: List<List<*>?>,
   private val dimenClassNames: List<String?>,

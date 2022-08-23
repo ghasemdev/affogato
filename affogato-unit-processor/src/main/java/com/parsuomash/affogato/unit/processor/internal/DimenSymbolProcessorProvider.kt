@@ -1,4 +1,3 @@
-@file:JvmSynthetic
 @file:Suppress("ForbiddenClassName")
 
 package com.parsuomash.affogato.unit.processor.internal
@@ -7,7 +6,7 @@ import com.google.devtools.ksp.processing.SymbolProcessor
 import com.google.devtools.ksp.processing.SymbolProcessorEnvironment
 import com.google.devtools.ksp.processing.SymbolProcessorProvider
 
-internal class DimenSymbolProcessorProvider : SymbolProcessorProvider {
+class DimenSymbolProcessorProvider : SymbolProcessorProvider {
   override fun create(environment: SymbolProcessorEnvironment): SymbolProcessor =
     with(environment) {
       DimenSymbolProcessor(
