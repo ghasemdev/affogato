@@ -15,6 +15,7 @@ import com.parsuomash.affogato.core.ktx.tryCatchNull
  * @throws IllegalArgumentException when n < 0.
  * @see String.repeat
  */
+@JvmSynthetic
 operator fun String.times(n: Int): String = repeat(n)
 
 /**
@@ -30,6 +31,7 @@ operator fun String.times(n: Int): String = repeat(n)
  * @throws IllegalArgumentException when n < 0.
  * @see times
  */
+@JvmSynthetic
 operator fun Char.times(n: Int): String = toString() * n
 
 /**
@@ -46,6 +48,7 @@ operator fun Char.times(n: Int): String = toString() * n
  * @see Boolean.not
  * @see Boolean.or
  */
+@JvmSynthetic
 infix fun Boolean.nor(other: Boolean): Boolean = (this or other).not()
 
 /**
@@ -62,6 +65,7 @@ infix fun Boolean.nor(other: Boolean): Boolean = (this or other).not()
  * @see Boolean.not
  * @see Boolean.and
  */
+@JvmSynthetic
 infix fun Boolean.nand(other: Boolean): Boolean = (this and other).not()
 
 /**
@@ -78,6 +82,7 @@ infix fun Boolean.nand(other: Boolean): Boolean = (this and other).not()
  * @see Boolean.not
  * @see Boolean.xor
  */
+@JvmSynthetic
 infix fun Boolean.xnor(other: Boolean): Boolean = (this xor other).not()
 
 /**
@@ -91,6 +96,7 @@ infix fun Boolean.xnor(other: Boolean): Boolean = (this xor other).not()
  * @since 1.1.0
  * @see inv
  */
+@JvmSynthetic
 operator fun Int.not(): Int = inv()
 
 /**
@@ -106,6 +112,7 @@ operator fun Int.not(): Int = inv()
  * @since 1.1.0
  * @see Int.or
  */
+@JvmSynthetic
 infix fun Int.nor(other: Int): Int = (this or other).not()
 
 /**
@@ -121,6 +128,7 @@ infix fun Int.nor(other: Int): Int = (this or other).not()
  * @since 1.1.0
  * @see Int.and
  */
+@JvmSynthetic
 infix fun Int.nand(other: Int): Int = (this and other).not()
 
 /**
@@ -136,6 +144,7 @@ infix fun Int.nand(other: Int): Int = (this and other).not()
  * @since 1.1.0
  * @see Int.xor
  */
+@JvmSynthetic
 infix fun Int.xnor(other: Int): Int = (this xor other).not()
 
 /**
@@ -150,6 +159,7 @@ infix fun Int.xnor(other: Int): Int = (this xor other).not()
  * @since 1.1.0
  * @throws IllegalArgumentException when n != 0 or n != 1.
  */
+@JvmSynthetic
 fun Int.toBoolean(): Boolean = when (this) {
   1 -> true
   0 -> false
@@ -167,6 +177,7 @@ fun Int.toBoolean(): Boolean = when (this) {
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun Int.toBooleanOrNull(): Boolean? = tryCatchNull { toBoolean() }
 
 /**
@@ -179,4 +190,5 @@ fun Int.toBooleanOrNull(): Boolean? = tryCatchNull { toBoolean() }
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun Boolean.toInt(): Int = if (this) 1 else 0

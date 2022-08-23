@@ -1,5 +1,3 @@
-@file:Suppress("unused")
-
 package com.parsuomash.affogato.metrica.ktx.profile
 
 import com.yandex.metrica.YandexMetrica
@@ -35,6 +33,7 @@ import com.yandex.metrica.profile.UserProfileUpdate
  * @see UserProfile.Builder
  * @see UserProfile
  */
+@JvmSynthetic
 inline fun metricaProfile(init: UserProfile.Builder.() -> Unit): UserProfile {
   val builder: UserProfile.Builder = UserProfile.newBuilder().also { init(it) }
   return builder.build()
@@ -47,6 +46,7 @@ inline fun metricaProfile(init: UserProfile.Builder.() -> Unit): UserProfile {
  * @return The UserProfileUpdate object.
  * @see NumberAttribute.withValue
  */
+@JvmSynthetic
 fun NumberAttribute.withValue(value: Int): UserProfileUpdate<out Kf> =
   withValue(value.toDouble())
 
@@ -57,5 +57,6 @@ fun NumberAttribute.withValue(value: Int): UserProfileUpdate<out Kf> =
  * @return The UserProfileUpdate object.
  * @see CounterAttribute.withDelta
  */
+@JvmSynthetic
 fun CounterAttribute.withDelta(value: Int): UserProfileUpdate<out Kf> =
   withDelta(value.toDouble())

@@ -17,7 +17,8 @@ import kotlinx.datetime.LocalTime
  * ```
  * @since 1.1.0
  */
-fun Long.toDate(): Date = Date(this)
+fun Long.toDate(): Date =
+  Date(this)
 
 /**
  * Convert [Duration] to [Date].
@@ -28,12 +29,15 @@ fun Long.toDate(): Date = Date(this)
  * ```
  * @since 1.1.0
  */
-fun Duration.toDate(): Date = Date(inWholeMilliseconds)
+@JvmSynthetic
+fun Duration.toDate(): Date =
+  Date(inWholeMilliseconds)
 
 /**
  * Convert [Date] to [LocalDate].
  * @since 1.1.0
  */
+@JvmSynthetic
 fun Date.toLocalDate(): LocalDate {
   val calendar = Calendar.getInstance().apply { time = this@toLocalDate }
   return LocalDate(calendar.year, calendar.month + 1, calendar.dayOfMonth)
@@ -43,6 +47,7 @@ fun Date.toLocalDate(): LocalDate {
  * Convert [Date] to [LocalTime].
  * @since 1.1.0
  */
+@JvmSynthetic
 fun Date.toLocalTime(): LocalTime {
   val calendar = Calendar.getInstance().apply { time = this@toLocalTime }
   return LocalTime(calendar.hourOfDay, calendar.minute, calendar.second)
@@ -52,6 +57,7 @@ fun Date.toLocalTime(): LocalTime {
  * Convert [Date] to [LocalDateTime].
  * @since 1.1.0
  */
+@JvmSynthetic
 fun Date.toLocalDateTime(): LocalDateTime {
   val calendar = Calendar.getInstance().apply { time = this@toLocalDateTime }
   with(calendar) {
@@ -63,7 +69,8 @@ fun Date.toLocalDateTime(): LocalDateTime {
  * Convert [Date] to [Calendar].
  * @since 1.1.0
  */
-fun Date.toCalendar(): Calendar = Calendar.getInstance().apply { time = this@toCalendar }
+fun Date.toCalendar(): Calendar =
+  Calendar.getInstance().apply { time = this@toCalendar }
 
 /**
  * Two days are considered to be the same if they have the same day.
@@ -83,25 +90,33 @@ infix fun Date.isSameDay(date: Date): Boolean =
  * Adds the other value to this value.
  * @since 1.1.0
  */
-operator fun Date.plus(other: Date): Date = Date(time + other.time)
+@JvmSynthetic
+operator fun Date.plus(other: Date): Date =
+  Date(time + other.time)
 
 /**
  * Subtracts the other value from this value.
  * @since 1.1.0
  */
-operator fun Date.minus(other: Date): Date = Date(time - other.time)
+@JvmSynthetic
+operator fun Date.minus(other: Date): Date =
+  Date(time - other.time)
 
 /**
  * Adds the [Duration] value to this [Date].
  * @since 1.1.0
  */
-operator fun Date.plus(other: Duration): Date = Date(time + other.inWholeMilliseconds)
+@JvmSynthetic
+operator fun Date.plus(other: Duration): Date =
+  Date(time + other.inWholeMilliseconds)
 
 /**
  * Subtracts the [Duration] value from this [Date].
  * @since 1.1.0
  */
-operator fun Date.minus(other: Duration): Date = Date(time - other.inWholeMilliseconds)
+@JvmSynthetic
+operator fun Date.minus(other: Duration): Date =
+  Date(time - other.inWholeMilliseconds)
 
 /**
  * Produce a date from the given strings value and [pattern].
@@ -118,6 +133,7 @@ operator fun Date.minus(other: Duration): Date = Date(time - other.inWholeMillis
  * @return A Date parsed from the string.
  * @see SimpleDateFormat
  */
+@JvmOverloads
 fun String.toDate(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): Date {
   simpleDateFormat.applyPattern(pattern)
   return simpleDateFormat.parse(this)
@@ -136,6 +152,7 @@ fun String.toDate(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): Date {
  * @return A nullable Date parsed from the string.
  * @see SimpleDateFormat
  */
+@JvmOverloads
 fun String.toDateOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): Date? = tryCatchNull {
   simpleDateFormat.applyPattern(pattern)
   simpleDateFormat.parse(this)

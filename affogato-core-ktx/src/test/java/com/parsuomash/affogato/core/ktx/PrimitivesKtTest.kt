@@ -48,4 +48,19 @@ internal class PrimitivesKtTest {
     assertThat(1.0.isNegative).isFalse()
     assertThat((-1.0).isNegative).isTrue()
   }
+
+  @Test
+  fun `checking positivity`() {
+    assertThat(1.isPositive).isTrue()
+    assertThat((-1).isPositive).isFalse()
+
+    assertThat(1L.isPositive).isTrue()
+    assertThat((-1L).isNegative).isFalse()
+
+    assertThat(1F.isPositive).isTrue()
+    assertThat((-1F).isPositive).isFalse()
+
+    assertThat(1.0.isPositive).isTrue()
+    assertThat((-1.0).isPositive).isFalse()
+  }
 }

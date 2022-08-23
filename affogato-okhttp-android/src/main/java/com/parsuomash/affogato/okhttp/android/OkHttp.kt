@@ -81,6 +81,7 @@ import okhttp3.Response
  * @since 1.5.0
  * @see OkHttpClient
  */
+@JvmSynthetic
 inline fun okHttp(
   init: OkHttpClient.Builder.() -> Unit
 ): OkHttpClient {
@@ -92,6 +93,7 @@ inline fun okHttp(
  * @since 1.5.0
  * @see OkHttpClient
  */
+@JvmSynthetic
 inline fun OkHttpClient.new(
   init: OkHttpClient.Builder.() -> Unit
 ): OkHttpClient {
@@ -103,6 +105,7 @@ inline fun OkHttpClient.new(
  * @since 1.5.0
  * @see Response
  */
+@JvmSynthetic
 inline fun Response.new(
   init: Response.Builder.() -> Unit
 ): Response {

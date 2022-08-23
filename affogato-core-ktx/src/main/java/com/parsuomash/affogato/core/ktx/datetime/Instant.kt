@@ -18,18 +18,23 @@ import kotlinx.datetime.toLocalDateTime
  * ```
  * @since 1.1.0
  */
-fun Long.toInstant(): Instant = Instant.fromEpochMilliseconds(this)
+@JvmSynthetic
+fun Long.toInstant(): Instant =
+  Instant.fromEpochMilliseconds(this)
 
 /**
  * Convert [Instant] to [Date].
  * @since 1.1.0
  */
-fun Instant.toDate(): Date = Date(toEpochMilliseconds())
+@JvmSynthetic
+fun Instant.toDate(): Date =
+  Date(toEpochMilliseconds())
 
 /**
  * Convert [Instant] to [Calendar].
  * @since 1.1.0
  */
+@JvmSynthetic
 fun Instant.toCalendar(): Calendar =
   Calendar.getInstance().apply { time = Date(toEpochMilliseconds()) }
 
@@ -37,6 +42,7 @@ fun Instant.toCalendar(): Calendar =
  * Convert [Instant] to [LocalDate].
  * @since 1.1.0
  */
+@JvmSynthetic
 fun Instant.toLocalDate(timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDate =
   toLocalDateTime(timeZone).date
 
@@ -44,6 +50,7 @@ fun Instant.toLocalDate(timeZone: TimeZone = TimeZone.currentSystemDefault()): L
  * Convert [Instant] to [LocalTime].
  * @since 1.1.0
  */
+@JvmSynthetic
 fun Instant.toLocalTime(timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalTime =
   toLocalDateTime(timeZone).time
 
@@ -59,6 +66,7 @@ fun Instant.toLocalTime(timeZone: TimeZone = TimeZone.currentSystemDefault()): L
  * @since 1.1.0
  * @see now
  */
+@JvmSynthetic
 infix fun Instant.isSameDay(date: Instant): Boolean =
   toLocalDate().dayOfYear == date.toLocalDate().dayOfYear
 
@@ -77,6 +85,7 @@ infix fun Instant.isSameDay(date: Instant): Boolean =
  * @return An Instant parsed from the string.
  * @see SimpleDateFormat
  */
+@JvmSynthetic
 fun String.toInstant(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): Instant {
   simpleDateFormat.applyPattern(pattern)
   val date = simpleDateFormat.parse(this)
@@ -96,6 +105,7 @@ fun String.toInstant(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): Instant 
  * @return A nullable Instant parsed from the string.
  * @see SimpleDateFormat
  */
+@JvmSynthetic
 fun String.toInstantOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): Instant? =
   tryCatchNull {
     simpleDateFormat.applyPattern(pattern)
@@ -115,6 +125,7 @@ fun String.toInstantOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): In
  * @return The formatted date-time string.
  * @see SimpleDateFormat
  */
+@JvmSynthetic
 fun Instant.format(pattern: String): String {
   simpleDateFormat.applyPattern(pattern)
   return simpleDateFormat.format(toDate())
@@ -143,6 +154,7 @@ fun Instant.format(pattern: String): String {
   ),
   level = DeprecationLevel.WARNING
 )
+@JvmSynthetic
 fun Instant.toString(format: String): String {
   simpleDateFormat.applyPattern(format)
   return simpleDateFormat.format(toDate())

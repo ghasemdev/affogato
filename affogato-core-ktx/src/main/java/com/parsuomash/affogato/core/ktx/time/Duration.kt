@@ -13,6 +13,7 @@ import kotlin.time.toDuration
  * ```
  * @since 1.1.2
  */
+@get:JvmSynthetic
 inline val Int.weeks: Duration
   get() = toDuration(DurationUnit.DAYS) * 7
 
@@ -25,6 +26,7 @@ inline val Int.weeks: Duration
  * ```
  * @since 1.1.2
  */
+@get:JvmSynthetic
 inline val Long.weeks: Duration
   get() = toDuration(DurationUnit.DAYS) * 7
 
@@ -41,6 +43,7 @@ inline val Long.weeks: Duration
  * @since 1.1.2
  * @throws IllegalArgumentException if this [Double] value is `NaN`.
  */
+@get:JvmSynthetic
 inline val Double.weeks: Duration
   get() = toDuration(DurationUnit.DAYS) * 7
 
@@ -53,6 +56,7 @@ inline val Double.weeks: Duration
  * ```
  * @since 1.1.0
  */
+@get:JvmSynthetic
 inline val Int.months: Duration
   get() = toDuration(DurationUnit.DAYS) * 30
 
@@ -65,6 +69,7 @@ inline val Int.months: Duration
  * ```
  * @since 1.1.0
  */
+@get:JvmSynthetic
 inline val Long.months: Duration
   get() = toDuration(DurationUnit.DAYS) * 30
 
@@ -81,6 +86,7 @@ inline val Long.months: Duration
  * @since 1.1.0
  * @throws IllegalArgumentException if this [Double] value is `NaN`.
  */
+@get:JvmSynthetic
 inline val Double.months: Duration
   get() = toDuration(DurationUnit.DAYS) * 30
 
@@ -93,6 +99,7 @@ inline val Double.months: Duration
  * ```
  * @since 1.1.0
  */
+@get:JvmSynthetic
 inline val Int.years: Duration
   get() = toDuration(DurationUnit.DAYS) * 365
 
@@ -105,6 +112,7 @@ inline val Int.years: Duration
  * ```
  * @since 1.1.0
  */
+@get:JvmSynthetic
 inline val Long.years: Duration
   get() = toDuration(DurationUnit.DAYS) * 365
 
@@ -121,5 +129,6 @@ inline val Long.years: Duration
  * @since 1.1.0
  * @throws IllegalArgumentException if this [Double] value is `NaN`.
  */
+@get:JvmSynthetic
 inline val Double.years: Duration
   get() = toDuration(DurationUnit.DAYS) * 365

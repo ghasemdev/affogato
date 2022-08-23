@@ -7,6 +7,11 @@ plugins {
 android {
   compileSdk = 33
   buildToolsVersion = "33.0.0"
+  defaultConfig {
+    minSdk = 16
+    targetSdk = 33
+    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+  }
   compileOptions {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
@@ -24,7 +29,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-logger-android"
-        version = "1.5.0"
+        version = "1.5.1"
 
         from(components["release"])
       }

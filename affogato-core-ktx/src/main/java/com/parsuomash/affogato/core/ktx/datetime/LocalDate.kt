@@ -22,6 +22,7 @@ import kotlinx.datetime.todayIn
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun Long.toLocalDate(): LocalDate {
   val calendar = Calendar.getInstance().apply { time = Date(this@toLocalDate) }
   return LocalDate(calendar.year, calendar.month + 1, calendar.dayOfMonth)
@@ -31,6 +32,7 @@ fun Long.toLocalDate(): LocalDate {
  * Convert [LocalDate] to [Date].
  * @since 1.1.0
  */
+@JvmSynthetic
 fun LocalDate.toDate(): Date = Calendar.getInstance().apply {
   set(this@toDate.year, this@toDate.monthNumber - 1, this@toDate.dayOfMonth, 0, 0, 0)
   set(Calendar.MILLISECOND, 0)
@@ -40,12 +42,15 @@ fun LocalDate.toDate(): Date = Calendar.getInstance().apply {
  * Convert [LocalDate] to [LocalDateTime].
  * @since 1.1.0
  */
-fun LocalDate.toLocalDateTime(): LocalDateTime = LocalDateTime(year, month, dayOfMonth, 0, 0, 0)
+@JvmSynthetic
+fun LocalDate.toLocalDateTime(): LocalDateTime =
+  LocalDateTime(year, month, dayOfMonth, 0, 0, 0)
 
 /**
  * Convert [LocalDate] to [Calendar].
  * @since 1.1.0
  */
+@JvmSynthetic
 fun LocalDate.toCalendar(): Calendar = Calendar.getInstance().apply {
   set(this@toCalendar.year, this@toCalendar.monthNumber - 1, this@toCalendar.dayOfMonth, 0, 0, 0)
   set(Calendar.MILLISECOND, 0)
@@ -56,6 +61,7 @@ fun LocalDate.toCalendar(): Calendar = Calendar.getInstance().apply {
  * @since 1.1.0
  * @see Clock
  */
+@JvmSynthetic
 fun LocalDate.Companion.now(timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDate =
   Clock.System.todayIn(timeZone)
 
@@ -71,12 +77,15 @@ fun LocalDate.Companion.now(timeZone: TimeZone = TimeZone.currentSystemDefault()
  * @since 1.1.0
  * @see now
  */
-infix fun LocalDate.isSameDay(date: LocalDate): Boolean = dayOfYear == date.dayOfYear
+@JvmSynthetic
+infix fun LocalDate.isSameDay(date: LocalDate): Boolean =
+  dayOfYear == date.dayOfYear
 
 /**
  * Adds the other value to this value.
  * @since 1.1.0
  */
+@JvmSynthetic
 operator fun LocalDate.plus(duration: Duration): LocalDate =
   plus(duration.inWholeDays, DateTimeUnit.DAY)
 
@@ -84,6 +93,7 @@ operator fun LocalDate.plus(duration: Duration): LocalDate =
  * Subtracts the other value from this value.
  * @since 1.1.0
  */
+@JvmSynthetic
 operator fun LocalDate.minus(duration: Duration): LocalDate =
   minus(duration.inWholeDays, DateTimeUnit.DAY)
 
@@ -102,6 +112,7 @@ operator fun LocalDate.minus(duration: Duration): LocalDate =
  * @return A LocalDate parsed from the string.
  * @see SimpleDateFormat
  */
+@JvmSynthetic
 fun String.toLocalDate(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): LocalDate {
   simpleDateFormat.applyPattern(pattern)
   return simpleDateFormat.parse(this).toLocalDate()
@@ -120,6 +131,7 @@ fun String.toLocalDate(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): LocalD
  * @return A nullable LocalDate parsed from the string.
  * @see SimpleDateFormat
  */
+@JvmSynthetic
 fun String.toLocalDateOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): LocalDate? =
   tryCatchNull {
     simpleDateFormat.applyPattern(pattern)
@@ -138,6 +150,7 @@ fun String.toLocalDateOrNull(pattern: String = "EEE MMM dd HH:mm:ss zzz yyyy"): 
  * @return The formatted date-time string.
  * @see SimpleDateFormat
  */
+@JvmSynthetic
 fun LocalDate.format(pattern: String): String {
   simpleDateFormat.applyPattern(pattern)
   return simpleDateFormat.format(toDate())
@@ -166,6 +179,7 @@ fun LocalDate.format(pattern: String): String {
   ),
   level = DeprecationLevel.WARNING
 )
+@JvmSynthetic
 fun LocalDate.toString(format: String): String {
   simpleDateFormat.applyPattern(format)
   return simpleDateFormat.format(toDate())

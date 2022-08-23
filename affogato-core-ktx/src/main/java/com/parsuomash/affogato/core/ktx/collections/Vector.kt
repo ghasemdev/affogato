@@ -37,6 +37,7 @@ inline fun <reified T> vectorOf(vararg elements: T): Vector<T> = Vector(elements
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun vectorOf(range: IntRange): Vector<Int> = Vector(range.toList())
 
 /**
@@ -48,6 +49,7 @@ fun vectorOf(range: IntRange): Vector<Int> = Vector(range.toList())
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun vectorOf(range: UIntRange): Vector<UInt> = Vector(range.toList())
 
 /**
@@ -59,6 +61,7 @@ fun vectorOf(range: UIntRange): Vector<UInt> = Vector(range.toList())
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun vectorOf(range: LongRange): Vector<Long> = Vector(range.toList())
 
 /**
@@ -70,6 +73,7 @@ fun vectorOf(range: LongRange): Vector<Long> = Vector(range.toList())
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun vectorOf(range: ULongRange): Vector<ULong> = Vector(range.toList())
 
 /**
@@ -81,6 +85,7 @@ fun vectorOf(range: ULongRange): Vector<ULong> = Vector(range.toList())
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun vectorOf(progression: IntProgression): Vector<Int> = Vector(progression.toList())
 
 /**
@@ -92,6 +97,7 @@ fun vectorOf(progression: IntProgression): Vector<Int> = Vector(progression.toLi
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun vectorOf(progression: UIntProgression): Vector<UInt> = Vector(progression.toList())
 
 /**
@@ -103,6 +109,7 @@ fun vectorOf(progression: UIntProgression): Vector<UInt> = Vector(progression.to
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun vectorOf(progression: LongProgression): Vector<Long> = Vector(progression.toList())
 
 /**
@@ -114,6 +121,7 @@ fun vectorOf(progression: LongProgression): Vector<Long> = Vector(progression.to
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun vectorOf(progression: ULongProgression): Vector<ULong> = Vector(progression.toList())
 
 /**
@@ -125,6 +133,7 @@ fun vectorOf(progression: ULongProgression): Vector<ULong> = Vector(progression.
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun vectorOf(range: CharRange): Vector<Char> = Vector(range.toList())
 
 /**
@@ -136,6 +145,7 @@ fun vectorOf(range: CharRange): Vector<Char> = Vector(range.toList())
  * ```
  * @since 1.1.0
  */
+@JvmSynthetic
 fun vectorOf(progression: CharProgression): Vector<Char> = Vector(progression.toList())
 
 /**

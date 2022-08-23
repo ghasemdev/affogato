@@ -29,6 +29,7 @@ value class Phone(val value: String) : Emptiness {
    * or null can be supplied.
    * @return a boolean that indicates whether the number is of a valid pattern.
    */
+  @JvmOverloads
   fun isValid(defaultRegion: String? = null): Boolean {
     return tryCatchBoolean {
       val number = phoneNumberKit.parse(value, defaultRegion)
@@ -46,6 +47,7 @@ value class Phone(val value: String) : Emptiness {
    * or null can be supplied.
    * @return the type of the phone number, or UNKNOWN if it is invalid.
    */
+  @JvmOverloads
   fun type(defaultRegion: String? = null): PhoneNumberType? {
     return tryCatchNull {
       val number = phoneNumberKit.parse(value, defaultRegion)
@@ -65,6 +67,7 @@ value class Phone(val value: String) : Emptiness {
    * [INTERNATIONAL]
    * @return the formatted phone number.
    */
+  @JvmOverloads
   fun format(
     defaultRegion: String? = null,
     numberFormat: PhoneNumberFormat = INTERNATIONAL
@@ -107,4 +110,5 @@ typealias PhoneNumberFormat = PhoneNumberUtil.PhoneNumberFormat
  */
 typealias PhoneNumberType = PhoneNumberUtil.PhoneNumberType
 
+@get:JvmSynthetic
 private val phoneNumberKit: PhoneNumberUtil by lazy { PhoneNumberUtil.getInstance() }

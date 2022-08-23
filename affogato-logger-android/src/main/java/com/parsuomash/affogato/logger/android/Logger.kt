@@ -1,5 +1,3 @@
-@file:Suppress("MemberVisibilityCanBePrivate")
-
 package com.parsuomash.affogato.logger.android
 
 import android.util.Log
@@ -19,7 +17,7 @@ import android.util.Log
  *       YandexMetrica.reportError(message, throwable)
  *     }
  * }
- * Logger.info(message = "Hello world!")
+ * Logger.info(message = "Hello Affogato!")
  * ```
  * @since 1.5.0
  * @see logcat
@@ -29,18 +27,21 @@ object Logger {
    * Logging tag help for beter filter and search.
    * @since 1.5.0
    */
+  @JvmField
   var tag: String = "Logger"
 
   /**
    * When is true printing logs, otherwise run onRelease block.
    * @since 1.5.0
    */
+  @JvmField
   var isDebug: Boolean = true
 
   /**
    * With onRelease block we define our api for logging in release mode like use crash service.
    * @since 1.5.0
    */
+  @JvmField
   var onRelease: ((tag: String?, message: String, throwable: Throwable) -> Unit)? = null
 
   /**
@@ -51,6 +52,7 @@ object Logger {
    * @param tag String: Used to identify the source of a log message. It usually
    * identifies the class or activity where the log call occurs. This value may be null.
    */
+  @JvmStatic
   fun verbose(tag: String?, message: String, throwable: Throwable?) {
     if (isDebug) {
       if (throwable != null) {
@@ -71,6 +73,7 @@ object Logger {
    * @param tag String: Used to identify the source of a log message. It usually
    * identifies the class or activity where the log call occurs. This value may be null.
    */
+  @JvmStatic
   fun debug(tag: String?, message: String, throwable: Throwable?) {
     if (isDebug) {
       if (throwable != null) {
@@ -91,6 +94,7 @@ object Logger {
    * @param tag String: Used to identify the source of a log message. It usually
    * identifies the class or activity where the log call occurs. This value may be null.
    */
+  @JvmStatic
   fun info(tag: String?, message: String, throwable: Throwable?) {
     if (isDebug) {
       if (throwable != null) {
@@ -111,6 +115,7 @@ object Logger {
    * @param tag String: Used to identify the source of a log message. It usually
    * identifies the class or activity where the log call occurs. This value may be null.
    */
+  @JvmStatic
   fun warn(tag: String?, message: String, throwable: Throwable?) {
     if (isDebug) {
       if (throwable != null) {
@@ -131,6 +136,7 @@ object Logger {
    * @param tag String: Used to identify the source of a log message. It usually
    * identifies the class or activity where the log call occurs. This value may be null.
    */
+  @JvmStatic
   fun error(tag: String?, message: String, throwable: Throwable?) {
     if (isDebug) {
       if (throwable != null) {
@@ -151,6 +157,8 @@ object Logger {
    * @param tag String: Used to identify the source of a log message. It usually
    * identifies the class or activity where the log call occurs. This value may be null.
    */
+  @JvmStatic
+  @JvmName("wtf")
   fun assert(tag: String?, message: String, throwable: Throwable?) {
     if (isDebug) {
       if (throwable != null) {

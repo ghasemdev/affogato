@@ -5,8 +5,8 @@ package com.parsuomash.affogato.logger.android
  *
  * Example :
  * ```kotlin
- * logcat { "Hello, Napier" }
- * logcat(tag = "your tag") { "Hello, Napier" }
+ * logcat { "Hello, Affogato" }
+ * logcat(tag = "your tag") { "Hello, Affogato" }
  * ```
  * @since 1.5.0
  * @param priority enum: The priority/type of this log message Value is ASSERT,
@@ -17,6 +17,7 @@ package com.parsuomash.affogato.logger.android
  * @param message Lambda: The message you would like logged. This value cannot be null.
  * @see Logger
  */
+@JvmSynthetic
 inline fun logcat(
   priority: LogLevel = LogLevel.DEBUG,
   throwable: Throwable? = null,

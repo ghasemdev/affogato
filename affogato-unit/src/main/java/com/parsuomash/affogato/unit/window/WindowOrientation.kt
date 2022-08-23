@@ -29,6 +29,7 @@ enum class WindowOrientation {
  * @since 1.0.0
  * @see android.content.res.Configuration
  */
+@get:JvmSynthetic
 inline val windowOrientation: WindowOrientation
   @Composable get() =
     if (LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -42,5 +43,6 @@ inline val windowOrientation: WindowOrientation
  * @since 1.0.0
  * @see android.content.res.Configuration
  */
+@get:JvmSynthetic
 inline val Configuration.isLandscape: Boolean
   @Composable get() = windowOrientation == WindowOrientation.ORIENTATION_LANDSCAPE

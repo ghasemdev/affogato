@@ -11,4 +11,6 @@ package com.parsuomash.affogato.core.ktx
  * @since 1.1.0
  * @return [Number] value or **Zero**
  */
-fun Number?.orZero(): Number = this ?: 0
+@JvmSynthetic
+fun Number?.orZero(): Number =
+  this ?: 0

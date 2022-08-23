@@ -1,5 +1,3 @@
-@file:Suppress("unused")
-
 package com.parsuomash.affogato.unit.window
 
 import android.content.res.Configuration
@@ -17,22 +15,25 @@ import androidx.window.layout.FoldingFeature
  * Returns a height dp size of the hinge from a [FoldingFeature].
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val FoldingFeature.hingeWidthDp: Dp
-  @JvmSynthetic get() = hingeWidthDpSize.dp
+  get() = hingeWidthDpSize.dp
 
 /**
  * Returns a height dp size of the hinge from a [FoldingFeature].
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val FoldingFeature.hingeHeightDp: Dp
-  @JvmSynthetic get() = hingeHeightDpSize.dp
+  get() = hingeHeightDpSize.dp
 
 /**
  * Returns a dp size of the hinge according to the window orientation from a [FoldingFeature].
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val FoldingFeature.hingeDp: Dp
-  @Composable @JvmSynthetic get() = when (windowOrientation) {
+  @Composable get() = when (windowOrientation) {
     WindowOrientation.ORIENTATION_LANDSCAPE -> hingeWidthDp
     WindowOrientation.ORIENTATION_PORTRAIT -> hingeHeightDp
   }
@@ -41,29 +42,33 @@ inline val FoldingFeature.hingeDp: Dp
  * Returns a dp size of the hinge from a [FoldingFeature].
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val FoldingFeature.hingeDpSize: DpSize
-  @JvmSynthetic get() = DpSize(width = hingeWidthDpSize.dp, height = hingeWidthDpSize.dp)
+  get() = DpSize(width = hingeWidthDpSize.dp, height = hingeWidthDpSize.dp)
 
 /**
  * Returns a width pixel size of the hinge from a [FoldingFeature].
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val FoldingFeature.hingeWidthPxSize: Float
-  @JvmSynthetic get() = toSize().width
+  get() = toSize().width
 
 /**
  * Returns a width pixel size of the hinge from a [FoldingFeature].
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val FoldingFeature.hingeHeightPxSize: Float
-  @JvmSynthetic get() = toSize().height
+  get() = toSize().height
 
 /**
  * Returns a pixel size of the hinge from a [FoldingFeature].
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val FoldingFeature.hingePxSize: Float
-  @JvmSynthetic get() =
+  get() =
     if (Resources.getSystem().configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
       hingeWidthPxSize
     } else {
@@ -74,22 +79,25 @@ inline val FoldingFeature.hingePxSize: Float
  * Returns a width Dp size of the hinge from a [FoldingFeature].
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val FoldingFeature.hingeWidthDpSize: Float
-  @JvmSynthetic get() = toSize().width
+  get() = toSize().width
 
 /**
  * Returns a width Dp size of the hinge from a [FoldingFeature].
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val FoldingFeature.hingeHeightDpSize: Float
-  @JvmSynthetic get() = toSize().height
+  get() = toSize().height
 
 /**
  * Returns whether a [FoldingFeature] is the table-top mode.
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val FoldingFeature.isTableTopPosture: Boolean
-  @JvmSynthetic get() {
+  get() {
     return state == FoldingFeature.State.HALF_OPENED &&
       orientation == FoldingFeature.Orientation.HORIZONTAL
   }
@@ -98,8 +106,9 @@ inline val FoldingFeature.isTableTopPosture: Boolean
  * Returns whether a [FoldingFeature] is the book mode.
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val FoldingFeature.isBookPosture: Boolean
-  @JvmSynthetic get() {
+  get() {
     return state == FoldingFeature.State.HALF_OPENED &&
       orientation == FoldingFeature.Orientation.VERTICAL
   }
@@ -108,34 +117,39 @@ inline val FoldingFeature.isBookPosture: Boolean
  * Returns whether the state of a [FoldingFeature] is half-opened.
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val FoldingFeature.isHalfOpened: Boolean
-  @JvmSynthetic get() = state == FoldingFeature.State.HALF_OPENED
+  get() = state == FoldingFeature.State.HALF_OPENED
 
 /**
  * Returns whether the state of a [FoldingFeature] is flat.
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val FoldingFeature.isFlat: Boolean
-  @JvmSynthetic get() = state == FoldingFeature.State.FLAT
+  get() = state == FoldingFeature.State.FLAT
 
 /**
  * Returns whether the orientation of a [FoldingFeature] is vertical.
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val FoldingFeature.isVertical: Boolean
-  @JvmSynthetic get() = orientation == FoldingFeature.Orientation.HORIZONTAL
+  get() = orientation == FoldingFeature.Orientation.HORIZONTAL
 
 /**
  * Returns whether the orientation of a [FoldingFeature] is horizontal.
  * @since 1.0.0
  */
+@get:JvmSynthetic
 inline val FoldingFeature.isHorizontal: Boolean
-  @JvmSynthetic get() = orientation == FoldingFeature.Orientation.HORIZONTAL
+  get() = orientation == FoldingFeature.Orientation.HORIZONTAL
 
 /**
  * Finds a [FoldingFeature] from a list of [DisplayFeature].
  * @since 1.0.0
  */
+@JvmSynthetic
 fun List<DisplayFeature>.findFoldingFeature(): FoldingFeature? =
   filterIsInstance<FoldingFeature>().firstOrNull()
 
@@ -143,6 +157,7 @@ fun List<DisplayFeature>.findFoldingFeature(): FoldingFeature? =
  * Returns a [Posture] which represent the current posture of the foldable device.
  * @since 1.0.0
  */
+@JvmSynthetic
 fun FoldingFeature.toPosture(): Posture = when {
   isTableTopPosture -> Posture.TableTop(bounds.toSize())
   isBookPosture -> Posture.Book(bounds.toSize())
@@ -153,6 +168,7 @@ fun FoldingFeature.toPosture(): Posture = when {
  * Returns a [Size] spec from a [FoldingFeature].
  * @since 1.0.0
  */
+@JvmSynthetic
 fun DisplayFeature.toSize(): Size =
   Size((bounds.right - bounds.left).toFloat(), (bounds.bottom - bounds.top).toFloat())
 
@@ -160,5 +176,4 @@ fun DisplayFeature.toSize(): Size =
  * Returns [Size] class from a [Rect] class.
  * @since 1.0.0
  */
-@JvmSynthetic
 private fun Rect.toSize(): Size = Size((right - left).toFloat(), (bottom - top).toFloat())

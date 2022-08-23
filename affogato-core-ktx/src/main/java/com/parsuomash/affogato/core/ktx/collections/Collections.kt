@@ -12,7 +12,9 @@ import com.parsuomash.affogato.core.ktx.tryCatchNull
  * ```
  * @since 1.1.0
  */
-inline val <T> Collection<T>.lastIndex: Int get() = size - 1
+@get:JvmSynthetic
+inline val <T> Collection<T>.lastIndex: Int
+  get() = size - 1
 
 /**
  * Returns an element at the given index or empty
@@ -27,6 +29,7 @@ inline val <T> Collection<T>.lastIndex: Int get() = size - 1
  * @since 1.1.0
  * @see listOf
  */
+@JvmSynthetic
 fun Collection<String>.getOrEmpty(index: Int): String =
   if (index in 0..lastIndex) toList()[index] else ""
 

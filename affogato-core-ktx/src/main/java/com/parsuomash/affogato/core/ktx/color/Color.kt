@@ -12,6 +12,7 @@ import java.awt.Color
  * ```
  * @since 1.1.0
  */
+@get:JvmName("rgbToHex")
 inline val Int.rgbToHex: String
   get() = "#%06X".format(-0x1 and this)
 
@@ -24,6 +25,7 @@ inline val Int.rgbToHex: String
  * ```
  * @since 1.1.0
  */
+@get:JvmSynthetic
 inline val Triple<UByte, UByte, UByte>.rgbToHex: String
   get() {
     val r = "%02X".format(-0x1 and first.toInt())
@@ -43,6 +45,7 @@ inline val Triple<UByte, UByte, UByte>.rgbToHex: String
  * @since 1.1.0
  * @return [Triple] of red, green and blue values.
  */
+@get:JvmSynthetic
 inline val String.hexToRgb: Triple<UByte, UByte, UByte>?
   get() = tryCatchNull {
     var name = this

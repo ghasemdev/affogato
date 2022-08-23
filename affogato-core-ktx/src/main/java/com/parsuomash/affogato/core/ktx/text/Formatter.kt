@@ -49,6 +49,7 @@ fun Double.removeDecimalPart(): String {
  * @param pattern default pattern is comma separator.
  * @return format number.
  */
+@JvmOverloads
 fun Number.format(pattern: String = "#,###.##"): String {
   decimalFormat.applyPattern(pattern)
   return decimalFormat.format(this)
@@ -93,6 +94,7 @@ fun Number.compactFormat(): String {
  * @since 1.1.0
  * @return formatted credit card number.
  */
+@JvmOverloads
 fun String.formatCreditCard(separator: String = " ", separatorDigit: Int = 4): String {
   val preparedString = replace(" ", "").trim()
   return buildString {
@@ -105,5 +107,7 @@ fun String.formatCreditCard(separator: String = " ", separatorDigit: Int = 4): S
   }
 }
 
-internal val decimalFormat: DecimalFormat by lazy { DecimalFormat() }
+@get:JvmSynthetic
+private val decimalFormat: DecimalFormat by lazy { DecimalFormat() }
+
 private val suffix = charArrayOf(' ', 'k', 'M', 'B', 'T', 'P', 'E')

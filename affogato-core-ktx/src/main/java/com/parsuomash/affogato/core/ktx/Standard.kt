@@ -188,6 +188,7 @@ fun <T> counter(content: Iterable<T>): Map<T, Int> =
  * @since 1.1.0
  * @return [T] value or **default**
  */
+@JvmSynthetic
 fun <T> T?.orDefault(default: T): T =
   this ?: default
 
@@ -205,6 +206,7 @@ fun <T> T?.orDefault(default: T): T =
  * @since 1.1.0
  * @return [Boolean]
  */
+@JvmSynthetic
 fun <T> T?.isNull(): Boolean =
   this == null
 
@@ -222,6 +224,7 @@ fun <T> T?.isNull(): Boolean =
  * @since 1.1.0
  * @return [Boolean]
  */
+@JvmSynthetic
 fun <T> T?.isNotNull(): Boolean =
   this != null
 
@@ -247,6 +250,7 @@ fun <T> T?.isNotNull(): Boolean =
  * @since 1.1.0
  * @return value or [Unit]
  */
+@JvmSynthetic
 inline fun <T> T?.ifNull(block: (T?) -> Any): Any =
   this ?: block(this)
 
@@ -272,6 +276,7 @@ inline fun <T> T?.ifNull(block: (T?) -> Any): Any =
  * @since 1.1.0
  * @return value or [Unit]
  */
+@JvmSynthetic
 inline fun <T, R> T?.ifNotNull(block: (T) -> R): R? =
   if (this != null) block(this) else this
 

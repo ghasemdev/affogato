@@ -42,6 +42,7 @@ inline val Number.isEven: Boolean
  * ```
  * @since 1.1.0
  */
+@get:JvmName("asDegrees")
 inline val Number.asDegrees: Float
   get() = toFloat() * (180F / PI).toFloat()
 
@@ -54,6 +55,7 @@ inline val Number.asDegrees: Float
  * ```
  * @since 1.1.0
  */
+@get:JvmName("asRadians")
 inline val Number.asRadians: Float
   get() = toFloat() * (PI / 180F).toFloat()
 
@@ -69,6 +71,7 @@ inline val Number.asRadians: Float
  * @since 1.1.0
  * @see kotlin.math.round
  */
+@JvmOverloads
 fun round(number: Float, digits: Int = 0): Float {
   return if (digits == 0) {
     round(number)
@@ -89,6 +92,7 @@ fun round(number: Float, digits: Int = 0): Float {
  * @since 1.1.0
  * @see kotlin.math.round
  */
+@JvmOverloads
 fun round(number: Double, digits: Int = 0): Double {
   return if (digits == 0) {
     round(number)
@@ -109,7 +113,8 @@ fun round(number: Double, digits: Int = 0): Double {
  * @since 1.1.0
  * @see kotlin.math.round
  */
-@JvmName("roundEx")
+@JvmName("roundExtension")
+@JvmSynthetic
 fun Float.round(digits: Int = 0): Float {
   return if (digits == 0) {
     round(this)
@@ -130,7 +135,8 @@ fun Float.round(digits: Int = 0): Float {
  * @since 1.1.0
  * @see kotlin.math.round
  */
-@JvmName("roundEx")
+@JvmName("roundExtension")
+@JvmSynthetic
 fun Double.round(digits: Int = 0): Double {
   return if (digits == 0) {
     round(this)
@@ -148,6 +154,7 @@ fun Double.round(digits: Int = 0): Double {
  * ```
  * @since 1.1.0
  */
+@JvmOverloads
 tailrec fun fact(n: Long, run: Long = 1): Long =
   if (n == 1L) run else fact(n - 1, run * n)
 
@@ -160,6 +167,7 @@ tailrec fun fact(n: Long, run: Long = 1): Long =
  * ```
  * @since 1.1.0
  */
+@JvmOverloads
 tailrec fun fib(n: Long, first: Long = 0, second: Long = 1): Long =
   if (n == 0L) first else fib(n - 1, second, first + second)
 
@@ -187,6 +195,7 @@ inline infix fun <reified T : Number> T.perc(percentage: T): Double =
  * @since 1.1.0
  * @see round
  */
+@JvmSynthetic
 inline infix fun <reified T : Number> T.almostEq(other: T): Boolean {
   if (this == other) return false
   return round(toDouble()) == round(other.toDouble())
