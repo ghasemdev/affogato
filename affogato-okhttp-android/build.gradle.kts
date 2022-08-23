@@ -9,6 +9,8 @@ android {
   buildToolsVersion = "33.0.0"
   defaultConfig {
     minSdk = 16
+    targetSdk = 33
+    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
   compileOptions {
     sourceCompatibility = JavaVersion.VERSION_11
