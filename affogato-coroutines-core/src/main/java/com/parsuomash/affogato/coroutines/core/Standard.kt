@@ -1,5 +1,3 @@
-@file:Suppress("unused")
-
 package com.parsuomash.affogato.coroutines.core
 
 import com.parsuomash.affogato.core.ktx.tryCatchBool
@@ -24,6 +22,7 @@ import kotlinx.coroutines.withContext
  * @since 1.2.0
  * @see tryCatchIgnore
  */
+@JvmSynthetic
 suspend inline fun <T> suspendedTryCatchIgnore(
   context: CoroutineContext = Dispatchers.Default,
   crossinline block: suspend () -> T
@@ -45,6 +44,7 @@ suspend inline fun <T> suspendedTryCatchIgnore(
  * @see tryCatchBoolean
  * @see suspendedTryCatchBool
  */
+@JvmSynthetic
 suspend inline fun suspendedTryCatchBoolean(
   context: CoroutineContext = Dispatchers.Default,
   crossinline block: suspend () -> Unit
@@ -64,6 +64,7 @@ suspend inline fun suspendedTryCatchBoolean(
  * @see tryCatchBool
  * @see suspendedTryCatchBoolean
  */
+@JvmSynthetic
 suspend inline fun suspendedTryCatchBool(
   context: CoroutineContext = Dispatchers.Default,
   crossinline block: suspend () -> Boolean
@@ -82,6 +83,7 @@ suspend inline fun suspendedTryCatchBool(
  * @since 1.2.0
  * @see tryCatchNull
  */
+@JvmSynthetic
 suspend inline fun <T> suspendedTryCatchNull(
   context: CoroutineContext = Dispatchers.Default,
   crossinline block: suspend () -> T
@@ -100,6 +102,7 @@ suspend inline fun <T> suspendedTryCatchNull(
  * @since 1.2.0
  * @see tryCatchElse
  */
+@JvmSynthetic
 suspend inline fun <T> suspendedTryCatchElse(
   context: CoroutineContext = Dispatchers.Default,
   crossinline elseBlock: suspend () -> T,

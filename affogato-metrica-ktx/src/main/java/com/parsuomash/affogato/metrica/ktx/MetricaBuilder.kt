@@ -1,4 +1,5 @@
-@file:Suppress("unused")
+@file:JvmName("MetricaBuilder")
+@file:JvmMultifileClass
 
 package com.parsuomash.affogato.metrica.ktx
 
@@ -64,6 +65,7 @@ inline fun Context.yandexMetrica(
  * @return the same YandexMetricaConfig.Builder object.
  * @see YandexMetricaConfig.Builder.withLogs
  */
+@JvmSynthetic
 fun YandexMetricaConfig.Builder.withLogs(isDebugMode: Boolean = true): YandexMetricaConfig.Builder =
   if (isDebugMode) withLogs() else this
 
@@ -79,6 +81,7 @@ fun YandexMetricaConfig.Builder.withLogs(isDebugMode: Boolean = true): YandexMet
  * @return the same YandexMetricaConfig.Builder object.
  * @see YandexMetricaConfig.Builder.withSessionTimeout
  */
+@JvmSynthetic
 fun YandexMetricaConfig.Builder.withSessionTimeout(
   duration: Duration
 ): YandexMetricaConfig.Builder = withSessionTimeout(duration.inWholeSeconds.toInt())

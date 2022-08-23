@@ -1,5 +1,3 @@
-@file:Suppress("unused")
-
 package com.parsuomash.affogato.metrica.ktx
 
 import com.yandex.metrica.YandexMetrica
