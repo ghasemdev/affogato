@@ -7,9 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [🐛 v1.5.1 ] - 2022-08-15
 
-### 🐛 Fixes
-
-* Fix min sdk issue
+### Fix min sdk issue and some improvements
 
 ## [🎉 1.5.0 Structure, Logger, OkHttp] - 2022-08-22
 
