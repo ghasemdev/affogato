@@ -29,7 +29,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-logger-android"
-        version = "1.5.1"
+        version = "1.5.2"
 
         from(components["release"])
       }

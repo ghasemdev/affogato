@@ -24,13 +24,10 @@ android {
 }
 
 dependencies {
-  // define a BOM and its version
-  implementation(platform("com.squareup.okhttp3:okhttp-bom:4.10.0"))
-
-  // define any required OkHttp artifacts without version
-  api("com.squareup.okhttp3:okhttp")
-  api("com.squareup.okhttp3:logging-interceptor")
-  testApi("com.squareup.okhttp3:mockwebserver")
+  // OkHttp3 ---------------------------------------------------------------------------------------
+  api("com.squareup.okhttp3:okhttp:4.10.0")
+  api("com.squareup.okhttp3:logging-interceptor:4.10.0")
+  testApi("com.squareup.okhttp3:mockwebserver:4.10.0")
 }
 
 afterEvaluate {
@@ -39,7 +36,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-okhttp-android"
-        version = "1.5.1"
+        version = "1.5.2"
 
         from(components["release"])
       }
