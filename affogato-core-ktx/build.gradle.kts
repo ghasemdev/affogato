@@ -45,7 +45,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-core-ktx"
-        version = "1.5.1"
+        version = "1.5.2"
 
         from(components["java"])
       }
