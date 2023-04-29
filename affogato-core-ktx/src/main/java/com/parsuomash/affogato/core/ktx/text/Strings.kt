@@ -313,8 +313,8 @@ fun String?.isNotNullNotEmpty(): Boolean =
  * @see URLEncoder
  */
 @JvmOverloads
-fun String.encodeToUrl(charSet: String = "UTF-8"): String =
-  URLEncoder.encode(this, charSet)
+fun String.encodeToUrl(charset: String = "UTF-8"): String =
+  URLEncoder.encode(this, charset)
 
 /**
  * Decodes an application/x-www-form-urlencoded string using a specific encoding scheme.
@@ -328,8 +328,8 @@ fun String.encodeToUrl(charSet: String = "UTF-8"): String =
  * @see URLDecoder
  */
 @JvmOverloads
-fun String.decodeToUrl(charSet: String = "UTF-8"): String =
-  URLDecoder.decode(this, charSet)
+fun String.decodeToUrl(charset: String = "UTF-8"): String =
+  URLDecoder.decode(this, charset)
 
 /**
  * Returns a copy of this string having it's first letter title cased using the rules of the
