@@ -6,31 +6,31 @@ plugins {
 
 android {
   compileSdk = 33
-  buildToolsVersion = "33.0.0"
+  namespace = "com.parsuomash.affogato.metrica.ktx"
+
   defaultConfig {
     minSdk = 17
-    targetSdk = 33
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
   compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
   }
   kotlinOptions {
-    apiVersion = "1.7"
-    languageVersion = "1.7"
-    jvmTarget = "11"
+    apiVersion = "1.8"
+    languageVersion = "1.8"
+    jvmTarget = "17"
   }
 }
 
 dependencies {
   // AppMetrica ------------------------------------------------------------------------------------
-  api("com.yandex.android:mobmetricalib:5.0.1")
+  api("com.yandex.android:mobmetricalib:5.3.0")
   api("com.yandex.android:mobmetricapushlib:2.2.0")
   api("com.yandex.android:appmetricapush-provider-hms:2.2.0")
 
   // Serialization ---------------------------------------------------------------------------------
-  implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
+  implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
 }
 
 afterEvaluate {
@@ -39,7 +39,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-metrica-ktx"
-        version = "1.5.2"
+        version = "1.6.0"
 
         from(components["release"])
       }

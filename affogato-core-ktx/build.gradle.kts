@@ -7,15 +7,15 @@ plugins {
 }
 
 java {
-  sourceCompatibility = JavaVersion.VERSION_11
-  targetCompatibility = JavaVersion.VERSION_11
+  sourceCompatibility = JavaVersion.VERSION_17
+  targetCompatibility = JavaVersion.VERSION_17
 }
 
 tasks.withType<KotlinCompile>().configureEach {
   kotlinOptions {
-    apiVersion = "1.7"
-    languageVersion = "1.7"
-    jvmTarget = "11"
+    apiVersion = "1.8"
+    languageVersion = "1.8"
+    jvmTarget = "17"
   }
 }
 
@@ -25,7 +25,7 @@ tasks.test {
 
 dependencies {
   // Serialization ---------------------------------------------------------------------------------
-  api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
+  api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
   // Immutable Collections -------------------------------------------------------------------------
   api("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
   // DateTime --------------------------------------------------------------------------------------
@@ -35,8 +35,8 @@ dependencies {
   testImplementation("io.kotlintest:kotlintest-core:3.4.2")
   testImplementation("com.google.truth:truth:1.1.3")
   testImplementation("org.hamcrest:hamcrest:2.2")
-  testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
-  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.0")
+  testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
+  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
 }
 
 afterEvaluate {
@@ -45,7 +45,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-core-ktx"
-        version = "1.5.2"
+        version = "1.6.0"
 
         from(components["java"])
       }

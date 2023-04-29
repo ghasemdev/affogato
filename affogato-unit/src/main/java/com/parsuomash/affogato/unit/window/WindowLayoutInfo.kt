@@ -3,7 +3,6 @@ package com.parsuomash.affogato.unit.window
 import android.app.Activity
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
-import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.window.layout.FoldingFeature
 import androidx.window.layout.WindowInfoTracker
@@ -15,7 +14,6 @@ import kotlinx.coroutines.flow.Flow
  * @since 1.0.0
  */
 @get:JvmSynthetic
-@ExperimentalLifecycleComposeApi
 inline val Activity.windowLayoutInfoState: State<WindowLayoutInfo?>
   @Composable get() =
     windowLayoutInfo.collectAsStateWithLifecycle(initialValue = null)
@@ -73,7 +71,6 @@ inline val WindowLayoutInfo.state: FoldingFeature.State
  * Returns a [State] of the [WindowLayoutInfo].
  * @since 1.0.0
  */
-@ExperimentalLifecycleComposeApi
 @JvmSynthetic
 @Composable
 fun WindowInfoTracker.windowLayoutInfoState(activity: Activity): State<WindowLayoutInfo?> =

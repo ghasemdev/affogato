@@ -2,11 +2,9 @@ package com.parsuomash.affogato.metrica.ktx.profile
 
 import com.yandex.metrica.YandexMetrica
 import com.yandex.metrica.YandexMetrica.reportUserProfile
-import com.yandex.metrica.impl.ob.Kf
 import com.yandex.metrica.profile.CounterAttribute
 import com.yandex.metrica.profile.NumberAttribute
 import com.yandex.metrica.profile.UserProfile
-import com.yandex.metrica.profile.UserProfileUpdate
 
 /**
  * This method store a user profile.
@@ -47,8 +45,7 @@ inline fun metricaProfile(init: UserProfile.Builder.() -> Unit): UserProfile {
  * @see NumberAttribute.withValue
  */
 @JvmSynthetic
-fun NumberAttribute.withValue(value: Int): UserProfileUpdate<out Kf> =
-  withValue(value.toDouble())
+fun NumberAttribute.withValue(value: Int) = withValue(value.toDouble())
 
 /**
  * Updates the counter attribute value with the specified delta [value].
@@ -58,5 +55,4 @@ fun NumberAttribute.withValue(value: Int): UserProfileUpdate<out Kf> =
  * @see CounterAttribute.withDelta
  */
 @JvmSynthetic
-fun CounterAttribute.withDelta(value: Int): UserProfileUpdate<out Kf> =
-  withDelta(value.toDouble())
+fun CounterAttribute.withDelta(value: Int) = withDelta(value.toDouble())

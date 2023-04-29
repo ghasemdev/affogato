@@ -3,20 +3,20 @@ import org.jetbrains.dokka.base.DokkaBase
 import org.jetbrains.dokka.base.DokkaBaseConfiguration
 
 plugins {
-  id("com.android.application") version "7.2.2" apply false
-  id("com.android.library") version "7.2.2" apply false
-  kotlin("android") version "1.7.10" apply false
-  kotlin("jvm") version "1.7.10" apply false
+  id("com.android.application") version "8.0.0" apply false
+  id("com.android.library") version "8.0.0" apply false
+  kotlin("android") version "1.8.20" apply false
+  kotlin("jvm") version "1.8.20" apply false
 
   id("io.gitlab.arturbosch.detekt") version "1.21.0"
   id("org.jetbrains.dokka") version "1.7.10"
-  id("org.jetbrains.kotlinx.kover") version "0.6.0-Beta"
+  id("org.jetbrains.kotlinx.kover") version "0.6.0"
 }
 
 buildscript {
   dependencies {
-    classpath("org.jetbrains.dokka:dokka-base:1.7.10")
-    classpath("org.jetbrains.kotlinx:kover:0.6.0-Beta")
+    classpath("org.jetbrains.dokka:dokka-base:1.8.10")
+    classpath("org.jetbrains.kotlinx:kover:0.6.1")
   }
 }
 
@@ -31,7 +31,7 @@ subprojects {
   }
   dependencies {
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.21.0")
-    dokkaPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.10")
+    dokkaPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.8.10")
   }
   // Static analysis
   detekt {
