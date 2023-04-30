@@ -81,6 +81,9 @@ dependencies {
   implementation(project(":affogato-unit"))
   ksp(project(":affogato-unit-processor"))
 
+  implementation(project(":affogato-hilt-binding"))
+  ksp(project(":affogato-hilt-binding-processor"))
+
   // AndroidX ------------------------------------------------------------------------------------
   implementation("androidx.core:core-ktx:1.10.0")
 
