@@ -8,6 +8,7 @@ plugins {
 
 android {
   compileSdk = 33
+  buildToolsVersion = "33.0.2"
   namespace = "com.parsuomash.affogato.unit"
 
   defaultConfig {
