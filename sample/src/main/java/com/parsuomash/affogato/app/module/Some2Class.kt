@@ -1,6 +1,6 @@
 package com.parsuomash.affogato.app.module
 
-import com.parsuomash.affogato.hilt.binding.HiltBinding
+import com.parsuomash.affogato.hilt.binding.SingletonBinding
 
-@HiltBinding
+@SingletonBinding
 class Some2Class

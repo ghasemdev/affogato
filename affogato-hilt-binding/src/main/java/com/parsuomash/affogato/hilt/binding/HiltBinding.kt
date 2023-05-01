@@ -1,16 +1,27 @@
 package com.parsuomash.affogato.hilt.binding
 
-import dagger.hilt.components.SingletonComponent
+import dagger.hilt.GeneratesRootInput
+import javax.inject.Singleton
 import kotlin.reflect.KClass
 
+@Retention(AnnotationRetention.BINARY)
 @Target(AnnotationTarget.CLASS)
-@Retention(AnnotationRetention.SOURCE)
+@GeneratesRootInput
 annotation class HiltBinding(
-  val component: KClass<*> = SingletonComponent::class,
-  val scope: KClass<*> = NoneScope::class,
-  val qualifier: KClass<*> = NoneQualifier::class,
+  val component: KClass<*>,
+  val scope: KClass<*> = Any::class,
+  val qualifier: KClass<*> = Any::class,
   val named: String = "",
 )
 
-class NoneQualifier
-class NoneScope
+@Retention(AnnotationRetention.BINARY)
+@Target(AnnotationTarget.CLASS)
+@GeneratesRootInput
+@HiltBinding(
+  component = SingletonBinding::class,
+  scope = Singleton::class,
+)
+annotation class SingletonBinding(
+  val qualifier: KClass<*> = Any::class,
+  val named: String = "",
+)
