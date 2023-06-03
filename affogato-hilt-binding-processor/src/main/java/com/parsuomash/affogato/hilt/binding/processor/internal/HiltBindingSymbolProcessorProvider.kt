@@ -9,7 +9,6 @@ internal class HiltBindingSymbolProcessorProvider : SymbolProcessorProvider {
     with(environment) {
       HiltBindingSymbolProcessor(
         config = HiltBindingConfig(
-          packageName = options[ARG_PACKAGE_NAME] ?: DEFAULT_PACKAGE_NAME,
           moduleName = options[ARG_MODULE_NAME].orEmpty(),
           internalVisibility = options[ARG_INTERNAL_VISIBILITY].toBoolean()
         ),
@@ -19,10 +18,7 @@ internal class HiltBindingSymbolProcessorProvider : SymbolProcessorProvider {
     }
 
   private companion object {
-    const val ARG_PACKAGE_NAME = "affogato.packageName"
     const val ARG_MODULE_NAME = "affogato.moduleName"
     const val ARG_INTERNAL_VISIBILITY = "affogato.internalVisibility"
-
-    const val DEFAULT_PACKAGE_NAME = "com.parsuomash.affogato"
   }
 }
