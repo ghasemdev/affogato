@@ -7,7 +7,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.State
 import androidx.compose.ui.geometry.Size
-import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.window.layout.WindowInfoTracker
 import androidx.window.layout.WindowLayoutInfo
@@ -45,7 +44,6 @@ sealed class Posture(val size: Size) {
  * Returns a [State] of the [Posture] by tracking the [WindowLayoutInfo].
  * @since 1.0.0
  */
-@ExperimentalLifecycleComposeApi
 @get:JvmSynthetic
 inline val Activity.postureState: State<Posture>
   @Composable get() = postureFlow
@@ -63,6 +61,7 @@ inline val Activity.postureFlow: Flow<Posture>
  * Returns a [Flow] of the [Posture] by tracking the [WindowLayoutInfo].
  * @since 1.0.0
  */
+@Suppress("UnusedReceiverParameter")
 @JvmSynthetic
 fun WindowInfoTracker.postureFlow(activity: Activity): Flow<Posture> {
   return activity.windowLayoutInfo.map { layoutInfo ->

@@ -4,19 +4,19 @@ plugins {
   id("java-library")
   kotlin("jvm")
   id("maven-publish")
-  kotlin("plugin.serialization") version "1.7.10"
+  kotlin("plugin.serialization") version "1.8.20"
 }
 
 java {
-  sourceCompatibility = JavaVersion.VERSION_11
-  targetCompatibility = JavaVersion.VERSION_11
+  sourceCompatibility = JavaVersion.VERSION_17
+  targetCompatibility = JavaVersion.VERSION_17
 }
 
 tasks.withType<KotlinCompile>().configureEach {
   kotlinOptions {
-    apiVersion = "1.7"
-    languageVersion = "1.7"
-    jvmTarget = "11"
+    apiVersion = "1.8"
+    languageVersion = "1.8"
+    jvmTarget = "17"
   }
 }
 
@@ -28,14 +28,14 @@ dependencies {
   implementation(project(":affogato-core-ktx"))
 
   // Serialization ---------------------------------------------------------------------------------
-  implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
+  implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
   // Phone Checker ---------------------------------------------------------------------------------
-  implementation("com.googlecode.libphonenumber:libphonenumber:8.12.54")
+  implementation("com.googlecode.libphonenumber:libphonenumber:8.13.11")
 
   // Test ------------------------------------------------------------------------------------------
   testImplementation("com.google.truth:truth:1.1.3")
-  testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
-  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.0")
+  testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
+  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
 }
 
 afterEvaluate {
@@ -44,7 +44,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-structure"
-        version = "1.5.2"
+        version = "1.6.0"
 
         from(components["java"])
       }

@@ -6,28 +6,29 @@ plugins {
 
 android {
   compileSdk = 33
-  buildToolsVersion = "33.0.0"
+  buildToolsVersion = "33.0.2"
+  namespace = "com.parsuomash.affogato.okhttp.android"
+
   defaultConfig {
     minSdk = 16
-    targetSdk = 33
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
   compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
   }
   kotlinOptions {
-    apiVersion = "1.7"
-    languageVersion = "1.7"
-    jvmTarget = "11"
+    apiVersion = "1.8"
+    languageVersion = "1.8"
+    jvmTarget = "17"
   }
 }
 
 dependencies {
   // OkHttp3 ---------------------------------------------------------------------------------------
-  api("com.squareup.okhttp3:okhttp:4.10.0")
-  api("com.squareup.okhttp3:logging-interceptor:4.10.0")
-  testApi("com.squareup.okhttp3:mockwebserver:4.10.0")
+  api("com.squareup.okhttp3:okhttp:4.11.0")
+  api("com.squareup.okhttp3:logging-interceptor:4.11.0")
+  testApi("com.squareup.okhttp3:mockwebserver:4.11.0")
 }
 
 afterEvaluate {
@@ -36,7 +37,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-okhttp-android"
-        version = "1.5.2"
+        version = "1.6.0"
 
         from(components["release"])
       }
