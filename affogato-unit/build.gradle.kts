@@ -45,7 +45,7 @@ dependencies {
   api("androidx.window:window:1.0.0")
 
   // Compose -------------------------------------------------------------------------------------
-  val composeVersion = "1.4.2"
+  val composeVersion = "1.4.3"
 
   implementation("androidx.compose.ui:ui:$composeVersion")
   implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")

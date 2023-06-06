@@ -19,21 +19,14 @@ tasks.withType<KotlinCompile>().configureEach {
   }
 }
 
-tasks.test {
-  useJUnitPlatform()
-}
-
 dependencies {
-  implementation(project(":affogato-core-ktx"))
-
-  // Coroutines ------------------------------------------------------------------------------------
-  api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
-  api("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
+  // KSP -------------------------------------------------------------------------------------------
+  implementation("com.google.devtools.ksp:symbol-processing-api:1.8.21-1.0.11")
+  implementation("com.fleshgrinder.kotlin:case-format:0.2.0")
 
   // Test ------------------------------------------------------------------------------------------
+  testImplementation("junit:junit:4.13.2")
   testImplementation("com.google.truth:truth:1.1.3")
-  testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
-  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
 }
 
 afterEvaluate {
@@ -41,7 +34,7 @@ afterEvaluate {
     publications {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
-        artifactId = "affogato-coroutines-core"
+        artifactId = "affogato-hilt-binding-processor"
         version = "1.6.0"
 
         from(components["java"])

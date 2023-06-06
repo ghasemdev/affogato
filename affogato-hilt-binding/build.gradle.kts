@@ -7,7 +7,7 @@ plugins {
 android {
   compileSdk = 33
   buildToolsVersion = "33.0.2"
-  namespace = "com.parsuomash.affogato.okhttp.android"
+  namespace = "com.parsuomash.affogato.hilt.binding"
 
   defaultConfig {
     minSdk = 16
@@ -25,10 +25,13 @@ android {
 }
 
 dependencies {
-  // OkHttp3 ---------------------------------------------------------------------------------------
-  api("com.squareup.okhttp3:okhttp:4.11.0")
-  api("com.squareup.okhttp3:logging-interceptor:4.11.0")
-  testApi("com.squareup.okhttp3:mockwebserver:4.11.0")
+  // Hilt ------------------------------------------------------------------------------------------
+  api("com.google.dagger:hilt-android:2.46.1")
+
+  // Test ------------------------------------------------------------------------------------------
+  testImplementation("com.google.truth:truth:1.1.3")
+  testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
+  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
 }
 
 afterEvaluate {
@@ -36,7 +39,7 @@ afterEvaluate {
     publications {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
-        artifactId = "affogato-okhttp-android"
+        artifactId = "affogato-hilt-binding"
         version = "1.6.0"
 
         from(components["release"])
