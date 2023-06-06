@@ -32,4 +32,7 @@ internal object ErrorMassage {
 
   const val ERROR_MASSAGE_HILT_SCOPE = "Invalid Hilt Scope!! Please use this valid " +
     "scopes (Singleton, ActivityScoped, FragmentScoped, ...)"
+
+  const val ERROR_MESSAGE_ANNOTATION_CLASS = "Qualifier must be annotation class!!"
+  const val ERROR_MESSAGE_QUALIFIER_ANNOTATION = "Qualifier class must have @Qualifier annotation!!"
 }

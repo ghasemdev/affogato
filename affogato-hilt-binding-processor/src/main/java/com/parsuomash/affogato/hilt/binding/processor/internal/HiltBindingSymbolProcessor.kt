@@ -12,9 +12,12 @@ import com.google.devtools.ksp.symbol.KSAnnotation
 import com.google.devtools.ksp.symbol.KSClassDeclaration
 import com.google.devtools.ksp.symbol.KSType
 import com.google.devtools.ksp.symbol.KSValueArgument
+import com.google.devtools.ksp.symbol.Modifier
 import com.google.devtools.ksp.validate
 import com.parsuomash.affogato.hilt.binding.processor.utils.ErrorMassage.ERROR_MASSAGE_HILT_COMPONENT
 import com.parsuomash.affogato.hilt.binding.processor.utils.ErrorMassage.ERROR_MASSAGE_HILT_SCOPE
+import com.parsuomash.affogato.hilt.binding.processor.utils.ErrorMassage.ERROR_MESSAGE_ANNOTATION_CLASS
+import com.parsuomash.affogato.hilt.binding.processor.utils.ErrorMassage.ERROR_MESSAGE_QUALIFIER_ANNOTATION
 import com.parsuomash.affogato.hilt.binding.processor.utils.ErrorMassage.namedQualifier
 import com.parsuomash.affogato.hilt.binding.processor.utils.ErrorMassage.supperType
 import com.parsuomash.affogato.hilt.binding.processor.utils.ImportManager
@@ -90,11 +93,23 @@ internal class HiltBindingSymbolProcessor(
           logger.error("${declaration.location} -> ${namedQualifier(SINGLETON_BINDING_ANNOTATION)}")
           return
         }
+
+        val hiltQualifierDeclaration = (hiltQualifier as KSType).declaration
+
+        if (Modifier.ANNOTATION !in hiltQualifierDeclaration.modifiers) {
+          logger.error("${declaration.location} -> $ERROR_MESSAGE_ANNOTATION_CLASS")
+          return
+        }
+        if (QUALIFIER !in hiltQualifierDeclaration.annotations.toList().map { it.toString() }) {
+          logger.error("${declaration.location} -> $ERROR_MESSAGE_QUALIFIER_ANNOTATION")
+          return
+        }
+
         annotations
           .append(INDENTATION)
           .appendLine("@$hiltQualifier")
 
-        val qualifierPackageName = (hiltQualifier as KSType).declaration.packageName.asString()
+        val qualifierPackageName = hiltQualifierDeclaration.packageName.asString()
         if (packageName != qualifierPackageName) {
           importManager.append("$qualifierPackageName.$hiltQualifier")
         }
@@ -159,18 +174,37 @@ internal class HiltBindingSymbolProcessor(
           logger.error("${declaration.location} -> ${namedQualifier(HILT_BINDING_ANNOTATION)}")
           return
         }
+
+        val hiltQualifierDeclaration = (hiltQualifier as KSType).declaration
+
+        if (Modifier.ANNOTATION !in hiltQualifierDeclaration.modifiers) {
+          logger.error("${declaration.location} -> $ERROR_MESSAGE_ANNOTATION_CLASS")
+          return
+        }
+        if (QUALIFIER !in hiltQualifierDeclaration.annotations.toList().map { it.toString() }) {
+          logger.error("${declaration.location} -> $ERROR_MESSAGE_QUALIFIER_ANNOTATION")
+          return
+        }
+
         annotations
           .append(INDENTATION)
           .appendLine("@$hiltQualifier")
 
-        val qualifierPackageName = (hiltQualifier as KSType).declaration.packageName.asString()
+        val qualifierPackageName = hiltQualifierDeclaration.packageName.asString()
         if (packageName != qualifierPackageName) {
           importManager.append("$qualifierPackageName.$hiltQualifier")
         }
       }
 
       if (hiltComponent != null && hiltComponent.toString() in validHiltComponents) {
-        val componentPackageName = (hiltComponent as KSType).declaration.packageName.asString()
+        val hiltComponentDeclaration = (hiltComponent as KSType).declaration
+
+        if (COMPONENT !in hiltComponentDeclaration.annotations.toList().map { it.toString() }) {
+          logger.error("${declaration.location} -> $ERROR_MASSAGE_HILT_COMPONENT")
+          return
+        }
+
+        val componentPackageName = hiltComponentDeclaration.packageName.asString()
         importManager.append("$componentPackageName.$hiltComponent")
       } else {
         logger.error("${declaration.location} -> $ERROR_MASSAGE_HILT_COMPONENT")
@@ -179,11 +213,18 @@ internal class HiltBindingSymbolProcessor(
 
       if (hiltScope != null && hiltScope.toString() != "Any") {
         if (hiltScope.toString() in validHiltScopes) {
+          val hiltScopeDeclaration = (hiltScope as KSType).declaration
+
+          if (SCOPE !in hiltScopeDeclaration.annotations.toList().map { it.toString() }) {
+            logger.error("${declaration.location} -> $ERROR_MASSAGE_HILT_SCOPE")
+            return
+          }
+
           annotations
             .append(INDENTATION)
             .appendLine("@$hiltScope")
 
-          val scopePackageName = (hiltScope as KSType).declaration.packageName.asString()
+          val scopePackageName = hiltScopeDeclaration.packageName.asString()
           importManager.append("$scopePackageName.$hiltScope")
         } else {
           logger.error("${declaration.location} -> $ERROR_MASSAGE_HILT_SCOPE")
@@ -317,6 +358,10 @@ internal class HiltBindingSymbolProcessor(
     const val ANNOTATION_SCOPE = "scope"
     const val ANNOTATION_QUALIFIER = "qualifier"
     const val ANNOTATION_NAMED = "named"
+
+    const val COMPONENT = "@DefineComponent"
+    const val SCOPE = "@Scope"
+    const val QUALIFIER = "@Qualifier"
   }
 }
 
