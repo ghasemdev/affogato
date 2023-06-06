@@ -28,9 +28,9 @@ dependencies {
   api(project(":affogato-coroutines-core"))
 
   // Coroutines ------------------------------------------------------------------------------------
-  api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0-RC")
-  api("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.0-RC")
-  api("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.0-RC")
+  api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+  api("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+  api("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
 }
 
 afterEvaluate {

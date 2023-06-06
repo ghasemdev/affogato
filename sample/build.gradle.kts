@@ -4,11 +4,11 @@ plugins {
   id("com.android.application")
   kotlin("android")
   // Kotlin Serialization
-  kotlin("plugin.serialization") version "1.8.20"
+  kotlin("plugin.serialization") version "1.8.21"
   // Kotlin Parcelize
   id("kotlin-parcelize")
   // Kotlin Symbol Processor
-  id("com.google.devtools.ksp") version "1.8.20-1.0.11"
+  id("com.google.devtools.ksp") version "1.8.21-1.0.11"
 }
 
 android {
@@ -85,10 +85,10 @@ dependencies {
   ksp(project(":affogato-hilt-binding-processor"))
 
   // AndroidX ------------------------------------------------------------------------------------
-  implementation("androidx.core:core-ktx:1.10.0")
+  implementation("androidx.core:core-ktx:1.10.1")
 
   // Compose ---------------------------------------------------------------------------------------
-  val composeVersion = "1.4.2"
+  val composeVersion = "1.4.3"
 
   implementation("androidx.compose.ui:ui:$composeVersion")
   implementation("androidx.compose.ui:ui-util:$composeVersion")
@@ -107,11 +107,11 @@ dependencies {
 
   implementation("androidx.compose.runtime:runtime:$composeVersion")
   implementation("androidx.compose.runtime:runtime-livedata:$composeVersion")
-  implementation("androidx.compose.compiler:compiler:1.4.6")
+  implementation("androidx.compose.compiler:compiler:1.4.7")
   implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
   implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")
 
-  implementation("androidx.paging:paging-compose:1.0.0-alpha18")
+  implementation("androidx.paging:paging-compose:1.0.0-alpha19")
   implementation("androidx.activity:activity-compose:1.7.1")
   implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 

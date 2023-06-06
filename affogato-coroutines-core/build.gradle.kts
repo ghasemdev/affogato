@@ -27,8 +27,8 @@ dependencies {
   implementation(project(":affogato-core-ktx"))
 
   // Coroutines ------------------------------------------------------------------------------------
-  api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0-RC")
-  api("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.0-RC")
+  api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+  api("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
 
   // Test ------------------------------------------------------------------------------------------
   testImplementation("com.google.truth:truth:1.1.3")

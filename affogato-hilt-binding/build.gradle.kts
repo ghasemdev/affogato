@@ -26,7 +26,7 @@ android {
 
 dependencies {
   // Hilt ------------------------------------------------------------------------------------------
-  api("com.google.dagger:hilt-android:2.46")
+  api("com.google.dagger:hilt-android:2.46.1")
 
   // Test ------------------------------------------------------------------------------------------
   testImplementation("com.google.truth:truth:1.1.3")

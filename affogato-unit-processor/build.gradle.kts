@@ -21,7 +21,7 @@ tasks.withType<KotlinCompile>().configureEach {
 
 dependencies {
   // KSP -------------------------------------------------------------------------------------------
-  implementation("com.google.devtools.ksp:symbol-processing-api:1.8.20-1.0.11")
+  implementation("com.google.devtools.ksp:symbol-processing-api:1.8.21-1.0.11")
   implementation("com.fleshgrinder.kotlin:case-format:0.2.0")
 
   // Test ------------------------------------------------------------------------------------------

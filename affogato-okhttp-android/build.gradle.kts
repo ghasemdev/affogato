@@ -26,9 +26,9 @@ android {
 
 dependencies {
   // OkHttp3 ---------------------------------------------------------------------------------------
-  api("com.squareup.okhttp3:okhttp:4.10.0")
-  api("com.squareup.okhttp3:logging-interceptor:4.10.0")
-  testApi("com.squareup.okhttp3:mockwebserver:4.10.0")
+  api("com.squareup.okhttp3:okhttp:4.11.0")
+  api("com.squareup.okhttp3:logging-interceptor:4.11.0")
+  testApi("com.squareup.okhttp3:mockwebserver:4.11.0")
 }
 
 afterEvaluate {

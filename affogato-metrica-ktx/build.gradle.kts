@@ -31,7 +31,7 @@ dependencies {
   api("com.yandex.android:appmetricapush-provider-hms:2.2.0")
 
   // Serialization ---------------------------------------------------------------------------------
-  implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
+  implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
 }
 
 afterEvaluate {

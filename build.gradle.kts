@@ -3,14 +3,14 @@ import org.jetbrains.dokka.base.DokkaBase
 import org.jetbrains.dokka.base.DokkaBaseConfiguration
 
 plugins {
-  id("com.android.application") version "8.0.0" apply false
-  id("com.android.library") version "8.0.0" apply false
-  kotlin("android") version "1.8.20" apply false
-  kotlin("jvm") version "1.8.20" apply false
+  id("com.android.application") version "8.0.1" apply false
+  id("com.android.library") version "8.0.1" apply false
+  kotlin("android") version "1.8.21" apply false
+  kotlin("jvm") version "1.8.21" apply false
 
-  id("io.gitlab.arturbosch.detekt") version "1.21.0"
-  id("org.jetbrains.dokka") version "1.7.10"
-  id("org.jetbrains.kotlinx.kover") version "0.6.0"
+  id("io.gitlab.arturbosch.detekt") version "1.23.0"
+  id("org.jetbrains.dokka") version "1.8.10"
+  id("org.jetbrains.kotlinx.kover") version "0.6.1"
 }
 
 buildscript {
@@ -30,13 +30,13 @@ subprojects {
     plugin("org.jetbrains.kotlinx.kover")
   }
   dependencies {
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.21.0")
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.0")
     dokkaPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.8.10")
   }
   // Static analysis
   detekt {
     // detekt version
-    toolVersion = "1.21.0"
+    toolVersion = "1.23.0"
     // preconfigure defaults
     buildUponDefaultConfig = true
     // activate all available (even unstable) rules.
