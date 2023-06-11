@@ -33,7 +33,7 @@ android {
     compose = true
   }
   composeOptions {
-    kotlinCompilerExtensionVersion = "1.4.6"
+    kotlinCompilerExtensionVersion = "1.4.7"
   }
   lint {
     baseline = file("$rootDir/config/lint/lint-baseline.xml")
@@ -42,7 +42,7 @@ android {
 
 dependencies {
   // Window ----------------------------------------------------------------------------------------
-  api("androidx.window:window:1.0.0")
+  api("androidx.window:window:1.1.0")
 
   // Compose -------------------------------------------------------------------------------------
   val composeVersion = "1.4.3"
