@@ -4,19 +4,19 @@ plugins {
   id("java-library")
   kotlin("jvm")
   id("maven-publish")
-  kotlin("plugin.serialization") version "1.8.20"
+  kotlin("plugin.serialization") version "1.8.21"
 }
 
 java {
-  sourceCompatibility = JavaVersion.VERSION_17
-  targetCompatibility = JavaVersion.VERSION_17
+  sourceCompatibility = JavaVersion.VERSION_11
+  targetCompatibility = JavaVersion.VERSION_11
 }
 
 tasks.withType<KotlinCompile>().configureEach {
   kotlinOptions {
     apiVersion = "1.8"
     languageVersion = "1.8"
-    jvmTarget = "17"
+    jvmTarget = "11"
   }
 }
 
@@ -30,7 +30,7 @@ dependencies {
   // Serialization ---------------------------------------------------------------------------------
   implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
   // Phone Checker ---------------------------------------------------------------------------------
-  implementation("com.googlecode.libphonenumber:libphonenumber:8.13.11")
+  implementation("com.googlecode.libphonenumber:libphonenumber:8.13.13")
 
   // Test ------------------------------------------------------------------------------------------
   testImplementation("com.google.truth:truth:1.1.3")
@@ -44,7 +44,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-structure"
-        version = "1.6.0"
+        version = "1.6.1"
 
         from(components["java"])
       }

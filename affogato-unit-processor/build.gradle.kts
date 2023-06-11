@@ -7,15 +7,15 @@ plugins {
 }
 
 java {
-  sourceCompatibility = JavaVersion.VERSION_17
-  targetCompatibility = JavaVersion.VERSION_17
+  sourceCompatibility = JavaVersion.VERSION_11
+  targetCompatibility = JavaVersion.VERSION_11
 }
 
 tasks.withType<KotlinCompile>().configureEach {
   kotlinOptions {
     apiVersion = "1.8"
     languageVersion = "1.8"
-    jvmTarget = "17"
+    jvmTarget = "11"
   }
 }
 
@@ -35,7 +35,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-unit-processor"
-        version = "1.6.0"
+        version = "1.6.1"
 
         from(components["java"])
       }

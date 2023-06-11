@@ -34,13 +34,13 @@ android {
     }
   }
   compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
   }
   kotlinOptions {
     apiVersion = "1.8"
     languageVersion = "1.8"
-    jvmTarget = "17"
+    jvmTarget = "11"
     freeCompilerArgs = listOf(
       "-P",
       "plugin:androidx.compose.compiler.plugins.kotlin:" +
@@ -51,7 +51,7 @@ android {
     compose = true
   }
   composeOptions {
-    kotlinCompilerExtensionVersion = "1.4.6"
+    kotlinCompilerExtensionVersion = "1.4.7"
   }
   packaging {
     resources.excludes.add("META-INF/AL2.0")
