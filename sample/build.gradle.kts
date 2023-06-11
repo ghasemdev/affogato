@@ -51,7 +51,7 @@ android {
     compose = true
   }
   composeOptions {
-    kotlinCompilerExtensionVersion = "1.4.6"
+    kotlinCompilerExtensionVersion = "1.4.7"
   }
   packaging {
     resources.excludes.add("META-INF/AL2.0")
@@ -111,8 +111,8 @@ dependencies {
   implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
   implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")
 
-  implementation("androidx.paging:paging-compose:1.0.0-alpha19")
-  implementation("androidx.activity:activity-compose:1.7.1")
+  implementation("androidx.paging:paging-compose:3.2.0-beta01")
+  implementation("androidx.activity:activity-compose:1.7.2")
   implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 
   androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")

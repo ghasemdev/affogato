@@ -4,7 +4,7 @@ plugins {
   id("java-library")
   kotlin("jvm")
   id("maven-publish")
-  kotlin("plugin.serialization") version "1.8.20"
+  kotlin("plugin.serialization") version "1.8.21"
 }
 
 java {
@@ -30,7 +30,7 @@ dependencies {
   // Serialization ---------------------------------------------------------------------------------
   implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
   // Phone Checker ---------------------------------------------------------------------------------
-  implementation("com.googlecode.libphonenumber:libphonenumber:8.13.11")
+  implementation("com.googlecode.libphonenumber:libphonenumber:8.13.13")
 
   // Test ------------------------------------------------------------------------------------------
   testImplementation("com.google.truth:truth:1.1.3")
