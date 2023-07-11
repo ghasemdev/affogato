@@ -1,7 +1,7 @@
 package com.parsuomash.affogato.logger.android
 
 import android.util.Log
-import com.parsuomash.affogato.logger.android.logcat.logcat
+import com.parsuomash.affogato.logger.android.logcat.ex.logcat
 
 /**
  * Logging class for manage logcat in debug/release mode.
