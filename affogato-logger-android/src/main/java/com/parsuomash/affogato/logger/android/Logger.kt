@@ -1,22 +1,26 @@
 package com.parsuomash.affogato.logger.android
 
-import android.util.Log
 import com.parsuomash.affogato.logger.android.logcat.ex.logcat
+import timber.log.Timber
 
 /**
- * Logging class for manage logcat in debug/release mode.
+ * Logging class for manage logcat in a debug/release mode.
+ * Under the hood we used [Timber].
  *
  * Example:
  * ```kotlin
- * with(Logger) {
+ * Logger.apply {
  *   tag = "Tick"
  *   isDebug = BuildConfig.DEBUG
- *   onRelease = { tag, message, throwable ->
- *     if (tag != null) {
- *       YandexMetrica.reportError(tag, message, throwable)
- *     } else {
- *       YandexMetrica.reportError(message, throwable)
+ *   onFilter { tag, message, throwable, level ->
+ *     if (level == LogLevel.ERROR) {
+ *       if (tag != null) {
+ *         YandexMetrica.reportError(tag, message, throwable)
+ *       } else {
+ *         YandexMetrica.reportError(message, throwable)
+ *       }
  *     }
+ *   }
  * }
  * Logger.info(message = "Hello Affogato!")
  * ```
@@ -38,14 +42,17 @@ object Logger {
   @JvmField
   var isDebug: Boolean = true
 
-  private var onRelease: ((tag: String?, message: String, throwable: Throwable) -> Unit)? = null
+  private var onFilter: (
+    (tag: String?, message: String, throwable: Throwable?, level: LogLevel) -> Unit)? = null
 
   /**
    * With onRelease block, we define our api for logging in release mode like use crash service.
    * @since 1.7.0
    */
-  fun onRelease(block: (tag: String?, message: String, throwable: Throwable) -> Unit) {
-    onRelease = block
+  fun onFilter(
+    block: (tag: String?, message: String, throwable: Throwable?, level: LogLevel) -> Unit
+  ) {
+    onFilter = block
   }
 
   /**
@@ -59,13 +66,10 @@ object Logger {
   @JvmStatic
   fun verbose(tag: String?, message: String, throwable: Throwable?) {
     if (isDebug) {
-      if (throwable != null) {
-        Log.v(tag ?: Logger.tag, message, throwable)
-      } else {
-        Log.v(tag ?: Logger.tag, message)
-      }
-    } else if (throwable != null && onRelease != null) {
-      onRelease!!.invoke(tag, message, throwable)
+      Timber.tag(tag ?: Logger.tag).v(throwable, message)
+    }
+    if (onFilter != null) {
+      onFilter!!.invoke(tag, message, throwable, LogLevel.VERBOSE)
     }
   }
 
@@ -80,13 +84,10 @@ object Logger {
   @JvmStatic
   fun debug(tag: String?, message: String, throwable: Throwable?) {
     if (isDebug) {
-      if (throwable != null) {
-        Log.d(tag ?: Logger.tag, message, throwable)
-      } else {
-        Log.d(tag ?: Logger.tag, message)
-      }
-    } else if (throwable != null && onRelease != null) {
-      onRelease!!.invoke(tag, message, throwable)
+      Timber.tag(tag ?: Logger.tag).d(throwable, message)
+    }
+    if (onFilter != null) {
+      onFilter!!.invoke(tag, message, throwable, LogLevel.DEBUG)
     }
   }
 
@@ -101,13 +102,10 @@ object Logger {
   @JvmStatic
   fun info(tag: String?, message: String, throwable: Throwable?) {
     if (isDebug) {
-      if (throwable != null) {
-        Log.i(tag ?: Logger.tag, message, throwable)
-      } else {
-        Log.i(tag ?: Logger.tag, message)
-      }
-    } else if (throwable != null && onRelease != null) {
-      onRelease!!.invoke(tag, message, throwable)
+      Timber.tag(tag ?: Logger.tag).i(throwable, message)
+    }
+    if (onFilter != null) {
+      onFilter!!.invoke(tag, message, throwable, LogLevel.INFO)
     }
   }
 
@@ -122,13 +120,10 @@ object Logger {
   @JvmStatic
   fun warn(tag: String?, message: String, throwable: Throwable?) {
     if (isDebug) {
-      if (throwable != null) {
-        Log.w(tag ?: Logger.tag, message, throwable)
-      } else {
-        Log.w(tag ?: Logger.tag, message)
-      }
-    } else if (throwable != null && onRelease != null) {
-      onRelease!!.invoke(tag, message, throwable)
+      Timber.tag(tag ?: Logger.tag).w(throwable, message)
+    }
+    if (onFilter != null) {
+      onFilter!!.invoke(tag, message, throwable, LogLevel.WARN)
     }
   }
 
@@ -143,13 +138,10 @@ object Logger {
   @JvmStatic
   fun error(tag: String?, message: String, throwable: Throwable?) {
     if (isDebug) {
-      if (throwable != null) {
-        Log.e(tag ?: Logger.tag, message, throwable)
-      } else {
-        Log.e(tag ?: Logger.tag, message)
-      }
-    } else if (throwable != null && onRelease != null) {
-      onRelease!!.invoke(tag, message, throwable)
+      Timber.tag(tag ?: Logger.tag).e(throwable, message)
+    }
+    if (onFilter != null) {
+      onFilter!!.invoke(tag, message, throwable, LogLevel.ERROR)
     }
   }
 
@@ -165,13 +157,10 @@ object Logger {
   @JvmName("wtf")
   fun assert(tag: String?, message: String, throwable: Throwable?) {
     if (isDebug) {
-      if (throwable != null) {
-        Log.wtf(tag ?: Logger.tag, message, throwable)
-      } else {
-        Log.wtf(tag ?: Logger.tag, message)
-      }
-    } else if (throwable != null && onRelease != null) {
-      onRelease!!.invoke(tag, message, throwable)
+      Timber.tag(tag ?: Logger.tag).wtf(throwable, message)
+    }
+    if (onFilter != null) {
+      onFilter!!.invoke(tag, message, throwable, LogLevel.ASSERT)
     }
   }
 }
