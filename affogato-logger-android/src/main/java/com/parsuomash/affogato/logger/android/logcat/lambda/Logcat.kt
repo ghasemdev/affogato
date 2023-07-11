@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.parsuomash.affogato.logger.android.logcat
+package com.parsuomash.affogato.logger.android.logcat.lambda
 
 import com.parsuomash.affogato.logger.android.LogLevel
 import com.parsuomash.affogato.logger.android.Logger
