@@ -33,7 +33,7 @@ android {
     compose = true
   }
   composeOptions {
-    kotlinCompilerExtensionVersion = "1.4.7"
+    kotlinCompilerExtensionVersion = "1.4.8"
   }
   lint {
     baseline = file("$rootDir/config/lint/lint-baseline.xml")
@@ -45,14 +45,12 @@ dependencies {
   api("androidx.window:window:1.1.0")
 
   // Compose -------------------------------------------------------------------------------------
-  val composeVersion = "1.4.3"
-
-  implementation("androidx.compose.ui:ui:$composeVersion")
+  implementation("androidx.compose.ui:ui:1.4.3")
   implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")
 
   // Test ------------------------------------------------------------------------------------------
   testImplementation("junit:junit:4.13.2")
-  testImplementation("com.google.truth:truth:1.1.3")
+  testImplementation("com.google.truth:truth:1.1.5")
 }
 
 afterEvaluate {
@@ -61,7 +59,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-unit"
-        version = "1.6.1"
+        version = "1.7.0"
 
         from(components["release"])
       }

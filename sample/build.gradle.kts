@@ -1,14 +1,12 @@
-@file:Suppress("UnstableApiUsage")
-
 plugins {
   id("com.android.application")
   kotlin("android")
   // Kotlin Serialization
-  kotlin("plugin.serialization") version "1.8.21"
+  kotlin("plugin.serialization") version "1.8.22"
   // Kotlin Parcelize
   id("kotlin-parcelize")
   // Kotlin Symbol Processor
-  id("com.google.devtools.ksp") version "1.8.21-1.0.11"
+  id("com.google.devtools.ksp") version "1.8.22-1.0.11"
 }
 
 android {
@@ -51,7 +49,7 @@ android {
     compose = true
   }
   composeOptions {
-    kotlinCompilerExtensionVersion = "1.4.7"
+    kotlinCompilerExtensionVersion = "1.4.8"
   }
   packagingOptions {
     resources.excludes.add("META-INF/AL2.0")
@@ -107,17 +105,15 @@ dependencies {
 
   implementation("androidx.compose.runtime:runtime:$composeVersion")
   implementation("androidx.compose.runtime:runtime-livedata:$composeVersion")
-  implementation("androidx.compose.compiler:compiler:1.4.7")
+  implementation("androidx.compose.compiler:compiler:1.4.8")
   implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
   implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")
 
-  implementation("androidx.paging:paging-compose:3.2.0-beta01")
+  implementation("androidx.paging:paging-compose:3.2.0-rc01")
   implementation("androidx.activity:activity-compose:1.7.2")
   implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 
   androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
-  androidTestImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
-
   debugImplementation("androidx.compose.ui:ui-tooling:$composeVersion")
   debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
 
@@ -129,15 +125,15 @@ dependencies {
 
   // Test ------------------------------------------------------------------------------------------
   testImplementation("junit:junit:4.13.2")
-  testImplementation("com.google.truth:truth:1.1.3")
+  testImplementation("com.google.truth:truth:1.1.5")
 
   // Instrumentation Test --------------------------------------------------------------------------
   androidTestImplementation("junit:junit:4.13.2")
-  androidTestImplementation("com.google.truth:truth:1.1.3")
+  androidTestImplementation("com.google.truth:truth:1.1.5")
   androidTestImplementation("androidx.test.ext:junit:1.1.5")
 
   androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
   // Leakcanary ------------------------------------------------------------------------------------
-  debugImplementation("com.squareup.leakcanary:leakcanary-android:2.10")
+  debugImplementation("com.squareup.leakcanary:leakcanary-android:2.12")
 }

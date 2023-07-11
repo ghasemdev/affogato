@@ -4,7 +4,7 @@ plugins {
   id("java-library")
   kotlin("jvm")
   id("maven-publish")
-  kotlin("plugin.serialization") version "1.8.21"
+  kotlin("plugin.serialization") version "1.8.22"
 }
 
 java {
@@ -33,7 +33,7 @@ dependencies {
   implementation("com.googlecode.libphonenumber:libphonenumber:8.13.13")
 
   // Test ------------------------------------------------------------------------------------------
-  testImplementation("com.google.truth:truth:1.1.3")
+  testImplementation("com.google.truth:truth:1.1.5")
   testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
 }
@@ -44,7 +44,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-structure"
-        version = "1.6.1"
+        version = "1.7.0"
 
         from(components["java"])
       }
