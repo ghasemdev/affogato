@@ -5,17 +5,17 @@ import org.jetbrains.dokka.base.DokkaBaseConfiguration
 plugins {
   id("com.android.application") version "8.0.2" apply false
   id("com.android.library") version "8.0.2" apply false
-  kotlin("android") version "1.8.21" apply false
-  kotlin("jvm") version "1.8.21" apply false
+  kotlin("android") version "1.8.22" apply false
+  kotlin("jvm") version "1.8.22" apply false
 
   id("io.gitlab.arturbosch.detekt") version "1.23.0"
-  id("org.jetbrains.dokka") version "1.8.10"
+  id("org.jetbrains.dokka") version "1.8.20"
   id("org.jetbrains.kotlinx.kover") version "0.6.1"
 }
 
 buildscript {
   dependencies {
-    classpath("org.jetbrains.dokka:dokka-base:1.8.10")
+    classpath("org.jetbrains.dokka:dokka-base:1.8.20")
     classpath("org.jetbrains.kotlinx:kover:0.6.1")
   }
 }
@@ -31,7 +31,7 @@ subprojects {
   }
   dependencies {
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.0")
-    dokkaPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.8.10")
+    dokkaPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.8.20")
   }
   // Static analysis
   detekt {
@@ -42,6 +42,7 @@ subprojects {
     // activate all available (even unstable) rules.
     allRules = false
     // point to your custom config defining rules to run, overwriting default behavior
+    @Suppress("DEPRECATION")
     config = files("$rootDir/config/detekt/detekt.yml")
     // a way of suppressing issues before introducing detekt
     baseline = file("$rootDir/config/detekt/baseline.xml")

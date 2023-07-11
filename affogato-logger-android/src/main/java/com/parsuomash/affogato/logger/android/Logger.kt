@@ -1,6 +1,7 @@
 package com.parsuomash.affogato.logger.android
 
 import android.util.Log
+import com.parsuomash.affogato.logger.android.logcat.logcat
 
 /**
  * Logging class for manage logcat in debug/release mode.
@@ -24,7 +25,7 @@ import android.util.Log
  */
 object Logger {
   /**
-   * Logging tag help for beter filter and search.
+   * Logging tag help for better filter and search.
    * @since 1.5.0
    */
   @JvmField
@@ -37,12 +38,15 @@ object Logger {
   @JvmField
   var isDebug: Boolean = true
 
+  private var onRelease: ((tag: String?, message: String, throwable: Throwable) -> Unit)? = null
+
   /**
-   * With onRelease block we define our api for logging in release mode like use crash service.
-   * @since 1.5.0
+   * With onRelease block, we define our api for logging in release mode like use crash service.
+   * @since 1.7.0
    */
-  @JvmField
-  var onRelease: ((tag: String?, message: String, throwable: Throwable) -> Unit)? = null
+  fun onRelease(block: (tag: String?, message: String, throwable: Throwable) -> Unit) {
+    onRelease = block
+  }
 
   /**
    * Send a VERBOSE log message and log the exception.
@@ -87,7 +91,7 @@ object Logger {
   }
 
   /**
-   * Send a INFO log message and log the exception.
+   * Send an INFO log message and log the exception.
    * @since 1.5.0
    * @param message String: The message you would like logged. This value cannot be null.
    * @param throwable Throwable: An exception to log This value may be null.
@@ -129,7 +133,7 @@ object Logger {
   }
 
   /**
-   * Send a ERROR log message and log the exception.
+   * Send an ERROR log message and log the exception.
    * @since 1.5.0
    * @param message String: The message you would like logged. This value cannot be null.
    * @param throwable Throwable: An exception to log This value may be null.
