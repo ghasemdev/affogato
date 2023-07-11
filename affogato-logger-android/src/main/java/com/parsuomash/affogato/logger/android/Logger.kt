@@ -45,6 +45,10 @@ object Logger {
   private var onFilter: (
     (tag: String?, message: String, throwable: Throwable?, level: LogLevel) -> Unit)? = null
 
+  init {
+    Timber.plant(Timber.DebugTree())
+  }
+
   /**
    * With onRelease block, we define our api for logging in release mode like use crash service.
    * @since 1.7.0
@@ -65,9 +69,7 @@ object Logger {
    */
   @JvmStatic
   fun verbose(tag: String?, message: String, throwable: Throwable?) {
-    if (isDebug) {
-      Timber.tag(tag ?: Logger.tag).v(throwable, message)
-    }
+    Timber.tag(tag ?: Logger.tag).v(throwable, message)
     if (onFilter != null) {
       onFilter!!.invoke(tag, message, throwable, LogLevel.VERBOSE)
     }
@@ -83,9 +85,7 @@ object Logger {
    */
   @JvmStatic
   fun debug(tag: String?, message: String, throwable: Throwable?) {
-    if (isDebug) {
-      Timber.tag(tag ?: Logger.tag).d(throwable, message)
-    }
+    Timber.tag(tag ?: Logger.tag).d(throwable, message)
     if (onFilter != null) {
       onFilter!!.invoke(tag, message, throwable, LogLevel.DEBUG)
     }
@@ -101,9 +101,7 @@ object Logger {
    */
   @JvmStatic
   fun info(tag: String?, message: String, throwable: Throwable?) {
-    if (isDebug) {
-      Timber.tag(tag ?: Logger.tag).i(throwable, message)
-    }
+    Timber.tag(tag ?: Logger.tag).i(throwable, message)
     if (onFilter != null) {
       onFilter!!.invoke(tag, message, throwable, LogLevel.INFO)
     }
@@ -119,9 +117,7 @@ object Logger {
    */
   @JvmStatic
   fun warn(tag: String?, message: String, throwable: Throwable?) {
-    if (isDebug) {
-      Timber.tag(tag ?: Logger.tag).w(throwable, message)
-    }
+    Timber.tag(tag ?: Logger.tag).w(throwable, message)
     if (onFilter != null) {
       onFilter!!.invoke(tag, message, throwable, LogLevel.WARN)
     }
@@ -137,9 +133,7 @@ object Logger {
    */
   @JvmStatic
   fun error(tag: String?, message: String, throwable: Throwable?) {
-    if (isDebug) {
-      Timber.tag(tag ?: Logger.tag).e(throwable, message)
-    }
+    Timber.tag(tag ?: Logger.tag).e(throwable, message)
     if (onFilter != null) {
       onFilter!!.invoke(tag, message, throwable, LogLevel.ERROR)
     }
@@ -156,9 +150,7 @@ object Logger {
   @JvmStatic
   @JvmName("wtf")
   fun assert(tag: String?, message: String, throwable: Throwable?) {
-    if (isDebug) {
-      Timber.tag(tag ?: Logger.tag).wtf(throwable, message)
-    }
+    Timber.tag(tag ?: Logger.tag).wtf(throwable, message)
     if (onFilter != null) {
       onFilter!!.invoke(tag, message, throwable, LogLevel.ASSERT)
     }
