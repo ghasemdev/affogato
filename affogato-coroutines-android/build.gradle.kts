@@ -28,9 +28,9 @@ dependencies {
   api(project(":affogato-coroutines-core"))
 
   // Coroutines ------------------------------------------------------------------------------------
-  api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
-  api("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
-  api("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
+  api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2")
+  api("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.2")
+  api("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.2")
 }
 
 afterEvaluate {
@@ -39,7 +39,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-coroutines-android"
-        version = "1.6.0"
+        version = "1.7.0"
 
         from(components["release"])
       }

@@ -29,7 +29,7 @@ dependencies {
   api("com.google.dagger:hilt-android:2.46.1")
 
   // Test ------------------------------------------------------------------------------------------
-  testImplementation("com.google.truth:truth:1.1.3")
+  testImplementation("com.google.truth:truth:1.1.5")
   testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
 }
@@ -40,7 +40,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-hilt-binding"
-        version = "1.6.0"
+        version = "1.7.0"
 
         from(components["release"])
       }

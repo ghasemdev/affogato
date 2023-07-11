@@ -21,12 +21,12 @@ tasks.withType<KotlinCompile>().configureEach {
 
 dependencies {
   // KSP -------------------------------------------------------------------------------------------
-  implementation("com.google.devtools.ksp:symbol-processing-api:1.8.21-1.0.11")
+  implementation("com.google.devtools.ksp:symbol-processing-api:1.8.22-1.0.11")
   implementation("com.fleshgrinder.kotlin:case-format:0.2.0")
 
   // Test ------------------------------------------------------------------------------------------
   testImplementation("junit:junit:4.13.2")
-  testImplementation("com.google.truth:truth:1.1.3")
+  testImplementation("com.google.truth:truth:1.1.5")
 }
 
 afterEvaluate {
@@ -35,7 +35,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-unit-processor"
-        version = "1.6.0"
+        version = "1.7.0"
 
         from(components["java"])
       }
