@@ -18,8 +18,8 @@ android {
     targetCompatibility = JavaVersion.VERSION_17
   }
   kotlinOptions {
-    apiVersion = "1.8"
-    languageVersion = "1.8"
+    apiVersion = "1.9"
+    languageVersion = "1.9"
     jvmTarget = "17"
   }
 }
@@ -28,9 +28,9 @@ dependencies {
   api(project(":affogato-coroutines-core"))
 
   // Coroutines ------------------------------------------------------------------------------------
-  api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2")
-  api("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.2")
-  api("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.2")
+  api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+  api("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+  api("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
 }
 
 afterEvaluate {
@@ -39,7 +39,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-coroutines-android"
-        version = "1.7.0"
+        version = "1.7.2"
 
         from(components["release"])
       }

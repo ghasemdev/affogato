@@ -2,11 +2,11 @@ plugins {
   id("com.android.application")
   kotlin("android")
   // Kotlin Serialization
-  kotlin("plugin.serialization") version "1.8.22"
+  kotlin("plugin.serialization") version "1.9.0"
   // Kotlin Parcelize
   id("kotlin-parcelize")
   // Kotlin Symbol Processor
-  id("com.google.devtools.ksp") version "1.8.22-1.0.11"
+  id("com.google.devtools.ksp") version "1.9.0-1.0.12"
 }
 
 android {
@@ -36,8 +36,8 @@ android {
     targetCompatibility = JavaVersion.VERSION_17
   }
   kotlinOptions {
-    apiVersion = "1.8"
-    languageVersion = "1.8"
+    apiVersion = "1.9"
+    languageVersion = "1.9"
     jvmTarget = "17"
     freeCompilerArgs = listOf(
       "-P",
@@ -49,7 +49,7 @@ android {
     compose = true
   }
   composeOptions {
-    kotlinCompilerExtensionVersion = "1.4.8"
+    kotlinCompilerExtensionVersion = "1.5.1"
   }
   packaging {
     resources.excludes.add("META-INF/AL2.0")
@@ -86,7 +86,7 @@ dependencies {
   implementation("androidx.core:core-ktx:1.10.1")
 
   // Compose ---------------------------------------------------------------------------------------
-  val composeVersion = "1.4.3"
+  val composeVersion = "1.5.0-rc01"
 
   implementation("androidx.compose.ui:ui:$composeVersion")
   implementation("androidx.compose.ui:ui-util:$composeVersion")
@@ -105,11 +105,11 @@ dependencies {
 
   implementation("androidx.compose.runtime:runtime:$composeVersion")
   implementation("androidx.compose.runtime:runtime-livedata:$composeVersion")
-  implementation("androidx.compose.compiler:compiler:1.4.8")
+  implementation("androidx.compose.compiler:compiler:1.5.1")
   implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
   implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")
 
-  implementation("androidx.paging:paging-compose:3.2.0-rc01")
+  implementation("androidx.paging:paging-compose:3.2.0")
   implementation("androidx.activity:activity-compose:1.7.2")
   implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 
@@ -118,7 +118,7 @@ dependencies {
   debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
 
   // Accompanist -----------------------------------------------------------------------------------
-  val accompanistVersion = "0.30.1"
+  val accompanistVersion = "0.31.5-beta"
 
   implementation("com.google.accompanist:accompanist-pager:$accompanistVersion")
   implementation("com.google.accompanist:accompanist-pager-indicators:$accompanistVersion")

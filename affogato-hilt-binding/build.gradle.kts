@@ -18,20 +18,20 @@ android {
     targetCompatibility = JavaVersion.VERSION_17
   }
   kotlinOptions {
-    apiVersion = "1.8"
-    languageVersion = "1.8"
+    apiVersion = "1.9"
+    languageVersion = "1.9"
     jvmTarget = "17"
   }
 }
 
 dependencies {
   // Hilt ------------------------------------------------------------------------------------------
-  api("com.google.dagger:hilt-android:2.46.1")
+  api("com.google.dagger:hilt-android:2.47")
 
   // Test ------------------------------------------------------------------------------------------
   testImplementation("com.google.truth:truth:1.1.5")
-  testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
-  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
+  testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
+  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0")
 }
 
 afterEvaluate {
@@ -40,7 +40,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-hilt-binding"
-        version = "1.7.0"
+        version = "1.7.2"
 
         from(components["release"])
       }

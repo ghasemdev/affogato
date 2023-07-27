@@ -18,8 +18,8 @@ android {
     targetCompatibility = JavaVersion.VERSION_17
   }
   kotlinOptions {
-    apiVersion = "1.8"
-    languageVersion = "1.8"
+    apiVersion = "1.9"
+    languageVersion = "1.9"
     jvmTarget = "17"
   }
 }
@@ -40,7 +40,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-metrica-ktx"
-        version = "1.7.0"
+        version = "1.7.2"
 
         from(components["release"])
       }

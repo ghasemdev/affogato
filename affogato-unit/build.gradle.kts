@@ -20,8 +20,8 @@ android {
     targetCompatibility = JavaVersion.VERSION_17
   }
   kotlinOptions {
-    apiVersion = "1.8"
-    languageVersion = "1.8"
+    apiVersion = "1.9"
+    languageVersion = "1.9"
     jvmTarget = "17"
     freeCompilerArgs = listOf(
       "-P",
@@ -33,7 +33,7 @@ android {
     compose = true
   }
   composeOptions {
-    kotlinCompilerExtensionVersion = "1.4.8"
+    kotlinCompilerExtensionVersion = "1.5.1"
   }
   lint {
     baseline = file("$rootDir/config/lint/lint-baseline.xml")
@@ -45,7 +45,7 @@ dependencies {
   api("androidx.window:window:1.1.0")
 
   // Compose -------------------------------------------------------------------------------------
-  implementation("androidx.compose.ui:ui:1.4.3")
+  implementation("androidx.compose.ui:ui:1.5.0-rc01")
   implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")
 
   // Test ------------------------------------------------------------------------------------------
@@ -59,7 +59,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-unit"
-        version = "1.7.0"
+        version = "1.7.2"
 
         from(components["release"])
       }
