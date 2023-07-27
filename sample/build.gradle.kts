@@ -1,12 +1,9 @@
 plugins {
-  id("com.android.application")
-  kotlin("android")
-  // Kotlin Serialization
-  kotlin("plugin.serialization") version "1.9.0"
-  // Kotlin Parcelize
-  id("kotlin-parcelize")
-  // Kotlin Symbol Processor
-  id("com.google.devtools.ksp") version "1.9.0-1.0.12"
+  alias(libs.plugins.android.application)
+  alias(libs.plugins.kotlin.android)
+  alias(libs.plugins.kotlin.serialization)
+  alias(libs.plugins.ksp)
+  id(libs.plugins.kotlin.parcelize.get().pluginId)
 }
 
 android {
@@ -39,11 +36,6 @@ android {
     apiVersion = "1.9"
     languageVersion = "1.9"
     jvmTarget = "17"
-    freeCompilerArgs = listOf(
-      "-P",
-      "plugin:androidx.compose.compiler.plugins.kotlin:" +
-        "suppressKotlinVersionCompatibilityCheck=true"
-    )
   }
   buildFeatures {
     compose = true
@@ -83,57 +75,27 @@ dependencies {
   ksp(project(":affogato-hilt-binding-processor"))
 
   // AndroidX ------------------------------------------------------------------------------------
-  implementation("androidx.core:core-ktx:1.10.1")
+  implementation(libs.core.ktx)
 
   // Compose ---------------------------------------------------------------------------------------
-  val composeVersion = "1.5.0-rc01"
+  implementation(libs.bundles.compose)
 
-  implementation("androidx.compose.ui:ui:$composeVersion")
-  implementation("androidx.compose.ui:ui-util:$composeVersion")
-
-  implementation("androidx.compose.foundation:foundation:$composeVersion")
-
-  implementation("androidx.compose.material:material:$composeVersion")
-  implementation("androidx.compose.material:material-icons-core:$composeVersion")
-  implementation("androidx.compose.material:material-icons-extended:$composeVersion")
-
-  implementation("androidx.compose.ui:ui-tooling:$composeVersion")
-  implementation("androidx.compose.ui:ui-tooling-preview:$composeVersion")
-
-  implementation("androidx.compose.animation:animation:$composeVersion")
-  implementation("androidx.compose.animation:animation-graphics:$composeVersion")
-
-  implementation("androidx.compose.runtime:runtime:$composeVersion")
-  implementation("androidx.compose.runtime:runtime-livedata:$composeVersion")
-  implementation("androidx.compose.compiler:compiler:1.5.1")
-  implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
-  implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")
-
-  implementation("androidx.paging:paging-compose:3.2.0")
-  implementation("androidx.activity:activity-compose:1.7.2")
-  implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
-
-  androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
-  debugImplementation("androidx.compose.ui:ui-tooling:$composeVersion")
-  debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
+  androidTestImplementation(libs.compose.ui.test.junit4)
+  debugImplementation(libs.compose.ui.tooling)
+  debugImplementation(libs.compose.ui.test.manifest)
 
   // Accompanist -----------------------------------------------------------------------------------
-  val accompanistVersion = "0.31.5-beta"
-
-  implementation("com.google.accompanist:accompanist-pager:$accompanistVersion")
-  implementation("com.google.accompanist:accompanist-pager-indicators:$accompanistVersion")
+  implementation(libs.bundles.accompanist)
 
   // Test ------------------------------------------------------------------------------------------
-  testImplementation("junit:junit:4.13.2")
-  testImplementation("com.google.truth:truth:1.1.5")
+  testImplementation(libs.bundles.junit4)
 
   // Instrumentation Test --------------------------------------------------------------------------
-  androidTestImplementation("junit:junit:4.13.2")
-  androidTestImplementation("com.google.truth:truth:1.1.5")
-  androidTestImplementation("androidx.test.ext:junit:1.1.5")
+  androidTestImplementation(libs.bundles.junit4)
+  androidTestImplementation(libs.androidx.junit)
 
-  androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+  androidTestImplementation(libs.espresso.core)
 
   // Leakcanary ------------------------------------------------------------------------------------
-  debugImplementation("com.squareup.leakcanary:leakcanary-android:2.12")
+  debugImplementation(libs.leakcanary.android)
 }

@@ -1,32 +1,16 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-  id("java-library")
-  kotlin("jvm")
-  id("maven-publish")
+  id(libs.plugins.maven.publish.get().pluginId)
 }
 
-java {
-  sourceCompatibility = JavaVersion.VERSION_17
-  targetCompatibility = JavaVersion.VERSION_17
-}
-
-tasks.withType<KotlinCompile>().configureEach {
-  kotlinOptions {
-    apiVersion = "1.9"
-    languageVersion = "1.9"
-    jvmTarget = "17"
-  }
+apply {
+  from("$rootDir/library-build.gradle")
 }
 
 dependencies {
   // KSP -------------------------------------------------------------------------------------------
-  implementation("com.google.devtools.ksp:symbol-processing-api:1.9.0-1.0.12")
-  implementation("com.fleshgrinder.kotlin:case-format:0.2.0")
-
+  "implementation"(libs.bundles.processing)
   // Test ------------------------------------------------------------------------------------------
-  testImplementation("junit:junit:4.13.2")
-  testImplementation("com.google.truth:truth:1.1.5")
+  "testImplementation"(libs.bundles.junit4)
 }
 
 afterEvaluate {
@@ -35,7 +19,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-unit-processor"
-        version = "1.7.2"
+        version = libs.versions.affogato.get()
 
         from(components["java"])
       }

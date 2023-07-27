@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+  compileSdk 33
+  buildToolsVersion "33.0.2"
+
+  defaultConfig {
+    minSdk = 16
+    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+  }
+
+  compileOptions {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+  }
+
+  kotlinOptions {
+    apiVersion = "1.9"
+    languageVersion = "1.9"
+    jvmTarget = "17"
+  }
+
+  packagingOptions {
+    exclude("META-INF/AL2.0")
+    exclude("META-INF/LGPL2.1")
+  }
+}
+
+dependencies {
+}
