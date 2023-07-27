@@ -7,7 +7,7 @@ apply {
 }
 
 dependencies {
-  "implementation"(project(":affogato-core-ktx"))
+  "implementation"(project(AffogatoModules.coreKtx))
 
   // Coroutines ------------------------------------------------------------------------------------
   "api"(libs.kotlinx.coroutines.core)

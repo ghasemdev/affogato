@@ -12,7 +12,7 @@ android {
 }
 
 dependencies {
-  api(project(":affogato-coroutines-core"))
+  api(project(AffogatoModules.coroutinesCore))
 
   // Coroutines ------------------------------------------------------------------------------------
   api(libs.bundles.kotlinx.coroutines)

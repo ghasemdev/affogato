@@ -1,3 +1,11 @@
+import Configuration.APPLICATION_ID
+import Configuration.BUILD_TOOLS_VERSION
+import Configuration.COMPILE_SDK
+import Configuration.MIN_SDK
+import Configuration.TARGET_SDK
+import Configuration.VERSION_CODE
+import Configuration.VERSION_NAME
+
 plugins {
   alias(libs.plugins.android.application)
   alias(libs.plugins.kotlin.android)
@@ -7,16 +15,16 @@ plugins {
 }
 
 android {
-  compileSdk = 33
-  buildToolsVersion = "33.0.2"
-  namespace = "com.parsuomash.affogato"
+  compileSdk = COMPILE_SDK
+  buildToolsVersion = BUILD_TOOLS_VERSION
+  namespace = APPLICATION_ID
 
   defaultConfig {
-    applicationId = "com.parsuomash.affogato"
-    minSdk = 21
-    targetSdk = 33
-    versionCode = 1
-    versionName = "1.0.0"
+    applicationId = APPLICATION_ID
+    minSdk = MIN_SDK
+    targetSdk = TARGET_SDK
+    versionCode = VERSION_CODE
+    versionName = VERSION_NAME
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     vectorDrawables {
       useSupportLibrary = true
@@ -41,7 +49,7 @@ android {
     compose = true
   }
   composeOptions {
-    kotlinCompilerExtensionVersion = "1.5.1"
+    kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
   }
   packaging {
     resources.excludes.add("META-INF/AL2.0")
@@ -66,13 +74,13 @@ ksp {
 
 dependencies {
   // Modules
-  implementation(project(":affogato-core-ktx"))
-  implementation(project(":affogato-coroutines-android"))
-  implementation(project(":affogato-unit"))
-  ksp(project(":affogato-unit-processor"))
+  implementation(project(AffogatoModules.coreKtx))
+  implementation(project(AffogatoModules.coroutinesAndroid))
+  implementation(project(AffogatoModules.unit))
+  ksp(project(AffogatoModules.unitProcessor))
 
-  implementation(project(":affogato-hilt-binding"))
-  ksp(project(":affogato-hilt-binding-processor"))
+  implementation(project(AffogatoModules.hiltBinding))
+  ksp(project(AffogatoModules.hiltBindingProcessor))
 
   // AndroidX ------------------------------------------------------------------------------------
   implementation(libs.core.ktx)

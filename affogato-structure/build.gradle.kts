@@ -8,7 +8,7 @@ apply {
 }
 
 dependencies {
-  "implementation"(project(":affogato-core-ktx"))
+  "implementation"(project(AffogatoModules.coreKtx))
 
   // Serialization ---------------------------------------------------------------------------------
   "implementation"(libs.kotlinx.serialization.json)

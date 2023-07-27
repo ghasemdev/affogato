@@ -1,3 +1,5 @@
+import Configuration.MIN_SDK
+
 plugins {
   alias(libs.plugins.android.library)
   id(libs.plugins.maven.publish.get().pluginId)
@@ -11,13 +13,13 @@ android {
   namespace = "com.parsuomash.affogato.unit"
 
   defaultConfig {
-    minSdk = 21
+    minSdk = MIN_SDK
   }
   buildFeatures {
     compose = true
   }
   composeOptions {
-    kotlinCompilerExtensionVersion = "1.5.1"
+    kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
   }
   lint {
     baseline = file("$rootDir/config/lint/lint-baseline.xml")

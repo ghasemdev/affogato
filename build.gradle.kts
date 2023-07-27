@@ -26,18 +26,18 @@ subprojects {
     mavenCentral()
   }
   apply {
-    plugin("io.gitlab.arturbosch.detekt")
-    plugin("org.jetbrains.dokka")
-    plugin("org.jetbrains.kotlinx.kover")
+    plugin(Plugins.Detekt.value)
+    plugin(Plugins.Dokka.value)
+    plugin(Plugins.Kover.value)
   }
   dependencies {
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.0")
-    dokkaPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.8.20")
+    detektPlugins(Plugins.Detekt.formatting)
+    dokkaPlugin(Plugins.Dokka.KotlinAsJavaPlugin)
   }
   // Static analysis
   detekt {
     // detekt version
-    toolVersion = "1.23.0"
+    toolVersion = Plugins.Detekt.version
     // preconfigure defaults
     buildUponDefaultConfig = true
     // activate all available (even unstable) rules.
