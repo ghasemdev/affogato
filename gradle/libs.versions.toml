@@ -1,10 +1,11 @@
 [versions]
-accompanist = "0.31.5-beta"
+#noinspection GradleDependency
+accompanist = "0.31.5-beta" # 0.31.6-rc need android 14
 affogato = "1.7.2"
 agp = "8.1.0"
 case-format = "0.2.0"
 #noinspection GradleDependency
-compose = "1.5.0-rc01"
+compose = "1.5.0-beta03" # 1.5.0-rc01 need android 14
 compose-activity = "1.7.2"
 compose-compiler = "1.5.1"
 compose-constraintlayout = "1.0.1"
@@ -106,47 +107,47 @@ java-library = { id = "java-library" }
 
 [bundles]
 accompanist = [
-    "accompanist-pager",
-    "accompanist-pager-indicators"
+  "accompanist-pager",
+  "accompanist-pager-indicators"
 ]
 compose = [
-    "compose-ui",
-    "compose-ui-util",
-    "compose-foundation",
-    "compose-material",
-    "compose-material-icons-core",
-    "compose-material-icons-extended",
-    "compose-ui-tooling",
-    "compose-ui-tooling-preview",
-    "compose-animation",
-    "compose-animation-graphics",
-    "compose-runtime",
-    "compose-runtime-livedata",
-    "compose-lifecycle-runtime",
-    "compose-lifecycle-viewmodel",
-    "compose-paging",
-    "compose-activity",
-    "compose-constraintlayout",
+  "compose-ui",
+  "compose-ui-util",
+  "compose-foundation",
+  "compose-material",
+  "compose-material-icons-core",
+  "compose-material-icons-extended",
+  "compose-ui-tooling",
+  "compose-ui-tooling-preview",
+  "compose-animation",
+  "compose-animation-graphics",
+  "compose-runtime",
+  "compose-runtime-livedata",
+  "compose-lifecycle-runtime",
+  "compose-lifecycle-viewmodel",
+  "compose-paging",
+  "compose-activity",
+  "compose-constraintlayout",
 ]
 kotlinx-coroutines = [
-    "kotlinx-coroutines-android",
-    "kotlinx-coroutines-core",
-    "kotlinx-coroutines-test"
+  "kotlinx-coroutines-android",
+  "kotlinx-coroutines-core",
+  "kotlinx-coroutines-test"
 ]
 junit5 = [
-    "truth",
-    "junit-jupiter-api"
+  "truth",
+  "junit-jupiter-api"
 ]
 junit4 = [
-    "truth",
-    "junit"
+  "truth",
+  "junit"
 ]
 processing = [
-    "case-format",
-    "ksp-api"
+  "case-format",
+  "ksp-api"
 ]
 metrica = [
-    "metrica-push-provider-hms",
-    "metrica-push",
-    "metrica"
+  "metrica-push-provider-hms",
+  "metrica-push",
+  "metrica"
 ]
