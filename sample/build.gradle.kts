@@ -106,4 +106,5 @@ dependencies {
 
   // Leakcanary ------------------------------------------------------------------------------------
   debugImplementation(libs.leakcanary.android)
+  implementation("com.github.samanzamani:PersianDate:1.6.1")
 }

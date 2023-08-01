@@ -17,20 +17,25 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.parsuomash.affogato.R
+import com.parsuomash.affogato.app.datepicker.persian.PersianDatePicker2
+import com.parsuomash.affogato.app.datepicker.persian.rememberPersianDatePickerState
 import com.parsuomash.affogato.app.ui.theme.AffogatoTheme
 import com.parsuomash.affogato.unit.Dimen
 import com.parsuomash.affogato.unit.sdp
@@ -51,7 +56,7 @@ class MainActivity : ComponentActivity() {
           modifier = Modifier.fillMaxSize(),
           color = MaterialTheme.colors.background
         ) {
-          ScreenContent2(window)
+          ScreenContent3()
         }
       }
     }
@@ -138,6 +143,39 @@ fun ScreenContent2(window: WindowSize) {
     ) {
       Text(
         text = stringResource(id = R.string.app_name).uppercase(),
+        fontSize = dimen.fontSize
+      )
+    }
+  }
+}
+
+@Composable
+fun ScreenContent3() {
+  Column {
+    val persianDatePickerState = rememberPersianDatePickerState(
+      selectedDay = 1,
+      selectedMonth = 1,
+      selectedYear = 1370
+    )
+    CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
+      PersianDatePicker2(
+        modifier = Modifier.fillMaxWidth(),
+        persianDatePickerState = persianDatePickerState
+      )
+    }
+
+    Spacer(modifier = Modifier.height(50.dp))
+    Text(text = "${persianDatePickerState.selectedYear}/${persianDatePickerState.selectedMonth}/${persianDatePickerState.selectedDay}")
+    Spacer(modifier = Modifier.height(50.dp))
+
+    Button(
+      modifier = Modifier
+        .fillMaxWidth()
+        .height(dimen.heightButton),
+      onClick = { }
+    ) {
+      Text(
+        text = "show date picker",
         fontSize = dimen.fontSize
       )
     }
