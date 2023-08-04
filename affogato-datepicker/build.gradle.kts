@@ -34,7 +34,7 @@ dependencies {
   implementation(libs.compose.ui.tooling)
   debugImplementation(libs.compose.ui.tooling)
   // Date
-  implementation(libs.persianDate)
+  api(libs.persianDate)
 }
 
 afterEvaluate {
