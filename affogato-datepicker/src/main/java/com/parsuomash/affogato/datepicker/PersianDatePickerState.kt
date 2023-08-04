@@ -1,6 +1,6 @@
 @file:Suppress("MemberVisibilityCanBePrivate")
 
-package com.parsuomash.affogato.app.datepicker.persian
+package com.parsuomash.affogato.datepicker
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable

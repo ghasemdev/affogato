@@ -1,4 +1,4 @@
-package com.parsuomash.affogato.app.datepicker.persian
+package com.parsuomash.affogato.datepicker
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -16,8 +16,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.parsuomash.affogato.app.picker.NumberPicker
-import com.parsuomash.affogato.app.picker.rememberPickerState
+import com.parsuomash.affogato.datepicker.picker.NumberPicker
+import com.parsuomash.affogato.datepicker.picker.rememberPickerState
 
 @Composable
 fun PersianDatePicker(

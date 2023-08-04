@@ -1,4 +1,4 @@
-package com.parsuomash.affogato.app.picker
+package com.parsuomash.affogato.datepicker.picker
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable

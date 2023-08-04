@@ -33,6 +33,7 @@ lifecycle-runtime-compose = "2.6.1"
 metrica = "5.3.0"
 metrica-push = "2.2.0"
 okhttp = "4.11.0"
+persianDate = "1.6.1"
 timber = "5.0.1"
 truth = "1.1.5"
 window = "1.1.0"
@@ -87,6 +88,7 @@ metrica-push-provider-hms = { module = "com.yandex.android:appmetricapush-provid
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 okhttp-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
 okhttp-mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "okhttp" }
+persianDate = { module = "com.github.samanzamani:PersianDate", version.ref = "persianDate" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 truth = { module = "com.google.truth:truth", version.ref = "truth" }
 window = { module = "androidx.window:window", version.ref = "window" }

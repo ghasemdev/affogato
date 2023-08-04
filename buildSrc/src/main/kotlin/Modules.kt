@@ -3,6 +3,7 @@ object AffogatoModules {
   const val coreKtx = ":affogato-core-ktx"
   const val coroutinesAndroid = ":affogato-coroutines-android"
   const val coroutinesCore = ":affogato-coroutines-core"
+  const val datepicker = ":affogato-datepicker"
   const val hiltBinding = ":affogato-hilt-binding"
   const val hiltBindingProcessor = ":affogato-hilt-binding-processor"
   const val loggerAndroid = ":affogato-logger-android"

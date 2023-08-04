@@ -76,6 +76,7 @@ dependencies {
   // Modules
   implementation(project(AffogatoModules.coreKtx))
   implementation(project(AffogatoModules.coroutinesAndroid))
+  implementation(project(AffogatoModules.datepicker))
   implementation(project(AffogatoModules.unit))
   ksp(project(AffogatoModules.unitProcessor))
 
@@ -106,5 +107,4 @@ dependencies {
 
   // Leakcanary ------------------------------------------------------------------------------------
   debugImplementation(libs.leakcanary.android)
-  implementation("com.github.samanzamani:PersianDate:1.6.1")
 }

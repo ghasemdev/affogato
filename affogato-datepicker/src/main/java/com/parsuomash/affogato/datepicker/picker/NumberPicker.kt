@@ -1,4 +1,4 @@
-package com.parsuomash.affogato.app.picker
+package com.parsuomash.affogato.datepicker.picker
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior

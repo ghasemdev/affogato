@@ -34,9 +34,9 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.parsuomash.affogato.R
-import com.parsuomash.affogato.app.datepicker.persian.PersianDatePicker2
-import com.parsuomash.affogato.app.datepicker.persian.rememberPersianDatePickerState
 import com.parsuomash.affogato.app.ui.theme.AffogatoTheme
+import com.parsuomash.affogato.datepicker.PersianDatePicker
+import com.parsuomash.affogato.datepicker.rememberPersianDatePickerState
 import com.parsuomash.affogato.unit.Dimen
 import com.parsuomash.affogato.unit.sdp
 import com.parsuomash.affogato.unit.ssp
@@ -158,7 +158,7 @@ fun ScreenContent3() {
       selectedYear = 1370
     )
     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
-      PersianDatePicker2(
+      PersianDatePicker(
         modifier = Modifier.fillMaxWidth(),
         persianDatePickerState = persianDatePickerState
       )

@@ -1,4 +1,4 @@
-package com.parsuomash.affogato.app.datepicker.utils
+package com.parsuomash.affogato.datepicker.utils
 
 val persianMonthNames = arrayOf(
   "\u0641\u0631\u0648\u0631\u062f\u06cc\u0646",  // Farvardin
