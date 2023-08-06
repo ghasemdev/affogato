@@ -49,7 +49,7 @@ fun NumberPicker(
   visibleItemsCount: Int = 3,
   textModifier: Modifier = Modifier,
   textStyle: TextStyle = LocalTextStyle.current,
-  dividerColor: Color = LocalContentColor.current,
+  dividerColor: Color = LocalContentColor.current
 ) {
   val visibleItemsMiddle = visibleItemsCount / 2
   val listState = rememberLazyListState(initialFirstVisibleItemIndex = startIndex)

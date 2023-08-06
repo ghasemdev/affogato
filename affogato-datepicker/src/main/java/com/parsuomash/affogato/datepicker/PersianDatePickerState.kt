@@ -1,4 +1,4 @@
-@file:Suppress("MemberVisibilityCanBePrivate")
+@file:Suppress("MemberVisibilityCanBePrivate", "MagicNumber", "unused")
 
 package com.parsuomash.affogato.datepicker
 
@@ -11,7 +11,7 @@ import androidx.compose.runtime.saveable.Saver
 import androidx.compose.runtime.saveable.listSaver
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
-import java.util.*
+import java.util.Date
 import saman.zamani.persiandate.PersianDate
 
 @Composable
@@ -24,7 +24,7 @@ fun rememberPersianDatePickerState(
   minYear: Int = 1300,
   maxYear: Int = date.shYear,
   maxMonth: Int = 12,
-  maxDay: Int = 31,
+  maxDay: Int = 31
 ): PersianDatePickerState {
   return rememberSaveable(saver = PersianDatePickerState.Saver) {
     PersianDatePickerState(
