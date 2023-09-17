@@ -1,40 +1,40 @@
 [versions]
-#noinspection GradleDependency
-accompanist = "0.31.5-beta" # 0.31.6-rc need android 14
+accompanist = "0.32.0"
 affogato = "1.7.2"
-agp = "8.1.0"
+agp = "8.1.1"
 case-format = "0.2.0"
-#noinspection GradleDependency
-compose = "1.5.0-beta03" # 1.5.0-rc01 need android 14
-compose-activity = "1.7.2"
-compose-compiler = "1.5.1"
+compose = "1.5.1"
+compose-activity = "1.8.0-beta01"
+compose-compiler = "1.5.3"
 compose-constraintlayout = "1.0.1"
-compose-paging = "3.2.0"
-core-ktx = "1.10.1"
-detekt = "1.23.0"
-dokka = "1.8.20"
+compose-paging = "3.2.1"
+core-ktx = "1.12.0"
+detekt = "1.23.1"
+dokka = "1.9.0"
 espresso = "3.5.1"
 hamcrest = "2.2"
-hilt = "2.47"
+hilt = "2.48"
 junit = "4.13.2"
 junit-android = "1.1.5"
 junit5 = "5.10.0"
-kotlin = "1.9.0"
+kotlin = "1.9.10"
 kotlintest = "3.4.2"
 kotlinx-collections-immutable = "0.3.5"
 kotlinx-coroutines = "1.7.3"
-kotlinx-datetime = "0.4.0"
-kotlinx-serialization = "1.5.1"
+kotlinx-datetime = "0.4.1"
+kotlinx-serialization = "1.6.0"
 kover = "0.7.3"
-ksp = "1.9.0-1.0.12"
+ksp = "1.9.10-1.0.13"
 leakcanary = "2.12"
-libphonenumber = "8.13.17"
-lifecycle-runtime-compose = "2.6.1"
+libphonenumber = "8.13.20"
+lifecycle-runtime-compose = "2.6.2"
 metrica = "5.3.0"
 metrica-push = "2.2.0"
 okhttp = "4.11.0"
+pdfbox = "2.0.27.0"
 timber = "5.0.1"
 truth = "1.1.5"
+retrofit = "2.9.0"
 window = "1.1.0"
 
 [libraries]
@@ -87,8 +87,10 @@ metrica-push-provider-hms = { module = "com.yandex.android:appmetricapush-provid
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 okhttp-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
 okhttp-mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "okhttp" }
+pdfbox = { module = "com.tom-roush:pdfbox-android", version.ref = "pdfbox" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 truth = { module = "com.google.truth:truth", version.ref = "truth" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 window = { module = "androidx.window:window", version.ref = "window" }
 
 [plugins]
