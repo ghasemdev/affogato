@@ -150,7 +150,7 @@ fun ScreenContent2(window: WindowSize) {
 @Composable
 fun ScreenPdf() {
   val verticalState = rememberVerticalPdfReaderState(
-    resource = ResourceType.Base64(stringResource(id = R.string.base64_pdf))
+    resource = ResourceType.Asset(R.raw.med)
   )
   VerticalPDFReader(
     state = verticalState,
