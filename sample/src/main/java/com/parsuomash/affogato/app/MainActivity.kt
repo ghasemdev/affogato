@@ -32,6 +32,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.parsuomash.affogato.R
 import com.parsuomash.affogato.app.ui.theme.AffogatoTheme
+import com.parsuomash.affogato.pdfviewer.VerticalPDFReader
+import com.parsuomash.affogato.pdfviewer.state.ResourceType
+import com.parsuomash.affogato.pdfviewer.state.rememberVerticalPdfReaderState
 import com.parsuomash.affogato.unit.Dimen
 import com.parsuomash.affogato.unit.sdp
 import com.parsuomash.affogato.unit.ssp
@@ -51,7 +54,7 @@ class MainActivity : ComponentActivity() {
           modifier = Modifier.fillMaxSize(),
           color = MaterialTheme.colors.background
         ) {
-          ScreenContent2(window)
+          ScreenPdf()
         }
       }
     }
@@ -142,6 +145,17 @@ fun ScreenContent2(window: WindowSize) {
       )
     }
   }
+}
+
+@Composable
+fun ScreenPdf() {
+  val verticalState = rememberVerticalPdfReaderState(
+    resource = ResourceType.Base64(stringResource(id = R.string.base64_pdf))
+  )
+  VerticalPDFReader(
+    state = verticalState,
+    modifier = Modifier.fillMaxSize()
+  )
 }
 
 @Preview(name = "NEXUS_5", showBackground = true, device = Devices.NEXUS_5)

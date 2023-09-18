@@ -1,42 +1,24 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-  id("java-library")
-  kotlin("jvm")
-  id("maven-publish")
+  id(libs.plugins.maven.publish.get().pluginId)
 }
 
-java {
-  sourceCompatibility = JavaVersion.VERSION_17
-  targetCompatibility = JavaVersion.VERSION_17
-}
-
-tasks.withType<KotlinCompile>().configureEach {
-  kotlinOptions {
-    apiVersion = "1.8"
-    languageVersion = "1.8"
-    jvmTarget = "17"
-  }
-}
-
-tasks.test {
-  useJUnitPlatform()
+apply {
+  from("$rootDir/library-build.gradle")
 }
 
 dependencies {
   // Serialization ---------------------------------------------------------------------------------
-  api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
+  "api"(libs.kotlinx.serialization.json)
   // Immutable Collections -------------------------------------------------------------------------
-  api("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
+  "api"(libs.kotlinx.collections.immutable)
   // DateTime --------------------------------------------------------------------------------------
-  api("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+  "api"(libs.kotlinx.datetime)
 
   // Test ------------------------------------------------------------------------------------------
-  testImplementation("io.kotlintest:kotlintest-core:3.4.2")
-  testImplementation("com.google.truth:truth:1.1.5")
-  testImplementation("org.hamcrest:hamcrest:2.2")
-  testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
-  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
+  "testImplementation"(libs.kotlintest.core)
+  "testImplementation"(libs.hamcrest)
+  "testImplementation"(libs.bundles.junit5)
+  "testRuntimeOnly"(libs.junit.jupiter.engine)
 }
 
 afterEvaluate {
@@ -45,7 +27,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-core-ktx"
-        version = "1.7.0"
+        version = libs.versions.affogato.get()
 
         from(components["java"])
       }

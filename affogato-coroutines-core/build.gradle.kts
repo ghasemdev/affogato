@@ -1,39 +1,21 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-  id("java-library")
-  kotlin("jvm")
-  id("maven-publish")
+  id(libs.plugins.maven.publish.get().pluginId)
 }
 
-java {
-  sourceCompatibility = JavaVersion.VERSION_17
-  targetCompatibility = JavaVersion.VERSION_17
-}
-
-tasks.withType<KotlinCompile>().configureEach {
-  kotlinOptions {
-    apiVersion = "1.8"
-    languageVersion = "1.8"
-    jvmTarget = "17"
-  }
-}
-
-tasks.test {
-  useJUnitPlatform()
+apply {
+  from("$rootDir/library-build.gradle")
 }
 
 dependencies {
-  implementation(project(":affogato-core-ktx"))
+  "implementation"(project(AffogatoModules.coreKtx))
 
   // Coroutines ------------------------------------------------------------------------------------
-  api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2")
-  api("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.2")
+  "api"(libs.kotlinx.coroutines.core)
+  "api"(libs.kotlinx.coroutines.test)
 
   // Test ------------------------------------------------------------------------------------------
-  testImplementation("com.google.truth:truth:1.1.5")
-  testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
-  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
+  "testImplementation"(libs.bundles.junit5)
+  "testRuntimeOnly"(libs.junit.jupiter.engine)
 }
 
 afterEvaluate {
@@ -42,7 +24,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-coroutines-core"
-        version = "1.7.0"
+        version = libs.versions.affogato.get()
 
         from(components["java"])
       }

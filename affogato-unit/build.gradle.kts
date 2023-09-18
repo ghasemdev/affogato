@@ -1,39 +1,25 @@
-@file:Suppress("UnstableApiUsage")
+import Configuration.MIN_SDK
 
 plugins {
-  id("com.android.library")
-  kotlin("android")
-  id("maven-publish")
+  alias(libs.plugins.android.library)
+  id(libs.plugins.maven.publish.get().pluginId)
+}
+
+apply {
+  from("$rootDir/android-library-build.gradle")
 }
 
 android {
-  compileSdk = 33
-  buildToolsVersion = "33.0.2"
   namespace = "com.parsuomash.affogato.unit"
 
   defaultConfig {
-    minSdk = 21
-    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-  }
-  compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
-  }
-  kotlinOptions {
-    apiVersion = "1.8"
-    languageVersion = "1.8"
-    jvmTarget = "17"
-    freeCompilerArgs = listOf(
-      "-P",
-      "plugin:androidx.compose.compiler.plugins.kotlin:" +
-        "suppressKotlinVersionCompatibilityCheck=true"
-    )
+    minSdk = MIN_SDK
   }
   buildFeatures {
     compose = true
   }
   composeOptions {
-    kotlinCompilerExtensionVersion = "1.4.8"
+    kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
   }
   lint {
     baseline = file("$rootDir/config/lint/lint-baseline.xml")
@@ -42,15 +28,14 @@ android {
 
 dependencies {
   // Window ----------------------------------------------------------------------------------------
-  api("androidx.window:window:1.1.0")
+  api(libs.window)
 
   // Compose -------------------------------------------------------------------------------------
-  implementation("androidx.compose.ui:ui:1.4.3")
-  implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")
+  implementation(libs.compose.ui)
+  implementation(libs.compose.lifecycle.runtime)
 
   // Test ------------------------------------------------------------------------------------------
-  testImplementation("junit:junit:4.13.2")
-  testImplementation("com.google.truth:truth:1.1.5")
+  testImplementation(libs.bundles.junit4)
 }
 
 afterEvaluate {
@@ -59,7 +44,7 @@ afterEvaluate {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
         artifactId = "affogato-unit"
-        version = "1.7.0"
+        version = libs.versions.affogato.get()
 
         from(components["release"])
       }

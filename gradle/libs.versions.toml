@@ -1,0 +1,155 @@
+[versions]
+accompanist = "0.32.0"
+affogato = "1.8.0"
+agp = "8.1.1"
+case-format = "0.2.0"
+compose = "1.5.1"
+compose-activity = "1.8.0-beta01"
+compose-compiler = "1.5.3"
+compose-constraintlayout = "1.0.1"
+compose-paging = "3.2.1"
+core-ktx = "1.12.0"
+detekt = "1.23.1"
+dokka = "1.9.0"
+espresso = "3.5.1"
+hamcrest = "2.2"
+hilt = "2.48"
+junit = "4.13.2"
+junit-android = "1.1.5"
+junit5 = "5.10.0"
+kotlin = "1.9.10"
+kotlintest = "3.4.2"
+kotlinx-collections-immutable = "0.3.5"
+kotlinx-coroutines = "1.7.3"
+kotlinx-datetime = "0.4.1"
+kotlinx-serialization = "1.6.0"
+kover = "0.7.3"
+ksp = "1.9.10-1.0.13"
+leakcanary = "2.12"
+libphonenumber = "8.13.20"
+lifecycle-runtime-compose = "2.6.2"
+metrica = "5.3.0"
+metrica-push = "2.2.0"
+okhttp = "4.11.0"
+pdfbox = "2.0.27.0"
+timber = "5.0.1"
+truth = "1.1.5"
+retrofit = "2.9.0"
+window = "1.1.0"
+
+[libraries]
+accompanist-pager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanist" }
+accompanist-pager-indicators = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "accompanist" }
+androidx-junit = { module = "androidx.test.ext:junit", version.ref = "junit-android" }
+case-format = { module = "com.fleshgrinder.kotlin:case-format", version.ref = "case-format" }
+compose-activity = { module = "androidx.activity:activity-compose", version.ref = "compose-activity" }
+compose-animation = { module = "androidx.compose.animation:animation", version.ref = "compose" }
+compose-animation-graphics = { module = "androidx.compose.animation:animation-graphics", version.ref = "compose" }
+compose-constraintlayout = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "compose-constraintlayout" }
+compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
+compose-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-runtime-compose" }
+compose-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle-runtime-compose" }
+compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
+compose-material-icons-core = { module = "androidx.compose.material:material-icons-core", version.ref = "compose" }
+compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "compose" }
+compose-paging = { module = "androidx.paging:paging-compose", version.ref = "compose-paging" }
+compose-runtime = { module = "androidx.compose.runtime:runtime", version.ref = "compose" }
+compose-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "compose" }
+compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
+compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
+compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+compose-ui-util = { module = "androidx.compose.ui:ui-util", version.ref = "compose" }
+core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
+dokka-base = { module = "org.jetbrains.dokka:dokka-base", version.ref = "dokka" }
+dokka-kotlin-plugin = { module = "org.jetbrains.dokka:kotlin-as-java-plugin", version.ref = "dokka" }
+espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
+hamcrest = { module = "org.hamcrest:hamcrest", version.ref = "hamcrest" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+junit = { module = "junit:junit", version.ref = "junit" }
+junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit5" }
+junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit5" }
+kotlintest-core = { module = "io.kotlintest:kotlintest-core", version.ref = "kotlintest" }
+kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinx-collections-immutable" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+ksp-api = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
+leakcanary-android = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakcanary" }
+libphonenumber = { module = "com.googlecode.libphonenumber:libphonenumber", version.ref = "libphonenumber" }
+metrica = { module = "com.yandex.android:mobmetricalib", version.ref = "metrica" }
+metrica-push = { module = "com.yandex.android:mobmetricapushlib", version.ref = "metrica-push" }
+metrica-push-provider-hms = { module = "com.yandex.android:appmetricapush-provider-hms", version.ref = "metrica-push" }
+okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+okhttp-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
+okhttp-mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "okhttp" }
+pdfbox = { module = "com.tom-roush:pdfbox-android", version.ref = "pdfbox" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+truth = { module = "com.google.truth:truth", version.ref = "truth" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+window = { module = "androidx.window:window", version.ref = "window" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-parcelize = { id = "kotlin-parcelize" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
+maven-publish = { id = "maven-publish" }
+java-library = { id = "java-library" }
+
+[bundles]
+accompanist = [
+  "accompanist-pager",
+  "accompanist-pager-indicators"
+]
+compose = [
+  "compose-ui",
+  "compose-ui-util",
+  "compose-foundation",
+  "compose-material",
+  "compose-material-icons-core",
+  "compose-material-icons-extended",
+  "compose-ui-tooling",
+  "compose-ui-tooling-preview",
+  "compose-animation",
+  "compose-animation-graphics",
+  "compose-runtime",
+  "compose-runtime-livedata",
+  "compose-lifecycle-runtime",
+  "compose-lifecycle-viewmodel",
+  "compose-paging",
+  "compose-activity",
+  "compose-constraintlayout",
+]
+kotlinx-coroutines = [
+  "kotlinx-coroutines-android",
+  "kotlinx-coroutines-core",
+  "kotlinx-coroutines-test"
+]
+junit5 = [
+  "truth",
+  "junit-jupiter-api"
+]
+junit4 = [
+  "truth",
+  "junit"
+]
+processing = [
+  "case-format",
+  "ksp-api"
+]
+metrica = [
+  "metrica-push-provider-hms",
+  "metrica-push",
+  "metrica"
+]
