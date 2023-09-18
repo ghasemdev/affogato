@@ -2,6 +2,7 @@ import Configuration.MIN_SDK
 
 plugins {
   alias(libs.plugins.android.library)
+  id(libs.plugins.kotlin.parcelize.get().pluginId)
   id(libs.plugins.maven.publish.get().pluginId)
 }
 
@@ -27,7 +28,7 @@ android {
 }
 
 dependencies {
-//  implementation(libs.core.ktx)
+  implementation(libs.core.ktx)
   // Compose ---------------------------------------------------------------------------------------
   implementation(libs.compose.ui)
   implementation(libs.compose.foundation)
