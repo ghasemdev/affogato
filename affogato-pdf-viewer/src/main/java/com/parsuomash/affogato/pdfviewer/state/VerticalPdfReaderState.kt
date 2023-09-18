@@ -81,7 +81,7 @@ fun rememberVerticalPdfReaderState(
   isZoomEnable: Boolean = true,
   isAccessibleEnable: Boolean = false,
 ): VerticalPdfReaderState {
-  return rememberSaveable(saver = VerticalPdfReaderState.Saver) {
+  return rememberSaveable(resource, saver = VerticalPdfReaderState.Saver) {
     VerticalPdfReaderState(resource, isZoomEnable, isAccessibleEnable)
   }
 }
