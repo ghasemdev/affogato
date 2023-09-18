@@ -27,13 +27,14 @@ fun VerticalPDFReader(
     modifier = modifier,
     contentAlignment = Alignment.TopCenter
   ) {
-    val ctx = LocalContext.current
+    val context = LocalContext.current
     val coroutineScope = rememberCoroutineScope()
     val lazyState = state.lazyState
+
     DisposableEffect(state.resource) {
       loadPdf(
         coroutineScope,
-        ctx,
+        context,
         state,
         constraints.maxWidth,
         constraints.maxHeight,
@@ -43,6 +44,7 @@ fun VerticalPDFReader(
         state.close()
       }
     }
+
     state.pdfRender?.let { pdf ->
       LazyColumn(
         modifier = Modifier
