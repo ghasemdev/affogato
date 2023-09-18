@@ -74,6 +74,7 @@ ksp {
 
 dependencies {
   // Modules
+  implementation(project(AffogatoModules.pdfViewer))
   implementation(project(AffogatoModules.coreKtx))
   implementation(project(AffogatoModules.coroutinesAndroid))
   implementation(project(AffogatoModules.unit))
