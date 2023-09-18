@@ -77,7 +77,7 @@ fun rememberHorizontalPdfReaderState(
   isZoomEnable: Boolean = true,
   isAccessibleEnable: Boolean = false
 ): HorizontalPdfReaderState {
-  return rememberSaveable(saver = HorizontalPdfReaderState.Saver) {
+  return rememberSaveable(resource, saver = HorizontalPdfReaderState.Saver) {
     HorizontalPdfReaderState(
       resource = resource,
       isZoomEnable = isZoomEnable,

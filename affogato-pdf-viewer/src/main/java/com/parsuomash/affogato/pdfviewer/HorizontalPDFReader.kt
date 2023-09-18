@@ -16,8 +16,10 @@ import com.parsuomash.affogato.pdfviewer.internal.BlackPage
 import com.parsuomash.affogato.pdfviewer.internal.PageContentInt
 import com.parsuomash.affogato.pdfviewer.internal.PdfImage
 import com.parsuomash.affogato.pdfviewer.internal.loadPdf
-import com.parsuomash.affogato.pdfviewer.internal.tapToZoomHorizontal
 import com.parsuomash.affogato.pdfviewer.state.HorizontalPdfReaderState
+import com.parsuomash.affogato.pdfviewer.zoomable.Zoomable
+import com.parsuomash.affogato.pdfviewer.zoomable.ZoomableDefaults
+import com.parsuomash.affogato.pdfviewer.zoomable.rememberZoomableState
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -47,33 +49,40 @@ fun HorizontalPDFReader(
     }
 
     state.pdfRender?.let { pdf ->
-      HorizontalPager(
-        modifier = Modifier
-          .fillMaxSize()
-          .tapToZoomHorizontal(state, constraints),
-        state = state.pagerState,
-        userScrollEnabled = state.scale == 1f
-      ) { page ->
-        val pageContent = pdf.pageLists[page].stateFlow.collectAsState().value
-        DisposableEffect(key1 = Unit) {
-          pdf.pageLists[page].load()
-          onDispose {
-            pdf.pageLists[page].recycle()
-          }
-        }
-        when (pageContent) {
-          is PageContentInt.PageContent -> {
-            PdfImage(
-              bitmap = { pageContent.bitmap.asImageBitmap() },
-              contentDescription = pageContent.contentDescription
-            )
-          }
+      val zoomableState = rememberZoomableState(
+        minScale = ZoomableDefaults.DefaultScale
+      )
 
-          is PageContentInt.BlankPage -> {
-            BlackPage(
-              width = pageContent.width,
-              height = pageContent.height
-            )
+      Zoomable(
+        state = zoomableState,
+        enabled = state.isZoomEnable
+      ) {
+        HorizontalPager(
+          modifier = Modifier.fillMaxSize(),
+          state = state.pagerState,
+          userScrollEnabled = state.scale == 1f
+        ) { page ->
+          val pageContent = pdf.pageLists[page].stateFlow.collectAsState().value
+          DisposableEffect(key1 = Unit) {
+            pdf.pageLists[page].load()
+            onDispose {
+              pdf.pageLists[page].recycle()
+            }
+          }
+          when (pageContent) {
+            is PageContentInt.PageContent -> {
+              PdfImage(
+                bitmap = { pageContent.bitmap.asImageBitmap() },
+                contentDescription = pageContent.contentDescription
+              )
+            }
+
+            is PageContentInt.BlankPage -> {
+              BlackPage(
+                width = pageContent.width,
+                height = pageContent.height
+              )
+            }
           }
         }
       }
