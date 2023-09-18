@@ -27,12 +27,19 @@ android {
 }
 
 dependencies {
-  // Compose -------------------------------------------------------------------------------------
+//  implementation(libs.core.ktx)
+  // Compose ---------------------------------------------------------------------------------------
   implementation(libs.compose.ui)
   implementation(libs.compose.foundation)
   implementation(libs.compose.material)
   implementation(libs.compose.ui.tooling)
+  implementation(libs.accompanist.pager)
   debugImplementation(libs.compose.ui.tooling)
+  // Network ---------------------------------------------------------------------------------------
+  implementation(libs.okhttp)
+  implementation(libs.retrofit)
+  // PdfBox  ---------------------------------------------------------------------------------------
+  api(libs.pdfbox)
 }
 
 afterEvaluate {
