@@ -5,7 +5,6 @@ import android.net.Uri
 import android.util.Base64
 import java.io.File
 import java.io.FileOutputStream
-import java.util.Date
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -44,6 +43,4 @@ internal suspend fun Context.uriToFile(
   return file
 }
 
-internal fun generateFileName(): String {
-  return "${Date().time}.pdf"
-}
+internal fun generateFileName(): String = "affogato-pdf.pdf"
