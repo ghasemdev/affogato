@@ -1,8 +1,14 @@
 package com.parsuomash.affogato.app
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,6 +26,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
@@ -32,7 +40,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.parsuomash.affogato.R
 import com.parsuomash.affogato.app.ui.theme.AffogatoTheme
-import com.parsuomash.affogato.pdfviewer.VerticalPDFReader
+import com.parsuomash.affogato.pdfviewer.PDFView
 import com.parsuomash.affogato.pdfviewer.state.ResourceType
 import com.parsuomash.affogato.pdfviewer.state.rememberVerticalPdfReaderState
 import com.parsuomash.affogato.unit.Dimen
@@ -149,13 +157,43 @@ fun ScreenContent2(window: WindowSize) {
 
 @Composable
 fun ScreenPdf() {
+  var pdfUri: Uri by rememberSaveable { mutableStateOf(Uri.EMPTY) }
+  val pickPDFLauncher = rememberLauncherForActivityResult(
+    ActivityResultContracts.GetContent()
+  ) { uri ->
+    if (uri != null) {
+      pdfUri = uri
+    }
+  }
   val verticalState = rememberVerticalPdfReaderState(
-    resource = ResourceType.Asset(R.raw.med)
+    resource = ResourceType.Local(uri = pdfUri)
   )
-  VerticalPDFReader(
-    state = verticalState,
-    modifier = Modifier.fillMaxSize()
-  )
+
+  Column(
+    modifier = Modifier.fillMaxSize(),
+    horizontalAlignment = Alignment.CenterHorizontally
+  ) {
+    Button(
+      modifier = Modifier.fillMaxWidth(),
+      onClick = { pickPDFLauncher.launch("pdf/*") }
+    ) {
+      Text(text = "Select file")
+    }
+
+    Spacer(modifier = Modifier.height(8.dp))
+
+    AnimatedVisibility(
+      modifier = Modifier.fillMaxSize(),
+      visible = pdfUri != Uri.EMPTY,
+      enter = fadeIn(),
+      exit = fadeOut()
+    ) {
+      PDFView(
+        state = verticalState,
+        modifier = Modifier.fillMaxSize()
+      )
+    }
+  }
 }
 
 @Preview(name = "NEXUS_5", showBackground = true, device = Devices.NEXUS_5)
