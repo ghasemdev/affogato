@@ -25,7 +25,7 @@ import com.parsuomash.affogato.pdfviewer.zoomable.rememberZoomableState
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HorizontalPDFReader(
-  modifier: Modifier,
+  modifier: Modifier = Modifier,
   state: HorizontalPdfReaderState,
   zoomableState: ZoomableState = rememberZoomableState(
     minScale = ZoomableDefaults.DefaultScale

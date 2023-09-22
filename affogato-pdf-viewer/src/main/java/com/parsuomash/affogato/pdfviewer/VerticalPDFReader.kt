@@ -23,7 +23,7 @@ import com.parsuomash.affogato.pdfviewer.zoomable.rememberZoomableState
 
 @Composable
 fun VerticalPDFReader(
-  modifier: Modifier,
+  modifier: Modifier = Modifier,
   state: VerticalPdfReaderState,
   zoomableState: ZoomableState = rememberZoomableState(
     minScale = ZoomableDefaults.DefaultScale
