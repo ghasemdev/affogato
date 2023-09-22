@@ -23,10 +23,7 @@ import androidx.compose.ui.input.pointer.util.VelocityTracker
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.Velocity
-import kotlin.math.PI
-import kotlin.math.abs
 import kotlin.math.roundToInt
-import kotlin.math.sin
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
@@ -42,7 +39,7 @@ import kotlinx.coroutines.launch
  * @param initialTranslationY The initial value for [ZoomableState.translationY].
  */
 @Composable
-internal fun rememberZoomableState(
+fun rememberZoomableState(
   @FloatRange(from = 0.0) minScale: Float = ZoomableDefaults.MinScale,
   @FloatRange(from = 0.0) maxScale: Float = ZoomableDefaults.MaxScale,
   @FloatRange(from = 0.0) doubleTapScale: Float = ZoomableDefaults.DoubleTapScale,
@@ -68,7 +65,7 @@ internal fun rememberZoomableState(
  * @see rememberZoomableState
  */
 @Stable
-internal class ZoomableState(
+class ZoomableState(
   @FloatRange(from = 0.0) initialScale: Float = ZoomableDefaults.MinScale,
   @FloatRange(from = 0.0) initialTranslationX: Float = 0f,
   @FloatRange(from = 0.0) initialTranslationY: Float = 0f
@@ -111,21 +108,6 @@ internal class ZoomableState(
 
   internal var boundOffset by mutableStateOf(IntOffset.Zero)
     private set
-
-  internal var dismissDragAbsoluteOffsetY by mutableFloatStateOf(0f)
-    private set
-
-  internal val dismissDragOffsetY: Float
-    get() {
-      val maxOffset = childSize.height
-      return if (maxOffset == 0f) 0f else {
-        val progress = (dismissDragAbsoluteOffsetY / maxOffset).coerceIn(-1f, 1f)
-        maxOffset / DismissDragResistanceFactor * sin(progress * PI.toFloat() / 2)
-      }
-    }
-
-  internal val shouldDismiss: Boolean
-    get() = abs(dismissDragAbsoluteOffsetY) > size.height * DismissDragThreshold
 
   internal var size = IntSize.Zero
     set(value) {
@@ -289,19 +271,6 @@ internal class ZoomableState(
     velocityTracker.resetTracking()
   }
 
-  internal fun onDismissDrag(dragAmountY: Float) {
-    dismissDragAbsoluteOffsetY += dragAmountY
-  }
-
-  internal suspend fun onDismissDragEnd() {
-    animate(
-      initialValue = dismissDragAbsoluteOffsetY,
-      targetValue = 0f
-    ) { value, _ ->
-      dismissDragAbsoluteOffsetY = value
-    }
-  }
-
   override fun toString(): String =
     "ZoomableState(translateX=%.1f,translateY=%.1f,scale=%.2f)".format(
       translationX, translationY, scale
@@ -342,15 +311,15 @@ internal object ZoomableDefaults {
   /**
    * The default value for [ZoomableState.minScale].
    */
-  const val MinScale = 1 / 4f
+  const val MinScale = 1 / 5f
 
   /**
    * The default value for [ZoomableState.maxScale].
    */
-  const val MaxScale = 4f
+  const val MaxScale = 5f
 
   /**
    * The default value for [ZoomableState.doubleTapScale].
    */
-  const val DoubleTapScale = 2f
+  const val DoubleTapScale = 2.5f
 }
