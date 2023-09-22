@@ -18,11 +18,15 @@ import com.parsuomash.affogato.pdfviewer.internal.loadPdf
 import com.parsuomash.affogato.pdfviewer.state.VerticalPdfReaderState
 import com.parsuomash.affogato.pdfviewer.zoomable.Zoomable
 import com.parsuomash.affogato.pdfviewer.zoomable.ZoomableDefaults
+import com.parsuomash.affogato.pdfviewer.zoomable.ZoomableState
 import com.parsuomash.affogato.pdfviewer.zoomable.rememberZoomableState
 
 @Composable
 fun VerticalPDFReader(
   state: VerticalPdfReaderState,
+  zoomableState: ZoomableState = rememberZoomableState(
+    minScale = ZoomableDefaults.DefaultScale
+  ),
   modifier: Modifier
 ) {
   BoxWithConstraints(
@@ -48,12 +52,8 @@ fun VerticalPDFReader(
     }
 
     state.pdfRender?.let { pdf ->
-      val zoomableState = rememberZoomableState(
-        minScale = ZoomableDefaults.DefaultScale
-      )
-
       Zoomable(
-        state = zoomableState,
+        zoomableState = zoomableState,
         enabled = state.isZoomEnable
       ) {
         LazyColumn(
