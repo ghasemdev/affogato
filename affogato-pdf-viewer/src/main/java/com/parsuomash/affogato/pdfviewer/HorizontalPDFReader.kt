@@ -25,11 +25,11 @@ import com.parsuomash.affogato.pdfviewer.zoomable.rememberZoomableState
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HorizontalPDFReader(
+  modifier: Modifier,
   state: HorizontalPdfReaderState,
   zoomableState: ZoomableState = rememberZoomableState(
     minScale = ZoomableDefaults.DefaultScale
-  ),
-  modifier: Modifier
+  )
 ) {
   BoxWithConstraints(
     modifier = modifier,
