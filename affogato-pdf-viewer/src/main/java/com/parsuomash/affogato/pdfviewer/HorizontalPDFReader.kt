@@ -19,12 +19,16 @@ import com.parsuomash.affogato.pdfviewer.internal.loadPdf
 import com.parsuomash.affogato.pdfviewer.state.HorizontalPdfReaderState
 import com.parsuomash.affogato.pdfviewer.zoomable.Zoomable
 import com.parsuomash.affogato.pdfviewer.zoomable.ZoomableDefaults
+import com.parsuomash.affogato.pdfviewer.zoomable.ZoomableState
 import com.parsuomash.affogato.pdfviewer.zoomable.rememberZoomableState
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HorizontalPDFReader(
   state: HorizontalPdfReaderState,
+  zoomableState: ZoomableState = rememberZoomableState(
+    minScale = ZoomableDefaults.DefaultScale
+  ),
   modifier: Modifier
 ) {
   BoxWithConstraints(
@@ -49,43 +53,40 @@ fun HorizontalPDFReader(
     }
 
     state.pdfRender?.let { pdf ->
-      val zoomableState = rememberZoomableState(
-        minScale = ZoomableDefaults.DefaultScale
-      )
-
       Zoomable(
-        state = zoomableState,
-        enabled = state.isZoomEnable
-      ) {
-        HorizontalPager(
-          modifier = Modifier.fillMaxSize(),
-          state = state.pagerState,
-          userScrollEnabled = state.scale == 1f
-        ) { page ->
-          val pageContent = pdf.pageLists[page].stateFlow.collectAsState().value
-          DisposableEffect(key1 = Unit) {
-            pdf.pageLists[page].load()
-            onDispose {
-              pdf.pageLists[page].recycle()
+        zoomableState = zoomableState,
+        enabled = state.isZoomEnable,
+        content = {
+          HorizontalPager(
+            modifier = Modifier.fillMaxSize(),
+            state = state.pagerState,
+            userScrollEnabled = state.scale == 1f
+          ) { page ->
+            val pageContent = pdf.pageLists[page].stateFlow.collectAsState().value
+            DisposableEffect(key1 = Unit) {
+              pdf.pageLists[page].load()
+              onDispose {
+                pdf.pageLists[page].recycle()
+              }
             }
-          }
-          when (pageContent) {
-            is PageContentInt.PageContent -> {
-              PdfImage(
-                bitmap = { pageContent.bitmap.asImageBitmap() },
-                contentDescription = pageContent.contentDescription
-              )
-            }
+            when (pageContent) {
+              is PageContentInt.PageContent -> {
+                PdfImage(
+                  bitmap = { pageContent.bitmap.asImageBitmap() },
+                  contentDescription = pageContent.contentDescription
+                )
+              }
 
-            is PageContentInt.BlankPage -> {
-              BlackPage(
-                width = pageContent.width,
-                height = pageContent.height
-              )
+              is PageContentInt.BlankPage -> {
+                BlackPage(
+                  width = pageContent.width,
+                  height = pageContent.height
+                )
+              }
             }
           }
         }
-      }
+      )
     }
   }
 }
