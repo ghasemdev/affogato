@@ -174,8 +174,10 @@ fun ScreenPdf() {
     horizontalAlignment = Alignment.CenterHorizontally
   ) {
     Button(
-      modifier = Modifier.fillMaxWidth(),
-      onClick = { pickPDFLauncher.launch("pdf/*") }
+      modifier = Modifier
+        .fillMaxWidth()
+        .padding(vertical = 16.dp),
+      onClick = { pickPDFLauncher.launch("application/pdf") }
     ) {
       Text(text = "Select file")
     }
