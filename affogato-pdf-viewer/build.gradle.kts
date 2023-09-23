@@ -15,6 +15,7 @@ android {
 
   defaultConfig {
     minSdk = MIN_SDK
+    consumerProguardFiles("consumer-rules.pro")
   }
   buildFeatures {
     compose = true
@@ -41,6 +42,8 @@ dependencies {
   implementation(libs.retrofit)
   // PdfBox  ---------------------------------------------------------------------------------------
   api(libs.pdfbox)
+  // Android Pdf Viewer ----------------------------------------------------------------------------
+  implementation(libs.android.pdf.viewer)
 }
 
 afterEvaluate {
