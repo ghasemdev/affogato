@@ -40,7 +40,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.parsuomash.affogato.R
 import com.parsuomash.affogato.app.ui.theme.AffogatoTheme
-import com.parsuomash.affogato.pdfviewer.PDFView
+import com.parsuomash.affogato.pdfviewer.VerticalPDFView
 import com.parsuomash.affogato.pdfviewer.state.ResourceType
 import com.parsuomash.affogato.pdfviewer.state.rememberVerticalPdfReaderState
 import com.parsuomash.affogato.unit.Dimen
@@ -170,13 +170,15 @@ fun ScreenPdf() {
   )
 
   Column(
-    modifier = Modifier.fillMaxSize(),
+    modifier = Modifier
+      .fillMaxSize()
+      .padding(16.dp),
     horizontalAlignment = Alignment.CenterHorizontally
   ) {
     Button(
       modifier = Modifier
         .fillMaxWidth()
-        .padding(vertical = 16.dp),
+        .height(50.dp),
       onClick = { pickPDFLauncher.launch("application/pdf") }
     ) {
       Text(text = "Select file")
@@ -190,7 +192,7 @@ fun ScreenPdf() {
       enter = fadeIn(),
       exit = fadeOut()
     ) {
-      PDFView(
+      VerticalPDFView(
         state = verticalState,
         modifier = Modifier.fillMaxSize()
       )
