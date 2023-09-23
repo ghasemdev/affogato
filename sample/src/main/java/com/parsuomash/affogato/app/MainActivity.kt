@@ -41,8 +41,6 @@ import androidx.compose.ui.unit.sp
 import com.parsuomash.affogato.R
 import com.parsuomash.affogato.app.ui.theme.AffogatoTheme
 import com.parsuomash.affogato.pdfviewer.VerticalPDFView
-import com.parsuomash.affogato.pdfviewer.state.ResourceType
-import com.parsuomash.affogato.pdfviewer.state.rememberVerticalPdfReaderState
 import com.parsuomash.affogato.unit.Dimen
 import com.parsuomash.affogato.unit.sdp
 import com.parsuomash.affogato.unit.ssp
@@ -165,9 +163,6 @@ fun ScreenPdf() {
       pdfUri = uri
     }
   }
-  val verticalState = rememberVerticalPdfReaderState(
-    resource = ResourceType.Local(uri = pdfUri)
-  )
 
   Column(
     modifier = Modifier
@@ -193,8 +188,8 @@ fun ScreenPdf() {
       exit = fadeOut()
     ) {
       VerticalPDFView(
-        state = verticalState,
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize(),
+        uri = pdfUri
       )
     }
   }
