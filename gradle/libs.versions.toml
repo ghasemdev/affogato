@@ -1,7 +1,8 @@
 [versions]
 accompanist = "0.32.0"
-affogato = "1.8.3"
+affogato = "1.8.4"
 agp = "8.1.1"
+android-pdf-viewer = "3.2.0-beta.3"
 case-format = "0.2.0"
 compose = "1.5.1"
 compose-activity = "1.8.0-beta01"
@@ -36,10 +37,13 @@ timber = "5.0.1"
 truth = "1.1.5"
 retrofit = "2.9.0"
 window = "1.1.0"
+appcompat = "1.6.1"
+material = "1.9.0"
 
 [libraries]
 accompanist-pager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanist" }
 accompanist-pager-indicators = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "accompanist" }
+android-pdf-viewer = { module = "com.github.mhiew:android-pdf-viewer", version.ref = "android-pdf-viewer" }
 androidx-junit = { module = "androidx.test.ext:junit", version.ref = "junit-android" }
 case-format = { module = "com.fleshgrinder.kotlin:case-format", version.ref = "case-format" }
 compose-activity = { module = "androidx.activity:activity-compose", version.ref = "compose-activity" }
@@ -92,6 +96,8 @@ timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 truth = { module = "com.google.truth:truth", version.ref = "truth" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 window = { module = "androidx.window:window", version.ref = "window" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
