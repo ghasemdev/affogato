@@ -1,8 +1,14 @@
 package com.parsuomash.affogato.app
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -21,6 +27,8 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
@@ -37,6 +45,7 @@ import com.parsuomash.affogato.R
 import com.parsuomash.affogato.app.ui.theme.AffogatoTheme
 import com.parsuomash.affogato.datepicker.PersianDatePicker
 import com.parsuomash.affogato.datepicker.rememberPersianDatePickerState
+import com.parsuomash.affogato.pdfviewer.VerticalPDFView
 import com.parsuomash.affogato.unit.Dimen
 import com.parsuomash.affogato.unit.sdp
 import com.parsuomash.affogato.unit.ssp
@@ -177,6 +186,48 @@ fun ScreenContent3() {
       Text(
         text = "show date picker",
         fontSize = dimen.fontSize
+      )
+    }
+  }
+}
+
+@Composable
+fun ScreenPdf() {
+  var pdfUri: Uri by rememberSaveable { mutableStateOf(Uri.EMPTY) }
+  val pickPDFLauncher = rememberLauncherForActivityResult(
+    ActivityResultContracts.GetContent()
+  ) { uri ->
+    if (uri != null) {
+      pdfUri = uri
+    }
+  }
+
+  Column(
+    modifier = Modifier
+      .fillMaxSize()
+      .padding(16.dp),
+    horizontalAlignment = Alignment.CenterHorizontally
+  ) {
+    Button(
+      modifier = Modifier
+        .fillMaxWidth()
+        .height(50.dp),
+      onClick = { pickPDFLauncher.launch("application/pdf") }
+    ) {
+      Text(text = "Select file")
+    }
+
+    Spacer(modifier = Modifier.height(8.dp))
+
+    AnimatedVisibility(
+      modifier = Modifier.fillMaxSize(),
+      visible = pdfUri != Uri.EMPTY,
+      enter = fadeIn(),
+      exit = fadeOut()
+    ) {
+      VerticalPDFView(
+        modifier = Modifier.fillMaxSize(),
+        uri = pdfUri
       )
     }
   }

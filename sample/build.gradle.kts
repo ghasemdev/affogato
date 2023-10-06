@@ -34,6 +34,7 @@ android {
     getByName("release") {
       isMinifyEnabled = false
       proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
+      signingConfig = signingConfigs.getByName("debug")
     }
   }
   compileOptions {
@@ -74,6 +75,7 @@ ksp {
 
 dependencies {
   // Modules
+  implementation(project(AffogatoModules.pdfViewer))
   implementation(project(AffogatoModules.coreKtx))
   implementation(project(AffogatoModules.coroutinesAndroid))
   implementation(project(AffogatoModules.datepicker))

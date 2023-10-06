@@ -9,6 +9,7 @@ object AffogatoModules {
   const val loggerAndroid = ":affogato-logger-android"
   const val MetricaKtx = ":affogato-metrica-ktx"
   const val OkhttpAndroid = ":affogato-okhttp-android"
+  const val pdfViewer = ":affogato-pdf-viewer"
   const val structure = ":affogato-structure"
   const val unit = ":affogato-unit"
   const val unitProcessor = ":affogato-unit-processor"
