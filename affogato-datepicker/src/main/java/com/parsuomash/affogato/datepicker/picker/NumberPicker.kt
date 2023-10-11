@@ -36,6 +36,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlinx.collections.immutable.PersistentList
+import kotlinx.collections.immutable.toPersistentList
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 
@@ -44,7 +46,7 @@ import kotlinx.coroutines.flow.map
 fun NumberPicker(
   modifier: Modifier = Modifier,
   state: PickerState = rememberPickerState(),
-  items: List<String>,
+  items: PersistentList<String>,
   startIndex: Int = 0,
   visibleItemsCount: Int = 3,
   textModifier: Modifier = Modifier,
@@ -123,7 +125,7 @@ private fun PickerPreview() {
     NumberPicker(
       modifier = Modifier.fillMaxWidth(),
       state = rememberPickerState(),
-      items = (1300..1402).toList().map(Int::toString),
+      items = (1300..1402).toList().map(Int::toString).toPersistentList(),
       startIndex = 79,
       textModifier = Modifier.padding(8.dp),
       textStyle = TextStyle(fontSize = 24.sp)

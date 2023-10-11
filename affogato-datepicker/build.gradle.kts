@@ -35,6 +35,8 @@ dependencies {
   debugImplementation(libs.compose.ui.tooling)
   // Date
   api(libs.persianDate)
+  // Immutable Collection
+  api(libs.kotlinx.collections.immutable)
 }
 
 afterEvaluate {

@@ -41,10 +41,11 @@ import androidx.compose.ui.unit.dp
 import com.parsuomash.affogato.datepicker.utils.disabledLongPress
 import kotlin.math.abs
 import kotlin.math.roundToInt
+import kotlinx.collections.immutable.PersistentList
 import kotlinx.coroutines.launch
 
 private fun <T> getItemIndexForOffset(
-  range: List<T>,
+  range: PersistentList<T>,
   value: T,
   offset: Float,
   halfNumbersColumnHeightPx: Float
@@ -60,7 +61,7 @@ fun <T> ListItemPicker(
   provideValue: () -> T,
   onValueChange: (T) -> Unit,
   dividersColor: Color = MaterialTheme.colors.primary,
-  list: List<T>,
+  list: PersistentList<T>,
   textStyle: TextStyle = LocalTextStyle.current
 ) {
   val verticalMargin = 8.dp

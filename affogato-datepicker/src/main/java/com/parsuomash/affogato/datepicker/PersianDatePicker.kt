@@ -15,6 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.parsuomash.affogato.datepicker.picker.ListItemPicker
 import com.parsuomash.affogato.datepicker.utils.persianMonthNames
+import kotlinx.collections.immutable.toPersistentList
 
 @Composable
 fun PersianDatePicker(
@@ -24,13 +25,13 @@ fun PersianDatePicker(
   dividerColor: Color = MaterialTheme.colors.primary
 ) {
   val days = remember(persianDatePickerState.maxDay) {
-    (1..persianDatePickerState.maxDay).toList()
+    (1..persianDatePickerState.maxDay).toPersistentList()
   }
   val months = remember(persianDatePickerState.maxMonth) {
-    (1..persianDatePickerState.maxMonth).toList()
+    (1..persianDatePickerState.maxMonth).toPersistentList()
   }
   val years = remember(persianDatePickerState.maxYear, persianDatePickerState.minYear) {
-    (persianDatePickerState.minYear..persianDatePickerState.maxYear).toList()
+    (persianDatePickerState.minYear..persianDatePickerState.maxYear).toPersistentList()
   }
 
   Row(modifier = modifier, horizontalArrangement = Arrangement.Center) {
