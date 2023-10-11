@@ -23,6 +23,7 @@ import androidx.compose.material.ProvideTextStyle
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.NonRestartableComposable
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -81,14 +82,24 @@ fun <T> ListItemPicker(
       updateBounds(offsetRange.first, offsetRange.second)
     }
 
-  val coercedAnimatedOffset = animatedOffset.value % halfNumbersColumnHeightPx
+  val coercedAnimatedOffset by remember(animatedOffset.value) {
+    derivedStateOf {
+      animatedOffset.value % halfNumbersColumnHeightPx
+    }
+  }
 
-  val indexOfElement = getItemIndexForOffset(
+  val indexOfElement = remember(
     list,
     provideValue.invoke(),
     animatedOffset.value,
-    halfNumbersColumnHeightPx
-  )
+  ) {
+    getItemIndexForOffset(
+      list,
+      provideValue.invoke(),
+      animatedOffset.value,
+      halfNumbersColumnHeightPx
+    )
+  }
 
   var dividersWidth by remember { mutableStateOf(0.dp) }
 
