@@ -10,7 +10,6 @@ import androidx.compose.animation.core.calculateTargetValue
 import androidx.compose.animation.core.exponentialDecay
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.Orientation
-import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.gestures.draggable
 import androidx.compose.foundation.gestures.rememberDraggableState
 import androidx.compose.foundation.layout.Box
@@ -23,6 +22,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.ProvideTextStyle
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -32,13 +32,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
+import com.parsuomash.affogato.datepicker.utils.disabledLongPress
 import kotlin.math.abs
 import kotlin.math.roundToInt
 import kotlinx.coroutines.launch
@@ -82,13 +82,12 @@ fun <T> ListItemPicker(
 
   val coercedAnimatedOffset = animatedOffset.value % halfNumbersColumnHeightPx
 
-  val indexOfElement =
-    getItemIndexForOffset(
-      list,
-      provideValue.invoke(),
-      animatedOffset.value,
-      halfNumbersColumnHeightPx
-    )
+  val indexOfElement = getItemIndexForOffset(
+    list,
+    provideValue.invoke(),
+    animatedOffset.value,
+    halfNumbersColumnHeightPx
+  )
 
   var dividersWidth by remember { mutableStateOf(0.dp) }
 
@@ -212,15 +211,13 @@ fun <T> ListItemPicker(
 }
 
 @Composable
-private fun Label(text: String, modifier: Modifier) {
+@NonRestartableComposable
+private fun Label(
+  modifier: Modifier = Modifier,
+  text: String
+) {
   Text(
-    modifier = modifier.pointerInput(Unit) {
-      detectTapGestures(
-        onLongPress = {
-          // FIXME Empty to disable text selection
-        }
-      )
-    },
+    modifier = modifier.disabledLongPress(),
     text = text,
     textAlign = TextAlign.Center
   )
