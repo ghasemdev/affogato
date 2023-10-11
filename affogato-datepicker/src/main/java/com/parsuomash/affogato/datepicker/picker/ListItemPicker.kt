@@ -57,7 +57,7 @@ private fun <T> getItemIndexForOffset(
 fun <T> ListItemPicker(
   modifier: Modifier = Modifier,
   label: (T) -> String = { it.toString() },
-  value: T,
+  provideValue: () -> T,
   onValueChange: (T) -> Unit,
   dividersColor: Color = MaterialTheme.colors.primary,
   list: List<T>,
@@ -72,8 +72,8 @@ fun <T> ListItemPicker(
 
   val animatedOffset = remember { Animatable(0f) }
     .apply {
-      val index = list.indexOf(value)
-      val offsetRange = remember(value, list) {
+      val index = list.indexOf(provideValue.invoke())
+      val offsetRange = remember(provideValue.invoke(), list) {
         -((list.count() - 1) - index) * halfNumbersColumnHeightPx to
           index * halfNumbersColumnHeightPx
       }
@@ -83,7 +83,12 @@ fun <T> ListItemPicker(
   val coercedAnimatedOffset = animatedOffset.value % halfNumbersColumnHeightPx
 
   val indexOfElement =
-    getItemIndexForOffset(list, value, animatedOffset.value, halfNumbersColumnHeightPx)
+    getItemIndexForOffset(
+      list,
+      provideValue.invoke(),
+      animatedOffset.value,
+      halfNumbersColumnHeightPx
+    )
 
   var dividersWidth by remember { mutableStateOf(0.dp) }
 
@@ -112,7 +117,12 @@ fun <T> ListItemPicker(
             ).endState.value
 
             val result = list.elementAt(
-              getItemIndexForOffset(list, value, endValue, halfNumbersColumnHeightPx)
+              getItemIndexForOffset(
+                list,
+                provideValue.invoke(),
+                endValue,
+                halfNumbersColumnHeightPx
+              )
             )
             onValueChange(result)
             animatedOffset.snapTo(0f)
