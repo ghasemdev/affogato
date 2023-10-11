@@ -11,18 +11,19 @@ import androidx.compose.runtime.saveable.Saver
 import androidx.compose.runtime.saveable.listSaver
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
-import java.util.Date
+import com.parsuomash.affogato.datepicker.utils.PersianDateWrapper
+import java.util.*
 import saman.zamani.persiandate.PersianDate
 
 @Composable
 fun rememberPersianDatePickerState(
   isDisplayMonthNames: Boolean = true,
-  date: PersianDate = PersianDate(),
-  selectedYear: Int = date.shYear,
-  selectedMonth: Int = date.shMonth,
-  selectedDay: Int = date.shDay,
+  date: PersianDateWrapper = PersianDateWrapper(),
+  selectedYear: Int = date.value.shYear,
+  selectedMonth: Int = date.value.shMonth,
+  selectedDay: Int = date.value.shDay,
   minYear: Int = 1300,
-  maxYear: Int = date.shYear,
+  maxYear: Int = date.value.shYear,
   maxMonth: Int = 12,
   maxDay: Int = 31
 ): PersianDatePickerState {
@@ -44,17 +45,17 @@ fun rememberPersianDatePickerState(
 @Stable
 class PersianDatePickerState(
   isDisplayMonthNames: Boolean = true,
-  date: PersianDate = PersianDate(),
-  selectedYear: Int = date.shYear,
-  selectedMonth: Int = date.shMonth,
-  selectedDay: Int = date.shDay,
+  date: PersianDateWrapper = PersianDateWrapper(),
+  selectedYear: Int = date.value.shYear,
+  selectedMonth: Int = date.value.shMonth,
+  selectedDay: Int = date.value.shDay,
   minYear: Int = 1300,
-  maxYear: Int = date.shYear,
+  maxYear: Int = date.value.shYear,
   maxMonth: Int = 12,
   maxDay: Int = 31
 ) {
   var isDisplayMonthNames: Boolean by mutableStateOf(isDisplayMonthNames)
-  var date: PersianDate by mutableStateOf(date)
+  var date: PersianDateWrapper by mutableStateOf(date)
 
   var minYear: Int by mutableIntStateOf(minYear)
   var maxYear: Int by mutableIntStateOf(maxYear)
@@ -65,27 +66,27 @@ class PersianDatePickerState(
   var selectedMonth: Int by mutableIntStateOf(selectedMonth)
   var selectedDay: Int by mutableIntStateOf(selectedDay)
 
-  val persianYear: Int get() = date.shYear
-  val persianMonth: Int get() = date.shMonth
-  val persianDay: Int get() = date.shDay
+  val persianYear: Int get() = date.value.shYear
+  val persianMonth: Int get() = date.value.shMonth
+  val persianDay: Int get() = date.value.shDay
 
-  val gregorianDate: Date? get() = date.toDate()
-  val gregorianYear: Int get() = date.grgYear
-  val gregorianMonth: Int get() = date.grgMonth
-  val gregorianDay: Int get() = date.grgDay
+  val gregorianDate: Date? get() = date.value.toDate()
+  val gregorianYear: Int get() = date.value.grgYear
+  val gregorianMonth: Int get() = date.value.grgMonth
+  val gregorianDay: Int get() = date.value.grgDay
 
-  val dayOfWeek: Int get() = date.dayOfWeek()
-  val persianMonthName: String? get() = date.monthName
-  val persianDayOfWeekName: String? get() = date.dayName()
+  val dayOfWeek: Int get() = date.value.dayOfWeek()
+  val persianMonthName: String? get() = date.value.monthName
+  val persianDayOfWeekName: String? get() = date.value.dayName()
 
-  val timestamp: Long get() = date.time
+  val timestamp: Long get() = date.value.time
 
   fun updateDate(timestamp: Long) {
-    date = PersianDate(timestamp)
+    date = PersianDateWrapper(value = PersianDate(timestamp))
   }
 
   fun updateDate(date: Date) {
-    this.date = PersianDate(date)
+    this.date = PersianDateWrapper(value = PersianDate(date))
   }
 
   fun updateDate(persianYear: Int? = null, persianMonth: Int? = null, persianDay: Int? = null) {
@@ -93,7 +94,7 @@ class PersianDatePickerState(
     if (persianMonth != null) selectedMonth = persianMonth
     if (persianDay != null) selectedDay = persianDay
 
-    val isLeapYear = date.isLeap(selectedYear)
+    val isLeapYear = date.value.isLeap(selectedYear)
 
     when {
       selectedMonth < 7 -> {
@@ -130,7 +131,7 @@ class PersianDatePickerState(
   }
 
   private fun updateDate(persianYear: Int, persianMonth: Int, persianDay: Int) {
-    date.apply {
+    date.value.apply {
       shYear = persianYear
       shMonth = persianMonth
       shDay = persianDay
@@ -138,17 +139,17 @@ class PersianDatePickerState(
   }
 
   fun resetDate(onDateChanged: ((year: Int, month: Int, day: Int) -> Unit)? = null) {
-    date = PersianDate()
+    date = PersianDateWrapper()
 
-    selectedYear = date.shYear
-    selectedMonth = date.shMonth
-    selectedDay = date.shDay
+    selectedYear = date.value.shYear
+    selectedMonth = date.value.shMonth
+    selectedDay = date.value.shDay
 
     if (onDateChanged != null) {
       onDateChanged(
-        date.shYear,
-        date.shMonth,
-        date.shDay
+        date.value.shYear,
+        date.value.shMonth,
+        date.value.shDay
       )
     }
   }
@@ -171,7 +172,7 @@ class PersianDatePickerState(
     if (selectedMonth in 7..11 && selectedDay == 31) {
       selectedDay = 30
     } else {
-      val isLeapYear = date.isLeap(selectedYear)
+      val isLeapYear = date.value.isLeap(selectedYear)
       if (isLeapYear && selectedDay == 31) {
         selectedDay = 30
       } else if (selectedDay > 29) {
@@ -190,7 +191,7 @@ class PersianDatePickerState(
       save = {
         listOf(
           it.isDisplayMonthNames,
-          it.date.time,
+          it.date.value.time,
           it.selectedYear,
           it.selectedMonth,
           it.selectedDay,
@@ -203,7 +204,7 @@ class PersianDatePickerState(
       restore = {
         PersianDatePickerState(
           isDisplayMonthNames = it[0] as Boolean,
-          date = PersianDate(it[1] as Long),
+          date = PersianDateWrapper(value = PersianDate(it[1] as Long)),
           selectedYear = it[2] as Int,
           selectedMonth = it[3] as Int,
           selectedDay = it[4] as Int,
