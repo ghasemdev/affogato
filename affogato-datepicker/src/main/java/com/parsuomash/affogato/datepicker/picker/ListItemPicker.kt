@@ -147,7 +147,7 @@ fun <T> ListItemPicker(
             Label(
               text = label(list.elementAt(indexOfElement - 1)),
               modifier = baseLabelModifier
-                .offset(y = -halfNumbersColumnHeight)
+                .offset { IntOffset(x = 0, y = -halfNumbersColumnHeight.roundToPx()) }
                 .alpha(maxOf(MINIMUM_ALPHA, coercedAnimatedOffset / halfNumbersColumnHeightPx))
             )
           }
@@ -162,7 +162,7 @@ fun <T> ListItemPicker(
             Label(
               text = label(list.elementAt(indexOfElement + 1)),
               modifier = baseLabelModifier
-                .offset(y = halfNumbersColumnHeight)
+                .offset { IntOffset(x = 0, y = halfNumbersColumnHeight.roundToPx()) }
                 .alpha(maxOf(MINIMUM_ALPHA, -coercedAnimatedOffset / halfNumbersColumnHeightPx))
             )
           }
