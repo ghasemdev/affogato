@@ -42,6 +42,7 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.parsuomash.affogato.R
+import com.parsuomash.affogato.app.composable.WrappedColumn
 import com.parsuomash.affogato.app.ui.theme.AffogatoTheme
 import com.parsuomash.affogato.datepicker.PersianDatePicker
 import com.parsuomash.affogato.datepicker.rememberPersianDatePickerState
@@ -160,12 +161,13 @@ fun DimenScreen(window: WindowSize) {
 
 @Composable
 fun DatePickerScreen() {
-  Column(verticalArrangement = Arrangement.Center) {
-    val persianDatePickerState = rememberPersianDatePickerState(
-      selectedDay = 1,
-      selectedMonth = 1,
-      selectedYear = 1370
-    )
+  val persianDatePickerState = rememberPersianDatePickerState(
+    selectedDay = 1,
+    selectedMonth = 1,
+    selectedYear = 1370
+  )
+
+  WrappedColumn(verticalArrangement = Arrangement.Center) {
     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
       PersianDatePicker(
         modifier = Modifier.fillMaxWidth(),
@@ -174,7 +176,11 @@ fun DatePickerScreen() {
     }
 
     Spacer(modifier = Modifier.height(50.dp))
-    Text(text = "${persianDatePickerState.selectedYear}/${persianDatePickerState.selectedMonth}/${persianDatePickerState.selectedDay}")
+    Text(
+      text = "${persianDatePickerState.selectedYear}/" +
+        "${persianDatePickerState.selectedMonth}/" +
+        "${persianDatePickerState.selectedDay}"
+    )
     Spacer(modifier = Modifier.height(50.dp))
   }
 }
