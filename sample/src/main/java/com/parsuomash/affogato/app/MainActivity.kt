@@ -65,7 +65,7 @@ class MainActivity : ComponentActivity() {
           modifier = Modifier.fillMaxSize(),
           color = MaterialTheme.colors.background
         ) {
-          ScreenContent3()
+          DatePickerScreen()
         }
       }
     }
@@ -73,7 +73,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun ScreenContent() {
+fun SdpScreen() {
   Column(
     modifier = Modifier
       .fillMaxSize()
@@ -107,7 +107,7 @@ fun ScreenContent() {
 }
 
 @Composable
-fun ScreenContent2(window: WindowSize) {
+fun DimenScreen(window: WindowSize) {
   val configuration = LocalConfiguration.current
   val isLandscape = configuration.isLandscape
 
@@ -159,8 +159,8 @@ fun ScreenContent2(window: WindowSize) {
 }
 
 @Composable
-fun ScreenContent3() {
-  Column {
+fun DatePickerScreen() {
+  Column(verticalArrangement = Arrangement.Center) {
     val persianDatePickerState = rememberPersianDatePickerState(
       selectedDay = 1,
       selectedMonth = 1,
@@ -176,18 +176,6 @@ fun ScreenContent3() {
     Spacer(modifier = Modifier.height(50.dp))
     Text(text = "${persianDatePickerState.selectedYear}/${persianDatePickerState.selectedMonth}/${persianDatePickerState.selectedDay}")
     Spacer(modifier = Modifier.height(50.dp))
-
-    Button(
-      modifier = Modifier
-        .fillMaxWidth()
-        .height(dimen.heightButton),
-      onClick = { }
-    ) {
-      Text(
-        text = "show date picker",
-        fontSize = dimen.fontSize
-      )
-    }
   }
 }
 
@@ -240,7 +228,7 @@ fun ScreenPdf() {
 fun DefaultPreview() {
   val window = rememberWindowSize()
   AffogatoTheme {
-    ScreenContent2(window)
+    DimenScreen(window)
   }
 }
 
