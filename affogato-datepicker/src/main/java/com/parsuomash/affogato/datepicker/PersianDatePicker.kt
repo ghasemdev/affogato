@@ -10,11 +10,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.parsuomash.affogato.datepicker.picker.ListItemPicker
+import com.parsuomash.affogato.datepicker.utils.fadingEdge
 import com.parsuomash.affogato.datepicker.utils.persianMonthNames
 import kotlinx.collections.immutable.toPersistentList
 
@@ -36,7 +38,17 @@ fun PersianDatePicker(
     (persianDatePickerState.minYear..persianDatePickerState.maxYear).toPersistentList()
   }
 
-  Row(modifier = modifier, horizontalArrangement = Arrangement.Center) {
+  Row(
+    modifier = modifier.fadingEdge(
+      Brush.verticalGradient(
+        0f to Color.Transparent,
+        0.2f to Color.Black,
+        0.8f to Color.Black,
+        1f to Color.Transparent
+      )
+    ),
+    horizontalArrangement = Arrangement.Center
+  ) {
     ListItemPicker(
       modifier = Modifier
         .weight(1f)
