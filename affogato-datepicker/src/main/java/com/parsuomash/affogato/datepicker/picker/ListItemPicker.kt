@@ -32,7 +32,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.TextStyle
@@ -140,6 +142,7 @@ fun <T> ListItemPicker(
           }
         }
       )
+      .clip(RectangleShape)
       .padding(vertical = numbersColumnHeight / 3 + verticalMargin * 2),
     content = {
       Box(
@@ -154,8 +157,17 @@ fun <T> ListItemPicker(
           .offset { IntOffset(x = 0, y = coercedAnimatedOffset.roundToInt()) }
       ) {
         val baseLabelModifier = Modifier.align(Alignment.Center)
+
         ProvideTextStyle(textStyle) {
-          if (indexOfElement > 0) {
+          if (indexOfElement >= 2) {
+            Label(
+              text = label(list.elementAt(indexOfElement - 2)),
+              modifier = baseLabelModifier
+                .offset { IntOffset(x = 0, y = -halfNumbersColumnHeight.roundToPx() * 2) }
+                .alpha(MINIMUM_ALPHA)
+            )
+          }
+          if (indexOfElement >= 1) {
             Label(
               text = label(list.elementAt(indexOfElement - 1)),
               modifier = baseLabelModifier
@@ -170,12 +182,20 @@ fun <T> ListItemPicker(
                 maxOf(MINIMUM_ALPHA, 1 - abs(coercedAnimatedOffset) / halfNumbersColumnHeightPx)
               )
           )
-          if (indexOfElement < list.count() - 1) {
+          if (indexOfElement < list.size - 1) {
             Label(
               text = label(list.elementAt(indexOfElement + 1)),
               modifier = baseLabelModifier
                 .offset { IntOffset(x = 0, y = halfNumbersColumnHeight.roundToPx()) }
                 .alpha(maxOf(MINIMUM_ALPHA, -coercedAnimatedOffset / halfNumbersColumnHeightPx))
+            )
+          }
+          if (indexOfElement < list.size - 2) {
+            Label(
+              text = label(list.elementAt(indexOfElement + 2)),
+              modifier = baseLabelModifier
+                .offset { IntOffset(x = 0, y = halfNumbersColumnHeight.roundToPx() * 2) }
+                .alpha(MINIMUM_ALPHA)
             )
           }
         }
