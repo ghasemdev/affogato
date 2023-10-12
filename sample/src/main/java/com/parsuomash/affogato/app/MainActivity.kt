@@ -23,6 +23,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -31,15 +32,20 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.parsuomash.affogato.R
+import com.parsuomash.affogato.app.composable.WrappedColumn
 import com.parsuomash.affogato.app.ui.theme.AffogatoTheme
+import com.parsuomash.affogato.datepicker.PersianDatePicker
+import com.parsuomash.affogato.datepicker.rememberPersianDatePickerState
 import com.parsuomash.affogato.pdfviewer.VerticalPDFView
 import com.parsuomash.affogato.unit.Dimen
 import com.parsuomash.affogato.unit.sdp
@@ -60,7 +66,7 @@ class MainActivity : ComponentActivity() {
           modifier = Modifier.fillMaxSize(),
           color = MaterialTheme.colors.background
         ) {
-          ScreenPdf()
+          DatePickerScreen()
         }
       }
     }
@@ -68,7 +74,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun ScreenContent() {
+fun SdpScreen() {
   Column(
     modifier = Modifier
       .fillMaxSize()
@@ -102,7 +108,7 @@ fun ScreenContent() {
 }
 
 @Composable
-fun ScreenContent2(window: WindowSize) {
+fun DimenScreen(window: WindowSize) {
   val configuration = LocalConfiguration.current
   val isLandscape = configuration.isLandscape
 
@@ -150,6 +156,32 @@ fun ScreenContent2(window: WindowSize) {
         fontSize = dimen.fontSize
       )
     }
+  }
+}
+
+@Composable
+fun DatePickerScreen() {
+  val persianDatePickerState = rememberPersianDatePickerState(
+    selectedDay = 1,
+    selectedMonth = 1,
+    selectedYear = 1370
+  )
+
+  WrappedColumn(verticalArrangement = Arrangement.Center) {
+    CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
+      PersianDatePicker(
+        modifier = Modifier.fillMaxWidth(),
+        persianDatePickerState = persianDatePickerState
+      )
+    }
+
+    Spacer(modifier = Modifier.height(50.dp))
+    Text(
+      text = "${persianDatePickerState.selectedYear}/" +
+        "${persianDatePickerState.selectedMonth}/" +
+        "${persianDatePickerState.selectedDay}"
+    )
+    Spacer(modifier = Modifier.height(50.dp))
   }
 }
 
@@ -202,7 +234,7 @@ fun ScreenPdf() {
 fun DefaultPreview() {
   val window = rememberWindowSize()
   AffogatoTheme {
-    ScreenContent2(window)
+    DimenScreen(window)
   }
 }
 

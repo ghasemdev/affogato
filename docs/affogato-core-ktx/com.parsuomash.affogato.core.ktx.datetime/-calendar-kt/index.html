@@ -1,335 +1,360 @@
 <!doctype html>
-<html>
+<html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>CalendarKt</title>
-<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
-const savedDarkMode = storage ? JSON.parse(storage) : false
-if(savedDarkMode === true){
-    document.getElementsByTagName("html")[0].classList.add("theme-dark")
-}</script>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
 <script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
 <link href="../../../styles/style.css" rel="Stylesheet">
-<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
 <link href="../../../styles/main.css" rel="Stylesheet">
 <link href="../../../styles/prism.css" rel="Stylesheet">
 <link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
 <script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
 <script type="text/javascript" src="../../../scripts/main.js" defer></script>
-<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
 <body>
-<div class="navigation-wrapper" id="navigation-wrapper">
-    <div id="leftToggler"><span class="icon-toggler"></span></div>
-    <div class="library-name">
-<a href="../../../index.html">
-<span>Affogato</span>            </a>    </div>
-    <div>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../index.html">
+                            Affogato
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":affogato-core-ktx:dokkaHtmlPartial/main">jvm</button>
+        </div>
     </div>
-    <div class="pull-right d-flex">
-        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
-        <div id="searchBar"></div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
     </div>
-</div>
-<div id="container">
-    <div id="leftColumn">
-        <div id="sideMenu"></div>
-    </div>
-    <div id="main">
-<div class="main-content" id="content" pageids="affogato-core-ktx::com.parsuomash.affogato.core.ktx.datetime/CalendarKt///PointingToDeclaration//449597615">
-  <div class="breadcrumbs"><a href="../../index.html">affogato-core-ktx</a><span class="delimiter">/</span><a href="../index.html">com.parsuomash.affogato.core.ktx.datetime</a><span class="delimiter">/</span><a href="index.html">CalendarKt</a></div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="affogato-core-ktx::com.parsuomash.affogato.core.ktx.datetime/CalendarKt///PointingToDeclaration//449597615">
+  <div class="breadcrumbs"><a href="../../index.html">affogato-core-ktx</a><span class="delimiter">/</span><a href="../index.html">com.parsuomash.affogato.core.ktx.datetime</a><span class="delimiter">/</span><span class="current">CalendarKt</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Calendar</span><wbr><span><span>Kt</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">class </span><a href="index.html">CalendarKt</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">class </span><a href="index.html">CalendarKt</a></div></div></div>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
-      <h2 class="">Functions</h2>
-      <div class="table" data-togglable="Functions"><a data-name="-41876157%2FFunctions%2F449597615" anchor-label="format" id="-41876157%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
-        <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="format.html"><span><span>format</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-41876157%2FFunctions%2F449597615"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>&nbsp;<a href="format.html"><span class="token function">format</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a>&nbsp;$self<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>&nbsp;pattern</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Formats a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a> into a date-time <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>.</p></div></div></div>
+      <div data-togglable="EXTENSION_PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-635108988%2FProperties%2F449597615" anchor-label="dayOfMonth" id="-635108988%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-635108988%2FExtensions%2F449597615"><span>day</span><wbr><span>Of</span><wbr><span><span>Month</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-635108988%2FProperties%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.lang/Integer///PointingToDeclaration/">Integer</span>&nbsp;<a href="index.html#-635108988%2FExtensions%2F449597615">dayOfMonth</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="213673428%2FFunctions%2F449597615" anchor-label="isSameDay" id="213673428%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
-        <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="is-same-day.html"><span>is</span><wbr><span>Same</span><wbr><span><span>Day</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="213673428%2FFunctions%2F449597615"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html">Boolean</a>&nbsp;<a href="is-same-day.html"><span class="token function">isSameDay</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a>&nbsp;$self<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a>&nbsp;date</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Two days are considered to be the same if they have the same day.</p></div></div></div>
+<a data-name="-194463650%2FProperties%2F449597615" anchor-label="dayOfWeek" id="-194463650%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-194463650%2FExtensions%2F449597615"><span>day</span><wbr><span>Of</span><wbr><span><span>Week</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-194463650%2FProperties%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.lang/Integer///PointingToDeclaration/">Integer</span>&nbsp;<a href="index.html#-194463650%2FExtensions%2F449597615">dayOfWeek</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="1725939715%2FFunctions%2F449597615" anchor-label="toCalendar" id="1725939715%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
-        <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="to-calendar.html"><span>to</span><wbr><span><span>Calendar</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1725939715%2FFunctions%2F449597615"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a>&nbsp;<a href="to-calendar.html"><span class="token function">toCalendar</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html">Long</a>&nbsp;$self</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Convert <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a> to <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a>.</p></div><div class="symbol monospace block"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a>&nbsp;<a href="to-calendar.html"><span class="token function">toCalendar</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>&nbsp;$self</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace block"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a>&nbsp;<a href="to-calendar.html"><span class="token function">toCalendar</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>&nbsp;$self<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>&nbsp;pattern</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Produce a Calendar from the given strings value and <a href="../../../affogato-core-ktx/com.parsuomash.affogato.core.ktx.datetime/index.html">pattern</a>.</p></div></div></div>
+<a data-name="1608605981%2FProperties%2F449597615" anchor-label="dayOfWeekInMonth" id="1608605981%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1608605981%2FExtensions%2F449597615"><span>day</span><wbr><span>Of</span><wbr><span>Week</span><wbr><span>In</span><wbr><span><span>Month</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1608605981%2FProperties%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.lang/Integer///PointingToDeclaration/">Integer</span>&nbsp;<a href="index.html#1608605981%2FExtensions%2F449597615">dayOfWeekInMonth</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-346104063%2FFunctions%2F449597615" anchor-label="toCalendarOrNull" id="-346104063%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
-        <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="to-calendar-or-null.html"><span>to</span><wbr><span>Calendar</span><wbr><span>Or</span><wbr><span><span>Null</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-346104063%2FFunctions%2F449597615"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a>&nbsp;<a href="to-calendar-or-null.html"><span class="token function">toCalendarOrNull</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>&nbsp;$self</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace block"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a>&nbsp;<a href="to-calendar-or-null.html"><span class="token function">toCalendarOrNull</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>&nbsp;$self<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>&nbsp;pattern</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Produce a Calendar from the given strings value and <a href="../../../affogato-core-ktx/com.parsuomash.affogato.core.ktx.datetime/index.html">pattern</a> if possible.</p></div></div></div>
+<a data-name="-917447563%2FProperties%2F449597615" anchor-label="dayOfYear" id="-917447563%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-917447563%2FExtensions%2F449597615"><span>day</span><wbr><span>Of</span><wbr><span><span>Year</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-917447563%2FProperties%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.lang/Integer///PointingToDeclaration/">Integer</span>&nbsp;<a href="index.html#-917447563%2FExtensions%2F449597615">dayOfYear</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="806698319%2FFunctions%2F449597615" anchor-label="toDate" id="806698319%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
-        <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="to-date.html"><span>to</span><wbr><span><span>Date</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="806698319%2FFunctions%2F449597615"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a>&nbsp;<a href="to-date.html"><span class="token function">toDate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a>&nbsp;$self</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Convert <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a> to <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a>.</p></div></div></div>
+<a data-name="-1306712211%2FProperties%2F449597615" anchor-label="hour" id="-1306712211%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1306712211%2FExtensions%2F449597615"><span><span>hour</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1306712211%2FProperties%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.lang/Integer///PointingToDeclaration/">Integer</span>&nbsp;<a href="index.html#-1306712211%2FExtensions%2F449597615">hour</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-1382322184%2FFunctions%2F449597615" anchor-label="toString" id="-1382322184%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
-        <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="to-string.html"><span>to</span><wbr><span><span>String</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1382322184%2FFunctions%2F449597615"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block strikethrough"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-deprecated/index.html"><span class="token annotation">Deprecated</span></a><span class="token punctuation">(</span><span>message<span class="token operator"> = </span><span class="breakable-word"><span class="token string">"This function is deprecated and will be removed in next major release.Use format() instead."</span></span><span class="token punctuation">, </span></span><wbr><span>replaceWith<span class="token operator"> = </span><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-replace-with/index.html"><span class="token annotation">ReplaceWith</span></a><span class="token punctuation">(</span><span>imports<span class="token operator"> = </span><span class="token punctuation">{</span><span><span class="breakable-word"><span class="token string">"com.parsuomash.affogato.core.ktx.datetime.format"</span></span></span><wbr><span class="token punctuation">}</span><span class="token punctuation">, </span></span><wbr><span>expression<span class="token operator"> = </span><span class="breakable-word"><span class="token string">"format(format)"</span></span></span><wbr><span class="token punctuation">)</span><span class="token punctuation">, </span></span><wbr><span>level<span class="token operator"> = </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-deprecation-level/-w-a-r-n-i-n-g/index.html">DeprecationLevel.WARNING</a></span><wbr><span class="token punctuation">)</span></div></div><strike><span class="token keyword">public </span></strike><strike><span class="token keyword">final </span></strike><strike><span class="token keyword">static </span></strike><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><strike>&nbsp;</strike><a href="to-string.html"><strike><span class="token function">toString</span></strike></a><strike><span class="token punctuation">(</span></strike><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a>&nbsp;$self<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>&nbsp;format</span></span><strike><span class="token punctuation">)</span></strike><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Formats a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a> into a date-time <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>.</p></div></div></div>
+<a data-name="-1920638332%2FProperties%2F449597615" anchor-label="hourOfDay" id="-1920638332%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1920638332%2FExtensions%2F449597615"><span>hour</span><wbr><span>Of</span><wbr><span><span>Day</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1920638332%2FProperties%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.lang/Integer///PointingToDeclaration/">Integer</span>&nbsp;<a href="index.html#-1920638332%2FExtensions%2F449597615">hourOfDay</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1942512708%2FProperties%2F449597615" anchor-label="millisecond" id="1942512708%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1942512708%2FExtensions%2F449597615"><span><span>millisecond</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1942512708%2FProperties%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.lang/Integer///PointingToDeclaration/">Integer</span>&nbsp;<a href="index.html#1942512708%2FExtensions%2F449597615">millisecond</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="659217341%2FProperties%2F449597615" anchor-label="minute" id="659217341%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#659217341%2FExtensions%2F449597615"><span><span>minute</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="659217341%2FProperties%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.lang/Integer///PointingToDeclaration/">Integer</span>&nbsp;<a href="index.html#659217341%2FExtensions%2F449597615">minute</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-851818907%2FProperties%2F449597615" anchor-label="month" id="-851818907%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-851818907%2FExtensions%2F449597615"><span><span>month</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-851818907%2FProperties%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.lang/Integer///PointingToDeclaration/">Integer</span>&nbsp;<a href="index.html#-851818907%2FExtensions%2F449597615">month</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1973158237%2FProperties%2F449597615" anchor-label="second" id="1973158237%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1973158237%2FExtensions%2F449597615"><span><span>second</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1973158237%2FProperties%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.lang/Integer///PointingToDeclaration/">Integer</span>&nbsp;<a href="index.html#1973158237%2FExtensions%2F449597615">second</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1123732976%2FProperties%2F449597615" anchor-label="weekOfMonth" id="1123732976%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1123732976%2FExtensions%2F449597615"><span>week</span><wbr><span>Of</span><wbr><span><span>Month</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1123732976%2FProperties%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.lang/Integer///PointingToDeclaration/">Integer</span>&nbsp;<a href="index.html#1123732976%2FExtensions%2F449597615">weekOfMonth</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1771688585%2FProperties%2F449597615" anchor-label="weekOfYear" id="1771688585%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1771688585%2FExtensions%2F449597615"><span>week</span><wbr><span>Of</span><wbr><span><span>Year</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1771688585%2FProperties%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.lang/Integer///PointingToDeclaration/">Integer</span>&nbsp;<a href="index.html#1771688585%2FExtensions%2F449597615">weekOfYear</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="738129780%2FProperties%2F449597615" anchor-label="year" id="738129780%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#738129780%2FExtensions%2F449597615"><span><span>year</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="738129780%2FProperties%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.lang/Integer///PointingToDeclaration/">Integer</span>&nbsp;<a href="index.html#738129780%2FExtensions%2F449597615">year</a></div></div></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <h2 class="">Properties</h2>
-      <div class="table" data-togglable="Properties"><a data-name="-635108988%2FProperties%2F449597615" anchor-label="dayOfMonth" id="-635108988%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
-        <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="index.html#-635108988%2FProperties%2F449597615"><span>day</span><wbr><span>Of</span><wbr><span><span>Month</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-635108988%2FProperties%2F449597615"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><a data-name="-635108988%2FProperties%2F449597615" anchor-label="dayOfMonth" id="-635108988%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#-635108988%2FProperties%2F449597615">dayOfMonth</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-41876157%2FFunctions%2F449597615" anchor-label="format" id="-41876157%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="format.html"><span><span>format</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-41876157%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.lang/String///PointingToDeclaration/">String</span>&nbsp;<a href="format.html"><span class="token function">format</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="java.util/Calendar///PointingToDeclaration/">Calendar</span>&nbsp;$self<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="java.lang/String///PointingToDeclaration/">String</span>&nbsp;pattern</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Formats a <span data-unresolved-link="java.util/Calendar///PointingToDeclaration/">Calendar</span> into a date-time <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-194463650%2FProperties%2F449597615" anchor-label="dayOfWeek" id="-194463650%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
-        <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="index.html#-194463650%2FProperties%2F449597615"><span>day</span><wbr><span>Of</span><wbr><span><span>Week</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-194463650%2FProperties%2F449597615"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><a data-name="-194463650%2FProperties%2F449597615" anchor-label="dayOfWeek" id="-194463650%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#-194463650%2FProperties%2F449597615">dayOfWeek</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
+<a data-name="213673428%2FFunctions%2F449597615" anchor-label="isSameDay" id="213673428%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-same-day.html"><span>is</span><wbr><span>Same</span><wbr><span><span>Day</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="213673428%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.lang/Boolean///PointingToDeclaration/">Boolean</span>&nbsp;<a href="is-same-day.html"><span class="token function">isSameDay</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="java.util/Calendar///PointingToDeclaration/">Calendar</span>&nbsp;$self<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="java.util/Calendar///PointingToDeclaration/">Calendar</span>&nbsp;date</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Two days are considered to be the same if they have the same day.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="1608605981%2FProperties%2F449597615" anchor-label="dayOfWeekInMonth" id="1608605981%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
-        <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="index.html#1608605981%2FProperties%2F449597615"><span>day</span><wbr><span>Of</span><wbr><span>Week</span><wbr><span>In</span><wbr><span><span>Month</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1608605981%2FProperties%2F449597615"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><a data-name="1608605981%2FProperties%2F449597615" anchor-label="dayOfWeekInMonth" id="1608605981%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#1608605981%2FProperties%2F449597615">dayOfWeekInMonth</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
+<a data-name="1725939715%2FFunctions%2F449597615" anchor-label="toCalendar" id="1725939715%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="to-calendar.html"><span>to</span><wbr><span><span>Calendar</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1725939715%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.util/Calendar///PointingToDeclaration/">Calendar</span>&nbsp;<a href="to-calendar.html"><span class="token function">toCalendar</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="java.lang/Long///PointingToDeclaration/">Long</span>&nbsp;$self</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Convert <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a> to <span data-unresolved-link="java.util/Calendar///PointingToDeclaration/">Calendar</span>.</p></div><div class="symbol monospace block"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.util/Calendar///PointingToDeclaration/">Calendar</span>&nbsp;<a href="to-calendar.html"><span class="token function">toCalendar</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="java.lang/String///PointingToDeclaration/">String</span>&nbsp;$self</span></span><span class="token punctuation">)</span></div><div class="symbol monospace block"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.util/Calendar///PointingToDeclaration/">Calendar</span>&nbsp;<a href="to-calendar.html"><span class="token function">toCalendar</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="java.lang/String///PointingToDeclaration/">String</span>&nbsp;$self<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="java.lang/String///PointingToDeclaration/">String</span>&nbsp;pattern</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Produce a Calendar from the given strings value and <a href="../../../affogato-core-ktx/com.parsuomash.affogato.core.ktx.datetime/index.html">pattern</a>.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-917447563%2FProperties%2F449597615" anchor-label="dayOfYear" id="-917447563%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
-        <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="index.html#-917447563%2FProperties%2F449597615"><span>day</span><wbr><span>Of</span><wbr><span><span>Year</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-917447563%2FProperties%2F449597615"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><a data-name="-917447563%2FProperties%2F449597615" anchor-label="dayOfYear" id="-917447563%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#-917447563%2FProperties%2F449597615">dayOfYear</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
+<a data-name="-346104063%2FFunctions%2F449597615" anchor-label="toCalendarOrNull" id="-346104063%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="to-calendar-or-null.html"><span>to</span><wbr><span>Calendar</span><wbr><span>Or</span><wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-346104063%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.util/Calendar///PointingToDeclaration/">Calendar</span>&nbsp;<a href="to-calendar-or-null.html"><span class="token function">toCalendarOrNull</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="java.lang/String///PointingToDeclaration/">String</span>&nbsp;$self</span></span><span class="token punctuation">)</span></div><div class="symbol monospace block"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.util/Calendar///PointingToDeclaration/">Calendar</span>&nbsp;<a href="to-calendar-or-null.html"><span class="token function">toCalendarOrNull</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="java.lang/String///PointingToDeclaration/">String</span>&nbsp;$self<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="java.lang/String///PointingToDeclaration/">String</span>&nbsp;pattern</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Produce a Calendar from the given strings value and <a href="../../../affogato-core-ktx/com.parsuomash.affogato.core.ktx.datetime/index.html">pattern</a> if possible.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-1306712211%2FProperties%2F449597615" anchor-label="hour" id="-1306712211%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
-        <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="index.html#-1306712211%2FProperties%2F449597615"><span><span>hour</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1306712211%2FProperties%2F449597615"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><a data-name="-1306712211%2FProperties%2F449597615" anchor-label="hour" id="-1306712211%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#-1306712211%2FProperties%2F449597615">hour</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
+<a data-name="806698319%2FFunctions%2F449597615" anchor-label="toDate" id="806698319%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="to-date.html"><span>to</span><wbr><span><span>Date</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="806698319%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.util/Date///PointingToDeclaration/">Date</span>&nbsp;<a href="to-date.html"><span class="token function">toDate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="java.util/Calendar///PointingToDeclaration/">Calendar</span>&nbsp;$self</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Convert <span data-unresolved-link="java.util/Calendar///PointingToDeclaration/">Calendar</span> to <span data-unresolved-link="java.util/Date///PointingToDeclaration/">Date</span>.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-<a data-name="-1920638332%2FProperties%2F449597615" anchor-label="hourOfDay" id="-1920638332%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
-        <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="index.html#-1920638332%2FProperties%2F449597615"><span>hour</span><wbr><span>Of</span><wbr><span><span>Day</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1920638332%2FProperties%2F449597615"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><a data-name="-1920638332%2FProperties%2F449597615" anchor-label="hourOfDay" id="-1920638332%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#-1920638332%2FProperties%2F449597615">hourOfDay</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="1942512708%2FProperties%2F449597615" anchor-label="millisecond" id="1942512708%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
-        <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="index.html#1942512708%2FProperties%2F449597615"><span><span>millisecond</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1942512708%2FProperties%2F449597615"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><a data-name="1942512708%2FProperties%2F449597615" anchor-label="millisecond" id="1942512708%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#1942512708%2FProperties%2F449597615">millisecond</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="659217341%2FProperties%2F449597615" anchor-label="minute" id="659217341%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
-        <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="index.html#659217341%2FProperties%2F449597615"><span><span>minute</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="659217341%2FProperties%2F449597615"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><a data-name="659217341%2FProperties%2F449597615" anchor-label="minute" id="659217341%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#659217341%2FProperties%2F449597615">minute</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="-851818907%2FProperties%2F449597615" anchor-label="month" id="-851818907%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
-        <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="index.html#-851818907%2FProperties%2F449597615"><span><span>month</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-851818907%2FProperties%2F449597615"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><a data-name="-851818907%2FProperties%2F449597615" anchor-label="month" id="-851818907%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#-851818907%2FProperties%2F449597615">month</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="1973158237%2FProperties%2F449597615" anchor-label="second" id="1973158237%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
-        <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="index.html#1973158237%2FProperties%2F449597615"><span><span>second</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1973158237%2FProperties%2F449597615"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><a data-name="1973158237%2FProperties%2F449597615" anchor-label="second" id="1973158237%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#1973158237%2FProperties%2F449597615">second</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="1123732976%2FProperties%2F449597615" anchor-label="weekOfMonth" id="1123732976%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
-        <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="index.html#1123732976%2FProperties%2F449597615"><span>week</span><wbr><span>Of</span><wbr><span><span>Month</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1123732976%2FProperties%2F449597615"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><a data-name="1123732976%2FProperties%2F449597615" anchor-label="weekOfMonth" id="1123732976%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#1123732976%2FProperties%2F449597615">weekOfMonth</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="1771688585%2FProperties%2F449597615" anchor-label="weekOfYear" id="1771688585%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
-        <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="index.html#1771688585%2FProperties%2F449597615"><span>week</span><wbr><span>Of</span><wbr><span><span>Year</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1771688585%2FProperties%2F449597615"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><a data-name="1771688585%2FProperties%2F449597615" anchor-label="weekOfYear" id="1771688585%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#1771688585%2FProperties%2F449597615">weekOfYear</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="738129780%2FProperties%2F449597615" anchor-label="year" id="738129780%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
-        <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="index.html#738129780%2FProperties%2F449597615"><span><span>year</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="738129780%2FProperties%2F449597615"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><a data-name="738129780%2FProperties%2F449597615" anchor-label="year" id="738129780%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#738129780%2FProperties%2F449597615">year</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "></div></div></div>
+<a data-name="-1382322184%2FFunctions%2F449597615" anchor-label="toString" id="-1382322184%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="to-string.html"><span>to</span><wbr><span><span>String</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1382322184%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace block"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-deprecated/index.html"><span class="token annotation builtin">Deprecated</span></a><span class="token punctuation">(</span><span>message<span class="token operator"> = </span><span class="breakable-word"><span class="token string">"This function is deprecated and will be removed in next major release.Use format() instead."</span></span><span class="token punctuation">, </span></span><wbr><span>replaceWith<span class="token operator"> = </span><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-replace-with/index.html"><span class="token annotation builtin">ReplaceWith</span></a><span class="token punctuation">(</span><span>imports<span class="token operator"> = </span><span class="token punctuation">{</span><span><span class="breakable-word"><span class="token string">"com.parsuomash.affogato.core.ktx.datetime.format"</span></span></span><wbr><span class="token punctuation">}</span><span class="token punctuation">, </span></span><wbr><span>expression<span class="token operator"> = </span><span class="breakable-word"><span class="token string">"format(format)"</span></span></span><wbr><span class="token punctuation">)</span><span class="token punctuation">, </span></span><wbr><span>level<span class="token operator"> = </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-deprecation-level/-w-a-r-n-i-n-g/index.html">DeprecationLevel.WARNING</a></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><span data-unresolved-link="java.lang/String///PointingToDeclaration/">String</span>&nbsp;<a href="to-string.html"><span class="token function"><strike>toString</strike></span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="java.util/Calendar///PointingToDeclaration/">Calendar</span>&nbsp;$self<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="java.lang/String///PointingToDeclaration/">String</span>&nbsp;format</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Formats a <span data-unresolved-link="java.util/Calendar///PointingToDeclaration/">Calendar</span> into a date-time <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>.</p></div></div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -339,10 +364,11 @@ if(savedDarkMode === true){
   </div>
 </div>
       <div class="footer">
-        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
       </div>
+            </div>
+        </div>
     </div>
-</div>
-
-</body></html>
+</body>
+</html>
 
