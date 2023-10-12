@@ -1,5 +1,6 @@
 package com.parsuomash.affogato.datepicker
 
+import androidx.annotation.FloatRange
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -22,6 +23,7 @@ fun PersianDatePicker(
   modifier: Modifier = Modifier,
   persianDatePickerState: PersianDatePickerState = rememberPersianDatePickerState(),
   textStyle: TextStyle = MaterialTheme.typography.body1,
+  @FloatRange(from = 1.0, to = 2.0) selectedTextScale: Float = 1f,
   dividerColor: Color = MaterialTheme.colors.primary
 ) {
   val days = remember(persianDatePickerState.maxDay) {
@@ -42,6 +44,7 @@ fun PersianDatePicker(
       list = days,
       provideValue = { persianDatePickerState.selectedDay },
       textStyle = textStyle,
+      selectedTextScale = selectedTextScale,
       dividersColor = dividerColor,
       onValueChange = {
         persianDatePickerState.updateDate(persianDay = it)
@@ -55,6 +58,7 @@ fun PersianDatePicker(
       list = months,
       provideValue = { persianDatePickerState.selectedMonth },
       textStyle = textStyle,
+      selectedTextScale = selectedTextScale,
       dividersColor = dividerColor,
       label = {
         if (persianDatePickerState.isDisplayMonthNames) {
@@ -75,6 +79,7 @@ fun PersianDatePicker(
       list = years,
       provideValue = { persianDatePickerState.selectedYear },
       textStyle = textStyle,
+      selectedTextScale = selectedTextScale,
       dividersColor = dividerColor,
       onValueChange = {
         persianDatePickerState.updateDate(persianYear = it)

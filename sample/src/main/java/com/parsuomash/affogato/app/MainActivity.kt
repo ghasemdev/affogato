@@ -171,7 +171,8 @@ fun DatePickerScreen() {
     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
       PersianDatePicker(
         modifier = Modifier.fillMaxWidth(),
-        persianDatePickerState = persianDatePickerState
+        persianDatePickerState = persianDatePickerState,
+        selectedTextScale = 1.4f
       )
     }
 

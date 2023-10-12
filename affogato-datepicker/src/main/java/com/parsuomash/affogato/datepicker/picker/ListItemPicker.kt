@@ -2,6 +2,7 @@
 
 package com.parsuomash.affogato.datepicker.picker
 
+import androidx.annotation.FloatRange
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationResult
 import androidx.compose.animation.core.AnimationVector1D
@@ -33,6 +34,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.Layout
@@ -65,7 +67,8 @@ fun <T> ListItemPicker(
   onValueChange: (T) -> Unit,
   dividersColor: Color = MaterialTheme.colors.primary,
   list: PersistentList<T>,
-  textStyle: TextStyle = LocalTextStyle.current
+  textStyle: TextStyle = LocalTextStyle.current,
+  @FloatRange(from = 1.0, to = 2.0) selectedTextScale: Float = 1f
 ) {
   val verticalMargin = 8.dp
   val numbersColumnHeight = 80.dp
@@ -178,6 +181,7 @@ fun <T> ListItemPicker(
           Label(
             text = label(list.elementAt(indexOfElement)),
             modifier = baseLabelModifier
+              .scale(selectedTextScale)
               .alpha(
                 maxOf(MINIMUM_ALPHA, 1 - abs(coercedAnimatedOffset) / halfNumbersColumnHeightPx)
               )
