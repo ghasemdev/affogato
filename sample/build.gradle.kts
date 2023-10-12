@@ -78,6 +78,7 @@ dependencies {
   implementation(project(AffogatoModules.pdfViewer))
   implementation(project(AffogatoModules.coreKtx))
   implementation(project(AffogatoModules.coroutinesAndroid))
+  implementation(project(AffogatoModules.datepicker))
   implementation(project(AffogatoModules.unit))
   ksp(project(AffogatoModules.unitProcessor))
 

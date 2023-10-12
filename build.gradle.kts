@@ -94,6 +94,25 @@ subprojects {
       html { onCheck = true }
     }
   }
+
+  tasks.withType(org.jetbrains.kotlin.gradle.dsl.KotlinCompile::class.java).configureEach {
+    kotlinOptions {
+      if (project.findProperty("composeCompilerReports") == "true") {
+        freeCompilerArgs = listOf(
+          "-P",
+          "plugin:androidx.compose.compiler.plugins.kotlin:reportsDestination=" +
+            project.buildDir.absolutePath + "/compose_compiler"
+        )
+      }
+      if (project.findProperty("composeCompilerMetrics") == "true") {
+        freeCompilerArgs = listOf(
+          "-P",
+          "plugin:androidx.compose.compiler.plugins.kotlin:metricsDestination=" +
+            project.buildDir.absolutePath + "/compose_compiler"
+        )
+      }
+    }
+  }
 }
 
 // Dokka
