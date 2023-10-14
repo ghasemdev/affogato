@@ -23,7 +23,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun PagerTabScreen() {
   val coroutineScope = rememberCoroutineScope()
-  val pagerState = rememberPagerState { 5 }
+  val pagerState = rememberPagerState { 2 }
 
   Column {
     TabRow(
