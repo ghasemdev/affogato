@@ -15,16 +15,19 @@ import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.parsuomash.affogato.pager.indicator.HorizontalPagerIndicator
 import com.parsuomash.affogato.pager.indicator.VerticalPagerIndicator
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun PagerScreen() {
+  val coroutineScope = rememberCoroutineScope()
   val horizontalPagerState = rememberPagerState { 10 }
   val verticalPagerState = rememberPagerState { 10 }
 
@@ -50,7 +53,12 @@ fun PagerScreen() {
         pagerState = horizontalPagerState,
         modifier = Modifier
           .align(Alignment.BottomCenter)
-          .padding(bottom = 8.dp)
+          .padding(bottom = 8.dp),
+        onIndicatorClick = { page ->
+          coroutineScope.launch {
+            horizontalPagerState.animateScrollToPage(page)
+          }
+        }
       )
     }
 
@@ -75,7 +83,12 @@ fun PagerScreen() {
         pagerState = verticalPagerState,
         modifier = Modifier
           .align(Alignment.CenterStart)
-          .padding(start = 8.dp)
+          .padding(start = 8.dp),
+        onIndicatorClick = { page ->
+          coroutineScope.launch {
+            verticalPagerState.animateScrollToPage(page)
+          }
+        }
       )
     }
   }
