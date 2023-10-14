@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.DpSize
 import com.parsuomash.affogato.pager.indicator.utils.clickableWithoutRipple
 
 @Composable
-internal fun Indicator(
+internal fun DotIndicator(
   size: DpSize,
   padding: PaddingValues,
   color: Color,

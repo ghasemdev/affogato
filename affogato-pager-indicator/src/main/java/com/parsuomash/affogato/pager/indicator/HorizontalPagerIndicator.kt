@@ -27,7 +27,7 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
-import com.parsuomash.affogato.pager.indicator.internal.Indicator
+import com.parsuomash.affogato.pager.indicator.internal.DotIndicator
 import com.parsuomash.affogato.pager.indicator.internal.LARGE_INDICATOR_WEIGHT
 import com.parsuomash.affogato.pager.indicator.internal.MINIMUM_PAGE_COUNT_FOR_SCROLLING
 import com.parsuomash.affogato.pager.indicator.internal.SMALL_INDICATOR_WEIGHT
@@ -188,7 +188,7 @@ private fun HorizontalPagerIndicator(
           inactiveColor
         }
 
-        Indicator(
+        DotIndicator(
           size = size,
           padding = spacing,
           color = color,
