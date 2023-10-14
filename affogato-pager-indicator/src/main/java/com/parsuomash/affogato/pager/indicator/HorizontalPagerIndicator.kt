@@ -34,6 +34,8 @@ import com.parsuomash.affogato.pager.indicator.utils.LARGE_INDICATOR_WEIGHT
 import com.parsuomash.affogato.pager.indicator.utils.MINIMUM_PAGE_COUNT_FOR_SCROLLING
 import com.parsuomash.affogato.pager.indicator.utils.SMALL_INDICATOR_WEIGHT
 import com.parsuomash.affogato.pager.indicator.utils.calculateIndicatorsWidth
+import kotlin.time.Duration.Companion.milliseconds
+import kotlinx.coroutines.delay
 
 /**
  * A horizontally laid out indicator for a [androidx.compose.foundation.pager.HorizontalPager] or
@@ -133,6 +135,15 @@ private fun HorizontalPagerIndicator(
         .visibleItemsInfo
         .lastOrNull()
         ?.index ?: 0
+    }
+  }
+
+  // After configuration change dots need to be refreshed
+  LaunchedEffect(Unit) {
+    if (pagerState.currentPage == pagerState.pageCount - 1) {
+      indicatorScrollState.animateScrollToItem(pagerState.currentPage - 1)
+      delay(100.milliseconds)
+      indicatorScrollState.animateScrollToItem(pagerState.currentPage)
     }
   }
 
