@@ -1,6 +1,6 @@
 @file:Suppress("ConstPropertyName", "PrivatePropertyName")
 
-package com.parsuomash.affogato.pager.indicator.utils
+package com.parsuomash.affogato.pager.indicator.internal
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationSpec

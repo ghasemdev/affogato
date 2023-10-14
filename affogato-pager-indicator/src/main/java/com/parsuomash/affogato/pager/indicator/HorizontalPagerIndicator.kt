@@ -28,12 +28,12 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import com.parsuomash.affogato.pager.indicator.internal.DotIndicator
-import com.parsuomash.affogato.pager.indicator.internal.LARGE_INDICATOR_WEIGHT
-import com.parsuomash.affogato.pager.indicator.internal.MINIMUM_PAGE_COUNT_FOR_SCROLLING
-import com.parsuomash.affogato.pager.indicator.internal.SMALL_INDICATOR_WEIGHT
-import com.parsuomash.affogato.pager.indicator.internal.calculateIndicatorsWidth
-import com.parsuomash.affogato.pager.indicator.utils.StretchEffectOnly
-import com.parsuomash.affogato.pager.indicator.utils.animateDpSizeAsState
+import com.parsuomash.affogato.pager.indicator.internal.StretchEffectOnly
+import com.parsuomash.affogato.pager.indicator.internal.animateDpSizeAsState
+import com.parsuomash.affogato.pager.indicator.utils.LARGE_INDICATOR_WEIGHT
+import com.parsuomash.affogato.pager.indicator.utils.MINIMUM_PAGE_COUNT_FOR_SCROLLING
+import com.parsuomash.affogato.pager.indicator.utils.SMALL_INDICATOR_WEIGHT
+import com.parsuomash.affogato.pager.indicator.utils.calculateIndicatorsWidth
 
 /**
  * A horizontally laid out indicator for a [androidx.compose.foundation.pager.HorizontalPager] or

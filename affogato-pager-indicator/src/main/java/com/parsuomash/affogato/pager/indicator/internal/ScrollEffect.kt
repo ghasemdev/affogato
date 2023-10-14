@@ -1,4 +1,4 @@
-package com.parsuomash.affogato.pager.indicator.utils
+package com.parsuomash.affogato.pager.indicator.internal
 
 import android.os.Build
 import androidx.compose.foundation.ExperimentalFoundationApi

@@ -1,4 +1,4 @@
-package com.parsuomash.affogato.pager.indicator.internal
+package com.parsuomash.affogato.pager.indicator.utils
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.ui.unit.Dp

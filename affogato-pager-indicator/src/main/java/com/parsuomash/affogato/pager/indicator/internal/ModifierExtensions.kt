@@ -1,4 +1,4 @@
-package com.parsuomash.affogato.pager.indicator.utils
+package com.parsuomash.affogato.pager.indicator.internal
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
