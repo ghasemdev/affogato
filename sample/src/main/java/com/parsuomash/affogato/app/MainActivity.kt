@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
-import com.parsuomash.affogato.app.screens.PagerScreen
+import com.parsuomash.affogato.app.screens.PagerTabScreen
 import com.parsuomash.affogato.app.ui.theme.AffogatoTheme
 import com.parsuomash.affogato.unit.window.rememberWindowSize
 
@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
           modifier = Modifier.fillMaxSize(),
           color = MaterialTheme.colors.background
         ) {
-          PagerScreen()
+          PagerTabScreen()
         }
       }
     }
