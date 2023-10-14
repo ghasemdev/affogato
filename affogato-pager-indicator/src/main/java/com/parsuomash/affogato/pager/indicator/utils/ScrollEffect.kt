@@ -22,7 +22,7 @@ import androidx.compose.ui.graphics.Color
  */
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-inline fun DisableScrollEffect(crossinline content: @Composable () -> Unit) {
+internal inline fun DisableScrollEffect(crossinline content: @Composable () -> Unit) {
   CompositionLocalProvider(LocalOverscrollConfiguration provides null) {
     content()
   }
@@ -44,7 +44,7 @@ inline fun DisableScrollEffect(crossinline content: @Composable () -> Unit) {
  */
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-inline fun ScrollEffect(
+internal inline fun ScrollEffect(
   glowColor: Color = Color(0xff666666), // taken from EdgeEffect.java defaults
   crossinline content: @Composable () -> Unit
 ) {
@@ -70,7 +70,7 @@ inline fun ScrollEffect(
  * @see DisableScrollEffect
  */
 @Composable
-inline fun StretchEffectOnly(crossinline content: @Composable () -> Unit) {
+internal inline fun StretchEffectOnly(crossinline content: @Composable () -> Unit) {
   if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
     ScrollEffect(content = content)
   } else {

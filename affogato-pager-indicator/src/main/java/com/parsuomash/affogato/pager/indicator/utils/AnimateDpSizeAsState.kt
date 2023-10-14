@@ -35,7 +35,7 @@ import androidx.compose.ui.unit.dp
  * @return A [State] object, the value of which is updated by animation.
  */
 @Composable
-fun animateDpSizeAsState(
+internal fun animateDpSizeAsState(
   targetValue: DpSize,
   animationSpec: AnimationSpec<DpSize> = dpSizeDefaultSpring,
   label: String = "DpSizeAnimation",
@@ -53,7 +53,7 @@ fun animateDpSizeAsState(
 /**
  * A type converter that converts a [DpSize] to a [AnimationVector2D], and vice versa.
  */
-val DpSize.Companion.VectorConverter: TwoWayConverter<DpSize, AnimationVector2D>
+internal val DpSize.Companion.VectorConverter: TwoWayConverter<DpSize, AnimationVector2D>
   get() = DpSizeToVector
 
 /**
@@ -75,7 +75,7 @@ private val dpSizeDefaultSpring = spring(visibilityThreshold = DpSize.Visibility
  * considered to be no longer visible. The animation system uses this to signal to some default
  * [spring] animations to stop when the value is close enough to the target.
  */
-val DpSize.Companion.VisibilityThreshold: DpSize
+internal val DpSize.Companion.VisibilityThreshold: DpSize
   get() = DpSize(width = DpVisibilityThreshold.dp, height = DpVisibilityThreshold.dp)
 
 private const val DpVisibilityThreshold = 0.1f
