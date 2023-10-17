@@ -57,3 +57,23 @@ internal fun Modifier.clickableWithoutRipple(
     interactionSource = remember { MutableInteractionSource() }
   )
 }
+
+/**
+ * Combine modifiers with condition.
+ *
+ * Example:
+ * ```kotlin
+ * Modifier.applyIf("".length >= 1) {
+ *   Modifier.background(Color.Red)
+ * }
+ * ```
+ * @since 2.0.0
+ */
+internal fun Modifier.applyIf(
+  condition: Boolean,
+  modifierFunction: Modifier.() -> Modifier
+): Modifier = if (condition) {
+  modifierFunction()
+} else {
+  this
+}
