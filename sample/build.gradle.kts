@@ -75,6 +75,7 @@ ksp {
 
 dependencies {
   // Modules
+  implementation(project(AffogatoModules.pagerIndicator))
   implementation(project(AffogatoModules.pdfViewer))
   implementation(project(AffogatoModules.coreKtx))
   implementation(project(AffogatoModules.coroutinesAndroid))
@@ -94,9 +95,6 @@ dependencies {
   androidTestImplementation(libs.compose.ui.test.junit4)
   debugImplementation(libs.compose.ui.tooling)
   debugImplementation(libs.compose.ui.test.manifest)
-
-  // Accompanist -----------------------------------------------------------------------------------
-  implementation(libs.bundles.accompanist)
 
   // Test ------------------------------------------------------------------------------------------
   testImplementation(libs.bundles.junit4)
