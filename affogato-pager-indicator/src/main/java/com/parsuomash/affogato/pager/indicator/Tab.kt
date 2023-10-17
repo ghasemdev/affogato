@@ -295,7 +295,7 @@ private fun TabTransition(
 }
 
 // Tab specifications
-private val SmallTabHeight = 48.dp
+internal val SmallTabHeight = 48.dp
 
 // Tab transition specifications
 private const val TabFadeInAnimationDuration = 150
