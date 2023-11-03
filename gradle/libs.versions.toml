@@ -46,7 +46,6 @@ workRuntimeKtx = "2.8.1"
 [libraries]
 android-pdf-viewer = { module = "com.github.mhiew:android-pdf-viewer", version.ref = "android-pdf-viewer" }
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt-google" }
-androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hilt-google" }
 androidx-hilt-work = { module = "androidx.hilt:hilt-work", version.ref = "hilt-google" }
 androidx-junit = { module = "androidx.test.ext:junit", version.ref = "junit-android" }
 androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workRuntimeKtx" }
@@ -79,7 +78,7 @@ dokka-kotlin-plugin = { module = "org.jetbrains.dokka:kotlin-as-java-plugin", ve
 espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
 hamcrest = { module = "org.hamcrest:hamcrest", version.ref = "hamcrest" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
 junit = { module = "junit:junit", version.ref = "junit" }
 junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit5" }
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit5" }

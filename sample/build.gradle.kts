@@ -96,8 +96,7 @@ dependencies {
 
   // Dependency Injection --------------------------------------------------------------------------
   implementation(libs.bundles.hilt)
-  ksp(libs.hilt.android.compiler)
-  ksp(libs.androidx.hilt.compiler)
+  ksp(libs.hilt.compiler)
 
   // Compose ---------------------------------------------------------------------------------------
   implementation(libs.bundles.compose)
