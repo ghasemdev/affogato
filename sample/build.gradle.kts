@@ -12,6 +12,7 @@ plugins {
   alias(libs.plugins.kotlin.serialization)
   alias(libs.plugins.ksp)
   id(libs.plugins.kotlin.parcelize.get().pluginId)
+  id(libs.plugins.hilt.asProvider().get().pluginId)
 }
 
 android {
@@ -86,8 +87,17 @@ dependencies {
   implementation(project(AffogatoModules.hiltBinding))
   ksp(project(AffogatoModules.hiltBindingProcessor))
 
-  // AndroidX ------------------------------------------------------------------------------------
+  // AndroidX --------------------------------------------------------------------------------------
   implementation(libs.core.ktx)
+  implementation(libs.androidx.work.runtime.ktx)
+
+  // Lifcycle --------------------------------------------------------------------------------------
+  implementation(libs.bundles.lifcycle)
+
+  // Dependency Injection --------------------------------------------------------------------------
+  implementation(libs.bundles.hilt)
+  ksp(libs.hilt.android.compiler)
+  ksp(libs.androidx.hilt.compiler)
 
   // Compose ---------------------------------------------------------------------------------------
   implementation(libs.bundles.compose)

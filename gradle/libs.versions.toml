@@ -3,8 +3,8 @@ affogato = "1.9.0"
 agp = "8.1.1"
 android-pdf-viewer = "3.2.0-beta.3"
 case-format = "0.2.0"
-compose = "1.5.3"
-compose-alpha = "1.6.0-alpha07"
+compose = "1.5.4"
+compose-alpha = "1.6.0-alpha08"
 compose-activity = "1.8.0"
 compose-compiler = "1.5.3"
 compose-constraintlayout = "1.0.1"
@@ -15,6 +15,7 @@ dokka = "1.9.0"
 espresso = "3.5.1"
 hamcrest = "2.2"
 hilt = "2.48.1"
+hilt-google = "1.1.0"
 junit = "4.13.2"
 junit-android = "1.1.5"
 junit5 = "5.10.0"
@@ -28,7 +29,7 @@ kover = "0.7.3"
 ksp = "1.9.10-1.0.13"
 leakcanary = "2.12"
 libphonenumber = "8.13.20"
-lifecycle-runtime-compose = "2.6.2"
+lifecycle = "2.6.2"
 metrica = "5.3.0"
 metrica-push = "2.2.0"
 okhttp = "4.11.0"
@@ -40,10 +41,15 @@ retrofit = "2.9.0"
 window = "1.1.0"
 appcompat = "1.6.1"
 material = "1.10.0"
+workRuntimeKtx = "2.8.1"
 
 [libraries]
 android-pdf-viewer = { module = "com.github.mhiew:android-pdf-viewer", version.ref = "android-pdf-viewer" }
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt-google" }
+androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hilt-google" }
+androidx-hilt-work = { module = "androidx.hilt:hilt-work", version.ref = "hilt-google" }
 androidx-junit = { module = "androidx.test.ext:junit", version.ref = "junit-android" }
+androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workRuntimeKtx" }
 case-format = { module = "com.fleshgrinder.kotlin:case-format", version.ref = "case-format" }
 compose-activity = { module = "androidx.activity:activity-compose", version.ref = "compose-activity" }
 compose-animation = { module = "androidx.compose.animation:animation", version.ref = "compose" }
@@ -51,8 +57,6 @@ compose-animation-graphics = { module = "androidx.compose.animation:animation-gr
 compose-constraintlayout = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "compose-constraintlayout" }
 compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
 compose-foundation-alpha = { module = "androidx.compose.foundation:foundation", version.ref = "compose-alpha" }
-compose-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-runtime-compose" }
-compose-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle-runtime-compose" }
 compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
 compose-material-alpha = { module = "androidx.compose.material:material", version.ref = "compose-alpha" }
 compose-material-icons-core = { module = "androidx.compose.material:material-icons-core", version.ref = "compose" }
@@ -75,6 +79,7 @@ dokka-kotlin-plugin = { module = "org.jetbrains.dokka:kotlin-as-java-plugin", ve
 espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
 hamcrest = { module = "org.hamcrest:hamcrest", version.ref = "hamcrest" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 junit = { module = "junit:junit", version.ref = "junit" }
 junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit5" }
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit5" }
@@ -88,6 +93,9 @@ kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 ksp-api = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
 leakcanary-android = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakcanary" }
 libphonenumber = { module = "com.googlecode.libphonenumber:libphonenumber", version.ref = "libphonenumber" }
+lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
+lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
 metrica = { module = "com.yandex.android:mobmetricalib", version.ref = "metrica" }
 metrica-push = { module = "com.yandex.android:mobmetricapushlib", version.ref = "metrica-push" }
 metrica-push-provider-hms = { module = "com.yandex.android:appmetricapush-provider-hms", version.ref = "metrica-push" }
@@ -108,6 +116,8 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+hilt = { id = "dagger.hilt.android.plugin" }
+hilt-google = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
@@ -131,11 +141,19 @@ compose = [
   "compose-animation-graphics",
   "compose-runtime",
   "compose-runtime-livedata",
-  "compose-lifecycle-runtime",
-  "compose-lifecycle-viewmodel",
   "compose-paging",
   "compose-activity",
   "compose-constraintlayout",
+]
+lifcycle = [
+  "lifecycle-runtime-compose",
+  "lifecycle-viewmodel-ktx",
+  "lifecycle-viewmodel-compose",
+]
+hilt = [
+  "hilt-android",
+  "androidx-hilt-work",
+  "androidx-hilt-navigation-compose",
 ]
 kotlinx-coroutines = [
   "kotlinx-coroutines-android",

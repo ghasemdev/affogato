@@ -32,7 +32,7 @@ dependencies {
 
   // Compose -------------------------------------------------------------------------------------
   implementation(libs.compose.ui)
-  implementation(libs.compose.lifecycle.runtime)
+  implementation(libs.lifecycle.runtime.compose)
 
   // Test ------------------------------------------------------------------------------------------
   testImplementation(libs.bundles.junit4)
