@@ -1,0 +1,937 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>PersianDatePickerState</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../index.html">
+                            Affogato
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":affogato-datepicker:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="affogato-datepicker::com.parsuomash.affogato.datepicker/PersianDatePickerState///PointingToDeclaration//171821791">
+  <div class="breadcrumbs"><a href="../../index.html">affogato-datepicker</a><span class="delimiter">/</span><a href="../index.html">com.parsuomash.affogato.datepicker</a><span class="delimiter">/</span><span class="current">PersianDatePickerState</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Persian</span><wbr><span>Date</span><wbr><span>Picker</span><wbr><span><span>State</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/Stable.html"><span class="token annotation builtin">Stable</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><span class="token keyword">class </span><a href="index.html">PersianDatePickerState</a></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="1346594760%2FConstructors%2F171821791" anchor-label="PersianDatePickerState" id="1346594760%2FConstructors%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-persian-date-picker-state.html"><span>Persian</span><wbr><span>Date</span><wbr><span>Picker</span><wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1346594760%2FConstructors%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="index.html">PersianDatePickerState</a>&nbsp;<a href="-persian-date-picker-state.html"><span class="token function">PersianDatePickerState</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Boolean.html">Boolean</a>&nbsp;isDisplayMonthNames<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="../../com.parsuomash.affogato.datepicker.utils/-persian-date-wrapper/index.html">PersianDateWrapper</a>&nbsp;date<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;selectedYear<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;selectedMonth<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;selectedDay<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;minYear<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;maxYear<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;maxMonth<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;maxDay</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="-356840342%2FClasslikes%2F171821791" anchor-label="Companion" id="-356840342%2FClasslikes%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-356840342%2FClasslikes%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">class </span><a href="-companion/index.html">Companion</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="364296633%2FProperties%2F171821791" anchor-label="Companion" id="364296633%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#364296633%2FProperties%2F171821791"><span><span>Companion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="364296633%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="-companion/index.html">PersianDatePickerState.Companion</a>&nbsp;<a href="index.html#364296633%2FProperties%2F171821791">Companion</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="201323689%2FProperties%2F171821791" anchor-label="date" id="201323689%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#201323689%2FProperties%2F171821791"><span><span>date</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="201323689%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword"></span><a href="../../com.parsuomash.affogato.datepicker.utils/-persian-date-wrapper/index.html">PersianDateWrapper</a>&nbsp;<a href="index.html#201323689%2FProperties%2F171821791">date</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2017811420%2FProperties%2F171821791" anchor-label="dayOfWeek" id="2017811420%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#2017811420%2FProperties%2F171821791"><span>day</span><wbr><span>Of</span><wbr><span><span>Week</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2017811420%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#2017811420%2FProperties%2F171821791">dayOfWeek</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-993713425%2FProperties%2F171821791" anchor-label="gregorianDate" id="-993713425%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-993713425%2FProperties%2F171821791"><span>gregorian</span><wbr><span><span>Date</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-993713425%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/util/Date.html">Date</a>&nbsp;<a href="index.html#-993713425%2FProperties%2F171821791">gregorianDate</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="917812353%2FProperties%2F171821791" anchor-label="gregorianDay" id="917812353%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#917812353%2FProperties%2F171821791"><span>gregorian</span><wbr><span><span>Day</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="917812353%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#917812353%2FProperties%2F171821791">gregorianDay</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="472786461%2FProperties%2F171821791" anchor-label="gregorianMonth" id="472786461%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#472786461%2FProperties%2F171821791"><span>gregorian</span><wbr><span><span>Month</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="472786461%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#472786461%2FProperties%2F171821791">gregorianMonth</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1029965504%2FProperties%2F171821791" anchor-label="gregorianYear" id="-1029965504%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1029965504%2FProperties%2F171821791"><span>gregorian</span><wbr><span><span>Year</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1029965504%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#-1029965504%2FProperties%2F171821791">gregorianYear</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2063952035%2FProperties%2F171821791" anchor-label="isDisplayMonthNames" id="2063952035%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-display-month-names.html"><span>is</span><wbr><span>Display</span><wbr><span>Month</span><wbr><span><span>Names</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2063952035%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Boolean.html">Boolean</a>&nbsp;<a href="is-display-month-names.html">isDisplayMonthNames</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="287028607%2FProperties%2F171821791" anchor-label="maxDay" id="287028607%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#287028607%2FProperties%2F171821791"><span>max</span><wbr><span><span>Day</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="287028607%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#287028607%2FProperties%2F171821791">maxDay</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-120004709%2FProperties%2F171821791" anchor-label="maxMonth" id="-120004709%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-120004709%2FProperties%2F171821791"><span>max</span><wbr><span><span>Month</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-120004709%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#-120004709%2FProperties%2F171821791">maxMonth</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="890574850%2FProperties%2F171821791" anchor-label="maxYear" id="890574850%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#890574850%2FProperties%2F171821791"><span>max</span><wbr><span><span>Year</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="890574850%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#890574850%2FProperties%2F171821791">maxYear</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-711154220%2FProperties%2F171821791" anchor-label="minYear" id="-711154220%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-711154220%2FProperties%2F171821791"><span>min</span><wbr><span><span>Year</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-711154220%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#-711154220%2FProperties%2F171821791">minYear</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-426796869%2FProperties%2F171821791" anchor-label="persianDay" id="-426796869%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-426796869%2FProperties%2F171821791"><span>persian</span><wbr><span><span>Day</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-426796869%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#-426796869%2FProperties%2F171821791">persianDay</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2043506757%2FProperties%2F171821791" anchor-label="persianDayOfWeekName" id="2043506757%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#2043506757%2FProperties%2F171821791"><span>persian</span><wbr><span>Day</span><wbr><span>Of</span><wbr><span>Week</span><wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2043506757%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a>&nbsp;<a href="index.html#2043506757%2FProperties%2F171821791">persianDayOfWeekName</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1088480215%2FProperties%2F171821791" anchor-label="persianMonth" id="1088480215%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1088480215%2FProperties%2F171821791"><span>persian</span><wbr><span><span>Month</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1088480215%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#1088480215%2FProperties%2F171821791">persianMonth</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="326934156%2FProperties%2F171821791" anchor-label="persianMonthName" id="326934156%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#326934156%2FProperties%2F171821791"><span>persian</span><wbr><span>Month</span><wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="326934156%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a>&nbsp;<a href="index.html#326934156%2FProperties%2F171821791">persianMonthName</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="236821574%2FProperties%2F171821791" anchor-label="persianYear" id="236821574%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#236821574%2FProperties%2F171821791"><span>persian</span><wbr><span><span>Year</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="236821574%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#236821574%2FProperties%2F171821791">persianYear</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="953277890%2FProperties%2F171821791" anchor-label="selectedDay" id="953277890%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#953277890%2FProperties%2F171821791"><span>selected</span><wbr><span><span>Day</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="953277890%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#953277890%2FProperties%2F171821791">selectedDay</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="195429150%2FProperties%2F171821791" anchor-label="selectedMonth" id="195429150%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#195429150%2FProperties%2F171821791"><span>selected</span><wbr><span><span>Month</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="195429150%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#195429150%2FProperties%2F171821791">selectedMonth</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="69466143%2FProperties%2F171821791" anchor-label="selectedYear" id="69466143%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#69466143%2FProperties%2F171821791"><span>selected</span><wbr><span><span>Year</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="69466143%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="index.html#69466143%2FProperties%2F171821791">selectedYear</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1779586765%2FProperties%2F171821791" anchor-label="timestamp" id="1779586765%2FProperties%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1779586765%2FProperties%2F171821791"><span><span>timestamp</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1779586765%2FProperties%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">private </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Long.html">Long</a>&nbsp;<a href="index.html#1779586765%2FProperties%2F171821791">timestamp</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="1460483327%2FFunctions%2F171821791" anchor-label="getDate" id="1460483327%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-date.html"><span>get</span><wbr><span><span>Date</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1460483327%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="../../com.parsuomash.affogato.datepicker.utils/-persian-date-wrapper/index.html">PersianDateWrapper</a>&nbsp;<a href="get-date.html"><span class="token function">getDate</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-700391098%2FFunctions%2F171821791" anchor-label="getDayOfWeek" id="-700391098%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-day-of-week.html"><span>get</span><wbr><span>Day</span><wbr><span>Of</span><wbr><span><span>Week</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-700391098%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="get-day-of-week.html"><span class="token function">getDayOfWeek</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="88859481%2FFunctions%2F171821791" anchor-label="getGregorianDate" id="88859481%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-gregorian-date.html"><span>get</span><wbr><span>Gregorian</span><wbr><span><span>Date</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="88859481%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/util/Date.html">Date</a>&nbsp;<a href="get-gregorian-date.html"><span class="token function">getGregorianDate</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="259997399%2FFunctions%2F171821791" anchor-label="getGregorianDay" id="259997399%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-gregorian-day.html"><span>get</span><wbr><span>Gregorian</span><wbr><span><span>Day</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="259997399%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="get-gregorian-day.html"><span class="token function">getGregorianDay</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-327191821%2FFunctions%2F171821791" anchor-label="getGregorianMonth" id="-327191821%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-gregorian-month.html"><span>get</span><wbr><span>Gregorian</span><wbr><span><span>Month</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-327191821%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="get-gregorian-month.html"><span class="token function">getGregorianMonth</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="52607402%2FFunctions%2F171821791" anchor-label="getGregorianYear" id="52607402%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-gregorian-year.html"><span>get</span><wbr><span>Gregorian</span><wbr><span><span>Year</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="52607402%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="get-gregorian-year.html"><span class="token function">getGregorianYear</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-841336747%2FFunctions%2F171821791" anchor-label="getMaxDay" id="-841336747%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-max-day.html"><span>get</span><wbr><span>Max</span><wbr><span><span>Day</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-841336747%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="get-max-day.html"><span class="token function">getMaxDay</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2147351311%2FFunctions%2F171821791" anchor-label="getMaxMonth" id="-2147351311%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-max-month.html"><span>get</span><wbr><span>Max</span><wbr><span><span>Month</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2147351311%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="get-max-month.html"><span class="token function">getMaxMonth</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="270987244%2FFunctions%2F171821791" anchor-label="getMaxYear" id="270987244%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-max-year.html"><span>get</span><wbr><span>Max</span><wbr><span><span>Year</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="270987244%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="get-max-year.html"><span class="token function">getMaxYear</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1330741826%2FFunctions%2F171821791" anchor-label="getMinYear" id="-1330741826%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-min-year.html"><span>get</span><wbr><span>Min</span><wbr><span><span>Year</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1330741826%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="get-min-year.html"><span class="token function">getMinYear</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1208270993%2FFunctions%2F171821791" anchor-label="getPersianDay" id="1208270993%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-persian-day.html"><span>get</span><wbr><span>Persian</span><wbr><span><span>Day</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1208270993%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="get-persian-day.html"><span class="token function">getPersianDay</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1687468901%2FFunctions%2F171821791" anchor-label="getPersianDayOfWeekName" id="-1687468901%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-persian-day-of-week-name.html"><span>get</span><wbr><span>Persian</span><wbr><span>Day</span><wbr><span>Of</span><wbr><span>Week</span><wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1687468901%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a>&nbsp;<a href="get-persian-day-of-week-name.html"><span class="token function">getPersianDayOfWeekName</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="430665261%2FFunctions%2F171821791" anchor-label="getPersianMonth" id="430665261%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-persian-month.html"><span>get</span><wbr><span>Persian</span><wbr><span><span>Month</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="430665261%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="get-persian-month.html"><span class="token function">getPersianMonth</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="346951138%2FFunctions%2F171821791" anchor-label="getPersianMonthName" id="346951138%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-persian-month-name.html"><span>get</span><wbr><span>Persian</span><wbr><span>Month</span><wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="346951138%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a>&nbsp;<a href="get-persian-month-name.html"><span class="token function">getPersianMonthName</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-615682256%2FFunctions%2F171821791" anchor-label="getPersianYear" id="-615682256%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-persian-year.html"><span>get</span><wbr><span>Persian</span><wbr><span><span>Year</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-615682256%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="get-persian-year.html"><span class="token function">getPersianYear</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="100774060%2FFunctions%2F171821791" anchor-label="getSelectedDay" id="100774060%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-selected-day.html"><span>get</span><wbr><span>Selected</span><wbr><span><span>Day</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="100774060%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="get-selected-day.html"><span class="token function">getSelectedDay</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1278002056%2FFunctions%2F171821791" anchor-label="getSelectedMonth" id="1278002056%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-selected-month.html"><span>get</span><wbr><span>Selected</span><wbr><span><span>Month</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1278002056%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="get-selected-month.html"><span class="token function">getSelectedMonth</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-588348811%2FFunctions%2F171821791" anchor-label="getSelectedYear" id="-588348811%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-selected-year.html"><span>get</span><wbr><span>Selected</span><wbr><span><span>Year</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-588348811%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;<a href="get-selected-year.html"><span class="token function">getSelectedYear</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-938615753%2FFunctions%2F171821791" anchor-label="getTimestamp" id="-938615753%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-timestamp.html"><span>get</span><wbr><span><span>Timestamp</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-938615753%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Long.html">Long</a>&nbsp;<a href="get-timestamp.html"><span class="token function">getTimestamp</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1677534087%2FFunctions%2F171821791" anchor-label="initDate" id="-1677534087%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="init-date.html"><span>init</span><wbr><span><span>Date</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1677534087%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>&nbsp;<a href="init-date.html"><span class="token function">initDate</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2063952035%2FFunctions%2F171821791" anchor-label="isDisplayMonthNames" id="2063952035%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-display-month-names.html"><span>is</span><wbr><span>Display</span><wbr><span>Month</span><wbr><span><span>Names</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2063952035%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Boolean.html">Boolean</a>&nbsp;<a href="is-display-month-names.html"><span class="token function">isDisplayMonthNames</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="520425254%2FFunctions%2F171821791" anchor-label="resetDate" id="520425254%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="reset-date.html"><span>reset</span><wbr><span><span>Date</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="520425254%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>&nbsp;<a href="reset-date.html"><span class="token function">resetDate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="kotlin.jvm.functions/Function3///PointingToDeclaration/">Function3</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">&gt;</span>&nbsp;onDateChanged</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1561946086%2FFunctions%2F171821791" anchor-label="setDate" id="-1561946086%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-date.html"><span>set</span><wbr><span><span>Date</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1561946086%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>&nbsp;<a href="set-date.html"><span class="token function">setDate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../../com.parsuomash.affogato.datepicker.utils/-persian-date-wrapper/index.html">PersianDateWrapper</a>&nbsp;date</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-209535020%2FFunctions%2F171821791" anchor-label="setDisplayMonthNames" id="-209535020%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-display-month-names.html"><span>set</span><wbr><span>Display</span><wbr><span>Month</span><wbr><span><span>Names</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-209535020%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>&nbsp;<a href="set-display-month-names.html"><span class="token function">setDisplayMonthNames</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Boolean.html">Boolean</a>&nbsp;isDisplayMonthNames</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="513702951%2FFunctions%2F171821791" anchor-label="setMaxDay" id="513702951%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-max-day.html"><span>set</span><wbr><span>Max</span><wbr><span><span>Day</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="513702951%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>&nbsp;<a href="set-max-day.html"><span class="token function">setMaxDay</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;maxDay</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="341436611%2FFunctions%2F171821791" anchor-label="setMaxMonth" id="341436611%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-max-month.html"><span>set</span><wbr><span>Max</span><wbr><span><span>Month</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="341436611%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>&nbsp;<a href="set-max-month.html"><span class="token function">setMaxMonth</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;maxMonth</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1561071766%2FFunctions%2F171821791" anchor-label="setMaxYear" id="1561071766%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-max-year.html"><span>set</span><wbr><span>Max</span><wbr><span><span>Year</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1561071766%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>&nbsp;<a href="set-max-year.html"><span class="token function">setMaxYear</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;maxYear</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1524760552%2FFunctions%2F171821791" anchor-label="setMinYear" id="1524760552%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-min-year.html"><span>set</span><wbr><span>Min</span><wbr><span><span>Year</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1524760552%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>&nbsp;<a href="set-min-year.html"><span class="token function">setMinYear</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;minYear</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="921107286%2FFunctions%2F171821791" anchor-label="setSelectedDay" id="921107286%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-selected-day.html"><span>set</span><wbr><span>Selected</span><wbr><span><span>Day</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="921107286%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>&nbsp;<a href="set-selected-day.html"><span class="token function">setSelectedDay</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;selectedDay</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1014978610%2FFunctions%2F171821791" anchor-label="setSelectedMonth" id="1014978610%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-selected-month.html"><span>set</span><wbr><span>Selected</span><wbr><span><span>Month</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1014978610%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>&nbsp;<a href="set-selected-month.html"><span class="token function">setSelectedMonth</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;selectedMonth</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1305704263%2FFunctions%2F171821791" anchor-label="setSelectedYear" id="1305704263%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-selected-year.html"><span>set</span><wbr><span>Selected</span><wbr><span><span>Year</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1305704263%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>&nbsp;<a href="set-selected-year.html"><span class="token function">setSelectedYear</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;selectedYear</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1596360363%2FFunctions%2F171821791" anchor-label="toString" id="1596360363%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="to-string.html"><span>to</span><wbr><span><span>String</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1596360363%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/String.html">String</a>&nbsp;<a href="to-string.html"><span class="token function">toString</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-722999324%2FFunctions%2F171821791" anchor-label="updateDate" id="-722999324%2FFunctions%2F171821791" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":affogato-datepicker:dokkaHtmlPartial/release" data-filterable-set=":affogato-datepicker:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="update-date.html"><span>update</span><wbr><span><span>Date</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-722999324%2FFunctions%2F171821791"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-datepicker:dokkaHtmlPartial/release"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>&nbsp;<a href="update-date.html"><span class="token function">updateDate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/util/Date.html">Date</a>&nbsp;date</span></span><span class="token punctuation">)</span></div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>&nbsp;<a href="update-date.html"><span class="token function">updateDate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Long.html">Long</a>&nbsp;timestamp</span></span><span class="token punctuation">)</span></div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a>&nbsp;<a href="update-date.html"><span class="token function">updateDate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;persianYear<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;persianMonth<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://developer.android.com/reference/kotlin/java/lang/Integer.html">Integer</a>&nbsp;persianDay</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
