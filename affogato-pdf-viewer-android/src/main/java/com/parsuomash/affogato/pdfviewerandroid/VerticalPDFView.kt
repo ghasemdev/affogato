@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.parsuomash.affogato.pdfviewer
+package com.parsuomash.affogato.pdfviewerandroid
 
 import android.net.Uri
 import androidx.compose.runtime.Composable
@@ -13,79 +13,79 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
 import com.github.barteksc.pdfviewer.PDFView
 import com.github.barteksc.pdfviewer.util.FitPolicy
-import com.parsuomash.affogato.pdfviewer.zoomable.ZoomableDefaults
-import com.parsuomash.affogato.pdfviewer.zoomable.ZoomableState
-import com.parsuomash.affogato.pdfviewer.zoomable.rememberZoomableState
+import com.parsuomash.affogato.pdfviewerandroid.zoomable.ZoomableDefaults
+import com.parsuomash.affogato.pdfviewerandroid.zoomable.ZoomableState
+import com.parsuomash.affogato.pdfviewerandroid.zoomable.rememberZoomableState
 import java.io.File
 import java.io.InputStream
 
 @Composable
-fun HorizontalPDFView(
+fun VerticalPDFView(
   modifier: Modifier = Modifier,
   uri: Uri,
   zoomableState: ZoomableState = rememberZoomableState(
     minScale = ZoomableDefaults.DefaultScale
   )
 ) {
-  HorizontalPDFViewImpl(modifier = modifier, zoomableState = zoomableState) {
+  VerticalPDFViewImpl(modifier = modifier, zoomableState = zoomableState) {
     it.fromUri(uri)
   }
 }
 
 @Composable
-fun HorizontalPDFView(
+fun VerticalPDFView(
   modifier: Modifier = Modifier,
   file: File,
   zoomableState: ZoomableState = rememberZoomableState(
     minScale = ZoomableDefaults.DefaultScale
   )
 ) {
-  HorizontalPDFViewImpl(modifier = modifier, zoomableState = zoomableState) {
+  VerticalPDFViewImpl(modifier = modifier, zoomableState = zoomableState) {
     it.fromFile(file)
   }
 }
 
 @Composable
-fun HorizontalPDFView(
+fun VerticalPDFView(
   modifier: Modifier = Modifier,
   assetName: String,
   zoomableState: ZoomableState = rememberZoomableState(
     minScale = ZoomableDefaults.DefaultScale
   )
 ) {
-  HorizontalPDFViewImpl(modifier = modifier, zoomableState = zoomableState) {
+  VerticalPDFViewImpl(modifier = modifier, zoomableState = zoomableState) {
     it.fromAsset(assetName)
   }
 }
 
 @Composable
-fun HorizontalPDFView(
+fun VerticalPDFView(
   modifier: Modifier = Modifier,
   bytes: ByteArray,
   zoomableState: ZoomableState = rememberZoomableState(
     minScale = ZoomableDefaults.DefaultScale
   )
 ) {
-  HorizontalPDFViewImpl(modifier = modifier, zoomableState = zoomableState) {
+  VerticalPDFViewImpl(modifier = modifier, zoomableState = zoomableState) {
     it.fromBytes(bytes)
   }
 }
 
 @Composable
-fun HorizontalPDFView(
+fun VerticalPDFView(
   modifier: Modifier = Modifier,
   stream: InputStream,
   zoomableState: ZoomableState = rememberZoomableState(
     minScale = ZoomableDefaults.DefaultScale
   )
 ) {
-  HorizontalPDFViewImpl(modifier = modifier, zoomableState = zoomableState) {
+  VerticalPDFViewImpl(modifier = modifier, zoomableState = zoomableState) {
     it.fromStream(stream)
   }
 }
 
 @Composable
-private fun HorizontalPDFViewImpl(
+private fun VerticalPDFViewImpl(
   modifier: Modifier,
   zoomableState: ZoomableState,
   configurator: (PDFView) -> PDFView.Configurator
@@ -108,11 +108,6 @@ private fun HorizontalPDFViewImpl(
           maxZoom = zoomableState.maxScale
           pageFitPolicy(FitPolicy.WIDTH)
           useBestQuality(true)
-
-          swipeHorizontal(true)
-          pageSnap(true)
-          autoSpacing(true)
-          pageFling(true)
 
           if (isDefaultPageLoaded.not()) {
             defaultPage(currentPage)

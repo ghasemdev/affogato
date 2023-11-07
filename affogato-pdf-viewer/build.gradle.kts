@@ -41,8 +41,6 @@ dependencies {
   implementation(libs.retrofit)
   // PdfBox  ---------------------------------------------------------------------------------------
   api(libs.pdfbox)
-  // Android Pdf Viewer ----------------------------------------------------------------------------
-  implementation(libs.android.pdf.viewer)
 }
 
 afterEvaluate {

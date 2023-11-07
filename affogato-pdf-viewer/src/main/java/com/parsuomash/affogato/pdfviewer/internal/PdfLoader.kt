@@ -12,12 +12,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 internal fun loadPdf(
-  coroutineScope: CoroutineScope,
-  context: Context,
-  state: PdfReaderState,
-  width: Int,
-  height: Int,
-  portrait: Boolean
+    coroutineScope: CoroutineScope,
+    context: Context,
+    state: PdfReaderState,
+    width: Int,
+    height: Int,
+    portrait: Boolean
 ) {
   runCatching {
     if (state.isLoaded) {

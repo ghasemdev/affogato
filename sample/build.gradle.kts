@@ -77,7 +77,7 @@ ksp {
 dependencies {
   // Modules
   implementation(project(AffogatoModules.pagerIndicator))
-  implementation(project(AffogatoModules.pdfViewer))
+  implementation(project(AffogatoModules.pdfViewerAndroid))
   implementation(project(AffogatoModules.coreKtx))
   implementation(project(AffogatoModules.coroutinesAndroid))
   implementation(project(AffogatoModules.datepicker))
