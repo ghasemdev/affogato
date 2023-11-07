@@ -1,5 +1,5 @@
 [versions]
-affogato = "1.9.1"
+affogato = "1.10.1"
 agp = "8.1.1"
 android-pdf-viewer = "3.2.0-beta.3"
 case-format = "0.2.0"
