@@ -1,4 +1,4 @@
-package com.parsuomash.affogato.pdfviewerandroid.network
+package com.parsuomash.affogato.pdfviewer.network
 
 import okhttp3.Interceptor
 import okhttp3.Response

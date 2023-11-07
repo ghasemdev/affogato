@@ -1,4 +1,4 @@
-package com.parsuomash.affogato.pdfviewerandroid.state
+package com.parsuomash.affogato.pdfviewer.state
 
 import android.net.Uri
 import android.os.Parcelable

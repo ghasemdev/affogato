@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.parsuomash.affogato.pdfviewerandroid.state
+package com.parsuomash.affogato.pdfviewer.state
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
@@ -8,7 +8,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.geometry.Offset
-import com.parsuomash.affogato.pdfviewerandroid.internal.PdfRenderer
+import com.parsuomash.affogato.pdfviewer.internal.PdfRenderer
 import java.io.File
 
 abstract class PdfReaderState(

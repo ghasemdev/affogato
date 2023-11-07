@@ -1,4 +1,4 @@
-package com.parsuomash.affogato.pdfviewerandroid.zoomable
+package com.parsuomash.affogato.pdfviewer.zoomable
 
 import androidx.annotation.FloatRange
 import androidx.compose.animation.core.Animatable

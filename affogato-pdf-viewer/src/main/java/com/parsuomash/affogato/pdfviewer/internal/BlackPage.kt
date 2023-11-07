@@ -1,4 +1,4 @@
-package com.parsuomash.affogato.pdfviewerandroid.internal
+package com.parsuomash.affogato.pdfviewer.internal
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

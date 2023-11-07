@@ -1,4 +1,4 @@
-package com.parsuomash.affogato.pdfviewerandroid.network
+package com.parsuomash.affogato.pdfviewer.network
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

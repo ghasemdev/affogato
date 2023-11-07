@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.parsuomash.affogato.pdfviewerandroid.state
+package com.parsuomash.affogato.pdfviewer.state
 
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.runtime.Composable

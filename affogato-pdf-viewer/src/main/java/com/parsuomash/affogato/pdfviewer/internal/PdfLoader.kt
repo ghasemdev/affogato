@@ -1,10 +1,10 @@
-package com.parsuomash.affogato.pdfviewerandroid.internal
+package com.parsuomash.affogato.pdfviewer.internal
 
 import android.content.Context
 import android.os.ParcelFileDescriptor
-import com.parsuomash.affogato.pdfviewerandroid.network.getDownloadInterface
-import com.parsuomash.affogato.pdfviewerandroid.state.PdfReaderState
-import com.parsuomash.affogato.pdfviewerandroid.state.ResourceType
+import com.parsuomash.affogato.pdfviewer.network.getDownloadInterface
+import com.parsuomash.affogato.pdfviewer.state.PdfReaderState
+import com.parsuomash.affogato.pdfviewer.state.ResourceType
 import java.io.File
 import java.io.IOException
 import kotlinx.coroutines.CoroutineScope
@@ -12,12 +12,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 internal fun loadPdf(
-  coroutineScope: CoroutineScope,
-  context: Context,
-  state: PdfReaderState,
-  width: Int,
-  height: Int,
-  portrait: Boolean
+    coroutineScope: CoroutineScope,
+    context: Context,
+    state: PdfReaderState,
+    width: Int,
+    height: Int,
+    portrait: Boolean
 ) {
   runCatching {
     if (state.isLoaded) {

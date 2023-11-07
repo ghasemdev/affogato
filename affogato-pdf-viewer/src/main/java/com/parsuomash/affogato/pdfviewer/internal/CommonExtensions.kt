@@ -1,4 +1,4 @@
-package com.parsuomash.affogato.pdfviewerandroid.internal
+package com.parsuomash.affogato.pdfviewer.internal
 
 import android.content.Context
 import android.net.Uri

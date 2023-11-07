@@ -1,6 +1,6 @@
 @file:Suppress("MemberVisibilityCanBePrivate")
 
-package com.parsuomash.affogato.pdfviewerandroid.internal
+package com.parsuomash.affogato.pdfviewer.internal
 
 import android.graphics.Bitmap
 import android.graphics.Canvas

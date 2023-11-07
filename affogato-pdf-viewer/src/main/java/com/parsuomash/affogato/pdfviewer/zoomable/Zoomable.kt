@@ -1,4 +1,4 @@
-package com.parsuomash.affogato.pdfviewerandroid.zoomable
+package com.parsuomash.affogato.pdfviewer.zoomable
 
 import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown
