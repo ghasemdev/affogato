@@ -10,7 +10,7 @@ object AffogatoModules {
   const val MetricaKtx = ":affogato-metrica-ktx"
   const val OkhttpAndroid = ":affogato-okhttp-android"
   const val pagerIndicator = ":affogato-pager-indicator"
-  const val pdfViewer = ":affogato-pdf-viewer"
+  const val pdfViewerAndroid = ":affogato-pdf-viewer-android"
   const val structure = ":affogato-structure"
   const val unit = ":affogato-unit"
   const val unitProcessor = ":affogato-unit-processor"

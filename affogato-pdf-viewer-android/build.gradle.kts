@@ -11,7 +11,7 @@ apply {
 }
 
 android {
-  namespace = "com.parsuomash.affogato.pdfviewer"
+  namespace = "com.parsuomash.affogato.pdfviewerandroid"
 
   defaultConfig {
     minSdk = MIN_SDK
@@ -41,6 +41,8 @@ dependencies {
   implementation(libs.retrofit)
   // PdfBox  ---------------------------------------------------------------------------------------
   api(libs.pdfbox)
+  // Android Pdf Viewer ----------------------------------------------------------------------------
+  implementation(libs.android.pdf.viewer)
 }
 
 afterEvaluate {
@@ -48,7 +50,7 @@ afterEvaluate {
     publications {
       create<MavenPublication>("release") {
         groupId = "com.parsuomash.affogato"
-        artifactId = "affogato-pdfviewer"
+        artifactId = "affogato-pdfviewer-android"
         version = libs.versions.affogato.get()
 
         from(components["release"])

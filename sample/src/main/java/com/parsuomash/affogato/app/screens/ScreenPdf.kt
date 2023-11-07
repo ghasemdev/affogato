@@ -22,7 +22,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.parsuomash.affogato.pdfviewer.VerticalPDFView
+import com.parsuomash.affogato.pdfviewerandroid.VerticalPDFView
 
 @Composable
 fun ScreenPdf() {
