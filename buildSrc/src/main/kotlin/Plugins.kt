@@ -8,7 +8,7 @@ object Plugins {
   object Dokka {
     private const val version = "1.9.10"
     const val value = "org.jetbrains.dokka"
-    const val KotlinAsJavaPlugin = "org.jetbrains.dokka:kotlin-as-java-plugin:$version"
+    const val AndroidDocPlugin = "org.jetbrains.dokka:android-documentation-plugin:$version"
   }
 
   object Kover {

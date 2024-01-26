@@ -2,8 +2,12 @@ import io.gitlab.arturbosch.detekt.Detekt
 import kotlinx.kover.gradle.plugin.dsl.AggregationType.COVERED_PERCENTAGE
 import kotlinx.kover.gradle.plugin.dsl.GroupingEntityType.APPLICATION
 import kotlinx.kover.gradle.plugin.dsl.MetricType.LINE
+import org.jetbrains.dokka.DokkaConfiguration.Visibility.PROTECTED
+import org.jetbrains.dokka.DokkaConfiguration.Visibility.PUBLIC
 import org.jetbrains.dokka.base.DokkaBase
 import org.jetbrains.dokka.base.DokkaBaseConfiguration
+import org.jetbrains.dokka.gradle.DokkaTaskPartial
+import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
 
 plugins {
   alias(libs.plugins.android.application) apply false
@@ -31,7 +35,7 @@ subprojects {
   }
   dependencies {
     detektPlugins(Plugins.Detekt.formatting)
-    dokkaPlugin(Plugins.Dokka.KotlinAsJavaPlugin)
+    dokkaPlugin(Plugins.Dokka.AndroidDocPlugin)
   }
   // Static analysis
   detekt {
@@ -94,7 +98,7 @@ subprojects {
     }
   }
 
-  tasks.withType(org.jetbrains.kotlin.gradle.dsl.KotlinCompile::class.java).configureEach {
+  tasks.withType(KotlinCompile::class.java).configureEach {
     kotlinOptions {
       if (project.findProperty("composeCompilerReports") == "true") {
         freeCompilerArgs = listOf(
@@ -112,23 +116,27 @@ subprojects {
       }
     }
   }
-}
 
-// Dokka
-tasks.dokkaHtml.configure {
-  dokkaSourceSets {
-    configureEach {
-      perPackageOption {
-        matchingRegex.set(""".*\.app.*""")
-        suppress.set(true)
+  tasks.withType(DokkaTaskPartial::class.java).configureEach {
+    dokkaSourceSets {
+      configureEach {
+        documentedVisibilities.set(setOf(PUBLIC, PROTECTED))
+        perPackageOption {
+          matchingRegex.set(""".*\.app.*""")
+          suppress.set(true)
+        }
       }
     }
   }
 }
+
+// Dokka
 tasks.dokkaHtmlMultiModule.configure {
   outputDirectory.set(rootDir.resolve("docs"))
   // Set module name displayed in the final output
   moduleName.set("Affogato")
+  moduleVersion.set("1.10.2")
+  includes.from("README.md")
   // Custom Style
   pluginConfiguration<DokkaBase, DokkaBaseConfiguration> {
     customAssets = listOf(file("$rootDir/config/dokka/logo-icon.svg"))
