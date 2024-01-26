@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>All modules</title>
+    <link href="images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="scripts/sourceset_dependencies.js" async="async"></script>
+<link href="styles/style.css" rel="Stylesheet">
+<link href="styles/main.css" rel="Stylesheet">
+<link href="styles/prism.css" rel="Stylesheet">
+<link href="styles/logo-styles.css" rel="Stylesheet">
+<link href="styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+<link href="images/logo-icon.svg">
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="index.html">
+                            Affogato
+                    </a>
+            </div>
+            <div class="library-version">
+1.10.2            </div>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" id="content" pageIds="Affogato::.ext/allModules///PointingToDeclaration//0">
+  <div class="breadcrumbs"></div>
+  <div class="cover ">
+    <div class="cover ">
+      <p class="paragraph"><a href="https://github.com/ghasemdev/affogato/releases/tag/1.10.2"></a> <a href="https://kotlinlang.org/"></a> <a href="https://www.android.com/"></a> <a href="https://opensource.org/licenses/MIT"></a></p>
+      <p class="paragraph"><img alt="affogato_img" src="assets/affogato.png"></p>
+      <h1 class=""> Affogato</h1>
+      <p class="paragraph">Affogato is a multipurpose library for Jetpack Compose, Android and Kotlin.</p>
+      <h3 class=""> <a href="https://github.com/ghasemdev/affogato/wiki/Core-Ktx">Core-ktx</a></h3>
+      <p class="paragraph">Core-ktx is a Kotlin library that provides a set of Kotlin extensions. Like collections, operations, string, math, random, date time, color, block scope and try-catch functions. Also, <code class="lang-kotlin">TimeAgo</code> is my favorite extension for times 😄.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">TimeAgo.format(now()) // a moment ago<br>now().timeAgo(locale = TimeAgo.Locale.EN) // a moment ago</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> <a href="https://github.com/ghasemdev/affogato/wiki/Coroutines">Coroutines</a></h3>
+      <p class="paragraph">Coroutines module contains suspended try-catch from Core-ktx and <code class="lang-kotlin">DispatchersProvider</code> for handling coroutines context in main and test source.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">// Normal way<br>suspend fun foo() = withContext(Dispatchers.Default) {<br>  return try {<br>    // do something return value<br>  } catch (_: Exception) {<br>    null<br>  }<br>}<br><br>// Affogato way<br>suspend fun foo() = suspendedTryCatchNull {<br>  // do something return value<br>}</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> <a href="https://github.com/ghasemdev/affogato/wiki/Logger">Logger</a></h3>
+      <p class="paragraph">Logger module contains a simple logger for Android. It's a wrapper for <code class="lang-kotlin">Log</code> and<code class="lang-kotlin">Logger</code> with some extensions.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">// Setup<br>Logger.tag = &quot;MyApp&quot;<br><br>Logger.isDebug = BuildConfig.DEBUG // if debug mode false onRelease will be called.<br>Logger.onRealease = { tag, message, throwable -&gt;<br>  // do something<br>}<br><br>// Extension<br>logcat { &quot;Hello Affogato&quot; }<br>logcat(tag = &quot;TAG&quot;) { &quot;Hello Affogato&quot; }<br>logcat(LogLevel.INFO) { &quot;Hello Affogato&quot; }<br>try {<br>  // do something<br>} catch (e: Exception) {<br>  logcat(throwable = e) { &quot;Hello Affogato&quot; }<br>}</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> <a href="https://github.com/ghasemdev/affogato/wiki/Metrica-Ktx">Metrica-ktx</a></h3>
+      <p class="paragraph">This module adds Yandex Metrica to your project. You can use it for crashlytics and reporting events and push notifications.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">yandexMetrica(&quot;api-key&quot;) {<br>  // configuration<br>}<br><br>@Serializable<br>data class Foo(val bar: String)<br>YandexMetricaX.reportEvent(&quot;event_name&quot;, Foo(&quot;bar&quot;))</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> <a href="https://github.com/ghasemdev/affogato/wiki/Okhttp">Okhttp</a></h3>
+      <p class="paragraph">Okhttp builder is part of this module. You can use it for building okhttp client with a simple syntax. Also, you can track download and upload progress with <code class="lang-kotlin">DownloadStreamResponseBody</code> and <code class="lang-kotlin">UploadStreamRequestBody</code>.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">val client = okHttp {<br>  addInterceptor(HttpLoggingInterceptor())<br>  cache(Cache(cacheDir, cacheSize))<br>}</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> <a href="https://github.com/ghasemdev/affogato/wiki/Structure">Structure</a></h3>
+      <p class="paragraph">This module contains useful structure class like <code class="lang-kotlin">DataState</code> and <code class="lang-kotlin">EntityMapper</code>. Also, it contains <code class="lang-kotlin">SingletonHolder</code> for creating singleton classes or <code class="lang-kotlin">ObjectPool</code> for creating heavy objects to save time. You can use checker class for validate phone, email and password.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">class SharedPref private constructor(private val context: Context) {<br>  // ...<br>  companion object : SingletonHolder&lt;SharedPref, Context&gt;(::SharedPref)<br>}<br><br>StringPool[&quot;key&quot;] = &quot;token&quot;<br>StringPool[&quot;key&quot;] // token<br><br>Phone(&quot;09123456789&quot;).isValid() // true<br>Phone(&quot;09123456789&quot;).format(&quot;IR&quot;) // +98 912 345 6789</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> <a href="https://github.com/ghasemdev/affogato/wiki/Unit-Size">Compose Unit Size</a></h3>
+      <p class="paragraph">The unit is one of the <strong>Jetpack Compose</strong> modules of this library, which can support relative screen sizes in <code class="lang-kotlin">sdp</code>, <code class="lang-kotlin">ssp</code> and custom create with <code class="lang-kotlin">@Dimen</code>. Also, we can use <code class="lang-kotlin">rememberWindowSize()</code> to know in which device we are (Compact, Medium, Expanded) or use <code class="lang-kotlin">postureState</code> to build adaptive and responsive UIs in <strong>Foldables</strong>.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">@Dimen(type = &quot;dp&quot;, values = [&quot;320:70&quot;, &quot;480:80&quot;, &quot;600:180&quot;, &quot;720:180&quot;])<br>val icon = 80.dp<br><br>dimen.icon // 80.dp in device with width 480.dp</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h1 class=""> Links</h1>
+      <p class="paragraph">Affogato is currently available for maven/gradle builds at <a href="https://jitpack.io/#ghasemdev/affogato/1.10.1">Jitpack</a> ( read <a href="https://github.com/ghasemdev/affogato/wiki/Getting-Started">Getting started</a>).</p>
+      <ul>
+        <li>
+          <p class="paragraph"><a href="https://github.com/ghasemdev/affogato/wiki">Wiki</a></p>
+        </li>
+        <li>
+          <p class="paragraph"><a href="https://github.com/ghasemdev/affogato/blob/master/CHANGELOG.md">Change log</a></p>
+        </li>
+      </ul>
+      <h1 class=""> Download</h1>
+      <h3 class=""> Gradle Setup</h3>
+      <p class="paragraph">Step 1. Add the JitPack repository to your <code class="lang-kotlin">build.gradle</code> file</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">allprojects {<br>    repositories {<br>        ...<br>        maven { url 'https://jitpack.io' }<br>    }<br>}</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">Step 2. Add the dependency</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">dependencies {<br>    implementation 'com.github.ghasemdev.affogato:AFFOGATO_MODULE:AFFOGATO_VERSION'<br>}</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+
+      <h3 class=""> Maven Setup</h3>
+      <p class="paragraph">Step 1. Add the JitPack repository to your <code class="lang-kotlin">build.gradle</code> file</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">&lt;repositories&gt;<br>    &lt;repository&gt;<br>        &lt;id&gt;jitpack.io&lt;/id&gt;<br>        &lt;url&gt;https://jitpack.io&lt;/url&gt;<br>    &lt;/repository&gt;<br>&lt;/repositories&gt;</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">Step 2. Add the dependency</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">&lt;dependency&gt;<br>    &lt;groupId&gt;com.github.ghasemdev.affogato&lt;/groupId&gt;<br>    &lt;artifactId&gt;AFFOGATO_MODULE&lt;/artifactId&gt;<br>    &lt;version&gt;AFFOGATO_VERSION&lt;/version&gt;<br>&lt;/dependency&gt;</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+
+      <h3 class=""> License</h3>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">The MIT License (MIT)<br><br>Copyright (c) 2022 ghasemdev<br><br>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and<br>associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction,<br>including without limitation the rights to use, copy, modify, merge, publish, distribute,<br>sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is<br>furnished to do so, subject to the following conditions:<br><br>The above copyright notice and this permission notice shall be included in all copies or substantial<br>portions of the Software.<br><br>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT<br>NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND<br>NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES<br>OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN<br>CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+    </div>
+    <h2 class="">All modules:</h2>
+    <div class="table"><a data-name="-1137037598%2FMain%2F0" anchor-label="affogato-core-ktx" id="-1137037598%2FMain%2F0" data-filterable-set=""></a>
+      <div class="table-row">
+        <div class="main-subrow ">
+          <div class="w-100"><span class="inline-flex">
+              <div><a href="affogato-core-ktx/index.html">affogato-core-ktx</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1137037598%2FMain%2F0"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div><span class="brief-comment"></span></div>
+        </div>
+      </div>
+<a data-name="2110111470%2FMain%2F0" anchor-label="affogato-coroutines-core" id="2110111470%2FMain%2F0" data-filterable-set=""></a>
+      <div class="table-row">
+        <div class="main-subrow ">
+          <div class="w-100"><span class="inline-flex">
+              <div><a href="affogato-coroutines-core/index.html">affogato-coroutines-core</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2110111470%2FMain%2F0"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div><span class="brief-comment"></span></div>
+        </div>
+      </div>
+<a data-name="1625057799%2FMain%2F0" anchor-label="affogato-datepicker" id="1625057799%2FMain%2F0" data-filterable-set=""></a>
+      <div class="table-row">
+        <div class="main-subrow ">
+          <div class="w-100"><span class="inline-flex">
+              <div><a href="affogato-datepicker/index.html">affogato-datepicker</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1625057799%2FMain%2F0"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div><span class="brief-comment"></span></div>
+        </div>
+      </div>
+<a data-name="1353030626%2FMain%2F0" anchor-label="affogato-hilt-binding" id="1353030626%2FMain%2F0" data-filterable-set=""></a>
+      <div class="table-row">
+        <div class="main-subrow ">
+          <div class="w-100"><span class="inline-flex">
+              <div><a href="affogato-hilt-binding/index.html">affogato-hilt-binding</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1353030626%2FMain%2F0"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div><span class="brief-comment"></span></div>
+        </div>
+      </div>
+<a data-name="-831979439%2FMain%2F0" anchor-label="affogato-logger-android" id="-831979439%2FMain%2F0" data-filterable-set=""></a>
+      <div class="table-row">
+        <div class="main-subrow ">
+          <div class="w-100"><span class="inline-flex">
+              <div><a href="affogato-logger-android/index.html">affogato-logger-android</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-831979439%2FMain%2F0"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div><span class="brief-comment"></span></div>
+        </div>
+      </div>
+<a data-name="-1296471892%2FMain%2F0" anchor-label="affogato-metrica-ktx" id="-1296471892%2FMain%2F0" data-filterable-set=""></a>
+      <div class="table-row">
+        <div class="main-subrow ">
+          <div class="w-100"><span class="inline-flex">
+              <div><a href="affogato-metrica-ktx/index.html">affogato-metrica-ktx</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1296471892%2FMain%2F0"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div><span class="brief-comment"></span></div>
+        </div>
+      </div>
+<a data-name="728946685%2FMain%2F0" anchor-label="affogato-okhttp-android" id="728946685%2FMain%2F0" data-filterable-set=""></a>
+      <div class="table-row">
+        <div class="main-subrow ">
+          <div class="w-100"><span class="inline-flex">
+              <div><a href="affogato-okhttp-android/index.html">affogato-okhttp-android</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="728946685%2FMain%2F0"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div><span class="brief-comment"></span></div>
+        </div>
+      </div>
+<a data-name="-1359535494%2FMain%2F0" anchor-label="affogato-pager-indicator" id="-1359535494%2FMain%2F0" data-filterable-set=""></a>
+      <div class="table-row">
+        <div class="main-subrow ">
+          <div class="w-100"><span class="inline-flex">
+              <div><a href="affogato-pager-indicator/index.html">affogato-pager-indicator</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1359535494%2FMain%2F0"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div><span class="brief-comment"></span></div>
+        </div>
+      </div>
+<a data-name="1475036566%2FMain%2F0" anchor-label="affogato-pdf-viewer" id="1475036566%2FMain%2F0" data-filterable-set=""></a>
+      <div class="table-row">
+        <div class="main-subrow ">
+          <div class="w-100"><span class="inline-flex">
+              <div><a href="affogato-pdf-viewer/index.html">affogato-pdf-viewer</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1475036566%2FMain%2F0"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div><span class="brief-comment"></span></div>
+        </div>
+      </div>
+<a data-name="-1097617100%2FMain%2F0" anchor-label="affogato-pdf-viewer-android" id="-1097617100%2FMain%2F0" data-filterable-set=""></a>
+      <div class="table-row">
+        <div class="main-subrow ">
+          <div class="w-100"><span class="inline-flex">
+              <div><a href="affogato-pdf-viewer-android/index.html">affogato-pdf-viewer-android</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1097617100%2FMain%2F0"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div><span class="brief-comment"></span></div>
+        </div>
+      </div>
+<a data-name="1933094860%2FMain%2F0" anchor-label="affogato-structure" id="1933094860%2FMain%2F0" data-filterable-set=""></a>
+      <div class="table-row">
+        <div class="main-subrow ">
+          <div class="w-100"><span class="inline-flex">
+              <div><a href="affogato-structure/index.html">affogato-structure</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1933094860%2FMain%2F0"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div><span class="brief-comment"></span></div>
+        </div>
+      </div>
+<a data-name="410932415%2FMain%2F0" anchor-label="affogato-unit" id="410932415%2FMain%2F0" data-filterable-set=""></a>
+      <div class="table-row">
+        <div class="main-subrow ">
+          <div class="w-100"><span class="inline-flex">
+              <div><a href="affogato-unit/index.html">affogato-unit</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="410932415%2FMain%2F0"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div><span class="brief-comment"></span></div>
+        </div>
+      </div>
+<a data-name="-676178709%2FMain%2F0" anchor-label="sample" id="-676178709%2FMain%2F0" data-filterable-set=""></a>
+      <div class="table-row">
+        <div class="main-subrow ">
+          <div class="w-100"><span class="inline-flex">
+              <div><a href="sample/index.html">sample</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-676178709%2FMain%2F0"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div><span class="brief-comment"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

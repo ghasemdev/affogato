@@ -1,0 +1,362 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>com.parsuomash.affogato.core.ktx</title>
+<link href="../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../index.html">
+                            Affogato
+                    </a>            </div>
+            <div class="library-version">1.10.2
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":affogato-core-ktx:dokkaHtmlPartial/main">jvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="package" id="content" pageids="affogato-core-ktx::com.parsuomash.affogato.core.ktx////PointingToDeclaration//449597615">
+  <div class="breadcrumbs"><a href="../index.html">affogato-core-ktx</a><span class="delimiter">/</span><span class="current">com.parsuomash.affogato.core.ktx</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button><button class="section-tab" data-togglable="PROPERTY,EXTENSION_PROPERTY">Properties</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="-2140122538%2FClasslikes%2F449597615" anchor-label="SafeThreadLazy" id="-2140122538%2FClasslikes%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-safe-thread-lazy/index.html"><span>Safe</span><wbr><span>Thread</span><wbr><span><span>Lazy</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2140122538%2FClasslikes%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="-safe-thread-lazy/index.html">SafeThreadLazy</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-safe-thread-lazy/index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>provider<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="-safe-thread-lazy/index.html">T</a></span></span><span class="token punctuation">)</span> : <span data-unresolved-link="kotlin/Lazy///PointingToDeclaration/">Lazy</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-safe-thread-lazy/index.html">T</a><span class="token operator">&gt; </span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="EXTENSION_PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="351925288%2FProperties%2F449597615" anchor-label="isNegative" id="351925288%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-negative.html"><span>is</span><wbr><span><span>Negative</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="351925288%2FProperties%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><span data-unresolved-link="kotlin/Double///PointingToDeclaration/">Double</span><span class="token punctuation">.</span><a href="is-negative.html">isNegative</a><span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><span data-unresolved-link="kotlin/Float///PointingToDeclaration/">Float</span><span class="token punctuation">.</span><a href="is-negative.html">isNegative</a><span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token punctuation">.</span><a href="is-negative.html">isNegative</a><span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><span data-unresolved-link="kotlin/Long///PointingToDeclaration/">Long</span><span class="token punctuation">.</span><a href="is-negative.html">isNegative</a><span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span></div><div class="brief "><p class="paragraph">Checking negativity.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1492139568%2FProperties%2F449597615" anchor-label="isPositive" id="1492139568%2FProperties%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-positive.html"><span>is</span><wbr><span><span>Positive</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1492139568%2FProperties%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><span data-unresolved-link="kotlin/Double///PointingToDeclaration/">Double</span><span class="token punctuation">.</span><a href="is-positive.html">isPositive</a><span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><span data-unresolved-link="kotlin/Float///PointingToDeclaration/">Float</span><span class="token punctuation">.</span><a href="is-positive.html">isPositive</a><span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token punctuation">.</span><a href="is-positive.html">isPositive</a><span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><span data-unresolved-link="kotlin/Long///PointingToDeclaration/">Long</span><span class="token punctuation">.</span><a href="is-positive.html">isPositive</a><span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span></div><div class="brief "><p class="paragraph">Checking positivity.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="721311317%2FFunctions%2F449597615" anchor-label="block" id="721311317%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="block.html"><span><span>block</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="721311317%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="block.html">T</a><span class="token operator">&gt; </span><a href="block.html">T</a><span class="token punctuation">.</span><a href="block.html"><span class="token function"><strike>block</strike></span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Unit///PointingToDeclaration/">Unit</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="block.html">T</a></div><div class="brief "><p class="paragraph">Return the value before run the execution block.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="727419576%2FFunctions%2F449597615" anchor-label="counter" id="727419576%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="counter.html"><span><span>counter</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="727419576%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="counter.html">T</a><span class="token operator">&gt; </span><a href="counter.html"><span class="token function">counter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">content<span class="token operator">: </span><span data-unresolved-link="kotlin/Array///PointingToDeclaration/">Array</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="counter.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin.collections/Map///PointingToDeclaration/">Map</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="counter.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Calculate count of each value by group in the Array.</p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="counter.html"><span class="token function">counter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">content<span class="token operator">: </span><span data-unresolved-link="kotlin/BooleanArray///PointingToDeclaration/">BooleanArray</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin.collections/Map///PointingToDeclaration/">Map</span><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Calculate count of each value by group in the boolean array.</p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="counter.html"><span class="token function">counter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">content<span class="token operator">: </span><span data-unresolved-link="kotlin/ByteArray///PointingToDeclaration/">ByteArray</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin.collections/Map///PointingToDeclaration/">Map</span><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="kotlin/Byte///PointingToDeclaration/">Byte</span><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Calculate count of each value by group in the byte array.</p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="counter.html"><span class="token function">counter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">content<span class="token operator">: </span><span data-unresolved-link="kotlin/CharArray///PointingToDeclaration/">CharArray</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin.collections/Map///PointingToDeclaration/">Map</span><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="kotlin/Char///PointingToDeclaration/">Char</span><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Calculate count of each value by group in the char array.</p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="counter.html"><span class="token function">counter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">content<span class="token operator">: </span><span data-unresolved-link="kotlin/DoubleArray///PointingToDeclaration/">DoubleArray</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin.collections/Map///PointingToDeclaration/">Map</span><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="kotlin/Double///PointingToDeclaration/">Double</span><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Calculate count of each value by group in the double array.</p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="counter.html"><span class="token function">counter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">content<span class="token operator">: </span><span data-unresolved-link="kotlin/FloatArray///PointingToDeclaration/">FloatArray</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin.collections/Map///PointingToDeclaration/">Map</span><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="kotlin/Float///PointingToDeclaration/">Float</span><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Calculate count of each value by group in the float array.</p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="counter.html"><span class="token function">counter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">content<span class="token operator">: </span><span data-unresolved-link="kotlin/IntArray///PointingToDeclaration/">IntArray</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin.collections/Map///PointingToDeclaration/">Map</span><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Calculate count of each value by group in the int array.</p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="counter.html"><span class="token function">counter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">content<span class="token operator">: </span><span data-unresolved-link="kotlin/LongArray///PointingToDeclaration/">LongArray</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin.collections/Map///PointingToDeclaration/">Map</span><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="kotlin/Long///PointingToDeclaration/">Long</span><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Calculate count of each value by group in the long array.</p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="counter.html"><span class="token function">counter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">content<span class="token operator">: </span><span data-unresolved-link="kotlin/ShortArray///PointingToDeclaration/">ShortArray</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin.collections/Map///PointingToDeclaration/">Map</span><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="kotlin/Short///PointingToDeclaration/">Short</span><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Calculate count of each value by group in the short array.</p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="counter.html"><span class="token function">counter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">content<span class="token operator">: </span><span data-unresolved-link="kotlin/String///PointingToDeclaration/">String</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin.collections/Map///PointingToDeclaration/">Map</span><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="kotlin/Char///PointingToDeclaration/">Char</span><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Calculate count of each value by group in the string.</p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="counter.html">T</a><span class="token operator">&gt; </span><a href="counter.html"><span class="token function">counter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">content<span class="token operator">: </span><span data-unresolved-link="kotlin.collections/Iterable///PointingToDeclaration/">Iterable</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="counter.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin.collections/Map///PointingToDeclaration/">Map</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="counter.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Calculate count of each value by group in the iterable.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-721807784%2FFunctions%2F449597615" anchor-label="ifNotNull" id="-721807784%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="if-not-null.html"><span>if</span><wbr><span>Not</span><wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-721807784%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="if-not-null.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="if-not-null.html">R</a><span class="token operator">&gt; </span><a href="if-not-null.html">T</a><span class="token operator">?</span><span class="token punctuation">.</span><a href="if-not-null.html"><span class="token function">ifNotNull</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="if-not-null.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="if-not-null.html">R</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="if-not-null.html">R</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">ifNotNull execute when value isn't null.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1018872497%2FFunctions%2F449597615" anchor-label="ifNull" id="1018872497%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="if-null.html"><span>if</span><wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1018872497%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="if-null.html">T</a><span class="token operator">&gt; </span><a href="if-null.html">T</a><span class="token operator">?</span><span class="token punctuation">.</span><a href="if-null.html"><span class="token function">ifNull</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="if-null.html">T</a><span class="token operator">?</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Any///PointingToDeclaration/">Any</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin/Any///PointingToDeclaration/">Any</span></div><div class="brief "><p class="paragraph">ifNull execute when value is null.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="596274599%2FFunctions%2F449597615" anchor-label="isNotNull" id="596274599%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-not-null.html"><span>is</span><wbr><span>Not</span><wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="596274599%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="is-not-null.html">T</a><span class="token operator">&gt; </span><a href="is-not-null.html">T</a><span class="token operator">?</span><span class="token punctuation">.</span><a href="is-not-null.html"><span class="token function">isNotNull</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span></div><div class="brief "><p class="paragraph">Checking none nullability.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-256046840%2FFunctions%2F449597615" anchor-label="isNull" id="-256046840%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-null.html"><span>is</span><wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-256046840%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="is-null.html">T</a><span class="token operator">&gt; </span><a href="is-null.html">T</a><span class="token operator">?</span><span class="token punctuation">.</span><a href="is-null.html"><span class="token function">isNull</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span></div><div class="brief "><p class="paragraph">Checking nullability.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1950916123%2FFunctions%2F449597615" anchor-label="orDefault" id="-1950916123%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="or-default.html"><span>or</span><wbr><span><span>Default</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1950916123%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="or-default.html">T</a><span class="token operator">&gt; </span><a href="or-default.html">T</a><span class="token operator">?</span><span class="token punctuation">.</span><a href="or-default.html"><span class="token function">orDefault</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">default<span class="token operator">: </span><a href="or-default.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="or-default.html">T</a></div><div class="brief "><p class="paragraph">when variable is null default value maintained.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-271255090%2FFunctions%2F449597615" anchor-label="orZero" id="-271255090%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="or-zero.html"><span>or</span><wbr><span><span>Zero</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-271255090%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="kotlin/Double///PointingToDeclaration/">Double</span><span class="token operator">?</span><span class="token punctuation">.</span><a href="or-zero.html"><span class="token function">orZero</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin/Double///PointingToDeclaration/">Double</span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="kotlin/Float///PointingToDeclaration/">Float</span><span class="token operator">?</span><span class="token punctuation">.</span><a href="or-zero.html"><span class="token function">orZero</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin/Float///PointingToDeclaration/">Float</span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token operator">?</span><span class="token punctuation">.</span><a href="or-zero.html"><span class="token function">orZero</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="kotlin/Long///PointingToDeclaration/">Long</span><span class="token operator">?</span><span class="token punctuation">.</span><a href="or-zero.html"><span class="token function">orZero</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin/Long///PointingToDeclaration/">Long</span></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span data-unresolved-link="kotlin/Number///PointingToDeclaration/">Number</span><span class="token operator">?</span><span class="token punctuation">.</span><a href="or-zero.html"><span class="token function">orZero</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin/Number///PointingToDeclaration/">Number</span></div><div class="brief "><p class="paragraph">Return zero when number is null.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2023895586%2FFunctions%2F449597615" anchor-label="runBlock" id="2023895586%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="run-block.html"><span>run</span><wbr><span><span>Block</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2023895586%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="run-block.html">T</a><span class="token operator">&gt; </span><a href="run-block.html">T</a><span class="token punctuation">.</span><a href="run-block.html"><span class="token function">runBlock</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Unit///PointingToDeclaration/">Unit</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="run-block.html">T</a></div><div class="brief "><p class="paragraph">Return the value before run the execution block.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-602075310%2FFunctions%2F449597615" anchor-label="safeThread" id="-602075310%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="safe-thread.html"><span>safe</span><wbr><span><span>Thread</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-602075310%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="safe-thread.html">T</a><span class="token operator">&gt; </span><a href="safe-thread.html"><span class="token function">safeThread</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">provider<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="safe-thread.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-safe-thread-lazy/index.html">SafeThreadLazy</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="safe-thread.html">T</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-921784126%2FFunctions%2F449597615" anchor-label="tryCatchBool" id="-921784126%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="try-catch-bool.html"><span>try</span><wbr><span>Catch</span><wbr><span><span>Bool</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-921784126%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="try-catch-bool.html"><span class="token function">tryCatchBool</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span></div><div class="brief "><p class="paragraph">tryCatchBool used when you want to return a boolean value or return false if an exception is thrown.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2022438578%2FFunctions%2F449597615" anchor-label="tryCatchBoolean" id="2022438578%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="try-catch-boolean.html"><span>try</span><wbr><span>Catch</span><wbr><span><span>Boolean</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2022438578%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="try-catch-boolean.html"><span class="token function">tryCatchBoolean</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Unit///PointingToDeclaration/">Unit</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span></div><div class="brief "><p class="paragraph">tryCatchBoolean used when you want to return false if an exception is thrown.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1870632914%2FFunctions%2F449597615" anchor-label="tryCatchElse" id="-1870632914%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="try-catch-else.html"><span>try</span><wbr><span>Catch</span><wbr><span><span>Else</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1870632914%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="try-catch-else.html">T</a><span class="token operator">&gt; </span><a href="try-catch-else.html"><span class="token function">tryCatchElse</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">elseBlock<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="try-catch-else.html">T</a><span class="token punctuation">, </span></span><span class="parameter ">block<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="try-catch-else.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="try-catch-else.html">T</a></div><div class="brief "><p class="paragraph">tryCatchElse used when you want to return a default value if an exception is thrown.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1329930758%2FFunctions%2F449597615" anchor-label="tryCatchIgnore" id="-1329930758%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="try-catch-ignore.html"><span>try</span><wbr><span>Catch</span><wbr><span><span>Ignore</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1329930758%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="try-catch-ignore.html"><span class="token function">tryCatchIgnore</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Unit///PointingToDeclaration/">Unit</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">tryCatchIgnore used when you want to ignore catch block if an exception is thrown.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1909608702%2FFunctions%2F449597615" anchor-label="tryCatchNull" id="-1909608702%2FFunctions%2F449597615" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":affogato-core-ktx:dokkaHtmlPartial/main" data-filterable-set=":affogato-core-ktx:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="try-catch-null.html"><span>try</span><wbr><span>Catch</span><wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1909608702%2FFunctions%2F449597615"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":affogato-core-ktx:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="try-catch-null.html">T</a><span class="token operator">&gt; </span><a href="try-catch-null.html"><span class="token function">tryCatchNull</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="try-catch-null.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="try-catch-null.html">T</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">tryCatchNull used when you want to return null if an exception is thrown.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
