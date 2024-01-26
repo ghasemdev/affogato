@@ -43,7 +43,7 @@ class HorizontalPdfReaderState(
           it.isZoomEnable,
           it.isAccessibleEnable,
           it.pagerState.currentPage,
-          it.pagerState.initialPageOffsetFraction
+          it.pagerState.currentPageOffsetFraction
         )
       },
       restore = {

@@ -35,7 +35,7 @@ import kotlin.math.truncate
  * @throws IllegalArgumentException if the [Array] is empty.
  */
 inline fun <reified T> Array<T>.median(): Pair<T, T?> {
-  require(size >= 1) { "The array must have at least one element!!" }
+  require(isNotEmpty()) { "The array must have at least one element!!" }
   val sortedArray = sortedBy { it.hashCode() }
   return if (sortedArray.size % 2 == 0) {
     Pair(sortedArray[size / 2 - 1], sortedArray[size / 2])

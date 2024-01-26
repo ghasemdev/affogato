@@ -2,7 +2,6 @@ package com.parsuomash.affogato.coroutines.core
 
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestDispatcher
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
@@ -19,7 +18,6 @@ internal class DispatchersProviderKtTest {
     assertThat(dispatcherProvider.unconfined).isInstanceOf(CoroutineDispatcher::class.java)
   }
 
-  @OptIn(ExperimentalCoroutinesApi::class)
   @Test
   @DisplayName("Standard Implementation")
   fun testImplementation() {

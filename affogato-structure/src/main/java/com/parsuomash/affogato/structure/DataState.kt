@@ -24,5 +24,5 @@ package com.parsuomash.affogato.structure
 sealed interface DataState<out R> {
   data class Success<T>(val data: T) : DataState<T>
   data class Error(val exception: Exception) : DataState<Nothing>
-  object Loading : DataState<Nothing>
+  data object Loading : DataState<Nothing>
 }

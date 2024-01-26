@@ -1,7 +1,6 @@
 package com.parsuomash.affogato.coroutines.core
 
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.StandardTestDispatcher
 
 /**
@@ -15,7 +14,6 @@ class TestDispatchers : DispatchersProvider {
    * @see StandardTestDispatcher
    * @since 1.2.0
    */
-  @OptIn(ExperimentalCoroutinesApi::class)
   override val main: CoroutineDispatcher
     get() = StandardTestDispatcher()
 
@@ -23,7 +21,6 @@ class TestDispatchers : DispatchersProvider {
    * @see StandardTestDispatcher
    * @since 1.2.0
    */
-  @OptIn(ExperimentalCoroutinesApi::class)
   override val io: CoroutineDispatcher
     get() = StandardTestDispatcher()
 
@@ -31,7 +28,6 @@ class TestDispatchers : DispatchersProvider {
    * @see StandardTestDispatcher
    * @since 1.2.0
    */
-  @OptIn(ExperimentalCoroutinesApi::class)
   override val default: CoroutineDispatcher
     get() = StandardTestDispatcher()
 
@@ -39,7 +35,6 @@ class TestDispatchers : DispatchersProvider {
    * @see StandardTestDispatcher
    * @since 1.2.0
    */
-  @OptIn(ExperimentalCoroutinesApi::class)
   override val unconfined: CoroutineDispatcher
     get() = StandardTestDispatcher()
 }

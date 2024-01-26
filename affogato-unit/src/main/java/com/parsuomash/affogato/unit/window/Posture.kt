@@ -37,7 +37,7 @@ sealed class Posture(val size: Size) {
 
   /** Device posture is in normal mode. */
   @Immutable
-  object Normal : Posture(Size(0F, 0F))
+  data object Normal : Posture(Size(0F, 0F))
 }
 
 /**

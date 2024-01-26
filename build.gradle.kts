@@ -24,9 +24,6 @@ buildscript {
 }
 
 subprojects {
-  repositories {
-    mavenCentral()
-  }
   apply {
     plugin(Plugins.Detekt.value)
     plugin(Plugins.Dokka.value)
@@ -103,14 +100,14 @@ subprojects {
         freeCompilerArgs = listOf(
           "-P",
           "plugin:androidx.compose.compiler.plugins.kotlin:reportsDestination=" +
-            project.buildDir.absolutePath + "/compose_compiler"
+            project.layout.buildDirectory.get().asFile.absolutePath + "/compose_compiler"
         )
       }
       if (project.findProperty("composeCompilerMetrics") == "true") {
         freeCompilerArgs = listOf(
           "-P",
           "plugin:androidx.compose.compiler.plugins.kotlin:metricsDestination=" +
-            project.buildDir.absolutePath + "/compose_compiler"
+            project.layout.buildDirectory.get().asFile.absolutePath + "/compose_compiler"
         )
       }
     }
@@ -145,5 +142,5 @@ tasks.register("testAll") {
 }
 
 tasks.register("clean", Delete::class) {
-  delete(rootProject.buildDir)
+  delete(rootProject.layout.buildDirectory.get().asFile)
 }

@@ -5,7 +5,7 @@ package com.parsuomash.affogato.unit.window
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalConfiguration
 
@@ -77,10 +77,10 @@ sealed class WindowType(val dpSize: Int) {
 fun rememberWindowSize(): WindowSize {
   val configuration = LocalConfiguration.current
   val screenWidth by remember(configuration) {
-    mutableStateOf(configuration.screenWidthDp)
+    mutableIntStateOf(configuration.screenWidthDp)
   }
   val screenHeight by remember(configuration) {
-    mutableStateOf(configuration.screenHeightDp)
+    mutableIntStateOf(configuration.screenHeightDp)
   }
 
   return WindowSize(

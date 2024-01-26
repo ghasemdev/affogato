@@ -28,11 +28,11 @@ android {
 
 dependencies {
   // Compose -------------------------------------------------------------------------------------
-  implementation(libs.compose.ui.alpha)
-  implementation(libs.compose.foundation.alpha)
-  implementation(libs.compose.material.alpha)
-  implementation(libs.compose.ui.tooling.alpha)
-  debugImplementation(libs.compose.ui.tooling.alpha)
+  implementation(libs.compose.ui)
+  implementation(libs.compose.foundation)
+  implementation(libs.compose.material)
+  implementation(libs.compose.ui.tooling)
+  debugImplementation(libs.compose.ui.tooling)
 }
 
 afterEvaluate {

@@ -3,13 +3,11 @@
 package com.parsuomash.affogato.coroutines.core
 
 import com.google.common.truth.Truth.assertThat
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
-@OptIn(ExperimentalCoroutinesApi::class)
 internal class StandardKtTest {
   @Nested
   @DisplayName("suspended try-catch block")

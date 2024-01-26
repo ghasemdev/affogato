@@ -10,7 +10,7 @@ import androidx.compose.ui.graphics.CompositingStrategy
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
 
-internal fun Modifier.disabledLongPress() = pointerInput(Unit) {
+internal fun Modifier.disabledLongPress() = this.pointerInput(Unit) {
   detectTapGestures(onLongPress = emptyLambda)
 }
 
