@@ -35,9 +35,9 @@ com.parsuomash.affogato.okhttp.android.progress
 module:affogato-pager-indicator
 com.parsuomash.affogato.pager.indicator
 module:affogato-pdf-viewer
-com.parsuomash.affogato.pdfviewerandroid
-com.parsuomash.affogato.pdfviewerandroid.state
-com.parsuomash.affogato.pdfviewerandroid.zoomable
+com.parsuomash.affogato.pdfviewer
+com.parsuomash.affogato.pdfviewer.state
+com.parsuomash.affogato.pdfviewer.zoomable
 module:affogato-pdf-viewer-android
 com.parsuomash.affogato.pdfviewerandroid
 com.parsuomash.affogato.pdfviewerandroid.state
