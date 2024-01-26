@@ -1,5 +1,5 @@
-[![Version](https://shields.io/badge/VERSION-1.10.1-blue?style=for-the-badge)](https://github.com/ghasemdev/affogato/releases/tag/1.10.1)
-[![Kotlin](https://shields.io/badge/Kotlin-1.9.10-pink?style=for-the-badge)](https://kotlinlang.org/)
+[![Version](https://shields.io/badge/VERSION-1.10.2-blue?style=for-the-badge)](https://github.com/ghasemdev/affogato/releases/tag/1.10.2)
+[![Kotlin](https://shields.io/badge/Kotlin-1.9.22-pink?style=for-the-badge)](https://kotlinlang.org/)
 [![API](https://shields.io/badge/Api-+21-green?style=for-the-badge)](https://www.android.com/)
 [![License MIT](https://shields.io/badge/LICENSE-MIT-orange?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
